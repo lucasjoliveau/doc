@@ -1,0 +1,80 @@
+# User Docs
+
+Discover our user guides and configuration tutorials per application.
+
+  * Odoo essentials
+    * [Activities](applications/essentials/activities.html)
+    * [Reporting](applications/essentials/reporting.html)
+    * [Search and filter records](applications/essentials/search.html)
+    * [Contacts](applications/essentials/contacts.html)
+    * [Export and import data](applications/essentials/export_import_data.html)
+    * [In-app purchases (IAP)](applications/essentials/in_app_purchase.html)
+  * Finance
+    * [Accounting and Invoicing](applications/finance/accounting.html)
+    * [Expenses](applications/finance/expenses.html)
+    * [Online payments](applications/finance/payment_providers.html)
+    * [Fiscal localizations](applications/finance/fiscal_localizations.html)
+  * Sales
+    * [CRM](applications/sales/crm.html)
+    * [Sales](applications/sales/sales.html)
+    * [Point of Sale](applications/sales/point_of_sale.html)
+    * [Subscriptions](applications/sales/subscriptions.html)
+    * [Rental](applications/sales/rental.html)
+  * Websites
+    * [Website](applications/websites/website.html)
+    * [eCommerce](applications/websites/ecommerce.html)
+    * [eLearning](applications/websites/elearning.html)
+    * [Forum](applications/websites/forum.html)
+    * [Blog](applications/websites/blog.html)
+    * [Live Chat](applications/websites/livechat.html)
+  * Supply Chain
+    * [Inventory](applications/inventory_and_mrp/inventory.html)
+    * [Manufacturing](applications/inventory_and_mrp/manufacturing.html)
+    * [Purchase](applications/inventory_and_mrp/purchase.html)
+    * [Barcode](applications/inventory_and_mrp/barcode.html)
+    * [Quality](applications/inventory_and_mrp/quality.html)
+    * [Maintenance](applications/inventory_and_mrp/maintenance.html)
+    * [Product lifecycle management](applications/inventory_and_mrp/plm.html)
+  * Human resources
+    * [Attendances](applications/hr/attendances.html)
+    * [Employees](applications/hr/employees.html)
+    * [Fleet](applications/hr/fleet.html)
+    * [Payroll](applications/hr/payroll.html)
+    * [Time Off](applications/hr/time_off.html)
+    * [Recruitment](applications/hr/recruitment.html)
+    * [Referrals](applications/hr/referrals.html)
+  * Marketing
+    * [Email marketing](applications/marketing/email_marketing.html)
+    * [Marketing Automation](applications/marketing/marketing_automation.html)
+    * [SMS Marketing](applications/marketing/sms_marketing.html)
+    * [Events](applications/marketing/events.html)
+    * [Surveys](applications/marketing/surveys.html)
+    * [Social Marketing](applications/marketing/social_marketing.html)
+  * Services
+    * [Project](applications/services/project.html)
+    * [Timesheets](applications/services/timesheets.html)
+    * [Field Service](applications/services/field_service.html)
+    * [Helpdesk](applications/services/helpdesk.html)
+  * Productivity
+    * [Documents](applications/productivity/documents.html)
+    * [Sign](applications/productivity/sign.html)
+    * [Spreadsheet](applications/productivity/spreadsheet.html)
+    * [Knowledge](applications/productivity/knowledge.html)
+    * [Calendar](applications/productivity/calendar.html)
+    * [Discuss](applications/productivity/discuss.html)
+    * [VoIP (Voice over Internet Protocol)](applications/productivity/voip.html)
+  * [Studio](applications/studio.html)
+    * [Fields and widgets](applications/studio/fields.html)
+    * [Views](applications/studio/views.html)
+    * [Models, modules, and apps](applications/studio/models_modules_apps.html)
+    * [Automated actions (automations)](applications/studio/automated_actions.html)
+    * [PDF reports](applications/studio/pdf_reports.html)
+  * General settings
+    * [Apps and modules](applications/general/apps_modules.html)
+    * [Users](applications/general/users.html)
+    * [Companies](applications/general/companies.html)
+    * [Internet of Things (IoT)](applications/general/iot.html)
+    * [Email communication](applications/general/email_communication.html)
+    * [Integrations](applications/general/integrations.html)
+    * [Developer mode (debug mode)](applications/general/developer_mode.html)
+

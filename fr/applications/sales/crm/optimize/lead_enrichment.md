@@ -1,0 +1,128 @@
+# Lead enrichment
+
+_Lead enrichment_ is a service that provides business information for a
+contact attached to a lead. Lead enrichment is an In-App Purchase (IAP) that
+requires credits to use, and is available for existing leads in an Odoo
+database.
+
+The information provided by lead enrichment can include general information
+about the business (including full business name and logo), social media
+accounts, Company type, Founded information, Sectors information, the number
+of Employees, Estimated revenue, Phone number, Timezone, and Technologies
+Used.
+
+Note
+
+Enterprise Odoo users with a valid subscription get free credits to test IAP
+features before deciding to purchase more credits for the database. This
+includes demo/training databases, educational databases, and one-app-free
+databases.
+
+Important
+
+The _leads_ feature **must** be activated in the _CRM_ settings page in order
+to use lead enrichment. To access the _CRM_ settings, navigate to CRM app ‣
+Configuration ‣ Settings. Under the CRM section activate the Leads option and
+click Save.
+
+## Lead enrichment set up
+
+To set up lead enrichment in the _CRM_ application, navigate to CRM app ‣
+Configuration ‣ Settings. Then, under the Lead Generation section, tick the
+checkbox next to Lead Enrichment, and select either Enrich leads on demand
+only or Enrich all leads automatically. Click the Save button to activate the
+changes.
+
+![CRM lead generation settings page, with lead enrichment activation
+highlighted, and enrich leads on demand only
+chosen.](../../../../_images/lead-enrichment-activate.png)
+
+## Enrich leads
+
+Enrichment of leads is based on the domain of the email address of the
+customer set on the lead. There are two different ways that a lead can be
+enriched: _automatically_ or _manually_.
+
+### Automatically enrich leads
+
+During set up, if Enrich all leads automatically was selected on the _CRM_
+Settings page, then no action needs to be taken by the user to enrich the
+lead. A scheduled action runs automatically, every sixty minutes, and
+enrichment occurs on leads, after a remote database is contacted.
+
+Astuce
+
+To access the cron that runs for the automatic lead enrichment, activate
+[developer mode](../../../general/developer_mode.html#developer-mode), and
+navigate to Settings app ‣ Technical menu ‣ Automation section ‣ Scheduled
+Actions. In the Search… bar, type in `CRM`. Click into the result labeled CRM:
+enrich leads (IAP), and make any necessary adjustments. In the Execute Every
+field, enter a value greater than, or equal to, five minutes.
+
+Example
+
+The following is an example of lead enrichment data that has been
+autocompleted successfully:
+
+![Chatter showing lead enrichment data.](../../../../_images/lead-enrichment-
+data.png)
+
+### Manually enrich leads
+
+If the Enrich leads on demand only option was selected on the _CRM_ Settings
+page, when activating Lead Enrichment, each lead that a user wishes to enrich
+**must** be manually enriched. This is achieved by clicking the Enrich button
+in the top menu of the lead.
+
+The same information will be retrieved at the same IAP credit cost (one per
+enrichment). This method of enrichment is useful when every lead does not need
+to be enriched, or cost is an issue.
+
+![Manual enrich button feature highlighted on the CRM
+lead.](../../../../_images/manual-enrichment.png)
+
+Astuce
+
+Manually enrich leads in bulk using the _list_ view. First, navigate to CRM
+app ‣ Leads, and click the list view button (☰ (three horizontal lines) icon).
+Next, tick the checkboxes for the leads that should be manually enriched.
+Finally, click the ⚙️ Action icon, and select Enrich from the resulting drop-
+down menu. This can also be achieved from the _My Pipeline_ page. To do so,
+simply open the _CRM_ app, or navigate to CRM app ‣ Sales ‣ My Pipeline.
+Either route reveals leads and opportunities on the Pipeline page.
+
+## Tarification
+
+Lead enrichment is an In-App Purchase (IAP) feature, and each enriched lead
+costs one credit.
+
+Note
+
+See here for full pricing information: [Lead Generation by Odoo
+IAP](https://iap.odoo.com/iap/in-app-services/273).
+
+To buy credits, navigate to CRM app ‣ Configuration ‣ Settings. In the Lead
+Generation section, under the Lead Enrichment feature, click on Buy Credits.
+
+![Buy credits from the lead enrichment settings.](../../../../_images/buy-
+lead-enrichment-credits-setting.png)
+
+Credits and balances may also be purchased by navigating to the Settings app.
+In the Contacts section, under the Odoo IAP feature, click on View My
+Services.
+
+![Acheter des crédits via les paramètres Odoo IAP.](../../../../_images/view-
+my-services-setting1.png)
+
+Pour plus d'infos
+
+[In-app purchases (IAP)](../../../essentials/in_app_purchase.html)
+
+Important
+
+When collecting a company’s contact information, make sure to be aware of the
+latest EU regulations. For more information about General Data Protection
+Regulation, refer to: [Odoo GDPR](http://odoo.com/gdpr).
+
+  *[IAP]: In-App Puchase
+
