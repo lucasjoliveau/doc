@@ -13,7 +13,7 @@ print("Création du répertoire:", dest_dir)
 
 # Fonction pour extraire le contenu de la balise <main> et le convertir en Markdown
 def convert_html_to_md(source_file, dest_file):
-    print(f"Conversion du fichier : {source_file} vers {dest_file}")
+    # print(f"Conversion du fichier : {source_file} vers {dest_file}")
     try:
         with open(source_file, 'r', encoding='utf-8') as f:
             soup = BeautifulSoup(f, 'html.parser')
@@ -23,7 +23,7 @@ def convert_html_to_md(source_file, dest_file):
     
     main_content = soup.find('main')
     if main_content:
-        print(f"Extraction du contenu de la balise <main> pour le fichier : {source_file}")
+        # print(f"Extraction du contenu de la balise <main> pour le fichier : {source_file}")
         # Remplacer les <span class="guilabel"> par des <b>
         for span in main_content.find_all('span', class_='guilabel'):
             span.name = 'b'
@@ -39,7 +39,7 @@ def convert_html_to_md(source_file, dest_file):
                 alert['class'] = [cls if cls != 'alert-tip' else 'alert-info' for cls in alert['class']]
             
             # Remplacer les <span class="pre"> et <span class="doc"> par leur contenu
-            for span in alert.find_all('span', class_=['pre', 'doc']):
+            for span in alert.find_all('span', class_=['pre', 'doc', 'menuselection']):
                 span.unwrap()
             
             # Supprimer toutes les classes des balises <code>, <a>, et <ul>
@@ -81,8 +81,8 @@ def convert_html_to_md(source_file, dest_file):
                 f.write(md_content)
         except Exception as e:
             print(f"Erreur lors de l'écriture du fichier {dest_file}: {e}")
-    else:
-        print(f"Pas de balise <main> trouvée dans le fichier : {source_file}")
+    # else:
+        # print(f"Pas de balise <main> trouvée dans le fichier : {source_file}")
 
 # Vérifier si le répertoire source contient des fichiers HTML
 if not os.path.exists(source_dir):
