@@ -1,6 +1,6 @@
 # Información
 
-La aplicación _Información de Odoo_ es una aplicación de productividad
+La aplicación _Información de Konvergo ERP_ es una aplicación de productividad
 multiuso que permite a los usuarios internos enriquecer su base de
 conocimiento empresarial y proporcionar información recopilada de forma
 individual o grupal.
@@ -10,11 +10,14 @@ componen principalmente de un título y un cuerpo. Este último es un campo HTML
 que contiene texto, imágenes, enlaces a otros artículos, registros de otros
 modelos, plantillas, etc.
 
-Ver también
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="https://www.odoo.com/app/knowledge">Página de producto de Información</a></p></li>
+</ul>
+</div>
 
-  * [Página de producto de Información](https://www.odoo.com/app/knowledge)
-
-  * [Edición de artículos](knowledge/articles_editing.html)
-  * [Gestión de artículos](knowledge/management.html)
-  * [Propiedades](knowledge/properties.html)
+  * [Edición de artículos](knowledge/articles_editing)
+  * [Gestión de artículos](knowledge/management)
+  * [Propiedades](knowledge/properties)
 

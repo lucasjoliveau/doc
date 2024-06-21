@@ -17,7 +17,7 @@ External identifiers are in the form `_module_._id_` (e.g.
 left out.
 
 Sometimes referred to as «xml id» or `xml_id` as XML-based [Data
-Files](reference/backend/data.html#reference-data) make extensive use of them.
+Files](reference/backend/data#reference-data) make extensive use of them.
 
 format string
 

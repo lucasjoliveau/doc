@@ -7,7 +7,7 @@ permet d’intégrer d’autres projets Git dans votre code, sans avoir à copie
 coller tout leur code.
 
 En effet, vos modules personnalisés peuvent dépendre des modules provenant
-d’autres dépôts. En ce qui concerne Odoo, cette fonctionnalité vous permet
+d’autres dépôts. En ce qui concerne Konvergo ERP, cette fonctionnalité vous permet
 d’ajouter des modules à partir d’autres dépôts Git dans les branches de votre
 dépôt. L’ajout de ces dépendances de votre branche par le biais de sous-
 modules facilite le déploiement de votre code et de vos serveurs, car vous
@@ -19,7 +19,7 @@ module et vous pouvez décider de la révision que vous voulez. C’est à vous 
 décider si vous voulez épingler le sous-module à une révision spécifique et
 quand vous voulez mettre à jour vers une révision plus récente.
 
-Dans Odoo.sh, les sous-modules vous permettent d’utiliser et de dépendre de
+Dans Konvergo ERP.sh, les sous-modules vous permettent d’utiliser et de dépendre de
 modules disponibles dans d’autres dépôts. La plateforme détectera que vous
 avez ajouté des modules par le biais de sous-modules dans vos branches et les
 ajoutera automatiquement à votre chemin d’accès aux modules complémentaires
@@ -27,21 +27,21 @@ pour que vous puissiez les installer dans vos bases de données.
 
 Si vous ajoutez des dépôts privés en tant que sous-modules dans vos branches,
 vous devez configurer une clé de déploiement dans les paramètres de votre
-projet Odoo.sh. Sinon, Odoo.sh ne sera pas autorisé à les télécharger. La
+projet Konvergo ERP.sh. Sinon, Konvergo ERP.sh ne sera pas autorisé à les télécharger. La
 procédure est détaillée dans le chapitre [Paramètres > Sous-
-modules](../getting_started/settings.html#odoosh-gettingstarted-settings-
+modules](../getting_started/settings#odoosh-gettingstarted-settings-
 submodules).
 
 ## Ajouter un sous-module
 
-### Avec Odoo.sh (facile)
+### Avec Konvergo ERP.sh (facile)
 
-Avertissement
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Pour l’instant, cette méthode ne permet pas d’ajouter des dépôts <b>privés</b>. Vous pouvez toutefois le faire <a href="#odoosh-advanced-submodules-withgit"><span class="std std-ref">avec Git</span></a>.</p>
+</div>
 
-Pour l’instant, cette méthode ne permet pas d’ajouter des dépôts **privés**.
-Vous pouvez toutefois le faire avec Git.
-
-Sur Odoo.sh, dans la vue branches de votre projet, choisissez la branche dans
+Sur Konvergo ERP.sh, dans la vue branches de votre projet, choisissez la branche dans
 laquelle vous voulez ajouter un sous-module.
 
 Dans le coin supérieur droit, cliquez sur le bouton _Submodule_ et ensuite sur

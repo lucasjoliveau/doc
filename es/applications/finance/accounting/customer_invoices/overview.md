@@ -1,7 +1,7 @@
 # Procesos de facturación
 
 Dependiendo de su negocio y la aplicación que utiliza, hay diferentes maneras
-de automatizar la creación de facturas de clientes en Odoo. Por lo general, el
+de automatizar la creación de facturas de clientes en Konvergo ERP. Por lo general, el
 sistema crea borradores de facturas (con información proveniente de otros
 documentos como las órdenes de venta o contratos), de manera que contabilidad
 solo tiene que validar los borradores y enviar las facturas por lote (por
@@ -36,9 +36,12 @@ siguientes opciones: facturar la orden completa, facturar un porcentaje
 Este proceso es bueno tanto para los servicios como para los productos
 físicos.
 
-Ver también
-
-  * [Facturas proforma](../../../sales/sales/invoicing/proforma.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../../sales/sales/invoicing/proforma">Facturas proforma</a></p></li>
+</ul>
+</div>
 
 ### Orden de venta ‣ Orden de entrega ‣ Factura
 
@@ -52,15 +55,18 @@ realmente se entregó. Si crea órdenes parciales (entrega unas cosas primero y
 el resto más adelante), el cliente recibirá dos facturas, una por cada orden
 de entrega.
 
-Ver también
-
-  * [Facturar por cantidades entregadas u ordenadas](../../../sales/sales/invoicing/invoicing_policy.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../../sales/sales/invoicing/invoicing_policy">Facturar por cantidades entregadas u ordenadas</a></p></li>
+</ul>
+</div>
 
 ### Orden de comercio electrónico ‣ factura
 
 Una orden de comercio electrónico también activará la creación de la orden
 cuando se pague por completo. Si permite que el pago de las órdenes sea por
-cheque o transferencia bancaria, Odoo solo creará una orden y la factura se
+cheque o transferencia bancaria, Konvergo ERP solo creará una orden y la factura se
 activará una vez que se recibe el pago.
 
 ## Contratos
@@ -87,13 +93,14 @@ con base en el tiempo y material utilizan este enfoque. En cambio, las
 empresas de servicio que facturan con base en el precio fijo, usan una orden
 de venta normal.
 
-Ver también
-
-  * [Facturación por tiempo y materiales](../../../sales/sales/invoicing/time_materials.html)
-
-  * [Volver a facturar gastos a los clientes](../../../sales/sales/invoicing/expense.html)
-
-  * [Facturar objetivos de proyecto](../../../sales/sales/invoicing/milestone.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../../sales/sales/invoicing/time_materials">Facturación por tiempo y materiales</a></p></li>
+<li><p><a href="../../../sales/sales/invoicing/expense">Volver a facturar gastos a los clientes</a></p></li>
+<li><p><a href="../../../sales/sales/invoicing/milestone">Facturar objetivos de proyecto</a></p></li>
+</ul>
+</div>
 
 ### Contratos recurrentes ‣ facturas
 
@@ -101,9 +108,12 @@ En el caso de las suscripciones, se activa una factura periódicamente de forma
 automática. La frecuencia de la facturación y de los servicios/productos
 facturados se definen en el contrato.
 
-Ver también
-
-  * [Suscripciones](../../../sales/subscriptions.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../../sales/subscriptions">Suscripciones</a></p></li>
+</ul>
+</div>
 
 ## Otros
 
@@ -155,11 +165,14 @@ La **digitalización de facturas** es el proceso en el que las facturas
 impresas se codifican de manera automática y se convierten en formularios de
 facturas en su contabilidad en línea.
 
-Odoo usa OCR y tecnología de inteligencia artificial para reconocer el
+Konvergo ERP usa OCR y tecnología de inteligencia artificial para reconocer el
 contenido de los documentos. Los formularios para las facturas de cliente y
 proveedor se crean y se llenan según las facturas escaneadas.
 
-Ver también
-
-  * [Digitalización de documentos con IA](../vendor_bills/invoice_digitization.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../vendor_bills/invoice_digitization">Digitalización de documentos con IA</a></p></li>
+</ul>
+</div>
 

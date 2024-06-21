@@ -19,20 +19,20 @@ option, allez à Ventes ‣ Configuration ‣ Paramètres et, sous la catégorie
 _Tarif_ , vous avez la possibilité d’appliquer des remises sur les lignes de
 bon de commande.
 
-![Activation de l'option de remise dans Odoo
+![Activation de l'option de remise dans Konvergo ERP
 Ventes](../../../_images/configuration-to-upsell-a-subscription.png)
 
 ## Appliquer la vente incitative à votre premier abonnement
 
 Avant d’appliquer une vente incitative à un abonnement, n’hésitez pas à
 consulter notre documentation sur la façon de [Créer un
-devis](../subscriptions.html) avec des produits d’abonnement. En effet, une
+devis](../subscriptions) avec des produits d’abonnement. En effet, une
 fois confirmé, un devis se transforme en commande et un nouvel abonnement se
 crée automatiquement. Par conséquent, cet abonnement a le statut _En cours_. À
 partir de là, vous avez la possibilité d’appliquer une vente incitative à
 votre abonnement.
 
-![Appliquer la vente incitative à votre abonnement avec Odoo
+![Appliquer la vente incitative à votre abonnement avec Konvergo ERP
 Abonnements](../../../_images/upsell-your-subscription.png)
 
 En utilisant le bouton intelligent _Vente incitative_ , vous pouvez créer un
@@ -40,14 +40,11 @@ nouveau devis avec de nouveaux produits d’abonnement et l’envoyer à vos
 clients pour approbation.
 
 ![Ajouter des produits à votre abonnement via l'option de vente incitative
-dans Odoo Abonnements](../../../_images/use-of-the-upsell-button-in-odoo-
-sales.png)
-
-Important
-
-Lorsque le devis est confirmé par votre client, les produits sont ajoutés à
-l’abonnement initial. Les prix du devis sont alors calculés au prorata du
-temps restant de la période de facturation en cours.
+dans Konvergo ERP Abonnements](../../../_images/use-of-the-upsell-button-in-odoo-
+sales.png) <div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Lorsque le devis est confirmé par votre client, les produits sont ajoutés à l’abonnement initial. Les prix du devis sont alors calculés au prorata du temps restant de la période de facturation en cours.</p>
+</div>
 
 Bien entendu, avant d’envoyer ce nouveau devis à vos clients, vous pouvez
 modifier le prix unitaire, les taxes et même la remise que vous voulez offrir.
@@ -59,7 +56,7 @@ afficher toutes les mises à jour. De là, vous pouvez voir qu’une ligne
 additionnelle a été ajoutée à l’abonnement avec le nouveau service
 supplémentaire que le client voulait acheter.
 
-![Visualiser toutes les mises à jour de vos abonnements avec Odoo
+![Visualiser toutes les mises à jour de vos abonnements avec Konvergo ERP
 Abonnements](../../../_images/subscriptions-updates.png)
 
 De plus, en cliquant sur le bouton _Ventes_ , vous disposez d’un récapitulatif
@@ -72,11 +69,12 @@ La seule différence entre vos deux bons de commande est la description dans la
 section _Gestion des abonnements_. Là, vous pouvez facilement visualiser
 laquelle est votre vente incitative.
 
-Pour plus d'infos
-
-  * [Abonnements](../subscriptions.html)
-
-  * [Plans d’abonnement](plans.html)
-
-  * [Produits d’abonnement](products.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../subscriptions">Abonnements</a></p></li>
+<li><p><a href="plans">Plans d’abonnement</a></p></li>
+<li><p><a href="products">Produits d’abonnement</a></p></li>
+</ul>
+</div>
 

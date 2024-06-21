@@ -10,20 +10,23 @@ usted le envía a los proveedores con los estados bancarios.
 ### Activar métodos de pago con cheque
 
 Para activar el método de pago con cheques, vaya a Contabilidad ‣
-Configuración ‣ Ajustes y baje a la sección Pagos de proveedor. Ahí debe
-activar el método de pago, además de que debe configurar el Diseño del cheque.
+Configuración ‣ Ajustes y baje a la sección **Pagos de proveedor**. Ahí debe
+activar el método de pago, además de que debe configurar el **Diseño del
+cheque**.
 
-Nota
-
-  * Ya que haya activado la opción Cheques, el método de pago **por cheques** se configura de manera automática en las pestañas Pagos salientes del diario **bancario**.
-
-  * Algunos países necesitan módulos específicos del país para imprimir cheques, es posible que estos módulos ya estén instalados. Por ejemplo, el módulo U.S. Checks Layout es necesario para imprimir cheques en los Estados Unidos.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><ul>
+<li><p>Ya que haya activado la opción <b>Cheques</b>, el método de pago <b>por cheques</b> se configura de manera automática en las pestañas <b>Pagos salientes</b> del diario <b>bancario</b>.</p></li>
+<li><p>Algunos países necesitan módulos específicos del país para imprimir cheques, es posible que estos módulos ya estén instalados. Por ejemplo, el módulo <b>U.S. Checks Layout</b> es necesario para imprimir cheques en los Estados Unidos.</p></li>
+</ul>
+</div>
 
 ## Material compatible para la impresión de cheques
 
 ### Estados Unidos
 
-Para los Estados Unidos, Odoo es compatible de forma predeterminada con los
+Para los Estados Unidos, Konvergo ERP es compatible de forma predeterminada con los
 siguientes formatos de cheques:
 
   * **Quickbooks y Quicken** : cheque en la parte superior, talón en el centro y en la parte inferior.
@@ -46,15 +49,15 @@ El pago a un proveedor con un cheque se realiza en tres pasos:
 
 Para registrar un pago, abra cualquier factura de proveedor desde Compra ‣
 Facturas de proveedor. Puede registrar un pago una vez que se validó una
-factura de proveedor. Configure el método de pago como Cheques y valide el
-pago.
+factura de proveedor. Configure el **método de pago** como **Cheques** y
+valide el pago.
 
 ### Imprimir cheques
 
-En su tablero de Contabilidad vaya al diario banco puede ver el número de
-cheques que están registrados. Al hacer clic en Cheques por imprimir puede
-imprimir los cheques conciliados.
+En su **tablero de Contabilidad** vaya al diario **banco** puede ver el número
+de cheques que están registrados. Al hacer clic en **Cheques por imprimir**
+puede imprimir los cheques conciliados.
 
 Para imprimir todos los cheques por lote, seleccione todos los pagos desde la
-vista de lista y haga clic en Imprimir.
+vista de lista y haga clic en **Imprimir**.
 

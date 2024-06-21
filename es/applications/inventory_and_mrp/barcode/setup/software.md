@@ -1,4 +1,4 @@
-# Activar los códigos de barras en Odoo
+# Activar los códigos de barras en Konvergo ERP
 
 Los códigos de barra pueden ahorrarle tiempo que generalmente pierde cambiando
 entre el teclado, el ratón y el escáner. El uso correcto del código de barras
@@ -27,12 +27,10 @@ formulario del producto.
 
 ![../../../../_images/software_03.png](../../../../_images/software_03.png)
 ![../../../../_images/software_04.png](../../../../_images/software_04.png)
-
-Nota
-
-Tenga cuidado, agregue códigos de barras directamente en las variantes del
-producto y no en la plantilla del producto, de lo contrario, no podrá
-diferenciarlos.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Tenga cuidado, agregue códigos de barras directamente en las variantes del producto y no en la plantilla del producto, de lo contrario, no podrá diferenciarlos.</p>
+</div>
 
 ## Establecer códigos de barras de ubicaciones
 
@@ -42,11 +40,10 @@ Inventario ‣ Configuración ‣ Ubicaciones.
 
 ![../../../../_images/software_05.png](../../../../_images/software_05.png)
 ![../../../../_images/software_06.png](../../../../_images/software_06.png)
-
-Nota
-
-En el menú _imprimir_ puede imprimir el código de barras que le asigne a cada
-ubicación.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>En el menú <em>imprimir</em> puede imprimir el código de barras que le asigne a cada ubicación.</p>
+</div>
 
 ## Formatos de código de barras
 
@@ -65,8 +62,8 @@ código de barras. Para obtener más información sobre la clave de la empresa
 GS1, o para comprar una licencia para una clave, vaya a la página de clave de
 la empresa GS1.
 
-Los usuarios de Odoo pueden usar códigos de barra GTIN para identificar sus
-productos. Sin embargo, ya que Odoo acepta cualquier string numérica como
+Los usuarios de Konvergo ERP pueden usar códigos de barra GTIN para identificar sus
+productos. Sin embargo, ya que Konvergo ERP acepta cualquier string numérica como
 código de barras, también es posible definir un código de barras personalizado
 para uso interno.
 

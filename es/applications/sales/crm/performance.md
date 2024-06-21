@@ -1,4 +1,4 @@
 # Analizar el rendimiento
 
-  * [Revise la relación ganancia/pérdida](performance/win_loss.html)
+  * [Revise la relación ganancia/pérdida](performance/win_loss)
 

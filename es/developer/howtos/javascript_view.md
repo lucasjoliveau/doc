@@ -193,10 +193,11 @@ view.
     }
     
 
-Nota
-
-For advanced cases, instead of creating a model from scratch, it is also
-possible to use `RelationalModel`, which is used by other views.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>For advanced cases, instead of creating a model from scratch, it is also possible to use
+<code>RelationalModel</code>, which is used by other views.</p>
+</div>
 
   4. Create the arch parser.
 
@@ -261,7 +262,7 @@ to the information.
     registry.category("views").add("beautifulView", beautifulView);
     
 
-  6. Declare the [view](../reference/backend/views.html#reference-views-structure) in the arch.
+  6. Declare the [view](../reference/backend/views#reference-views-structure) in the arch.
     
         ...
     <record id="my_beautiful_view" model="ir.ui.view">

@@ -12,7 +12,7 @@ Allez à Site Web ‣ Configuration ‣ Paramètres et activez les _Trackers de
 liens_.
 
 ![Vue de la page des paramètres de Site Web mettant en évidence le champ des
-trackers de liens dans Odoo Site
+trackers de liens dans Konvergo ERP Site
 Web](../../../../_images/enable_link_tracker.png)
 
 ### Mise en place d’URLs traçables
@@ -21,7 +21,7 @@ Allez à Site Web ‣ Aller au site web ‣ Promouvoir ‣ Suivre cette page. Ic
 vous pouvez obtenir une URL de suivi spécifique en fonction de la campagne, du
 medium et de la source utilisés.
 
-![Vue des champs du tracker de liens pour Odoo Site
+![Vue des champs du tracker de liens pour Konvergo ERP Site
 Web](../../../../_images/link_tracker_fields.png)
 
   * **URL** : url de la page que vous souhaitez suivre (par exemple, la page d’accueil ou la page d’un produit).
@@ -44,13 +44,13 @@ consulter des statistiques complètes en cliquant sur _Stats_ , notamment le
 nombre de clics et le pays d’origine de ces clics.
 
 ![Vue de la liste suivie mettant en évidence les boutons des statistiques dans
-Odoo Site Web](../../../../_images/links_statistics.png)
-
-Astuce
-
-  1. Vous pouvez également accéder au tracker de liens sur _odoo.com/r_ via votre navigateur.
-
-  2. Activez le mode développeur (Paramètres ‣ Activer le mode développeur) et accédez au module _Tracker de liens_ et à ses fonctionnalités backend.
-
-  3. Integrated with [Google Analytics](analytics.html#analytics-google-analytics), those trackers allow you to see the number of clicks and visitors to keep you on top of your marketing campaigns.
+Konvergo ERP Site Web](../../../../_images/links_statistics.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><ol class="arabic simple">
+<li><p>Vous pouvez également accéder au tracker de liens sur <em>odoo.com/r</em> via votre navigateur.</p></li>
+<li><p>Activez le mode développeur (Paramètres ‣ Activer le mode développeur) et accédez au module <em>Tracker de liens</em> et à ses fonctionnalités backend.</p></li>
+<li><p>Integrated with <a href="analytics#analytics-google-analytics"><span class="std std-ref">Google Analytics</span></a>, those trackers allow you to see the number
+of clicks and visitors to keep you on top of your marketing campaigns.</p></li>
+</ol>
+</div>
 

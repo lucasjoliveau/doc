@@ -10,7 +10,7 @@ Controllers thus provide their own extension mechanism, separate from that of
 models:
 
 Controllers are created by
-[inheriting](https://docs.python.org/3/tutorial/classes.html#tut-inheritance
+[inheriting](https://docs.python.org/3/tutorial/classes#tut-inheritance
 "\(in Python v3.12\)") from `Controller`. Routes are defined through methods
 decorated with `route()`:
 
@@ -23,7 +23,7 @@ decorated with `route()`:
     
 
 To _override_ a controller,
-[inherit](https://docs.python.org/3/tutorial/classes.html#tut-inheritance
+[inherit](https://docs.python.org/3/tutorial/classes#tut-inheritance
 "\(in Python v3.12\)") from its class and override relevant methods, re-
 exposing them if necessary:
 

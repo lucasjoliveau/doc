@@ -1,4 +1,4 @@
-# Activer les codes-barres dans Odoo
+# Activer les codes-barres dans Konvergo ERP
 
 Les fonctionnalités de lecture des codes-barres peuvent vous faire gagner un
 temps considérable, habituellement perdu à alterner entre le clavier, la
@@ -29,12 +29,10 @@ sur la fiche produit directement lors de la création de ce produit.
 
 ![../../../../_images/software_03.png](../../../../_images/software_03.png)
 ![../../../../_images/software_04.png](../../../../_images/software_04.png)
-
-Note
-
-Veillez à ajouter les codes-barres directement sur les variantes du produit et
-non sur le modèle du produit. Sinon, vous ne serez pas en mesure de les
-différencier.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Veillez à ajouter les codes-barres directement sur les variantes du produit et non sur le modèle du produit. Sinon, vous ne serez pas en mesure de les différencier.</p>
+</div>
 
 ## Configurer les codes-barres des emplacements
 
@@ -45,11 +43,10 @@ Emplacements.
 
 ![../../../../_images/software_05.png](../../../../_images/software_05.png)
 ![../../../../_images/software_06.png](../../../../_images/software_06.png)
-
-Note
-
-Vous pouvez facilement imprimer le code-barres que vous attribuez aux
-emplacements via le menu _Imprimer_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Vous pouvez facilement imprimer le code-barres que vous attribuez aux emplacements via le menu <em>Imprimer</em>.</p>
+</div>
 
 ## Formats des codes-barres
 
@@ -68,8 +65,8 @@ barres ou des produits sur lesquels il apparaît. Pour en savoir plus sur les
 préfixes d’entreprise GS1, ou acheter une licence pour un préfixe, consultez
 la page des préfixes d’entreprise GS1.
 
-Les utilisateurs d’Odoo peuvent utilisent les codes-barres GTIN pour
-identifier leurs produits. Cependant, comme Odoo prend en charge n’importe
+Les utilisateurs d’Konvergo ERP peuvent utilisent les codes-barres GTIN pour
+identifier leurs produits. Cependant, comme Konvergo ERP prend en charge n’importe
 quelle chaîne numérique comme code-barres, il est également possible de
 définir un code-barres personnalisé pour un usage interne.
 

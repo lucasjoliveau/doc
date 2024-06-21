@@ -2,7 +2,7 @@
 
 ## From Customer Invoice to Payments Collection
 
-Odoo supports multiple invoicing and payment workflows, so you can choose and
+Konvergo ERP supports multiple invoicing and payment workflows, so you can choose and
 use the ones that match your business needs. Whether you want to accept a
 single payment for a single invoice, or process a payment spanning multiple
 invoices and taking discounts for early payments, you can do so efficiently
@@ -20,7 +20,7 @@ Invoicing in most countries occurs when a contractual obligation is met. If
 you ship a box to a customer, you have met the terms of the contract and can
 bill them. If your supplier sends you a shipment, they have met the terms of
 that contract and can bill you. Therefore, the terms of the contract is
-fulfilled when the box moves to or from the truck. At this point, Odoo
+fulfilled when the box moves to or from the truck. At this point, Konvergo ERP
 supports the creation of what is called a Draft Invoice by Warehouse staff.
 
 ### Invoice creation
@@ -72,7 +72,7 @@ tax information.
 “Validate” the invoice when you are ready to approve it. The invoice then
 moves from the Draft state to the Open state.
 
-When you have validated an invoice, Odoo gives it a unique number from a
+When you have validated an invoice, Konvergo ERP gives it a unique number from a
 defined, and modifiable, sequence.
 
 ![../../../_images/invoice03.png](../../../_images/invoice03.png)
@@ -101,7 +101,7 @@ Sales |  |  |  | 100
   
 ### Payment
 
-In Odoo, an invoice is considered to be paid when the associated accounting
+In Konvergo ERP, an invoice is considered to be paid when the associated accounting
 entry has been reconciled with the payment entries. If there has not been a
 reconciliation, the invoice will remain in the Open state until you have
 entered the payment.
@@ -115,7 +115,7 @@ Accounts Receivable | Agrolait |  |  | 115
   
 ### Receive a partial payment through the bank statement
 
-You can manually enter your bank statements in Odoo, or you can import them in
+You can manually enter your bank statements in Konvergo ERP, or you can import them in
 from a csv file or from several other predefined formats according to your
 accounting localisation.
 
@@ -150,7 +150,7 @@ invoice.
 There’s a growing trend of customers paying bills later and later. Therefore,
 collectors must make every effort to collect money and collect it faster.
 
-Odoo will help you define your follow-up strategy. To remind customers to pay
+Konvergo ERP will help you define your follow-up strategy. To remind customers to pay
 their outstanding invoices, you can define different actions depending on how
 severely overdue the customer is. These actions are bundled into follow-up
 levels that are triggered when the due date of an invoice has passed a certain
@@ -194,18 +194,18 @@ For example, if you manage your inventory using the perpetual accounting
 method, you should expect a decrease in account “Current Assets” once the
 material has been shipped to the customer.
 
-  * [Invoicing processes](customer_invoices/overview.html)
-  * [Delivery and invoice addresses](customer_invoices/customer_addresses.html)
-  * [Payment terms and installment plans](customer_invoices/payment_terms.html)
-  * [Default terms and conditions (T&C)](customer_invoices/terms_conditions.html)
-  * [Cash discounts and tax reduction](customer_invoices/cash_discounts.html)
-  * [Credit notes and refunds](customer_invoices/credit_notes.html)
-  * [Cash rounding](customer_invoices/cash_rounding.html)
-  * [Deferred revenues](customer_invoices/deferred_revenues.html)
-  * [Electronic invoicing (EDI)](customer_invoices/electronic_invoicing.html)
-  * [Snailmail](customer_invoices/snailmail.html)
-  * [EPC QR codes](customer_invoices/epc_qr_code.html)
-  * [Incoterms](customer_invoices/incoterms.html)
+  * [Invoicing processes](customer_invoices/overview)
+  * [Delivery and invoice addresses](customer_invoices/customer_addresses)
+  * [Payment terms and installment plans](customer_invoices/payment_terms)
+  * [Default terms and conditions (T&C)](customer_invoices/terms_conditions)
+  * [Cash discounts and tax reduction](customer_invoices/cash_discounts)
+  * [Credit notes and refunds](customer_invoices/credit_notes)
+  * [Cash rounding](customer_invoices/cash_rounding)
+  * [Deferred revenues](customer_invoices/deferred_revenues)
+  * [Electronic invoicing (EDI)](customer_invoices/electronic_invoicing)
+  * [Snailmail](customer_invoices/snailmail)
+  * [EPC QR codes](customer_invoices/epc_qr_code)
+  * [Incoterms](customer_invoices/incoterms)
 
   *[EDI]: electronic data interchange
 

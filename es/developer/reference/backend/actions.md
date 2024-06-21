@@ -37,7 +37,7 @@ treat as a number
     
 
 read the corresponding action record from the database, may be a database
-identifier or an [external id](../../glossary.html#term-external-id)
+identifier or an [external id](../../glossary#term-external-id)
 
   * A dictionary
     
@@ -55,9 +55,10 @@ attributes used to present an action in an arbitrary model’s contextual menu:
 
 specifies which model the action is bound to
 
-Nota
-
-For Server Actions, use `model_id`.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>For Server Actions, use <code>model_id</code>.</p>
+</div>
 
 `binding_type`
 
@@ -91,7 +92,7 @@ list and form )
 ## Window Actions (`ir.actions.act_window`)
 
 The most common action type, used to present visualisations of a model through
-[views](views.html#reference-views): a window action defines a set of view
+[views](views#reference-views): a window action defines a set of view
 types (and possibly specific views) for a model (and possibly specific record
 of the model).
 
@@ -201,23 +202,20 @@ these types will be present in the generated `views` list (with at least a
 
 M2M1 to view objects, defines the initial content of `views`
 
-Nota
-
-Act_window views can also be defined cleanly through
-`ir.actions.act_window.view`.
-
-If you plan to allow multiple views for your model, prefer using
-ir.actions.act_window.view instead of the action `view_ids`
-
-    
-    
-    <record model="ir.actions.act_window.view" id="test_action_tree">
-       <field name="sequence" eval="1"/>
-       <field name="view_mode">tree</field>
-       <field name="view_id" ref="view_test_tree"/>
-       <field name="act_window_id" ref="test_action"/>
-    </record>
-    
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Act_window views can also be defined cleanly through <code>ir.actions.act_window.view</code>.</p>
+<p>If you plan to allow multiple views for your model, prefer using
+ir.actions.act_window.view instead of the action <code>view_ids</code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">"ir.actions.act_window.view"</span> <span class="na">id=</span><span class="s">"test_action_tree"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"sequence"</span> <span class="na">eval=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"view_mode"</span><span class="nt">&gt;</span>tree<span class="nt">&lt;/field&gt;</span>
+   <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"view_id"</span> <span class="na">ref=</span><span class="s">"view_test_tree"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"act_window_id"</span> <span class="na">ref=</span><span class="s">"test_action"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+</div>
 
 `view_id`
 
@@ -227,7 +225,7 @@ specific view added to the `views` list in case its type is part of the
 `view_mode` list and not already filled by one of the views in `view_ids`
 
 These are mostly used when defining actions from [Data
-Files](data.html#reference-data):
+Files](data#reference-data):
 
     
     
@@ -259,7 +257,7 @@ view type, without a view id.
 
 ## URL Actions (`ir.actions.act_url`)
 
-Allow opening a URL (website/web page) via an Odoo action. Can be customized
+Allow opening a URL (website/web page) via an Konvergo ERP action. Can be customized
 via two fields:
 
 `url`
@@ -284,7 +282,7 @@ with the page if `self`. Defaults to `new`
     }
     
 
-will replace the current content section by the Odoo home page.
+will replace the current content section by the Konvergo ERP home page.
 
 ## Server Actions (`ir.actions.server`)
 
@@ -311,7 +309,7 @@ corresponding behaviors) are shared between states:
 
     
 
-Odoo model linked to the action.
+Konvergo ERP model linked to the action.
 
 `state`
 
@@ -346,31 +344,29 @@ Specify a piece of Python code to execute when the action is called
     </record>
     
 
-Nota
-
-The code segment can define a variable called `action`, which will be returned
-to the client as the next action to execute:
-
-    
-    
-    <record model="ir.actions.server" id="print_instance">
-        <field name="name">Res Partner Server Action</field>
-        <field name="model_id" ref="model_res_partner"/>
-        <field name="state">code</field>
-        <field name="code">
-            if record.some_condition():
-                action = {
-                    "type": "ir.actions.act_window",
-                    "view_mode": "form",
-                    "res_model": record._name,
-                    "res_id": record.id,
-                }
-        </field>
-    </record>
-    
-
-will ask the client to open a form for the record if it fulfills some
-condition
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>The code segment can define a variable called <code>action</code>, which will be
+returned to the client as the next action to execute:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">"ir.actions.server"</span> <span class="na">id=</span><span class="s">"print_instance"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>Res Partner Server Action<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"model_id"</span> <span class="na">ref=</span><span class="s">"model_res_partner"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"state"</span><span class="nt">&gt;</span>code<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"code"</span><span class="nt">&gt;</span>
+        if record.some_condition():
+            action = {
+                "type": "ir.actions.act_window",
+                "view_mode": "form",
+                "res_model": record._name,
+                "res_id": record.id,
+            }
+    <span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<p>will ask the client to open a form for the record if it fulfills some
+condition</p>
+</div>
 
 `crud_model_id` (create)(required)
 
@@ -430,7 +426,7 @@ server actions:
 
   * `record`/`records` record/recorset on which the action is triggered, can be void.
 
-  * `env` Odoo Environment
+  * `env` Konvergo ERP Environment
 
   * `datetime`, `dateutil`, `time`, `timezone` corresponding Python modules
 
@@ -472,7 +468,7 @@ either `qweb-pdf` for PDF reports or `qweb-html` for HTML
 
     
 
-the name ([external id](../../glossary.html#term-external-id)) of the qweb
+the name ([external id](../../glossary#term-external-id)) of the qweb
 template used to render the report
 
 `print_report_name`
@@ -555,9 +551,12 @@ instead of `current` to clear the breadcrumbs. Defaults to `current`.
 tells the client to start the Point of Sale interface, the server has no idea
 how the POS interface works.
 
-Ver también
-
-  * [Tutorial: Client Actions](../../tutorials/web.html#howtos-web-client-actions)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../tutorials/web#howtos-web-client-actions"><span class="std std-ref">Tutorial: Client Actions</span></a></p></li>
+</ul>
+</div>
 
 ## Automated Actions (`ir.cron`)
 

@@ -1,8 +1,8 @@
-# VoIP services in Odoo with Axivox
+# VoIP services in Konvergo ERP with Axivox
 
 ## Introduction
 
-Odoo VoIP (Voice over Internet Protocol) can be set up to work together with
+Konvergo ERP VoIP (Voice over Internet Protocol) can be set up to work together with
 [Axivox](https://www.axivox.com/). In that case, an Asterisk server is **not**
 necessary, as the infrastructure is hosted and managed by Axivox.
 
@@ -12,66 +12,61 @@ along with the areas the company’s users wish to call.
 
 ## Configuration
 
-To configure Axivox in Odoo, go to the Apps application, and search for
-`VoIP`. Then, install the VoIP module.
+To configure Axivox in Konvergo ERP, go to the Apps application, and search for
+`VoIP`. Then, install the **VoIP** module.
 
 Next, go to Settings app ‣ General Settings ‣ Integrations section, and fill
-out the Asterisk (VoIP) field:
+out the **Asterisk (VoIP)** field:
 
-  * OnSIP Domain: set the domain created by Axivox for the account (e.g., `yourcompany.axivox.com`)
+  * **OnSIP Domain** : set the domain created by Axivox for the account (e.g., `yourcompany.axivox.com`)
 
-  * WebSocket: type in `wss://pabx.axivox.com:3443`
+  * **WebSocket** : type in `wss://pabx.axivox.com:3443`
 
-  * VoIP Environment: set as Production
+  * **VoIP Environment** : set as **Production**
 
-![Integration of Axivox as VoIP provider in an Odoo
-database.](../../../../_images/voip-configuration.png)
+![Integration of Axivox as VoIP provider in an Konvergo ERP
+database.](../../../../_images/voip-configuration.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Access the domain on the Axivox administrative panel by navigating to <a href="https://manage.axivox.com/">https://manage.axivox.com/</a>. After logging into the portal, go to Users ‣
+Edit (next to any user) ‣ SIP Identifiers tab ‣ Domain.</p>
+</div>
 
-Astuce
+### Configure VoIP user in Konvergo ERP
 
-Access the domain on the Axivox administrative panel by navigating to
-<https://manage.axivox.com/>. After logging into the portal, go to Users ‣
-Edit (next to any user) ‣ SIP Identifiers tab ‣ Domain.
+Next, the user is configured in Konvergo ERP, which **must** take place for every
+Axivox/Konvergo ERP user using VoIP.
 
-### Configure VoIP user in Odoo
+In Konvergo ERP, go to Settings app ‣ Users & Companies ‣ Users, then open the desired
+user’s form to configure VoIP. Under the **Preferences** tab, fill out the
+**VOIP Configuration** section:
 
-Next, the user is configured in Odoo, which **must** take place for every
-Axivox/Odoo user using VoIP.
+  * **VoIP username** / **Browser’s Extension** : (Axivox) **SIP username**
 
-In Odoo, go to Settings app ‣ Users & Companies ‣ Users, then open the desired
-user’s form to configure VoIP. Under the Preferences tab, fill out the VOIP
-Configuration section:
+  * **VoIP Secret** : (Axivox) **SIP Password**
 
-  * VoIP username / Browser’s Extension: (Axivox) SIP username
+  * **External device number** : SIP external phone extension
 
-  * VoIP Secret: (Axivox) SIP Password
+  * **How to place calls on mobile** : method to make calls on a mobile device
 
-  * External device number: SIP external phone extension
+  * **OnSIP Auth User** : (Axivox) **SIP username**
 
-  * How to place calls on mobile: method to make calls on a mobile device
+  * **Call from another device** : option to always transfer phone calls to handset
 
-  * OnSIP Auth User: (Axivox) SIP username
+  * **Reject All Incoming Calls** : option to reject all incoming calls
 
-  * Call from another device: option to always transfer phone calls to handset
-
-  * Reject All Incoming Calls: option to reject all incoming calls
-
-![Integration of Axivox user in the Odoo user
-preference.](../../../../_images/odoo-user.png)
-
-Astuce
-
-Access the domain on the Axivox administrative panel by navigating to
-<https://manage.axivox.com/>. After logging into the portal, go to Users ‣
-Edit (next to the user) ‣ SIP Identifiers tab ‣ SIP username / SIP password.
-
-![SIP credentials in the Axivox manager.](../../../../_images/manager-sip.png)
-
-Important
-
-When entering the SIP Password into the user’s Preferences tab, this value
-**must** be typed out manually and **not** pasted in. Pasting in causes a `401
-server rejection error`.
+![Integration of Axivox user in the Konvergo ERP user
+preference.](../../../../_images/odoo-user.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Access the domain on the Axivox administrative panel by navigating to <a href="https://manage.axivox.com/">https://manage.axivox.com/</a>. After logging into the portal, go to Users ‣
+Edit (next to the user) ‣ SIP Identifiers tab ‣ SIP username / SIP password.</p>
+<img alt="SIP credentials in the Axivox manager." class="align-center" src="../../../../_images/manager-sip.png"/>
+</div>
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>When entering the <b>SIP Password</b> into the user’s <b>Preferences</b> tab, this
+value <b>must</b> be typed out manually and <b>not</b> pasted in. Pasting in causes a <code>401 server
+rejection error</code>.</p>
+</div>
 
   *[VoIP]: Voice over Internet Protocol
 

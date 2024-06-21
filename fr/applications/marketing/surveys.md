@@ -1,10 +1,13 @@
 # Sondages
 
-Pour plus d'infos
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="https://www.odoo.com/slides/surveys-62">Tutoriels Konvergo ERP : Sondages</a></p></li>
+</ul>
+</div>
 
-  * [Tutoriels Odoo : Sondages](https://www.odoo.com/slides/surveys-62)
-
-  * [Les essentiels de Sondages](surveys/create.html)
-  * [Noter les sondages](surveys/scoring.html)
-  * [Questions chronométrées et aléatoires](surveys/time_random.html)
+  * [Les essentiels de Sondages](surveys/create)
+  * [Noter les sondages](surveys/scoring)
+  * [Questions chronométrées et aléatoires](surveys/time_random)
 

@@ -2,17 +2,17 @@
 
 ## Overview
 
-This chapter helps you to create your first Odoo module and deploy it in your
-Odoo.sh project.
+This chapter helps you to create your first Konvergo ERP module and deploy it in your
+Konvergo ERP.sh project.
 
-This tutorial requires [you created a project on Odoo.sh](create.html#odoosh-
+This tutorial requires [you created a project on Konvergo ERP.sh](create#odoosh-
 gettingstarted-create), and you know your Github repository’s URL.
 
 Basic use of Git and Github is explained.
 
 The below assumptions are made:
 
-  * _~/src_ is the directory where are located the Git repositories related to your Odoo projects,
+  * _~/src_ is the directory where are located the Git repositories related to your Konvergo ERP projects,
 
   * _odoo_ is the Github user,
 
@@ -28,7 +28,7 @@ Replace these by the values of your choice.
 
 ## Create the development branch
 
-### From Odoo.sh
+### From Konvergo ERP.sh
 
 In the branches view:
 
@@ -72,11 +72,11 @@ Create a new branch:
 
 ### Scaffolding the module
 
-While not necessary, scaffolding avoids the tedium of setting the basic Odoo
+While not necessary, scaffolding avoids the tedium of setting the basic Konvergo ERP
 module structure. You can scaffold a new module using the executable _odoo-
 bin_.
 
-From the Odoo.sh editor, in a terminal:
+From the Konvergo ERP.sh editor, in a terminal:
 
     
     
@@ -84,14 +84,14 @@ From the Odoo.sh editor, in a terminal:
     
 
 Or, from your computer, if you have an [installation of
-Odoo](../../on_premise/source.html):
+Konvergo ERP](../../on_premise/source):
 
     
     
     $ ./odoo-bin scaffold my_module ~/src/odoo-addons/
     
 
-If you do not want to bother installing Odoo on your computer, you can also
+If you do not want to bother installing Konvergo ERP on your computer, you can also
 [`download this module structure
 template`](../../../_downloads/b7f3a4243ae7f3166cd5c4d23a256739/my_module.zip)
 in which you replace every occurrences of _my_module_ to the name of your
@@ -119,12 +119,12 @@ The below structure will be generated:
         └── views.xml
     
 
-Warning
-
-Do not use special characters other than the underscore ( _ ) for your module
-name, not even an hyphen ( - ). This name is used for the Python classes of
-your module, and having classes name with special characters other than the
-underscore is not valid in Python.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Do not use special characters other than the underscore ( _ ) for your module name, not even an
+hyphen ( - ). This name is used for the Python classes of your module, and having classes name
+with special characters other than the underscore is not valid in Python.</p>
+</div>
 
 Uncomment the content of the files:
 
@@ -146,7 +146,7 @@ Uncomment the content of the files:
 ### Manually
 
 If you want to create your module structure manually, you can follow the
-[Getting started](../../../developer/tutorials/getting_started.html) tutorial
+[Getting started](../../../developer/tutorials/getting_started) tutorial
 to understand the structure of a module and the content of each file.
 
 ## Push the development branch
@@ -167,7 +167,7 @@ Commit your changes
 
 Push your changes to your remote repository
 
-From an Odoo.sh editor terminal:
+From an Konvergo ERP.sh editor terminal:
 
     
     
@@ -175,8 +175,8 @@ From an Odoo.sh editor terminal:
     
 
 The above command is explained in the section [Commit & Push your
-changes](online-editor.html#odoosh-gettingstarted-online-editor-push) of the
-[Online Editor](online-editor.html#odoosh-gettingstarted-online-editor)
+changes](online-editor#odoosh-gettingstarted-online-editor-push) of the
+[Online Editor](online-editor#odoosh-gettingstarted-online-editor)
 chapter. It includes the explanation regarding the fact you will be prompted
 to type your username and password, and what to do if you use the two-factor
 authentication.
@@ -215,7 +215,7 @@ Once the database ready, you can access it by clicking the _Connect_ button.
 ![../../../_images/firstmodule-test-
 database.png](../../../_images/firstmodule-test-database.png)
 
-If your Odoo.sh project is configured to install your module automatically,
+If your Konvergo ERP.sh project is configured to install your module automatically,
 you will directly see it amongst the database apps. Otherwise, it will be
 available in the apps to install.
 
@@ -265,7 +265,7 @@ on demand.
 Your module may not appear directly in your apps to install either, you need
 to update your apps list first:
 
-  * Activate the [developer mode](../../../applications/general/developer_mode.html#developer-mode)
+  * Activate the [developer mode](../../../applications/general/developer_mode#developer-mode)
 
   * in the apps menu, click the _Update Apps List_ button,
 
@@ -313,7 +313,7 @@ staging databases.
 This section explains how to add a change in your module by adding a new field
 in a model and deploy it.
 
-From the Odoo.sh editor,
+From the Konvergo ERP.sh editor,
 
     
 
@@ -365,7 +365,7 @@ modify a view stored in database.
 In order to be applied in existing databases, such as your production
 database, these changes requires the module to be updated.
 
-If you would like the update to be performed automatically by the Odoo.sh
+If you would like the update to be performed automatically by the Konvergo ERP.sh
 platform when you push your changes, increase your module version in its
 manifest.
 
@@ -390,7 +390,7 @@ module upon the new revision deployment.
 
 Browse to your Git folder.
 
-Then, from an Odoo.sh terminal:
+Then, from an Konvergo ERP.sh terminal:
 
     
     
@@ -420,7 +420,7 @@ Commit your changes
 
 Push your changes:
 
-From an Odoo.sh terminal:
+From an Konvergo ERP.sh terminal:
 
     
     
@@ -441,7 +441,7 @@ build.png](../../../_images/firstmodule-test-addachange-build.png)
 
 Once you tested your changes, you can merge your changes in the production
 branch, for instance by drag-and-dropping the branch on the production branch
-in the Odoo.sh interface. As you increased the module version in the manifest,
+in the Konvergo ERP.sh interface. As you increased the module version in the manifest,
 the platform will update the module automatically and your new field will be
 directly available. Otherwise you can manually update the module within the
 apps list.
@@ -452,13 +452,17 @@ If you would like to use an external Python library which is not installed by
 default, you can define a _requirements.txt_ file listing the external
 libraries your modules depends on.
 
-Note
-
-  * It is not possible to install or upgrade system packages on an Odoo.sh database (e.g., apt packages). However, under specific conditions, packages can be considered for installation. This also applies to **Python modules** requiring system packages for their compilation, and **third-party Odoo modules**.
-
-  * **PostgreSQL extensions** are not supported on Odoo.sh.
-
-  * For more information, consult our [FAQ](https://www.odoo.sh/faq#install_dependencies).
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>It is not possible to install or upgrade system packages on an Konvergo ERP.sh database (e.g., apt
+packages). However, under specific conditions, packages can be considered for installation.
+This also applies to <b>Python modules</b> requiring system packages for their compilation, and
+<b>third-party Konvergo ERP modules</b>.</p></li>
+<li><p><b>PostgreSQL extensions</b> are not supported on Konvergo ERP.sh.</p></li>
+<li><p>For more information, consult our <a href="https://www.odoo.sh/faq#install_dependencies">FAQ</a>.</p></li>
+</ul>
+</div>
 
 The platform will use this file to automatically install the Python libraries
 your project needs.
@@ -468,7 +472,7 @@ library](https://pypi.python.org/pypi/Unidecode) in your module.
 
 Create a file _requirements.txt_ in the root folder of your repository
 
-From the Odoo.sh editor, create and open the file ~/src/user/requirements.txt.
+From the Konvergo ERP.sh editor, create and open the file ~/src/user/requirements.txt.
 
 Or, from your computer, create and open the file ~/src/odoo-
 addons/requirements.txt.
@@ -552,7 +556,7 @@ Stage and commit your changes:
 
 Then, push your changes:
 
-In an Odoo.sh terminal:
+In an Konvergo ERP.sh terminal:
 
     
     

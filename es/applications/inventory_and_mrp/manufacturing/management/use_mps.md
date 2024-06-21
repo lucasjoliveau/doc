@@ -8,11 +8,10 @@ planificar la producción a partir de la previsión de la demanda.
 Vaya a la aplicación Fabricación ‣ Configuración ‣ Ajustes y active la función
 del Programa maestro de producción antes de hacer clic en guardar.
 
-Truco
-
-Desde los ajustes del programa maestro de producción puede definir el
-intervalo de tiempo de su PMP (mes/semana/día) y el número de periodos que
-desea mostrar en todo momento.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Desde los ajustes del programa maestro de producción puede definir el intervalo de tiempo de su PMP (mes/semana/día) y el número de periodos que desea mostrar en todo momento.</p>
+</div>
 
 Ahora vaya a Planeación ‣ Programa maestro de producción y haga clic en
 _agregar un producto_. Podrá definir su objetivo de existencias de seguridad
@@ -56,7 +55,7 @@ ellas haciendo clic en la celda _Reabastecimiento real_.
 
 En caso de editar manualmente la cantidad _A reabastecer_ , aparecerá una
 pequeña cruz a la izquierda. En caso de que desee volver al valor calculado
-automáticamente por Odoo, puede hacer clic en la cruz.
+automáticamente por Konvergo ERP, puede hacer clic en la cruz.
 
 ## Significado del color de las celdas
 

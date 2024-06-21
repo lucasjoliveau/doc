@@ -1,91 +1,83 @@
 # Export and import data
 
-In Odoo, it is sometimes necessary to export or import data for running
+In Konvergo ERP, it is sometimes necessary to export or import data for running
 reports, or for data modification. This document covers the export and import
-of data into and out of Odoo.
+of data into and out of Konvergo ERP.
 
-Important
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Sometimes, users run into a ‘time out’ error, or a record does not process, due to its size. This
+can occur with large exports, or in cases where the import file is too large. To circumvent this
+limitation surrounding the size of the records, process exports or imports in smaller batches.</p>
+</div>
 
-Sometimes, users run into a ‘time out’ error, or a record does not process,
-due to its size. This can occur with large exports, or in cases where the
-import file is too large. To circumvent this limitation surrounding the size
-of the records, process exports or imports in smaller batches.
-
-## Export data from Odoo
+## Export data from Konvergo ERP
 
 When working with a database, it is sometimes necessary to export data in a
-distinct file. Doing so can aid in reporting on activities, although, Odoo
+distinct file. Doing so can aid in reporting on activities, although, Konvergo ERP
 provides a precise and easy reporting tool with each available application.
 
-With Odoo, the values can be exported from any field in any record. To do so,
-activate the list view (☰ (three horizontal lines) icon), on the items that
-need to be exported, and then select the records that should be exported. To
-select a record, tick the checkbox next to the corresponding record. Finally,
-click on ⚙️ Action, and then Export.
+With Konvergo ERP, the values can be exported from any field in any record. To do so,
+activate the list view (**☰ (three horizontal lines)** icon), on the items
+that need to be exported, and then select the records that should be exported.
+To select a record, tick the checkbox next to the corresponding record.
+Finally, click on **⚙️ Action** , and then **Export**.
 
 ![View of the different things to enable/click to export
 data.](../../_images/list-view-export.png)
 
-When clicking on Export, an Export Data pop-over window appears, with several
-options for the data to export:
+When clicking on **Export** , an **Export Data** pop-over window appears, with
+several options for the data to export:
 
 ![Overview of options to consider when exporting data in
-Odoo..](../../_images/export-data-overview.png)
+Konvergo ERP..](../../_images/export-data-overview.png)
 
-  1. With the I want to update data (import-compatable export) option ticked, the system only shows the fields that can be imported. This is helpful in the case where the existing records need to be updated. This works like a filter. Leaving the box unticked, gives many more field options because it shows all the fields, not just the ones that can be imported.
+  1. With the **I want to update data (import-compatable export)** option ticked, the system only shows the fields that can be imported. This is helpful in the case where the existing records need to be updated. This works like a filter. Leaving the box unticked, gives many more field options because it shows all the fields, not just the ones that can be imported.
 
   2. When exporting, there is the option to export in two formats: `.csv` and `.xls`. With `.csv`, items are separated by a comma, while `.xls` holds information about all the worksheets in a file, including both content and formatting.
 
-  3. These are the items that can be exported. Use the > (right arrow) icon to display more sub-field options. Use the Search bar to find specific fields. To use the Search option more efficiently, click on all the > (right arrows) to display all fields.
+  3. These are the items that can be exported. Use the **> (right arrow)** icon to display more sub-field options. Use the **Search** bar to find specific fields. To use the **Search** option more efficiently, click on all the **> (right arrows)** to display all fields.
 
-  4. The \+ (plus sign) icon button is present to add fields to the Fields to export list.
+  4. The **\+ (plus sign)** icon button is present to add fields to the **Fields to export** list.
 
-  5. The ↕️ (up-down arrow) to the left of the selected fields can be used to move the fields up and down, to change the order in which they are displayed in the exported file. Drag-and-drop using the ↕️ (up-down arrow) icon.
+  5. The **↕️ (up-down arrow)** to the left of the selected fields can be used to move the fields up and down, to change the order in which they are displayed in the exported file. Drag-and-drop using the **↕️ (up-down arrow)** icon.
 
-  6. The 🗑️ (trash can) icon is used to remove fields. Click on the 🗑️ (trash can) icon to remove the field.
+  6. The **🗑️ (trash can)** icon is used to remove fields. Click on the **🗑️ (trash can)** icon to remove the field.
 
-  7. For recurring reports, it is helpful to save export presets. Select all the needed fields, and click on the template drop-down menu. Once there, click on New template, and give a unique name to the export just created. The next time the same list needs to be exported, select the related template that was previously saved from the drop-down menu.
+  7. For recurring reports, it is helpful to save export presets. Select all the needed fields, and click on the template drop-down menu. Once there, click on **New template** , and give a unique name to the export just created. The next time the same list needs to be exported, select the related template that was previously saved from the drop-down menu.
 
-Tip
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>It is helpful to know the field’s external identifier. For example, <b>Related Company</b>
+in the export user interface is equal to <em>parent_id</em> (external identifier). This is helpful
+because then, the only data exported is what should be modified and re-imported.</p>
+</div>
 
-It is helpful to know the field’s external identifier. For example, Related
-Company in the export user interface is equal to _parent_id_ (external
-identifier). This is helpful because then, the only data exported is what
-should be modified and re-imported.
+## Import data into Konvergo ERP
 
-## Import data into Odoo
-
-Importing data into Odoo is extremely helpful during implementation, or in
+Importing data into Konvergo ERP is extremely helpful during implementation, or in
 times where data needs to be updated in bulk. The following documentation
-covers how to import data into an Odoo database.
+covers how to import data into an Konvergo ERP database.
 
-Warning
-
-Imports are permanent and **cannot** be undone. However, it is possible to use
-filters (`created on` or `last modified`) to identify records changed or
-created by the import.
-
-Tip
-
-Activating [developer mode](../general/developer_mode.html#developer-mode)
-changes the visible import settings in the left menu. Doing so reveals an
-Advanced menu. Included in this advanced menu are two options: Track history
-during import and Allow matching with subfields.
-
-![Advanced import options when developer mode is
-activated.](../../_images/advanced-import.png)
-
-If the model uses openchatter, the Track history during import option sets up
-subscriptions and sends notifications during the import, but leads to a slower
-import.
-
-Should the Allow matching with subfields option be selected, then all
-subfields within a field are used to match under the Odoo Field while
-importing.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Imports are permanent and <b>cannot</b> be undone. However, it is possible to use filters (<code>created
+on</code> or <code>last modified</code>) to identify records changed or created by the import.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Activating <a href="../general/developer_mode#developer-mode"><span class="std std-ref">developer mode</span></a> changes the visible import settings in the left
+menu. Doing so reveals an Advanced menu. Included in this advanced menu are two
+options: <b>Track history during import</b> and <b>Allow matching with subfields</b>.</p>
+<img alt="Advanced import options when developer mode is activated." class="align-center" src="../../_images/advanced-import.png"/>
+<p>If the model uses openchatter, the <b>Track history during import</b> option sets up
+subscriptions and sends notifications during the import, but leads to a slower import.</p>
+<p>Should the <b>Allow matching with subfields</b> option be selected, then all subfields
+within a field are used to match under the <b>Konvergo ERP Field</b> while importing.</p>
+</div>
 
 ### Get started
 
-Data can be imported on any Odoo business object using either Excel (`.xlsx`)
+Data can be imported on any Konvergo ERP business object using either Excel (`.xlsx`)
 or CSV (`.csv`) formats. This includes: contacts, products, bank statements,
 journal entries, and orders.
 
@@ -95,24 +87,23 @@ and click on ⭐ Favorites ‣ Import records.
 ![Favorites menu revealed with the import records option
 highlighted.](../../_images/import-button.png)
 
-After clicking Import records, Odoo reveals a separate page with templates
-that can be downloaded and populated with the company’s own data. Such
-templates can be imported in one click, since the data mapping is already
-done. To download a template click Import Template for Customers at the center
-of the page.
+After clicking **Import records** , Konvergo ERP reveals a separate page with
+templates that can be downloaded and populated with the company’s own data.
+Such templates can be imported in one click, since the data mapping is already
+done. To download a template click **Import Template for Customers** at the
+center of the page.
 
-Important
-
-When importing a CSV file, Odoo provides Formatting options. These options do
-**not** appear when importing the proprietary Excel file type (`.xls`,
-`.xlsx`).
-
-![Formatting options presented when a CVS file is imported in
-Odoo.](../../_images/formatting.png)
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>When importing a <abbr title="Comma-separated Values">CSV</abbr> file, Konvergo ERP provides <b>Formatting</b>
+options. These options do <b>not</b> appear when importing the proprietary Excel file type (<code>.xls</code>,
+<code>.xlsx</code>).</p>
+<img alt="Formatting options presented when a CVS file is imported in Konvergo ERP." class="align-center" src="../../_images/formatting.png"/>
+</div>
 
 Make necessary adjustments to the _Formatting_ options, and ensure all columns
-in the Odoo field and File Column are free of errors. Finally, click Import to
-import the data.
+in the **Konvergo ERP field** and **File Column** are free of errors. Finally, click
+**Import** to import the data.
 
 ### Adapt a template
 
@@ -125,36 +116,30 @@ Once the template is downloaded, proceed to follow these steps:
 
   * Add, remove, and sort columns to best fit the data structure.
 
-  * It is strongly advised to **not** remove the External ID (ID) column (see why in the next section).
+  * It is strongly advised to **not** remove the **External ID** (ID) column (see why in the next section).
 
-  * Set a unique ID to every record by dragging down the ID sequencing in the External ID (ID) column.
+  * Set a unique ID to every record by dragging down the ID sequencing in the **External ID** (ID) column.
 
 ![An animation of the mouse dragging down the ID column, so each record has a
-unique ID.](../../_images/dragdown.gif)
-
-Note
-
-When a new column is added, Odoo may not be able to map it automatically, if
-its label does not fit any field within Odoo. However, new columns can be
-mapped manually when the import is tested. Search the drop-down menu for the
-corresponding field.
-
-![Drop-down menu expanded in the initial import screen on
-Odoo.](../../_images/field_list.png)
-
-Then, use this field’s label in the import file to ensure future imports are
-successful.
-
-Tip
-
-Another useful way to find out the proper column names to import is to export
-a sample file using the fields that should be imported. This way, if there is
-not a sample import template, the names are accurate.
+unique ID.](../../_images/dragdown.gif) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When a new column is added, Konvergo ERP may not be able to map it automatically, if its label does not
+fit any field within Konvergo ERP. However, new columns can be mapped manually when the import is tested.
+Search the drop-down menu for the corresponding field.</p>
+<img alt="Drop-down menu expanded in the initial import screen on Konvergo ERP." class="align-center" src="../../_images/field_list.png"/>
+<p>Then, use this field’s label in the import file to ensure future imports are successful.</p>
+</div>
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Another useful way to find out the proper column names to import is to export a sample file
+using the fields that should be imported. This way, if there is not a sample import template,
+the names are accurate.</p>
+</div>
 
 ### Import from another application
 
-The External ID (ID) is a unique identifier for the line item. Feel free to
-use one from previous software to facilitate the transition to Odoo.
+The **External ID** (ID) is a unique identifier for the line item. Feel free
+to use one from previous software to facilitate the transition to Konvergo ERP.
 
 Setting an ID is not mandatory when importing, but it helps in many cases:
 
@@ -163,25 +148,25 @@ Setting an ID is not mandatory when importing, but it helps in many cases:
   * Import relation fields.
 
 To recreate relationships between different records, the unique identifier
-from the original application should be used to map it to the External ID (ID)
-column in Odoo.
+from the original application should be used to map it to the **External ID**
+(ID) column in Konvergo ERP.
 
 When another record is imported that links to the first one, use **XXX/ID**
 (XXX/External ID) for the original unique identifier. This record can also be
 found using its name.
 
-Warning
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>It should be noted that there will be a conflict if two or more records have the same name.</p>
+</div>
 
-It should be noted that there will be a conflict if two or more records have
-the same name.
-
-The External ID (ID) can also be used to update the original import, if
+The **External ID** (ID) can also be used to update the original import, if
 modified data needs to be re-imported later, therefore, it is a good practice
 to specify it whenever possible.
 
 ### Field missing to map column
 
-Odoo heuristically tries to find the type of field for each column inside the
+Konvergo ERP heuristically tries to find the type of field for each column inside the
 imported file, based on the first ten lines of the files.
 
 For example, if there is a column only containing numbers, only the fields
@@ -191,56 +176,56 @@ While this behavior might be beneficial in most cases, it is also possible
 that it could fail, or the column may be mapped to a field that is not
 proposed by default.
 
-If this happens, check the Show fields of relation fields (advanced) option,
-then a complete list of fields becomes available for each column.
+If this happens, check the **Show fields of relation fields (advanced)
+option** , then a complete list of fields becomes available for each column.
 
 ![Searching for the field to match the tax
 column.](../../_images/field_list.png)
 
 ### Change data import format
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Konvergo ERP can automatically detect if a column is a date, and tries to guess the date format from a
+set of most commonly used date formats. While this process can work for many date formats, some
+date formats are not recognizable. This can cause confusion, due to day-month inversions; it is
+difficult to guess which part of a date format is the day, and which part is the month, in a
+date, such as <code>01-03-2016</code>.</p>
+</div>
 
-Odoo can automatically detect if a column is a date, and tries to guess the
-date format from a set of most commonly used date formats. While this process
-can work for many date formats, some date formats are not recognizable. This
-can cause confusion, due to day-month inversions; it is difficult to guess
-which part of a date format is the day, and which part is the month, in a
-date, such as `01-03-2016`.
+When importing a CSV file, Konvergo ERP provides **Formatting** options.
 
-When importing a CSV file, Odoo provides Formatting options.
+To view which date format Konvergo ERP has found from the file, check the **Date
+Format** that is shown when clicking on options under the file selector. If
+this format is incorrect, change it to the preferred format using _ISO 8601_
+to define the format.
 
-To view which date format Odoo has found from the file, check the Date Format
-that is shown when clicking on options under the file selector. If this format
-is incorrect, change it to the preferred format using _ISO 8601_ to define the
-format.
-
-Important
-
- _ISO 8601_ is an international standard, covering the worldwide exchange,
-along with the communication of date and time-related data. For example, the
-date format should be `YYYY-MM-DD`. So, in the case of July 24th 1981, it
-should be written as `1981-07-24`.
-
-Tip
-
-When importing Excel files (`.xls`, `.xlsx`), consider using _date cells_ to
-store dates. This maintains locale date formats for display, regardless of how
-the date is formatted in Odoo. When importing a CSV file, use Odoo’s
-Formatting section to select the date format columns to import.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p><em>ISO 8601</em> is an international standard, covering the worldwide exchange, along with the
+communication of date and time-related data. For example, the date format should be <code>YYYY-MM-DD</code>.
+So, in the case of July 24th 1981, it should be written as <code>1981-07-24</code>.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>It is helpful to know the field’s external identifier. For example, <b>Related Company</b>
+in the export user interface is equal to <em>parent_id</em> (external identifier). This is helpful
+because then, the only data exported is what should be modified and re-imported.</p>
+</div>0
 
 ### Import numbers with currency signs
 
-Odoo fully supports numbers with parenthesis to represent negative signs, as
-well as numbers with currency signs attached to them. Odoo also automatically
+Konvergo ERP fully supports numbers with parenthesis to represent negative signs, as
+well as numbers with currency signs attached to them. Konvergo ERP also automatically
 detects which thousand/decimal separator is used. If a currency symbol unknown
-to Odoo is used, it might not be recognized as a number, and the import
+to Konvergo ERP is used, it might not be recognized as a number, and the import
 crashes.
 
-Note
-
-When importing a CSV file, the Formatting menu appears on the left-hand
-column. Under these options, the Thousands Separator can be changed.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>It is helpful to know the field’s external identifier. For example, <b>Related Company</b>
+in the export user interface is equal to <em>parent_id</em> (external identifier). This is helpful
+because then, the only data exported is what should be modified and re-imported.</p>
+</div>1
 
 Examples of supported numbers (using ‘thirty-two thousand’ as the figure):
 
@@ -264,29 +249,31 @@ Example that will not work:
 
   * $ (32.000,00)
 
-Important
-
-A () (parenthesis) around the number indicates that the number is a negative
-value. The currency symbol **must** be placed within the parenthesis for Odoo
-to recognize it as a negative currency value.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>It is helpful to know the field’s external identifier. For example, <b>Related Company</b>
+in the export user interface is equal to <em>parent_id</em> (external identifier). This is helpful
+because then, the only data exported is what should be modified and re-imported.</p>
+</div>2
 
 ### Import preview table not displayed correctly
 
 By default, the import preview is set on commas as field separators, and
 quotation marks as text delimiters. If the CSV file does not have these
-settings, modify the Formatting options (displayed under the Import CSV file
-bar after selecting the CSV file).
+settings, modify the **Formatting** options (displayed under the **Import**
+CSV file bar after selecting the CSV file).
 
-Important
-
-If the CSV file has a tabulation as a separator, Odoo does **not** detect the
-separations. The file format options need to be modified in the spreadsheet
-application. See the following Change CSV file format section.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>It is helpful to know the field’s external identifier. For example, <b>Related Company</b>
+in the export user interface is equal to <em>parent_id</em> (external identifier). This is helpful
+because then, the only data exported is what should be modified and re-imported.</p>
+</div>3
 
 ### Change CSV file format in spreadsheet application
 
 When editing and saving CSV files in spreadsheet applications, the computer’s
-regional settings are applied for the separator and delimiter. Odoo suggests
+regional settings are applied for the separator and delimiter. Konvergo ERP suggests
 using _OpenOffice_ or _LibreOffice_ , as both applications allow modifications
 of all three options (from _LibreOffice_ application, go to ‘Save As’ dialog
 box ‣ Check the box ‘Edit filter settings’ ‣ Save).
@@ -298,42 +285,45 @@ Microsoft Excel can modify the encoding when saving (‘Save As’ dialog box �
 
 Some fields define a relationship with another object. For example, the
 country of a contact is a link to a record of the ‘Country’ object. When such
-fields are imported, Odoo has to recreate links between the different records.
-To help import such fields, Odoo provides three mechanisms.
+fields are imported, Konvergo ERP has to recreate links between the different records.
+To help import such fields, Konvergo ERP provides three mechanisms.
 
-Important
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>It is helpful to know the field’s external identifier. For example, <b>Related Company</b>
+in the export user interface is equal to <em>parent_id</em> (external identifier). This is helpful
+because then, the only data exported is what should be modified and re-imported.</p>
+</div>4
 
-**Only one** mechanism should be used per field that is imported.
-
-For example, to reference the country of a contact, Odoo proposes three
+For example, to reference the country of a contact, Konvergo ERP proposes three
 different fields to import:
 
-  * Country: the name or code of the country
+  * **Country** : the name or code of the country
 
-  * Country/Database ID: the unique Odoo ID for a record, defined by the ID PostgreSQL column
+  * **Country/Database ID** : the unique Konvergo ERP ID for a record, defined by the ID PostgreSQL column
 
-  * Country/External ID: the ID of this record referenced in another application (or the `.XML` file that imported it)
+  * **Country/External ID** : the ID of this record referenced in another application (or the `.XML` file that imported it)
 
 For the country of Belgium, for example, use one of these three ways to
 import:
 
-  * Country: `Belgium`
+  * **Country** : `Belgium`
 
-  * Country/Database ID: `21`
+  * **Country/Database ID** : `21`
 
-  * Country/External ID: `base.be`
+  * **Country/External ID** : `base.be`
 
 According to the company’s need, use one of these three ways to reference
 records in relations. Here is an example when one or the other should be used,
 according to the need:
 
-  * Use Country: this is the easiest way when data comes from CSV files that have been created manually.
+  * Use **Country** : this is the easiest way when data comes from CSV files that have been created manually.
 
-  * Use Country/Database ID: this should rarely be used. It is mostly used by developers as the main advantage is to never have conflicts (there may be several records with the same name, but they always have a unique Database ID)
+  * Use **Country/Database ID** : this should rarely be used. It is mostly used by developers as the main advantage is to never have conflicts (there may be several records with the same name, but they always have a unique Database ID)
 
-  * Use Country/External ID: use _External ID_ when importing data from a third-party application.
+  * Use **Country/External ID** : use _External ID_ when importing data from a third-party application.
 
-When _External IDs_ are used, import CSV files with the External ID (ID)
+When _External IDs_ are used, import CSV files with the **External ID** (ID)
 column defining the _External ID_ of each record that is imported. Then, a
 reference can be made to that record with columns, like `Field/External ID`.
 The following two CSV files provide an example for products and their
@@ -345,7 +335,7 @@ categories.
 
 ### Import relation fields
 
-An Odoo object is always related to many other objects (e.g. a product is
+An Konvergo ERP object is always related to many other objects (e.g. a product is
 linked to product categories, attributes, vendors, etc.). To import those
 relations, the records of the related object need to be imported first, from
 their own list menu.
@@ -359,14 +349,14 @@ for product attributes: `Product Attributes / Attribute / ID`).
 
 If, for example, there are two product categories with the child name
 `Sellable` (e.g. `Misc. Products/Sellable` & `Other Products/Sellable`), the
-validation is halted, but the data may still be imported. However, Odoo
+validation is halted, but the data may still be imported. However, Konvergo ERP
 recommends that the data is not imported because it will all be linked to the
 first `Sellable` category found in the _Product Category_ list (`Misc.
-Products/Sellable`). Odoo, instead, recommends modifying one of the
+Products/Sellable`). Konvergo ERP, instead, recommends modifying one of the
 duplicate’s values, or the product category hierarchy.
 
 However, if the company does not wish to change the configuration of product
-categories, Odoo recommends making use of the _External ID_ for this field,
+categories, Konvergo ERP recommends making use of the _External ID_ for this field,
 ‘Category’.
 
 #### Import many2many relationship fields
@@ -403,32 +393,32 @@ contacts:
 
 ### Import records several times
 
-If an imported file contains one of the columns: External ID or Database ID,
-records that have already been imported are modified, instead of being
+If an imported file contains one of the columns: **External ID** or **Database
+ID** , records that have already been imported are modified, instead of being
 created. This is extremely useful as it allows users to import the same CSV
 file several times, while having made some changes in between two imports.
 
-Odoo takes care of creating or modifying each record, depending if it is new
+Konvergo ERP takes care of creating or modifying each record, depending if it is new
 or not.
 
-This feature allows a company to use the _Import/Export tool_ in Odoo to
+This feature allows a company to use the _Import/Export tool_ in Konvergo ERP to
 modify a batch of records in a spreadsheet application.
 
 ### Value not provided for a specific field
 
-If all fields are not set in the CSV file, Odoo assigns the default value for
+If all fields are not set in the CSV file, Konvergo ERP assigns the default value for
 every non-defined field. But, if fields are set with empty values in the CSV
-file, Odoo sets the empty value in the field, instead of assigning the default
+file, Konvergo ERP sets the empty value in the field, instead of assigning the default
 value.
 
-### Export/import different tables from an SQL application to Odoo
+### Export/import different tables from an SQL application to Konvergo ERP
 
 If data needs to be imported from different tables, relations need to be
 recreated between records belonging to different tables. For instance, if
 companies and people are imported, the link between each person and the
 company they work for needs to be recreated.
 
-To manage relations between tables, use the `External ID` facilities of Odoo.
+To manage relations between tables, use the `External ID` facilities of Konvergo ERP.
 The `External ID` of a record is the unique identifier of this record in
 another application. The `External ID` must be unique across all records of
 all objects. It is a good practice to prefix this `External ID` with the name
@@ -485,7 +475,7 @@ The _External ID_ is prefixed by the name of the table to avoid a conflict of
 ID between people and companies (`person_1` and `company_1`, who shared the
 same ID 1 in the original database).
 
-The two files produced are ready to be imported in Odoo without any
+The two files produced are ready to be imported in Konvergo ERP without any
 modifications. After having imported these two CSV files, there are four
 contacts and three companies (the first two contacts are linked to the first
 company). Keep in mind to first import the companies, and then the people.

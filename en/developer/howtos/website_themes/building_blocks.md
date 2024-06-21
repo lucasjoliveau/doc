@@ -43,14 +43,13 @@ The styles’ file structure is the following.
     │           └── option.js
     
 
-See also
-
-[XML templates of the different
-snippets](https://github.com/odoo/odoo/blob/16.0/addons/website/views/snippets/snippets.xml)
-
-Demo page
-
-<http://localhost:8069/website/demo/snippets>
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="https://github.com/odoo/odoo/blob/16.0/addons/website/views/snippets/snippets.xml">XML templates of the different snippets</a></p>
+</div> <div class="admonition-demo-page alert">
+<p class="alert-title">
+Demo page</p><p><a href="http://localhost:8069/website/demo/snippets">http://localhost:8069/website/demo/snippets</a></p>
+</div>
 
 ## Layout
 
@@ -87,16 +86,14 @@ data-snippet | Used by the system to identify the snippet
 The system automatically adds the `data-name` and `data-snippet` attributes
 during the drag and drop based on the template’s name.
 
-Warning
-
-Those attributes should be specifically added when a snippet is declared on a
-theme page.
-
-Warning
-
-Avoid adding a `section` tag inside another `section` tag: this will trigger
-twice the Website Builder’s options. You can use inner content snippets
-instead.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Those attributes should be specifically added when a snippet is declared on a theme page.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Avoid adding a <code>section</code> tag inside another <code>section</code> tag: this will trigger twice the Website
+Builder’s options. You can use inner content snippets instead.</p>
+</div>
 
 ### Columns
 
@@ -271,20 +268,19 @@ Create the snippet’s content.
     </odoo>
     
 
-Warning
-
-`data-name` and `data-snippet` attributes have to be specified when a snippet
-is declared on a theme page.
-
-Tip
-
-  * Use Bootstrap native classes as much as possible.
-
-  * Prefix all your custom classes.
-
-  * Use underscore lowercase notation to name classes, e.g., `.x_nav`, `.x_nav_item`.
-
-  * Avoid using ID tag.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p><code>data-name</code> and <code>data-snippet</code> attributes have to be specified when a snippet is declared on a
+theme page.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><ul>
+<li><p>Use Bootstrap native classes as much as possible.</p></li>
+<li><p>Prefix all your custom classes.</p></li>
+<li><p>Use underscore lowercase notation to name classes, e.g., <code>.x_nav</code>, <code>.x_nav_item</code>.</p></li>
+<li><p>Avoid using ID tag.</p></li>
+</ul>
+</div>
 
 Add your custom snippet to the list of default snippets, so the user can drag
 and drop it on the page, directly from the edit panel.
@@ -385,10 +381,10 @@ can apply. Only one option can be enabled at a time.
     </template>
     
 
-See also
-
-[XML templates of the different
-snippets](https://github.com/odoo/odoo/blob/16.0/addons/website/views/snippets/snippets.xml)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="https://github.com/odoo/odoo/blob/16.0/addons/website/views/snippets/snippets.xml">XML templates of the different snippets</a></p>
+</div>
 
 ### JavaScript options
 

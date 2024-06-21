@@ -55,17 +55,18 @@ characters**. A line break in a sentence results in an additional whitespace
 in HTML. That means that you do not need to leave a trailing whitespace at the
 end of a line to separate words.
 
-Astuce
-
-You can safely break a line around the separators (`-->`) of `menuselection`
-markups and anywhere in a hyperlink reference. For the `doc`, `ref` and
-`download` markups, this is only true for the label part of the reference.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>You can safely break a line around the separators (<code>--&gt;</code>) of <code>menuselection</code> markups and
+anywhere in a hyperlink reference. For the <code>doc</code>, <code>ref</code> and <code>download</code> markups, this is
+only true for the label part of the reference.</p>
+</div>
 
 ### Example: Line breaks within markups
 
     
     
-    To register your seller account in Odoo, go to :menuselection:`Sales --> Configuration --> Settings
+    To register your seller account in Konvergo ERP, go to :menuselection:`Sales --> Configuration --> Settings
     --> Amazon Connector --> Amazon Accounts` and click on :guilabel:`CREATE`. You can find the **Seller
     ID** under the link :guilabel:`Your Merchant Token`.
     

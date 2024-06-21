@@ -3,20 +3,23 @@
 [Alipay](https://www.alipay.com/) est une plateforme de paiement en ligne
 établie en Chine par le groupe Alibaba.
 
-Avertissement
-
-Le fournisseur Alipay est obsolète. Nous vous recommandons d’utiliser plutôt
-[AsiaPay](asiapay.html).
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Le fournisseur Alipay est obsolète. Nous vous recommandons d’utiliser plutôt <a href="asiapay">AsiaPay</a>.</p>
+</div>
 
 ## Configuration
 
-Pour plus d'infos
-
-  * [Enable a payment provider](../payment_providers.html#payment-providers-add-new)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../payment_providers#payment-providers-add-new"><span class="std std-ref">Enable a payment provider</span></a></p></li>
+</ul>
+</div>
 
 ### Onglet des identifiants
 
-Odoo a besoin de vos **identifiants API** pour se connecter à votre compte
+Konvergo ERP a besoin de vos **identifiants API** pour se connecter à votre compte
 Alipay. Ils incluent :
 
   * **Compte** : Selon l’endroit où vous vous trouvez - `Paiement rapide` si vous êtes un marchand chinois. - `Transfrontalier` si vous ne l’êtes pas.
@@ -33,13 +36,13 @@ dans les champs associés dans l’onglet **Identifiants**.
 Pour les récupérer, connectez-vous à votre compte Alipay, ils sont en première
 page.
 
-Important
-
-Si vous testez Alipay, dans le _sandbox_ , changez le **statut** en _Mode
-test_. Nous vous recommandons de le faire sur une base de données de test
-Odoo, plutôt que sur votre base de données principale.
-
-Pour plus d'infos
-
-  * [Paiements en ligne](../payment_providers.html)
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Si vous testez Alipay, dans le <em>sandbox</em>, changez le <b>statut</b> en <em>Mode test</em>. Nous vous recommandons de le faire sur une base de données de test Konvergo ERP, plutôt que sur votre base de données principale.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../payment_providers">Paiements en ligne</a></p></li>
+</ul>
+</div>
 

@@ -1,33 +1,33 @@
 # Chapter 13: Inheritance
 
-A powerful aspect of Odoo is its modularity. A module is dedicated to a
+A powerful aspect of Konvergo ERP is its modularity. A module is dedicated to a
 business need, but modules can also interact with one another. This is useful
 for extending the functionality of an existing module. For example, in our
 real estate scenario we want to display the list of a salesperson’s properties
 directly in the regular user view.
 
-But before going through the specific Odoo module inheritance, let’s see how
+But before going through the specific Konvergo ERP module inheritance, let’s see how
 we can alter the behavior of the standard CRUD (Create, Retrieve, Update or
 Delete) methods.
 
 ## Python Inheritance
 
-Note
-
-**Goal** : at the end of this section:
-
-  * It should not be possible to delete a property which is not new or canceled.
-
-![Unlink](../../../_images/unlink.gif)
-
-  * When an offer is created, the property state should change to ‘Offer Received’
-
-  * It should not be possible to create an offer with a lower price than an existing offer
-
-![Create](../../../_images/create.gif)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section:</p>
+<ul>
+<li><p>It should not be possible to delete a property which is not new or canceled.</p></li>
+</ul>
+<img alt="Unlink" class="align-center" src="../../../_images/unlink.gif"/>
+<ul>
+<li><p>When an offer is created, the property state should change to ‘Offer Received’</p></li>
+<li><p>It should not be possible to create an offer with a lower price than an existing offer</p></li>
+</ul>
+<img alt="Create" class="align-center" src="../../../_images/create.gif"/>
+</div>
 
 In our real estate module, we never had to develop anything specific to be
-able to do the standard CRUD actions. The Odoo framework provides the
+able to do the standard CRUD actions. The Konvergo ERP framework provides the
 necessary tools to do them. In fact, such actions are already included in our
 model thanks to classical Python inheritance:
 
@@ -80,32 +80,35 @@ In Python 3, `super()` is equivalent to `super(TestModel, self)`. The latter
 may be necessary when you need to call the parent method with a modified
 recordset.
 
-Danger
-
-  * It is very important to **always** call `super()` to avoid breaking the flow. There are only a few very specific cases where you don’t want to call it.
-
-  * Make sure to **always** return data consistent with the parent method. For example, if the parent method returns a `dict()`, your override must also return a `dict()`.
-
-Exercise
-
-Add business logic to the CRUD methods.
-
-  * Prevent deletion of a property if its state is not ‘New’ or ‘Canceled’
-
-Tip: create a new method with the `ondelete()` decorator and remember that
-`self` can be a recordset with more than one record.
-
-  * At offer creation, set the property state to ‘Offer Received’. Also raise an error if the user tries to create an offer with a lower amount than an existing offer.
-
-Tip: the `property_id` field is available in the `vals`, but it is an `int`.
-To instantiate an `estate.property` object, use
-`self.env[model_name].browse(value)`
-([example](https://github.com/odoo/odoo/blob/136e4f66cd5cafe7df450514937c7218c7216c93/addons/gamification/models/badge.py#L57))
+<div class="alert alert-danger">
+<p class="alert-title">
+Danger</p><ul>
+<li><p>It is very important to <b>always</b> call <code>super()</code> to avoid breaking the flow. There are
+only a few very specific cases where you don’t want to call it.</p></li>
+<li><p>Make sure to <b>always</b> return data consistent with the parent method. For example, if
+the parent method returns a <code>dict()</code>, your override must also return a <code>dict()</code>.</p></li>
+</ul>
+</div> <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add business logic to the CRUD methods.</p>
+<ul>
+<li><p>Prevent deletion of a property if its state is not ‘New’ or ‘Canceled’</p></li>
+</ul>
+<p>Tip: create a new method with the <code>ondelete()</code> decorator and remember that
+<code>self</code> can be a recordset with more than one record.</p>
+<ul>
+<li><p>At offer creation, set the property state to ‘Offer Received’. Also raise an error if the user
+tries to create an offer with a lower amount than an existing offer.</p></li>
+</ul>
+<p>Tip: the <code>property_id</code> field is available in the <code>vals</code>, but it is an <code>int</code>. To
+instantiate an <code>estate.property</code> object, use <code>self.env[model_name].browse(value)</code>
+(<a href="https://github.com/odoo/odoo/blob/136e4f66cd5cafe7df450514937c7218c7216c93/addons/gamification/models/badge.py#L57">example</a>)</p>
+</div>
 
 ## Model Inheritance
 
 **Reference** : the documentation related to this topic can be found in
-[Inheritance and extension](../../reference/backend/orm.html#reference-orm-
+[Inheritance and extension](../../reference/backend/orm#reference-orm-
 inheritance).
 
 In our real estate module, we would like to display the list of properties
@@ -113,7 +116,7 @@ linked to a salesperson directly in the Settings / Users & Companies / Users
 form view. To do this, we need to add a field to the `res.users` model and
 adapt its view to show it.
 
-Odoo provides two _inheritance_ mechanisms to extend an existing model in a
+Konvergo ERP provides two _inheritance_ mechanisms to extend an existing model in a
 modular way.
 
 The first inheritance mechanism allows modules to modify the behavior of a
@@ -135,7 +138,7 @@ fields of this parent record.
 
 ![Inheritance Methods](../../../_images/inheritance_methods1.png)
 
-In Odoo, the first mechanism is by far the most used. In our case, we want to
+In Konvergo ERP, the first mechanism is by far the most used. In our case, we want to
 add a field to an existing model, which means we will use the first mechanism.
 For example:
 
@@ -155,17 +158,33 @@ A practical example where two fields are added to a model can be found
 By convention, each inherited model is defined in its own Python file. In our
 example, it would be `models/inherited_model.py`.
 
-Exercise
-
-Add a field to Users.
-
-  * Add the following field to `res.users`:
-
-Field | Type  
----|---  
-property_ids | One2many inverse of the field that references the salesperson in `estate.property`  
-  
-  * Add a domain to the field so it only lists the available properties.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add a field to Users.</p>
+<ul>
+<li><p>Add the following field to <code>res.users</code>:</p></li>
+</ul>
+<table class="table docutils">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>property_ids</p></td>
+<td><p>One2many inverse of the field that references the salesperson in
+<code>estate.property</code></p></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Add a domain to the field so it only lists the available properties.</p></li>
+</ul>
+</div>
 
 In the next section let’s add the field to the view and check that everything
 is working well!
@@ -173,16 +192,16 @@ is working well!
 ## View Inheritance
 
 **Reference** : the documentation related to this topic can be found in
-[Inheritance](../../reference/backend/views.html#reference-views-inheritance).
+[Inheritance](../../reference/backend/views#reference-views-inheritance).
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section, the list of available properties linked
+to a salesperson should be displayed in their user form view</p>
+<img alt="Users" class="align-center" src="../../../_images/users.png"/>
+</div>
 
-**Goal** : at the end of this section, the list of available properties linked
-to a salesperson should be displayed in their user form view
-
-![Users](../../../_images/users.png)
-
-Instead of modifying existing views in place (by overwriting them), Odoo
+Instead of modifying existing views in place (by overwriting them), Konvergo ERP
 provides view inheritance where children ‘extension’ views are applied on top
 of root views. These extension can both add and remove content from their
 parent view.
@@ -269,19 +288,17 @@ on the element to be found. Both inheritances below have the same result.
 An example of a view inheritance extension can be found
 [here](https://github.com/odoo/odoo/blob/691d1f087040f1ec7066e485d19ce3662dfc6501/addons/account_fleet/views/account_move_views.xml#L3-L17).
 
-Exercise
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add fields to the Users view.</p>
+<p>Add the <code>property_ids</code> field to the <code>base.view_users_form</code> in a new notebook page.</p>
+<p>Tip: an example an inheritance of the users’ view can be found
+<a href="https://github.com/odoo/odoo/blob/691d1f087040f1ec7066e485d19ce3662dfc6501/addons/gamification/views/res_users_views.xml#L5-L14">here</a>.</p>
+</div>
 
-Add fields to the Users view.
-
-Add the `property_ids` field to the `base.view_users_form` in a new notebook
-page.
-
-Tip: an example an inheritance of the users’ view can be found
-[here](https://github.com/odoo/odoo/blob/691d1f087040f1ec7066e485d19ce3662dfc6501/addons/gamification/views/res_users_views.xml#L5-L14).
-
-Inheritance is extensively used in Odoo due to its modular concept. Do not
+Inheritance is extensively used in Konvergo ERP due to its modular concept. Do not
 hesitate to read the corresponding documentation for more info!
 
-In the [next chapter](14_other_module.html#tutorials-getting-started-14-other-
+In the [next chapter](14_other_module#tutorials-getting-started-14-other-
 module), we will learn how to interact with other modules.
 

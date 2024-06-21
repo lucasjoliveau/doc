@@ -8,47 +8,38 @@ important details, such as the point at which the risk and costs transfer from
 the seller to the buyer, the responsibility for transportation, insurance,
 customs clearance, and other relevant aspects of the transaction.
 
-Note
-
-By default, all 11 Incoterms are available in Odoo:
-
-  * **EXW** : Ex works
-
-  * **FCA** : Free carrier
-
-  * **FAS** : Free alongside ship
-
-  * **FOB** : Free on board
-
-  * **CFR** : Cost and freight
-
-  * **CIF** : Cost, insurance and freight
-
-  * **CPT** : Carriage paid to
-
-  * **CIP** : Carriage and insurance paid to
-
-  * **DPU** : Delivered at place unloaded
-
-  * **DAP** : Delivered at place
-
-  * **DDP** : Delivered duty paid
-
-See also
-
-[Intrastat](../reporting/intrastat.html)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>By default, all 11 Incoterms are available in Konvergo ERP:</p>
+<ul>
+<li><p><b>EXW</b>: Ex works</p></li>
+<li><p><b>FCA</b>: Free carrier</p></li>
+<li><p><b>FAS</b>: Free alongside ship</p></li>
+<li><p><b>FOB</b>: Free on board</p></li>
+<li><p><b>CFR</b>: Cost and freight</p></li>
+<li><p><b>CIF</b>: Cost, insurance and freight</p></li>
+<li><p><b>CPT</b>: Carriage paid to</p></li>
+<li><p><b>CIP</b>: Carriage and insurance paid to</p></li>
+<li><p><b>DPU</b>: Delivered at place unloaded</p></li>
+<li><p><b>DAP</b>: Delivered at place</p></li>
+<li><p><b>DDP</b>: Delivered duty paid</p></li>
+</ul>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../reporting/intrastat">Intrastat</a></p>
+</div>
 
 ## Define an Incoterm
 
-To define an Incoterm manually, create an invoice or bill, click the Other
-Info tab, and select the Incoterm.
+To define an Incoterm manually, create an invoice or bill, click the **Other
+Info** tab, and select the **Incoterm**.
 
 ## Default Incoterm configuration
 
 You can set a default Incoterm rule to **automatically** populate the Incoterm
 field on all newly created invoices and bills. Under Accounting/Invoicing ‣
-Configuration ‣ Settings, scroll down to the Customer Invoices section, and
-select an Incoterm in the Default Incoterm field.
+Configuration ‣ Settings, scroll down to the **Customer Invoices** section,
+and select an Incoterm in the **Default Incoterm** field.
 
   *[Incoterms]: International Commercial Terms
 

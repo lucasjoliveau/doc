@@ -1,17 +1,17 @@
 # Spreadsheet
 
-  * [Link Odoo data](spreadsheet/insert.html)
-  * [Functions](spreadsheet/functions.html)
-  * [Templates](spreadsheet/templates.html)
+  * [Link Konvergo ERP data](spreadsheet/insert)
+  * [Functions](spreadsheet/functions)
+  * [Templates](spreadsheet/templates)
 
 Spreadsheet lets you organize, analyze, and visualize your data in tabular
 form. Among others, you can:
 
-  * [Insert and link your Odoo data (pivots, graphs, lists, and menus)](spreadsheet/insert.html).
+  * [Insert and link your Konvergo ERP data (pivots, graphs, lists, and menus)](spreadsheet/insert).
 
-  * [Use formulas and functions](spreadsheet/functions.html).
+  * [Use formulas and functions](spreadsheet/functions).
 
-  * [Use default templates or create new ones](spreadsheet/templates.html).
+  * [Use default templates or create new ones](spreadsheet/templates).
 
   * Format data.
 

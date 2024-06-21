@@ -1,8 +1,8 @@
 # Connect with a device
 
-IoT Drivers allow any Odoo module to communicate in real-time with any device
+IoT Drivers allow any Konvergo ERP module to communicate in real-time with any device
 connected to the IoT Box. Communication with the IoT Box goes both ways, so
-the Odoo client can send commands to and receive information from any of the
+the Konvergo ERP client can send commands to and receive information from any of the
 supported devices.
 
 To add support for a device, all we need is:
@@ -12,7 +12,7 @@ To add support for a device, all we need is:
   * a `Driver`, to communicate with an individual device
 
 At each boot, the IoT Box will load all of the Interfaces and Drivers that can
-be located on the connected Odoo instance. Each module can contain an
+be located on the connected Konvergo ERP instance. Each module can contain an
 `iot_handlers` directory that will be copied to the IoT Box. The structure of
 this directory is the following
 
@@ -38,7 +38,7 @@ Printers, Serial, etc.). The interface maintains a list of detected devices
 and associates them with the right Driver.
 
 Supported devices will appear both on the IoT Box Homepage that you can access
-through its IP address and in the IoT module of the connected Odoo instance.
+through its IP address and in the IoT module of the connected Konvergo ERP instance.
 
 ### Interface
 
@@ -51,10 +51,11 @@ determined connection type. Creating a new interface requires
 
   * Implementing the `get_devices` method, that should return a dictionary containing data about each detected device. This data will be given as argument to the constructors and `supported` method of the Drivers.
 
-Nota
-
-Setting the `_loop_delay` attribute will modify the interval between calls to
-`get_devices`. By default, this interval is set to 3 seconds.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Setting the <code>_loop_delay</code> attribute will modify the interval between calls
+to <code>get_devices</code>. By default, this interval is set to 3 seconds.</p>
+</div>
 
     
     
@@ -78,12 +79,13 @@ test their respective `supported` method on all detected devices. If the
 supported method of a Driver returns `True`, an instance of this Driver will
 be created for the corresponding device.
 
-Nota
-
-`supported` methods of drivers are given a priority order. The `supported`
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p><code>supported</code> methods of drivers are given a priority order. The <code>supported</code>
 method of a child class will always be tested before the one of its parent.
-This priority can be adjusted by modifying the `priority` attribute of the
-Driver.
+This priority can be adjusted by modifying the <code>priority</code> attribute of the
+Driver.</p>
+</div>
 
 Creating a new Driver requires:
 
@@ -142,11 +144,12 @@ is instantiated using the IP of the IoT Box and the device identifier.
 Actions are used to tell a selected device to execute a specific action, such
 as taking a picture, printing a receipt, etc.
 
-Nota
-
-It must be noted that no “answer” will be sent by the box on this route, only
-the request status. The answer to the action, if any, has to be retrieved via
-the longpolling.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>It must be noted that no “answer” will be sent by the box on this route,
+only the request status. The answer to the action, if any, has to be
+retrieved via the longpolling.</p>
+</div>
 
 An action can be performed on the DeviceProxy Object.
 
@@ -156,7 +159,7 @@ An action can be performed on the DeviceProxy Object.
     
 
 In your driver, define an `action` method that will be executed when called
-from an Odoo module. It takes the data given during the call as argument.
+from an Konvergo ERP module. It takes the data given during the call as argument.
 
     
     
@@ -166,7 +169,7 @@ from an Odoo module. It takes the data given during the call as argument.
 
 ### Longpolling
 
-When any module in Odoo wants to read data from a specific device, it creates
+When any module in Konvergo ERP wants to read data from a specific device, it creates
 a listener identified by the IP/domain of the box and the device identifier
 and passes it a callback function to be called every time the device status
 changes. The callback is called with the new data as argument.

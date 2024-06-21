@@ -3,7 +3,7 @@
 Invoicing customers for shipping after delivery ensures accurate charges based
 on real-time shipping factors like distance, weight, and method.
 
-In Odoo, shipping costs can be invoiced in two ways:
+In Konvergo ERP, shipping costs can be invoiced in two ways:
 
   1. Agree with the customer on a fixed cost and include it in the sale order.
 
@@ -12,8 +12,8 @@ In Odoo, shipping costs can be invoiced in two ways:
 ## Configuration
 
 To set prices to delivery methods, go to Inventory app ‣ Configuration ‣
-Settings. Under the Shipping section, enable the Delivery Methods feature.
-Then, click Save.
+Settings. Under the **Shipping** section, enable the **Delivery Methods**
+feature. Then, click **Save**.
 
 ![Enable the "Delivery Methods" feature in
 Settings.](../../../../../_images/enable-delivery.png)
@@ -21,62 +21,64 @@ Settings.](../../../../../_images/enable-delivery.png)
 ## Add shipping method
 
 Next, configure the the price of each delivery method by going to Inventory
-app ‣ Configuration ‣ Shipping Methods and click the Create button. Doing so
-opens a form to provide details about the shipping provider, including:
+app ‣ Configuration ‣ Shipping Methods and click the **Create** button. Doing
+so opens a form to provide details about the shipping provider, including:
 
-  * Shipping Method (_required_) the name of the delivery method (e.g. `flat-rate shipping`, `same day delivery`, etc.).
+  * **Shipping Method** (_required_) the name of the delivery method (e.g. `flat-rate shipping`, `same day delivery`, etc.).
 
-  * Provider (_required_): choose the delivery service, like FedEx, if using a third-party carrier Ensure the integration with the shipping carrier is properly installed and select the provider from the drop-down menu.
+  * **Provider** (_required_): choose the delivery service, like FedEx, if using a third-party carrier Ensure the integration with the shipping carrier is properly installed and select the provider from the drop-down menu.
 
-See also
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../setup_configuration/third_party_shipper">Third-party shipping carriers</a></p>
+</div>
 
-[Third-party shipping
-carriers](../setup_configuration/third_party_shipper.html)
+  * **Company** : if the shipping method should apply to a specific company, select it from the drop-down menu. Leave the field blank to apply the method to all companies.
 
-  * Company: if the shipping method should apply to a specific company, select it from the drop-down menu. Leave the field blank to apply the method to all companies.
+  * **Website** : configure shipping methods for an e-commerce page. Select the applicable website from the drop-down menu, or leave it blank to apply the method to all web pages.
 
-  * Website: configure shipping methods for an e-commerce page. Select the applicable website from the drop-down menu, or leave it blank to apply the method to all web pages.
+  * **Delivery Product** (_required_): the product listed on the sales order line as the delivery charge.
 
-  * Delivery Product (_required_): the product listed on the sales order line as the delivery charge.
-
-  * Free if order amount is above: checking this box enables free shipping if the customer spends above the specified amount.
+  * **Free if order amount is above** : checking this box enables free shipping if the customer spends above the specified amount.
 
 ## Invoice cost on sales order
 
 To invoice shipping costs on the sales order, before the item is delivered, go
 to the Sales app and select the desired sales order.
 
-On the sales order, click the Add Shipping button at the bottom-right corner.
+On the sales order, click the **Add Shipping** button at the bottom-right
+corner.
 
 ![Click "Add Shipping" button at the bottom right, near the
 total.](../../../../../_images/add-shipping.png)
 
-In the Add a shipping method pop-up window, choose the intended carrier in the
-Shipping Method field.
+In the **Add a shipping method** pop-up window, choose the intended carrier in
+the **Shipping Method** field.
 
-Then, click the Get Rate button to the calculate shipping price based on real-
-time shipping data Odoo’s shipping carrier integration.
+Then, click the **Get Rate** button to the calculate shipping price based on
+real-time shipping data Konvergo ERP’s shipping carrier integration.
 
-The Cost is automatically calculated using the weight of the items in the
-order. Finally, click the Add button to close the window.
+The **Cost** is automatically calculated using the weight of the items in the
+order. Finally, click the **Add** button to close the window.
 
 ![Calculate shipping by selecting a shipping
 method.](../../../../../_images/add-a-shipping-method.png)
 
-On the sales order, the delivery product appears in the Order Lines tab, with
-the Unit Price set as the shipping cost calculated in the Add a shipping
-method pop-up window.
+On the sales order, the delivery product appears in the **Order Lines** tab,
+with the **Unit Price** set as the shipping cost calculated in the **Add a
+shipping method** pop-up window.
 
 ![Show delivery product on the sales order
 line.](../../../../../_images/delivery-product.png)
 
-Finally, after the product is delivered, click the Create invoice button, and
-an invoice is created that includes the shipping cost that was added earlier.
+Finally, after the product is delivered, click the **Create invoice** button,
+and an invoice is created that includes the shipping cost that was added
+earlier.
 
 ![Show "Create Invoice" button.](../../../../../_images/create-invoice.png)
 
-Then, click the Create and View Invoice button, and a draft invoice is
-generated, with the shipping cost included in the Invoice Lines tab.
+Then, click the **Create and View Invoice** button, and a draft invoice is
+generated, with the shipping cost included in the **Invoice Lines** tab.
 
 ![Show delivery product in the invoice line.](../../../../../_images/invoice-
 line.png)
@@ -84,18 +86,19 @@ line.png)
 ## Invoice real shipping costs
 
 To modify the invoice to reflect the real cost of shipping, follow the steps
-above to create an invoice with a delivery product with a Unit Price of zero.
+above to create an invoice with a delivery product with a **Unit Price** of
+zero.
 
-Then, on a draft invoice, modify the Unit Price to reflect the real shipping
-cost. Finally, invoice the customer the adjusted shipping cost by clicking
-Confirm.
+Then, on a draft invoice, modify the **Unit Price** to reflect the real
+shipping cost. Finally, invoice the customer the adjusted shipping cost by
+clicking **Confirm**.
 
 ![Show delivery product on the invoice line.](../../../../../_images/invoice-
-cost.png)
-
-See also
-
-  * [Third-party shipping carriers](../setup_configuration/third_party_shipper.html)
-
-  * [Print shipping labels](../setup_configuration/labels.html)
+cost.png) <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../setup_configuration/third_party_shipper">Third-party shipping carriers</a></p></li>
+<li><p><a href="../setup_configuration/labels">Print shipping labels</a></p></li>
+</ul>
+</div>
 

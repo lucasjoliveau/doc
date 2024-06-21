@@ -1,6 +1,6 @@
 # Preguntas cronometradas y aleatorias
 
-Al crear una encuesta en Odoo, hay opciones que le permiten establecer un
+Al crear una encuesta en Konvergo ERP, hay opciones que le permiten establecer un
 tiempo límite en la encuesta y mostrar las preguntas aleatoriamente.
 
 ## Tiempo límite
@@ -11,39 +11,38 @@ se usa el tiempo límite es para reducir la probabilidad de que el participante
 busque las respuestas en otro lado (por ejemplo, en internet), y establce la
 encuesta como un ambiente de prueba a «libro cerrado».
 
-Busque la opción Tiempo límite de la encuesta en la pestaña de Opciones del
-formulario de la encuesta, en la sección de Preguntas.
+Busque la opción **Tiempo límite de la encuesta** en la pestaña de
+**Opciones** del formulario de la encuesta, en la sección de **Preguntas**.
 
 ![El campo de tiempo límite en la pestaña de opciones de una plantilla del
 formulario de una encuesta. ](../../../_images/time-limit.png)
 
-Cuando selecciona la opción Tiempo límite de la encuesta, aparecerá un
+Cuando selecciona la opción **Tiempo límite de la encuesta** , aparecerá un
 cronómetro en cada página de la encuesta, permitiendole a los participantes
 estar atentos al tiempo restante mientras la encuesta está activa.
 
-Nota
-
-A los participantes que no suban su encuesta en el tiempo límite preesablecido
-_no_ se les guardarán sus respuestas.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>A los participantes que no suban su encuesta en el tiempo límite preesablecido <em>no</em> se les guardarán sus respuestas.</p>
+</div>
 
 ## Aleatorio por sección
 
-Cuando una encuesta es aleatoria, Odoo mezcla las preguntas y las muestra en
+Cuando una encuesta es aleatoria, Konvergo ERP mezcla las preguntas y las muestra en
 un orden aleatorio cada vez que un participante comienza a responder las
 preguntas. Utilizar este método no le permite a los participantes comparar sus
 respuestas entre ellos y ayuda a darle control para pruebas individuales.
 
-Para hacer aleatoria una encuesta, haga clic en la pestaña de Opciones en el
-formulario de la encuesta. En la sección de Preguntas, seleccione Aleatorio
-por sección para el campo de Selección de preguntas. Después de activarla,
-vaya a la pestaña de Preguntas y busque la columna Número de preguntas
-aleatorias. A partir de ahí, establezca cuántas preguntas (por sección) debe
-seleccionar y mostrar Odoo durante la mezcla de preguntas.
+Para hacer aleatoria una encuesta, haga clic en la pestaña de **Opciones** en
+el formulario de la encuesta. En la sección de **Preguntas** , seleccione
+**Aleatorio por sección** para el campo de **Selección de preguntas**. Después
+de activarla, vaya a la pestaña de **Preguntas** y busque la columna **Número
+de preguntas aleatorias**. A partir de ahí, establezca cuántas preguntas (por
+sección) debe seleccionar y mostrar Konvergo ERP durante la mezcla de preguntas.
 
 ![Número de preguntas aleatorias en la pestaña de preguntas de una encuesta.
-](../../../_images/random-questions.png)
-
-Ver también
-
-[Puntaje de las encuestas](scoring.html)
+](../../../_images/random-questions.png) <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="scoring">Puntaje de las encuestas</a></p>
+</div>
 

@@ -2,18 +2,18 @@
 
 Hay varios tipos de **impuestos** , y su uso varía mucho, esto depende
 principalmente de la ubicación de su empresa. Para asegurarse de que se
-registran correctamente, el sistema de impuestos de Odoo es compatible con
+registran correctamente, el sistema de impuestos de Konvergo ERP es compatible con
 todo tipo de usos y cálculos.
 
 ## Impuestos predeterminados
 
 Los **Impuestos predeterminados** definen cuáles impuestos se seleccionan
 automáticamente cuando no hay ninguna otra indicación sobre qué impuesto usar.
-Por ejemplo, Odoo completa previamente el campo **Impuestos** con los
+Por ejemplo, Konvergo ERP completa previamente el campo **Impuestos** con los
 impuestos predeterminados cuando se crea un nuevo producto o se añade una
 nueva línea en una factura.
 
-![Odoo completa el campo "impuestos" de forma automática según los impuestos
+![Konvergo ERP completa el campo "impuestos" de forma automática según los impuestos
 predeterminados](../../../_images/default-invoice-line.png)
 
 Si desea cambiar sus **impuestos predeterminados** , vaya a Contabilidad ‣
@@ -22,19 +22,15 @@ los impuestos apropiados para su **impuesto de venta** e **impuesto de
 compra** , y haga clic en _Guardar_.
 
 ![Defina qué impuestos se utilizan de forma predeterminada en
-Odoo](../../../_images/default-configuration.png)
-
-Nota
-
-Los **impuestos predeterminados** se configuran de forma automática según el
-país seleccionado en la creación de su base de datos, o al configurar un
-[paquete de localización fiscal](../fiscal_localizations.html#fiscal-
-localizations-packages) para su empresa.
+Konvergo ERP](../../../_images/default-configuration.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Los <b>impuestos predeterminados</b> se configuran de forma automática según el país seleccionado en la creación de su base de datos, o al configurar un <a href="../fiscal_localizations#fiscal-localizations-packages"><span class="std std-ref">paquete de localización fiscal</span></a> para su empresa.</p>
+</div>
 
 ## Activar los impuestos sobre la venta desde la vista de lista
 
 Como parte de su [paquete de localización
-fiscal](../fiscal_localizations.html#fiscal-localizations-packages), la
+fiscal](../fiscal_localizations#fiscal-localizations-packages), la
 mayoría de los impuestos de ventas de su país ya están preconfigurados en su
 base de datos. Sin embargo, solo algunos de ellos están activados de forma
 predeterminada, de esta forma puede activar solo los que sean relevantes para
@@ -44,7 +40,7 @@ Para activar los impuestos de venta, vaya a Contabilidad ‣ Configuración ‣
 Impuestos y utilice el botón _activar_ para activar o desactivar un impuesto.
 
 ![Impuestos preconfigurados activos en la aplicación Contabilidad de
-Odoo](../../../_images/list.png)
+Konvergo ERP](../../../_images/list.png)
 
 ## Configuración
 
@@ -52,17 +48,30 @@ Si desea editar o crear un **impuesto** , vaya a Contabilidad ‣ Configuración
 ‣ Impuestos, abra un impuesto o haga clic en _crear_.
 
 ![Modo de edición de un impuesto en la aplicación Contabilidad de
-Odoo](../../../_images/edit.png)
+Konvergo ERP](../../../_images/edit.png) <div class="alert alert-warning" id="taxes-labels">
+<p class="alert-title">
+Importante</p><p>Los impuestos tienen tres etiquetas diferentes, cada una con un uso específico. Consulte la siguiente tabla para ver en qué lugar aparecen.</p>
+<table class="table docutils">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 37%"/>
+<col style="width: 37%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><a href="#taxes-name"><span class="std std-ref">Nombre del impuesto</span></a></p></th>
+<th class="head"><p><a href="#taxes-label-invoices"><span class="std std-ref">Etiqueta en la factura</span></a></p></th>
+<th class="head"><p><a href="#taxes-tax-group"><span class="std std-ref">Grupo de impuestos</span></a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Backend</p></td>
+<td><p>La columna <em>impuestos</em> en las facturas exportadas</p></td>
+<td><p>Arriba de la línea <em>total</em> en las facturas exportadas</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 
-Importante
-
-Los impuestos tienen tres etiquetas diferentes, cada una con un uso
-específico. Consulte la siguiente tabla para ver en qué lugar aparecen.
-
-Nombre del impuesto | Etiqueta en la factura | Grupo de impuestos  
----|---|---  
-Backend | La columna _impuestos_ en las facturas exportadas | Arriba de la línea _total_ en las facturas exportadas  
-  
 ### Opciones principales
 
 #### Nombre del impuesto
@@ -78,11 +87,10 @@ venta, facturas, productos, etc.
 El impuesto es una combinación de varios subimpuestos. Puede agregar tantos
 impuestos como desee, en el orden en el que desee que se apliquen.
 
-Importante
-
-Asegúrese de que la secuencia de impuestos es correcta, ya su orden puede
-afectar al cálculo de los importes de los impuestos, en especial si uno de los
-impuestos afecta a la base de los siguientes.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Asegúrese de que la secuencia de impuestos es correcta, ya su orden puede afectar al cálculo de los importes de los impuestos, en especial si uno de los impuestos <a href="#taxes-base-subsequent"><span class="std std-ref">afecta a la base de los siguientes</span></a>.</p>
+</div>
 
   * **Fijo**
 
@@ -122,15 +130,13 @@ Precio de venta del producto | Precio sin impuestos | Impuesto | Total
 
 Solo se pueden agregar impuestos **activos** a los nuevos documentos.
 
-Importante
-
-No es posible eliminar los impuestos que ya se han utilizado. En su lugar,
-puede desactivarlos para evitar su uso en el futuro.
-
-Nota
-
-Este campo se puede modificar desde la _vista de lista_. Consulte esta sección
-para obtener más información.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>No es posible eliminar los impuestos que ya se han utilizado. En su lugar, puede desactivarlos para evitar su uso en el futuro.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Este campo se puede modificar desde la <em>vista de lista</em>. Consulte <a href="#taxes-list-activation"><span class="std std-ref">esta sección</span></a> para obtener más información.</p>
+</div>
 
 #### Ámbito del impuesto
 
@@ -143,11 +149,10 @@ limita su visualización.
 
   * **Ninguno**
 
-Truco
-
-Puede utilizar la opción **ninguno** para los impuestos que desee incluir en
-un grupo de impuestos pero que no desee incluir en la lista junto con los
-otros impuestos de venta o compra.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Puede utilizar la opción <b>ninguno</b> para los impuestos que desee incluir en un <a href="#taxes-computation"><span class="std std-ref">grupo de impuestos</span></a> pero que no desee incluir en la lista junto con los otros impuestos de venta o compra.</p>
+</div>
 
 ### Pestaña de definición
 
@@ -165,7 +170,7 @@ correctas](../../../_images/definition.png)
 
   * **Cuenta** : si está definida, se registra un apunte contable adicional.
 
-  * **Tablas de impuestos** : se usan para generar [reportes de impuestos](reporting/tax_returns.html) de forma automática, de acuerdo a las normativas de su país.
+  * **Tablas de impuestos** : se usan para generar [reportes de impuestos](reporting/tax_returns) de forma automática, de acuerdo a las normativas de su país.
 
 ### Pestaña de opciones avanzadas
 
@@ -186,7 +191,7 @@ las facturas exportadas y en los portales de clientes.
 
 Los grupos de impuestos incluyen diferentes repeticiones del mismo impuesto.
 Esto puede ser útil cuando se debe registrar de forma diferente el mismo
-impuesto según las [posiciones fiscales](taxes/fiscal_positions.html).
+impuesto según las [posiciones fiscales](taxes/fiscal_positions).
 
 ![El nombre del grupo de impuestos es distinto al de la etiqueta en las
 facturas](../../../_images/invoice-tax-group.png)
@@ -216,18 +221,16 @@ tenemos:
 Precio de venta del producto | Precio sin impuestos | Impuesto | Total  
 ---|---|---|---  
 1,000 | 900.10 | 90.9 | 1,000.00  
-  
-Nota
-
-Si necesita definir los precios con precisión, tanto con o sin impuestos,
-consulte la siguiente documentación: [Precios B2B (impuestos no incluidos) y
-B2C (impuestos incluidos)](taxes/B2B_B2C.html).
-
-Nota
-
-  * **Facturas** : de forma predeterminada, los subtotales de línea mostrados en sus facturas son _sin impuestos incluidos_. Para mostrar los subtotales de línea _con impuestos incluidos_ , vaya a Contabilidad ‣ Configuración ‣ Ajustes ‣ Facturas de clientes, y seleccione _con impuestos incluidos_ en el campo **distribución de impuestos de los subtotales de línea** , luego haga clic en _guardar_.
-
-  * **Comercio electrónico** : de forma predeterminada, los precios mostrados en su sitio web de comercio electrónico son _sin impuestos incluidos_. Para mostrar los precios _con impuestos incluidos_ , vaya a Sitio web ‣ Configuración ‣ Ajustes ‣ Precios, y seleccione _con impuestos incluidos_ en el campo **precios de los productos** , luego haga clic en _guardar_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Si necesita definir los precios con precisión, tanto con o sin impuestos, consulte la siguiente documentación: <a href="taxes/B2B_B2C">Precios B2B (impuestos no incluidos) y B2C (impuestos incluidos)</a>.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><ul>
+<li><p><b>Facturas</b>: de forma predeterminada, los subtotales de línea mostrados en sus facturas son <em>sin impuestos incluidos</em>. Para mostrar los subtotales de línea <em>con impuestos incluidos</em>, vaya a Contabilidad ‣ Configuración ‣ Ajustes ‣ Facturas de clientes, y seleccione <em>con impuestos incluidos</em> en el campo <b>distribución de impuestos de los subtotales de línea</b>, luego haga clic en <em>guardar</em>.</p></li>
+<li><p><b>Comercio electrónico</b>: de forma predeterminada, los precios mostrados en su sitio web de comercio electrónico son <em>sin impuestos incluidos</em>. Para mostrar los precios <em>con impuestos incluidos</em>, vaya a Sitio web ‣ Configuración ‣ Ajustes ‣ Precios, y seleccione <em>con impuestos incluidos</em> en el campo <b>precios de los productos</b>, luego haga clic en <em>guardar</em>.</p></li>
+</ul>
+</div>
 
 #### Afectación a la base de los impuestos subsecuentes
 
@@ -238,40 +241,30 @@ Puede configurar un nuevo grupo de impuestos que incluya este impuesto, o
 agregarlo directamente a una línea de producto.
 
 ![El impuesto se considera como base del IVA del
-21%](../../../_images/subsequent-line.png)
+21%](../../../_images/subsequent-line.png) <div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>El orden en el que se añaden los impuestos en una línea de producto no tiene ningún efecto sobre el cálculo de los importes. Si añade los impuestos directamente en una línea de producto, solo la secuencia de impuestos determina el orden en que se aplican.</p>
+<p>Para reorganizar la secuencia, vaya a Contabilidad ‣ Configuración ‣ Impuestos, y arrastre y suelte las líneas junto a los nombres de los impuestos.</p>
+<img alt="La secuencia de los impuestos en Konvergo ERP determina qué impuestos se aplican primero" src="../../../_images/list-sequence.png"/>
+</div>
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="taxes/fiscal_positions">Posiciones fiscales (mapeo de impuestos y cuentas)</a></p></li>
+<li><p><a href="taxes/B2B_B2C">Precios B2B (impuestos no incluidos) y B2C (impuestos incluidos)</a></p></li>
+<li><p><a href="taxes/taxcloud">Integración con TaxCloud</a> (en Konvergo ERP 17 y posteriores la integración con TaxCloud quedará fuera de servicio)</p></li>
+<li><p><a href="reporting/tax_returns">Declaración de impuestos</a></p></li>
+</ul>
+</div>
 
-Advertencia
-
-El orden en el que se añaden los impuestos en una línea de producto no tiene
-ningún efecto sobre el cálculo de los importes. Si añade los impuestos
-directamente en una línea de producto, solo la secuencia de impuestos
-determina el orden en que se aplican.
-
-Para reorganizar la secuencia, vaya a Contabilidad ‣ Configuración ‣
-Impuestos, y arrastre y suelte las líneas junto a los nombres de los
-impuestos.
-
-![La secuencia de los impuestos en Odoo determina qué impuestos se aplican
-primero](../../../_images/list-sequence.png)
-
-Ver también
-
-  * [Posiciones fiscales (mapeo de impuestos y cuentas)](taxes/fiscal_positions.html)
-
-  * [Precios B2B (impuestos no incluidos) y B2C (impuestos incluidos)](taxes/B2B_B2C.html)
-
-  * [Integración con TaxCloud](taxes/taxcloud.html) (en Odoo 17 y posteriores la integración con TaxCloud quedará fuera de servicio)
-
-  * [Declaración de impuestos](reporting/tax_returns.html)
-
-  * [Impuestos de base de efectivo](taxes/cash_basis.html)
-  * [Retención fiscal](taxes/retention.html)
-  * [Comprobar un número de IVA (sistema VIES)](taxes/vat_verification.html)
-  * [Posiciones fiscales (mapeo de impuestos y cuentas)](taxes/fiscal_positions.html)
-  * [Integración con AvaTax](taxes/avatax.html)
-    * [Uso de AvaTax](taxes/avatax/avatax_use.html)
-    * [Portal de Avalara (AvaTax)](taxes/avatax/avalara_portal.html)
-  * [Integración con TaxCloud](taxes/taxcloud.html)
-  * [Ventas a distancia intracomunitarias en la UE](taxes/eu_distance_selling.html)
-  * [Precios B2B (impuestos no incluidos) y B2C (impuestos incluidos)](taxes/B2B_B2C.html)
+  * [Impuestos de base de efectivo](taxes/cash_basis)
+  * [Retención fiscal](taxes/retention)
+  * [Comprobar un número de IVA (sistema VIES)](taxes/vat_verification)
+  * [Posiciones fiscales (mapeo de impuestos y cuentas)](taxes/fiscal_positions)
+  * [Integración con AvaTax](taxes/avatax)
+    * [Uso de AvaTax](taxes/avatax/avatax_use)
+    * [Portal de Avalara (AvaTax)](taxes/avatax/avalara_portal)
+  * [Integración con TaxCloud](taxes/taxcloud)
+  * [Ventas a distancia intracomunitarias en la UE](taxes/eu_distance_selling)
+  * [Precios B2B (impuestos no incluidos) y B2C (impuestos incluidos)](taxes/B2B_B2C)
 

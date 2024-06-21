@@ -1,50 +1,50 @@
-# Documentación de Odoo
+# Documentación de Konvergo ERP
 
-## [Documentos para el usuario](applications.html)
+## [Documentos para el usuario](applications)
 
 Descubra nuestra guía que le ayudará a usar y configurar su plataforma. La
 guía está separada por aplicación.
 
 ##### Aplicaciones principales
 
-  * [ Contabilidad ](applications/finance/accounting.html)
-  * [ Inventario ](applications/inventory_and_mrp/inventory.html)
-  * [ Fabricación ](applications/inventory_and_mrp/manufacturing.html)
-  * [ Punto de venta ](applications/sales/point_of_sale.html)
+  * [ Contabilidad ](applications/finance/accounting)
+  * [ Inventario ](applications/inventory_and_mrp/inventory)
+  * [ Fabricación ](applications/inventory_and_mrp/manufacturing)
+  * [ Punto de venta ](applications/sales/point_of_sale)
 
-## [Instalar y dar mantenimiento](administration.html)
+## [Instalar y dar mantenimiento](administration)
 
-Aprenda cómo instalar, desplegar y actualizar Odoo con alojamiento local o en
-Odoo.sh.
+Aprenda cómo instalar, desplegar y actualizar Konvergo ERP con alojamiento local o en
+Konvergo ERP.sh.
 
 ##### Enlaces principales
 
-  * [ Instalar Odoo ]( administration/deployment/install.html )
-  * [ Actualizaciones de solución de bugs ](administration/maintain/update.html)
-  * [ Actualizar Odoo ](administration/upgrade.html)
-  * [ Odoo.sh: la plataforma de Odoo en la nube ](administration/odoo_sh/overview/introduction.html)
+  * [ Instalar Konvergo ERP ]( administration/deployment/install )
+  * [ Actualizaciones de solución de bugs ](administration/maintain/update)
+  * [ Actualizar Konvergo ERP ](administration/upgrade)
+  * [ Konvergo ERP.sh: la plataforma de Konvergo ERP en la nube ](administration/odoo_sh/overview/introduction)
 
-## [Desarrollador](developer.html)
+## [Desarrollador](developer)
 
-Aprenda cómo desarrollar en Odoo al leer las referencias del entorno de
+Aprenda cómo desarrollar en Konvergo ERP al leer las referencias del entorno de
 trabajo y los tutoriales de programador.
 
 ##### Enlaces principales
 
-  * [ Tutorial: Empezando ](developer/tutorials/getting_started.html)
-  * [ ORM ](developer/reference/backend/orm.html)
-  * [ Vistas regulares ](developer/reference/backend/views.html)
-  * [ Vistas de QWeb ](developer/reference/frontend/qweb.html)
-  * [ API externa ](developer/api/external_api.html)
+  * [ Tutorial: Empezando ](developer/tutorials/getting_started)
+  * [ ORM ](developer/reference/backend/orm)
+  * [ Vistas regulares ](developer/reference/backend/views)
+  * [ Vistas de QWeb ](developer/reference/frontend/qweb)
+  * [ API externa ](developer/api/external_api)
 
-## [Contribución](contributing.html)
+## [Contribución](contributing)
 
-¿Desea ayudar a Odoo pero no sabe por dónde empezar? Contamos con tutoriales y
-lineamientos que le pueden ayudar a mejorar Odoo.
+¿Desea ayudar a Konvergo ERP pero no sabe por dónde empezar? Contamos con tutoriales y
+lineamientos que le pueden ayudar a mejorar Konvergo ERP.
 
 ##### Enlaces principales
 
-  * [ Lineamientos de programación ](contributing/development/coding_guidelines.html)
-  * [ Documentación ](contributing/documentation.html)
-  * [ Lineamientos de contenido ](contributing/documentation/content_guidelines.html)
+  * [ Lineamientos de programación ](contributing/development/coding_guidelines)
+  * [ Documentación ](contributing/documentation)
+  * [ Lineamientos de contenido ](contributing/documentation/content_guidelines)
 

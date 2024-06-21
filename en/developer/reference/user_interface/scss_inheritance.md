@@ -2,10 +2,10 @@
 
 ## Overview
 
-Managing SCSS assets in Odoo is not as straightforward as it is in some other
+Managing SCSS assets in Konvergo ERP is not as straightforward as it is in some other
 environments, but it’s highly efficient.
 
-Modularity is key. The inheritance scheme described further allows Odoo to:
+Modularity is key. The inheritance scheme described further allows Konvergo ERP to:
 
   * customize the Bootstrap CSS framework;
 
@@ -20,23 +20,23 @@ Modularity is key. The inheritance scheme described further allows Odoo to:
 ## SCSS’s `!default` directive
 
 “Direct variables’ overrides” are technically possible in SCSS but may lead to
-inconsistent results in complex environments like Odoo.
+inconsistent results in complex environments like Konvergo ERP.
 
-Example
-
-`library.scss`
-
-    
-    
-    $foo: red;
-    
-
-`customization_layer.scss`
-
-    
-    
-    $foo: blue; // -> Don't!
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><code>library.scss</code></span><a href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nv">$foo</span><span class="o">:</span> <span class="ni">red</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><code>customization_layer.scss</code></span><a href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nv">$foo</span><span class="o">:</span> <span class="ni">blue</span><span class="p">;</span> <span class="c1">// -&gt; Don't!</span>
+</pre></div>
+</div>
+</div>
+</div>
 
 Indeed, since the compilation process acts across different interdependent
 bundles, re-assigning a variable in the “wrong spot” may lead to unexpected
@@ -44,7 +44,7 @@ cascading results.
 
 SCSS provides several techniques to overcome these issues (e.g.:
 [shadowing](https://sass-lang.com/documentation/variables#shadowing)), but the
-most critical procedure in Odoo is the use of the `!default` flag.
+most critical procedure in Konvergo ERP is the use of the `!default` flag.
 
 When using the `!default` flag, the compiler assigns a value **only** if that
 variable is not yet defined.
@@ -52,39 +52,36 @@ variable is not yet defined.
 As a result of this technique, the priority in which variables are assigned
 matches the assets’ loading order.
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><code>customization_layer.scss</code></span><a href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nv">$foo</span><span class="o">:</span> <span class="ni">red</span> <span class="nv">!default</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><code>library.scss</code></span><a href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nv">$foo</span><span class="o">:</span> <span class="ni">blue</span> <span class="nv">!default</span><span class="p">;</span> <span class="c1">// -&gt; Already defined, line ignored.</span>
+<span class="nv">$bar</span><span class="o">:</span> <span class="ni">black</span> <span class="nv">!default</span><span class="p">;</span> <span class="c1">// -&gt; Not defined yet, value assigned.</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><code>component.scss</code></span><a href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.component {
+   color: $foo; // -&gt; 'color: red;'
+   background: $bar; // -&gt; 'background: black;'
+}
+</pre></div>
+</div>
+</div>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><code>!default</code> flag on the <a href="https://sass-lang.com/documentation/variables#default-values">SASS Documentation</a></p>
+</div>
 
-`customization_layer.scss`
-
-    
-    
-    $foo: red !default;
-    
-
-`library.scss`
-
-    
-    
-    $foo: blue !default; // -> Already defined, line ignored.
-    $bar: black !default; // -> Not defined yet, value assigned.
-    
-
-`component.scss`
-
-    
-    
-    .component {
-       color: $foo; // -> 'color: red;'
-       background: $bar; // -> 'background: black;'
-    }
-    
-
-See also
-
-`!default` flag on the [SASS Documentation](https://sass-
-lang.com/documentation/variables#default-values)
-
-## Odoo’s SCSS inheritance system
+## Konvergo ERP’s SCSS inheritance system
 
 The following diagram conceptually illustrates the compilation order in which
 the CSS and SCSS variables are defined.
@@ -113,9 +110,9 @@ the CSS and SCSS variables are defined.
     ● [Visual result on screen]
     
 
-Important
-
-This diagram is incomplete and does not match the current bundles’
-organization. Read more on [asset bundles](../frontend/assets.html#reference-
-assets-bundle).
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>This diagram is incomplete and does not match the current bundles’ organization. Read more on
+<a href="../frontend/assets#reference-assets-bundle"><span class="std std-ref">asset bundles</span></a>.</p>
+</div>
 

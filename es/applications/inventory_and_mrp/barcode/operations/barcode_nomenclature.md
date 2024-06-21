@@ -9,10 +9,10 @@ calcular el precio debidamente.
 
 ## Crear una nomenclatura de código de barras
 
-Odoo es compatible con nomenclaturas del código de barras. Estas nomenclaturas
+Konvergo ERP es compatible con nomenclaturas del código de barras. Estas nomenclaturas
 determinan el mapeo de la información encriptada. Puede configurar su
 nomenclatura de código de barras en el [modo de
-desarrollador](../../../general/developer_mode.html#developer-mode). Para
+desarrollador](../../../general/developer_mode#developer-mode). Para
 hacerlo, vaya a Inventario ‣ Configuración ‣ Nomenclatura del código de
 barras.
 
@@ -37,10 +37,10 @@ producto en cuestión. La “N” define un número y la “D” define los deci
 La codificación permite especificar la codificación del código de barras en la
 que se debe aplicar la regla.
 
-Nota
-
-Puede definir diferentes reglas y ordenar su prioridad gracias a la secuencia.
-Se aplicará la primera regla que coincida con el código de barras escaneado.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Puede definir diferentes reglas y ordenar su prioridad gracias a la secuencia. Se aplicará la primera regla que coincida con el código de barras escaneado.</p>
+</div>
 
 ### Configure su producto
 
@@ -56,7 +56,7 @@ Se aplicará la primera regla que coincida con el código de barras escaneado.
 
 Si pesa 1,5 kg de pasta, la balanza le imprimirá el siguiente código de barras
 2112345015002. Si escanea este código de barras en su punto de venta o cuando
-reciba productos en su aplicación de código de barras, Odoo creará
+reciba productos en su aplicación de código de barras, Konvergo ERP creará
 automáticamente una nueva línea para el producto Pasta para una cantidad de
 1.5 Kg. Para el punto de venta, también se calculará un precio que depende de
 la cantidad.
@@ -83,8 +83,8 @@ la cantidad.
 
   * **Producto unitario** : le permite identificar un producto tanto para el PdV como para transferencias.
 
-Nota
-
-Cuando el patrón de código de barras contiene. *, significa que puede contener
-cualquier número de caracteres y estos caracteres pueden ser cualquier número.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando el patrón de código de barras contiene. <a href="#id1"><span class="problematic" id="id2">*</span></a>, significa que puede contener cualquier número de caracteres y estos caracteres pueden ser cualquier número.</p>
+</div>
 

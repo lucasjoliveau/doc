@@ -1,7 +1,7 @@
 # Invoicing processes
 
 Depending on your business and the application you use, there are different
-ways to automate the customer invoice creation in Odoo. Usually, draft
+ways to automate the customer invoice creation in Konvergo ERP. Usually, draft
 invoices are created by the system (with information coming from other
 documents like sales order or contracts) and accountant just have to validate
 draft invoices and send the invoices in batch (by regular mail or email).
@@ -33,9 +33,12 @@ advance.
 
 This process is good for both services and physical products.
 
-See also
-
-  * [Pro-forma invoices](../../../sales/sales/invoicing/proforma.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../../../sales/sales/invoicing/proforma">Pro-forma invoices</a></p></li>
+</ul>
+</div>
 
 ### Sales Order ‣ Delivery Order ‣ Invoice
 
@@ -48,14 +51,17 @@ This way, if you deliver a partial order, you only invoice for what you really
 delivered. If you do back orders (deliver partially and the rest later), the
 customer will receive two invoices, one for each delivery order.
 
-See also
-
-  * [Invoice based on delivered or ordered quantities](../../../sales/sales/invoicing/invoicing_policy.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../../../sales/sales/invoicing/invoicing_policy">Invoice based on delivered or ordered quantities</a></p></li>
+</ul>
+</div>
 
 ### eCommerce Order ‣ Invoice
 
 An eCommerce order will also trigger the creation of the order when it is
-fully paid. If you allow paying orders by check or wire transfer, Odoo only
+fully paid. If you allow paying orders by check or wire transfer, Konvergo ERP only
 creates an order and the invoice will be triggered once the payment is
 received.
 
@@ -82,13 +88,14 @@ This approach is used by services companies that invoice mostly based on time
 and material. For services companies that invoice on fix price, they use a
 regular sales order.
 
-See also
-
-  * [Invoicing based on time and materials](../../../sales/sales/invoicing/time_materials.html)
-
-  * [Reinvoice expenses to customers](../../../sales/sales/invoicing/expense.html)
-
-  * [Invoice project milestones](../../../sales/sales/invoicing/milestone.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../../../sales/sales/invoicing/time_materials">Invoicing based on time and materials</a></p></li>
+<li><p><a href="../../../sales/sales/invoicing/expense">Reinvoice expenses to customers</a></p></li>
+<li><p><a href="../../../sales/sales/invoicing/milestone">Invoice project milestones</a></p></li>
+</ul>
+</div>
 
 ### Recurring Contracts ‣ Invoices
 
@@ -96,9 +103,12 @@ For subscriptions, an invoice is triggered periodically, automatically. The
 frequency of the invoicing and the services/products invoiced are defined on
 the contract.
 
-See also
-
-  * [Subscriptions](../../../sales/subscriptions.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../../../sales/subscriptions">Subscriptions</a></p></li>
+</ul>
+</div>
 
 ## Others
 
@@ -146,11 +156,14 @@ It remains possible to resequence the invoices but with some restrictions:
 **Invoice digitization** is the process of automatically encoding traditional
 paper invoices into invoices forms in your accounting.
 
-Odoo uses OCR and artificial intelligence technologies to recognize the
+Konvergo ERP uses OCR and artificial intelligence technologies to recognize the
 content of the documents. Vendor bills and customer invoices forms are
 automatically created and populated based on scanned invoices.
 
-See also
-
-  * [AI-powered document digitization](../vendor_bills/invoice_digitization.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../vendor_bills/invoice_digitization">AI-powered document digitization</a></p></li>
+</ul>
+</div>
 

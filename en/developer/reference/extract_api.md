@@ -1,6 +1,6 @@
 # Extract API
 
-Odoo provides a service to automate the processing of documents of type
+Konvergo ERP provides a service to automate the processing of documents of type
 **invoices** , **expenses** or **resumes**.
 
 The service scans documents using an OCR engine and then uses AI-based
@@ -120,7 +120,7 @@ The supported extensions are _pdf_ , _png_ , _jpg_ and _bmp_.
 
     
 
-Unique identifier of the Odoo database.
+Unique identifier of the Konvergo ERP database.
 
 `webhook_url` (optional)
 
@@ -173,7 +173,7 @@ The user email.
 
     
 
-Regex for purchase order identification. Will default to Odoo PO format if not
+Regex for purchase order identification. Will default to Konvergo ERP PO format if not
 provided.
 
 `perspective` (optional)
@@ -210,11 +210,11 @@ provided, client will be used.
     }
     
 
-Note
-
-The `user_infos` parameter is optional but it greatly improves the quality of
-the result, especially for invoices. The more information you can provide, the
-better.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The <code>user_infos</code> parameter is optional but it greatly improves the quality of the result,
+especially for invoices. The more information you can provide, the better.</p>
+</div>
 
 ### Response
 
@@ -273,10 +273,11 @@ status | status_msg
     }
     
 
-Note
-
-The API does not actually use the JSON-RPC error scheme. Instead the API has
-its own error scheme bundled inside a successful JSON-RPC result.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The API does not actually use the JSON-RPC error scheme. Instead the API has its own error
+scheme bundled inside a successful JSON-RPC result.</p>
+</div>
 
 ## Get results
 
@@ -510,7 +511,7 @@ invoice.
 
 Feature name | Specifities  
 ---|---  
-`SWIFT_code` | `content` is a dictionary encoded as a string. It contains information about the detected SWIFT code (or [BIC](https://www.iso9362.org/isobic/overview.html)). Keys:
+`SWIFT_code` | `content` is a dictionary encoded as a string. It contains information about the detected SWIFT code (or [BIC](https://www.iso9362.org/isobic/overview)). Keys:
 
 `bic`
 

@@ -3,9 +3,9 @@
 Menus are used to organize your website’s content and help visitors navigate
 through your web pages effectively. User-friendly and well-structured website
 menus also play a crucial role in improving [search engine
-rankings](seo.html).
+rankings](seo).
 
-Odoo allows you to customize the content and appearance of your website’s menu
+Konvergo ERP allows you to customize the content and appearance of your website’s menu
 to your needs.
 
 ## Menu editor
@@ -16,35 +16,34 @@ items and mega menus.
 To edit your website’s menu, go to Website ‣ Site ‣ Menu Editor. From there,
 you can:
 
-  * **rename** a menu item or change its URL using the Edit Menu Item icon;
+  * **rename** a menu item or change its URL using the **Edit Menu Item** icon;
 
-  * **delete** a menu item using the Delete Menu Item icon;
+  * **delete** a menu item using the **Delete Menu Item** icon;
 
   * **move** a menu item by dragging and dropping it to the desired place in the menu;
 
   * **create a regular drop-down menu** by dragging and dropping the sub-menu items to the right, underneath their parent menu.
 
 ![Menu editor with sub-menus](../../../../_images/menu-editor.png)
-
-Note
-
-You can also access the menu editor by clicking Edit, selecting any menu item
-and clicking the Edit Menu icon.
-
-![Access the Menu editor while in Edit mode.](../../../../_images/edit-menu-
-icon.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>You can also access the menu editor by clicking <b>Edit</b>, selecting any menu item and
+clicking the <b>Edit Menu</b> icon.</p>
+<img alt="Access the Menu editor while in Edit mode." src="../../../../_images/edit-menu-icon.png"/>
+</div>
 
 ### Adding regular menu items
 
 By default, pages are added to the menu as regular menu items when [they are
-created](../pages.html). You can also add regular menu items from the menu
-editor by clicking Add Menu Item. Enter the Name and URL of the related page
-in the pop-up window that appears on the screen and click OK.
+created](../pages). You can also add regular menu items from the menu
+editor by clicking **Add Menu Item**. Enter the **Name** and URL of the
+related page in the pop-up window that appears on the screen and click **OK**.
 
-Tip
-
-In the URL or Email field, you can type `/` to search for a page on your
-website or `#` to search for an existing custom anchor.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>In the <b>URL or Email</b> field, you can type <code>/</code> to search for a page on your website or
+<code>#</code> to search for an existing custom anchor.</p>
+</div>
 
 ### Adding mega menus
 
@@ -57,18 +56,19 @@ regular drop-down menus, for example, through layout, typography, and icons.
 
 ![Mega menu in the navigation bar.](../../../../_images/mega-menu.png)
 
-To create a mega menu, go to Website ‣ Site ‣ Menu Editor and click Add Mega
-Menu Item. Enter the Name of the mega menu in the pop-up, click OK, then Save.
+To create a mega menu, go to Website ‣ Site ‣ Menu Editor and click **Add Mega
+Menu Item**. Enter the **Name** of the mega menu in the pop-up, click **OK** ,
+then **Save**.
 
 To adapt the options and layout of the mega menu, click it in the navigation
-bar, then click Edit. Mega menus are composed of building blocks, which means
-you can customize each component individually using inline formatting, as well
-as the options available in the Customize tab in the website builder. For
-example, you can:
+bar, then click **Edit**. Mega menus are composed of building blocks, which
+means you can customize each component individually using inline formatting,
+as well as the options available in the **Customize** tab in the website
+builder. For example, you can:
 
   * edit the text directly in the building block;
 
-  * edit a menu item’s URL by selecting the menu item, then clicking the Edit link button in the small preview pop-up. Type `/` to search for a page on your website, or `#` to search for an existing custom anchor.
+  * edit a menu item’s URL by selecting the menu item, then clicking the **Edit link** button in the small preview pop-up. Type `/` to search for a page on your website, or `#` to search for an existing custom anchor.
 
 ![Edit a mega menu option.](../../../../_images/mega-menu-option.png)
 
@@ -76,15 +76,17 @@ example, you can:
 
   * delete a menu item by deleting the related block.
 
-Tip
-
-You can adapt the general layout of the mega menu by selecting the desired
-Template and Size in the Mega menu section in the Customize tab in the website
-builder.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>You can adapt the general layout of the mega menu by selecting the desired <b>Template</b>
+and <b>Size</b> in the <b>Mega menu</b> section in the <b>Customize</b> tab in the
+website builder.</p>
+</div>
 
 ## Header and navigation bar appearance
 
-To customize the appearance of your website’s menu, click Edit, then select
-the navigation bar or any menu item. You can then adapt the fields in the
-Header and Navbar sections in the Customize tab in the website builder.
+To customize the appearance of your website’s menu, click **Edit** , then
+select the navigation bar or any menu item. You can then adapt the fields in
+the **Header** and **Navbar** sections in the **Customize** tab in the website
+builder.
 

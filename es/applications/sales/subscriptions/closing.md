@@ -11,7 +11,7 @@ esto pase.
 
   2. Si no adopta estos métodos, se encuentra entre las empresas que siguen evolucionando en un modelo de negocio de suscripción a largo plazo, especialmente en una era de comunicación ultrarrápida entre clientes insatisfechos y los que conservan a sus clientes facilitándoles la salida si lo desean. Al darles la oportunidad de cancelar sus propias suscripciones, sus clientes no se sienten atrapados por haberse suscrito a sus productos/servicios.
 
-En resumen, la aplicación _Suscripción de Odoo_ le da la **oportunidad de
+En resumen, la aplicación _Suscripción de Konvergo ERP_ le da la **oportunidad de
 escoger lo que quiera aplicar**. De hecho, usted puede decidir si dar a sus
 clientes la opción de cancelar sus suscripciones cuando quieran o restringir
 esta posibilidad. La decisión es suya, aquí mostraremos cómo hacerlo en
@@ -26,13 +26,11 @@ _Cancelable por el cliente_ en la pestaña de facturación. Una vez habilitada,
 sus clientes podrán cancelar sus suscripciones.
 
 ![Configuración para cerrar su suscripción con Suscripciones de
-Odoo](../../../_images/configuration-to-close-your-subscriptions.png)
-
-Nota
-
-Asegúrese de consultar nuestra documentación sobre cómo [Usar plantillas de
-suscripción](plans.html) para entender por completo la importancia de esta
-función en un flujo básico utilizando la aplicación **Suscripciones de Odoo**.
+Konvergo ERP](../../../_images/configuration-to-close-your-subscriptions.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Asegúrese de consultar nuestra documentación sobre cómo <a href="plans">Usar plantillas de suscripción</a> para entender por completo la importancia de esta función en un flujo básico utilizando la aplicación <b>Suscripciones de Konvergo ERP</b>.</p>
+</div>
 
 ## Cancelar su primera suscripción
 
@@ -43,7 +41,7 @@ automáticamente una suscripción. Por esta razón el estado de la suscripción 
 _En progreso_. Después tendrá la opción de cancelarla.
 
 ![Cierre su suscripción desde el punto de vista administrativo con
-Suscripciones de Odoo ](../../../_images/close-your-subscriptions-as-an-
+Suscripciones de Konvergo ERP ](../../../_images/close-your-subscriptions-as-an-
 administrator.png)
 
 Al utilizar el botón inteligente _Cancelar_ , tiene que introducir un motivo
@@ -53,7 +51,7 @@ finalización», etc. Inmediatamente después de confirmar el motivo de
 cancelación, puede observar que el estado de la suscripción cambió a
 _Cancelada_ y que el motivo de cancelación se menciona en la suscripción.
 
-![¿Qué pasa cuando cierra su suscripción con Suscripciones de Odoo?
+![¿Qué pasa cuando cierra su suscripción con Suscripciones de Konvergo ERP?
 ](../../../_images/use-of-close-reasons.png)
 
 ### Vista del cliente
@@ -65,13 +63,13 @@ ejemplo, el cliente tiene la opción de cancelar su suscripción cuando quiera
 hacerlo gracias al botón, _Cancelar suscripción_.
 
 ![Cierre su suscripción desde el punto de vista del cliente con Suscripciones
-de Odoo ](../../../_images/close-your-subscriptions-as-a-customer.png)
+de Konvergo ERP ](../../../_images/close-your-subscriptions-as-a-customer.png)
 
 Si se usa este botón, el cliente podrá especificar la razón por la cual
 canceló su suscripción e incluso podrá dejar un mensaje.
 
 ![¿Qué pasa cuando los clientes cierran su suscripción con Suscripciones de
-Odoo? ](../../../_images/use-of-close-reasons-as-a-customer.png)
+Konvergo ERP? ](../../../_images/use-of-close-reasons-as-a-customer.png)
 
 Al confirmar la cancelación, se redirecciona al cliente a su portal y se
 informa al administrador de esta modificación. Efectivamente, el estado de la
@@ -80,21 +78,16 @@ etapa, la fecha de finalización, el motivo de cancelación y el texto de
 cancelación del cliente.
 
 ![¿Qué pasa cuando los clientes cierran su suscripción en Suscripciones de
-Odoo? ](../../../_images/chatter-history-when-a-customer-closes-a-
-subscription.png)
-
-Nota
-
-Antes de cerrar una suscripción, revise nuestra documentación sobre cómo
-[Crear una cotización usando productos de la
-suscripción](../subscriptions.html) para entender cómo se gestionan las
-suscripciones en la aplicación **Suscripciones de Odoo**.
-
-Ver también
-
-  * [Suscripciones](../subscriptions.html)
-
-  * [Planes de suscripción](plans.html)
-
-  * [Productos de suscripción](products.html)
+Konvergo ERP? ](../../../_images/chatter-history-when-a-customer-closes-a-
+subscription.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Antes de cerrar una suscripción, revise nuestra documentación sobre cómo <a href="../subscriptions">Crear una cotización usando productos de la suscripción</a> para entender cómo se gestionan las suscripciones en la aplicación <b>Suscripciones de Konvergo ERP</b>.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../subscriptions">Suscripciones</a></p></li>
+<li><p><a href="plans">Planes de suscripción</a></p></li>
+<li><p><a href="products">Productos de suscripción</a></p></li>
+</ul>
+</div>
 

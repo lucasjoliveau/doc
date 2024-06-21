@@ -1,6 +1,6 @@
 # Colombie
 
-Odoo’s Colombian localization package provides accounting, fiscal, and legal
+Konvergo ERP’s Colombian localization package provides accounting, fiscal, and legal
 features for databases in Colombia – such as chart of accounts, taxes, and
 electronic invoicing.
 
@@ -8,30 +8,30 @@ In addition, a series of videos on the subject is also available. These videos
 cover how to start from scratch, set up configurations, complete common
 workflows, and provide in-depth looks at some specific use cases as well.
 
-Pour plus d'infos
-
-[Smart Tutorial - Colombian Localization](https://www.odoo.com/slides/smart-
-tutorial-localizacion-de-colombia-132).
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="https://www.odoo.com/slides/smart-tutorial-localizacion-de-colombia-132">Smart Tutorial - Colombian Localization</a>.</p>
+</div>
 
 ## Configuration
 
 ### Installation des modules
 
-[Installez](../../general/apps_modules.html#general-install) les modules
+[Installez](../../general/apps_modules#general-install) les modules
 suivants pour bénéficier de toutes les fonctionnalités de la localisation
 colombienne :
 
 Nom | Nom technique | Description  
 ---|---|---  
-Colombie - Comptabilité | `l10n_co` | Default [fiscal localization package](../fiscal_localizations.html#fiscal-localizations-packages). This module adds the base accounting features for the Colombian localization: chart of accounts, taxes, withholdings, and identification document type.  
-Colombie - Rapports comptables | `l10n_co_reports` | Inclut des rapports comptables permettant d’envoyer des certifications aux fournisseurs pour les retenues à la source appliquées.  
-Facturation électronique pour la Colombie avec Carvajal | `l10n_co_edi` | This module includes the features required for integration with Carvajal, and generates the electronic invoices and support documents related to the vendor bills, based on DIAN regulations.  
-Colombie - Point de Vente | `l10n_co_pos` | Includes Point of Sale receipts for Colombian localization.  
-  
-Note
-
-When `Colombia` is selected for a company’s Fiscal Localization, Odoo
-automatically installs certain modules.
+**Colombie - Comptabilité** | `l10n_co` | Default [fiscal localization package](../fiscal_localizations#fiscal-localizations-packages). This module adds the base accounting features for the Colombian localization: chart of accounts, taxes, withholdings, and identification document type.  
+**Colombie - Rapports comptables** | `l10n_co_reports` | Inclut des rapports comptables permettant d’envoyer des certifications aux fournisseurs pour les retenues à la source appliquées.  
+**Facturation électronique pour la Colombie avec Carvajal** | `l10n_co_edi` | This module includes the features required for integration with Carvajal, and generates the electronic invoices and support documents related to the vendor bills, based on DIAN regulations.  
+**Colombie - Point de Vente** | `l10n_co_pos` | Includes Point of Sale receipts for Colombian localization.  
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When <code>Colombia</code> is selected for a company’s <b>Fiscal Localization</b>, Konvergo ERP automatically
+installs certain modules.</p>
+</div>
 
 ### Configuration de l’entreprise
 
@@ -39,55 +39,55 @@ To configure your company information, go to the Contacts app, and search for
 your company.
 
 Alternatively, activate [developer
-mode](../../general/developer_mode.html#developer-mode) and navigate to
+mode](../../general/developer_mode#developer-mode) and navigate to
 General Setting ‣ Company ‣ Update Info ‣ Contact. Then, edit the contact form
 and configure the following information:
 
-  * Nom de la société.
+  * **Nom de la société**.
 
-  * Address: Including City, Department and ZIP code.
+  * **Address** : Including **City** , **Department** and **ZIP** code.
 
-  * Identification Number: Select the Identification Type (`NIT`, `Cédula de Ciudadanía`, `Registro Civil`, etc.). When the Identification Type is `NIT`, the Identification Number **must** have the _verification digit_ at the end of the ID prefixed by a hyphen (`-`).
+  * **Identification Number** : Select the **Identification Type** (`NIT`, `Cédula de Ciudadanía`, `Registro Civil`, etc.). When the **Identification Type** is `NIT`, the **Identification Number** **must** have the _verification digit_ at the end of the ID prefixed by a hyphen (`-`).
 
-Ensuite, configurez les Informations fiscales dans l’onglet Ventes & Achats :
+Ensuite, configurez les **Informations fiscales** dans l’onglet **Ventes &
+Achats** :
 
-  * Obligaciones y Responsabilidades: Select the fiscal responsibility for the company (`O-13` Gran Contribuyente, `O-15` Autorretenedor, `O-23` Agente de retención IVA, `O-47` Regimen de tributación simple, `R-99-PN` No Aplica).
+  * **Obligaciones y Responsabilidades** : Select the fiscal responsibility for the company (`O-13` Gran Contribuyente, `O-15` Autorretenedor, `O-23` Agente de retención IVA, `O-47` Regimen de tributación simple, `R-99-PN` No Aplica).
 
-  * Gran Contribuyente : Sélectionnez cette option si la société est _Gran Contribuyente_.
+  * **Gran Contribuyente** : Sélectionnez cette option si la société est _Gran Contribuyente_.
 
-  * Fiscal Regimen: Select the Tribute Name for the company (`IVA`, `INC`, `IVA e INC`, or `No Aplica`)
+  * **Fiscal Regimen** : Select the Tribute Name for the company (`IVA`, `INC`, `IVA e INC`, or `No Aplica`)
 
-  * Nom commercial : Si la société utilise un nom commercial spécifique et qu’il doit être affiché sur la facture.
+  * **Nom commercial** : Si la société utilise un nom commercial spécifique et qu’il doit être affiché sur la facture.
 
 ### Configuration des identifiants Carjaval
 
 Once the modules are installed, the user credentials **must** be configured,
 in order to connect with Carvajal Web Service. To do so, navigate to
-Accounting ‣ Configuration ‣ Settings and scroll to the Colombian Electronic
-Invoicing section. Then, fill in the required configuration information
+Accounting ‣ Configuration ‣ Settings and scroll to the **Colombian Electronic
+Invoicing** section. Then, fill in the required configuration information
 provided by Carvajal:
 
-  * Username and Password: Username and password (provided by Carvajal) to the company.
+  * **Username** and **Password** : Username and password (provided by Carvajal) to the company.
 
-  * Registre national des sociétés : Numéro NIT de la société _sans_ le code de vérification.
+  * **Registre national des sociétés** : Numéro NIT de la société _sans_ le code de vérification.
 
-  * Account ID: Company’s NIT number followed by `_01`.
+  * **Account ID** : Company’s NIT number followed by `_01`.
 
-  * Colombia Template Code: Select one of the two available templates (`CGEN03` or `CGNE04`) to be used in the PDF format of the electronic invoice.
+  * **Colombia Template Code** : Select one of the two available templates (`CGEN03` or `CGNE04`) to be used in the PDF format of the electronic invoice.
 
-Enable the Test mode checkbox to connect with the Carvajal testing
+Enable the **Test mode** checkbox to connect with the Carvajal testing
 environment.
 
-Once Odoo and Carvajal are fully configured and ready for production,
-deactivate the Test mode checkbox to use the production database.
+Once Konvergo ERP and Carvajal are fully configured and ready for production,
+deactivate the **Test mode** checkbox to use the production database.
 
 ![Configurez les identifiants pour le service web Carvajal dans
-Odoo.](../../../_images/carvajal-configuration.png)
-
-Important
-
-Test mode must **only** be used on duplicated databases, **not** the
-production environment.
+Konvergo ERP.](../../../_images/carvajal-configuration.png) <div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p><b>Test mode</b> must <b>only</b> be used on duplicated databases, <b>not</b> the production
+environment.</p>
+</div>
 
 ### Configuration des données du rapport
 
@@ -95,48 +95,50 @@ Les données de rapport peuvent être définies pour la section fiscale et les
 informations bancaires dans le PDF dans le cadre des informations
 configurables qui sont envoyées dans les XML.
 
-Navigate to Accounting ‣ Configuration ‣ Settings, and scroll to the Colombian
-Electronic Invoicing section, in order to find the Report Configuration
-fields. Here the header information for each report type can be configured.
+Navigate to Accounting ‣ Configuration ‣ Settings, and scroll to the
+**Colombian Electronic Invoicing** section, in order to find the **Report
+Configuration** fields. Here the header information for each report type can
+be configured.
 
-  * Gran Contribuyente
+  * **Gran Contribuyente**
 
-  * Tipo de Régimen
+  * **Tipo de Régimen**
 
-  * Retenedores de IVA
+  * **Retenedores de IVA**
 
-  * Autorretenedores
+  * **Autorretenedores**
 
-  * Resolución Aplicable
+  * **Resolución Aplicable**
 
-  * Actividad Económica
+  * **Actividad Económica**
 
-  * Bank Information
+  * **Bank Information**
 
 ### Configuration des données de base
 
 #### Partenaire
 
 Partner contacts can be created in the _Contacts_ app. To do so, navigate to
-Contacts, and click the Create button.
+Contacts, and click the **Create** button.
 
 Then, name the contact, and using the radio buttons, select the contact type,
-either Individual or Company.
+either **Individual** or **Company**.
 
-Complete the full Address, including the City, State, and ZIP code. Then,
-complete the identification and fiscal information.
+Complete the full **Address** , including the **City** , **State** , and
+**ZIP** code. Then, complete the identification and fiscal information.
 
 ##### Informations d’identification
 
 Identification types, defined by the DIAN, are available on the partner form,
 as part of the Colombian localization. Colombian partners **must** have their
-Identification Number (VAT) and Document Type set.
+**Identification Number** (VAT) and **Document Type** set.
 
-Astuce
-
-When the Document Type is `NIT`, the Identification Number needs to be
-configured in Odoo, including the _verification digit at the end of the ID,
-prefixed by a hyphen (`-`)_.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>When the <b>Document Type</b> is <code>NIT</code>, the <b>Identification Number</b> needs to be
+configured in Konvergo ERP, including the <em>verification digit at the end of the ID, prefixed by a hyphen
+(`-`)</em>.</p>
+</div>
 
 ##### Informations fiscales
 
@@ -147,13 +149,13 @@ DIAN.
 The required fields can be found under Partner ‣ Sales & Purchase Tab ‣ Fiscal
 Information section:
 
-  * Obligaciones y Responsabilidades: Select the fiscal responsibility for the company (`O-13` Gran Contribuyente, `O-15` Autorretenedor, `O-23` Agente de retención IVA, `O-47` Regimen de tributación simple, or `R-99-PN` No Aplica).
+  * **Obligaciones y Responsabilidades** : Select the fiscal responsibility for the company (`O-13` Gran Contribuyente, `O-15` Autorretenedor, `O-23` Agente de retención IVA, `O-47` Regimen de tributación simple, or `R-99-PN` No Aplica).
 
-  * Gran Contribuyente : Sélectionnez cette option si la société est _Gran Contribuyente_.
+  * **Gran Contribuyente** : Sélectionnez cette option si la société est _Gran Contribuyente_.
 
-  * Fiscal Regimen: Select the tribute name for the company (`IVA`, `INC`, `IVA e INC`, or `No Aplica`)
+  * **Fiscal Regimen** : Select the tribute name for the company (`IVA`, `INC`, `IVA e INC`, or `No Aplica`)
 
-  * Nom commercial : Si la société utilise un nom commercial spécifique et qu’il doit être affiché sur la facture.
+  * **Nom commercial** : Si la société utilise un nom commercial spécifique et qu’il doit être affiché sur la facture.
 
 #### Produits
 
@@ -161,71 +163,73 @@ To manage products, navigate to Accounting ‣ Customers ‣ Products, then clic
 on a product.
 
 When adding general information on the product form, it is required that
-either the UNSPSC Category (Accounting tab), or Internal Reference (General
-Information tab) field is configured. Be sure to Save the product once
-configured.
+either the **UNSPSC Category** (**Accounting** tab), or **Internal Reference**
+(**General Information** tab) field is configured. Be sure to **Save** the
+product once configured.
 
 #### Taxes
 
 To create or modify taxes, go to Accounting ‣ Configuration ‣ Taxes, and
 select the related tax.
 
-If sales transactions include products with taxes, the Value Type field in the
-Advanced Options tab needs to be configured per tax. Retention tax types (ICA,
-IVA, Fuente) are also included. This configuration is used to display taxes
-correctly in the invoice PDF.
+If sales transactions include products with taxes, the **Value Type** field in
+the **Advanced Options** tab needs to be configured per tax. Retention tax
+types (**ICA** , **IVA** , **Fuente**) are also included. This configuration
+is used to display taxes correctly in the invoice PDF.
 
 ![Les champs ICA, IVA et Fuente dans l'onglet Options avancées dans
-Odoo.](../../../_images/retention-tax-types.png)
+Konvergo ERP.](../../../_images/retention-tax-types.png)
 
 #### Journaux de vente
 
 Once the DIAN has assigned the official sequence and prefix for the electronic
 invoice resolution, the sales journals related to the invoice documents
-**must** be updated in Odoo. To do so, navigate to Accounting ‣ Configuration
+**must** be updated in Konvergo ERP. To do so, navigate to Accounting ‣ Configuration
 ‣ Journals, and select an existing sales journal, or create a new one with the
-Create button.
+**Create** button.
 
-On the sales journal form, input the Journal Name, Type, and set a unique
-Short Code in the Journals Entries tab. Then, configure the following data in
-the Advanced Settings tab:
+On the sales journal form, input the **Journal Name** , **Type** , and set a
+unique **Short Code** in the **Journals Entries** tab. Then, configure the
+following data in the **Advanced Settings** tab:
 
-  * Facturation électronique : Activez UBL 2.1 (Colombie).
+  * **Facturation électronique** : Activez **UBL 2.1 (Colombie)**.
 
-  * Résolution de facturation : Numéro de résolution délivré par la DIAN à la société.
+  * **Résolution de facturation** : Numéro de résolution délivré par la DIAN à la société.
 
-  * Date de résolution : Date d’entrée en vigueur de la résolution.
+  * **Date de résolution** : Date d’entrée en vigueur de la résolution.
 
-  * Date de fin de la résolution : Date de fin de validité de la résolution.
+  * **Date de fin de la résolution** : Date de fin de validité de la résolution.
 
-  * Plage de numérotation (minimum) : Premier numéro de facture autorisé.
+  * **Plage de numérotation (minimum)** : Premier numéro de facture autorisé.
 
-  * Plage de numérotation (maximum) : Dernier numéro de facture autorisé.
+  * **Plage de numérotation (maximum)** : Dernier numéro de facture autorisé.
 
-Note
-
-The sequence and resolution of the journal **must** match the one configured
-in Carvajal and the DIAN.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The sequence and resolution of the journal <b>must</b> match the one configured in Carvajal and the
+<abbr title="Dirección de Impuestos y Aduanas Nacionales">DIAN</abbr>.</p>
+</div>
 
 ##### Séquence des factures
 
 The invoice sequence and prefix **must** be correctly configured when the
 first document is created.
 
-Note
-
-Odoo automatically assigns a prefix and sequence to the following invoices.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Konvergo ERP automatically assigns a prefix and sequence to the following invoices.</p>
+</div>
 
 ##### Journaux des achats
 
 Once the DIAN has assigned the official sequence and prefix for the _support
 document_ related to vendor bills, the purchase journals related to their
-supporting documents need to be updated in Odoo. The process is similar to the
+supporting documents need to be updated in Konvergo ERP. The process is similar to the
 configuration of the sales journals.
 
 ##### Plan comptable
 
-Le [plan comptable](../accounting/get_started/chart_of_accounts.html) est
+Le [plan comptable](../accounting/get_started/chart_of_accounts) est
 installé par défaut dans le cadre du module de localisation, les comptes sont
 mappés automatiquement dans les taxes, le compte fournisseur par défaut et le
 compte client par défaut. Le plan comptable pour la Colombie est basé sur le
@@ -263,26 +267,27 @@ localization.](../../../_images/workflow-electronic-invoice.png)
 
 #### Création d’une facture
 
-Note
-
-The functional workflow taking place before an invoice validation does **not**
-alter the main changes introduced with the electronic invoice.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The functional workflow taking place before an invoice validation does <b>not</b> alter the main
+changes introduced with the electronic invoice.</p>
+</div>
 
 Electronic invoices are generated and sent to both the DIAN and customer
 through Carvajal’s web service integration. These documents can be created
 from your sales order or manually generated. To create a new invoice, go to
-Accounting ‣ Customers ‣ Invoices, and select Create. On the invoice form
+Accounting ‣ Customers ‣ Invoices, and select **Create**. On the invoice form
 configure the following fields:
 
-  * Client : Informations relatives au client.
+  * **Client** : Informations relatives au client.
 
-  * Journal : Journal utilisé pour les factures électroniques.
+  * **Journal** : Journal utilisé pour les factures électroniques.
 
-  * Type de facture électronique : Sélectionnez le type de document. Factura de Venta est sélectionné par défaut.
+  * **Type de facture électronique** : Sélectionnez le type de document. **Factura de Venta** est sélectionné par défaut.
 
-  * Lignes de facture : Précisez les produits avec les bonnes taxes.
+  * **Lignes de facture** : Précisez les produits avec les bonnes taxes.
 
-Une fois que vous avez terminé, cliquez sur Confirmer.
+Une fois que vous avez terminé, cliquez sur **Confirmer**.
 
 #### Validation des factures
 
@@ -292,12 +297,12 @@ asynchrone par le service de facturation électronique UBL 2.1 (Colombie). Le
 fichier s’affiche également dans le chatter.
 
 ![Fichier de facture XML Carvajal dans le chatter
-d'Odoo.](../../../_images/invoice-sent.png)
+d'Konvergo ERP.](../../../_images/invoice-sent.png)
 
-The Electronic Invoice Name field is now displayed in the EDI Documents tab,
-with the name of the XML file. Additionally, the Electronic Invoice Status
-field is displayed with the initial value To Send. To process the invoice
-manually, click on the Process Now button.
+The **Electronic Invoice Name** field is now displayed in the **EDI
+Documents** tab, with the name of the XML file. Additionally, the **Electronic
+Invoice Status** field is displayed with the initial value **To Send**. To
+process the invoice manually, click on the **Process Now** button.
 
 #### Réception des fichiers juridiques XML et PDF
 
@@ -307,55 +312,57 @@ to validate its structure and information.
 Après avoir validé la facture électronique, générez un fichier XML légal, qui
 inclut un signature numérique et un code unique (CUFE). Une facture PDF
 comprenant un code QR et le CUFE est également généré. Si tout est correct, la
-valeur du champ Facturation électronique passé à Envoyé.
+valeur du champ **Facturation électronique** passé à **Envoyé**.
 
 A `.zip` containing the legal electronic invoice (in XML format) and the
 invoice in (PDF format) is downloaded and displayed in the invoice chatter:
 
 ![Le fichier ZIP affiché dans le chatter de la facture dans
-Odoo.](../../../_images/invoice-zip.png)
+Konvergo ERP.](../../../_images/invoice-zip.png)
 
-Le statut de la facture électronique passe à Accepté.
+Le statut de la facture électronique passe à **Accepté**.
 
 ### Avoirs
 
 The process for credit notes is the same as for invoices. To create a credit
 note with reference to an invoice, go to Accounting ‣ Customers ‣ Invoices. On
-the invoice, click Add Credit Note, and complete the following information:
+the invoice, click **Add Credit Note** , and complete the following
+information:
 
-  * Méthode de crédit : Sélectionnez le type de méthode de crédit.
+  * **Méthode de crédit** : Sélectionnez le type de méthode de crédit.
 
-    * Remboursement partiel : Utilisez cette option lorsqu’il s’agit d’un montant partiel.
+    * **Remboursement partiel** : Utilisez cette option lorsqu’il s’agit d’un montant partiel.
 
-    * Remboursement intégral : Utilisez cette option si l’avoir concerne le montant intégral.
+    * **Remboursement intégral** : Utilisez cette option si l’avoir concerne le montant intégral.
 
-    * Remboursement intégral et nouvelle facture brouillon : Utilisez cette option si l’avoir est validé automatiquement et lettré avec la facture. La facture originale est dupliquée comme un nouveau brouillon.
+    * **Remboursement intégral et nouvelle facture brouillon** : Utilisez cette option si l’avoir est validé automatiquement et lettré avec la facture. La facture originale est dupliquée comme un nouveau brouillon.
 
-  * Motif : Saisissez le motif de l’avoir.
+  * **Motif** : Saisissez le motif de l’avoir.
 
-  * Date d’extourne : Sélectionnez si vous souhaitez une date spécifique pour l’avoir ou s’il s’agit de la date de la pièce comptable.
+  * **Date d’extourne** : Sélectionnez si vous souhaitez une date spécifique pour l’avoir ou s’il s’agit de la date de la pièce comptable.
 
-  * Utiliser un journal spécifique : Sélectionnez le journal pour votre avoir ou laissez-le vide si vous voulez utiliser le même journal que la facture originale.
+  * **Utiliser un journal spécifique** : Sélectionnez le journal pour votre avoir ou laissez-le vide si vous voulez utiliser le même journal que la facture originale.
 
-  * Date de remboursement : Si vous avez choisi une date spécifique, sélectionnez la date pour le remboursement.
+  * **Date de remboursement** : Si vous avez choisi une date spécifique, sélectionnez la date pour le remboursement.
 
-Une fois que vous avez terminé, cliquez sur le bouton Extourner.
+Une fois que vous avez terminé, cliquez sur le bouton **Extourner**.
 
 ### Notes de débit
 
 The process for debit notes is similar to credit notes. To create a debit note
 with reference to an invoice, go to Accounting ‣ Customers ‣ Invoices. On the
-invoice, click the Add Debit Note button, and enter the following information:
+invoice, click the **Add Debit Note** button, and enter the following
+information:
 
-  * Motif : Saisissez le motif de la note de débit.
+  * **Motif** : Saisissez le motif de la note de débit.
 
-  * Date de la note de débit : Sélectionnez les options spécifiques.
+  * **Date de la note de débit** : Sélectionnez les options spécifiques.
 
-  * Copier les lignes : Sélectionnez cette option si vous devez enregistrer une note de débit avec les mêmes lignes que la facture.
+  * **Copier les lignes** : Sélectionnez cette option si vous devez enregistrer une note de débit avec les mêmes lignes que la facture.
 
-  * Utiliser un journal spécifique : Sélectionnez le point d’impression pour votre note de débit ou laissez-le vide si vous voulez utiliser le même journal que la facture originale.
+  * **Utiliser un journal spécifique** : Sélectionnez le point d’impression pour votre note de débit ou laissez-le vide si vous voulez utiliser le même journal que la facture originale.
 
-Une fois que vous avez terminé, cliquez sur Créer une note de débit.
+Une fois que vous avez terminé, cliquez sur **Créer une note de débit**.
 
 ### Document d’accompagnement pour les factures fournisseurs
 
@@ -366,15 +373,15 @@ Les documents d’accompagnement pour les factures fournisseurs peuvent être
 créés manuellement ou à partir de votre bon de commande. Allez à Comptabilité
 ‣ Fournisseurs ‣ Factures fournisseurs et saisissez les données suivantes :
 
-  * Fournisseur : Saisissez les informations du fournisseur.
+  * **Fournisseur** : Saisissez les informations du fournisseur.
 
-  * Date de facturation : Sélectionnez la date de la facture.
+  * **Date de facturation** : Sélectionnez la date de la facture.
 
-  * Journal : Sélectionnez le journal pour les documents d’accompagnement relatifs aux factures fournisseurs.
+  * **Journal** : Sélectionnez le journal pour les documents d’accompagnement relatifs aux factures fournisseurs.
 
-  * Lignes facturées : Précisez les produits avec les bonnes taxes.
+  * **Lignes facturées** : Précisez les produits avec les bonnes taxes.
 
-Une fois que vous avez terminé, cliquez sur le bouton Confirmer. Après
+Une fois que vous avez terminé, cliquez sur le bouton **Confirmer**. Après
 confirmation, un fichier XML est créé et envoyé automatiquement à Carvajal.
 
 ### Erreurs courantes
@@ -386,10 +393,10 @@ après avoir mis à jour le statut de la facture électronique.
 
 Après avoir corrigé les données de base, il est possible de retraiter le XML
 avec les nouvelles données et d’envoyer la version mise à jour à l’aide du
-bouton Réessayer.
+bouton **Réessayer**.
 
 ![Erreurs de validation XML affichées dans le chatter de la facture dans
-Odoo.](../../../_images/xml-validation-error.png)
+Konvergo ERP.](../../../_images/xml-validation-error.png)
 
 ## Rapports financiers
 
@@ -400,7 +407,7 @@ l’impôt colombien sur l’industrie et le commerce (ICA). Ce rapport se trouv
 sous Comptabilité ‣ Rapports ‣ Relevés colombiens ‣ Certificado de Retención
 en ICA.
 
-![Rapport Certificado de Retención en ICA dans Odoo
+![Rapport Certificado de Retención en ICA dans Konvergo ERP
 Comptabilité.](../../../_images/ica-report.png)
 
 ### Certificado de Retención en IVA
@@ -409,7 +416,7 @@ Ce rapport certifie le montant retenu auprès des fournisseurs pour la retenue
 de la TVA. Ce rapport se trouve sous Comptabilité ‣ Rapports ‣ Relevés
 colombiens ‣ Certificado de Retención en IVA.
 
-![Rapport Certificado de Retención en IVA dans Odoo
+![Rapport Certificado de Retención en IVA dans Konvergo ERP
 Comptabilité.](../../../_images/iva-report.png)
 
 ### Certificado de Retención en la Fuente
@@ -418,7 +425,7 @@ Ce certificat est délivré aux partenaires pour la retenue à la source qu’il
 ont effectuée. Le rapport se trouve sous Comptabilité ‣ Rapports ‣ Relevés
 colombiens ‣ Certificado de Retención en Fuente.
 
-![Rapport Certificado de Retención en Fuente dans Odoo
+![Rapport Certificado de Retención en Fuente dans Konvergo ERP
 Comptabilité.](../../../_images/fuente-report.png)
 
   *[DIAN]: Dirección de Impuestos y Aduanas Nacionales

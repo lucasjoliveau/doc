@@ -2,49 +2,53 @@
 
 ##  Licencias 
 
-  * [ Licencias ](legal/licenses.html#licenses)
+  * [ Licencias ](legal/licenses#licenses)
 
 ##  Términos y condiciones 
 
 __
 
-##### Odoo Enterprise Agreement
+##### Konvergo ERP Enterprise Agreement
 
-Applies to self-hosting, Odoo.SH and Odoo Cloud.
+Applies to self-hosting, Konvergo ERP.SH and Konvergo ERP Cloud.
 
-[Read](legal/terms/i18n/enterprise_es.html)
-[Inglés](../legal/terms/enterprise.html)
+[Read](legal/terms/i18n/enterprise_es)
+[Inglés](../legal/terms/enterprise)
 
 __
 
-##### Odoo Partnership Agreement
+##### Konvergo ERP Partnership Agreement
 
-[Read](legal/terms/i18n/partnership_es.html)
-[Inglés](legal/terms/partnership.html)
+[Read](legal/terms/i18n/partnership_es)
+[Inglés](legal/terms/partnership)
 
 __
 
 ##### Terms Of Sale
 
-[Read](legal/terms/i18n/terms_of_sale_es.html)
-[Inglés](legal/terms/terms_of_sale.html)
+[Read](legal/terms/i18n/terms_of_sale_es)
+[Inglés](legal/terms/terms_of_sale)
 
-Ver también
-
-[Archive of older
-agreements](https://drive.google.com/open?id=1skSTsdAPOBlaIWi_hUkL3tfaoi8Qdspu)
+<div class="alert alert-go_to">
+<p class="alert-title">
+            Ver también
+            </p>
+<p>
+<a href="https://drive.google.com/open?id=1skSTsdAPOBlaIWi_hUkL3tfaoi8Qdspu" target="_blank">Archive of older agreements</a>
+</p>
+</div>
 
 ##  Other legal references 
 
-  * [Odoo Cloud Service Level Agreement (SLA)](https://www.odoo.com/cloud-sla)
+  * [Konvergo ERP Cloud Service Level Agreement (SLA)](https://www.odoo.com/cloud-sla)
 
-  * [Odoo Cloud Acceptable Use Policy](https://www.odoo.com/acceptable-use)
+  * [Konvergo ERP Cloud Acceptable Use Policy](https://www.odoo.com/acceptable-use)
 
-  * [Odoo SA’s Privacy Policy](https://www.odoo.com/privacy)
+  * [Konvergo ERP SA’s Privacy Policy](https://www.odoo.com/privacy)
 
-  * [Odoo SA’s GDPR Compliance Guide](https://www.odoo.com/gdpr)
+  * [Konvergo ERP SA’s GDPR Compliance Guide](https://www.odoo.com/gdpr)
 
-  * [ Contributor License Agreement ](legal/cla.html#cla)
+  * [ Contributor License Agreement ](legal/cla#cla)
 
-  * [ German Tax Accounting Standards: Odoo’s guide to GoBD Compliance ](applications/finance/accounting/fiscal_localizations/localizations/germany.html#germany-gobd)
+  * [ German Tax Accounting Standards: Konvergo ERP’s guide to GoBD Compliance ](applications/finance/accounting/fiscal_localizations/localizations/germany#germany-gobd)
 

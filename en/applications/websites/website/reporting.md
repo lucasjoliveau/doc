@@ -1,5 +1,5 @@
 # Reporting
 
-  * [Website analytics](reporting/analytics.html)
-  * [Link trackers](reporting/link_tracker.html)
+  * [Website analytics](reporting/analytics)
+  * [Link trackers](reporting/link_tracker)
 

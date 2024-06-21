@@ -1,5 +1,5 @@
 # Upgrades
 
-  * [Upgrade scripts](upgrades/upgrade_scripts.html)
-  * [Upgrade utils](upgrades/upgrade_utils.html)
+  * [Upgrade scripts](upgrades/upgrade_scripts)
+  * [Upgrade utils](upgrades/upgrade_utils)
 

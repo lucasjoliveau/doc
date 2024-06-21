@@ -17,11 +17,10 @@ Le protocole HTTPS repose sur la transmission de certificats TLS/SSL, qui
 permettent de vérifier qu’un fournisseur donné est bien celui qu’il prétend
 être.
 
-Note
-
-Dans cette documentation et dans tout Odoo, le terme « certificat HTTPS » sera
-utilisé pour définir le fait que le certificat SSL est valide et permet une
-connexion HTTPS.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Dans cette documentation et dans tout Konvergo ERP, le terme « certificat HTTPS » sera utilisé pour définir le fait que le certificat <abbr title="Secure Sockets Layer">SSL</abbr> est valide et permet une connexion <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr>.</p>
+</div>
 
 ### Pourquoi est-ce nécessaire ?
 
@@ -43,30 +42,29 @@ le certificat HTTPS si l”IoT box et la base de données sont éligibles.
 > de la base de données ne doit pas être une copie, un doublon, un
 > environnement de simulation ou de développement.
 >
->   2. L’abonnement Odoo doit :
+>   2. L’abonnement Konvergo ERP doit :
 >
 
->>      * Avoir une ligne Abonnement IoT Box.
+>>      * Avoir une ligne **Abonnement IoT Box**.
 
 >>
 
->>      * Le Statut doit être En cours.
+>>      * Le **Statut** doit être **En cours**.
 
 >
 > Si l’abonnement est lié à un utilisateur du portail <https://www.odoo.com>,
 > vérifiez les informations sur la page d’abonnement du portail.
 >
-> ![Les abonnements dans le portail Odoo.com filtrés par "en
+> ![Les abonnements dans le portail Konvergo ERP.com filtrés par "en
 > cours".](../../../../_images/sub-example-in-progress.png)
 >
 > Dans ce cas, les deux abonnements sont considérés comme étant « en cours »,
-> car le filtre Filtrer par: En cours a été utilisé.
+> car le filtre **Filtrer par: En cours** a été utilisé.
 >
-> Note
->
-> Si l’abonnement est en question, contactez le gestionnaire de compte ou le
-> partenaire de la base de données à ce sujet.
->
+> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Si l’abonnement est en question, contactez le gestionnaire de compte ou le partenaire de la base de données à ce sujet.</p>
+</div>
 >
 
 ## Dépannage des erreurs de certificat Hypertext Transfer Protocol Secure
@@ -76,12 +74,10 @@ Si un problème survient au cours du processus de génération ou de réception 
 « certificat HTTPS », un code d’erreur spécifique est indiqué sur la page
 d’accueil de l”IoT box.
 
-Astuce
-
-L’accès à la page d’accueil de l”IoT box permet de vérifier la présence du «
-certificat HTTPS » et de tenter de le générer s’il est manquant. Par
-conséquent, en cas d’erreur sur la page d’accueil de l”IoT, actualisez la page
-d’accueil de l”IoT pour voir si l’erreur disparaît.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>L’accès à la page d’accueil de l”<abbr title="Internet of Things">IoT</abbr> box permet de vérifier la présence du « certificat HTTPS » et de tenter de le générer s’il est manquant. Par conséquent, en cas d’erreur sur la page d’accueil de l”<abbr title="Internet of Things">IoT</abbr>, actualisez la page d’accueil de l”<abbr title="Internet of Things">IoT</abbr> pour voir si l’erreur disparaît.</p>
+</div>
 
 ### `ERR_IOT_HTTPS_CHECK_NO_SERVER`
 
@@ -90,7 +86,7 @@ Motif :
     
 
 La configuration concernant le serveur est manquante. En d’autres termes,
-l’instance Odoo n’est pas connectée à l’IoT Box.
+l’instance Konvergo ERP n’est pas connectée à l’IoT Box.
 
 Solution :
 
@@ -98,9 +94,10 @@ Solution :
 
 Assurez-vous que le serveur est configuré.
 
-Pour plus d'infos
-
-[Connecter une IoT box à Odoo](connect.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="connect">Connecter une IoT box à Konvergo ERP</a></p>
+</div>
 
 ### `ERR_IOT_HTTPS_CHECK_CERT_READ_EXCEPTION`
 
@@ -130,7 +127,7 @@ Solution :
 
 Assurez-vous que les deux valeurs sont configurées comme prévu. Pour les
 modifier, allez à la page d’accueil de l”IoT box et naviguez jusqu’à
-Credential.
+**Credential**.
 
 ### `ERR_IOT_HTTPS_LOAD_REQUEST_EXCEPTION`
 
@@ -151,21 +148,17 @@ l’infrastructure/configuration du réseau :
 >
 >
 
-Note
-
-De plus amples informations concernant l’erreur qui s’est produite peuvent
-être trouvées dans les détails complets de l’exception de la requête, qui se
-trouvent dans les journaux de l”IoT box.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>De plus amples informations concernant l’erreur qui s’est produite peuvent être trouvées dans les détails complets de l’exception de la requête, qui se trouvent dans les journaux de l”<abbr title="Internet of Things">IoT</abbr> box.</p>
+</div>
 
 Solution :
 
-    
-
-Avertissement
-
-Consultez votre administrateur système ou réseau si ce problème survient. Ce
-code d’erreur dépend de l’infrastructure du réseau et dépasse la portée du
-service d’assistance d’Odoo.
+    <div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Consultez votre administrateur système ou réseau si ce problème survient. Ce code d’erreur dépend de l’infrastructure du réseau et dépasse la portée du service d’assistance d’Konvergo ERP.</p>
+</div> 
 
 ### `ERR_IOT_HTTPS_LOAD_REQUEST_STATUS`
 
@@ -218,11 +211,11 @@ certificat : Éligibilité à l’Internet des objets (IoT).
 ## Comment s’assurer que le certificat HTTPS est correct
 
 Si le certificat a été appliqué avec succès, une nouvelle URL HTTPS pour l”IoT
-box se terminant par `.odoo-iot.com` apparaîtra dans la base de données Odoo,
+box se terminant par `.odoo-iot.com` apparaîtra dans la base de données Konvergo ERP,
 à l’intérieur de l’application IoT sur le formulaire de ce périphérique
 spécifique.
 
-![IoT Box sur l'application IoT Odoo avec le domaine .odoo-
+![IoT Box sur l'application IoT Konvergo ERP avec le domaine .odoo-
 iot.com.](../../../../_images/odoo-new-domain.png)
 
 Lors de la navigation vers l”URL dans un navigateur, une connexion sécurisée
@@ -244,7 +237,7 @@ HTTPS.](../../../../_images/status-ok.png)
 ## Problème de Domain Name System (DNS)
 
 Si l”IoT box est accessible à partir de son adresse IP, mais pas à partir du
-domaine attribué par Odoo : `.odoo-iot.com` ; ensuite, il est probable que
+domaine attribué par Konvergo ERP : `.odoo-iot.com` ; ensuite, il est probable que
 l”IoT box rencontre un problème de DNS (système de nom de domaine). Sur
 certains navigateurs, un code d’erreur mentionnant DNS (like
 `DNS_PROBE_FINISHED_NXDOMAIN`) sera affiché.
@@ -275,17 +268,13 @@ Problème DNS dans la navigateur Edge sous Windows 10.
 
   2. Si votre routeur ne le permet pas, il faudra modifier les paramètres DNS de chaque périphérique utilisant [Google DNS](https://developers.google.com/speed/public-dns). Cette opération doit être effectuée sur **chaque** périphérique qui prévoit d’interagir avec l”IoT box (par ex. ordinateur, tablette ou téléphone). Les processus de configuration de chaque périphérique figurent sur le site web du fabricant du périphérique.
 
-Note
-
-Il ne sera probablement pas nécessaire de modifier les paramètres DNS d’autres
-périphériques IoT, tels que les terminaux de paiement, car ils sont déjà
-configurés avec un DNS personnalisé.
-
-Avertissement
-
-Consultez votre administrateur système ou réseau si ce problème survient. Ce
-code d’erreur dépend de l’infrastructure du réseau et dépasse la portée du
-service d’assistance d’Odoo.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Il ne sera probablement pas nécessaire de modifier les paramètres <abbr title="Domain Name System">DNS</abbr> d’autres périphériques <abbr title="Internet of Things">IoT</abbr>, tels que les terminaux de paiement, car ils sont déjà configurés avec un <abbr title="Domain Name System">DNS</abbr> personnalisé.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Consultez votre administrateur système ou réseau si ce problème survient. Ce code d’erreur dépend de l’infrastructure du réseau et dépasse la portée du service d’assistance d’Konvergo ERP.</p>
+</div>
 
   *[HTTPS]: Hypertext Transfer Protocol Secure
   *[TLS]: Transport Layer Security

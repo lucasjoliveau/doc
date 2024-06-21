@@ -14,7 +14,7 @@ y la administración
 Uno de los usos de EDI es que podrá crear facturas y notas de crédito en
 formato electrónico.
 
-Los siguientes formatos, entre otros, son compatibles con Odoo.
+Los siguientes formatos, entre otros, son compatibles con Konvergo ERP.
 
 Nombre de Formato | Aplicación  
 ---|---  
@@ -33,11 +33,10 @@ NLCIUS (Países Bajos) | Para empresas neerlandesas
 EHF 3.0 | Para empresas noruegas  
 Facturación SG BIS 3.0 | Para empresas singapurenses  
 A-NZ BIS Billing 3.0 | Para empresas australianas o neozelandesas  
-  
-Ver también
-
-[Paquetes de localización fiscal](../../fiscal_localizations.html#fiscal-
-localizations-packages)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="../../fiscal_localizations#fiscal-localizations-packages"><span class="std std-ref">Paquetes de localización fiscal</span></a></p>
+</div>
 
 ## Configuración
 
@@ -48,19 +47,19 @@ este diario.
 ![Seleccione el formato EDI que necesita](../../../../_images/formats.png)
 
 Después de que active el formato de facturación electrónica, se generarán los
-documentos XML cuando haga clic en el botón Confirmar que está en los
+documentos XML cuando haga clic en el botón **Confirmar** que está en los
 documentos como facturas, notas de crédito, etc. Podrá encontrar estos
 documentos en la sección de archivos adjuntos o incrustados en el PDF.
 
-Nota
-
-  * Para el formato E-FFF, el archivo xml aparece solo después de generar el PDF (con el botón Imprimir o Enviar e imprimir), ya que el PDF necesita estar insertado en el xml.
-
-  * Todo PDF generado desde Odoo contiene un archivo XML Factur-X (por motivos de interoperabilidad). Para empresas alemanas y francesas, la opción Factur-X (PDF/A-3) también activa las revisiones de validación en la factura y genera un archivo PDF/A-3. Este archivo es necesario para plataformas como Chorus Pro.
-
-  * Los formatos disponibles dependen del país que está registrado en la Información general de la empresa.
-
-  * Odoo es compatible con el formato **Peppol BIS Billing 3.0** que se puede usar a través de puntos de acceso existentes.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><ul>
+<li><p>Para el formato E-FFF, el archivo xml aparece solo después de generar el PDF (con el botón <b>Imprimir</b> o <b>Enviar e imprimir</b>), ya que el PDF necesita estar insertado en el xml.</p></li>
+<li><p>Todo PDF generado desde Konvergo ERP contiene un archivo XML <b>Factur-X</b> (por motivos de interoperabilidad). Para empresas alemanas y francesas, la opción <b>Factur-X (PDF/A-3)</b> también activa las revisiones de validación en la factura y genera un archivo PDF/A-3. Este archivo es necesario para plataformas como Chorus Pro.</p></li>
+<li><p>Los formatos disponibles dependen del país que está registrado en la <b>Información general</b> de la empresa.</p></li>
+<li><p>Konvergo ERP es compatible con el formato <b>Peppol BIS Billing 3.0</b>  que se puede usar a través de puntos de acceso existentes.</p></li>
+</ul>
+</div>
 
   *[EDI]: intercambio electrónico de datos
 

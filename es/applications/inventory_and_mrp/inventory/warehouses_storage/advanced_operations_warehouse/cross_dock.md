@@ -6,13 +6,10 @@ camiones descargan en un área _sin almacenaje intermedio_ con el fin de
 reorganizar productos y cargar otro camión.
 
 ![../../../../../_images/cross1.png](../../../../../_images/cross1.png)
-
-Nota
-
-Para obtener más información sobre cómo organizar su almacén, consulte nuestro
-blog: [¿Qué es cross-docking y es lo que
-necesita?](https://www.odoo.com/blog/business-hacks-1/post/what-is-cross-
-docking-and-is-it-for-me-270)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Para obtener más información sobre cómo organizar su almacén, consulte nuestro blog: <a href="https://www.odoo.com/blog/business-hacks-1/post/what-is-cross-docking-and-is-it-for-me-270">¿Qué es cross-docking y es lo que necesita?</a></p>
+</div>
 
 ## Configuración
 
@@ -20,10 +17,10 @@ En la aplicación _Inventario_ , abra Configuración ‣ Ajustes y active las
 _Rutas multietapa_.
 
 ![../../../../../_images/cross2.png](../../../../../_images/cross2.png)
-
-Nota
-
-Hacer esto también habilitará la función _Ubicaciones de almacenamiento_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Hacer esto también habilitará la función <em>Ubicaciones de almacenamiento</em>.</p>
+</div>
 
 Debe configurar los envíos _entrantes_ y _salientes_ para que funcionen con 2
 pasos. Para adaptar la configuración, vaya a Inventario ‣ Configuración ‣
@@ -47,7 +44,7 @@ quien compra el producto y establezca su precio.
 ![../../../../../_images/cross6.png](../../../../../_images/cross6.png)
 
 Una vez hecho esto, cree una orden de venta para el producto y confírmela.
-Odoo, en automático, creará dos traslados y se vincularán a la orden de venta.
+Konvergo ERP, en automático, creará dos traslados y se vincularán a la orden de venta.
 El primer traslado es de la _ubicación de entrada_ a la _ubicación de salida_
 , el cual corresponde al movimiento del producto en el área de _cross dock_.
 El segundo es la orden de entrega de la _ubicación de salida_ a la _ubicación

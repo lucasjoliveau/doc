@@ -8,10 +8,11 @@ production based on your demand forecast.
 Go to the Manufacturing app ‣ Configuration ‣ Settings and activate the Master
 Production Schedule feature before hitting save.
 
-Tip
-
-In the MPS settings, you can define the time range of your MPS
-(month/week/day) and the number of periods you want to display at all times.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>In the MPS settings, you can define the time range of your MPS (month/week/day)
+and the number of periods you want to display at all times.</p>
+</div>
 
 Now, go to Planning ‣ Master Production Schedule and click on _add a product_.
 You can now define your safety stock target (= the stock you want to have on
@@ -52,7 +53,7 @@ those by clicking on the _Actual Replenishment_ cell.
 
 In case you manually edit the _Suggested Replenishment_ quantity, a small
 cross will appear on the left hand side of the cell. In case you want to go
-back to the automatically computed value given by Odoo, simply click the
+back to the automatically computed value given by Konvergo ERP, simply click the
 cross.
 
 ## Cells color signification

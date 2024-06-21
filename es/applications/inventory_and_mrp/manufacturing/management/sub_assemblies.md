@@ -14,23 +14,23 @@ Para configurar una lista de materiales de varios niveles también debe
 configurar el producto de nivel superior y los productos semielaborados, así
 que el primer paso es crear los productos semielaborados y sus LdM.
 
-Ver también
-
-[Lista de materiales](bill_configuration.html)
-
-![Una lista de materiales para un producto
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="bill_configuration">Lista de materiales</a></p>
+</div> ![Una lista de materiales para un producto
 semielaborado.](../../../../_images/semifinished-product-bom.png)
 
 ## Crear la lista de materiales (LdM) del nivel superior
 
 Tras configurar los productos semielaborados por completo, vaya a Fabricación
-‣ Productos ‣ Productos y cree el producto de nivel superior. Después,
-configure las especificaciones del producto como desee y asegúrese de guardar.
+‣ Productos ‣ Productos y **cree** el producto de nivel superior. Después,
+configure las especificaciones del producto como desee y asegúrese de
+**guardar**.
 
 Una vez que configuró el producto de nivel superior, haga clic en el botón
-inteligente Lista de materiales en el formulario del producto. Luego haga clic
-en crear para elaborar una LdM para el producto de nivel superior y solo
-agregue los productos semielaborados a esa lista junto con cualquier otro
+inteligente **Lista de materiales** en el formulario del producto. Luego haga
+clic en **crear** para elaborar una LdM para el producto de nivel superior y
+solo agregue los productos semielaborados a esa lista junto con cualquier otro
 componente necesario.
 
 ![Una lista de materiales para un producto de nivel superior que incluye un
@@ -41,12 +41,10 @@ componente de subconjunto.](../../../../_images/custom-computer-bom.png)
 Hay varios métodos para gestionar la automatización de órdenes de fabricación
 para productos con listas de materiales de múltiples niveles.
 
-Nota
-
-Los productos semielaborados se utilizan específicamente para gestionar los
-productos que se fabrican con LdM de varios niveles. Si crea una lista de
-materiales solo para organizar componentes o agrupar productos vendibles, es
-una mejor opción usar los [kits](kit_shipping.html).
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Los productos semielaborados se utilizan específicamente para gestionar los productos que se fabrican con LdM de varios niveles. Si crea una lista de materiales solo para organizar componentes o agrupar productos vendibles, es una mejor opción usar los <a href="kit_shipping">kits</a>.</p>
+</div>
 
 Hay dos opciones para activar de forma automática las órdenes de fabricación
 de productos semielaborados después de confirmar una orden de fabricación del
@@ -54,11 +52,12 @@ producto principal:
 
   * **Opción 1 (recomendada):** cree _reglas de reordenamiento_ para los productos semielaborados y establezca las cantidades de existencias mínimas y máximas deseadas en `0`.
 
-Ver también
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="../../purchase/products/reordering">Configurar reglas de reordenamiento</a></p>
+</div>
 
-[Configurar reglas de reordenamiento](../../purchase/products/reordering.html)
-
-  * **Opción 2:** active la opción Reabastecer sobre pedido (MTO) y las rutas de Fabricación en la pestaña Inventario del formulario del producto semielaborado.
+  * **Opción 2:** active la opción **Reabastecer sobre pedido (MTO)** y las rutas de **Fabricación** en la pestaña **Inventario** del formulario del producto semielaborado.
 
 La primera opción es más flexible que la segunda, así que es la más
 recomendada. Las reglas de reordenamiento no vinculan directamente la demanda

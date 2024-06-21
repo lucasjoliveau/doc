@@ -18,14 +18,15 @@ this new income in a deferred revenue account and decide to recognize it on a
 yearly basis. Each year, for the next 5 years, $ 70 will be recognized as
 revenue.
 
-Odoo Accounting handles deferred revenues by spreading them in multiple
+Konvergo ERP Accounting handles deferred revenues by spreading them in multiple
 entries that are automatically created in _draft mode_ and then posted
 periodically.
 
-Note
-
-The server checks once a day if an entry must be posted. It might then take up
-to 24 hours before you see a change from _draft_ to _posted_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The server checks once a day if an entry must be posted. It might then take up to 24 hours before
+you see a change from <em>draft</em> to <em>posted</em>.</p>
+</div>
 
 ## Prerequisites
 
@@ -37,13 +38,11 @@ on the default income account.
 To configure your account in the **Chart of Accounts** , go to Accounting ‣
 Configuration ‣ Chart of Accounts, click on _Create_ , and fill out the form.
 
-![Configuration of a Deferred Revenue Account in Odoo
-Accounting](../../../../_images/deferred_revenues01.png)
-
-Note
-
-This account’s type must be either _Current Liabilities_ or _Non-current
-Liabilities_
+![Configuration of a Deferred Revenue Account in Konvergo ERP
+Accounting](../../../../_images/deferred_revenues01.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This account’s type must be either <em>Current Liabilities</em> or <em>Non-current Liabilities</em></p>
+</div>
 
 ### Post an income to the right account
 
@@ -52,7 +51,7 @@ Liabilities_
 On a draft invoice, select the right account for all the products of which the
 incomes must be deferred.
 
-![Selection of a Deferred Revenue Account on a draft invoice in Odoo
+![Selection of a Deferred Revenue Account on a draft invoice in Konvergo ERP
 Accounting](../../../../_images/deferred_revenues02.png)
 
 #### Choose a different Income Account for specific products
@@ -61,12 +60,11 @@ Start editing the product, go to the _Accounting_ tab, select the right
 **Income Account** , and save.
 
 ![Change of the Income Account for a product in
-Odoo](../../../../_images/deferred_revenues03.png)
-
-Tip
-
-It is possible to automate the creation of revenue entries for these products
-(see: Automate the Deferred Revenues).
+Konvergo ERP](../../../../_images/deferred_revenues03.png) <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>It is possible to automate the creation of revenue entries for these products (see:
+<a href="#automate-the-deferred-revenues">Automate the Deferred Revenues</a>).</p>
+</div>
 
 #### Change the account of a posted journal item
 
@@ -74,7 +72,7 @@ To do so, open your Sales Journal by going to Accounting ‣ Accounting ‣ Sale
 select the journal item you want to modify, click on the account, and select
 the right one.
 
-![Modification of a posted journal item's account in Odoo
+![Modification of a posted journal item's account in Konvergo ERP
 Accounting](../../../../_images/deferred_revenues04.png)
 
 ## Deferred Revenues entries
@@ -92,14 +90,14 @@ Click on **select related purchases** to link an existing journal item to this
 new entry. Some fields are then automatically filled out, and the journal item
 is now listed under the **Related Sales** tab.
 
-![Deferred Revenue entry in Odoo
+![Deferred Revenue entry in Konvergo ERP
 Accounting](../../../../_images/deferred_revenues05.png)
 
 Once done, you can click on _Compute Revenue_ (next to the _Confirm_ button)
 to generate all the values of the **Revenue Board**. This board shows you all
-the entries that Odoo will post to recognize your revenue, and at which date.
+the entries that Konvergo ERP will post to recognize your revenue, and at which date.
 
-![Revenue Board in Odoo
+![Revenue Board in Konvergo ERP
 Accounting](../../../../_images/deferred_revenues06.png)
 
 #### What does “Prorata Temporis” mean?
@@ -127,7 +125,7 @@ the right account (see: Change the account of a posted journal item).
 Then, click on _Action_ , select **Create Deferred Entry** , and fill out the
 form the same way you would do to create a new entry.
 
-![Create Deferred Entry from a journal item in Odoo
+![Create Deferred Entry from a journal item in Konvergo ERP
 Accounting](../../../../_images/deferred_revenues07.png)
 
 ## Deferred Revenue Models
@@ -139,11 +137,12 @@ To create a model, go to Accounting ‣ Configuration ‣ Deferred Revenue Model
 click on _Create_ , and fill out the form the same way you would do to create
 a new entry.
 
-Tip
-
-You can also convert a _confirmed Deferred Revenue entry_ into a model by
-opening it from Accounting ‣ Accounting ‣ Deferred Revenues and then, by
-clicking on the button _Save Model_.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>You can also convert a <em>confirmed Deferred Revenue entry</em> into a model by
+opening it from Accounting ‣ Accounting ‣ Deferred
+Revenues and then, by clicking on the button <em>Save Model</em>.</p>
+</div>
 
 ### Apply a Deferred Revenue Model to a new entry
 
@@ -154,7 +153,7 @@ New buttons with all the models linked to that account appear at the top of
 the form. Clicking on a model button fills out the form according to that
 model.
 
-![Deferred Revenue model button in Odoo
+![Deferred Revenue model button in Konvergo ERP
 Accounting](../../../../_images/deferred_revenues08.png)
 
 ## Automate the Deferred Revenues
@@ -171,18 +170,17 @@ You have three choices for the **Automate Deferred Revenue** field:
 
   3. **Create and validate:** you must also select a Deferred Revenue Model (see: Deferred Revenue Models). Whenever a transaction is posted on the account, a _Deferred Revenues entry_ is created and immediately validated.
 
-![Automate Deferred Revenue on an account in Odoo
-Accounting](../../../../_images/deferred_revenues09.png)
-
-Tip
-
-You can, for example, select this account as the default **Income Account** of
-a product to fully automate its sale. (see: Choose a different Income Account
-for specific products).
-
-See also
-
-  * [Chart of accounts](../get_started/chart_of_accounts.html)
-
-  * [Odoo Academy: Deferred Revenues (Recognition)](https://www.odoo.com/r/EWO)
+![Automate Deferred Revenue on an account in Konvergo ERP
+Accounting](../../../../_images/deferred_revenues09.png) <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>You can, for example, select this account as the default <b>Income Account</b> of a product to fully
+automate its sale. (see: <a href="#choose-a-different-income-account-for-specific-products">Choose a different Income Account for specific products</a>).</p>
+</div>
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../get_started/chart_of_accounts">Chart of accounts</a></p></li>
+<li><p><a href="https://www.odoo.com/r/EWO">Konvergo ERP Academy: Deferred Revenues (Recognition)</a></p></li>
+</ul>
+</div>
 

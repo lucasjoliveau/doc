@@ -6,25 +6,27 @@ aux API officielles des ASPSP dans toute l’Europe sans stocker de données.
 
 ![Logo d'Enable Banking](../../../../../_images/enablebanking.png)
 
-**Odoo** peut être directement synchronisé avec les banques pour accéder à
+**Konvergo ERP** peut être directement synchronisé avec les banques pour accéder à
 toutes les transactions bancaires et les importer automatiquement dans votre
 base de données
 
-Pour plus d'infos
-
-  * [Synchronisation bancaire](../bank_synchronization.html)
-
-  * [Site web Enable Banking](https://enablebanking.com/)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../bank_synchronization">Synchronisation bancaire</a></p></li>
+<li><p><a href="https://enablebanking.com/">Site web Enable Banking</a></p></li>
+</ul>
+</div>
 
 ## Configuration
 
-### Lier des comptes bancaires avec Odoo
+### Lier des comptes bancaires avec Konvergo ERP
 
   1. Lancez la synchronisation en cliquant sur Comptabilité ‣ Configuration ‣ Ajouter un compte bancaire ;
 
   2. Sélectionnez votre banque ;
 
-  3. Assurez-vous de donner votre consentement pour partager vos informations de compte avec Odoo en cliquant sur Poursuivre l’authentification ;
+  3. Assurez-vous de donner votre consentement pour partager vos informations de compte avec Konvergo ERP en cliquant sur **Poursuivre l’authentification** ;
 
 ![Page d'authentification d'Enable
 Banking](../../../../../_images/enablebankingauth.png)

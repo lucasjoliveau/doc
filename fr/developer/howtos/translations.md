@@ -2,10 +2,11 @@
 
 This section explains how to provide translation abilities to your module.
 
-Note
-
-If you want to contribute to the translation of Odoo itself, please refer to
-the [Odoo Wiki page](https://github.com/odoo/odoo/wiki/Translations).
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>If you want to contribute to the translation of Konvergo ERP itself, please refer to the
+<a href="https://github.com/odoo/odoo/wiki/Translations">Konvergo ERP Wiki page</a>.</p>
+</div>
 
 ## Exporting translatable term
 
@@ -23,7 +24,7 @@ Export ‣ Export Translations
 
   * select your module
 
-  * click Export and download the file
+  * click **Export** and download the file
 
 ![../../_images/po-export.png](../../_images/po-export.png)
 
@@ -31,21 +32,22 @@ This gives you a file called `_yourmodule_.pot` which should be moved to the
 `_yourmodule_ /i18n/` directory. The file is a _PO Template_ which simply
 lists translatable strings and from which actual translations (PO files) can
 be created. PO files can be created using
-[msginit](https://www.gnu.org/software/gettext/manual/gettext.html#Creating),
+[msginit](https://www.gnu.org/software/gettext/manual/gettext#Creating),
 with a dedicated translation tool like [POEdit](https://poedit.net/) or by
 simply copying the template to a new file called `_language_.po`. Translation
 files should be put in `_yourmodule_ /i18n/`, next to `_yourmodule_.pot`, and
-will be automatically loaded by Odoo when the corresponding language is
+will be automatically loaded by Konvergo ERP when the corresponding language is
 installed (via Settings ‣ Translations ‣ Languages)
 
-Note
-
-translations for all loaded languages are also installed or updated when
-installing or updating a module
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>translations for all loaded languages are also installed or updated
+when installing or updating a module</p>
+</div>
 
 ## Implicit exports
 
-Odoo automatically exports translatable strings from « data »-type content:
+Konvergo ERP automatically exports translatable strings from « data »-type content:
 
   * in non-QWeb views, all text nodes are exported as well as the content of the `string`, `help`, `sum`, `confirm` and `placeholder` attributes
 
@@ -64,7 +66,7 @@ Odoo automatically exports translatable strings from « data »-type content:
 ## Explicit exports
 
 When it comes to more « imperative » situations in Python code or Javascript
-code, Odoo cannot automatically export translatable terms so they must be
+code, Konvergo ERP cannot automatically export translatable terms so they must be
 marked explicitly for export. This is done by wrapping a literal string in a
 function call.
 
@@ -82,39 +84,38 @@ In JavaScript, the wrapping function is generally `odoo.web._t()`:
     title = _t("Bank Accounts");
     
 
-Avertissement
-
-Only literal strings can be marked for exports, not expressions or variables.
-For situations where strings are formatted, this means the format string must
-be marked, not the formatted string
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Only literal strings can be marked for exports, not expressions or
+variables. For situations where strings are formatted, this means the
+format string must be marked, not the formatted string</p>
+</div>
 
 The lazy version of `_` and `_t` is `odoo._lt()` in python and
 `odoo.web._lt()` in javascript. The translation lookup is executed only at
 rendering and can be used to declare translatable properties in class methods
 of global variables.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Translations of a module are <b>not</b> exposed to the front end by default and
+thus are not accessible from JavaScript. In order to achieve that, the
+module name has to be either prefixed with <code>website</code> (just like
+<code>website_sale</code>, <code>website_event</code> etc.) or explicitly register by implementing
+<code>_get_translation_frontend_modules_name()</code> for the <code>ir.http</code> model.</p>
+<p>This could look like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">models</span>
 
-Translations of a module are **not** exposed to the front end by default and
-thus are not accessible from JavaScript. In order to achieve that, the module
-name has to be either prefixed with `website` (just like `website_sale`,
-`website_event` etc.) or explicitly register by implementing
-`_get_translation_frontend_modules_name()` for the `ir.http` model.
+<span class="k">class</span> <span class="nc">IrHttp</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">AbstractModel</span><span class="p">):</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="s1">'ir.http'</span>
 
-This could look like the following:
-
-    
-    
-    from odoo import models
-    
-    class IrHttp(models.AbstractModel):
-        _inherit = 'ir.http'
-    
-        @classmethod
-        def _get_translation_frontend_modules_name(cls):
-            modules = super()._get_translation_frontend_modules_name()
-            return modules + ['your_module']
-    
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_get_translation_frontend_modules_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="n">modules</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_get_translation_frontend_modules_name</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">modules</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'your_module'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 
 ### Variables
 

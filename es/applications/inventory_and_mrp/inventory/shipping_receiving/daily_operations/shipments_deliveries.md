@@ -9,16 +9,18 @@ entre otros. Puede configurar diferentes ajustes para las recepciones y las
 entregas, pues no es necesario que estén configuradas para tener el mismo
 número de pasos.
 
-Ver también
-
-  * [Uso de rutas (tutorial en eLearning)](https://www.odoo.com/slides/slide/using-routes-1018)
-
-  * [Reglas push y pull (tutorial en eLearning)](https://www.odoo.com/slides/slide/push-pull-rules-1024)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="https://www.odoo.com/slides/slide/using-routes-1018">Uso de rutas (tutorial en eLearning)</a></p></li>
+<li><p><a href="https://www.odoo.com/slides/slide/push-pull-rules-1024">Reglas push y pull (tutorial en eLearning)</a></p></li>
+</ul>
+</div>
 
 ## Elegir el flujo de inventario adecuado para gestionar recepciones y
 entregas
 
-De forma predeterminada, Odoo gestiona el envío y la recepción de tres formas
+De forma predeterminada, Konvergo ERP gestiona el envío y la recepción de tres formas
 distintas: en uno, dos o tres pasos. La configuración más simple es en un
 paso, que es la estándar. Cada paso adicional necesario para un almacén para
 procesar la recepción o el envío agregará una capa adicional de operaciones a
@@ -44,9 +46,10 @@ siguientes:
 
   * Los artículos se reciben desde o se envían directamente a las existencias.
 
-Ver también
-
-[Procesar recepciones y entregas en un paso](receipts_delivery_one_step.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="receipts_delivery_one_step">Procesar recepciones y entregas en un paso</a></p>
+</div>
 
 ### Flujo de dos pasos
 
@@ -63,10 +66,10 @@ siguientes:
 
   * Los productos recibidos no estarán disponibles para fabricar, enviar, etc., hasta que se transfieran a las existencias.
 
-Ver también
-
-[Procesar recepciones y entregas en dos
-pasos](receipts_delivery_two_steps.html#inventory-receipts-delivery-two-steps)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="receipts_delivery_two_steps#inventory-receipts-delivery-two-steps"><span class="std std-ref">Procesar recepciones y entregas en dos pasos</span></a></p>
+</div>
 
 ### Flujo de tres pasos
 
@@ -85,11 +88,13 @@ siguientes:
 
   * Los productos recibidos no estarán disponibles para fabricar, enviar, etc., hasta que se transfieran a las existencias.
 
-Ver también
-
-  * [Procesar recepciones en tres pasos](receipts_three_steps.html#inventory-receipts-three-steps)
-
-  * [Procesar entregas en tres pasos](delivery_three_steps.html#inventory-delivery-three-steps)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="receipts_three_steps#inventory-receipts-three-steps"><span class="std std-ref">Procesar recepciones en tres pasos</span></a></p></li>
+<li><p><a href="delivery_three_steps#inventory-delivery-three-steps"><span class="std std-ref">Procesar entregas en tres pasos</span></a></p></li>
+</ul>
+</div>
 
   *[PEPS]: Primeras entradas, primeras salidas
   *[UEPS]: Últimas entradas, primeras salidas

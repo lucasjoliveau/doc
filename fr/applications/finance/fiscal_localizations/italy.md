@@ -2,13 +2,13 @@
 
 ## Configuration
 
-[Installez](../../general/apps_modules.html#general-install) les modules
+[Installez](../../general/apps_modules#general-install) les modules
 suivants pour obtenir toutes les fonctionnalités de la localisation italienne
 :
 
 Nom | Nom technique | Description  
 ---|---|---  
-Italie - Comptabilité | `l10n_it` | Le [package de localisation fiscale](../fiscal_localizations.html#fiscal-localizations-packages) par défaut  
+Italie - Comptabilité | `l10n_it` | Le [package de localisation fiscale](../fiscal_localizations#fiscal-localizations-packages) par défaut  
 Italie - Facturation électronique | `l10n_it_edi` | Implémentation de la facturation électronique  
 Italie - Facturation électronique | `l10n_it_edi_withholding` | Retenue sur facture électronique  
 Italie - Rapports comptables | `l10n_it_reports` | Rapports nationaux  
@@ -20,16 +20,16 @@ Italy - Stock DDT | `l10n_it_stock_ddt` | Documents de transport - Documento di 
 La configuration des informations relatives à l’entreprise vous permet de
 correctement configurer la base de données de la comptabilité. Pour ajouter
 des informations, allez aux Paramètres ‣ Paramètres généraux et dans la
-section Sociétés, cliquez sur Mettre à jour les informations. Complétez alors
-les champs suivants :
+section **Sociétés** , cliquez sur **Mettre à jour les informations**.
+Complétez alors les champs suivants :
 
-  * Adresse : l’adresse de la société ;
+  * **Adresse** : l’adresse de la société ;
 
-  * TVA : le numéro de TVA de la société ;
+  * **TVA** : le numéro de TVA de la société ;
 
-  * Codice Fiscale : le code fiscal de la société ;
+  * **Codice Fiscale** : le code fiscal de la société ;
 
-  * Système fiscal : le système fiscal de la société ;
+  * **Système fiscal** : le système fiscal de la société ;
 
 ![Informations à fournir sur la société](../../../_images/italy-company.png)
 
@@ -41,9 +41,9 @@ documents doivent être au format XML et officiellement validés par le système
 avant d’être livrés.
 
 Pour pouvoir recevoir des factures et des notifications, le service SdI doit
-être informé que les fichiers de l’utilisateur doivent être envoyés à **Odoo**
-et traités en son nom. Pour ce faire, vous devez configurer le Codice
-Destinatario d’Odoo sur le portail de l”**Agenzia Delle Entrate**.
+être informé que les fichiers de l’utilisateur doivent être envoyés à **Konvergo ERP**
+et traités en son nom. Pour ce faire, vous devez configurer le **Codice
+Destinatario** d’Konvergo ERP sur le portail de l”**Agenzia Delle Entrate**.
 
   1. Allez à <https://ivaservizi.agenziaentrate.gov.it/portale/> et connectez-vous ;
 
@@ -51,44 +51,41 @@ Destinatario d’Odoo sur le portail de l”**Agenzia Delle Entrate**.
 
   3. Définissez l’utilisateur comme Partie légale pour le numéro de TVA dont vous souhaitez configurer l’adresse électronique ;
 
-  4. Dans Servizi Disponibili ‣ Fatturazione Elettronica ‣ Registrazione dell’indirizzo telematico dove ricevere tutte le fatture elettroniche, saisissez le Codice Destinatario d’Odoo `K95IV18` et confirmez.
+  4. Dans Servizi Disponibili ‣ Fatturazione Elettronica ‣ Registrazione dell’indirizzo telematico dove ricevere tutte le fatture elettroniche, saisissez le **Codice Destinatario** d’Konvergo ERP `K95IV18` et confirmez.
 
 #### Échange de données informatisé (EDI)
 
-Odoo utilise le format EDI **FatturaPA** pour la localisation italienne, qui
+Konvergo ERP utilise le format EDI **FatturaPA** pour la localisation italienne, qui
 est activé sur les journaux par défaut lors de l’installation. Lorsque
 l”**autorisation de traitement des fichiers** a été accordée, toutes les
 **factures clients** et **factures fournisseurs** sont envoyées
 automatiquement.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Vous pouvez <a href="../accounting/customer_invoices/electronic_invoicing#e-invoicing-configuration"><span class="std std-ref">activer la facturation électronique pour d’autres journaux de ventes et d’achats</span></a> que ceux par défaut.</p>
+</div>
 
-Vous pouvez [activer la facturation électronique pour d’autres journaux de
-ventes et
-d’achats](../accounting/customer_invoices/electronic_invoicing.html#e-invoicing-
-configuration) que ceux par défaut.
-
-Vous pouvez vérifier le statut actuel d’une facture dans le champ Facturation
-électronique. Le fichier XML se trouve dans le **chatter** de la facture.
+Vous pouvez vérifier le statut actuel d’une facture dans le champ
+**Facturation électronique**. Le fichier XML se trouve dans le **chatter** de
+la facture.
 
 ![Statut de la facturation électronique \(en attente de
-confirmation\)](../../../_images/italy-test.png)
+confirmation\)](../../../_images/italy-test.png) <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../accounting/customer_invoices/electronic_invoicing">Facturation électronique (EDI)</a></p>
+</div>
 
-Pour plus d'infos
+### Autorisation de traitement des fichiers (Konvergo ERP)
 
-[Facturation électronique
-(EDI)](../accounting/customer_invoices/electronic_invoicing.html)
-
-### Autorisation de traitement des fichiers (Odoo)
-
-Puisque les fichiers sont transmis par le serveur d’Odoo avant d’être envoyés
-au service SdI ou reçus par votre base de données, vous devez autoriser Odoo à
+Puisque les fichiers sont transmis par le serveur d’Konvergo ERP avant d’être envoyés
+au service SdI ou reçus par votre base de données, vous devez autoriser Konvergo ERP à
 traiter vos fichiers à partir de votre base de données. Pour ce faire, allez à
 Comptabilité ‣ Configuration ‣ Paramètres ‣ Facturation électronique.
 
 **Trois** modes sont disponibles :
 
-Démo
+**Démo**
 
     
 
@@ -97,7 +94,7 @@ gouvernement. Dans ce mode, les factures doivent être téléchargées
 _manuellement_ au format XML et chargées sur le site web de l”**Agenzia delle
 Entrate**.
 
-Test (expérimental)
+**Test (expérimental)**
 
     
 
@@ -106,7 +103,7 @@ test) mis à disposition par l”**Agenzia delle Entrate**. L’enregistrement d
 cette modification permet à toutes les sociétés de la base de données
 d’utiliser cette configuration.
 
-Officiel
+**Officiel**
 
     
 
@@ -114,33 +111,23 @@ Il s’agit d’un mode de production qui envoie vos factures directement à
 l”**Agenzia delle Entrate**.
 
 Une fois que vous avez sélectionnez un mode, vous devez accepter les
-**conditions générales** en cochant Autoriser Odoo à traiter les factures, et
-puis en cliquant sur Enregistrer. Vous pouvez désormais enregistrer vos
-transactions dans Odoo Comptabilité.
+**conditions générales** en cochant **Autoriser Konvergo ERP à traiter les factures**
+, et puis en cliquant sur **Enregistrer**. Vous pouvez désormais enregistrer
+vos transactions dans Konvergo ERP Comptabilité.
 
-Avertissement
-
-La sélection du mode Test (expérimental) ou Officiel est **irréversible**. Une
-fois en mode Officiel, il n’est plus possible de sélectionner les modes Test
-(expérimental) ou Démo et il en va de même pour le mode Test (expérimental).
-Nous recommandons de créer une base de données séparée pour les tests
-uniquement.
-
-Note
-
-En mode Test (Expérimental), toutes les factures envoyées _doivent_ avoir un
-partenaire qui utilise l’un des des faux Codice Destinatario fournis par
-l”**Agenzia Delle Entrate** : `0803HR0` \- `N8MIMM9` \- `X9XX79Z`. Tout Codice
-Destinario de production réel de vos clients ne sera pas reconnu comme étant
-valide lors des tests.
-
-![Les options de la facturation électronique en
-Italie](../../../_images/italy-edi.png)
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>La sélection du mode <b>Test (expérimental)</b> ou <b>Officiel</b> est <b>irréversible</b>. Une fois en mode <b>Officiel</b>, il n’est plus possible de sélectionner les modes <b>Test (expérimental)</b> ou <b>Démo</b> et il en va de même pour le mode <b>Test (expérimental)</b>. Nous recommandons de créer une base de données séparée pour les tests uniquement.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>En mode <b>Test (Expérimental)</b>, toutes les factures envoyées <em>doivent</em> avoir un partenaire qui utilise l’un des des faux <b>Codice Destinatario</b> fournis par l”<b>Agenzia Delle Entrate</b> : <code>0803HR0</code> - <code>N8MIMM9</code> - <code>X9XX79Z</code>. Tout <b>Codice Destinario</b> de production réel de vos clients ne sera pas reconnu comme étant valide lors des tests.</p>
+</div> ![Les options de la facturation
+électronique en Italie](../../../_images/italy-edi.png)
 
 ## Configuration des taxes
 
 De nombreuses fonctionnalités de facturation électronique sont mises en œuvre
-en utilisant le système fiscal d’Odoo. Il est donc très important que les
+en utilisant le système fiscal d’Konvergo ERP. Il est donc très important que les
 taxes sont correctement configurées afin de générer des factures correctement
 et de gérer d’autres cas d’utilisation de facturation. Par exemple, des
 configurations spécifiques sont requises pour le type de taxes
@@ -162,46 +149,40 @@ la facture utilisent une taxe d”**autoliquidation**. La localisation
 au sein de l’UE à utiliser comme référence (`0% UE`, libellé de facture
 `00eu`), qui peut être trouvé dans Comptabilité ‣ Configuration ‣ Taxes. Les
 exportations sont exonérées de la TVA et, par conséquent, les taxes
-d”**autoliquidation** exigent que la case Exonération de la taxe (Italie) soit
-cochée et que le type d”Exonération et la Référence de la loi soient
-complétés.
+d”**autoliquidation** exigent que la case **Exonération de la taxe (Italie)**
+soit cochée et que le type d”**Exonération** et la **Référence de la loi**
+soient complétés.
 
 ![Paramètres de l'autoliquidation externe](../../../_images/italy-tax.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Si vous devez utiliser un autre type d”<b>Exonération</b>, cliquez sur Action ‣ Dupliquer dans le menu de taxe pour créer une copie d’une taxe similaire existante. Sélectionnez ensuite une autre <b>Exonération</b> et cliquez sur <b>Enregistrer</b>. Répétez ce processus autant de fois que nécessaire pour les différents types d”<b>Exonération</b>.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p><b>Renommez</b> vos taxes dans le champ <b>Nom</b> en fonction de leur <b>Exonération</b> pour les identifier facilement.</p>
+</div>
 
-Note
+Sur votre facture, sélectionnez la taxe correspondante dans le champ
+**Taxes**. Vous pouvez trouver les **informations supplémentaires** suivantes
+en ouvrant le fichier **XML** de la facture émise :
 
-Si vous devez utiliser un autre type d”Exonération, cliquez sur Action ‣
-Dupliquer dans le menu de taxe pour créer une copie d’une taxe similaire
-existante. Sélectionnez ensuite une autre Exonération et cliquez sur
-Enregistrer. Répétez ce processus autant de fois que nécessaire pour les
-différents types d”Exonération.
+  * **Adresse SdI (Codice Destinatario)** : doit être complétée pour les pays **UE** et les pays **non UE** ;
 
-Astuce
+  * **ID pays** : doit contenir le pays du fournisseur étranger dans le code ISO (Alpha-2) à deux lettres (par ex. `IT` pour “Italie”) ;
 
-**Renommez** vos taxes dans le champ Nom en fonction de leur Exonération pour
-les identifier facilement.
+  * **CAP** : doit être complété par `00000` ;
 
-Sur votre facture, sélectionnez la taxe correspondante dans le champ Taxes.
-Vous pouvez trouver les **informations supplémentaires** suivantes en ouvrant
-le fichier **XML** de la facture émise :
+  * **Partita Iva** (**numéro de TVA**) : doit contenir le numéro de **TVA** des **entreprises européennes** et `OO99999999999` (double **lettre** “O”, pas “zéro”) pour les **entreprises non européennes**. Dans le cas de clients particuliers sans numéro de **TVA** , utilisez `0000000` ;
 
-  * Adresse SdI (Codice Destinatario) : doit être complétée pour les pays **UE** et les pays **non UE** ;
+  * **Code fiscal** : pour les entités étrangères qui n’ont pas de **Codice Fiscale** , tout identifiant reconnaissable est valide.
 
-  * ID pays : doit contenir le pays du fournisseur étranger dans le code ISO (Alpha-2) à deux lettres (par ex. `IT` pour “Italie”) ;
-
-  * CAP : doit être complété par `00000` ;
-
-  * Partita Iva (**numéro de TVA**) : doit contenir le numéro de **TVA** des **entreprises européennes** et `OO99999999999` (double **lettre** “O”, pas “zéro”) pour les **entreprises non européennes**. Dans le cas de clients particuliers sans numéro de **TVA** , utilisez `0000000` ;
-
-  * Code fiscal : pour les entités étrangères qui n’ont pas de **Codice Fiscale** , tout identifiant reconnaissable est valide.
-
-Note
-
-Odoo ne prend pas en charge l’envoi des fichiers XML modifiés par
-l’utilisateur.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Konvergo ERP ne prend pas en charge l’envoi des fichiers XML modifiés par l’utilisateur.</p>
+</div>
 
 Pour les **factures** , plusieurs configurations sont techniquement
-identifiées par un code Tipo Documento :
+identifiées par un code **Tipo Documento** :
 
   * `TD02` \- Acomptes ;
 
@@ -217,11 +198,11 @@ identifiées par un code Tipo Documento :
 
 > Acomptes.
 >
-> Les factures d”**acompte** sont importées/exportées avec un code Tipo
-> Documento `TDO2` différent de celui des factures normales. Lors de
+> Les factures d”**acompte** sont importées/exportées avec un code **Tipo
+> Documento** `TDO2` différent de celui des factures normales. Lors de
 > l’importation de la facture, une facture fournisseur normale est créée.
 >
-> Odoo exporte les écritures en tant que `TD02` si les conditions suivantes
+> Konvergo ERP exporte les écritures en tant que `TD02` si les conditions suivantes
 > sont réunies :
 
   * Est une facture ;
@@ -237,17 +218,17 @@ d’information sont moindres.
 
 Pour qu’une facture **simplifiée** soit établie, elle doit inclure :
 
-  * Référence de la facture client : séquence de numérotation **unique** **sans écarts** ;
+  * Référence de la **facture client** : séquence de numérotation **unique** **sans écarts** ;
 
-  * Date de facturation : **date** d’émission de la facture ;
+  * **Date de facturation** : **date** d’émission de la facture ;
 
-  * Informations relatives à la société : les coordonnées complètes du **vendeur** (numéro TVA/TIN, nom, adresse complète) dans Paramètres généraux ‣ Sociétés (section) ;
+  * **Informations relatives à la société** : les coordonnées complètes du **vendeur** (numéro TVA/TIN, nom, adresse complète) dans Paramètres généraux ‣ Sociétés (section) ;
 
-  * TVA : le numéro TVA/TIN de l”**acheteur** (sur leur profil) ;
+  * **TVA** : le numéro TVA/TIN de l”**acheteur** (sur leur profil) ;
 
-  * Total : le **montant** total (TVA comprise) de la facture.
+  * **Total** : le **montant** total (TVA comprise) de la facture.
 
-Dans l”EDI, Odoo exporte les factures en format simplifié si :
+Dans l”EDI, Konvergo ERP exporte les factures en format simplifié si :
 
   * Il s’agit d’une transaction **nationale** (c’est-à-dire, le partenaire se situe en Italie) ;
 
@@ -257,12 +238,10 @@ Dans l”EDI, Odoo exporte les factures en format simplifié si :
 
   * Le montant total toutes taxes comprises est **inférieur** à **400 €**.
 
-Note
-
-Le seuil de 400€ a été défini dans [le décret du 10 mai 2019 publié dans la
-Gazzetta
-Ufficiale](https://www.gazzettaufficiale.it/eli/id/2019/05/24/19A03271/sg).
-Nous vous recommandons de vérifier le montant officiel actuel.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Le seuil de 400€ a été défini dans <a href="https://www.gazzettaufficiale.it/eli/id/2019/05/24/19A03271/sg">le décret du 10 mai 2019 publié dans la Gazzetta Ufficiale</a>. Nous vous recommandons de vérifier le montant officiel actuel.</p>
+</div>
 
 Factures différées.
 
@@ -283,13 +262,12 @@ livraison est accompagnée d’un **Documento di Transporto (DDT)** ou **Documen
 de transport**. La facture différée **doit** indiquer les détails de toutes
 les informations du **DDT** pour une meilleure traçabilité.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>La facturation électronique des factures différées nécessite le <a href="#italy-modules"><span class="std std-ref">module</span></a> <code>l10n_it_stock_ddt</code>. Dans ce cas, un <b>Tipo Documento</b> <code>TD24</code> dédié est utilisé dans la facturation électronique.</p>
+</div>
 
-La facturation électronique des factures différées nécessite le module
-`l10n_it_stock_ddt`. Dans ce cas, un Tipo Documento `TD24` dédié est utilisé
-dans la facturation électronique.
-
-Odoo exporte les écritures en tant que `TD24` si les conditions suivantes sont
+Konvergo ERP exporte les écritures en tant que `TD24` si les conditions suivantes sont
 réunies :
 
   * Est une facture ;
@@ -303,27 +281,28 @@ pays membres de l’UE (ou des services des pays non membres de l’UE) doivent
 envoyer les informations qui figurent dans la facture fournisseur à
 l”**Agenzia delle Entrate**. Cela vous permet de compléter les informations
 relatives à la TVA sur votre facture et de l’envoyer. Le vendeur doit être
-défini comme Cedente/Prestatore et l’acheteur comme Cessionario/Committente.
-Figurant sur le document **XML** de la facture fournisseur, les identifiants
-du fournisseur s’affichent comme Cedente/Prestatore et les identifiants de
-votre société comme Cessionario/Committente.
+défini comme **Cedente/Prestatore** et l’acheteur comme
+**Cessionario/Committente**. Figurant sur le document **XML** de la facture
+fournisseur, les identifiants du fournisseur s’affichent comme
+**Cedente/Prestatore** et les identifiants de votre société comme
+**Cessionario/Committente**.
 
-Note
-
-Les factures en auto-facturation ou les intégrations fiscales de factures
-doivent être émises et envoyées à l’administration fiscale.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Les factures en auto-facturation ou les intégrations fiscales de factures doivent être émises et envoyées à l’administration fiscale.</p>
+</div>
 
 Lorsque vous complétez les taxes sur une facture fournisseur, il est possible
 de sélectionner des taxes d”**autoliquidation**. Celles-ci sont
 automatiquement activées dans la position fiscale italienne. En allant à
 Comptabilité ‣ Configuration ‣ Taxes, les champs d’application de la taxe sur
-les Marchandises et les Services de `10%` et `22%` sont activés et
+les **Marchandises** et les **Services** de `10%` et `22%` sont activés et
 préconfigurés avec les bonnes grilles fiscales. Celles-ci sont configurées
 automatiquement pour assurer l’enregistrement correct des écritures comptables
 et l’affichage de la déclaration d’impôt.
 
 Pour les **factures fournisseurs** , **trois** types de configurations sont
-techniquement identifiés par un code intitulé Tipo Documento :
+techniquement identifiés par un code intitulé **Tipo Documento** :
 
   * `TD17` \- Acheter des services à des pays **membres de l’UE** et **non membres de l’UE** ;
 
@@ -350,7 +329,7 @@ techniquement identifiés par un code intitulé Tipo Documento :
 >
 
 >
-> Odoo exporte une transaction en tant que `TD17` si les conditions suivantes
+> Konvergo ERP exporte une transaction en tant que `TD17` si les conditions suivantes
 > sont réunies :
 >
 >   * Est une facture fournisseur ;
@@ -358,8 +337,8 @@ techniquement identifiés par un code intitulé Tipo Documento :
 >   * Au moins une taxe sur les lignes de facture cible les grilles fiscales
 > VJ ;
 >
->   * Toutes les lignes de facture ont des Services comme **produits** ou une
-> taxe dont le **champ d’application** inclut les Services.
+>   * Toutes les lignes de facture ont des **Services** comme **produits** ou
+> une taxe dont le **champ d’application** inclut les **Services**.
 >
 >
 
@@ -368,14 +347,14 @@ Acheter des **marchandises** à des pays **membres de l’UE** :
 Les factures émises au sein de l’UE respectent un **format standard** , donc
 une seule intégration de la facture existante est requise.
 
-Odoo exporte une transaction en tant que `TD18` si les conditions suivantes
+Konvergo ERP exporte une transaction en tant que `TD18` si les conditions suivantes
 sont réunies :
 
   * Est une facture fournisseur ;
 
   * Au moins une taxe sur les lignes de facture cible les grilles fiscales VJ ;
 
-  * Toutes les lignes de la facture ont des **produits** consommables ou une taxe dont le **champ d’application** inclut les Marchandises.
+  * Toutes les lignes de la facture ont des **produits** **consommables** ou une taxe dont le **champ d’application** inclut les **Marchandises**.
 
 Acheter des **marchandises** à un fournisseur **étranger** , mais les
 **marchandises** se trouvent déjà en **Italie** dans un **dépôt TVA** :
@@ -384,28 +363,26 @@ Acheter des **marchandises** à un fournisseur **étranger** , mais les
 
   * Non UE : l” _acheteur_ s’envoie _lui-même_ une facture (c’est-à-dire **auto-facturation**).
 
-Odoo exporte une écriture en tant que `TD19` si les conditions suivantes sont
+Konvergo ERP exporte une écriture en tant que `TD19` si les conditions suivantes sont
 réunies :
 
   * Est une facture fournisseur ;
 
   * Au moins une taxe sur les lignes de facture cible la grille fiscale VJ3 ;
 
-  * Toutes les lignes de la facture sont des produits consommables ou une taxe dont le champ d’application inclut des marchandises.
+  * Toutes les lignes de la facture sont des produits **consommables** ou une taxe dont le champ d’application inclut des **marchandises**.
 
-Avertissement
-
-Odoo n’offre pas les exigences de [Conservazione
-Sostitutiva](https://www.agid.gov.it/index.php/it/piattaforme/conservazione).
-D’autres fournisseurs et l”**Agenzia delle Entrate** fournissent un stockage
-gratuit et certifié pour répondre aux conditions requises.
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../accounting/customer_invoices/electronic_invoicing">Facturation électronique (EDI)</a></p>
+</div>0
 
 ### Autoliquidation interne
 
-Avertissement
-
-Pour l’instant, Odoo ne prend pas en charge les processus d”**autoliquidation
-interne** nationaux.
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../accounting/customer_invoices/electronic_invoicing">Facturation électronique (EDI)</a></p>
+</div>1
 
 ### Grilles fiscales d’autoliquidation
 
@@ -424,23 +401,23 @@ grids.png)
 Saint-Marin et l’Italie ont conclu des accords spéciaux relatifs aux
 opérations de facturation électronique. Les **factures** suivent donc les
 règles d”**autoliquidation** habituelles. Des exigences supplémentaires ne
-sont pas appliquées par Odoo. Cependant, l’utilisateur est invité par
+sont pas appliquées par Konvergo ERP. Cependant, l’utilisateur est invité par
 l”**État** à :
 
-  * Sélectionner une taxe avec l’option Est exonéré de la taxe (Italie) cochée et l”Exonération définie sur `N3.3` ;
+  * Sélectionner une taxe avec l’option **Est exonéré de la taxe (Italie)** cochée et l”**Exonération** définie sur `N3.3` ;
 
-  * Utiliser le Codice Destinatario générique du SdI `2R4GT08`. La facture est ensuite envoyée par une agence spécialisée à Saint-Marin à l’entreprise concernée.
+  * Utiliser le **Codice Destinatario** générique du SdI `2R4GT08`. La facture est ensuite envoyée par une agence spécialisée à Saint-Marin à l’entreprise concernée.
 
 ### Factures fournisseurs
 
 Lorsqu’une entreprise italienne reçoit une **facture papier** du Saint-Marin,
 elle **doit** soumettre cette facture à l”**Agenzia delle Entrate** en
-indiquant la valeur spéciale `TD28` dans le champ Tipo Documento de la facture
-électronique.
+indiquant la valeur spéciale `TD28` dans le champ **Tipo Documento** de la
+facture électronique.
 
 `TD28`
 
-Odoo exporte une écriture en tant que `TD28` si les conditions suivantes sont
+Konvergo ERP exporte une écriture en tant que `TD28` si les conditions suivantes sont
 réunies :
 
   * Est une facture fournisseur ;
@@ -451,13 +428,10 @@ réunies :
 
 ## Pubblica amministrazione (B2G)
 
-Avertissement
-
-Odoo n’envoie **pas** directement les factures au gouvernement puisqu’elles
-doivent être signées. Si le codice destinatario comporte 6 chiffres, elle
-n’est pas envoyé automatiquement à l’administration publique (PA), mais vous
-pouvez télécharger le XML, le signer avec un programme externe et l’envoyer au
-portail.
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../accounting/customer_invoices/electronic_invoicing">Facturation électronique (EDI)</a></p>
+</div>2
 
 ### Signature numérique qualifiée
 
@@ -489,11 +463,10 @@ contient un CIG et un CUP. Pour chaque facture électronique, il est
 unique permettant au SdI de délivrer correctement la facture électronique à
 l’agence destinataire.
 
-Note
-
-  * Le Codice Unico di Progetto) et le CIG doivent être inclus dans l’un des blocs d’information **2.1.2** (DatiOrdineAcquisto), **2.1.3** (Dati Contratto), **2.1.4** (DatiConvenzione), **2.1.5** (Date Ricezione) ou **2.1.6** (Dati Fatture Collegate). Ceux-ci correspondent aux éléments CodiceCUP et CodiceCIG du fichier **XML** de la facture électronique, dont le tableau est accessible sur le [site web du gouvernement](http://www.fatturapa.gov.it/).
-
-  * Le CUU doit être inclus dans la facture électronique correspondant à l’élément **1.1.4** (CodiceDestinario).
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../accounting/customer_invoices/electronic_invoicing">Facturation électronique (EDI)</a></p>
+</div>3
 
   *[SdI]: Sistema di Interscambio
   *[EDI]: Échange de données informatisé

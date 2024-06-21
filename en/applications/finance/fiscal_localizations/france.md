@@ -11,8 +11,8 @@ transmit this file upon request by the tax authorities for audit purposes.
 
 ### FEC Import
 
-To make the onboarding of new users easier, Odoo Enterprise’s French [fiscal
-localization package](../fiscal_localizations.html#fiscal-localizations-
+To make the onboarding of new users easier, Konvergo ERP Enterprise’s French [fiscal
+localization package](../fiscal_localizations#fiscal-localizations-
 packages) includes the **FEC Import** feature (module name:
 `l10n_fr_fec_import`), which enables the import of existing FEC files from
 older software.
@@ -23,25 +23,26 @@ Accounting Import, enable **FEC Import** , and _Save_.
 Next, go to Accounting ‣ Configuration ‣ FEC Import, upload your FEC file, and
 click on _Import_.
 
-Note
-
-Importing FEC files from different year takes no particular action or
-computation.
-
-Should multiple files contain any “Reports à Nouveaux” (RAN) with the starting
-balance of the year, you might need to cancel those entries in the User
-Interface. Odoo makes those entries (RAN) useless.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><div class="line-block">
+<div class="line">Importing FEC files from different year takes no particular action or computation.</div>
+<div class="line">Should multiple files contain any “Reports à Nouveaux” (RAN) with the starting balance of the
+year, you might need to cancel those entries in the User Interface. Konvergo ERP makes those entries
+(RAN) useless.</div>
+</div>
+</div>
 
 #### File formats
 
 FEC files can only be in CSV format, as the XML format is not supported.
 
-Note
-
-The FEC CSV file has a plain text format representing a data table, with the
-first line being a header and defining the list of fields for each entry, and
-each following line representing one accounting entry, in no predetermined
-order.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The FEC CSV file has a plain text format representing a data table, with the first line being a
+header and defining the list of fields for each entry, and each following line representing one
+accounting entry, in no predetermined order.</p>
+</div>
 
 Our module expects the files to meet the following technical specifications:
 
@@ -107,20 +108,20 @@ the field `CompteNum`.
 Should a similar account code already be present in the system, the existing
 one is used instead of creating a new one.
 
-Accounts in Odoo generally have a number of digits that are default for the
+Accounts in Konvergo ERP generally have a number of digits that are default for the
 fiscal localization. As the FEC module is related to the French localization,
 the default number of relevant digits is 6.
 
 This means that the account codes the trailing zeroes are right-trimmed, and
 that the comparison between the account codes in the FEC file and the ones
-already existing in Odoo is performed only on the first six digits of the
+already existing in Konvergo ERP is performed only on the first six digits of the
 codes.
 
-Example
-
-The account code `65800000` in the file is matched against an existing
-`658000` account in Odoo, and that account is used instead of creating a new
-one.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>The account code <code>65800000</code> in the file is matched against an existing <code>658000</code> account in Konvergo ERP,
+and that account is used instead of creating a new one.</p>
+</div>
 
 ##### Reconcilable flag
 
@@ -128,12 +129,12 @@ An account is technically flagged as _reconcilable_ if the first line in which
 it appears has the `EcritureLet` field filled out, as this flag means that the
 accounting entry is going to be reconciled with another one.
 
-Note
-
-In case the line somehow has this field not filled out, but the entry still
-has to be reconciled with a payment that hasn’t yet been recorded, this isn’t
-a problem anyway; the account is flagged as reconcilable as soon as the import
-of the move lines requires it.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>In case the line somehow has this field not filled out, but the entry still has to be reconciled
+with a payment that hasn’t yet been recorded, this isn’t a problem anyway; the account is
+flagged as reconcilable as soon as the import of the move lines requires it.</p>
+</div>
 
 ##### Account type and Templates matching
 
@@ -145,20 +146,53 @@ Account templates. Also, the _reconcile_ flag is also computed this way.
 The match is done with the left-most digits, starting by using all digits,
 then 3, then 2.
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><table class="table docutils">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+<col style="width: 20%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Code</p></th>
+<th class="head"><p>Full comparison</p></th>
+<th class="head"><p>3-digits comparison</p></th>
+<th class="head"><p>2-digits comparison</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Template</p></td>
+<td><p><code>400000</code></p></td>
+<td><p><code>400000</code></p></td>
+<td><p><code>400</code></p></td>
+<td><p><code>40</code></p></td>
+</tr>
+<tr class="row-odd"><td><p>CompteNum</p></td>
+<td><p><code>40100000</code></p></td>
+<td><p><code>40100000</code></p></td>
+<td><p><code>401</code></p></td>
+<td><p><code>40</code></p></td>
+</tr>
+<tr class="row-even"><td><p><b>Result</b></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Match <b>found</b></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 
-Name | Code | Full comparison | 3-digits comparison | 2-digits comparison  
----|---|---|---|---  
-Template | `400000` | `400000` | `400` | `40`  
-CompteNum | `40100000` | `40100000` | `401` | `40`  
-**Result** |  |  |  | Match **found**  
-  
 The type of the account is then flagged as _payable_ and _reconcilable_ as per
 the account template.
 
 ##### Journals
 
-Journals are also checked against those already existing in Odoo to avoid
+Journals are also checked against those already existing in Konvergo ERP to avoid
 duplicates, also in the case of multiple FEC files imports.
 
 Should a similar journal code already be present in the system, the existing
@@ -166,9 +200,10 @@ one is used instead of creating a new one.
 
 New journals have their name prefixed by the string `FEC-`.
 
-Example
-
-`ACHATS` -> `FEC-ACHATS`
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p><code>ACHATS</code> -&gt; <code>FEC-ACHATS</code></p>
+</div>
 
 The journals are _not_ archived, the user is entitled to handle them as he
 wishes.
@@ -196,40 +231,64 @@ Purchase refund journal items are debit/credit inverted.
 
   * `general`: for everything else.
 
-Note
-
-  * A minimum of three moves is necessary for journal type identification.
-
-  * A threshold of 70% of moves must correspond to a criteria for a journal type to be determined.
-
-Example
-
-Suppose we are analyzing the moves that share a certain `journal_id`.
-
-Moves | Count | Percentage  
----|---|---  
-that have a sale account line and no purchase account line | 0 | 0  
-that have a purchase account line and no sale account line | 1 | 25%  
-that have a liquidity account line | 3 | **75%**  
-**Total** | 4 | 100%  
-  
-The journal `type` would be `bank`, because the bank moves percentage (75%)
-exceeds the threshold (70%).
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>A minimum of three moves is necessary for journal type identification.</p></li>
+<li><p>A threshold of 70% of moves must correspond to a criteria for a journal type to be determined.</p></li>
+</ul>
+</div> <div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Suppose we are analyzing the moves that share a certain <code>journal_id</code>.</p>
+<table class="table docutils">
+<colgroup>
+<col style="width: 76%"/>
+<col style="width: 9%"/>
+<col style="width: 15%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Moves</p></th>
+<th class="head"><p>Count</p></th>
+<th class="head"><p>Percentage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>that have a sale account line and no purchase account line</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>that have a purchase account line and no sale account line</p></td>
+<td><p>1</p></td>
+<td><p>25%</p></td>
+</tr>
+<tr class="row-even"><td><p>that have a liquidity account line</p></td>
+<td><p>3</p></td>
+<td><p><b>75%</b></p></td>
+</tr>
+<tr class="row-odd"><td><p><b>Total</b></p></td>
+<td><p>4</p></td>
+<td><p>100%</p></td>
+</tr>
+</tbody>
+</table>
+<p>The journal <code>type</code> would be <code>bank</code>, because the bank moves percentage (75%) exceeds the threshold
+(70%).</p>
+</div>
 
 ##### Partners
 
 Each partner keeps its `Reference` from the field `CompAuxNum`.
 
-Note
-
-These fields are searchable, in line with former FEC imports on the accounting
-expert’s side for fiscal/audit purposes.
-
-Tip
-
-Users can merge partners with the Data Cleaning App, where Vendors and
-Customers or similar partner entries may be merged by the user, with
-assistance from the system that groups them by similar entries.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>These fields are searchable, in line with former FEC imports on the accounting expert’s side for
+fiscal/audit purposes.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Users can merge partners with the Data Cleaning App, where Vendors and Customers or similar
+partner entries may be merged by the user, with assistance from the system that groups them by
+similar entries.</p>
+</div>
 
 ##### Moves
 
@@ -263,9 +322,12 @@ One last attempt is made, grouping all lines from the same journal and date
 (sum(credit) - sum(debit) = 0), then each different combination of journal and
 date creates a new move.
 
-Example
-
-`ACH` \+ `2021/05/01` –> new move on journal `ACH` with name `20210501`.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The FEC CSV file has a plain text format representing a data table, with the first line being a
+header and defining the list of fields for each entry, and each following line representing one
+accounting entry, in no predetermined order.</p>
+</div>0
 
 Should this attempt fail, the user is prompted an error message with all the
 move lines that are supposedly unbalanced.
@@ -279,20 +341,21 @@ _receivable_.
 ### Export
 
 If you have installed the French [fiscal localization
-package](../fiscal_localizations.html#fiscal-localizations-packages), you
+package](../fiscal_localizations#fiscal-localizations-packages), you
 should be able to download the FEC. To do so, go to Accounting ‣ Reporting ‣
 France ‣ FEC.
 
-Tip
-
-If you do not see the submenu **FEC** , go to Apps, remove the _Apps_ filter,
-then search for the module named **France-FEC** and make sure it is installed.
-
-See also
-
-  * [Official Technical Specification (fr)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027804775)
-
-  * [Test-Compta-Demat (Official FEC Testing tool)](https://github.com/DGFiP/Test-Compta-Demat)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The FEC CSV file has a plain text format representing a data table, with the first line being a
+header and defining the list of fields for each entry, and each following line representing one
+accounting entry, in no predetermined order.</p>
+</div>1 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The FEC CSV file has a plain text format representing a data table, with the first line being a
+header and defining the list of fields for each entry, and each following line representing one
+accounting entry, in no predetermined order.</p>
+</div>2
 
 ## French Accounting Reports
 
@@ -305,17 +368,17 @@ accounting reports specific to France:
 
   * Plan de Taxes France
 
-## Get the VAT anti-fraud certification with Odoo
+## Get the VAT anti-fraud certification with Konvergo ERP
 
 As of January 1st 2018, a new anti-fraud legislation comes into effect in
 France and DOM-TOM. This new legislation stipulates certain criteria
 concerning the inalterability, security, storage and archiving of sales data.
-These legal requirements are implemented in Odoo, version 9 onward, through a
+These legal requirements are implemented in Konvergo ERP, version 9 onward, through a
 module and a certificate of conformity to download.
 
 ### Is my company required to use anti-fraud software?
 
-Your company is required to use an anti-fraud cash register software like Odoo
+Your company is required to use an anti-fraud cash register software like Konvergo ERP
 (CGI art. 286, I. 3° bis) if:
 
   * You are taxable (not VAT exempt) in France or any DOM-TOM,
@@ -325,35 +388,34 @@ Your company is required to use an anti-fraud cash register software like Odoo
 This rule applies to any company size. Auto-entrepreneurs are exempted from
 VAT and therefore are not affected.
 
-### Get certified with Odoo
+### Get certified with Konvergo ERP
 
-Getting compliant with Odoo is very easy.
+Getting compliant with Konvergo ERP is very easy.
 
 Your company is requested by the tax administration to deliver a certificate
 of conformity testifying that your software complies with the anti-fraud
-legislation. This certificate is granted by Odoo SA to Odoo Enterprise users
+legislation. This certificate is granted by Konvergo ERP SA to Konvergo ERP Enterprise users
 [here](https://www.odoo.com/my/contract/french-certification/). If you use
-Odoo Community, you should [upgrade to Odoo
-Enterprise](../../../administration/on_premise/community_to_enterprise.html)
-or contact your Odoo service provider.
+Konvergo ERP Community, you should [upgrade to Konvergo ERP
+Enterprise](../../../administration/on_premise/community_to_enterprise)
+or contact your Konvergo ERP service provider.
 
 In case of non-conformity, your company risks a fine of €7,500.
 
 To get the certification, just follow the following steps:
 
-  * If you use **Odoo Point of Sale** , [install](../../general/apps_modules.html#general-install) the **France - VAT Anti-Fraud Certification for Point of Sale (CGI 286 I-3 bis)** module by going to Apps, removing the _Apps_ filter, then searching for _l10n_fr_pos_cert_ , and installing the module.
+  * If you use **Konvergo ERP Point of Sale** , [install](../../general/apps_modules#general-install) the **France - VAT Anti-Fraud Certification for Point of Sale (CGI 286 I-3 bis)** module by going to Apps, removing the _Apps_ filter, then searching for _l10n_fr_pos_cert_ , and installing the module.
 
   * Make sure a country is set on your company, otherwise your entries won’t be encrypted for the inalterability check. To edit your company’s data, go to Settings ‣ Users & Companies ‣ Companies. Select a country from the list; Do not create a new country.
 
-  * Download the mandatory certificate of conformity delivered by Odoo SA [here](https://www.odoo.com/my/contract/french-certification/).
+  * Download the mandatory certificate of conformity delivered by Konvergo ERP SA [here](https://www.odoo.com/my/contract/french-certification/).
 
-Note
-
-  * To install the module in any system created before December 18th 2017, you should update the modules list. To do so, activate the [developer mode](../../general/developer_mode.html#developer-mode). Then go to the _Apps_ menu and press _Update Modules List_ in the top-menu.
-
-  * In case you run Odoo on-premise, you need to update your installation and restart your server beforehand.
-
-  * If you have installed the initial version of the anti-fraud module (prior to December 18th 2017), you need to update it. The module’s name was _France - Accounting - Certified CGI 286 I-3 bis_. After an update of the modules list, search for the updated module in _Apps_ , select it and click _Upgrade_. Finally, make sure the following module _l10n_fr_sale_closing_ is installed.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The FEC CSV file has a plain text format representing a data table, with the first line being a
+header and defining the list of fields for each entry, and each following line representing one
+accounting entry, in no predetermined order.</p>
+</div>3
 
 ### Anti-fraud features
 
@@ -371,10 +433,12 @@ All the possible ways to cancel and modify key data of paid POS orders,
 confirmed invoices and journal entries are deactivated, if the company is
 located in France or in any DOM-TOM.
 
-Note
-
-If you run a multi-companies environment, only the documents of such companies
-are impacted.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The FEC CSV file has a plain text format representing a data table, with the first line being a
+header and defining the list of fields for each entry, and each following line representing one
+accounting entry, in no predetermined order.</p>
+</div>4
 
 #### Security
 
@@ -403,44 +467,39 @@ recorded in the system.
 Closings can be found in the _French Statements_ menu of Point of Sale,
 Invoicing and Accounting apps.
 
-Note
-
-  * Closings compute the totals for journal entries of sales journals (Journal Type = Sales).
-
-  * For multi-companies environments, such closings are performed by company.
-
-  * POS orders are posted as journal entries at the closing of the POS session. Closing a POS session can be done anytime. To prompt users to do it on a daily basis, the module prevents from resuming a session opened more than 24 hours ago. Such a session must be closed before selling again.
-
-  * A period’s total is computed from all the journal entries posted after the previous closing of the same type, regardless of their posting date. If you record a new sales transaction for a period already closed, it will be counted in the very next closing.
-
-Tip
-
-  * For test & audit purposes such closings can be manually generated in the [developer mode](../../general/developer_mode.html#developer-mode).
-
-  * Then go to Settings ‣ Technical ‣ Automation ‣ Scheduled Actions.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The FEC CSV file has a plain text format representing a data table, with the first line being a
+header and defining the list of fields for each entry, and each following line representing one
+accounting entry, in no predetermined order.</p>
+</div>5 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The FEC CSV file has a plain text format representing a data table, with the first line being a
+header and defining the list of fields for each entry, and each following line representing one
+accounting entry, in no predetermined order.</p>
+</div>6
 
 ### Responsibilities
 
 Do not uninstall the module! If you do so, the hashes will be reset and none
 of your past data will be longer guaranteed as being inalterable.
 
-Users remain responsible for their Odoo instance and must use it with due
+Users remain responsible for their Konvergo ERP instance and must use it with due
 diligence. It is not permitted to modify the source code which guarantees the
 inalterability of data.
 
-Odoo absolves itself of all and any responsibility in case of changes in the
-module’s functions caused by 3rd party applications not certified by Odoo.
+Konvergo ERP absolves itself of all and any responsibility in case of changes in the
+module’s functions caused by 3rd party applications not certified by Konvergo ERP.
 
 ### More Information
 
 You can find more information about this legislation in the following official
 documents.
 
-See also
-
-  * [Frequently Asked Questions](https://www.economie.gouv.fr/files/files/directions_services/dgfip/controle_fiscal/actualites_reponses/logiciels_de_caisse.pdf)
-
-  * [Official Statement](http://bofip.impots.gouv.fr/bofip/10691-PGP.html?identifiant=BOI-TVA-DECLA-30-10-30-20160803)
-
-  * [Item 88 of Finance Law 2016](https://www.legifrance.gouv.fr/affichTexteArticle.do?idArticle=JORFARTI000031732968&categorieLien=id&cidTexte=JORFTEXT000031732865)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The FEC CSV file has a plain text format representing a data table, with the first line being a
+header and defining the list of fields for each entry, and each following line representing one
+accounting entry, in no predetermined order.</p>
+</div>7
 

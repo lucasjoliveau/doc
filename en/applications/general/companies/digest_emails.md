@@ -5,7 +5,8 @@ organization that include high-level information about how the business is
 performing.
 
 To start sending digest emails, begin by navigating to Settings app ‣
-Statistics section, activate the Digest Emails feature, and click Save.
+Statistics section, activate the **Digest Emails** feature, and click
+**Save**.
 
 ![Digest Emails section inside General Settings.](../../../_images/digest-
 email-settings.png)
@@ -22,230 +23,227 @@ A variety of settings can be configured for digest emails, such as:
 
   * Adding additional KPIs (_Studio_ app required)
 
-Note
-
-By default, the Digest Email feature is enabled. Your Odoo Periodic Digest
-serves as the primary template, which includes all KPI measurements across the
-Odoo database, and is sent daily to administrators.
-
-Warning
-
-When creating duplicates of databases that have sending capabilities (not
-testing-mode), the digest emails continue to send from the duplicate database,
-unless deactivated.
-
-To deactivate the digest email, navigate to Settings ‣ Statistics section.
-Then, deactivate the Digest Emails feature, by un-ticking the checkbox, and
-clicking Save. See the section on Deactivate digest email.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>By default, the <b>Digest Email</b> feature is enabled. <b>Your Konvergo ERP Periodic
+Digest</b> serves as the primary template, which includes all <abbr title="key performance indicator">KPI</abbr> measurements across the Konvergo ERP database, and is sent daily to administrators.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When creating duplicates of databases that have sending capabilities (not testing-mode), the
+digest emails continue to send from the duplicate database, unless deactivated.</p>
+<p>To deactivate the digest email, navigate to Settings ‣ Statistics section.
+Then, deactivate the <b>Digest Emails</b> feature, by un-ticking the checkbox, and clicking
+<b>Save</b>. See the section on <a href="#digest-emails-deactivate"><span class="std std-ref">Deactivate digest email</span></a>.</p>
+</div>
 
 ## Customize default digest email
 
-To customize the default digest email (_Your Odoo Periodic Digest_), go to
-Settings app ‣ Statistics section ‣ Digest Email field. Then, select Your Odoo
-Periodic Digest, and click on the ↗️ (External link) icon, next to the drop-
-down menu selection.
+To customize the default digest email (_Your Konvergo ERP Periodic Digest_), go to
+Settings app ‣ Statistics section ‣ Digest Email field. Then, select **Your
+Konvergo ERP Periodic Digest** , and click on the **↗️ (External link)** icon, next to
+the drop-down menu selection.
 
 A pop-up window appears, and presents a variety of editable settings, which
 include:
 
-  * Digest Name: the name of the digest email.
+  * **Digest Name** : the name of the digest email.
 
-  * Periodicity: control how often digest emails are sent (Daily, Weekly, Monthly, or Quarterly).
+  * **Periodicity** : control how often digest emails are sent (**Daily** , **Weekly** , **Monthly** , or **Quarterly**).
 
-  * Next Send Date: the date on which the digest email will be sent again.
+  * **Next Send Date** : the date on which the digest email will be sent again.
 
-  * KPIs tab: check/uncheck each calculated KPI that appears in digest emails. A ticked box indicates an active KPI in the digest email. See the section on KPIs.
+  * **KPIs** tab: check/uncheck each calculated KPI that appears in digest emails. A ticked box indicates an active KPI in the digest email. See the section on KPIs.
 
-  * Recipients tab: add/remove users who receive the digest emails. See the section on Recipients.
+  * **Recipients** tab: add/remove users who receive the digest emails. See the section on Recipients.
 
-Note
-
-The KPIs can be customized using Odoo _Studio_. Additional costs to the
-database subscription are incurred should _Studio_ need to be installed. See
-this section on Custom KPIs with Odoo Studio.
-
-![Customize default Digest Email settings and custom
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The <abbr title="key performance indicators">KPIs</abbr> can be customized using Konvergo ERP <em>Studio</em>. Additional
+costs to the database subscription are incurred should <em>Studio</em> need to be installed. See this
+section on <a href="#digest-emails-custom-kpi"><span class="std std-ref">Custom KPIs with Konvergo ERP Studio</span></a>.</p>
+</div> ![Customize default Digest Email settings and custom
 KPIs.](../../../_images/periodic-digest.png)
 
 ## Deactivate digest email
 
 To manually deactivate an individual digest email, first navigate to Settings
-app ‣ Statistics section, and click Configure Digest Emails. Then, select the
-desired digest email from the list that should be deactivated.
+app ‣ Statistics section, and click **Configure Digest Emails**. Then, select
+the desired digest email from the list that should be deactivated.
 
-Next, click DEACTIVATE FOR EVERYONE to deactivate the digest email for
-everyone, or UNSUBSCRIBE ME to remove the logged in user from the mailing
-list. These buttons are located in the top menu, just above the Digest Name.
+Next, click **DEACTIVATE FOR EVERYONE** to deactivate the digest email for
+everyone, or **UNSUBSCRIBE ME** to remove the logged in user from the mailing
+list. These buttons are located in the top menu, just above the **Digest
+Name**.
 
 ## Manually send digest email
 
 To manually send a digest email, first navigate to Settings app ‣ Statistics
-section, and click Configure Digest Emails. Then, select the desired digest
-email, and click SEND NOW. This button is located in the top menu, just above
-the Digest Name.
+section, and click **Configure Digest Emails**. Then, select the desired
+digest email, and click **SEND NOW**. This button is located in the top menu,
+just above the **Digest Name**.
 
 ## KPIs
 
-Pre-configured KPIs can be added to the digest email from the KPIs tab of the
-digest email template form.
+Pre-configured KPIs can be added to the digest email from the **KPIs** tab of
+the digest email template form.
 
-First, navigate to Settings app ‣ Statistics section, and click Configure
-Digest Emails.
+First, navigate to Settings app ‣ Statistics section, and click **Configure
+Digest Emails**.
 
-Then, select the desired digest email, and open the KPIs tab.
+Then, select the desired digest email, and open the **KPIs** tab.
 
 To add a KPI to the digest email, tick the checkbox next to the desired KPI.
-After all KPIs are added (or deselected), click Save.
+After all KPIs are added (or deselected), click **Save**.
 
-The following KPIs are available in the KPIs tab on a digest email template
-form out-of-box in Odoo:
+The following KPIs are available in the **KPIs** tab on a digest email
+template form out-of-box in Konvergo ERP:
 
 ![KPIs listed in the out-of-box digest email.](../../../_images/oob-kpis.png)
 
-General
+**General**
 
     
 
-  * Connected Users
+  * **Connected Users**
 
-  * Messages
+  * **Messages**
 
-Project
-
-    
-
-  * Open Tasks
-
-Recruitment
+**Project**
 
     
 
-  * Employees
+  * **Open Tasks**
 
-CRM
-
-    
-
-  * New Leads/Opportunities
-
-  * Opportunities Won
-
-Sales
+**Recruitment**
 
     
 
-  * All Sales
+  * **Employees**
 
-  * eCommerce Sales
-
-Point of Sale
+**CRM**
 
     
 
-  * POS Sales
+  * **New Leads/Opportunities**
 
-Live Chat
+  * **Opportunities Won**
 
-    
-
-  * % of Happiness
-
-  * Conversations handled
-
-  * Time to answer (sec)
-
-Helpdesk
+**Sales**
 
     
 
-  * Tickets Closed
+  * **All Sales**
 
-Invoicing
+  * **eCommerce Sales**
+
+**Point of Sale**
 
     
 
-  * Revenue
+  * **POS Sales**
 
-  * Banks and Cash Moves
+**Live Chat**
+
+    
+
+  * **% of Happiness**
+
+  * **Conversations handled**
+
+  * **Time to answer (sec)**
+
+**Helpdesk**
+
+    
+
+  * **Tickets Closed**
+
+**Invoicing**
+
+    
+
+  * **Revenue**
+
+  * **Banks and Cash Moves**
 
 ## Recipients
 
-Digest email recipients are added from the Recipients tab of the digest email
-template form.
+Digest email recipients are added from the **Recipients** tab of the digest
+email template form.
 
 To add a recipient, navigate to Settings app ‣ Statistics section, and click
-Configure Digest Emails. Then, select the desired digest email, and open the
-Recipients tab.
+**Configure Digest Emails**. Then, select the desired digest email, and open
+the **Recipients** tab.
 
-To add a recipient, click Add a line, and an Add Recipients pop-up window
-appears, with all available users to add as recipients.
+To add a recipient, click **Add a line** , and an **Add Recipients** pop-up
+window appears, with all available users to add as recipients.
 
-From the pop-up window, tick the checkbox next to the Name of the user(s), and
-click the Select button.
+From the pop-up window, tick the checkbox next to the **Name** of the user(s),
+and click the **Select** button.
 
-To remove a user as a recipient, click the ❌ (remove) icon to the far-right of
-the user listed in the Recipients tab.
+To remove a user as a recipient, click the **❌ (remove)** icon to the far-
+right of the user listed in the **Recipients** tab.
 
-Click Save to implement the changes.
+Click **Save** to implement the changes.
 
 ## Create digest emails
 
 To create a new digest email, navigate to Settings app ‣ Statistics section,
-and click Configure Digest Emails. Then, click Create to create a new digest
-email.
+and click **Configure Digest Emails**. Then, click **Create** to create a new
+digest email.
 
 A separate page, with a blank digest email template appears, and presents a
 variety of editable settings, including:
 
-  * Digest Name: the name of the digest email.
+  * **Digest Name** : the name of the digest email.
 
-  * Periodicity: control how often digest emails are sent (Daily, Weekly, Monthly, or Quarterly).
+  * **Periodicity** : control how often digest emails are sent (**Daily** , **Weekly** , **Monthly** , or **Quarterly**).
 
-  * Next Send Date: the date on which the digest email will be sent again.
+  * **Next Send Date** : the date on which the digest email will be sent again.
 
-  * KPIs tab: check/uncheck each calculated KPI that appears in digest emails. A ticked box indicates an active KPI in the digest email. See the section on KPIs.
+  * **KPIs** tab: check/uncheck each calculated KPI that appears in digest emails. A ticked box indicates an active KPI in the digest email. See the section on KPIs.
 
-  * Recipients tab: add/remove users who receive the digest emails. See the section on Recipients.
+  * **Recipients** tab: add/remove users who receive the digest emails. See the section on Recipients.
 
-From there, give the digest email a Digest Name, specify Periodicity, choose
-the desired KPIs, and add Recipients, as needed.
+From there, give the digest email a **Digest Name** , specify **Periodicity**
+, choose the desired KPIs, and add **Recipients** , as needed.
 
-After clicking Save, the new custom digest email is available as a selection
-in the Digest Email field, located in the Settings app ‣ Statistics section.
+After clicking **Save** , the new custom digest email is available as a
+selection in the **Digest Email** field, located in the Settings app ‣
+Statistics section.
 
-## Custom KPIs with Odoo Studio
+## Custom KPIs with Konvergo ERP Studio
 
-The KPIs on a digest email template form, in the KPIs tab, can be customized
-using Odoo _Studio_.
+The KPIs on a digest email template form, in the **KPIs** tab, can be
+customized using Konvergo ERP _Studio_.
 
-Warning
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Additional costs to the database subscription are incurred, should Konvergo ERP <em>Studio</em> need to be
+installed.</p>
+</div>
 
-Additional costs to the database subscription are incurred, should Odoo
-_Studio_ need to be installed.
-
-To begin, click the 🛠️ (tools) icon in the top-right of the screen. This is
-the link to the Odoo _Studio_ application.
+To begin, click the **🛠️ (tools)** icon in the top-right of the screen. This
+is the link to the Konvergo ERP _Studio_ application.
 
 In order to create additional fields, create two fields on the digest object:
 
-  1. Create a boolean field called `kpi_myfield`, and display it in the KPIs tab.
+  1. Create a boolean field called `kpi_myfield`, and display it in the **KPIs** tab.
 
   2. Create a computed field called `kpi_myfield_value` that computes the customized KPI.
 
-  3. Select the KPIs in the KPIs tab.
+  3. Select the KPIs in the **KPIs** tab.
 
-Tip
-
-Here is the [source
-code](https://github.com/odoo/odoo/blob/15.0/addons/digest/models/digest.py)
-for the `digest.py` file, which guides the programmer in the coding of the
-computed field.
-
-See also
-
-Users can also click the Recipients tab, and then the vertical three-dot
-(kebab) menu to edit this view. Either click EDIT LIST VIEW or EDIT FORM VIEW
-to modify this tab.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Here is the <a href="https://github.com/odoo/odoo/blob/15.0/addons/digest/models/digest.py">source code</a> for the <code>digest.py</code>
+file, which guides the programmer in the coding of the computed field.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p>Users can also click the <b>Recipients</b> tab, and then the vertical three-dot
+<b>(kebab)</b> menu to edit this view. Either click <b>EDIT LIST VIEW</b> or
+<b>EDIT FORM VIEW</b> to modify this tab.</p>
+</div>
 
 ### Computed values reference table
 

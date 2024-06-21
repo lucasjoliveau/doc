@@ -1,7 +1,7 @@
 # Diferencia entre lotes y números de serie
 
 Los _lotes_ y _números de serie_ son dos formas diferentes de identificar y
-rastrear los productos en Odoo. Aunque hay similitudes entre estos dos métodos
+rastrear los productos en Konvergo ERP. Aunque hay similitudes entre estos dos métodos
 de rastreos, también hay diferencias muy importantes que afectan las
 recepciones, entregas y reportes de inventario.
 
@@ -13,11 +13,13 @@ Un _número de serie_ es un identificador único que se le asigna a los
 productos o artículos de manera incremental (o secuencial) para distinguirlos
 de otros productos y artículos.
 
-Ver también
-
-  * [Números de lote](lots.html)
-
-  * [Usar números de serie para rastrear productos](serial_numbers.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="lots">Números de lote</a></p></li>
+<li><p><a href="serial_numbers">Usar números de serie para rastrear productos</a></p></li>
+</ul>
+</div>
 
 ## Activar lotes y números de serie
 
@@ -25,8 +27,8 @@ Debe activar la función _Lotes y números de serie_ para poder rastrear
 productos con lotes y números de serie.
 
 Para hacerlo, vaya a Inventario ‣ Configuración ‣ Ajustes, baje a la sección
-Trazabilidad y haga clic en la casilla junto a Número de serie y lote.
-Después, haga clic en Guardar para guardar los cambios.
+**Trazabilidad** y haga clic en la casilla junto a **Número de serie y lote**.
+Después, haga clic en **Guardar** para guardar los cambios.
 
 ![Active las funciones de lote y número de serie desde los ajustes del
 inventario.](../../../../../_images/differences-enabled-setting.png)
@@ -38,10 +40,10 @@ cantidades (como ropa y comida), además de que ayuda a saber de qué grupo
 salió un producto. Esto le ayudará cuando tenga que retirar un producto del
 mercado o al gestionar fechas de caducidad.
 
-Example
-
-![Lote creado con la cantidad de productos en
-él.](../../../../../_images/differences-lot.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><img alt="Lote creado con la cantidad de productos en él." class="align-center" src="../../../../../_images/differences-lot.png"/>
+</div>
 
 Los fabricantes asignan un número de lote a grupos de producto que tienen
 propiedades en común, por lo que es posible que muchos bienes compartan el
@@ -56,10 +58,10 @@ posible identificar el historial de cada artículo conforme se mueve a lo largo
 de la cadena de suministro. Esto puede ser útil para fabricadores que proveen
 servicios posventa a productos que ya vendieron y entregaron.
 
-Example
-
-![Lista de números de serie para
-productos.](../../../../../_images/differences-serial-numbers.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><img alt="Lista de números de serie para productos." class="align-center" src="../../../../../_images/differences-serial-numbers.png"/>
+</div>
 
 Los números de serie pueden contener muchos tipos de caracteres diferentes:
 números, letras, símbolos tipográficos o una mezcla de los tres.
@@ -82,9 +84,9 @@ o números de serie que esos productos tienen asignados.
 
 Para agrupar por lotes o números de serie, primero quite todos los filtros
 automáticos de la barra de búsqueda en la esquina superior derecha. Después,
-haga clic en Agrupar por y seleccione Agregar grupo personalizado, lo que le
-mostrará un menú desplegable desde donde podrá seleccionar un Lote/Número de
-serie. Finalmente, haga clic en Aplicar.
+haga clic en **Agrupar por** y seleccione **Agregar grupo personalizado** , lo
+que le mostrará un menú desplegable desde donde podrá seleccionar un
+**Lote/Número de serie**. Finalmente, haga clic en **Aplicar**.
 
 Al hacer esto se mostrarán todos los lotes o números de serie y de lote
 existentes y puede expandir la vista para mostrar todas las cantidades de
@@ -93,14 +95,8 @@ _no_ se van a volver a usar, debería haber _solo_ un producto por número de
 serie.
 
 ![Página de reportes con listas desplegables de lotes y números de
-serie.](../../../../../_images/differences-tracking.png)
-
-Truco
-
-Para más información sobre números de lote (o de serie) individuales, haga
-clic en la línea de artículo para el lote o número de serie para mostrar el
-formulario de ese número de lote en específico. Cuando esté en el formulario
-haga clic en los botones inteligentes Ubicación y Trazabilidad para ver todas
-las existencias a la mano que usan ese número de serie y todas las operaciones
-que se hacen con es número de serie.
+serie.](../../../../../_images/differences-tracking.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Para más información sobre números de lote (o de serie) individuales, haga clic en la línea de artículo para el lote o número de serie para mostrar el formulario de ese <b>número de lote</b> en específico. Cuando esté en el formulario haga clic en los botones inteligentes <b>Ubicación</b> y <b>Trazabilidad</b> para ver todas las existencias a la mano que usan ese número de serie y todas las operaciones que se hacen con es número de serie.</p>
+</div>
 

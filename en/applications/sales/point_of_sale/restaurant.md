@@ -6,30 +6,31 @@ tasks in such businesses.
 
 Once the POS is set to be used in a restaurant or a bar, you can:
 
-  * [organize your floors and tables to reflect your interior](restaurant/floors_tables.html);
+  * [organize your floors and tables to reflect your interior](restaurant/floors_tables);
 
-  * [take orders](restaurant/floors_tables.html#floors-tables-orders);
+  * [take orders](restaurant/floors_tables#floors-tables-orders);
 
-  * [communicate with the kitchen or the bar through the POS](restaurant/kitchen_printing.html);
+  * [communicate with the kitchen or the bar through the POS](restaurant/kitchen_printing);
 
-  * [print bills in advance and split them](restaurant/bill_printing.html);
+  * [print bills in advance and split them](restaurant/bill_printing);
 
-  * [collect tips](restaurant/tips.html); and
+  * [collect tips](restaurant/tips); and
 
-  * [set different taxes for takeaway food](pricing/fiscal_position.html).
+  * [set different taxes for takeaway food](pricing/fiscal_position).
 
 ## Configuration
 
 To enable the restaurant and bar-specific features, go to Point of Sale ‣
-Configuration ‣ Settings, select the POS, and activate Is a Bar/Restaurant.
+Configuration ‣ Settings, select the POS, and activate **Is a
+Bar/Restaurant**.
 
-These features are displayed in the Restaurant & Bar section.
+These features are displayed in the **Restaurant & Bar** section.
 
 ![restaurant and bar-specific features](../../../_images/restaurant-bar-
 section.png)
 
-  * [Bills](restaurant/bill_printing.html)
-  * [Floors and tables management](restaurant/floors_tables.html)
-  * [Orders printing](restaurant/kitchen_printing.html)
-  * [Tips](restaurant/tips.html)
+  * [Bills](restaurant/bill_printing)
+  * [Floors and tables management](restaurant/floors_tables)
+  * [Orders printing](restaurant/kitchen_printing)
+  * [Tips](restaurant/tips)
 

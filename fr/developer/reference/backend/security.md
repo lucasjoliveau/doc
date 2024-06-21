@@ -1,6 +1,6 @@
-# Security in Odoo
+# Security in Konvergo ERP
 
-Aside from manually managing access using custom code, Odoo provides two main
+Aside from manually managing access using custom code, Konvergo ERP provides two main
 data-driven mechanisms to manage or restrict access to data.
 
 Both mechanisms are linked to specific users through _groups_ : a user belongs
@@ -22,7 +22,7 @@ category_id
 
     
 
-The _module category_ , serves to associate groups with an Odoo App (~a set of
+The _module category_ , serves to associate groups with an Konvergo ERP App (~a set of
 related business models) and convert them into an exclusive selection in the
 user form.
 
@@ -138,7 +138,7 @@ domain_force
 
     
 
-A predicate specified as a [domain](orm.html#reference-orm-domains), the rule
+A predicate specified as a [domain](orm#reference-orm-domains), the rule
 allows the selected operations if the domain matches the record, and forbids
 it otherwise.
 
@@ -148,7 +148,7 @@ The domain is a _python expression_ which can use the following variables:
 
     
 
-Python’s [`time`](https://docs.python.org/3/library/time.html#module-time
+Python’s [`time`](https://docs.python.org/3/library/time#module-time
 "\(disponible dans Python v3.12\)") module.
 
 `user`
@@ -169,7 +169,7 @@ recordset).
     
 
 All the companies to which the current user has access as a list of company
-ids (not a recordset), see [Security rules](../../howtos/company.html#howto-
+ids (not a recordset), see [Security rules](../../howtos/company#howto-
 company-security) for more details.
 
 The `perm__method_` have completely different semantics than for
@@ -206,15 +206,16 @@ and combine:
 
   * The global and group rulesets _intersect_ , which means the first group rule being added to a given global ruleset will restrict access.
 
-Danger
-
-Creating multiple global rules is risky as it’s possible to create non-
-overlapping rulesets, which will remove all access.
+<div class="alert alert-danger">
+<p class="alert-title">
+Danger</p><p>Creating multiple global rules is risky as it’s possible to create
+non-overlapping rulesets, which will remove all access.</p>
+</div>
 
 ## Field Access
 
 An ORM `Field` can have a `groups` attribute providing a list of groups (as a
-comma-separated string of [external identifiers](../../glossary.html#term-
+comma-separated string of [external identifiers](../../glossary#term-
 external-identifiers)).
 
 If the current user is not in one of the listed groups, he will not have
@@ -233,7 +234,7 @@ avoid common mistakes leading to insecure code.
 
 ### Unsafe Public Methods
 
-Any public method can be executed via a [RPC call](../external_api.html#api-
+Any public method can be executed via a [RPC call](../external_api#api-
 external-api-calling-methods) with the chosen parameters. The methods starting
 with a `_` are not callable from an action button or external API.
 
@@ -321,13 +322,13 @@ Here is a memorable example to help you remember what the issue is about (but
 do not copy the code there). Before continuing, please be sure to read the
 online documentation of pyscopg2 to learn of to use it properly:
 
-  * [The problem with query parameters](http://initd.org/psycopg/docs/usage.html#the-problem-with-the-query-parameters)
+  * [The problem with query parameters](http://initd.org/psycopg/docs/usage#the-problem-with-the-query-parameters)
 
-  * [How to pass parameters with psycopg2](http://initd.org/psycopg/docs/usage.html#passing-parameters-to-sql-queries)
+  * [How to pass parameters with psycopg2](http://initd.org/psycopg/docs/usage#passing-parameters-to-sql-queries)
 
-  * [Advanced parameter types](http://initd.org/psycopg/docs/usage.html#adaptation-of-python-values-to-sql-types)
+  * [Advanced parameter types](http://initd.org/psycopg/docs/usage#adaptation-of-python-values-to-sql-types)
 
-  * [Psycopg documentation](https://www.psycopg.org/docs/sql.html)
+  * [Psycopg documentation](https://www.psycopg.org/docs/sql)
 
 ### Unescaped field content
 
@@ -393,10 +394,11 @@ While formatting the template differently would prevent such vulnerabilities.
 
 ### Escaping vs Sanitizing
 
-Important
-
-Escaping is always 100% mandatory when you mix data and code, no matter how
-safe the data
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Escaping is always 100% mandatory when you mix data and code, no matter how
+safe the data</p>
+</div>
 
 **Escaping** converts _TEXT_ to _CODE_. It is absolutely mandatory to do it
 every time you mix _DATA/TEXT_ with _CODE_ (e.g. generating HTML or python

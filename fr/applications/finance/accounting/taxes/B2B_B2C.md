@@ -5,7 +5,7 @@ exprimés avec les taxes incluses dans le prix (par exemple, sur la plupart des
 sites eCommerce). Mais, lorsque vous travaillez dans un environnement B2B, les
 entreprises négocient généralement des prix hors taxes.
 
-Odoo gère facilement les deux cas d’utilisation, tant que vous enregistrez vos
+Konvergo ERP gère facilement les deux cas d’utilisation, tant que vous enregistrez vos
 prix sur le produit hors taxes ou toutes taxes comprises, mais pas les deux en
 même temps. Si vous gérez tous vos prix TTC (ou HT) seulement, vous pouvez
 toujours faire facilement des commandes clients ayant des prix HT (ou TTC) :
@@ -33,27 +33,19 @@ vous aurez des résultats différents pour le prix TTC et le prix HT :
 
   * Toutes taxes comprises : **8,26€ & 9,99€**
 
-Note
-
-Si vous achetez 100 pièces à 10€ TTC, ça devient encore plus compliqué. Vous
-obtiendrez : **1000€ (TTC) = 826,45€ (prix) + 173,55€ (TVA) ** ce qui est très
-différent d’un prix à l’unité de 8,26€ HT.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Si vous achetez 100 pièces à 10€ TTC, ça devient encore plus compliqué. Vous obtiendrez : <a href="#id1"><span class="problematic" id="id2">**</span></a>1000€ (TTC) = 826,45€ (prix) + 173,55€ (TVA) ** ce qui est très différent d’un prix à l’unité de 8,26€ HT.</p>
+</div>
 
 Cette documentation explique comment gérer le cas d’utilisation très
 spécifique où vous devez gérer les deux prix (HT et TTC) sur la fiche du
 produit au sein de la même entreprise.
 
-Note
-
-Sur le plan financier, vous n’avez pas plus de revenus en vendant votre
-produit à 10€ au lieu de 9,99€ (pour une taxe de 21%), parce que votre revenu
-sera exactement le même à 9,99€, seule la taxe est plus élevée de 0,01€. Donc,
-si vous gérez un site d’eCommerce en Belgique, faites une faveur à votre
-client et fixez votre prix à 9,99€ au lieu de 10€. Notez que cela ne
-s’applique pas aux prix de 20€ ou 30€, ni aux autres taux de TVA, ni à une
-quantité >1\. Vous vous rendrez également service puisque vous pouvez tout
-gérer hors taxes, ce qui est moins sujet aux erreurs et plus facile pour vos
-vendeurs.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Sur le plan financier, vous n’avez pas plus de revenus en vendant votre produit à 10€ au lieu de 9,99€ (pour une taxe de 21%), parce que votre revenu sera exactement le même à 9,99€, seule la taxe est plus élevée de 0,01€. Donc, si vous gérez un site d’eCommerce en Belgique, faites une faveur à votre client et fixez votre prix à 9,99€ au lieu de 10€. Notez que cela ne s’applique pas aux prix de 20€ ou 30€, ni aux autres taux de TVA, ni à une quantité &gt;1. Vous vous rendrez également service puisque vous pouvez tout gérer hors taxes, ce qui est moins sujet aux erreurs et plus facile pour vos vendeurs.</p>
+</div>
 
 ## Configuration
 
@@ -62,7 +54,7 @@ vendeurs.
 La meilleure façon d’éviter cette complexité est de choisir une seule façon de
 gérer vos prix et de s’y tenir : prix hors taxes ou prix toutes taxes
 comprises. Définissez lequel sera enregistré par défaut sur la fiche du
-produit (sur la taxe par défaut liée au produit) et laissez Odoo calculer
+produit (sur la taxe par défaut liée au produit) et laissez Konvergo ERP calculer
 l’autre automatiquement, sur la base de la liste des prix et de la position
 fiscale. Négociez vos contrats avec les clients en conséquence. Cette solution
 est prête à l’emploi et vous n’avez aucune configuration spécifique à faire.
@@ -95,11 +87,11 @@ l’application **Site Web**.
 Si vous avez à la fois des prix B2B et B2C sur un seul site web, suivez ces
 instructions :
 
-  1. Activez le [mode développeur](../../../general/developer_mode.html#developer-mode) et allez à Paramètres généraux ‣ Utilisateurs & Sociétés ‣ Groupes.
+  1. Activez le [mode développeur](../../../general/developer_mode#developer-mode) et allez à Paramètres généraux ‣ Utilisateurs & Sociétés ‣ Groupes.
 
   2. Ouvrez soit `Technique / Affichage des taxes B2B` ou `Technique / Affichage des taxes B2C`.
 
-  3. Sous l’onglet Utilisateurs, ajoutez les utilisateurs nécessitant un accès au type de prix. Ajoutez les utilisateurs B2C dans le groupe B2C et les utilisateurs B2B dans le groupe B2B.
+  3. Sous l’onglet **Utilisateurs** , ajoutez les utilisateurs nécessitant un accès au type de prix. Ajoutez les utilisateurs B2C dans le groupe B2C et les utilisateurs B2B dans le groupe B2B.
 
 ### Configurer vos produits
 

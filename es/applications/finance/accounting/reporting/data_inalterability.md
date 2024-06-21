@@ -5,7 +5,7 @@ Las autoridades fiscales de algunos países exigen que las empresas
 que significa que una vez que se registra un asiento, ya no se puede
 modificar.
 
-Para ello, Odoo puede usar el **algoritmo SHA-256** que se encarga de crear
+Para ello, Konvergo ERP puede usar el **algoritmo SHA-256** que se encarga de crear
 una huella digital única denominada hash para cada asiento registrado. El hash
 se genera con los datos más importantes del asiento (los valores
 correspondientes a `fecha`, `journal_id`, `company_id`, `débito`, `crédito`,
@@ -22,29 +22,28 @@ para formar una **cadena de hashes**. Esta se utiliza para garantizar que no
 se agregue un nuevo asiento después de dos asientos registrados, pues se
 rompería la cadena.
 
-Nota
-
-En teoría, los hash generados por el algoritmo SHA-256 no son únicos, ya que
-existe un número finito de valores posibles. Sin embargo, este número es muy
-alto: 2²⁵⁶, es mayor que el número de átomos en el universo conocido. Por eso
-los hash se consideran «únicos».
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>En teoría, los hash generados por el algoritmo SHA-256 no son únicos, ya que existe un número finito de valores posibles. Sin embargo, este número es muy alto: 2²⁵⁶, es mayor que el número de átomos en el universo conocido. Por eso los hash se consideran «únicos».</p>
+</div>
 
 ## Bloquear asientos registrados con hash
 
 Para comenzar a usar la función hash, vaya a Contabilidad ‣ Configuración >
 Diarios. Abra el diario en el que desea activar la función, vaya a la pestaña
-ajustes avanzados y habilite la opción bloquear asientos registrados con hash.
+**ajustes avanzados** y habilite la opción **bloquear asientos registrados con
+hash**.
 
-Advertencia
-
-Una vez que registre un asiento en un diario bloqueado, no podrá deshabilitar
-la función ni editar ningún asiento registrado.
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Una vez que registre un asiento en un diario bloqueado, no podrá deshabilitar la función ni editar ningún asiento registrado.</p>
+</div>
 
 ## Descargar reporte
 
 Para descargar el reporte de comprobación de la inalterabilidad de los datos,
 vaya a Contabilidad ‣ Configuración ‣ Ajustes ‣ Reportes y haga clic en
-Descargar el reporte de comprobación de la inalterabilidad de los datos.
+**Descargar el reporte de comprobación de la inalterabilidad de los datos**.
 
 La primera sección del reporte es un resumen de todos los diarios y su
 configuración. En la columna de comprobación de inalterabilidad puede ver si

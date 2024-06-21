@@ -6,7 +6,7 @@ highly customized interfaces with ease. A client action is typically defined
 by an OWL component; we can also use the web framework and use services, core
 components, hooks,…
 
-  1. Create the [client action](../reference/backend/actions.html#reference-actions-client), don’t forget to make it accessible.
+  1. Create the [client action](../reference/backend/actions#reference-actions-client), don’t forget to make it accessible.
     
         <record model="ir.actions.client" id="my_client_action">
         <field name="name">My Client Action</field>

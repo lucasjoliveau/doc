@@ -10,48 +10,40 @@ datos sobre:
 
   * Devolución de bienes
 
-Nota
-
-Aunque se sigue utilizando el sistema Intrastat, el término Intrastat no se
-emplea en la [última
-legislación](http://data.europa.eu/eli/reg/2019/2152/2022-01-01), en su lugar
-se usa el término _estadísticas del comercio de bienes dentro de la Unión_.
-
-Ver también
-
-Explicación de las estadísticas de Eurostat - Glosario: Intrastat
-<<https://ec.europa.eu/eurostat/statistics-
-explained/index.php?title=Glossary:Intrastat>>`_
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Aunque se sigue utilizando el sistema Intrastat, el término Intrastat no se emplea en la <a href="http://data.europa.eu/eli/reg/2019/2152/2022-01-01">última legislación</a>, en su lugar se usa el término <em>estadísticas del comercio de bienes dentro de la Unión</em>.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>Explicación de las estadísticas de Eurostat - Glosario: Intrastat &lt;<a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Intrastat">https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Intrastat</a>&gt;`_</p>
+</div>
 
 ## Configuración general
 
 Active el reporte Intrastat en Contabilidad ‣ Configuración ‣ Ajustes.
-Seleccione Intrastat en la sección Facturas de clientes y, por último,
-Guardar.
+Seleccione **Intrastat** en la sección **Facturas de clientes** y, por último,
+**Guardar**.
 
 ### Códigos predeterminados de transacción: facturación y reembolsos
 
 Puede establecer un código de transacción predeterminado para todas las
 transacciones de factura y reembolso. Para hacer esto, vaya a Contabilidad ‣
-Configuración ‣ Ajustes, seleccione un código de transacción de factura
-predeterminado o un código de transacción de reembolso predeterminado y luego
-haga clic en guardar. El código se establecerá de forma automática en todas
-las líneas de factura respectivas.
+Configuración ‣ Ajustes, seleccione un **código de transacción de factura
+predeterminado** o un **código de transacción de reembolso predeterminado** y
+luego haga clic en **guardar**. El código se establecerá de forma automática
+en todas las líneas de factura respectivas.
 
 ### Código regional
 
 El código regional **solo se usa para las empresas belgas**. Para usarlo, vaya
-a Contabilidad ‣ Configuración ‣ Ajustes, seleccione la región intrastat de la
-empresa en la que se encuentra la empresa y haga clic en guardar.
+a Contabilidad ‣ Configuración ‣ Ajustes, seleccione la **región intrastat de
+la empresa** en la que se encuentra la empresa y haga clic en **guardar**.
 
-Truco
-
-Si tiene almacenes en más de una región, puede definir el código de región en
-cada almacén. Para ello, vaya a Inventario ‣ Configuración ‣ Almacenes,
-seleccione un almacén, defina su región intrastat y haga clic en guardar.
-
-![Se añade la región intrastat a un almacén](../../../../_images/warehouse-
-region.png)
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Si tiene almacenes en más de una región, puede definir el código de región en cada almacén. Para ello, vaya a Inventario ‣ Configuración ‣ Almacenes, seleccione un almacén, defina su <b>región intrastat</b> y haga clic en <b>guardar</b>.</p>
+<img alt="Se añade la región intrastat a un almacén" class="align-center" src="../../../../_images/warehouse-region.png"/>
+</div>
 
 ## Configuración de productos
 
@@ -67,14 +59,13 @@ customs.ec.europa.eu/customs-4/calculation-customs-duties/customs-
 tariff/combined-nomenclature_en).
 
 Si desea añadir un código de mercancía, vaya a Contabilidad ‣ Clientes ‣
-Productos y seleccione un producto, luego, en la pestaña contabilidad,
-establezca el código de mercancía del producto.
+Productos y seleccione un producto, luego, en la pestaña **contabilidad** ,
+establezca el **código de mercancía** del producto.
 
-Ver también
-
-[Códigos intrastat de mercancía - Banco Nacional de
-Bélgica](https://www.nbb.be/en/statistics/foreign-trade/nomenclature-and-
-codes)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="https://www.nbb.be/en/statistics/foreign-trade/nomenclature-and-codes">Códigos intrastat de mercancía - Banco Nacional de Bélgica</a></p>
+</div>
 
 ### Cantidad: peso y unidades suplementarias
 
@@ -85,13 +76,14 @@ unidades (`p/st`), litros (`l`), o gramos (`g`).
 
 Si desea añadir el peso de un producto o una unidad suplementaria, vaya a
 Contabilidad ‣ Clientes ‣ Productos y seleccione un producto. Introduzca el
-peso o las unidades suplementarias del producto en la pestaña contabilidad.
+**peso** o las **unidades suplementarias** del producto en la pestaña
+**contabilidad**.
 
 ### País de origen
 
 Si desea establecer el país de origen de un producto, vaya a Contabilidad ‣
-Clientes ‣ Productos y seleccione un producto. Establezca el país de origen en
-la pestaña contabilidad.
+Clientes ‣ Productos y seleccione un producto. Establezca el **país de
+origen** en la pestaña **contabilidad**.
 
 ## Configuración de las facturas
 
@@ -106,26 +98,24 @@ de facturas y reembolsos.
 
 Si desea establecer un código de transacción en una línea de factura debe
 crear una factura, hacer clic en el botón de selección de columnas,
-seleccionar intrastat, y usar esta nueva columna para seleccionar un código de
-transacción.
+seleccionar **intrastat** , y usar esta nueva columna para seleccionar un
+código de transacción.
 
 ![Se añade la columna intrastat en una factura](../../../../_images/intrastat-
-column.png)
-
-Ver también
-
-[Intrastat: características de las transacciones desde enero 2022 - Banco
-Nacional de
-Bélgica](https://www.nbb.be/doc/dd/onegate/data/new_natures_of_transaction_2022_en.pdf)
+column.png) <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="https://www.nbb.be/doc/dd/onegate/data/new_natures_of_transaction_2022_en.pdf">Intrastat: características de las transacciones desde enero 2022 - Banco Nacional de Bélgica</a></p>
+</div>
 
 ### País del contacto
 
 El país del contacto representa el país del proveedor y del cliente para las
 facturas. Se completa de forma automática según el país establecido en el
-campo País del contacto.
+campo **País** del contacto.
 
 Si desea editar el país del contacto de forma manual debe crear una factura,
-hacer clic en la pestaña Más información y seleccionar el país intrastat.
+hacer clic en la pestaña **Más información** y seleccionar el **país
+intrastat**.
 
 ### Código de transporte
 
@@ -133,17 +123,18 @@ El código de transporte identifica el presunto **modo de transporte** a usar
 para transportar los bienes (llegada o expedición).
 
 Si desea añadir el código de transporte debe crear una factura, hacer clic en
-la pestaña Más información y seleccionar el modo de transporte intrastat.
+la pestaña **Más información** y seleccionar el **modo de transporte
+intrastat**.
 
 ### Valor de los bienes
 
-El valor de un bien es el subtotal (precio multiplicado por la cantidad) de
-una línea de factura.
+El valor de un bien es el **subtotal** (**precio** multiplicado por la
+**cantidad**) de una línea de factura.
 
 ## Configuración de contacto
 
-Intrastat utiliza dos campos del formulario de contacto: NIF y país. Puede
-establecer el país en la factura de forma manual.
+Intrastat utiliza dos campos del formulario de contacto: **NIF** y **país**.
+Puede establecer el país en la factura de forma manual.
 
 ## Generar el reporte intrastat
 
@@ -176,7 +167,7 @@ la siguiente información:
 
   * Código de transporte;
 
-  * [Código incoterm](../customer_invoices/incoterms.html);
+  * [Código incoterm](../customer_invoices/incoterms);
 
   * Peso;
 

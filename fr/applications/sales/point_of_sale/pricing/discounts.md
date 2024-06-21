@@ -5,7 +5,7 @@ considérablement vos revenus. Il est essentiel de proposer des remises,
 qu’elles soient limitées dans le temps, saisonnières ou accordées
 manuellement.
 
-Pour gérer les remises, Odoo dispose de fonctionnalités puissantes qui vous
+Pour gérer les remises, Konvergo ERP dispose de fonctionnalités puissantes qui vous
 permettent de mettre en place une stratégie de prix adaptée à chaque
 entreprise.
 
@@ -47,12 +47,10 @@ PdV](../../../../_images/discounts_03.png)
 Cliquez dessus et saisissez la remise souhaitée.
 
 ![Vue de la remise offerte dans l'aperçu du
-paiement](../../../../_images/discounts_04.png)
-
-Note
-
-Sur cet exemple, il y a une remise globale de 50%, ainsi qu’une remise
-spécifique de 50% sur les oranges.
+paiement](../../../../_images/discounts_04.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Sur cet exemple, il y a une remise globale de 50%, ainsi qu’une remise spécifique de 50% sur les oranges.</p>
+</div>
 
 ## Appliquer des remises limitées dans le temps
 
@@ -70,7 +68,7 @@ défaut.
 
 ### Créer une liste de prix
 
-Par défaut, Odoo a une _liste de prix publique_ configurée. Pour en créer
+Par défaut, Konvergo ERP a une _liste de prix publique_ configurée. Pour en créer
 d’autres, allez à Point de vente ‣ Produits ‣ Listes de prix. Cliquez ensuite
 sur créer.
 

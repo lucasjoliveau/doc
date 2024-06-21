@@ -13,23 +13,22 @@ To set up a multilevel BoM, the top-level product and semi-finished products
 must be configured. Therefore, the first step is to create the semi-finished
 products and their BoMs.
 
-See also
-
-[Bill of materials](bill_configuration.html)
-
-![A bill of materials for a semi-finished
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="bill_configuration">Bill of materials</a></p>
+</div> ![A bill of materials for a semi-finished
 product.](../../../../_images/semifinished-product-bom.png)
 
 ## Create the top-level bill of materials (BoM)
 
 After the semi-finished products are fully configured, navigate to
-Manufacturing ‣ Products ‣ Products. Then, Create the top-level product.
-Configure the product’s specifications as desired, and be sure to Save.
+Manufacturing ‣ Products ‣ Products. Then, **Create** the top-level product.
+Configure the product’s specifications as desired, and be sure to **Save**.
 
-Once the top-level product is configured, click the Bill of Materials smart
-button on the product form, then click Create to make a BoM for the top-level
-product. Then, simply add the semi-finished products to this BoM, along with
-any other necessary components.
+Once the top-level product is configured, click the **Bill of Materials**
+smart button on the product form, then click **Create** to make a BoM for the
+top-level product. Then, simply add the semi-finished products to this BoM,
+along with any other necessary components.
 
 ![A bill of materials for a top-level product, containing a subassembly
 component.](../../../../_images/custom-computer-bom.png)
@@ -39,23 +38,24 @@ component.](../../../../_images/custom-computer-bom.png)
 There are several methods to manage manufacturing order automation for
 products with multilevel BoMs.
 
-Note
-
-Semi-finished products are specifically used to manage manufacturable products
-with multilevel BoMs. If a BoM is being created simply to organize components
-or bundle sellable products, using [Kits](kit_shipping.html) is the more
-appropriate option.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Semi-finished products are specifically used to manage manufacturable products with multilevel
+BoMs. If a BoM is being created simply to organize components or bundle sellable products,
+using <a href="kit_shipping">Kits</a> is the more appropriate option.</p>
+</div>
 
 To automatically trigger manufacturing orders for semi-finished products after
 confirming a manufacturing order for the main product, there are two options:
 
   * **Option 1 (recommended):** Create _Reordering Rules_ for the semi-finished products and set both the minimum and maximum desired stock quantities to `0`.
 
-See also
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../../purchase/products/reordering">Configure reordering rules</a></p>
+</div>
 
-[Configure reordering rules](../../purchase/products/reordering.html)
-
-  * **Option 2:** Activate the Replenish on Order (MTO) and Manufacture routes under the Inventory tab of the semi-finished product’s product form.
+  * **Option 2:** Activate the **Replenish on Order (MTO)** and **Manufacture** routes under the **Inventory** tab of the semi-finished product’s product form.
 
 Option 1 is more flexible than Option 2 and is therefore recommended.
 Reordering rules do not directly link demand to replenishment, and therefore

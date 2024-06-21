@@ -13,30 +13,29 @@ flexibility: a [templating](https://en.wikipedia.org/wiki/Template_processor)
 engine.
 
 You might already be familiar with existing engines such as Jinja (Python),
-ERB (Ruby) or Twig (PHP). Odoo comes with its own built-in engine: [QWeb
-Templates](../../reference/frontend/qweb.html#reference-qweb). QWeb is the
-primary templating engine used by Odoo. It is an XML templating engine and
+ERB (Ruby) or Twig (PHP). Konvergo ERP comes with its own built-in engine: [QWeb
+Templates](../../reference/frontend/qweb#reference-qweb). QWeb is the
+primary templating engine used by Konvergo ERP. It is an XML templating engine and
 used mostly to generate HTML fragments and pages.
 
 You probably already have come across the [kanban
-board](https://en.wikipedia.org/wiki/Kanban_board) in Odoo where the records
+board](https://en.wikipedia.org/wiki/Kanban_board) in Konvergo ERP where the records
 are displayed in a card-like structure. We will build such a view for our real
 estate module.
 
 ## Concrete Example: A Kanban View
 
 **Reference** : the documentation related to this topic can be found in
-[Kanban](../../reference/backend/views.html#reference-views-kanban).
+[Kanban](../../reference/backend/views#reference-views-kanban).
 
-Note
-
-**Goal** : at the end of this section a Kanban view of the properties should
-be created:
-
-![Kanban view](../../../_images/kanban.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section a Kanban view of the properties should be created:</p>
+<img alt="Kanban view" class="align-center" src="../../../_images/kanban.png"/>
+</div>
 
 In our estate application, we would like to add a Kanban view to display our
-properties. Kanban views are a standard Odoo view (like the form and list
+properties. Kanban views are a standard Konvergo ERP view (like the form and list
 views), but their structure is much more flexible. In fact, the structure of
 each card is a mix of form elements (including basic HTML) and QWeb. The
 definition of a Kanban view is similar to the definition of the list and form
@@ -58,7 +57,7 @@ Kanban view looks like:
 
 Let’s break down this example:
 
-  * `<templates>`: defines a list of [QWeb Templates](../../reference/frontend/qweb.html#reference-qweb) templates. Kanban views _must_ define at least one root template `kanban-box`, which will be rendered once for each record.
+  * `<templates>`: defines a list of [QWeb Templates](../../reference/frontend/qweb#reference-qweb) templates. Kanban views _must_ define at least one root template `kanban-box`, which will be rendered once for each record.
 
   * `<t t-name="kanban-box">`: `<t>` is a placeholder element for QWeb directives. In this case, it is used to set the `name` of the template to `kanban-box`
 
@@ -66,19 +65,18 @@ Let’s break down this example:
 
   * `<field name="name"/>`: this will add the `name` field to the view.
 
-Exercise
-
-Make a minimal kanban view.
-
-Using the simple example provided, create a minimal Kanban view for the
-properties. The only field to display is the `name`.
-
-Tip: you must add `kanban` in the `view_mode` of the corresponding
-`ir.actions.act_window`.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Make a minimal kanban view.</p>
+<p>Using the simple example provided, create a minimal Kanban view for the properties. The
+only field to display is the <code>name</code>.</p>
+<p>Tip: you must add <code>kanban</code> in the <code>view_mode</code> of the corresponding
+<code>ir.actions.act_window</code>.</p>
+</div>
 
 Once the Kanban view is working, we can start improving it. If we want to
 display an element conditionally, we can use the `t-if` directive (see
-[Conditionals](../../reference/frontend/qweb.html#reference-qweb-
+[Conditionals](../../reference/frontend/qweb#reference-qweb-
 conditionals)).
 
     
@@ -109,29 +107,26 @@ but `state` is outside of it. When we need the value of a field but don’t want
 to display it in the view, it is possible to add it outside of the
 `<templates>` element.
 
-Exercise
-
-Improve the Kanban view.
-
-Add the following fields to the Kanban view: expected price, best price,
-selling price and tags. Pay attention: the best price is only displayed when
-an offer is received, while the selling price is only displayed when an offer
-is accepted.
-
-Refer to the **Goal** of the section for a visual example.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Improve the Kanban view.</p>
+<p>Add the following fields to the Kanban view: expected price, best price, selling price and
+tags. Pay attention: the best price is only displayed when an offer is received, while the
+selling price is only displayed when an offer is accepted.</p>
+<p>Refer to the <b>Goal</b> of the section for a visual example.</p>
+</div>
 
 Let’s give the final touch to our view: the properties must be grouped by type
 by default. You might want to have a look at the various options described in
-[Kanban](../../reference/backend/views.html#reference-views-kanban).
+[Kanban](../../reference/backend/views#reference-views-kanban).
 
-Exercise
-
-Add default grouping.
-
-Use the appropriate attribute to group the properties by type by default. You
-must also prevent drag and drop.
-
-Refer to the **Goal** of the section for a visual example.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add default grouping.</p>
+<p>Use the appropriate attribute to group the properties by type by default. You must also prevent
+drag and drop.</p>
+<p>Refer to the <b>Goal</b> of the section for a visual example.</p>
+</div>
 
 Kanban views are a typical example of how it is always a good idea to start
 from an existing view and fine tune it instead of starting from scratch. There

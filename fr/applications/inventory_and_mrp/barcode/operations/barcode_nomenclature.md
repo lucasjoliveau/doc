@@ -9,10 +9,10 @@ calculer le prix en conséquence.
 
 ## Créer une nomenclature de codes-barres
 
-Odoo prend en charge les nomenclatures des codes-barres, qui déterminent le
+Konvergo ERP prend en charge les nomenclatures des codes-barres, qui déterminent le
 mappage et l’interprétation des informations encodées. Vous pouvez configurer
 votre nomenclature de code-barres en étant en [mode
-développeur](../../../general/developer_mode.html#developer-mode). Pour ce
+développeur](../../../general/developer_mode#developer-mode). Pour ce
 faire, allez à Inventaire ‣ Configuration ‣ Nomenclature des code-barres.
 
 Vous pouvez créer une nomenclature de codes-barres d’ici et ensuite ajouter
@@ -36,11 +36,10 @@ question. Le “N” définit un nombre et le “D” définit les décimales.
 L’encodage permet de préciser l’encodage du code-barres sur lequel la règle
 doit être appliquée.
 
-Note
-
-Vous pouvez définir différentes règles et les classer par ordre de priorité
-grâce à la séquence. La première règle qui correspond au code-barres scanné
-sera appliquée.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Vous pouvez définir différentes règles et les classer par ordre de priorité grâce à la séquence. La première règle qui correspond au code-barres scanné sera appliquée.</p>
+</div>
 
 ### Configurer votre produit
 
@@ -57,7 +56,7 @@ sera appliquée.
 Dans le cas où vous pesez 1,5 kg de pâtes, la balance vous imprimera le code-
 barres suivant 2112345015002. Si vous scannez ce code-barres dans votre point
 de vente ou lorsque vous recevez des produits dans votre application de code-
-barres, Odoo créera automatiquement une nouvelle ligne pour le produit Pâtes
+barres, Konvergo ERP créera automatiquement une nouvelle ligne pour le produit Pâtes
 pour une quantité de 1,5 kg. Pour le point de vente, un prix dépendant de la
 quantité sera également calculé.
 
@@ -83,9 +82,8 @@ quantité sera également calculé.
 
   * **Unité de produit** : vous permet d’identifier un produit pour les points de vente et les transferts.
 
-Note
-
-Lorsque le modèle de code-barres contient .*, cela signifie qu’il peut
-contenir un nombre quelconque de caractères, ces caractères pouvant être
-n’importe quel nombre.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Lorsque le modèle de code-barres contient .*, cela signifie qu’il peut contenir un nombre quelconque de caractères, ces caractères pouvant être n’importe quel nombre.</p>
+</div>
 

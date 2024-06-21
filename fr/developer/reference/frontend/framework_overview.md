@@ -2,9 +2,9 @@
 
 ## Introduction
 
-The Odoo Javascript framework is a set of features/building blocks provided by
+The Konvergo ERP Javascript framework is a set of features/building blocks provided by
 the `web/` addon to help build odoo applications running in the browser. At
-the same time, the Odoo Javascript framework is a single page application,
+the same time, the Konvergo ERP Javascript framework is a single page application,
 usually known as the _web client_ (available at the url `/web`).
 
 The web client started as an application made with a custom class and widget
@@ -19,24 +19,23 @@ replaces/updates the current screen accordingly. Also, it manages the url to
 keep it in sync with the current state.
 
 The javascript framework (all or some parts) is also used in other situations,
-such as the Odoo website or the point of sale. This reference is mostly
+such as the Konvergo ERP website or the point of sale. This reference is mostly
 focused on the web client.
 
-Note
-
-It is common in the Odoo ecosystem to see the words _frontend_ and _backend_
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>It is common in the Konvergo ERP ecosystem to see the words <em>frontend</em> and <em>backend</em>
 as synonyms for the odoo website (public) and the web client, respectively.
-This terminology is not to be confused with the more common use of browser-
-code (frontend) and server (backend).
-
-Note
-
-In this documentation, the word _component_ always refers to new Owl
-components, and _widget_ refers to old Odoo widgets.
-
-Note
-
-All new development should be done in Owl, if possible!
+This terminology is not to be confused with the more common use of
+browser-code (frontend) and server (backend).</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>In this documentation, the word <em>component</em> always refers to new Owl
+components, and <em>widget</em> refers to old Konvergo ERP widgets.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>All new development should be done in Owl, if possible!</p>
+</div>
 
 ## Code structure
 
@@ -92,15 +91,15 @@ the web client.
 
 ## Environment
 
-As an Owl application, the Odoo web client defines its own environment
+As an Owl application, the Konvergo ERP web client defines its own environment
 (components can access it using `this.env`). Here is a description of what
-Odoo adds to the shared `env` object:
+Konvergo ERP adds to the shared `env` object:
 
 Key | Value  
 ---|---  
 `qweb` | required by Owl (contains all templates)  
 `bus` | main bus, used to coordinate some generic events  
-`services` | all deployed [services](services.html#frontend-services) (should usually be accessed with the `useService` hook)  
+`services` | all deployed [services](services#frontend-services) (should usually be accessed with the `useService` hook)  
 `debug` | string. If non empty, the web client is in debug mode  
 `_t` | translation function  
 `isSmall` | boolean. If true, the web client is currently in mobile mode (screen width <= 767px)  
@@ -114,12 +113,13 @@ can do this:
     const someString = this.env._t('some text');
     
 
-Note
-
-Having a reference to the environment is quite powerful, because it provides
-access to all services. This is useful in many cases: for example, user menu
-items are mostly defined as a string, and a function taking the `env` as
-unique argument. This is enough to express all user menu needs.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Having a reference to the environment is quite powerful, because it provides
+access to all services. This is useful in many cases: for example,
+user menu items are mostly defined as a string, and a function taking the <code>env</code>
+as unique argument. This is enough to express all user menu needs.</p>
+</div>
 
 ## Building Blocks
 
@@ -128,7 +128,7 @@ services, components and hooks.
 
 ### Registries
 
-[Registries](registries.html#frontend-registries) are basically a simple
+[Registries](registries#frontend-registries) are basically a simple
 key/value mapping that stores some specific kind of objects. They are an
 important part of the extensibility of the UI: once some object is registered,
 the rest of the web client can use it. For example, the field registry
@@ -150,12 +150,12 @@ sub registry `fields`.
 
 ### Services
 
-[Services](services.html#frontend-services) are long lived pieces of code that
+[Services](services#frontend-services) are long lived pieces of code that
 provide a feature. They may be imported by components (with `useService`) or
 by other services. Also, they can declare a set of dependencies. In that
 sense, services are basically a DI (dependency injection) system. For example,
 the `notification` service provides a way to display a notification, or the
-`rpc` service is the proper way to perform a request to the Odoo server.
+`rpc` service is the proper way to perform a request to the Konvergo ERP server.
 
 The following example registers a simple service that displays a notification
 every 5 second:
@@ -179,9 +179,9 @@ every 5 second:
 
 ### Components and Hooks
 
-[Components](owl_components.html#frontend-components) and
-[hooks](hooks.html#frontend-hooks) are ideas coming from the [Owl component
-system](https://github.com/odoo/owl/blob/master/doc/readme.md). Odoo
+[Components](owl_components#frontend-components) and
+[hooks](hooks#frontend-hooks) are ideas coming from the [Owl component
+system](https://github.com/odoo/owl/blob/master/doc/readme.md). Konvergo ERP
 components are simply owl components that are part of the web client.
 
 [Hooks](https://github.com/odoo/owl/blob/master/doc/reference/hooks.md) are a
@@ -203,22 +203,23 @@ as a kind of mixin.
 
 ## Context
 
-An important concept in the Odoo javascript is the _context_ : it provides a
+An important concept in the Konvergo ERP javascript is the _context_ : it provides a
 way for code to give more context to a function call or a rpc, so other parts
 of the system can properly react to that information. In some way, it is like
 a bag of information that is propagated everywhere. It is useful in some
-situations, such as letting the Odoo server know that a model rpc comes from a
+situations, such as letting the Konvergo ERP server know that a model rpc comes from a
 specific form view, or activating/disabling some features in a component.
 
-There are two different contexts in the Odoo web client: the _user context_
+There are two different contexts in the Konvergo ERP web client: the _user context_
 and the _action context_ (so, we should be careful when using the word
 _context_ : it could mean a different thing depending on the situation).
 
-Note
-
-The `context` object may be useful in many cases, but one should be careful
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The <code>context</code> object may be useful in many cases, but one should be careful
 not to overuse it! Many problems can be solved in a standard way without
-modifying the context.
+modifying the context.</p>
+</div>
 
 ### User Context
 
@@ -247,15 +248,15 @@ In practice, the `orm` service automatically adds the user context to each of
 its requests. This is why it is usually not necessary to import it directly in
 most cases.
 
-Note
-
-The first element of the `allowed_company_ids` is the main company of the
-user.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The first element of the <code>allowed_company_ids</code> is the main company of the user.</p>
+</div>
 
 ### Action Context
 
-The [ir.actions.act_window](../backend/actions.html#reference-actions-window)
-and [ir.actions.client](../backend/actions.html#reference-actions-client)
+The [ir.actions.act_window](../backend/actions#reference-actions-window)
+and [ir.actions.client](../backend/actions#reference-actions-client)
 support an optional `context` field. This field is a `char` that represents an
 object. Whenever the corresponding action is loaded in the web client, this
 context field will be evaluated as an object and given to the component that
@@ -294,9 +295,9 @@ providing some information to the next action.
 
 ## Python Interpreter
 
-The Odoo framework features a built-in small python interpreter. Its purpose
+The Konvergo ERP framework features a built-in small python interpreter. Its purpose
 is to evaluate small python expressions. This is important, because views in
-Odoo have modifiers written in python, but they need to be evaluated by the
+Konvergo ERP have modifiers written in python, but they need to be evaluated by the
 browser.
 
 Example:
@@ -396,7 +397,7 @@ any the resulting value of the expression, with respect to the context
 
 ## Domains
 
-Broadly speaking, domains in Odoo represent a set of records that matches some
+Broadly speaking, domains in Konvergo ERP represent a set of records that matches some
 specified conditions. In javascript, they are usually represented either as a
 list of conditions (or of operators: `|`, `&` or `!` in prefix notation), or
 as string expressions. They don’t have to be normalized (the `&` operator is
@@ -421,7 +422,7 @@ String expressions are more powerful than list expressions: they can contain
 python expressions and unevaluated values, that depends on some evaluation
 context. However, manipulating string expressions is more difficult.
 
-Since domains are quite important in the web client, Odoo provides a `Domain`
+Since domains are quite important in the web client, Konvergo ERP provides a `Domain`
 class:
 
     
@@ -657,12 +658,12 @@ It contains the following content:
   
 ## Debug mode
 
-Odoo can sometimes operate in a special mode called the `debug` mode. It is
+Konvergo ERP can sometimes operate in a special mode called the `debug` mode. It is
 used for two main purposes:
 
   * display additional information/fields for some particular screens,
 
-  * provide some additional tools to help developer debug the Odoo interface.
+  * provide some additional tools to help developer debug the Konvergo ERP interface.
 
 The `debug` mode is described by a string. An empty string means that the
 `debug` mode is not active. Otherwise, it is active. If the string contains
@@ -672,24 +673,24 @@ string `assets,tests`.
 
 The `debug` mode current value can be read in the environment: `env.debug`.
 
-Astuce
-
-To show menus, fields or view elements only in debug mode, you should target
-the group `base.group_no_one`:
-
-    
-    
-    <field name="fname" groups="base.group_no_one"/>
-    
-
-Pour plus d'infos
-
-  * [Activate the debug mode](../../../applications/general/developer_mode.html#developer-mode)
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>To show menus, fields or view elements only in debug mode, you should target
+the group <code>base.group_no_one</code>:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"fname"</span> <span class="na">groups=</span><span class="s">"base.group_no_one"</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../../../applications/general/developer_mode#developer-mode"><span class="std std-ref">Activate the debug mode</span></a></p></li>
+</ul>
+</div>
 
 ### Assets mode
 
 The `debug=assets` sub mode is useful to debug javascript code: once
-activated, the [assets](assets.html#reference-assets) bundles are no longer
+activated, the [assets](assets#reference-assets) bundles are no longer
 minified, and source-maps are generated as well. This makes it useful to debug
 all kind of javascript code.
 
@@ -700,7 +701,10 @@ bundle `web.assets_tests` in the page. This bundle contains mostly test tours
 (tours whose purpose is to test a feature, not to show something interesting
 to users). The `tests` mode is then useful to be able to run these tours.
 
-Pour plus d'infos
-
-  * [Owl Repository](https://github.com/odoo/owl)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="https://github.com/odoo/owl">Owl Repository</a></p></li>
+</ul>
+</div>
 

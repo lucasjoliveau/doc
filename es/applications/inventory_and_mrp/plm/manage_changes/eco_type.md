@@ -18,22 +18,19 @@ de proveedor o actualización de firmware, que no les interesan.
 Para acceder a y gestionar los tipos de ECO debe ir a la aplicación PLM ‣
 Configuración ‣ Tipos de órdenes de cambio de ingeniería.
 
-Haga clic en Nuevo para poder crear un nuevo tipo de orden de cambio de
-ingeniería (ECO). En el nuevo formulario de Tipos de órdenes de cambio de
-ingeniería, llene la siguiente información:
+Haga clic en **Nuevo** para poder crear un nuevo tipo de orden de cambio de
+ingeniería (ECO). En el nuevo formulario de **Tipos de órdenes de cambio de
+ingeniería** , llene la siguiente información:
 
-  * Nombre: el nombre del tipo de ECO que organizará todos los ECO de este _tipo_ en un proyecto.
+  * **Nombre** : el nombre del tipo de ECO que organizará todos los ECO de este _tipo_ en un proyecto.
 
-  * Alias de correo electrónico: si se llena este campo opcional, los correos electrónicos que se envíen a esta dirección de correo harán que se generen ECO en la etapa más pegada a la izquierda de este tipo de ECO.
+  * **Alias de correo electrónico** : si se llena este campo opcional, los correos electrónicos que se envíen a esta dirección de correo harán que se generen ECO en la etapa más pegada a la izquierda de este tipo de ECO.
 
-Example
-
-El tipo de ECO `Tipo de fórmula` se usa antes de organizar y rastrear los ECO
-relacionados en un solo proyecto. Si llena el campo Dirección de correo se
-generarán ECO en el proyecto `Cambio de fórmula` que se le envió a la
-dirección de correo, `pawlish-change@pawlished-glam.odoo.com`.
-
-![Ejemplo de un tipo de ECO.](../../../../_images/create-eco-type.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>El tipo de <abbr title="Engineering Change Order">ECO</abbr> <code>Tipo de fórmula</code> se usa antes de organizar y rastrear los <abbr title="Engineering Change Order">ECO</abbr> relacionados en un solo proyecto. Si llena el campo <b>Dirección de correo</b> se generarán <abbr title="Engineering Change Order">ECO</abbr> en el proyecto <code>Cambio de fórmula</code> que se le envió a la dirección de correo, <code>pawlish-change@pawlished-glam.odoo.com</code>.</p>
+<img alt="Ejemplo de un tipo de ECO." class="align-center" src="../../../../_images/create-eco-type.png"/>
+</div>
 
 ## Editar tipo de ECO
 
@@ -41,8 +38,8 @@ Para modificar el nombre de tipos de ECO existentes y las direcciones de
 correo vaya a la aplicación PLM ‣ Configuración ‣ Tipos de ECO. Ahí, haga clic
 en el tipo de ECO deseado de la lista.
 
-En el formulario de cada tipo de ECO edite los campos de Nombre y Seudónimo de
-correo electrónico.
+En el formulario de cada tipo de ECO edite los campos de **Nombre** y
+**Seudónimo de correo electrónico**.
 
 ## Etapas
 
@@ -65,22 +62,19 @@ aprobaron para usarlos en la siguiente |LdM| de producción.
 ### Crear etapa
 
 Para agregar una etapa, vaya a la aplicación PLM y seleccione el proyecto para
-un tipo de ECO desde el tablero Información general de gestión de ciclo de
-vida del producto.
+un tipo de ECO desde el tablero **Información general de gestión de ciclo de
+vida del producto**.
 
-Después, en el flujo del proyecto Órdenes de cambio de ingeniería para tipos
-de ECO, haga clic en el botón \+ Etapa. Así se mostrará un cuadro de texto
-para ponerle nombre de la etapa. Después de ponerlo, haga clic en el botón
-Agregar para terminar de agregar la etapa.
+Después, en el flujo del proyecto **Órdenes de cambio de ingeniería** para
+tipos de ECO, haga clic en el botón **\+ Etapa**. Así se mostrará un cuadro de
+texto para ponerle nombre de la etapa. Después de ponerlo, haga clic en el
+botón **Agregar** para terminar de agregar la etapa.
 
-Example
-
-Aparecerá una nueva etapa llamada `Asignados` que separa los ECO de los que no
-están asignados en la etapa de `Nuevo`. Agregar una etapa nueva ayuda a que el
-gerente de producto pueda monitorear las tareas no asignadas.
-
-![Crear una nueva etapa en un proyecto para un tipo de
-ECO.](../../../../_images/create-stage.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Aparecerá una nueva etapa llamada <code>Asignados</code> que separa los <abbr title="Engineering Change Order">ECO</abbr> de los que no están asignados en la etapa de <code>Nuevo</code>. Agregar una etapa nueva ayuda a que el gerente de producto pueda monitorear las tareas no asignadas.</p>
+<img alt="Crear una nueva etapa en un proyecto para un tipo de ECO." class="align-center" src="../../../../_images/create-stage.png"/>
+</div>
 
 ### Etapa de verificación
 
@@ -88,55 +82,45 @@ Haga clic en un tipo de ECO en la aplicación PLM ‣ Información general para
 abrir la vista de kanban de los ECO de este tipo.
 
 Para configurar una etapa de verificación, pase el ratón por la etapa deseada
-y seleccione el icono ⚙️ (engranaje). Después, haga clic en Editar para abrir
-una ventana emergente.
+y seleccione el icono **⚙️ (engranaje)**. Después, haga clic en **Editar**
+para abrir una ventana emergente.
 
 Configura la etapa de verificación en la ventana emergente de edición de la
-etapa. Solo haga clic en la caja Permitir aplicar cambios.
+etapa. Solo haga clic en la caja **Permitir aplicar cambios**.
 
 Después, agregue una persona responsable de la aprobación en la sección
-Aprobadores, haga clic en Agregar una línea y especifique la Función del
-aprobador, el Usuario y el Tipo de aprobación.
+**Aprobadores** , haga clic en **Agregar una línea** y especifique la
+**Función** del aprobador, el **Usuario** y el **Tipo de aprobación**.
 
-Asegúrese de que se configuró al menos un aprobador en el Tipo de aprobación:
-Se requiere para aprobar.
+Asegúrese de que se configuró al menos un aprobador en el **Tipo de
+aprobación** : **Se requiere para aprobar**.
 
 El aprobador enlistado recibe una notificación cuando los ECO llegan a la
 etapa especificada en la ventana emergente. Una vez que termine, haga clic en
-Guardar y cerrar.
+**Guardar y cerrar**.
 
-Example
-
-En el tipo de ECO `Introducción de producto nuevo` debe hacer clic en el icono
-⚙️ (engranaje) y luego hacer clic en Editar para configurar la etapa
-`Validada`. Así se abrirá la ventana emergente Editar: validado.
-
-Si agregamos al `Gerente de ingeniería` como aprobador, solo los ECO que este
-usuario apruebe pueden pasar a la siguiente etapa y cambiar la |lista de
-materiales| en producción.
-
-Además, marque la opción Permitir aplicar cambios para asegurar que el
-comportamiento sea el adecuado.
-
-![Imagen donde se muestra que la opción *Permitir aplicar cambios* está
-marcada.](../../../../_images/verification-stage.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>En el tipo de <abbr title="Engineering Change Order">ECO</abbr> <code>Introducción de producto nuevo</code> debe hacer clic en el icono <b>⚙️ (engranaje)</b> y luego hacer clic en <b>Editar</b> para configurar la etapa <code>Validada</code>. Así se abrirá la ventana emergente <b>Editar: validado</b>.</p>
+<p>Si agregamos al <code>Gerente de ingeniería</code> como aprobador, solo los <abbr title="Engineering Change Order">ECO</abbr> que este usuario apruebe pueden pasar a la siguiente etapa y cambiar la <a href="#id9"><span class="problematic" id="id10">|lista de materiales|</span></a> en producción.</p>
+<p>Además, marque la opción <b>Permitir aplicar cambios</b> para asegurar que el comportamiento sea el adecuado.</p>
+<img alt="Imagen donde se muestra que la opción *Permitir aplicar cambios* está marcada." class="align-center" src="../../../../_images/verification-stage.png"/>
+</div>
 
 ### Etapa de cierrre
 
-Para configurar una etapa de cierre abra a la ventana emergente Editar:
-[etapa]. Para hacerlo, pase el ratón encima de la etapa deseada y haga clic en
-el icono ⚙️ (engranaje) que aparece en la esquina superior derecha. Después,
-haga clic en Editar en el menú desplegable.
+Para configurar una etapa de cierre abra a la ventana emergente **Editar:
+[etapa]**. Para hacerlo, pase el ratón encima de la etapa deseada y haga clic
+en el icono **⚙️ (engranaje)** que aparece en la esquina superior derecha.
+Después, haga clic en **Editar** en el menú desplegable.
 
-En la ventana emergente Editar: [etapa] marque las opciones de Plegado en la
-vista de kanban, Permitir aplicar cambios y Etapa final.
+En la ventana emergente **Editar: [etapa]** marque las opciones de **Plegado
+en la vista de kanban** , **Permitir aplicar cambios** y **Etapa final**.
 
-Example
-
-La etapa de cierre, donde configuramos `Effectivo` marcando las opciones
-Plegado en la vista de kanban, Permitir aplicar cambios y Etapa final.
-
-![Imagen donde se muestra la configuración de la etapa de
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>La etapa de cierre, donde configuramos <code>Effectivo</code> marcando las opciones <b>Plegado en la vista de kanban</b>, <b>Permitir aplicar cambios</b> y <b>Etapa final</b>.</p>
+</div> ![Imagen donde se muestra la configuración de la etapa de
 cierre.](../../../../_images/closing-stage.png)
 
   *[ECO]: Engineering Change Order

@@ -1,7 +1,7 @@
 # Terms and Conditions
 
-  * [Odoo.sh Beta Program](terms/odoo_sh_terms.html)
-  * [Odoo Enterprise Subscription Agreement](terms/enterprise.html)
-  * [1\. Odoo Partnership Agreement](terms/partnership.html)
-  * [General Terms of Sale](terms/terms_of_sale.html)
+  * [Konvergo ERP.sh Beta Program](terms/odoo_sh_terms)
+  * [Konvergo ERP Enterprise Subscription Agreement](terms/enterprise)
+  * [1\. Konvergo ERP Partnership Agreement](terms/partnership)
+  * [General Terms of Sale](terms/terms_of_sale)
 

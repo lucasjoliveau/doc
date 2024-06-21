@@ -1,30 +1,30 @@
 # Source install
 
-The source ‘installation’ is not about installing Odoo but running it directly
+The source ‘installation’ is not about installing Konvergo ERP but running it directly
 from the source instead.
 
-Using the Odoo source can be more convenient for module developers as it is
+Using the Konvergo ERP source can be more convenient for module developers as it is
 more easily accessible than using packaged installers.
 
-It makes starting and stopping Odoo more flexible and explicit than the
+It makes starting and stopping Konvergo ERP more flexible and explicit than the
 services set up by the packaged installers. Also, it allows overriding
 settings using [command-line
-parameters](../../developer/reference/cli.html#reference-cmdline) without
+parameters](../../developer/reference/cli#reference-cmdline) without
 needing to edit a configuration file.
 
 Finally, it provides greater control over the system’s setup and allows to
-more easily keep (and run) multiple versions of Odoo side-by-side.
+more easily keep (and run) multiple versions of Konvergo ERP side-by-side.
 
 ## Fetch the sources
 
-There are two ways to obtain the source code of Odoo: as a ZIP **archive** or
+There are two ways to obtain the source code of Konvergo ERP: as a ZIP **archive** or
 through **Git**.
 
 ### Archive
 
 Community edition:
 
-  * [Odoo download page](https://www.odoo.com/page/download)
+  * [Konvergo ERP download page](https://www.odoo.com/page/download)
 
   * [GitHub Community repository](https://github.com/odoo/odoo)
 
@@ -32,21 +32,22 @@ Community edition:
 
 Enterprise edition:
 
-  * [Odoo download page](https://www.odoo.com/page/download)
+  * [Konvergo ERP download page](https://www.odoo.com/page/download)
 
   * [GitHub Enterprise repository](https://github.com/odoo/enterprise)
 
 ### Git
 
-Note
-
-It is required to have [Git](https://git-scm.com/) installed, and it is
-recommended to have a basic knowledge of Git commands to proceed.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>It is required to have <a href="https://git-scm.com/">Git</a> installed, and it is recommended to have a
+basic knowledge of Git commands to proceed.</p>
+</div>
 
 To clone a Git repository, choose between cloning with HTTPS or SSH. In most
-cases, the best option is HTTPS. However, choose SSH to contribute to Odoo
+cases, the best option is HTTPS. However, choose SSH to contribute to Konvergo ERP
 source code or when following the [Getting Started developer
-tutorial](../../developer/tutorials/getting_started.html).
+tutorial](../../developer/tutorials/getting_started).
 
 LinuxWindowsMac OS
 
@@ -89,20 +90,20 @@ Clone with HTTPSClone with SSH
     $ git clone git@github.com:odoo/enterprise.git
     
 
-Note
-
-**The Enterprise git repository does not contain the full Odoo source code**.
-It is only a collection of extra add-ons. The main server code is in the
-Community edition. Running the Enterprise version means running the server
-from the Community version with the `addons-path` option set to the folder
-with the Enterprise edition. It is required to clone both the Community and
-Enterprise repositories to have a working Odoo Enterprise installation.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>The Enterprise git repository does not contain the full Konvergo ERP source code</b>. It is only a
+collection of extra add-ons. The main server code is in the Community edition. Running the
+Enterprise version means running the server from the Community version with the <code>addons-path</code>
+option set to the folder with the Enterprise edition. It is required to clone both the Community
+and Enterprise repositories to have a working Konvergo ERP Enterprise installation.</p>
+</div>
 
 ## Prepare
 
 ### Python
 
-Odoo requires **Python 3.7** or later to run.
+Konvergo ERP requires **Python 3.7** or later to run.
 
 LinuxWindowsMac OS
 
@@ -118,46 +119,38 @@ Use a package manager ([Homebrew](https://brew.sh/),
 [MacPorts](https://www.macports.org)) to download and install Python 3 if
 needed.
 
-Note
-
-If Python 3 is already installed, make sure that the version is 3.7 or above,
-as previous versions are not compatible with Odoo.
-
-LinuxWindowsMac OS
-
-    
-    
-    $ python3 --version
-    
-    
-    
-    C:\> python --version
-    
-    
-    
-    $ python3 --version
-    
-
-Verify that [pip](https://pip.pypa.io) is also installed for this version.
-
-LinuxWindowsMac OS
-
-    
-    
-    $ pip3 --version
-    
-    
-    
-    C:\> pip --version
-    
-    
-    
-    $ pip3 --version
-    
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>If Python 3 is already installed, make sure that the version is 3.7 or above, as previous
+versions are not compatible with Konvergo ERP.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-5-TGludXg=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-5-TGludXg=" name="TGludXg=" role="tab" tabindex="0">Linux</button><button aria-controls="panel-5-V2luZG93cw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="-1">Windows</button><button aria-controls="panel-5-TWFjIE9T" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-TWFjIE9T" name="TWFjIE9T" role="tab" tabindex="-1">Mac OS</button></div><div aria-labelledby="tab-5-TGludXg=" class="sphinx-tabs-panel group-tab" id="panel-5-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> python3 --version
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-5-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">C:\&gt;</span> python --version
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-5-TWFjIE9T" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-TWFjIE9T" name="TWFjIE9T" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> python3 --version
+</pre></div>
+</div>
+</div></div>
+<p>Verify that <a href="https://pip.pypa.io">pip</a> is also installed for this version.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-6-TGludXg=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-6-TGludXg=" name="TGludXg=" role="tab" tabindex="0">Linux</button><button aria-controls="panel-6-V2luZG93cw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-6-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="-1">Windows</button><button aria-controls="panel-6-TWFjIE9T" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-6-TWFjIE9T" name="TWFjIE9T" role="tab" tabindex="-1">Mac OS</button></div><div aria-labelledby="tab-6-TGludXg=" class="sphinx-tabs-panel group-tab" id="panel-6-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip3 --version
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-6-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-6-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">C:\&gt;</span> pip --version
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-6-TWFjIE9T" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-6-TWFjIE9T" name="TWFjIE9T" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip3 --version
+</pre></div>
+</div>
+</div></div>
+</div>
 
 ### PostgreSQL
 
-Odoo uses PostgreSQL as its database management system.
+Konvergo ERP uses PostgreSQL as its database management system.
 
 LinuxWindowsMac OS
 
@@ -175,13 +168,13 @@ versions: 12.0 or above) and install it.
 Use [Postgres.app](https://postgresapp.com) to download and install PostgreSQL
 (supported version: 12.0 or above).
 
-Tip
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>To make the command line tools bundled with Postgres.app available, make sure to set up the
+<code>$PATH</code> variable by following the <a href="https://postgresapp.com/documentation/cli-tools">Postgres.app CLI tools instructions</a>.</p>
+</div>
 
-To make the command line tools bundled with Postgres.app available, make sure
-to set up the `$PATH` variable by following the [Postgres.app CLI tools
-instructions](https://postgresapp.com/documentation/cli-tools.html).
-
-By default, the only user is `postgres`. As Odoo forbids connecting as
+By default, the only user is `postgres`. As Konvergo ERP forbids connecting as
 `postgres`, create a new PostgreSQL user.
 
 LinuxWindowsMac OS
@@ -192,10 +185,11 @@ LinuxWindowsMac OS
     $ createdb $USER
     
 
-Note
-
-Because the PostgreSQL user has the same name as the Unix login, it is
-possible to connect to the database without a password.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Because the PostgreSQL user has the same name as the Unix login, it is possible to connect
+to the database without a password.</p>
+</div>
 
   1. Add PostgreSQL’s `bin` directory (by default: `C:\Program Files\PostgreSQL\<version>\bin`) to the `PATH`.
 
@@ -219,10 +213,11 @@ possible to connect to the database without a password.
     $ createdb $USER
     
 
-Note
-
-Because the PostgreSQL user has the same name as the Unix login, it is
-possible to connect to the database without a password.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Because the PostgreSQL user has the same name as the Unix login, it is possible to connect
+to the database without a password.</p>
+</div>
 
 ### Dependencies
 
@@ -245,10 +240,11 @@ The `setup/debinstall.sh` script will parse the
 [debian/control](https://github.com/odoo/odoo/blob/16.0/debian/control) file
 and install the found packages.
 
-Warning
-
-Using pip may lead to security issues and broken dependencies; only do this if
-you know what you are doing.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Using pip may lead to security issues and broken dependencies; only do this if you
+know what you are doing.</p>
+</div>
 
 As some of the Python packages need a compilation step, they require system
 libraries to be installed.
@@ -261,25 +257,23 @@ libraries:
     $ sudo apt install python3-pip libldap2-dev libpq-dev libsasl2-dev
     
 
-Odoo dependencies are listed in the `requirements.txt` file located at the
-root of the Odoo Community directory.
+Konvergo ERP dependencies are listed in the `requirements.txt` file located at the
+root of the Konvergo ERP Community directory.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The Python packages in <code>requirements.txt</code> are based on their stable/LTS
+Debian/Ubuntu corresponding version at the moment of the Konvergo ERP release. For example,
+for Konvergo ERP 15.0, the <code>python3-babel</code> package version is 2.8.0 in Debian Bullseye and
+2.6.0 in Ubuntu Focal. The lowest version is then chosen in the
+<code>requirements.txt</code>.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>It can be preferable not to mix Python module packages between different instances of
+Konvergo ERP or with the system. However, it is possible to use <a href="https://pypi.org/project/virtualenv/">virtualenv</a> to create isolated Python environments.</p>
+</div>
 
-The Python packages in `requirements.txt` are based on their stable/LTS
-Debian/Ubuntu corresponding version at the moment of the Odoo release. For
-example, for Odoo 15.0, the `python3-babel` package version is 2.8.0 in Debian
-Bullseye and 2.6.0 in Ubuntu Focal. The lowest version is then chosen in the
-`requirements.txt`.
-
-Tip
-
-It can be preferable not to mix Python module packages between different
-instances of Odoo or with the system. However, it is possible to use
-[virtualenv](https://pypi.org/project/virtualenv/) to create isolated Python
-environments.
-
-Navigate to the path of the Odoo Community installation (`CommunityPath`) and
+Navigate to the path of the Konvergo ERP Community installation (`CommunityPath`) and
 run **pip** on the requirements file to install the requirements for the
 current user.
 
@@ -293,17 +287,16 @@ Before installing the dependencies, download and install the [Build Tools for
 Visual Studio](https://visualstudio.microsoft.com/downloads/). Select **C++
 build tools** in the **Workloads** tab and install them when prompted.
 
-Odoo dependencies are listed in the `requirements.txt` file located at the
-root of the Odoo Community directory.
+Konvergo ERP dependencies are listed in the `requirements.txt` file located at the
+root of the Konvergo ERP Community directory.
 
-> Tip
->
-> It can be preferable not to mix Python module packages between different
-> instances of Odoo or with the system. However, it is possible to use
-> [virtualenv](https://pypi.org/project/virtualenv/) to create isolated Python
-> environments.
+> <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>It can be preferable not to mix Python module packages between different instances of
+Konvergo ERP or with the system. However, it is possible to use <a href="https://pypi.org/project/virtualenv/">virtualenv</a> to create isolated Python environments.</p>
+</div>
 
-Navigate to the path of the Odoo Community installation (`CommunityPath`) and
+Navigate to the path of the Konvergo ERP Community installation (`CommunityPath`) and
 run **pip** on the requirements file in a terminal **with Administrator
 privileges** :
 
@@ -314,17 +307,19 @@ privileges** :
     C:\> pip install -r requirements.txt
     
 
-Odoo dependencies are listed in the `requirements.txt` file located at the
-root of the Odoo Community directory.
+Konvergo ERP dependencies are listed in the `requirements.txt` file located at the
+root of the Konvergo ERP Community directory.
 
-> Tip
->
-> It can be preferable not to mix Python module packages between different
-> instances of Odoo or with the system. However, it is possible to use
-> [virtualenv](https://pypi.org/project/virtualenv/) to create isolated Python
-> environments.
+> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>The Enterprise git repository does not contain the full Konvergo ERP source code</b>. It is only a
+collection of extra add-ons. The main server code is in the Community edition. Running the
+Enterprise version means running the server from the Community version with the <code>addons-path</code>
+option set to the folder with the Enterprise edition. It is required to clone both the Community
+and Enterprise repositories to have a working Konvergo ERP Enterprise installation.</p>
+</div>0
 
-Navigate to the path of the Odoo Community installation (`CommunityPath`) and
+Navigate to the path of the Konvergo ERP Community installation (`CommunityPath`) and
 run **pip** on the requirements file:
 
     
@@ -334,73 +329,50 @@ run **pip** on the requirements file:
     $ pip3 install -r requirements.txt
     
 
-Warning
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>The Enterprise git repository does not contain the full Konvergo ERP source code</b>. It is only a
+collection of extra add-ons. The main server code is in the Community edition. Running the
+Enterprise version means running the server from the Community version with the <code>addons-path</code>
+option set to the folder with the Enterprise edition. It is required to clone both the Community
+and Enterprise repositories to have a working Konvergo ERP Enterprise installation.</p>
+</div>1
 
-Non-Python dependencies must be installed with a package manager
-([Homebrew](https://brew.sh/), [MacPorts](https://www.macports.org)).
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>The Enterprise git repository does not contain the full Konvergo ERP source code</b>. It is only a
+collection of extra add-ons. The main server code is in the Community edition. Running the
+Enterprise version means running the server from the Community version with the <code>addons-path</code>
+option set to the folder with the Enterprise edition. It is required to clone both the Community
+and Enterprise repositories to have a working Konvergo ERP Enterprise installation.</p>
+</div>2 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>The Enterprise git repository does not contain the full Konvergo ERP source code</b>. It is only a
+collection of extra add-ons. The main server code is in the Community edition. Running the
+Enterprise version means running the server from the Community version with the <code>addons-path</code>
+option set to the folder with the Enterprise edition. It is required to clone both the Community
+and Enterprise repositories to have a working Konvergo ERP Enterprise installation.</p>
+</div>3
 
-  1. Download and install the **Command Line Tools** :
-    
-        $ xcode-select --install
-    
+## Running Konvergo ERP
 
-  2. Use the package manager to install non-Python dependencies.
-
-Note
-
-For languages using a **right-to-left interface** (such as Arabic or Hebrew),
-the `rtlcss` package is required.
-
-LinuxWindowsMac OS
-
-  1. Download and install **nodejs** and **npm** with a package manager.
-
-  2. Install `rtlcss`:
-    
-        $ sudo npm install -g rtlcss
-    
-
-  1. Download and install [nodejs](https://nodejs.org/en/download).
-
-  2. Install `rtlcss`:
-    
-        C:\> npm install -g rtlcss
-    
-
-  3. Edit the system environment’s variable `PATH` to add the folder where `rtlcss.cmd` is located (typically: `C:\Users\<user>\AppData\Roaming\npm\`).
-
-  1. Download and install **nodejs** with a package manager ([Homebrew](https://brew.sh/), [MacPorts](https://www.macports.org)).
-
-  2. Install `rtlcss`:
-    
-        $ sudo npm install -g rtlcss
-    
-
-Warning
-
-`wkhtmltopdf` is not installed through **pip** and must be installed manually
-in [version
-0.12.6](https://github.com/wkhtmltopdf/packaging/releases/tag/0.12.6.1-3) for
-it to support headers and footers. Check out the [wkhtmltopdf
-wiki](https://github.com/odoo/odoo/wiki/Wkhtmltopdf) for more details on the
-various versions.
-
-## Running Odoo
-
-Once all dependencies are set up, Odoo can be launched by running `odoo-bin`,
+Once all dependencies are set up, Konvergo ERP can be launched by running `odoo-bin`,
 the command-line interface of the server. It is located at the root of the
-Odoo Community directory.
+Konvergo ERP Community directory.
 
 To configure the server, either specify [command-line
-arguments](../../developer/reference/cli.html#reference-cmdline-server) or a
-[configuration file](../../developer/reference/cli.html#reference-cmdline-
+arguments](../../developer/reference/cli#reference-cmdline-server) or a
+[configuration file](../../developer/reference/cli#reference-cmdline-
 config).
 
-Tip
-
-For the Enterprise edition, add the path to the `enterprise` add-ons to the
-`addons-path` argument. Note that it must come before the other paths in
-`addons-path` for add-ons to be loaded correctly.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>The Enterprise git repository does not contain the full Konvergo ERP source code</b>. It is only a
+collection of extra add-ons. The main server code is in the Community edition. Running the
+Enterprise version means running the server from the Community version with the <code>addons-path</code>
+option set to the folder with the Enterprise edition. It is required to clone both the Community
+and Enterprise repositories to have a working Konvergo ERP Enterprise installation.</p>
+</div>4
 
 Common necessary configurations are:
 
@@ -418,7 +390,7 @@ LinuxWindowsMac OS
     $ python3 odoo-bin --addons-path=addons -d mydb
     
 
-Where `CommunityPath` is the path of the Odoo Community installation, and
+Where `CommunityPath` is the path of the Konvergo ERP Community installation, and
 `mydb` is the name of the PostgreSQL database.
 
     
@@ -427,7 +399,7 @@ Where `CommunityPath` is the path of the Odoo Community installation, and
     C:\> python odoo-bin -r dbuser -w dbpassword --addons-path=addons -d mydb
     
 
-Where `CommunityPath` is the path of the Odoo Community installation, `dbuser`
+Where `CommunityPath` is the path of the Konvergo ERP Community installation, `dbuser`
 is the PostgreSQL login, `dbpassword` is the PostgreSQL password, and `mydb`
 is the name of the PostgreSQL database.
 
@@ -437,21 +409,27 @@ is the name of the PostgreSQL database.
     $ python3 odoo-bin --addons-path=addons -d mydb
     
 
-Where `CommunityPath` is the path of the Odoo Community installation, and
+Where `CommunityPath` is the path of the Konvergo ERP Community installation, and
 `mydb` is the name of the PostgreSQL database.
 
 After the server has started (the INFO log `odoo.modules.loading: Modules
 loaded.` is printed), open <http://localhost:8069> in a web browser and log
-into the Odoo database with the base administrator account: use `admin` as the
+into the Konvergo ERP database with the base administrator account: use `admin` as the
 email and, again, `admin` as the password.
 
-Tip
-
-  * From there, create and manage new [users](../../applications/general/users.html).
-
-  * The user account used to log into Odoo’s web interface differs from the [`--db_user`](../../developer/reference/cli.html#cmdoption-odoo-bin-r) CLI argument.
-
-See also
-
-[The list of CLI arguments for odoo-bin](../../developer/reference/cli.html)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>The Enterprise git repository does not contain the full Konvergo ERP source code</b>. It is only a
+collection of extra add-ons. The main server code is in the Community edition. Running the
+Enterprise version means running the server from the Community version with the <code>addons-path</code>
+option set to the folder with the Enterprise edition. It is required to clone both the Community
+and Enterprise repositories to have a working Konvergo ERP Enterprise installation.</p>
+</div>5 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>The Enterprise git repository does not contain the full Konvergo ERP source code</b>. It is only a
+collection of extra add-ons. The main server code is in the Community edition. Running the
+Enterprise version means running the server from the Community version with the <code>addons-path</code>
+option set to the folder with the Enterprise edition. It is required to clone both the Community
+and Enterprise repositories to have a working Konvergo ERP Enterprise installation.</p>
+</div>6
 

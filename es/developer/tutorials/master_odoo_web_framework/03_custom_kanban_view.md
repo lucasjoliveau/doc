@@ -1,14 +1,14 @@
 # Chapter 3: Custom kanban view
 
-Advertencia
-
-It is highly recommended that you complete [Chapter 1: Fields and
-Views](01_fields_and_views.html) before starting this chapter. The concepts
-introduced in Chapter 3, including views and examples, will be essential for
-understanding the material covered in this chapter.
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>It is highly recommended that you complete <a href="01_fields_and_views">Chapter 1: Fields and Views</a> before starting this
+chapter. The concepts introduced in Chapter 3, including views and examples, will be essential
+for understanding the material covered in this chapter.</p>
+</div>
 
 We have gained an understanding of the numerous capabilities offered by the
-Odoo web framework. As a next step, we will customize a kanban view. This is a
+Konvergo ERP web framework. As a next step, we will customize a kanban view. This is a
 more complicated project that will showcase some non trivial aspects of the
 framework. The goal is to practice composing views, coordinating various
 aspects of the UI, and doing it in a maintainable way.
@@ -19,116 +19,111 @@ on the left of the task’s kanban view. When you click on a customer on the
 left sidebar, the kanban view on the right is filtered to only display orders
 linked to that customer.
 
-Goal
-
-![../../../_images/overview1.png](../../../_images/overview1.png)
-
-Solutions
-
-The solutions for each exercise of the chapter are hosted on the [official
-Odoo tutorials
-repository](https://github.com/odoo/tutorials/commits/16.0-solutions/awesome_tshirt).
+<div class="admonition-goal alert">
+<p class="alert-title">
+Goal</p><img alt="../../../_images/overview1.png" class="align-center" src="../../../_images/overview1.png"/>
+</div> <div class="accordion accordion-flush o_spoiler alert"><div class="accordion-item"><span class="accordion-header" id="o_spoiler_header_0"><button aria-controls="o_spoiler_content_0" aria-expanded="false" class="accordion-button collapsed flex-row-reverse justify-content-end fw-bold p-0 border-bottom-0" data-bs-target="#o_spoiler_content_0" data-bs-toggle="collapse" type="button">Solutions</button></span><div aria-labelledby="o_spoiler_header_0" class="accordion-collapse collapse border-bottom-0" id="o_spoiler_content_0"><div class="accordion-body"><p>The solutions for each exercise of the chapter are hosted on the
+<a href="https://github.com/odoo/tutorials/commits/16.0-solutions/awesome_tshirt">official Konvergo ERP tutorials repository</a>.</p>
+</div></div></div></div>
 
 ## 1\. Create a new kanban view
 
 Since we are customizing the kanban view, let us start by extending it and
 using our extension in the kanban view for the tshirt orders.
 
-Exercise
-
-  1. Extend the kanban view by extending the kanban controller and by creating a new view object.
-
-  2. Register it in the views registry under `awesome_tshirt.customer_kanban`.
-
-  3. Update the kanban arch to use the extended view. This can be done with the `js_class` attribute.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><ol class="arabic simple">
+<li><p>Extend the kanban view by extending the kanban controller and by creating a new view object.</p></li>
+<li><p>Register it in the views registry under <code>awesome_tshirt.customer_kanban</code>.</p></li>
+<li><p>Update the kanban arch to use the extended view. This can be done with the <code>js_class</code>
+attribute.</p></li>
+</ol>
+</div>
 
 ## 2\. Create a CustomerList component
 
 We will need to display a list of customers, so we might as well create the
 component.
 
-Exercise
-
-  1. Create a `CustomerList` component which only displays a `div` with some text for now.
-
-  2. It should have a `selectCustomer` prop.
-
-  3. Create a new template extending (XPath) the kanban controller template to add the `CustomerList` next to the kanban renderer. Give it an empty function as `selectCustomer` for now.
-
-  4. Subclass the kanban controller to add `CustomerList` in its sub-components.
-
-  5. Make sure you see your component in the kanban view.
-
-![../../../_images/customer_list.png](../../../_images/customer_list.png)
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><ol class="arabic simple">
+<li><p>Create a <code>CustomerList</code> component which only displays a <code>div</code> with some text for now.</p></li>
+<li><p>It should have a <code>selectCustomer</code> prop.</p></li>
+<li><p>Create a new template extending (XPath) the kanban controller template to add the
+<code>CustomerList</code> next to the kanban renderer. Give it an empty function as <code>selectCustomer</code> for
+now.</p></li>
+<li><p>Subclass the kanban controller to add <code>CustomerList</code> in its sub-components.</p></li>
+<li><p>Make sure you see your component in the kanban view.</p></li>
+</ol>
+<img alt="../../../_images/customer_list.png" class="align-center" src="../../../_images/customer_list.png" style="width: 627.6px; height: 544.8px;"/>
+</div>
 
 ## 3\. Load and display data
 
-Exercise
-
-  1. Modify the `CustomerList` component to fetch a list of all customers in `onWillStart`.
-
-  2. Display the list in the template with a `t-foreach`.
-
-  3. Whenever a customer is selected, call the `selectCustomer` function prop.
-
-![../../../_images/customer_data.png](../../../_images/customer_data.png)
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><ol class="arabic simple">
+<li><p>Modify the <code>CustomerList</code> component to fetch a list of all customers in <code>onWillStart</code>.</p></li>
+<li><p>Display the list in the template with a <code>t-foreach</code>.</p></li>
+<li><p>Whenever a customer is selected, call the <code>selectCustomer</code> function prop.</p></li>
+</ol>
+<img alt="../../../_images/customer_data.png" class="align-center" src="../../../_images/customer_data.png" style="width: 613.1999999999999px; height: 746.4px;"/>
+</div>
 
 ## 4\. Update the main kanban view
 
-Exercise
-
-  1. Implement `selectCustomer` in the kanban controller to add the proper domain.
-
-  2. Modify the template to give the real function to the `CustomerList` `selectCustomer` prop.
-
-Since it is not trivial to interact with the search view, here is a quick
-snippet to help:
-
-    
-    
-    selectCustomer(customer_id, customer_name) {
-       this.env.searchModel.setDomainParts({
-          customer: {
-                domain: [["customer_id", "=", customer_id]],
-                facetLabel: customer_name,
-          },
-       });
-    }
-    
-
-![../../../_images/customer_filter.png](../../../_images/customer_filter.png)
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><ol class="arabic simple">
+<li><p>Implement <code>selectCustomer</code> in the kanban controller to add the proper domain.</p></li>
+<li><p>Modify the template to give the real function to the <code>CustomerList</code> <code>selectCustomer</code> prop.</p></li>
+</ol>
+<p>Since it is not trivial to interact with the search view, here is a quick snippet to help:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">selectCustomer</span><span class="p">(</span><span class="nx">customer_id</span><span class="p">,</span> <span class="nx">customer_name</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">searchModel</span><span class="p">.</span><span class="nx">setDomainParts</span><span class="p">({</span>
+      <span class="nx">customer</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">domain</span><span class="o">:</span> <span class="p">[[</span><span class="s2">"customer_id"</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="nx">customer_id</span><span class="p">]],</span>
+            <span class="nx">facetLabel</span><span class="o">:</span> <span class="nx">customer_name</span><span class="p">,</span>
+      <span class="p">},</span>
+   <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<img alt="../../../_images/customer_filter.png" class="align-center" src="../../../_images/customer_filter.png" style="width: 780.0px; height: 516.0px;"/>
+</div>
 
 ## 5\. Only display customers which have an active order
 
 There is a `has_active_order` field on `res.partner`. Let us allow the user to
 filter results on customers with an active order.
 
-Exercise
-
-  1. Add an input of type checkbox in the `CustomerList` component, with a label «Active customers» next to it.
-
-  2. Changing the value of the checkbox should filter the list on customers with an active order.
-
-![../../../_images/active_customer.png](../../../_images/active_customer.png)
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><ol class="arabic simple">
+<li><p>Add an input of type checkbox in the <code>CustomerList</code> component, with a label «Active customers»
+next to it.</p></li>
+<li><p>Changing the value of the checkbox should filter the list on customers with an active order.</p></li>
+</ol>
+<img alt="../../../_images/active_customer.png" class="align-center" src="../../../_images/active_customer.png" style="width: 303.59999999999997px; height: 368.4px;"/>
+</div>
 
 ## 6\. Add a search bar to the customer list
 
-Exercise
-
-Add an input above the customer list that allows the user to enter a string
-and to filter the displayed customers, according to their name.
-
-Truco
-
-You can use the `fuzzyLookup` function to perform the filter.
-
-![../../../_images/customer_search.png](../../../_images/customer_search.png)
-
-Ver también
-
-  * [Code: The fuzzylookup function](https://github.com/odoo/odoo/blob/16.0/addons/web/static/src/core/utils/search.js)
-
-  * [Example: Using fuzzyLookup](https://github.com/odoo/odoo/blob/1f4e583ba20a01f4c44b0a4ada42c4d3bb074273/addons/web/static/tests/core/utils/search_test.js#L17)
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add an input above the customer list that allows the user to enter a string and to filter the
+displayed customers, according to their name.</p>
+<div class="alert alert-tip">
+<p class="alert-title">
+Truco</p><p>You can use the <code>fuzzyLookup</code> function to perform the filter.</p>
+</div>
+<img alt="../../../_images/customer_search.png" class="align-center" src="../../../_images/customer_search.png" style="width: 304.8px; height: 498.0px;"/>
+</div> <div class="admonition-goal alert">
+<p class="alert-title">
+Goal</p><img alt="../../../_images/overview1.png" class="align-center" src="../../../_images/overview1.png"/>
+</div>0
 
 ## 7\. Refactor the code to use `t-model`
 
@@ -138,24 +133,15 @@ way, with the
 [t-model](https://github.com/odoo/owl/blob/master/doc/reference/input_bindings.md)
 directive.
 
-Exercise
-
-  1. Make sure you have a reactive object that represents the fact that the filter is active (something like `this.state = useState({ displayActiveCustomers: false, searchString: ''})`).
-
-  2. Modify the code to add a getter `displayedCustomers` which returns the currently active list of customers.
-
-  3. Modify the template to use `t-model`.
+<div class="admonition-goal alert">
+<p class="alert-title">
+Goal</p><img alt="../../../_images/overview1.png" class="align-center" src="../../../_images/overview1.png"/>
+</div>1
 
 ## 8\. Paginate customers!
 
-Exercise
-
-  1. Add a [pager](../../reference/frontend/owl_components.html#frontend-pager) in the `CustomerList`, and only load/render the first 20 customers.
-
-  2. Whenever the pager is changed, the customer list should update accordingly.
-
-This is actually pretty hard, in particular in combination with the filtering
-done in the previous exercise. There are many edge cases to take into account.
-
-![../../../_images/customer_pager.png](../../../_images/customer_pager.png)
+<div class="admonition-goal alert">
+<p class="alert-title">
+Goal</p><img alt="../../../_images/overview1.png" class="align-center" src="../../../_images/overview1.png"/>
+</div>2
 

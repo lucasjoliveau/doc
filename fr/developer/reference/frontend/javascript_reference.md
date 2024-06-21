@@ -1,6 +1,6 @@
 # Javascript Reference
 
-This document presents the Odoo Javascript framework. This framework is not a
+This document presents the Konvergo ERP Javascript framework. This framework is not a
 large application in term of lines of code, but it is quite generic, because
 it is basically a machine to turn a declarative interface description into a
 live application, able to interact with every model and records in the
@@ -13,7 +13,7 @@ The Javascript framework is designed to work with three main use cases:
 
   * the _web client_ : this is the private web application, where one can view and edit business data. This is a single page application (the page is never reloaded, only the new data is fetched from the server whenever it is needed)
 
-  * the _website_ : this is the public part of Odoo. It allows an unidentified user to browse some content, to shop or to perform many actions, as a client. This is a classical website: various routes with controllers and some javascript to make it work.
+  * the _website_ : this is the public part of Konvergo ERP. It allows an unidentified user to browse some content, to shop or to perform many actions, as a client. This is a classical website: various routes with controllers and some javascript to make it work.
 
   * the _point of sale_ : this is the interface for the point of sale. It is a specialized single page application.
 
@@ -34,7 +34,7 @@ request a full page from the server each time the user perform an action.
 Instead, it only requests what it needs, and then replaces/updates the view.
 Also, it manages the url: it is kept in sync with the web client state.
 
-It means that while a user is working on Odoo, the web client class (and the
+It means that while a user is working on Konvergo ERP, the web client class (and the
 action manager) actually creates and destroys many sub components. The state
 is highly dynamic, and each widget could be destroyed at any time.
 
@@ -81,10 +81,11 @@ are a few things you can try to solve the issue:
 
   * or maybe to save your code file…
 
-Note
-
-Once an asset file has been recreated, you need to refresh the page, to reload
-the proper files (if that does not work, the files may be cached).
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Once an asset file has been recreated, you need to refresh the page, to reload
+the proper files (if that does not work, the files may be cached).</p>
+</div>
 
 ## Loading Javascript Code
 
@@ -107,39 +108,41 @@ done in the global scope directly.
 
   * Module systems help resolve these issues: because modules specify their dependencies the module system can ensure the necessary order of loading is respected, and because modules can precisely specify their exports it is less likely that they will leak implementation details.
 
-For most Odoo code, we want to use a module system. Because of the way assets
-work in Odoo (and in particular, the fact that each installed odoo addon can
-modify the list of files contained in a bundle), Odoo has to resolve modules
-browser side. To do that, Odoo provides a small module system described just
-below (see [Odoo Module System](javascript_modules.html#frontend-modules-odoo-
+For most Konvergo ERP code, we want to use a module system. Because of the way assets
+work in Konvergo ERP (and in particular, the fact that each installed odoo addon can
+modify the list of files contained in a bundle), Konvergo ERP has to resolve modules
+browser side. To do that, Konvergo ERP provides a small module system described just
+below (see [Konvergo ERP Module System](javascript_modules#frontend-modules-odoo-
 module)).
 
-However, Odoo also provides support for native javascript modules (see [Native
-Javascript Modules](javascript_modules.html#frontend-modules-native-js)).
+However, Konvergo ERP also provides support for native javascript modules (see [Native
+Javascript Modules](javascript_modules#frontend-modules-native-js)).
 These modules will simply be translated by the server into odoo modules. It is
 encouraged to write all javascript code as a native module, for a better IDE
-integration. In the future, the Odoo module system should be considered an
+integration. In the future, the Konvergo ERP module system should be considered an
 implementation detail, not the primary way to write javascript code.
 
-Note
-
-Native javascript modules are the primary way to define javascript code.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Native javascript modules are the primary way to define javascript code.</p>
+</div>
 
 ## Class System
 
-Odoo was developed before ECMAScript 6 classes were available. In Ecmascript
+Konvergo ERP was developed before ECMAScript 6 classes were available. In Ecmascript
 5, the standard way to define a class is to define a function and to add
 methods on its prototype object. This is fine, but it is slightly complex when
 we want to use inheritance, mixins.
 
-For these reasons, Odoo decided to use its own class system, inspired by John
+For these reasons, Konvergo ERP decided to use its own class system, inspired by John
 Resig. The base Class is located in _web.Class_ , in the file _class.js_.
 
-Note
-
-Note that the custom class system should be avoided for creating new code. It
-will be deprecated at some point, and then removed. New classes should use the
-standard ES6 class system.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Note that the custom class system should be avoided for creating new code. It
+will be deprecated at some point, and then removed.  New classes should use
+the standard ES6 class system.</p>
+</div>
 
 ### Creating a subclass
 
@@ -241,7 +244,7 @@ instances. This is done by using the _include_ method:
     
 
 This is obviously a dangerous operation and should be done with care. But with
-the way Odoo is structured, it is sometimes necessary in one addon to modify
+the way Konvergo ERP is structured, it is sometimes necessary in one addon to modify
 the behavior of a widget/class defined in another addon. Note that it will
 modify all instances of the class, even if they have already been created.
 
@@ -258,7 +261,7 @@ In short, the features provided by the Widget class include:
 
   * extensive lifecycle management with safety features (e.g. automatically destroying children widgets during the destruction of a parent)
 
-  * automatic rendering with [qweb](qweb.html#reference-qweb)
+  * automatic rendering with [qweb](qweb#reference-qweb)
 
   * various utility functions to help interacting with the outside environment.
 
@@ -287,7 +290,7 @@ Here is an example of a basic counter widget:
 For this example, assume that the template _some.template_ (and is properly
 loaded: the template is in a file, which is properly defined in the assets of
 the module manifest `'assets': {'web.assets_qweb': [...]}`, see
-[assets](assets.html#reference-assets).) is given by:
+[assets](assets#reference-assets).) is given by:
 
     
     
@@ -439,7 +442,7 @@ Widget.template
 
     
 
-Should be set to the name of a [QWeb template](qweb.html#reference-qweb). If
+Should be set to the name of a [QWeb template](qweb#reference-qweb). If
 set, the template will be rendered after the widget has been initialized but
 before it has been started. The root element generated by the template will be
 set as the DOM root of the widget.
@@ -536,9 +539,10 @@ Renvoie
 
 jQuery object
 
-Note
-
-this helper method is similar to `Backbone.View.$`
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>this helper method is similar to <code>Backbone.View.$</code></p>
+</div>
 
 Widget.setElement(_element_)
 
@@ -607,7 +611,7 @@ one), the id should be partially generated using `_.uniqueId()` e.g.:
 
   * Avoid predictable/common CSS class names. Class names such as « content » or « navigation » might match the desired meaning/semantics, but it is likely an other developer will have the same need, creating a naming conflict and unintended behavior. Generic class names should be prefixed with e.g. the name of the component they belong to (creating « informal » namespaces, much as in C or Objective-C).
 
-  * Global selectors should be avoided. Because a component may be used several times in a single page (an example in Odoo is dashboards), queries should be restricted to a given component’s scope. Unfiltered selections such as `$(selector)` or `document.querySelectorAll(selector)` will generally lead to unintended or incorrect behavior. Odoo Web’s `Widget()` has an attribute providing its DOM root (`$el`), and a shortcut to select nodes directly (`$()`).
+  * Global selectors should be avoided. Because a component may be used several times in a single page (an example in Konvergo ERP is dashboards), queries should be restricted to a given component’s scope. Unfiltered selections such as `$(selector)` or `document.querySelectorAll(selector)` will generally lead to unintended or incorrect behavior. Konvergo ERP Web’s `Widget()` has an attribute providing its DOM root (`$el`), and a shortcut to select nodes directly (`$()`).
 
   * More generally, never assume your components own or controls anything beyond its own personal `$el` (so, avoid using a reference to the parent widget)
 
@@ -648,7 +652,7 @@ one), the id should be partially generated using `_.uniqueId()` e.g.:
 
 ## QWeb Template Engine
 
-The web client uses the [QWeb Templates](qweb.html) template engine to render
+The web client uses the [QWeb Templates](qweb) template engine to render
 widgets (unless they override the _renderElement_ method to do something
 else). The Qweb JS template engine is based on XML, and is mostly compatible
 with the python implementation.
@@ -689,7 +693,7 @@ performed.
 
 ## Event system
 
-There are currently two event systems supported by Odoo: a simple system which
+There are currently two event systems supported by Konvergo ERP: a simple system which
 allows adding listeners and triggering events, and a more complete system that
 also makes events “bubble up”.
 
@@ -733,10 +737,11 @@ Here is an example on how this event system could be used:
     ... this.trigger('valuechange', someValue);
     
 
-Avertissement
-
-the use of this event system is discouraged, we plan to replace each _trigger_
-method by the _trigger_up_ method from the extended event system
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>the use of this event system is discouraged, we plan to replace each
+<em>trigger</em> method by the <em>trigger_up</em> method from the extended event system</p>
+</div>
 
 ### Extended Event System
 
@@ -744,11 +749,11 @@ The custom event widgets is a more advanced system, which mimic the DOM events
 API. Whenever an event is triggered, it will “bubble up” the component tree,
 until it reaches the root widget, or is stopped.
 
-  * _trigger_up_ : this is the method that will create a small _OdooEvent_ and dispatch it in the component tree. Note that it will start with the component that triggered the event
+  * _trigger_up_ : this is the method that will create a small _Konvergo ERPEvent_ and dispatch it in the component tree. Note that it will start with the component that triggered the event
 
   * _custom_events_ : this is the equivalent of the _event_ dictionary, but for odoo events.
 
-The OdooEvent class is very simple. It has three public attributes: _target_
+The Konvergo ERPEvent class is very simple. It has three public attributes: _target_
 (the widget that triggered the event), _name_ (the event name) and _data_ (the
 payload). It also has 2 methods: _stopPropagation_ and _is_stopped_.
 
@@ -780,7 +785,7 @@ The previous example can be updated to use the custom event system:
 
 ## Registries
 
-A common need in the Odoo ecosystem is to extend/change the behaviour of the
+A common need in the Konvergo ERP ecosystem is to extend/change the behaviour of the
 base system from the outside (by installing an application, i.e. a different
 module). For example, one may need to add a new widget type in some views. In
 that case, and many others, the usual process is to create the desired
@@ -973,19 +978,20 @@ helper that helps making a rpc.
     });
     
 
-Avertissement
-
-If a widget is destroyed, it will be detached from the main component tree and
-will not have a parent. In that case, the events will not bubble up, which
-means that the work will not be done. This is usually exactly what we want
-from a destroyed widget.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>If a widget is destroyed, it will be detached from the main component tree
+and will not have a parent.  In that case, the events will not bubble up, which
+means that the work will not be done.  This is usually exactly what we want from
+a destroyed widget.</p>
+</div>
 
 ### RPCs
 
 The rpc functionality is supplied by the ajax service. But most people will
 probably only interact with the __rpc_ helpers.
 
-There are typically two usecases when working on Odoo: one may need to call a
+There are typically two usecases when working on Konvergo ERP: one may need to call a
 method on a (python) model (this goes through a controller _call_kw_), or one
 may need to directly call a controller (available on some route).
 
@@ -1012,7 +1018,7 @@ may need to directly call a controller (available on some route).
 
 ## Notifications
 
-The Odoo framework has a standard way to communicate various information to
+The Konvergo ERP framework has a standard way to communicate various information to
 the user: notifications, which are displayed on the top right of the user
 interface.
 
@@ -1028,7 +1034,7 @@ notification could be displayed with two buttons _Accept_ and _Decline_.
 
 ### Notification system
 
-The notification system in Odoo is designed with the following components:
+The notification system in Konvergo ERP is designed with the following components:
 
   * a _Notification_ widget: this is a simple widget that is meant to be created and displayed with the desired information
 
@@ -1149,7 +1155,7 @@ files that need to be translated. The way it currently works is the following:
   * in runtime, whenever the function __t_ is called, it will look up in this list in order to find a translation, and return it or the original string if none is found.
 
 Note that translations are explained in more details, from the server point of
-view, in the document [Translating Modules](../../howtos/translations.html).
+view, in the document [Translating Modules](../../howtos/translations).
 
 There are two important functions for the translations in javascript: __t_ and
 __lt_. The difference is that __lt_ is lazily evaluated.
@@ -1236,7 +1242,7 @@ The word “view” has more than one meaning. This section is about the design 
 the javascript code of the views, not the structure of the _arch_ or anything
 else.
 
-In 2017, Odoo replaced the previous view code with a new architecture. The
+In 2017, Konvergo ERP replaced the previous view code with a new architecture. The
 main need was to separate the rendering logic from the model logic.
 
 Views (in a generic sense) are now described with 4 pieces: a View, a
@@ -1265,12 +1271,12 @@ The Renderer is the V in the MVC pattern.
 
 It is the C in the MVC pattern.
 
-Note
-
-The JS code for the views has been designed to be usable outside of the
-context of a view manager/action manager. They could be used in a client
-action, or, they could be displayed in the public website (with some work on
-the assets).
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The JS code for the views has been designed to be usable outside of the
+context of a view manager/action manager.  They could be used in a client action,
+or, they could be displayed in the public website (with some work on the assets).</p>
+</div>
 
 ## Field Widgets
 
@@ -1582,14 +1588,13 @@ handle (HandleWidget)
 This field’s job is to be displayed as a _handle_ , and allows reordering the
 various records by drag and dropping them.
 
-Avertissement
-
-It has to be specified on the field by which records are sorted.
-
-Avertissement
-
-Having more than one field with a handle widget on the same list is not
-supported.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>It has to be specified on the field by which records are sorted.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Having more than one field with a handle widget on the same list is not supported.</p>
+</div>
 
   * Supported field types: _integer_
 
@@ -2397,19 +2402,18 @@ several steps should be done.
     });
     
 
-Avertissement
-
-When the `loadControlPanel` is set to true, the client action will
-automatically get the content of a search view or a control panel view. In
-this case, a model name should be specified like this:
-
-    
-        init: function (parent, action, options) {
-        ...
-        this.controlPanelParams.modelName = 'model.name';
-        ...
-    }
-    
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>When the <code>loadControlPanel</code> is set to true, the client action will automatically get the content of a search view or a control panel view.
+In this case, a model name should be specified like this:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">init</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">parent</span><span class="p">,</span> <span class="nx">action</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">controlPanelParams</span><span class="p">.</span><span class="nx">modelName</span> <span class="o">=</span> <span class="s1">'model.name'</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 
   * Call the method _updateControlPanel_ whenever we need to update the control panel. For example:
     

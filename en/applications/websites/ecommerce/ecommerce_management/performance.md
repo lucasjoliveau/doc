@@ -1,6 +1,6 @@
 # Performance monitoring
 
-Odoo integrates a variety of tools to analyze and improve the performance of
+Konvergo ERP integrates a variety of tools to analyze and improve the performance of
 your eCommerce website.
 
 ## Data monitoring
@@ -12,25 +12,26 @@ as sales performance per product, category, day, etc.
 
 ![Performance reporting of eCommerce](../../../../_images/reporting.png)
 
-By clicking Measures, you can select the type of measurement used, such as:
+By clicking **Measures** , you can select the type of measurement used, such
+as:
 
-  * Margin;
+  * **Margin** ;
 
-  * Qty Invoiced;
+  * **Qty Invoiced** ;
 
-  * Untaxed Total;
+  * **Untaxed Total** ;
 
-  * Volume;
+  * **Volume** ;
 
   * …
 
 Other options include **multiple views (Pivot, etc.), comparison** by periods
-or years, and directly insert in spreadsheet, etc.
+or years, and directly **insert in spreadsheet** , etc.
 
 ## Analytics
 
-It is possible to link your Odoo website with
-[Plausible.io](../../website/reporting/analytics.html#analytics-plausible) and
-[Google Analytics](../../website/reporting/analytics.html#analytics-google-
+It is possible to link your Konvergo ERP website with
+[Plausible.io](../../website/reporting/analytics#analytics-plausible) and
+[Google Analytics](../../website/reporting/analytics#analytics-google-
 analytics).
 

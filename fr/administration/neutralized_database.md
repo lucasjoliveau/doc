@@ -6,20 +6,18 @@ risk of launching specific automated processes that could impact production
 data (e.g., sending emails to customers). Live access is removed and turned
 into a testing environment.
 
-Note
-
-**Toutes base de données de test créée est une base de données neutralisée**
-
-  * test des bases de données de secours
-
-  * dupliquer les bases de données
-
-  * pour Odoo.sh : bases de données de préproduction et de développement
-
-Important
-
-Une base de données peut être neutralisée pendant la migration car il est
-important de faire des tests avant de basculer sur une nouvelle version.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Toutes base de données de test créée est une base de données neutralisée</b></p>
+<ul>
+<li><p>test des bases de données de secours</p></li>
+<li><p>dupliquer les bases de données</p></li>
+<li><p>pour Konvergo ERP.sh : bases de données de préproduction et de développement</p></li>
+</ul>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Une base de données peut être neutralisée pendant la migration car il est important de faire des tests avant de basculer sur une nouvelle version.</p>
+</div>
 
 ## Fonctionnalités désactivées
 
@@ -37,10 +35,11 @@ Voici une liste non exhaustive des paramètres désactivés :
 
   * IAP tokens
 
-Note
-
-**A red banner at the top of the screen is displayed on the neutralized
-database so that it can be seen immediately.**
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>A red banner at the top of the screen is displayed on the neutralized database so that it can
+be seen immediately.</b></p>
+</div>
 
   *[IAP]: In-App Purchase
 

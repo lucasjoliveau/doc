@@ -1,21 +1,21 @@
 # VoIP (Voix sur protocole Internet)
 
-Pour plus d'infos
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p>For more information, reference the <a href="https://www.odoo.com/slides/voip-voice-over-ip-315">Konvergo ERP eLearning (video tutorials) on VoIP</a></p>
+</div>
 
-For more information, reference the [Odoo eLearning (video tutorials) on
-VoIP](https://www.odoo.com/slides/voip-voice-over-ip-315)
-
-  * [Utiliser les services VoIP dans Odoo avec OnSIP](voip/onsip.html)
+  * [Utiliser les services VoIP dans Konvergo ERP avec OnSIP](voip/onsip)
   * Axivox configuration
-    * [VoIP services in Odoo with Axivox](voip/axivox/axivox_config.html)
-    * [Manage users in Axivox](voip/axivox/manage_users.html)
-    * [Voicemails and audio messages](voip/axivox/vm_audio_messages.html)
-    * [Dynamic caller ID](voip/axivox/dynamic_caller_id.html)
-    * [Conference calls](voip/axivox/conference_calls.html)
-    * [Dial plan basics](voip/axivox/dial_plan_basics.html)
-    * [Advanced dial plans](voip/axivox/dial_plan_advanced.html)
-    * [Call queues](voip/axivox/call_queues.html)
-  * [VoIP widget](voip/voip_widget.html)
-  * [Devices and integrations](voip/devices_integrations.html)
-  * [Make, receive, transfer, and forward calls](voip/transfer_forward.html)
+    * [VoIP services in Konvergo ERP with Axivox](voip/axivox/axivox_config)
+    * [Manage users in Axivox](voip/axivox/manage_users)
+    * [Voicemails and audio messages](voip/axivox/vm_audio_messages)
+    * [Dynamic caller ID](voip/axivox/dynamic_caller_id)
+    * [Conference calls](voip/axivox/conference_calls)
+    * [Dial plan basics](voip/axivox/dial_plan_basics)
+    * [Advanced dial plans](voip/axivox/dial_plan_advanced)
+    * [Call queues](voip/axivox/call_queues)
+  * [VoIP widget](voip/voip_widget)
+  * [Devices and integrations](voip/devices_integrations)
+  * [Make, receive, transfer, and forward calls](voip/transfer_forward)
 

@@ -11,7 +11,7 @@ Por lo general, los paquetes se utilizan para los siguientes fines:
 
   3. Almacenar productos a granel.
 
-El campo _Uso del paquete_ en el formulario correspondiente en Odoo solo será
+El campo _Uso del paquete_ en el formulario correspondiente en Konvergo ERP solo será
 visible luego de habilitar las funciones _Traslados por lote_ y _Paquetes_
 (Inventario ‣ Configuración ‣ Ajustes).
 
@@ -21,23 +21,21 @@ reutilizable_ **solo** al configurar paquetes destinados para preparar varias
 órdenes.
 
 La función opcional _Tipo de paquete_ se usa para [calcular el costo de
-envío](../../shipping_receiving/setup_configuration/delivery_method.html),
+envío](../../shipping_receiving/setup_configuration/delivery_method),
 según el peso real del envío. Cree tipos de paquetes para incluir el peso del
 paquete (por ejemplo, de cajas, palés y otros contenedores de envío) en los
 cálculos de costos de envío.
 
-Nota
-
-Por lo general los paquetes se usan en [la ruta de entrega en tres
-pasos](../../shipping_receiving/daily_operations/delivery_three_steps.html),
-pero también se pueden usar en cualquier flujo de trabajo que involucre
-productos almacenables.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Por lo general los paquetes se usan en <a href="../../shipping_receiving/daily_operations/delivery_three_steps">la ruta de entrega en tres pasos</a>, pero también se pueden usar en cualquier flujo de trabajo que involucre productos almacenables.</p>
+</div>
 
 ## Configuración
 
 Para utilizar paquetes, primero vaya a Inventario ‣ Configuración ‣ Ajustes.
-En la sección Operaciones active la función Paquetes y luego haga clic en
-Guardar.
+En la sección **Operaciones** active la función **Paquetes** y luego haga clic
+en **Guardar**.
 
 ![Activar la función *Paquetes* en Inventario > Configuración >
 Ajustes.](../../../../../_images/enable-pack.png)
@@ -54,18 +52,19 @@ formas:
 ### Operaciones detalladas
 
 En cualquier traslado de almacén (por ejemplo, una recepción u orden de
-entrega) puede agregar un producto a un paquete si hace clic en el icono ⦙≣
-(lista con viñetas) en la pestaña Operaciones.
+entrega) puede agregar un producto a un paquete si hace clic en el icono **⦙≣
+(lista con viñetas)** en la pestaña **Operaciones**.
 
 ![El icono "Operaciones detalladas" aparece en la línea del
 producto.](../../../../../_images/detailed-operations1.png)
 
-Esta acción abrirá la ventana emergente Operaciones detalladas del producto.
+Esta acción abrirá la ventana emergente **Operaciones detalladas** del
+**producto**.
 
-Para colocar el producto en un paquete, haga clic en Agregar una línea y
-asigne el producto a un Paquete de destino. Seleccione un paquete existente o
-cree uno nuevo, para esto deberá escribir el nombre del nuevo paquete y luego
-seleccionar Crear….
+Para colocar el **producto** en un paquete, haga clic en **Agregar una línea**
+y asigne el producto a un **Paquete de destino**. Seleccione un paquete
+existente o cree uno nuevo, para esto deberá escribir el nombre del nuevo
+paquete y luego seleccionar **Crear…**.
 
 ![Asignar un paquete en el campo "Paquete de
 destino".](../../../../../_images/destination-package.png)
@@ -73,33 +72,32 @@ destino".](../../../../../_images/destination-package.png)
 Doce unidades del producto `Pantallas acústicas` se colocan en `PACK0000001`.
 
 Después, especifique la cantidad de artículos que se colocarán en el paquete
-en la columna Hecho. Repita los pasos anteriores para colocar el producto en
-distintos paquetes. Haga clic en Confirmar para cerrar la ventana después de
-que haya terminado.
+en la columna **Hecho**. Repita los pasos anteriores para colocar el
+**producto** en distintos paquetes. Haga clic en **Confirmar** para cerrar la
+ventana después de que haya terminado.
 
-Ver también
-
-[Enviar una orden en varios
-paquetes](../../shipping_receiving/advanced_operations_shipping/multipack.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="../../shipping_receiving/advanced_operations_shipping/multipack">Enviar una orden en varios paquetes</a></p>
+</div>
 
 ### Incluir en el paquete
 
-De forma alternativa, haga clic en el botón Incluir en el paquete en
+De forma alternativa, haga clic en el botón **Incluir en el paquete** en
 **cualquier** traslado de almacén para crear un nuevo paquete y colocar todos
 los artículos en el traslado en ese paquete recién creado.
 
-Importante
-
-El botón Incluir en el paquete aparece en las recepciones, órdenes de entrega
-y otros formularios de traslado cuando la función _Paquetes_ está habilitada
-en la aplicación Inventario ‣ Configuración ‣ Ajustes.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>El botón <b>Incluir en el paquete</b> aparece en las recepciones, órdenes de entrega y otros formularios de traslado cuando la función <em>Paquetes</em> está habilitada en la aplicación Inventario ‣ Configuración ‣ Ajustes.</p>
+</div>
 
 ![Imagen en donde se puede visualizar cómo se hace clic en el botón "Incluir
 en el paquete".](../../../../../_images/put-in-pack.png)
 
-En el traslado por lotes `BATCH/00003` se hizo clic en el botón Incluir en el
-paquete para crear el nuevo paquete `PACK0000002` y asignar todos los
-artículos a este en el campo Paquete de destino.
+En el traslado por lotes `BATCH/00003` se hizo clic en el botón **Incluir en
+el paquete** para crear el nuevo paquete `PACK0000002` y asignar todos los
+artículos a este en el campo **Paquete de destino**.
 
 ## Tipo de paquete
 
@@ -108,36 +106,38 @@ de paquetes, allí también podrá establecer dimensiones personalizadas y
 límites de peso. Esta función se utiliza en su mayoría para calcular el peso
 de los paquetes para los costos de envío.
 
-Ver también
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../shipping_receiving/setup_configuration/third_party_shipper">Transportistas</a></p></li>
+<li><p><a href="../../shipping_receiving/setup_configuration/delivery_method">Métodos de envío</a></p></li>
+</ul>
+</div>
 
-  * [Transportistas](../../shipping_receiving/setup_configuration/third_party_shipper.html)
+En la lista de **Tipos de paquetes** , abrirá un formulario vacío de tipo de
+paquete al hacer clic en **Nuevo**. Los campos del formulario son los
+siguientes:
 
-  * [Métodos de envío](../../shipping_receiving/setup_configuration/delivery_method.html)
+  * **Tipo de paquete** (obligatorio): defina el nombre del tipo de paquete.
 
-En la lista de Tipos de paquetes, abrirá un formulario vacío de tipo de
-paquete al hacer clic en Nuevo. Los campos del formulario son los siguientes:
+  * **Tamaño** : defina las dimensiones del paquete en milímetros (mm). Los campos, de izquierda a derecha, definen la **longitud** , el **ancho** y la **altura**.
 
-  * Tipo de paquete (obligatorio): defina el nombre del tipo de paquete.
+  * **Peso** : el peso de un paquete vacío (por ejemplo, una caja vacía, un palé).
 
-  * Tamaño: defina las dimensiones del paquete en milímetros (mm). Los campos, de izquierda a derecha, definen la longitud, el ancho y la altura.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Konvergo ERP calcula el peso del paquete sumando el peso del paquete vacío más el peso de los artículos. Este último está disponible en el formulario de cada producto en el campo <b>Peso</b> de la pestaña <b>Inventario</b>.</p>
+</div>
 
-  * Peso: el peso de un paquete vacío (por ejemplo, una caja vacía, un palé).
+  * **Peso máximo** : el peso máximo de envío permitido en el paquete.
 
-Nota
+  * **Código de barras** : defina un código de barras para identificar el tipo de paquete al escanearlo.
 
-Odoo calcula el peso del paquete sumando el peso del paquete vacío más el peso
-de los artículos. Este último está disponible en el formulario de cada
-producto en el campo Peso de la pestaña Inventario.
+  * **Empresa** : especifique una empresa para que el tipo de paquete esté disponible **solo** en la empresa seleccionada. Deje el campo vacío si está disponible en todas las empresas.
 
-  * Peso máximo: el peso máximo de envío permitido en el paquete.
+  * **Transportista** : especifique al transportista correspondiente para este tipo de paquete.
 
-  * Código de barras: defina un código de barras para identificar el tipo de paquete al escanearlo.
-
-  * Empresa: especifique una empresa para que el tipo de paquete esté disponible **solo** en la empresa seleccionada. Deje el campo vacío si está disponible en todas las empresas.
-
-  * Transportista: especifique al transportista correspondiente para este tipo de paquete.
-
-  * Código de transportista: defina un código vinculado al tipo de paquete.
+  * **Código de transportista** : defina un código vinculado al tipo de paquete.
 
 ![Tipo de paquete para una caja de 25 kilos de
 FedEx.](../../../../../_images/package-type.png)
@@ -145,41 +145,39 @@ FedEx.](../../../../../_images/package-type.png)
 ## Paquetes para varias órdenes
 
 Para utilizar los _paquetes para varias órdenes_ , primero vaya a la
-aplicación Inventario ‣ Configuración ‣ Ajustes y active la función Traslados
-por lote, está ubicada en la sección Operaciones. Una vez que haya hecho esto,
-el campo _Uso del paquete_ aparecerá en el formulario.
+aplicación Inventario ‣ Configuración ‣ Ajustes y active la función
+**Traslados por lote** , está ubicada en la sección **Operaciones**. Una vez
+que haya hecho esto, el campo _Uso del paquete_ aparecerá en el formulario.
 
 ![Activar la función *Traslados por lote* en Inventario > Configuración >
 Ajustes.](../../../../../_images/enable-batch.png)
 
-Vaya a Inventario ‣ Productos ‣ Paquetes y haga clic en Nuevo para agregar
+Vaya a Inventario ‣ Productos ‣ Paquetes y haga clic en **Nuevo** para agregar
 nuevos paquetes o seleccione uno existente. Esta acción abrirá el formulario
 del paquete con los siguientes campos:
 
-  * Referencia del paquete (obligatorio): el nombre del paquete.
+  * **Referencia del paquete** (obligatorio): el nombre del paquete.
 
-  * Tipo de paquete: se utiliza para configurar las cajas de envío para enviar al cliente.
+  * **Tipo de paquete** : se utiliza para configurar las cajas de envío para enviar al cliente.
 
-Nota
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El <b>tipo de paquete</b> no es necesario para configurar paquetes de recolección para varias órdenes.</p>
+</div>
 
-El tipo de paquete no es necesario para configurar paquetes de recolección
-para varias órdenes.
+  * **Peso de envío** : se utiliza para agregar el peso del paquete después de pesarlo.
 
-  * Peso de envío: se utiliza para agregar el peso del paquete después de pesarlo.
+  * **Empresa** : especifique una empresa para que el paquete esté disponible **solo** en la empresa seleccionada. Deje el campo vacío si está disponible en todas las empresas.
 
-  * Empresa: especifique una empresa para que el paquete esté disponible **solo** en la empresa seleccionada. Deje el campo vacío si está disponible en todas las empresas.
+  * **Ubicación** : la ubicación actual del paquete.
 
-  * Ubicación: la ubicación actual del paquete.
+  * **Fecha de empaquetado** : la fecha en que se creó el paquete.
 
-  * Fecha de empaquetado: la fecha en que se creó el paquete.
-
-  * Uso del paquete: seleccione Caja reutilizable si se trata de paquetes que se usarán para mover productos dentro del almacén o Caja desechable en caso de que los paquetes se usen para enviar productos a los clientes.
+  * **Uso del paquete** : seleccione **Caja reutilizable** si se trata de paquetes que se usarán para mover productos dentro del almacén o **Caja desechable** en caso de que los paquetes se usen para enviar productos a los clientes.
 
 ![Visualización del formulario de paquete para crear un paquete para varias
-órdenes.](../../../../../_images/package.png)
-
-Ver también
-
-[Usar paquetes para preparar varias
-órdenes](../../warehouses_storage/advanced_operations_warehouse/cluster_picking.html)
+órdenes.](../../../../../_images/package.png) <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="../../warehouses_storage/advanced_operations_warehouse/cluster_picking">Usar paquetes para preparar varias órdenes</a></p>
+</div>
 

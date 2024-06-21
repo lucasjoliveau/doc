@@ -4,8 +4,8 @@ Lorsque vous achetez un produit, il se peut que votre fournisseur utilise une
 unité de mesure différente de celle que vous utilisez pour vendre. Ceci
 pourrait être source de confusion entre les responsables des ventes et des
 achats. Il est également fastidieux de convertir mensuellement les unités de
-mesure à chaque fois. Avec Odoo, vous pouvez configurer votre produit une
-seule fois et laisser Odoo se charger de la conversion.
+mesure à chaque fois. Avec Konvergo ERP, vous pouvez configurer votre produit une
+seule fois et laisser Konvergo ERP se charger de la conversion.
 
 Prenons les exemples suivants :
 
@@ -18,7 +18,7 @@ Prenons les exemples suivants :
 Ouvrez votre application Ventes et allez à Configuration ‣ Paramètres. Dans la
 section Catalogue de produits, activez les _unités de mesure_.
 
-![Activer l'option des unités de mesure dans Odoo
+![Activer l'option des unités de mesure dans Konvergo ERP
 Ventes](../../../../_images/uom-enable-option.png)
 
 ## Définir des unités de mesure d’achat et de vente
@@ -30,10 +30,10 @@ données. Chacune appartient à l’une des cinq catégories d’unités de mesu
 préconfigurées : _Longueur / Distance_ , _Unité_ , _Volume_ , _Poids_ et
 _Temps de travail_.
 
-Astuce
-
-Vous pouvez créer vos propres unités de mesure et catégories d’unités de
-mesure (voir la section suivante).
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Vous pouvez créer vos propres unités de mesure et catégories d’unités de mesure (voir la section suivante).</p>
+</div>
 
 Pour définir des unités de mesure différentes pour les achats et les ventes,
 ouvrez l’application Achats et allez à Produits ‣ Produits. Créez un produit
@@ -49,12 +49,12 @@ sélectionnez d’abord _L_ (litres) comme _unité de mesure_ et _gal (US)_
 (gallons) comme _unité de mesure d’achat_. Cliquez ensuite sur _Enregistrer_.
 
 ![Configurer l'unité de mesure d'un produit dans
-Odoo](../../../../_images/uom-product-configuration.png)
+Konvergo ERP](../../../../_images/uom-product-configuration.png)
 
 ### Créer de nouvelles unités de mesure et catégories d’unités de mesure
 
 Parfois, vous devez créer vos propres unités et catégories, soit parce que la
-mesure n’est pas préconfigurée dans Odoo, soit parce que les unités ne sont
+mesure n’est pas préconfigurée dans Konvergo ERP, soit parce que les unités ne sont
 pas liées entre elles (par ex. kilos et centimètres).
 
 Si vous prenez le deuxième exemple où vous achetez des rideaux auprès d’un
@@ -65,7 +65,7 @@ _catégorie d’unités de mesure_ afin de relier les deux unités de mesure.
 Pour ce faire, allez à Configuration ‣ Catégories d’unités de mesure. Cliquez
 sur _Créer_ et nommez la catégorie.
 
-![Créer une nouvelle catégorie d'unités de mesure dans Odoo
+![Créer une nouvelle catégorie d'unités de mesure dans Konvergo ERP
 Achats](../../../../_images/uom-new-category.png)
 
 La prochaine étape est de créer les deux unités de mesure. Pour ce faire,
@@ -76,27 +76,18 @@ conversion vers d’autres unités de mesure à l’intérieur de la catégorie 
 cliquant sur _Créer_. Nommez l’unité et sélectionnez la catégorie d’unités de
 mesure que vous venez de créer. Concernant le _Type_ , sélectionnez _Unité de
 mesure de référence pour cette catégorie_. Saisissez la _précision d’arrondi_
-que vous voulez appliquer. La quantité calculée par Odoo est toujours un
+que vous voulez appliquer. La quantité calculée par Konvergo ERP est toujours un
 multiple de cette valeur.
 
 Dans l’exemple, comme vous ne pouvez pas acheter moins d’un rouleau et que
 vous n’utiliserez pas de fractions de rouleau comme unité de mesure, vous
 pouvez saisir 1.
 
-![Créer une nouvelle unité de mesure de référence dans Odoo
-Achats](../../../../_images/uom-new-reference-unit.png)
-
-Note
-
-Si vous utilisez une _précision d’arrondi_ inférieure à 0,01, un message
-d’avertissement peut apparaître indiquant qu’elle est supérieure à la
-_précision décimale_ et qu’elle peut entraîner des incohérences. Si vous
-souhaitez utiliser une _précision d’arrondi_ inférieure à 0,01, activez
-d’abord le [mode développeur](../../../general/developer_mode.html#developer-
-mode), allez ensuite à Paramètres ‣ Technique ‣ Structure de la base de
-données ‣ Précision décimale, sélectionnez _Unité de mesure du produit_ et
-modifiez les _chiffres_ en conséquence. Par exemple, si vous voulez appliquer
-une précision d’arrondi de 0,00001, définissez les _chiffres_ sur 5.
+![Créer une nouvelle unité de mesure de référence dans Konvergo ERP
+Achats](../../../../_images/uom-new-reference-unit.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Si vous utilisez une <em>précision d’arrondi</em> inférieure à 0,01, un message d’avertissement peut apparaître indiquant qu’elle est supérieure à la <em>précision décimale</em> et qu’elle peut entraîner des incohérences. Si vous souhaitez utiliser une <em>précision d’arrondi</em> inférieure à 0,01, activez d’abord le <a href="../../../general/developer_mode#developer-mode"><span class="std std-ref">mode développeur</span></a>, allez ensuite à Paramètres ‣ Technique ‣ Structure de la base de données ‣ Précision décimale, sélectionnez <em>Unité de mesure du produit</em> et modifiez les <em>chiffres</em> en conséquence. Par exemple, si vous voulez appliquer une précision d’arrondi de 0,00001, définissez les <em>chiffres</em> sur 5.</p>
+</div>
 
 Créez ensuite une deuxième unité de mesure, nommez-la et sélectionnez la même
 catégorie d’unités de mesure comme votre unité de référence. Dans la section
@@ -113,12 +104,12 @@ inférieur à 1.
 
 Pour votre rouleau de rideaux, le facteur doit être de 100.
 
-![Créer une deuxième unité de mesure dans Odoo
+![Créer une deuxième unité de mesure dans Konvergo ERP
 Achats](../../../../_images/uom-second-unit.png)
 
 Vous pouvez à présent configurer votre produit comme vous le feriez en
-utilisant les unités de mesure standards d’Odoo.
+utilisant les unités de mesure standards d’Konvergo ERP.
 
 ![Définir des unités de mesure d'un produit utilisant vos propres unités dans
-Odoo Achats](../../../../_images/uom-product-configuration-new-units.png)
+Konvergo ERP Achats](../../../../_images/uom-product-configuration-new-units.png)
 

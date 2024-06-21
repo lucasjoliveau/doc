@@ -5,7 +5,7 @@ imported by components (with `useService`) or by other services. Also, they
 can declare a set of dependencies. In that sense, services are basically a DI
 dependency injection system. For example, the `notification` service provides
 a way to display a notification, or the `rpc` service is the proper way to
-perform a request to the Odoo server.
+perform a request to the Konvergo ERP server.
 
 The following example registers a simple service that displays a notification
 every 5 seconds:
@@ -30,12 +30,13 @@ every 5 seconds:
 At startup, the web client starts all services present in the `services`
 registry. Note that the name used in the registry is the name of the service.
 
-Note
-
-Most code that is not a component should be _packaged_ in a service, in
-particular if it performs some side effect. This is very useful for testing
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Most code that is not a component should be <em>packaged</em> in a service, in
+particular if it performs some side effect.  This is very useful for testing
 purposes: tests can choose which services are active, so there are less chance
-for unwanted side effects interfering with the code being tested.
+for unwanted side effects interfering with the code being tested.</p>
+</div>
 
 ## Defining a service
 
@@ -82,7 +83,7 @@ Optional value. If given, it should be `true` or a list of strings.
 
 Some services need to provide an asynchronous API. For example, the `rpc`
 service is an asynchronous function, or the `orm` service provides a set of
-functions to call the Odoo server.
+functions to call the Konvergo ERP server.
 
 In that case, it is possible for components that use a service to be destroyed
 before the end of an asynchronous function call. Most of the time, the
@@ -209,9 +210,10 @@ Here’s how this can be displayed:
     });
     
 
-Avertissement
-
-The hook `useEffect` is not related to the effect service.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>The hook <code>useEffect</code> is not related to the effect service.</p>
+</div>
 
 #### API
 
@@ -335,7 +337,7 @@ called in webclient.js to make it visible everywhere for the example.
     effectService.add({ type: "sepia" });
     
 
-![Odoo in sepia](../../../_images/odoo_sepia.png)
+![Konvergo ERP in sepia](../../../_images/odoo_sepia.png)
 
 ### Http Service
 
@@ -565,7 +567,7 @@ removed).
 
 This method call does not reload the page. It also does not trigger a
 `hashchange` event, nor a `ROUTE_CHANGE` in the [main
-bus](framework_overview.html#frontend-framework-bus). This is because this
+bus](framework_overview#frontend-framework-bus). This is because this
 method is intended to only updates the url. The code calling this method has
 the responsibility to make sure that the screen is updated as well.
 
@@ -599,11 +601,11 @@ argument is rarely used: it is useful in some cases where we know that the
 server will be unavailable for a short duration, typically just after an addon
 update or install operation.
 
-Note
-
-The router service emits a `ROUTE_CHANGE` event on the [main
-bus](framework_overview.html#frontend-framework-bus) whenever the current
-route has changed.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The router service emits a <code>ROUTE_CHANGE</code> event on the <a href="framework_overview#frontend-framework-bus"><span class="std std-ref">main bus</span></a>
+whenever the current route has changed.</p>
+</div>
 
 ### RPC service
 
@@ -626,11 +628,13 @@ argument and optionally, a `params` object can be given as a second argument.
     const result = await this.rpc("/my/route", { some: "value" });
     
 
-Note
-
-Note that the `rpc` service is considered a low-level service. It should only
-be used to interact with Odoo controllers. To work with models (which is by
-far the most important usecase), one should use the `orm` service instead.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Note that the <code>rpc</code> service is considered a low-level service. It should
+only be used to interact with Konvergo ERP controllers. To work with models (which
+is by far the most important usecase), one should use the <code>orm</code> service
+instead.</p>
+</div>
 
 #### API
 
@@ -709,7 +713,7 @@ automatically scrolls to the target (if appropriate).
 
 The service adds an event listener to get `click`’s on the document. The
 service checks if the selector contained in its href attribute is valid to
-distinguish anchors and Odoo actions (e.g. `<a href="#target_element"></a>`).
+distinguish anchors and Konvergo ERP actions (e.g. `<a href="#target_element"></a>`).
 It does nothing if it is not the case.
 
 An event `SCROLLER:ANCHOR_LINK_CLICKED` is triggered on the main application
@@ -729,14 +733,12 @@ Name | Type | Description
 `element` | `HTMLElement | null` | The anchor element targeted by the href  
 `id` | `string` | The id contained in the href  
 `originalEv` | `Event` | The original click event  
-  
-Note
-
-The scroller service emits a `SCROLLER:ANCHOR_LINK_CLICKED` event on the [main
-bus](framework_overview.html#frontend-framework-bus). To avoid the default
-scroll behavior of the scroller service, you must use `preventDefault()` on
-the event given to the listener so that you can implement your own behavior
-correctly from the listener.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The scroller service emits a <code>SCROLLER:ANCHOR_LINK_CLICKED</code> event on the <a href="framework_overview#frontend-framework-bus"><span class="std std-ref">main bus</span></a>.
+To avoid the default scroll behavior of the scroller service, you must use <code>preventDefault()</code> on the event given
+to the listener so that you can implement your own behavior correctly from the listener.</p>
+</div>
 
 ### Title Service
 
@@ -747,15 +749,15 @@ correctly from the listener.
   * Dependencies: none
 
 The `title` service offers a simple API that allows to read/modify the
-document title. For example, if the current document title is « Odoo », we can
-change it to « Odoo 15 - Apple » by using the following command:
+document title. For example, if the current document title is « Konvergo ERP », we can
+change it to « Konvergo ERP 15 - Apple » by using the following command:
 
     
     
     // in some component setup method
     const titleService = useService("title");
     
-    titleService.setParts({ odoo: "Odoo 15", fruit: "Apple" });
+    titleService.setParts({ odoo: "Konvergo ERP 15", fruit: "Apple" });
     
 
 #### API
@@ -810,10 +812,10 @@ For example, if the title is composed of the following parts:
 
     
     
-    { odoo: "Odoo", action: "Import" }
+    { odoo: "Konvergo ERP", action: "Import" }
     
 
-with `current` value being `Odoo - Import` , then
+with `current` value being `Konvergo ERP - Import` , then
 
     
     
@@ -822,7 +824,7 @@ with `current` value being `Odoo - Import` , then
     });
     
 
-will change the title to `Odoo`.
+will change the title to `Konvergo ERP`.
 
 ### User service
 
@@ -839,7 +841,7 @@ concerning the connected user.
 
 Name | Type | Description  
 ---|---|---  
-`context` | `Object` | The [user context](framework_overview.html#frontend-framework-user-context)  
+`context` | `Object` | The [user context](framework_overview#frontend-framework-user-context)  
 `db` | `Object` | Info about the database  
 `home_action_id` | `(number | false)` | Id of the action used as home for the user  
 `isAdmin` | `boolean` | Whether the user is an admin (group `base.group_erp_manager` or superuser)  
@@ -861,7 +863,7 @@ Arguments
 
   * **update** (`object()`) – the object to update the context with
 
-update the [user context](framework_overview.html#frontend-framework-user-
+update the [user context](framework_overview#frontend-framework-user-
 context) with the given object.
 
     
@@ -880,7 +882,7 @@ Arguments
   * **key** (`string()`) – the key of the targeted attribute
 
 remove the value with the given key from the [user
-context](framework_overview.html#frontend-framework-user-context)
+context](framework_overview#frontend-framework-user-context)
 
     
     

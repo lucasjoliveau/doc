@@ -6,25 +6,26 @@ With **SEPA Direct Debit** (SDD), your customers can sign a mandate that
 authorizes you to collect future payments from their bank accounts. This is
 particularly useful for recurring payments based on a subscription.
 
-You can record customer mandates in Odoo, and generate `.xml` files containing
+You can record customer mandates in Konvergo ERP, and generate `.xml` files containing
 pending payments made with an SDD mandate.
 
-Note
-
-SDD is supported by all SEPA countries, which includes the 27 member states of
-the European Union as well as additional countries.
-
-[List of all SEPA countries](https://www.europeanpaymentscouncil.eu/document-
-library/other/epc-list-sepa-scheme-countries).
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><div class="line-block">
+<div class="line">SDD is supported by all SEPA countries, which includes the 27 member states of the European
+Union as well as additional countries.</div>
+<div class="line"><a href="https://www.europeanpaymentscouncil.eu/document-library/other/epc-list-sepa-scheme-countries">List of all SEPA countries</a>.</div>
+</div>
+</div>
 
 ## Configuration
 
-Go to Accounting app ‣ Configuration ‣ Settings, activate SEPA Direct Debit
-(SDD), and click on Save. Enter your company’s Creditor Identifier. This
-number is provided by your bank institution, or the authority responsible for
-delivering them.
+Go to Accounting app ‣ Configuration ‣ Settings, activate **SEPA Direct Debit
+(SDD)** , and click on **Save**. Enter your company’s **Creditor Identifier**.
+This number is provided by your bank institution, or the authority responsible
+for delivering them.
 
-![Add a SEPA Creditor Identifier to Odoo
+![Add a SEPA Creditor Identifier to Konvergo ERP
 Accounting](../../../../_images/creditor-identifier.png)
 
 ## SEPA Direct Debit Mandates
@@ -35,15 +36,16 @@ The SDD Mandate is the document that your customers sign to authorize you to
 collect money directly from their bank accounts.
 
 To create a new mandate, go to Accounting app ‣ Customers ‣ Direct Debit
-Mandates, on Create, and fill out the form. Export the PDF file by clicking on
-Print. It is then up to your customer to sign this document. Once done, upload
-the signed file and click on Validate to start running the mandate.
+Mandates, on **Create** , and fill out the form. Export the PDF file by
+clicking on **Print**. It is then up to your customer to sign this document.
+Once done, upload the signed file and click on **Validate** to start running
+the mandate.
 
-Important
-
-Make sure that the **IBAN bank accounts details** are correctly recorded on
-the debtor’s contact form, under the Accounting tab, and in your own [Bank
-Account](../bank.html) settings.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Make sure that the <b>IBAN bank accounts details</b> are correctly recorded on the debtor’s contact
+form, under the <b>Accounting</b> tab, and in your own <a href="../bank">Bank Account</a> settings.</p>
+</div>
 
 ### SEPA Direct Debit as a payment method
 
@@ -53,34 +55,36 @@ method, your customers can create and sign their mandates themselves.
 
 To do so, go to Accounting ‣ Configuration ‣ Payment Providers, click on _SEPA
 Direct Debit_ , and set it up according to your needs. To do so, go to
-Accounting app ‣ Configuration ‣ Payment Acquirers, click on SEPA Direct
-Debit.
+Accounting app ‣ Configuration ‣ Payment Acquirers, click on **SEPA Direct
+Debit**.
 
-Important
-
-Make sure to change the State field to Enabled, and to check Online Signature,
-as this is necessary to let your customers sign their mandates.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Make sure to change the <b>State</b> field to <b>Enabled</b>, and to check
+<b>Online Signature</b>, as this is necessary to let your customers sign their mandates.</p>
+</div>
 
 Customers using SDD as payment method get prompted to add their IBAN, email
 address, and to sign their SEPA Direct Debit mandate.
 
 ### Close or revoke a mandate
 
-Direct debit mandates are closed automatically after their End Date. If this
-field is left blank, the mandate keeps being **Active** until it is **Closed**
-or **Revoked**.
+Direct debit mandates are closed automatically after their **End Date**. If
+this field is left blank, the mandate keeps being **Active** until it is
+**Closed** or **Revoked**.
 
-Clicking on Close updates the mandate’s end day to the current day. This means
-that invoices issued after the present day will not be processed with an SDD
-payment.
+Clicking on **Close** updates the mandate’s end day to the current day. This
+means that invoices issued after the present day will not be processed with an
+SDD payment.
 
-Clicking on Revoke disables the mandate immediately. No SDD payment can be
+Clicking on **Revoke** disables the mandate immediately. No SDD payment can be
 registered anymore, regardless of the invoice’s date. However, payments that
 have already been registered are still included in the next SDD `.xml` file.
 
-Warning
-
-Once a mandate has been closed or revoked, it cannot be reactivated.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Once a mandate has been <b>closed</b> or <b>revoked</b>, it cannot be reactivated.</p>
+</div>
 
 ## Get paid with SEPA Direct Debit batch payments
 
@@ -89,48 +93,46 @@ Once a mandate has been closed or revoked, it cannot be reactivated.
 You can register SDD payments for invoices issued to customers who have an
 active SDD mandate.
 
-To do so, open the invoice, click on Register Payment, and choose SEPA Direct
-Debit as payment method.
+To do so, open the invoice, click on **Register Payment** , and choose **SEPA
+Direct Debit** as payment method.
 
 ### Generate SEPA Direct Debit `.XML` files to submit payments
 
 `.xml` files with all SDD payment instructions can be uploaded to your online
 banking interface to process all payments at once.
 
-Note
-
-The files generated by Odoo follow the SEPA Direct Debit **PAIN.008.001.02**
-specifications, as required by the SEPA customer-to-bank [implementation
-guidelines](https://www.europeanpaymentscouncil.eu/document-
-library/implementation-guidelines/sepa-credit-transfer-customer-psp-
-implementation), which ensures compatibility with the banks.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The files generated by Konvergo ERP follow the SEPA Direct Debit <b>PAIN.008.001.02</b> specifications, as
+required by the SEPA customer-to-bank <a href="https://www.europeanpaymentscouncil.eu/document-library/implementation-guidelines/sepa-credit-transfer-customer-psp-implementation">implementation guidelines</a>,
+which ensures compatibility with the banks.</p>
+</div>
 
 To generate your `.xml` file of multiple pending SDD payments, you can create
 a batch payment. To do so, go to Accounting app ‣ Customers ‣ Payments, select
-the needed payments, then click on Action, and finally Create a batch Payment.
-Once you click on Validate, the `.xml` file is directly available for
-download.
+the needed payments, then click on **Action** , and finally **Create a batch
+Payment**. Once you click on **Validate** , the `.xml` file is directly
+available for download.
 
-![Generate an .XML file for your SDD payments in Odoo
+![Generate an .XML file for your SDD payments in Konvergo ERP
 Accounting](../../../../_images/xml.png)
 
 Finally, upload this file to your online banking interface to process the
 payments.
 
-Tip
-
-You can retrieve all the generated SDD `.xml` files by going to Accounting app
-‣ Customers ‣ Batch Payments.
-
-See also
-
-  * [Batch payments by bank deposit](batch.html)
-
-  * [Bank and cash accounts](../bank.html)
-
-  * [List of all SEPA countries](https://www.europeanpaymentscouncil.eu/document-library/other/epc-list-sepa-scheme-countries)
-
-  * [Sepa guidelines](https://www.europeanpaymentscouncil.eu/document-library/implementation-guidelines/sepa-credit-transfer-inter-psp-implementation-guidelines)
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>You can retrieve all the generated SDD <code>.xml</code> files by going to
+Accounting app ‣ Customers ‣ Batch Payments.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="batch">Batch payments by bank deposit</a></p></li>
+<li><p><a href="../bank">Bank and cash accounts</a></p></li>
+<li><p><a href="https://www.europeanpaymentscouncil.eu/document-library/other/epc-list-sepa-scheme-countries">List of all SEPA countries</a></p></li>
+<li><p><a href="https://www.europeanpaymentscouncil.eu/document-library/implementation-guidelines/sepa-credit-transfer-inter-psp-implementation-guidelines">Sepa guidelines</a></p></li>
+</ul>
+</div>
 
   *[SDD]: sepa direct debit
 

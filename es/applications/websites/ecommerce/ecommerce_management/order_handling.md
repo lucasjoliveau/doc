@@ -1,7 +1,7 @@
 # Gestión de órdenes
 
 Cuando un cliente realiza una orden en su sitio web hay **tres** tipos de
-registro que se necesitan gestionar en Odoo:
+registro que se necesitan gestionar en Konvergo ERP:
 
   * Órdenes de venta;
 
@@ -15,11 +15,11 @@ registro que se necesitan gestionar en Odoo:
 
 El primer paso después de que un cliente agrega un producto a su carrito es la
 creación de una cotización. Las órdenes se pueden gestionar ya sea desde el
-**sitio web** o desde la aplicación [Ventas](../../../sales/sales.html). Para
+**sitio web** o desde la aplicación [Ventas](../../../sales/sales). Para
 que las órdenes del comercio electrónico se asignen a un equipo de ventas en
 específico primero vaya a Sitio web ‣ Configuración ‣ Ajustes. En la sección
-**Tienda - Proceso de pago** seleccione un Equipo de ventas o un Vendedor que
-gestione las órdenes del comercio electrónico.
+**Tienda - Proceso de pago** seleccione un **Equipo de ventas** o un
+**Vendedor** que gestione las órdenes del comercio electrónico.
 
 ![Asignación de las órdenes en línea a equipos de venta o a un
 vendedor](../../../../_images/handling-salesteam.png)
@@ -41,17 +41,16 @@ electrónico](../../../../_images/handling-status.png)
 Un **carrtio abandonado** representa una orden para la cual el cliente **no
 terminó** el proceso de confirmación de pago. Para estas órdenes es posible
 enviar un **correo de recordatorio** al cliente. Para activar esta función
-vaya a Sitio web ‣ Configuración ‣ Ajustes y en la sección Marketing por
-correo electrónico active Envío automático de correos electrónicos de pagos
-abandonados. Una vez que active esta opción, podrá configurar **cuánto
+vaya a Sitio web ‣ Configuración ‣ Ajustes y en la sección **Marketing por
+correo electrónico** active **Envío automático de correos electrónicos de
+pagos abandonados**. Una vez que active esta opción, podrá configurar **cuánto
 tiempo** después se debe enviar el correo, además de que podrá personalizar la
 **plantilla de correo** que se use.
 
-Nota
-
-Para correos de carritos abandonados, el cliente deben haber ingresado sus
-detalles de contacto durante el proceso de pago, o debe haber iniciado sesión
-cuando agregó el producto a su carrito.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Para correos de carritos abandonados, el cliente deben haber ingresado sus detalles de contacto durante el proceso de pago, o debe haber iniciado sesión cuando agregó el producto a su carrito.</p>
+</div>
 
 ## Órdenes de entrega
 
@@ -64,27 +63,24 @@ Empacar las órdenes del comercio electrónico usualmente requiere recolectar el
 producto, preparar el empaquetado, imprimir la (o las) etiqueta de envío y
 enviar el producto al cliente. Dependiendo del número de órdenes, la
 estrategia o los recursos, estos pasos se pueden considerar como una o varias
-acciones dentro de Odoo.
+acciones dentro de Konvergo ERP.
 
 Se le puede enviar un correo electrónico automático al cliente cuando el
-estado de transferencia en Odoo sea «listo». Para hacerlo, active la función
+estado de transferencia en Konvergo ERP sea «listo». Para hacerlo, active la función
 en los ajustes de la aplicación
-[Inventario](../../../inventory_and_mrp/inventory.html).
+[Inventario](../../../inventory_and_mrp/inventory).
 
-Nota
-
-Si los clientes pueden realizar su pago al recoger su orden en tiendas o por
-transferencia bancaria, la cotización **no** se confirmará y el inventario
-**no** se reservará. Las órdenes se deben confirmar de manera manual para
-reservar los productos en el inventario.
-
-Ver también
-
-  * [Facturación del costo de envío](../../../inventory_and_mrp/inventory/shipping_receiving/advanced_operations_shipping/invoicing.html)
-
-  * [Imprimir etiquetas de envío](../../../inventory_and_mrp/inventory/shipping_receiving/setup_configuration/labels.html)
-
-  * [Envío en varios paquetes](../../../inventory_and_mrp/inventory/shipping_receiving/advanced_operations_shipping/multipack.html)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Si los clientes pueden realizar su pago al recoger su orden en tiendas o por transferencia bancaria, la cotización <b>no</b> se confirmará y el inventario <b>no</b> se reservará. Las órdenes se deben confirmar de manera manual para reservar los productos en el inventario.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../../inventory_and_mrp/inventory/shipping_receiving/advanced_operations_shipping/invoicing">Facturación del costo de envío</a></p></li>
+<li><p><a href="../../../inventory_and_mrp/inventory/shipping_receiving/setup_configuration/labels">Imprimir etiquetas de envío</a></p></li>
+<li><p><a href="../../../inventory_and_mrp/inventory/shipping_receiving/advanced_operations_shipping/multipack">Envío en varios paquetes</a></p></li>
+</ul>
+</div>
 
 ### Devoluciones y reembolsos
 
@@ -96,13 +92,14 @@ Los reembolsos completos se pueden enviar directamente a los clientes desde la
 interfaz de la orden. Primero debe activar un proveedor de pago que sea
 compatible con el reembolso.
 
-Ver también
-
-  * [Devoluciones y reembolsos](../../../sales/sales/products_prices/returns.html)
-
-  * [Servicios posventa](../../../services/helpdesk/advanced/after_sales.html)
-
-  * [Pagos en línea](../../../finance/payment_providers.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../../sales/sales/products_prices/returns">Devoluciones y reembolsos</a></p></li>
+<li><p><a href="../../../services/helpdesk/advanced/after_sales">Servicios posventa</a></p></li>
+<li><p><a href="../../../finance/payment_providers">Pagos en línea</a></p></li>
+</ul>
+</div>
 
 ## Facturación y requerimientos legales
 
@@ -113,5 +110,5 @@ generar una factura de manera automática (B2B) o cuando el cliente la pida
 confirme.
 
 Para automatizar la facturación vaya a Sitio web ‣ Configuración ‣ Ajustes y
-en la sección Facturación active la opción Factura automática.
+en la sección **Facturación** active la opción **Factura automática**.
 

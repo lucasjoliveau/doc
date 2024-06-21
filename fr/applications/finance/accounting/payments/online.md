@@ -1,9 +1,9 @@
 # Paiements en ligne
 
   * Installer le patch pour désactiver le paiement des factures en ligne
-    * [Mettre à jour Odoo à la dernière version](online/install_portal_patch.html#update-odoo-to-the-latest-release)
-    * [Mettre à jour la liste des modules disponibles](online/install_portal_patch.html#update-the-list-of-available-modules)
-    * [Installez le module Patch de paiement des factures en ligne.](online/install_portal_patch.html#install-the-module-invoice-online-payment-patch)
+    * [Mettre à jour Konvergo ERP à la dernière version](online/install_portal_patch#update-odoo-to-the-latest-release)
+    * [Mettre à jour la liste des modules disponibles](online/install_portal_patch#update-the-list-of-available-modules)
+    * [Installez le module Patch de paiement des factures en ligne.](online/install_portal_patch#install-the-module-invoice-online-payment-patch)
 
 Pour que vos clients puissent payer plus facilement les factures que vous
 émettez, vous pouvez activer la fonctionnalité **Paiement des factures en
@@ -18,13 +18,13 @@ maintenant"](../../../../_images/online-payment-providers.png)
 ## Configuration
 
 Make sure your [payment providers are correctly
-configured](../../payment_providers.html).
+configured](../../payment_providers).
 
-Note
-
-By default, « [Wire Transfer](../../payment_providers/wire_transfer.html) » is
-the only payment provider activated, but you still have to fill out the
-payment details.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>By default, « <a href="../../payment_providers/wire_transfer">Wire Transfer</a> » is the
+only payment provider activated, but you still have to fill out the payment details.</p>
+</div>
 
 Pour activer le Paiement des factures en ligne, allez à Comptabilité ‣
 Configuration ‣ Paramètres ‣ Paiements clients, activez **Paiement des
@@ -43,9 +43,10 @@ Ils peuvent choisir le fournisseur de paiement qu’ils souhaitent utiliser en
 cliquant sur _Payer maintenant_.
 
 ![Le bouton "Payer maintenant" sur une facture dans le Portail
-client.](../../../../_images/pay-now.png)
-
-Pour plus d'infos
-
-  * [Paiements en ligne](../../payment_providers.html)
+client.](../../../../_images/pay-now.png) <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../../payment_providers">Paiements en ligne</a></p></li>
+</ul>
+</div>
 

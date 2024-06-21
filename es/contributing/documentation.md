@@ -1,16 +1,17 @@
 # Documentation
 
-  * [Content guidelines](documentation/content_guidelines.html)
-  * [RST cheat sheet](documentation/rst_cheat_sheet.html)
-  * [RST guidelines](documentation/rst_guidelines.html)
+  * [Content guidelines](documentation/content_guidelines)
+  * [RST cheat sheet](documentation/rst_cheat_sheet)
+  * [RST guidelines](documentation/rst_guidelines)
 
 This introductory guide will help you acquire the tools and knowledge you need
 to write documentation, whether you plan to make a minor content change or
 document an application from scratch.
 
-Ver también
-
-[Discover other ways to contribute to Odoo](../contributing.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="../contributing">Discover other ways to contribute to Konvergo ERP</a></p>
+</div>
 
 Read the introduction to the reStructuredText language if you are not familiar
 with it. Then, you have two courses of action to start contributing to the
@@ -32,25 +33,23 @@ is no need to worry; RST is not hard to learn, especially if you intend to
 make minor changes to the content.
 
 If you need to learn about a specific markup, head over to our [cheat sheet
-for RST](documentation/rst_cheat_sheet.html); it contains all the information
-you should ever need for the documentation of Odoo.
+for RST](documentation/rst_cheat_sheet); it contains all the information
+you should ever need for the documentation of Konvergo ERP.
 
-Importante
-
-We kindly ask you to observe a set of
-[content](documentation/content_guidelines.html) and
-[RST](documentation/rst_guidelines.html) guidelines as you write
-documentation. This ensures that you stay consistent with the rest of the
-documentation and facilitates the approval of your content changes as the Odoo
-team reviews them.
-
-Ver también
-
-  * [Content guidelines](documentation/content_guidelines.html)
-
-  * [RST cheat sheet](documentation/rst_cheat_sheet.html)
-
-  * [RST guidelines](documentation/rst_guidelines.html)
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>We kindly ask you to observe a set of <a href="documentation/content_guidelines">content</a> and
+<a href="documentation/rst_guidelines">RST</a> guidelines as you write documentation. This ensures
+that you stay consistent with the rest of the documentation and facilitates the approval of your
+content changes as the Konvergo ERP team reviews them.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="documentation/content_guidelines">Content guidelines</a></p></li>
+<li><p><a href="documentation/rst_cheat_sheet">RST cheat sheet</a></p></li>
+<li><p><a href="documentation/rst_guidelines">RST guidelines</a></p></li>
+</ul>
+</div>
 
 ## Environment setup
 
@@ -59,11 +58,11 @@ changes to the documentation and then push them to GitHub. Skip this section
 and go to Make your first contribution if you have already completed this step
 or want to make changes from the GitHub interface.
 
-  1. First, you need to [create a GitHub account](https://github.com/join). Odoo uses GitHub to manage the source code of its products, and this is where you will make your changes and submit them for review.
+  1. First, you need to [create a GitHub account](https://github.com/join). Konvergo ERP uses GitHub to manage the source code of its products, and this is where you will make your changes and submit them for review.
 
   2. [Generate a new SSH key and register it on your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
-  3. Go to [github.com/odoo/documentation](https://github.com/odoo/documentation) and click on the Fork button in the top right corner to create a fork (your own copy) of the repository on your account. This creates a copy of the codebase to which you can make changes without affecting the main codebase. Skip this step if you work at Odoo.
+  3. Go to [github.com/odoo/documentation](https://github.com/odoo/documentation) and click on the **Fork** button in the top right corner to create a fork (your own copy) of the repository on your account. This creates a copy of the codebase to which you can make changes without affecting the main codebase. Skip this step if you work at Konvergo ERP.
 
   4. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). It is a command-line (a text interface) tool that allows tracking the history of changes made to a file and, more importantly, working on different versions of that file simultaneously. It means you do not need to worry about overwriting someone else’s pending work when making changes.
 
@@ -93,7 +92,7 @@ easy-command-line-access/) with the installation path of Git (by default
     $ cd documentation
     
 
-  7. Configure Git to push changes to your fork rather than to the main codebase. In the commands below, replace `<your_github_account>` with the name of the GitHub account on which you created the fork. Skip this step if you work at Odoo.
+  7. Configure Git to push changes to your fork rather than to the main codebase. In the commands below, replace `<your_github_account>` with the name of the GitHub account on which you created the fork. Skip this step if you work at Konvergo ERP.
     
         $ git remote add dev git@github.com:<your_github_account>/documentation.git
     
@@ -153,60 +152,61 @@ Contribute from the GitHub interfaceContribute with Git
 
   1. Verify that you are browsing the documentation in the version that you intend to change. The version can be selected from the dropdown in the top menu.
 
-  2. Head to the page that you want to change and click on the Edit on GitHub button in the top right corner of the page.
+  2. Head to the page that you want to change and click on the **Edit on GitHub** button in the top right corner of the page.
 
-  3. Click on the Fork this repository button to create a fork (your own copy) of the repository on your account. This creates a copy of the codebase to which you can make changes without affecting the main codebase. Skip this step if you work at Odoo.
+  3. Click on the **Fork this repository** button to create a fork (your own copy) of the repository on your account. This creates a copy of the codebase to which you can make changes without affecting the main codebase. Skip this step if you work at Konvergo ERP.
 
 ![../_images/fork-repository.png](../_images/fork-repository.png)
 
-  4. Make the desired changes while taking care of following the [content](documentation/content_guidelines.html) and [RST](documentation/rst_guidelines.html) guidelines.
+  4. Make the desired changes while taking care of following the [content](documentation/content_guidelines) and [RST](documentation/rst_guidelines) guidelines.
 
-Truco
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Click on the <b>Preview changes</b> button to review your contribution in a more
+human-readable format. Be aware that the preview is not able to handle all markups
+correctly. Notes and tips, for instance, are shown as plain text.</p>
+</div>
 
-Click on the Preview changes button to review your contribution in a more
-human-readable format. Be aware that the preview is not able to handle all
-markups correctly. Notes and tips, for instance, are shown as plain text.
-
-  5. Scroll to the bottom of the page and fill out the small form to propose your changes. In the first text box, write a very short summary of your changes. For instance, «Fix a typo» or «Add documentation for invoicing of sales orders.» In the second text box, explain _why_ you are proposing these changes. Then, click on the Propose changes button.
+  5. Scroll to the bottom of the page and fill out the small form to propose your changes. In the first text box, write a very short summary of your changes. For instance, «Fix a typo» or «Add documentation for invoicing of sales orders.» In the second text box, explain _why_ you are proposing these changes. Then, click on the **Propose changes** button.
 
 ![../_images/propose-changes.png](../_images/propose-changes.png)
 
-  6. Review your changes and click on the Create pull request button.
+  6. Review your changes and click on the **Create pull request** button.
 
-  7. Tick the Allow edits from maintainer checkbox. Skip this step if you work at Odoo.
+  7. Tick the **Allow edits from maintainer** checkbox. Skip this step if you work at Konvergo ERP.
 
-  8. Review the summary that you wrote about your changes and click on the Create pull request button again.
+  8. Review the summary that you wrote about your changes and click on the **Create pull request** button again.
 
   9. At the bottom of the page, check the mergeability status and address any issues.
 
-  10. As soon as your PR is ready for merging, a member of the Odoo team will be automatically assigned for review. If the reviewer has questions or remarks, they will post them as comments and you will be notified by email. Those comments must be resolved for the contribution to go forward.
+  10. As soon as your PR is ready for merging, a member of the Konvergo ERP team will be automatically assigned for review. If the reviewer has questions or remarks, they will post them as comments and you will be notified by email. Those comments must be resolved for the contribution to go forward.
 
   11. Once your changes are approved, the reviewer merges them and they appear online the next day!
 
-Importante
-
-Some steps of this guide require to be comfortable with Git. Here are some
-[tutorials](https://www.atlassian.com/git/tutorials) and an [interactive
-training](https://learngitbranching.js.org/) if you are stuck at some point.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Some steps of this guide require to be comfortable with Git. Here are some <a href="https://www.atlassian.com/git/tutorials">tutorials</a> and an <a href="https://learngitbranching.js.org/">interactive training</a> if you are stuck at some point.</p>
+</div>
 
 Now that your environment is set up, you can start contributing to the
 documentation. In a terminal, navigate to the directory where you cloned the
 sources and follow the guide below.
 
-  1. Choose the version of the documentation to which you want to make changes. Keep in mind that contributions targeting an [unsupported version of Odoo](../administration/supported_versions.html) are not accepted. This guide assumes that the changes target the documentation of Odoo 16, which corresponds to branch `16.0`.
+  1. Choose the version of the documentation to which you want to make changes. Keep in mind that contributions targeting an [unsupported version of Konvergo ERP](../administration/supported_versions) are not accepted. This guide assumes that the changes target the documentation of Konvergo ERP 16, which corresponds to branch `16.0`.
 
-  2. Create a new branch starting from branch 16.0. Prefix the branch name with the base branch: `16.0-...`. If you work at Odoo, suffix the branch name with your Odoo handle: `16.0-...-xyz`.
+  2. Create a new branch starting from branch 16.0. Prefix the branch name with the base branch: `16.0-...`. If you work at Konvergo ERP, suffix the branch name with your Konvergo ERP handle: `16.0-...-xyz`.
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git switch -c <span class="m">16</span>.0-explain-pricelists
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git switch -c <span class="m">16</span>.0-explain-pricelists-xyz
+</pre></div>
+</div>
+</div>
 
-    
-        $ git switch -c 16.0-explain-pricelists
-    
-    
-        $ git switch -c 16.0-explain-pricelists-xyz
-    
-
-  3. Make the desired changes while taking care of following the [content](documentation/content_guidelines.html) and [RST](documentation/rst_guidelines.html) guidelines.
+  3. Make the desired changes while taking care of following the [content](documentation/content_guidelines) and [RST](documentation/rst_guidelines) guidelines.
 
   4. Compress all PNG images that you added or modified.
     
@@ -218,11 +218,12 @@ Example
 
   6. Build the documentation with **make**. Then, open `_build/index.html` in your web browser to browse the documentation with your changes.
 
-Truco
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Use <b class="command o_code">make help</b> to learn about other useful commands.</p>
+</div>
 
-Use **make help** to learn about other useful commands.
-
-  7. Commit your changes. Write a clear commit message as instructed in the [Git guidelines](development/git_guidelines.html).
+  7. Commit your changes. Write a clear commit message as instructed in the [Git guidelines](development/git_guidelines).
     
         $ git add .
     $ git commit
@@ -230,20 +231,22 @@ Use **make help** to learn about other useful commands.
 
   8. Push your change to your fork, for which we added the remote alias `dev`.
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git push -u dev <span class="m">16</span>.0-explain-pricelists
+</pre></div>
+</div>
+</div>
 
-    
-        $ git push -u dev 16.0-explain-pricelists
-    
-
-If you work at Odoo, push your changes directly to the main codebase whose
+If you work at Konvergo ERP, push your changes directly to the main codebase whose
 remote alias is `origin`.
 
-Example
-
-    
-        $ git push -u origin 16.0-explain-pricelists-xyz
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git push -u origin <span class="m">16</span>.0-explain-pricelists-xyz
+</pre></div>
+</div>
+</div>
 
   9. Open a PR on GitHub to submit your changes for review.
 
@@ -251,19 +254,19 @@ Example
 
     2. Select **16.0** for the base.
 
-    3. Click on compare across forks.
+    3. Click on **compare across forks**.
 
-    4. Select **< your_github_account>/odoo** for the head repository. Replace `<your_github_account>` with the name of the GitHub account on which you created the fork. Skip this step if you work at Odoo.
+    4. Select **< your_github_account>/odoo** for the head repository. Replace `<your_github_account>` with the name of the GitHub account on which you created the fork. Skip this step if you work at Konvergo ERP.
 
-    5. Review your changes and click on the Create pull request button.
+    5. Review your changes and click on the **Create pull request** button.
 
-    6. Tick the Allow edits from maintainer checkbox. Skip this step if you work at Odoo.
+    6. Tick the **Allow edits from maintainer** checkbox. Skip this step if you work at Konvergo ERP.
 
-    7. Complete the description and click on the Create pull request button again.
+    7. Complete the description and click on the **Create pull request** button again.
 
   10. At the bottom of the page, check the mergeability status and address any issues.
 
-  11. As soon as your PR is ready for merging, a member of the Odoo team will be automatically assigned for review. If the reviewer has questions or remarks, they will post them as comments and you will be notified by email. Those comments must be resolved for the contribution to go forward.
+  11. As soon as your PR is ready for merging, a member of the Konvergo ERP team will be automatically assigned for review. If the reviewer has questions or remarks, they will post them as comments and you will be notified by email. Those comments must be resolved for the contribution to go forward.
 
   12. Once your changes are approved, the reviewer merges them and they appear online the next day!
 

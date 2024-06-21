@@ -1,31 +1,30 @@
 # Customizing the web client
 
-Danger
+<div class="alert alert-danger">
+<p class="alert-title">
+Danger</p><p>This tutorial is outdated.</p>
+</div>
 
-This tutorial is outdated.
+This guide is about creating modules for Konvergo ERP’s web client.
 
-This guide is about creating modules for Odoo’s web client.
+To create websites with Konvergo ERP, see [Building a Website](website); to add
+business capabilities or extend existing business systems of Konvergo ERP, see
+[Building a Module](backend).
 
-To create websites with Odoo, see [Building a Website](website.html); to add
-business capabilities or extend existing business systems of Odoo, see
-[Building a Module](backend.html).
-
-Avertissement
-
-This guide assumes knowledge of:
-
-  * Javascript basics and good practices
-
-  * [jQuery](http://jquery.org)
-
-  * [Underscore.js](http://underscorejs.org)
-
-It also requires [an installed Odoo](../../administration/on_premise.html),
-and [Git](http://git-scm.com).
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>This guide assumes knowledge of:</p>
+<ul>
+<li><p>Javascript basics and good practices</p></li>
+<li><p><a href="http://jquery.org">jQuery</a></p></li>
+<li><p><a href="http://underscorejs.org">Underscore.js</a></p></li>
+</ul>
+<p>It also requires <a href="../../administration/on_premise">an installed Konvergo ERP</a>, and <a href="http://git-scm.com">Git</a>.</p>
+</div>
 
 ## A Simple Module
 
-Let’s start with a simple Odoo module holding basic web component
+Let’s start with a simple Konvergo ERP module holding basic web component
 configuration and letting us test the web framework.
 
 The example module is available online and can be downloaded using the
@@ -37,8 +36,8 @@ following command:
     
 
 This will create a `petstore` folder wherever you executed the command. You
-then need to add that folder to Odoo’s [`addons
-path`](../reference/cli.html#cmdoption-odoo-bin-addons-path), create a new
+then need to add that folder to Konvergo ERP’s [`addons
+path`](../reference/cli#cmdoption-odoo-bin-addons-path), create a new
 database and install the `oepetstore` module.
 
 If you browse the `petstore` folder, you should see the following content:
@@ -72,7 +71,7 @@ The module already holds various server customizations. We’ll come back to
 these later, for now let’s focus on the web-related content, in the `static`
 folder.
 
-Files used in the « web » side of an Odoo module must be placed in a `static`
+Files used in the « web » side of an Konvergo ERP module must be placed in a `static`
 folder so they are available to a web browser, files outside that folder can
 not be fetched by browsers. The `src/css`, `src/js` and `src/xml` sub-folders
 are conventional and not strictly necessary.
@@ -82,14 +81,14 @@ are conventional and not strictly necessary.
     
 
 Currently empty, will hold the
-[CSS](http://www.w3.org/Style/CSS/Overview.en.html) for pet store content
+[CSS](http://www.w3.org/Style/CSS/Overview.en) for pet store content
 
 `oepetstore/static/xml/petstore.xml`
 
     
 
 Mostly empty, will hold [QWeb
-Templates](../reference/frontend/qweb.html#reference-qweb) templates
+Templates](../reference/frontend/qweb#reference-qweb) templates
 
 `oepetstore/static/js/petstore.js`
 
@@ -124,32 +123,31 @@ order for them to be loaded correctly. Everything in `src/xml` is defined in
 `__manifest__.py` while the contents of `src/css` and `src/js` are defined in
 `petstore.xml`, or a similar file.
 
-Avertissement
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>All JavaScript files are concatenated and <a href="../glossary#term-minified"><span class="xref std std-term">minified</span></a> to improve
+application load time.</p>
+<p>One of the drawback is debugging becomes more difficult as
+individual files disappear and the code is made significantly less
+readable. It is possible to disable this process by enabling the
+« developer mode »: log into your Konvergo ERP instance (user <em>admin</em> password
+<em>admin</em> by default) open the user menu (in the top-right corner of the
+Konvergo ERP screen) and select <b>About Konvergo ERP</b> then <b>Activate
+the developer mode</b>:</p>
+<img alt="../../_images/about_odoo.png" class="align-center" src="../../_images/about_odoo.png"/>
+<img alt="../../_images/devmode.png" class="align-center" src="../../_images/devmode.png"/>
+<p>This will reload the web client with optimizations disabled, making
+development and debugging significantly more comfortable.</p>
+</div>
 
-All JavaScript files are concatenated and [minified](../glossary.html#term-
-minified) to improve application load time.
-
-One of the drawback is debugging becomes more difficult as individual files
-disappear and the code is made significantly less readable. It is possible to
-disable this process by enabling the « developer mode »: log into your Odoo
-instance (user _admin_ password _admin_ by default) open the user menu (in the
-top-right corner of the Odoo screen) and select About Odoo then Activate the
-developer mode:
-
-![../../_images/about_odoo.png](../../_images/about_odoo.png)
-![../../_images/devmode.png](../../_images/devmode.png)
-
-This will reload the web client with optimizations disabled, making
-development and debugging significantly more comfortable.
-
-## Odoo JavaScript Module
+## Konvergo ERP JavaScript Module
 
 Javascript doesn’t have built-in modules. As a result variables defined in
 different files are all mashed together and may conflict. This has given rise
 to various module patterns used to build clean namespaces and limit risks of
 naming conflicts.
 
-The Odoo framework uses one such pattern to define modules within web addons,
+The Konvergo ERP framework uses one such pattern to define modules within web addons,
 in order to both namespace code and correctly order its loading.
 
 `oepetstore/static/js/petstore.js` contains a module declaration:
@@ -161,16 +159,16 @@ in order to both namespace code and correctly order its loading.
     }
     
 
-In Odoo web, modules are declared as functions set on the global `odoo`
+In Konvergo ERP web, modules are declared as functions set on the global `odoo`
 variable. The function’s name must be the same as the addon (in this case
 `oepetstore`) so the framework can find it, and automatically initialize it.
 
 When the web client loads your module it will call the root function and
 provide two parameters:
 
-  * the first parameter is the current instance of the Odoo web client, it gives access to various capabilities defined by the Odoo (translations, network services) as well as objects defined by the core or by other modules.
+  * the first parameter is the current instance of the Konvergo ERP web client, it gives access to various capabilities defined by the Konvergo ERP (translations, network services) as well as objects defined by the core or by other modules.
 
-  * the second parameter is your own local namespace automatically created by the web client. Objects and variables which should be accessible from outside your module (either because the Odoo web client needs to call them or because others may want to customize them) should be set inside that namespace.
+  * the second parameter is your own local namespace automatically created by the web client. Objects and variables which should be accessible from outside your module (either because the Konvergo ERP web client needs to call them or because others may want to customize them) should be set inside that namespace.
 
 ## Classes
 
@@ -178,7 +176,7 @@ Much as modules, and contrary to most object-oriented languages, javascript
 does not build in _classes_1 although it provides roughly equivalent (if
 lower-level and more verbose) mechanisms.
 
-For simplicity and developer-friendliness Odoo web provides a class system
+For simplicity and developer-friendliness Konvergo ERP web provides a class system
 based on John Resig’s [Simple JavaScript
 Inheritance](http://ejohn.org/blog/simple-javascript-inheritance/).
 
@@ -276,44 +274,43 @@ call the original method:
     // print "hello Bob \n translation in Spanish: hola Bob" in the console
     
 
-Avertissement
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p><code>_super</code> is not a standard method, it is set on-the-fly to the next
+method in the current inheritance chain, if any. It is only defined
+during the <em>synchronous</em> part of a method call, for use in asynchronous
+handlers (after network calls or in <code>setTimeout</code> callbacks) a reference
+to its value should be retained, it should not be accessed via <code>this</code>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// broken, will generate an error</span>
+<span class="nx">say_hello</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+    <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
 
-`_super` is not a standard method, it is set on-the-fly to the next method in
-the current inheritance chain, if any. It is only defined during the
-_synchronous_ part of a method call, for use in asynchronous handlers (after
-network calls or in `setTimeout` callbacks) a reference to its value should be
-retained, it should not be accessed via `this`:
-
-    
-    
-    // broken, will generate an error
-    say_hello: function () {
-        setTimeout(function () {
-            this._super();
-        }.bind(this), 0);
-    }
-    
-    // correct
-    say_hello: function () {
-        // don't forget .bind()
-        var _super = this._super.bind(this);
-        setTimeout(function () {
-            _super();
-        }.bind(this), 0);
-    }
-    
+<span class="c1">// correct</span>
+<span class="nx">say_hello</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// don't forget .bind()</span>
+    <span class="kd">var</span> <span class="nx">_super</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">_super</span><span class="p">();</span>
+    <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 
 ## Widgets Basics
 
-The Odoo web client bundles [jQuery](http://jquery.org) for easy DOM
+The Konvergo ERP web client bundles [jQuery](http://jquery.org) for easy DOM
 manipulation. It is useful and provides a better API than standard [W3C
 DOM](http://www.w3.org/TR/DOM-Level-3-Core/)2, but insufficient to structure
 complex applications leading to difficult maintenance.
 
 Much like object-oriented desktop UI toolkits (e.g. [Qt](http://qt-
-project.org), [Cocoa](https://developer.apple.com/technologies/mac/cocoa.html)
-or [GTK](http://www.gtk.org)), Odoo Web makes specific components responsible
-for sections of a page. In Odoo web, the base for such components is the
+project.org), [Cocoa](https://developer.apple.com/technologies/mac/cocoa)
+or [GTK](http://www.gtk.org)), Konvergo ERP Web makes specific components responsible
+for sections of a page. In Konvergo ERP web, the base for such components is the
 `Widget()` class, a component specialized in handling a page section and
 displaying information for the user.
 
@@ -345,10 +342,11 @@ registers our basic widget as a client action. Client actions will be
 explained later, for now this is just what allows our widget to be called and
 displayed when we select the Pet Store ‣ Pet Store ‣ Home Page menu.
 
-Avertissement
-
-because the widget will be called from outside our module, the web client
-needs its « fully qualified » name, not the local version.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>because the widget will be called from outside our module, the web client
+needs its « fully qualified » name, not the local version.</p>
+</div>
 
 ### Display Content
 
@@ -378,19 +376,20 @@ Let’s add some content to the widget’s root element, using jQuery:
     
     local.HomePage = instance.Widget.extend({
         start: function() {
-            this.$el.append("<div>Hello dear Odoo user!</div>");
+            this.$el.append("<div>Hello dear Konvergo ERP user!</div>");
         },
     });
     
 
 That message will now appear when you open Pet Store ‣ Pet Store ‣ Home Page
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>to refresh the javascript code loaded in Konvergo ERP Web, you will need to reload
+the page. There is no need to restart the Konvergo ERP server.</p>
+</div>
 
-to refresh the javascript code loaded in Odoo Web, you will need to reload the
-page. There is no need to restart the Odoo server.
-
-The `HomePage` widget is used by Odoo Web and managed automatically. To learn
+The `HomePage` widget is used by Konvergo ERP Web and managed automatically. To learn
 how to use a widget « from scratch » let’s create a new one:
 
     
@@ -409,7 +408,7 @@ We can now add our `GreetingsWidget` to the `HomePage` by using the
     
     local.HomePage = instance.Widget.extend({
         start: function() {
-            this.$el.append("<div>Hello dear Odoo user!</div>");
+            this.$el.append("<div>Hello dear Konvergo ERP user!</div>");
             var greeting = new local.GreetingsWidget(this);
             return greeting.appendTo(this.$el);
         },
@@ -443,12 +442,12 @@ find where they are, by `adding a class to their root elements`:
     
 
 If you can find the relevant section of the DOM (right-click on the text then
-Inspect Element), it should look like this:
+**Inspect Element**), it should look like this:
 
     
     
     <div class="oe_petstore_homepage">
-        <div>Hello dear Odoo user!</div>
+        <div>Hello dear Konvergo ERP user!</div>
         <div class="oe_petstore_greetings">
             <div>We are so happy to see you again in this menu!</div>
         </div>
@@ -556,11 +555,13 @@ Then it erases itself from the DOM. If you have set up permanent structures in
 `init()` or `start()` which must be explicitly cleaned up (because the garbage
 collector will not handle them), you can override `destroy()`.
 
-Danger
-
-when overriding `destroy()`, `_super()` _must always_ be called otherwise the
-widget and its children are not correctly cleaned up leaving possible memory
-leaks and « phantom events », even if no error is displayed
+<div class="alert alert-danger">
+<p class="alert-title">
+Danger</p><p>when overriding <code>destroy()</code>, <code>_super()</code>
+<em>must always</em> be called otherwise the widget and its children are not
+correctly cleaned up leaving possible memory leaks and « phantom events »,
+even if no error is displayed</p>
+</div>
 
 ## The QWeb Template Engine
 
@@ -569,16 +570,16 @@ manipulating (and adding to) their DOM:
 
     
     
-    this.$el.append("<div>Hello dear Odoo user!</div>");
+    this.$el.append("<div>Hello dear Konvergo ERP user!</div>");
     
 
 This allows generating and displaying any type of content, but gets unwieldy
 when generating significant amounts of DOM (lots of duplication, quoting
 issues, …)
 
-As many other environments, Odoo’s solution is to use a [template
-engine](http://en.wikipedia.org/wiki/Web_template_system). Odoo’s template
-engine is called [QWeb Templates](../reference/frontend/qweb.html#reference-
+As many other environments, Konvergo ERP’s solution is to use a [template
+engine](http://en.wikipedia.org/wiki/Web_template_system). Konvergo ERP’s template
+engine is called [QWeb Templates](../reference/frontend/qweb#reference-
 qweb).
 
 QWeb is an XML-based templating language, similar to
@@ -591,19 +592,19 @@ characteristics:
 
   * Each template file (XML files) contains multiple templates
 
-  * It has special support in Odoo Web’s `Widget()`, though it can be used outside of Odoo’s web client (and it’s possible to use `Widget()` without relying on QWeb)
+  * It has special support in Konvergo ERP Web’s `Widget()`, though it can be used outside of Konvergo ERP’s web client (and it’s possible to use `Widget()` without relying on QWeb)
 
-Note
-
-The rationale behind using QWeb instead of existing javascript template
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The rationale behind using QWeb instead of existing javascript template
 engines is the extensibility of pre-existing (third-party) templates, much
-like Odoo [views](../reference/backend/views.html#reference-views).
-
-Most javascript template engines are text-based which precludes easy
+like Konvergo ERP <a href="../reference/backend/views#reference-views"><span class="std std-ref">views</span></a>.</p>
+<p>Most javascript template engines are text-based which precludes easy
 structural extensibility where an XML-based templating engine can be
-generically altered using e.g. XPath or CSS and a tree-alteration DSL (or even
-just XSLT). This flexibility and extensibility is a core characteristic of
-Odoo, and losing it was considered unacceptable.
+generically altered using e.g. XPath or CSS and a tree-alteration DSL (or
+even just XSLT). This flexibility and extensibility is a core
+characteristic of Konvergo ERP, and losing it was considered unacceptable.</p>
+</div>
 
 ### Using QWeb
 
@@ -656,12 +657,13 @@ usages:
 
   * in the first version the template’s content is added to the widget’s root element, whereas in the second version the template’s root element is directly _set as_ the widget’s root element. Which is why the « greetings » sub-widget also gets a red background
 
-Avertissement
-
-templates should have a single non-`t` root element, especially if they’re set
-as a widget’s `template`. If there are multiple « root elements », results are
-undefined (usually only the first root element will be used and the others
-will be ignored)
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>templates should have a single non-<code>t</code> root element, especially if
+they’re set as a widget’s <code>template</code>. If there are
+multiple « root elements », results are undefined (usually only the first
+root element will be used and the others will be ignored)</p>
+</div>
 
 #### QWeb Context
 
@@ -783,11 +785,12 @@ HTML-escape step.
     <div><t t-raw="name.link(user_account)"/></div>
     
 
-Danger
-
-`t-raw` _must not_ be used on any data which may contain non-escaped user-
-provided content as this leads to [cross-site
-scripting](http://en.wikipedia.org/wiki/Cross-site_scripting) vulnerabilities
+<div class="alert alert-danger">
+<p class="alert-title">
+Danger</p><p><code>t-raw</code> <em>must not</em> be used on any data which may contain non-escaped
+user-provided content as this leads to <a href="http://en.wikipedia.org/wiki/Cross-site_scripting">cross-site scripting</a>
+vulnerabilities</p>
+</div>
 
 #### Conditionals
 
@@ -807,11 +810,16 @@ empty string) the whole block is suppressed, otherwise it is displayed.
     </div>
     
 
-Note
-
-QWeb doesn’t have an « else » structure, use a second `t-if` with the original
-condition inverted. You may want to store the condition in a local variable if
-it’s a complex or expensive expression.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>This guide assumes knowledge of:</p>
+<ul>
+<li><p>Javascript basics and good practices</p></li>
+<li><p><a href="http://jquery.org">jQuery</a></p></li>
+<li><p><a href="http://underscorejs.org">Underscore.js</a></p></li>
+</ul>
+<p>It also requires <a href="../../administration/on_premise">an installed Konvergo ERP</a>, and <a href="http://git-scm.com">Git</a>.</p>
+</div>0
 
 #### Iteration
 
@@ -830,9 +838,16 @@ to each item during iteration.
     </div>
     
 
-Note
-
-`t-foreach` can also be used with numbers and objects (dictionaries)
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>This guide assumes knowledge of:</p>
+<ul>
+<li><p>Javascript basics and good practices</p></li>
+<li><p><a href="http://jquery.org">jQuery</a></p></li>
+<li><p><a href="http://underscorejs.org">Underscore.js</a></p></li>
+</ul>
+<p>It also requires <a href="../../administration/on_premise">an installed Konvergo ERP</a>, and <a href="http://git-scm.com">Git</a>.</p>
+</div>1
 
 #### Defining attributes
 
@@ -899,27 +914,20 @@ Sub-templates inherit the rendering context of their caller.
 #### To Learn More About QWeb
 
 For a QWeb reference, see [QWeb
-Templates](../reference/frontend/qweb.html#reference-qweb).
+Templates](../reference/frontend/qweb#reference-qweb).
 
 #### Exercise
 
-Exercise
-
-Usage of QWeb in Widgets
-
-Create a widget whose constructor takes two parameters aside from `parent`:
-`product_names` and `color`.
-
-  * `product_names` should an array of strings, each one the name of a product
-
-  * `color` is a string containing a color in CSS color format (ie: `#000000` for black).
-
-The widget should display the given product names one under the other, each
-one in a separate box with a background color with the value of `color` and a
-border. You should use QWeb to render the HTML. Any necessary CSS should be in
-`oepetstore/static/src/css/petstore.css`.
-
-Use the widget in `HomePage` with half a dozen products.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>This guide assumes knowledge of:</p>
+<ul>
+<li><p>Javascript basics and good practices</p></li>
+<li><p><a href="http://jquery.org">jQuery</a></p></li>
+<li><p><a href="http://underscorejs.org">Underscore.js</a></p></li>
+</ul>
+<p>It also requires <a href="../../administration/on_premise">an installed Konvergo ERP</a>, and <a href="http://git-scm.com">Git</a>.</p>
+</div>2
 
 ## Widget Helpers
 
@@ -945,14 +953,16 @@ shortcut through the `$()` method:
     });
     
 
-Avertissement
-
-The global jQuery function `$()` should _never_ be used unless it is
-absolutely necessary: selection on a widget’s root are scoped to the widget
-and local to it, but selections with `$()` are global to the page/application
-and may match parts of other widgets and views, leading to odd or dangerous
-side-effects. Since a widget should generally act only on the DOM section it
-owns, there is no cause for global selection.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>This guide assumes knowledge of:</p>
+<ul>
+<li><p>Javascript basics and good practices</p></li>
+<li><p><a href="http://jquery.org">jQuery</a></p></li>
+<li><p><a href="http://underscorejs.org">Underscore.js</a></p></li>
+</ul>
+<p>It also requires <a href="../../administration/on_premise">an installed Konvergo ERP</a>, and <a href="http://git-scm.com">Git</a>.</p>
+</div>3
 
 ### Easier DOM Events Binding
 
@@ -1091,12 +1101,16 @@ called with the additional arguments of `trigger()` if it has any. Example:
     }
     
 
-Note
-
-Triggering events on an other widget is generally a bad idea. The main
-exception to that rule is `odoo.web.bus` which exists specifically to
-broadcasts evens in which any widget could be interested throughout the Odoo
-web application.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>This guide assumes knowledge of:</p>
+<ul>
+<li><p>Javascript basics and good practices</p></li>
+<li><p><a href="http://jquery.org">jQuery</a></p></li>
+<li><p><a href="http://underscorejs.org">Underscore.js</a></p></li>
+</ul>
+<p>It also requires <a href="../../administration/on_premise">an installed Konvergo ERP</a>, and <a href="http://git-scm.com">Git</a>.</p>
+</div>4
 
 ### Properties
 
@@ -1122,29 +1136,20 @@ that they trigger events when set:
 
 ### Exercise
 
-Exercise
-
-Widget Properties and Events
-
-Create a widget `ColorInputWidget` that will display 3 `<input type="text">`.
-Each of these `<input>` is dedicated to type a hexadecimal number from 00 to
-FF. When any of these `<input>` is modified by the user the widget must query
-the content of the three `<input>`, concatenate their values to have a
-complete CSS color code (ie: `#00FF00`) and put the result in a property named
-`color`. Please note the jQuery `change()` event that you can bind on any HTML
-`<input>` element and the `val()` method that can query the current value of
-that `<input>` could be useful to you for this exercise.
-
-Then, modify the `HomePage` widget to instantiate `ColorInputWidget` and
-display it. The `HomePage` widget should also display an empty rectangle. That
-rectangle must always, at any moment, have the same background color as the
-color in the `color` property of the `ColorInputWidget` instance.
-
-Use QWeb to generate all HTML.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>This guide assumes knowledge of:</p>
+<ul>
+<li><p>Javascript basics and good practices</p></li>
+<li><p><a href="http://jquery.org">jQuery</a></p></li>
+<li><p><a href="http://underscorejs.org">Underscore.js</a></p></li>
+</ul>
+<p>It also requires <a href="../../administration/on_premise">an installed Konvergo ERP</a>, and <a href="http://git-scm.com">Git</a>.</p>
+</div>5
 
 ## Modify existing widgets and classes
 
-The class system of the Odoo web framework allows direct modification of
+The class system of the Konvergo ERP web framework allows direct modification of
 existing classes using the `include()` method:
 
     
@@ -1194,7 +1199,7 @@ JavaScript module. They are used thus:
     this.$el.text(_t("Hello user!"));
     
 
-In Odoo, translations files are automatically generated by scanning the source
+In Konvergo ERP, translations files are automatically generated by scanning the source
 code. All piece of code that calls a certain function are detected and their
 content is added to a translation file that will then be sent to the
 translators. In Python, the function is `_()`. In JavaScript the function is
@@ -1203,22 +1208,16 @@ translators. In Python, the function is `_()`. In JavaScript the function is
 `_t()` will return the translation defined for the text it is given. If no
 translation is defined for that text, it will return the original text as-is.
 
-Note
-
-To inject user-provided values in translatable strings, it is recommended to
-use [_.str.sprintf](http://gabceb.github.io/underscore.string.site/#sprintf)
-with named arguments _after_ the translation:
-
-    
-    
-    this.$el.text(_.str.sprintf(
-        _t("Hello, %(user)s!"), {
-        user: "Ed"
-    }));
-    
-
-This makes translatable strings more readable to translators, and gives them
-more flexibility to reorder or ignore parameters.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>This guide assumes knowledge of:</p>
+<ul>
+<li><p>Javascript basics and good practices</p></li>
+<li><p><a href="http://jquery.org">jQuery</a></p></li>
+<li><p><a href="http://underscorejs.org">Underscore.js</a></p></li>
+</ul>
+<p>It also requires <a href="../../administration/on_premise">an installed Konvergo ERP</a>, and <a href="http://git-scm.com">Git</a>.</p>
+</div>6
 
 `_lt()` (« lazy translate ») is similar but somewhat more complex: instead of
 translating its parameter immediately, it returns an object which, when
@@ -1228,19 +1227,19 @@ It is used to define translatable terms before the translations system is
 initialized, for class attributes for instance (as modules are loaded before
 the user’s language is configured and translations are downloaded).
 
-## Communication with the Odoo Server
+## Communication with the Konvergo ERP Server
 
 ### Contacting Models
 
-Most operations with Odoo involve communicating with _models_ implementing
+Most operations with Konvergo ERP involve communicating with _models_ implementing
 business concern, these models will then (potentially) interact with some
 storage engine (usually
 [PostgreSQL](http://en.wikipedia.org/wiki/PostgreSQL)).
 
 Although [jQuery](http://jquery.org) provides a
 [$.ajax](http://api.jquery.com/jquery.ajax/) function for network
-interactions, communicating with Odoo requires additional metadata whose setup
-before every call would be verbose and error-prone. As a result, Odoo web
+interactions, communicating with Konvergo ERP requires additional metadata whose setup
+before every call would be verbose and error-prone. As a result, Konvergo ERP web
 provides higher-level communication primitives.
 
 To demonstrate this, the file `petstore.py` already contains a small model
@@ -1278,11 +1277,11 @@ Here is a sample widget that calls `my_method()` and displays the result:
     });
     
 
-The class used to call Odoo models is `odoo.Model()`. It is instantiated with
-the Odoo model’s name as first parameter (`oepetstore.message_of_the_day`
+The class used to call Konvergo ERP models is `odoo.Model()`. It is instantiated with
+the Konvergo ERP model’s name as first parameter (`oepetstore.message_of_the_day`
 here).
 
-`call()` can be used to call any (public) method of an Odoo model. It takes
+`call()` can be used to call any (public) method of an Konvergo ERP model. It takes
 the following positional arguments:
 
 `name`
@@ -1296,7 +1295,7 @@ The name of the method to call, `my_method` here
     
 
 an array of [positional
-arguments](https://docs.python.org/2/glossary.html#term-argument) to provide
+arguments](https://docs.python.org/2/glossary#term-argument) to provide
 to the method. Because the example has no positional argument to provide, the
 `args` parameter is not provided.
 
@@ -1317,7 +1316,7 @@ Here is an other example with positional arguments:
 
     
 
-a mapping of [keyword arguments](https://docs.python.org/2/glossary.html#term-
+a mapping of [keyword arguments](https://docs.python.org/2/glossary#term-
 argument) to pass. The example provides a single named argument `context`.
 
     
@@ -1348,7 +1347,7 @@ The context is like a « magic » argument that the web client will always give
 to the server when calling a method. The context is a dictionary containing
 multiple keys. One of the most important key is the language of the user, used
 by the server to translate all the messages of the application. Another one is
-the time zone of the user, used to compute correctly dates and times if Odoo
+the time zone of the user, used to compute correctly dates and times if Konvergo ERP
 is used by people in different countries.
 
 The `argument` is necessary in all methods, otherwise bad things could happen
@@ -1376,12 +1375,12 @@ them to the server.
     
 
 You can see the dictionary in the argument `context` contains some keys that
-are related to the configuration of the current user in Odoo plus the
+are related to the configuration of the current user in Konvergo ERP plus the
 `new_key` key that was added when instantiating `CompoundContext()`.
 
 ### Queries
 
-While `call()` is sufficient for any interaction with Odoo models, Odoo Web
+While `call()` is sufficient for any interaction with Konvergo ERP models, Konvergo ERP Web
 provides a helper for simpler and clearer querying of models (fetching of
 records based on various conditions): `query()` which acts as a shortcut for
 the common combination of `search()` and :`read()`. It provides a clearer
@@ -1421,44 +1420,32 @@ requested field a dictionary key.
 
 ## Exercises
 
-Exercise
-
-Message of the Day
-
-Create a `MessageOfTheDay` widget displaying the last record of the
-`oepetstore.message_of_the_day` model. The widget should fetch its record as
-soon as it is displayed.
-
-Display the widget in the Pet Store home page.
-
-Exercise
-
-Pet Toys List
-
-Create a `PetToysList` widget displaying 5 toys (using their name and their
-images).
-
-The pet toys are not stored in a new model, instead they’re stored in
-`product.product` using a special category _Pet Toys_. You can see the pre-
-generated toys and add new ones by going to Pet Store ‣ Pet Store ‣ Pet Toys.
-You will probably need to explore `product.product` to create the right domain
-to select just pet toys.
-
-In Odoo, images are generally stored in regular fields encoded as
-[base64](http://en.wikipedia.org/wiki/Base64), HTML supports displaying images
-straight from base64 with `<img src="data:_mime_type_
-;base64,_base64_image_data_ "/>`
-
-The `PetToysList` widget should be displayed on the home page on the right of
-the `MessageOfTheDay` widget. You will need to make some layout with CSS to
-achieve this.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>This guide assumes knowledge of:</p>
+<ul>
+<li><p>Javascript basics and good practices</p></li>
+<li><p><a href="http://jquery.org">jQuery</a></p></li>
+<li><p><a href="http://underscorejs.org">Underscore.js</a></p></li>
+</ul>
+<p>It also requires <a href="../../administration/on_premise">an installed Konvergo ERP</a>, and <a href="http://git-scm.com">Git</a>.</p>
+</div>7 <div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>This guide assumes knowledge of:</p>
+<ul>
+<li><p>Javascript basics and good practices</p></li>
+<li><p><a href="http://jquery.org">jQuery</a></p></li>
+<li><p><a href="http://underscorejs.org">Underscore.js</a></p></li>
+</ul>
+<p>It also requires <a href="../../administration/on_premise">an installed Konvergo ERP</a>, and <a href="http://git-scm.com">Git</a>.</p>
+</div>8
 
 ## Existing web components
 
 ### The Action Manager
 
-In Odoo, many operations start from an
-[action](../reference/backend/actions.html#reference-actions): opening a menu
+In Konvergo ERP, many operations start from an
+[action](../reference/backend/actions#reference-actions): opening a menu
 item (to a view), printing a report, …
 
 Actions are pieces of data describing how a client should react to the
@@ -1466,14 +1453,14 @@ activation of a piece of content. Actions can be stored (and read through a
 model) or they can be generated on-the fly (locally to the client by
 javascript code, or remotely by a method of a model).
 
-In Odoo Web, the component responsible for handling and reacting to these
+In Konvergo ERP Web, the component responsible for handling and reacting to these
 actions is the _Action Manager_.
 
 #### Using the Action Manager
 
 The action manager can be invoked explicitly from javascript code by creating
 a dictionary describing [an
-action](../reference/backend/actions.html#reference-actions) of the right
+action](../reference/backend/actions#reference-actions) of the right
 type, and calling an action manager instance with it.
 
 `do_action()` is a shortcut of `Widget()` looking up the « current » action
@@ -1534,22 +1521,26 @@ web client by the action, or `new` to open the action in a dialog box.
 
 Additional context data to use within the action.
 
-Exercise
-
-Jump to Product
-
-Modify the `PetToysList` component so clicking on a toy replaces the homepage
-by the toy’s form view.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>This guide assumes knowledge of:</p>
+<ul>
+<li><p>Javascript basics and good practices</p></li>
+<li><p><a href="http://jquery.org">jQuery</a></p></li>
+<li><p><a href="http://underscorejs.org">Underscore.js</a></p></li>
+</ul>
+<p>It also requires <a href="../../administration/on_premise">an installed Konvergo ERP</a>, and <a href="http://git-scm.com">Git</a>.</p>
+</div>9
 
 ### Client Actions
 
 Throughout this guide, we used a simple `HomePage` widget which the web client
-automatically starts when we select the right menu item. But how did the Odoo
+automatically starts when we select the right menu item. But how did the Konvergo ERP
 web know to start this widget? Because the widget is registered as a _client
 action_.
 
 A client action is (as its name implies) an action type defined almost
-entirely in the client, in javascript for Odoo web. The server simply sends an
+entirely in the client, in javascript for Konvergo ERP web. The server simply sends an
 action tag (an arbitrary name), and optionally adds a few parameters, but
 beyond that _everything_ is handled by custom client code.
 
@@ -1563,17 +1554,28 @@ Our widget is registered as the handler for the client action through this:
 `instance.web.client_actions` is a `Registry()` in which the action manager
 looks up client action handlers when it needs to execute one. The first
 parameter of `add()` is the name (tag) of the client action, and the second
-parameter is the path to the widget from the Odoo web client root.
+parameter is the path to the widget from the Konvergo ERP web client root.
 
 When a client action must be executed, the action manager looks up its tag in
 the registry, walks the specified path and displays the widget it finds at the
 end.
 
-Note
-
-a client action handler can also be a regular function, in which case it’ll be
-called and its result (if any) will be interpreted as the next action to
-execute.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>All JavaScript files are concatenated and <a href="../glossary#term-minified"><span class="xref std std-term">minified</span></a> to improve
+application load time.</p>
+<p>One of the drawback is debugging becomes more difficult as
+individual files disappear and the code is made significantly less
+readable. It is possible to disable this process by enabling the
+« developer mode »: log into your Konvergo ERP instance (user <em>admin</em> password
+<em>admin</em> by default) open the user menu (in the top-right corner of the
+Konvergo ERP screen) and select <b>About Konvergo ERP</b> then <b>Activate
+the developer mode</b>:</p>
+<img alt="../../_images/about_odoo.png" class="align-center" src="../../_images/about_odoo.png"/>
+<img alt="../../_images/devmode.png" class="align-center" src="../../_images/devmode.png"/>
+<p>This will reload the web client with optimizations disabled, making
+development and debugging significantly more comfortable.</p>
+</div>0
 
 On the server side, we had simply defined an `ir.actions.client` action:
 
@@ -1594,7 +1596,7 @@ and a menu opening the action:
 
 ### Architecture of the Views
 
-Much of Odoo web’s usefulness (and complexity) resides in views. Each view
+Much of Konvergo ERP web’s usefulness (and complexity) resides in views. Each view
 type is a way of displaying a model in the client.
 
 #### The View Manager
@@ -1608,11 +1610,11 @@ views depending on the original action’s requirements:
 
 #### The Views
 
-Most [Odoo views](../reference/backend/views.html#reference-views) are
+Most [Konvergo ERP views](../reference/backend/views#reference-views) are
 implemented through a subclass of `odoo.web.View()` which provides a bit of
 generic basic structure for handling events and displaying model information.
 
-The _search view_ is considered a view type by the main Odoo framework, but
+The _search view_ is considered a view type by the main Konvergo ERP framework, but
 handled separately by the web client (as it’s a more permanent fixture and can
 interact with other views, which regular views don’t do).
 
@@ -1633,7 +1635,7 @@ displaying fields.
 
 All built-in fields have a default display implementation, a new form widget
 may be necessary to correctly interact with a new field type (e.g. a
-[GIS](../glossary.html#term-GIS) field) or to provide new representations and
+[GIS](../glossary#term-GIS) field) or to provide new representations and
 ways to interact with existing field types (e.g. validate `Char` fields which
 should contain email addresses and display them as email links).
 
@@ -1645,13 +1647,22 @@ simply use the `widget` attribute in the view’s XML description:
     <field name="contact_mail" widget="email"/>
     
 
-Note
-
-  * the same widget is used in both « view » (read-only) and « edit » modes of a form view, it’s not possible to use a widget in one and an other widget in the other
-
-  * and a given field (name) can not be used multiple times in the same form
-
-  * a widget may ignore the current mode of the form view and remain the same in both view and edit modes
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>All JavaScript files are concatenated and <a href="../glossary#term-minified"><span class="xref std std-term">minified</span></a> to improve
+application load time.</p>
+<p>One of the drawback is debugging becomes more difficult as
+individual files disappear and the code is made significantly less
+readable. It is possible to disable this process by enabling the
+« developer mode »: log into your Konvergo ERP instance (user <em>admin</em> password
+<em>admin</em> by default) open the user menu (in the top-right corner of the
+Konvergo ERP screen) and select <b>About Konvergo ERP</b> then <b>Activate
+the developer mode</b>:</p>
+<img alt="../../_images/about_odoo.png" class="align-center" src="../../_images/about_odoo.png"/>
+<img alt="../../_images/devmode.png" class="align-center" src="../../_images/devmode.png"/>
+<p>This will reload the web client with optimizations disabled, making
+development and debugging significantly more comfortable.</p>
+</div>1
 
 Fields are instantiated by the form view after it has read its XML description
 and constructed the corresponding HTML representing that description. After
@@ -1664,19 +1675,19 @@ Here are some of the responsibilities of a field class:
 
   * The field class must display and allow the user to edit the value of the field.
 
-  * It must correctly implement the 3 field attributes available in all fields of Odoo. The `AbstractField` class already implements an algorithm that dynamically calculates the value of these attributes (they can change at any moment because their value change according to the value of other fields). Their values are stored in _Widget Properties_ (the widget properties were explained earlier in this guide). It is the responsibility of each field class to check these widget properties and dynamically adapt depending of their values. Here is a description of each of these attributes:
+  * It must correctly implement the 3 field attributes available in all fields of Konvergo ERP. The `AbstractField` class already implements an algorithm that dynamically calculates the value of these attributes (they can change at any moment because their value change according to the value of other fields). Their values are stored in _Widget Properties_ (the widget properties were explained earlier in this guide). It is the responsibility of each field class to check these widget properties and dynamically adapt depending of their values. Here is a description of each of these attributes:
 
     * `required`: The field must have a value before saving. If `required` is `true` and the field doesn’t have a value, the method `is_valid()` of the field must return `false`.
 
     * `invisible`: When this is `true`, the field must be invisible. The `AbstractField` class already has a basic implementation of this behavior that fits most fields.
 
-    * `readonly`: When `true`, the field must not be editable by the user. Most fields in Odoo have a completely different behavior depending on the value of `readonly`. As example, the `FieldChar` displays an HTML `<input>` when it is editable and simply displays the text when it is read-only. This also means it has much more code it would need to implement only one behavior, but this is necessary to ensure a good user experience.
+    * `readonly`: When `true`, the field must not be editable by the user. Most fields in Konvergo ERP have a completely different behavior depending on the value of `readonly`. As example, the `FieldChar` displays an HTML `<input>` when it is editable and simply displays the text when it is read-only. This also means it has much more code it would need to implement only one behavior, but this is necessary to ensure a good user experience.
 
-  * Fields have two methods, `set_value()` and `get_value()`, which are called by the form view to give it the value to display and get back the new value entered by the user. These methods must be able to handle the value as given by the Odoo server when a `read()` is performed on a model and give back a valid value for a `write()`. Remember that the JavaScript/Python data types used to represent the values given by `read()` and given to `write()` is not necessarily the same in Odoo. As example, when you read a many2one, it is always a tuple whose first value is the id of the pointed record and the second one is the name get (ie: `(15, "Agrolait")`). But when you write a many2one it must be a single integer, not a tuple anymore. `AbstractField` has a default implementation of these methods that works well for simple data type and set a widget property named `value`.
+  * Fields have two methods, `set_value()` and `get_value()`, which are called by the form view to give it the value to display and get back the new value entered by the user. These methods must be able to handle the value as given by the Konvergo ERP server when a `read()` is performed on a model and give back a valid value for a `write()`. Remember that the JavaScript/Python data types used to represent the values given by `read()` and given to `write()` is not necessarily the same in Konvergo ERP. As example, when you read a many2one, it is always a tuple whose first value is the id of the pointed record and the second one is the name get (ie: `(15, "Agrolait")`). But when you write a many2one it must be a single integer, not a tuple anymore. `AbstractField` has a default implementation of these methods that works well for simple data type and set a widget property named `value`.
 
 Please note that, to better understand how to implement fields, you are
 strongly encouraged to look at the definition of the `FieldInterface`
-interface and the `AbstractField` class directly in the code of the Odoo web
+interface and the `AbstractField` class directly in the code of the Konvergo ERP web
 client.
 
 #### Creating a New Type of Field
@@ -1728,7 +1739,7 @@ field should be an empty string).
 ##### Read-Write Field
 
 Read-only fields, which only display content and don’t allow the user to
-modify it can be useful, but most fields in Odoo also allow editing. This
+modify it can be useful, but most fields in Konvergo ERP also allow editing. This
 makes the field classes more complicated, mostly because fields are supposed
 to handle both editable and non-editable mode, those modes are often
 completely different (for design and usability purpose) and the fields must be
@@ -1803,22 +1814,22 @@ verifications to know the state of the `effective_readonly` property:
 
   * In `render_value()`, we use a completely different code to display the value of the field depending if we are in read-only or in read-write mode.
 
-Exercise
-
-Create a Color Field
-
-Create a `FieldColor` class. The value of this field should be a string
-containing a color code like those used in CSS (example: `#FF0000` for red).
-In read-only mode, this color field should display a little block whose color
-corresponds to the value of the field. In read-write mode, you should display
-an `<input type="color" />`. That type of `<input />` is an HTML5 component
-that doesn’t work in all browsers but works well in Google Chrome. So it’s OK
-to use as an exercise.
-
-You can use that widget in the form view of the `message_of_the_day` model for
-its field named `color`. As a bonus, you can change the `MessageOfTheDay`
-widget created in the previous part of this guide to display the message of
-the day with the background color indicated in the `color` field.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>All JavaScript files are concatenated and <a href="../glossary#term-minified"><span class="xref std std-term">minified</span></a> to improve
+application load time.</p>
+<p>One of the drawback is debugging becomes more difficult as
+individual files disappear and the code is made significantly less
+readable. It is possible to disable this process by enabling the
+« developer mode »: log into your Konvergo ERP instance (user <em>admin</em> password
+<em>admin</em> by default) open the user menu (in the top-right corner of the
+Konvergo ERP screen) and select <b>About Konvergo ERP</b> then <b>Activate
+the developer mode</b>:</p>
+<img alt="../../_images/about_odoo.png" class="align-center" src="../../_images/about_odoo.png"/>
+<img alt="../../_images/devmode.png" class="align-center" src="../../_images/devmode.png"/>
+<p>This will reload the web client with optimizations disabled, making
+development and debugging significantly more comfortable.</p>
+</div>2
 
 ### The Form View Custom Widgets
 
@@ -1874,46 +1885,37 @@ being:
 
   * An event `field_changed:_field_name_` is triggered any time the value of the field called `field_name` is changed
 
-Exercise
-
-Show Coordinates on Google Map
-
-Add two fields to `product.product` storing a latitude and a longitude, then
-create a new form widget to display the latitude and longitude of a product’s
-origin on a map
-
-To display the map, use Google Map’s embedding:
-
-    
-    
-    <iframe width="400" height="300" src="https://maps.google.com/?ie=UTF8&amp;ll=XXX,YYY&amp;output=embed">
-    </iframe>
-    
-
-where `XXX` should be replaced by the latitude and `YYY` by the longitude.
-
-Display the two position fields and a map widget using them in a new notebook
-page of the product’s form view.
-
-Exercise
-
-Get the Current Coordinate
-
-Add a button resetting the product’s coordinates to the location of the user,
-you can get these coordinates using the [javascript geolocation
-API](http://diveintohtml5.info/geolocation.html).
-
-Now we would like to display an additional button to automatically set the
-coordinates to the location of the current user.
-
-To get the coordinates of the user, an easy way is to use the geolocation
-JavaScript API. [See the online documentation to know how to use
-it](http://www.w3schools.com/html/html5_geolocation.asp).
-
-Please also note that the user should not be able to click on that button when
-the form view is in read-only mode. So, this custom widget should handle
-correctly the `effective_readonly` property just like any field. One way to do
-this would be to make the button disappear when `effective_readonly` is true.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>All JavaScript files are concatenated and <a href="../glossary#term-minified"><span class="xref std std-term">minified</span></a> to improve
+application load time.</p>
+<p>One of the drawback is debugging becomes more difficult as
+individual files disappear and the code is made significantly less
+readable. It is possible to disable this process by enabling the
+« developer mode »: log into your Konvergo ERP instance (user <em>admin</em> password
+<em>admin</em> by default) open the user menu (in the top-right corner of the
+Konvergo ERP screen) and select <b>About Konvergo ERP</b> then <b>Activate
+the developer mode</b>:</p>
+<img alt="../../_images/about_odoo.png" class="align-center" src="../../_images/about_odoo.png"/>
+<img alt="../../_images/devmode.png" class="align-center" src="../../_images/devmode.png"/>
+<p>This will reload the web client with optimizations disabled, making
+development and debugging significantly more comfortable.</p>
+</div>3 <div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>All JavaScript files are concatenated and <a href="../glossary#term-minified"><span class="xref std std-term">minified</span></a> to improve
+application load time.</p>
+<p>One of the drawback is debugging becomes more difficult as
+individual files disappear and the code is made significantly less
+readable. It is possible to disable this process by enabling the
+« developer mode »: log into your Konvergo ERP instance (user <em>admin</em> password
+<em>admin</em> by default) open the user menu (in the top-right corner of the
+Konvergo ERP screen) and select <b>About Konvergo ERP</b> then <b>Activate
+the developer mode</b>:</p>
+<img alt="../../_images/about_odoo.png" class="align-center" src="../../_images/about_odoo.png"/>
+<img alt="../../_images/devmode.png" class="align-center" src="../../_images/devmode.png"/>
+<p>This will reload the web client with optimizations disabled, making
+development and debugging significantly more comfortable.</p>
+</div>4
 
 1
 

@@ -12,20 +12,19 @@ Install the _Gamification_ module, or the _CRM gamification_ one, which adds
 some useful data (goals and challenges) that can be used on _CRM/Sale_.
 
 ![View of the gamification module being installed in
-Odoo](../../../../_images/gamification_module_install.png)
+Konvergo ERP](../../../../_images/gamification_module_install.png)
 
 ## Create a challenge
 
 Now, create your first challenge by going to Settings ‣ Gamification Tools ‣
 Challenges.
 
-Note
-
-As the gamification tool is a one-time technical setup, you need to activate
-the technical features in order to access the configuration. To do so, go to
-_Settings_ and _Activate the developer mode_.
-
-![View if the gamification tools menu in Odoo
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>As the gamification tool is a one-time technical setup, you need to activate the technical
+features in order to access the configuration. To do so, go to <em>Settings</em> and <em>Activate the
+developer mode</em>.</p>
+</div> ![View if the gamification tools menu in Konvergo ERP
 Settings](../../../../_images/gamification_tools_menu.png)
 
 A challenge is a mission that you send to your sales team. It can include one
@@ -42,19 +41,19 @@ as follows:
 
   5. Set up your rewards (badges).
 
-Note
-
-Badges are granted when a challenge is finished. This is either at the end of
-a running period (eg: end of the month for a monthly challenge), at the end
-date of a challenge (if no periodicity is set), or when the challenge is
-manually closed.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Badges are granted when a challenge is finished. This is either at the end of a running period
+(eg: end of the month for a monthly challenge), at the end date of a challenge (if no periodicity
+is set), or when the challenge is manually closed.</p>
+</div>
 
 In the example below, 2 employees are being challenged with a _Monthly Sales
 Target_. The challenge is based on 2 goals: the total amount invoiced and
 number of new leads generated. At the end of the month, the winner will be
 granted with a badge.
 
-![View of the challenge form and a challenge being created for Odoo
+![View of the challenge form and a challenge being created for Konvergo ERP
 Sales](../../../../_images/challenges.png)
 
 ### Set up goals
@@ -71,12 +70,11 @@ amount invoiced in a specific week, month or any other time frame based on
 your management preferences, etc.
 
 ![View of the goal definition form and a goal definition being created for
-Odoo Sales](../../../../_images/goal_definitions.png)
-
-Note
-
-Goals may include your database setup as well (e.g. set your company data and
-a timezone, create new users, etc.).
+Konvergo ERP Sales](../../../../_images/goal_definitions.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Goals may include your database setup as well (e.g. set your company data and a timezone,
+create new users, etc.).</p>
+</div>
 
 ### Set up rewards
 
@@ -86,5 +84,5 @@ express gratitude to a user for their good work. To create and grant badges to
 your employees based on their performance, go to Settings ‣ Gamification Tools
 ‣ Badges.
 
-![View of the badges page in Odoo](../../../../_images/badges.png)
+![View of the badges page in Konvergo ERP](../../../../_images/badges.png)
 

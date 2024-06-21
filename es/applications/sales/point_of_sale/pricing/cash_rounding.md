@@ -8,7 +8,7 @@ Por ejemplo, algunos países exigen a sus empresas que redondeen el importe
 total de una factura a los cinco centavos más cercanos, siempre que el pago
 sea en efectivo.
 
-Cada punto de venta en Odoo se puede configurar para aplicar redondeo de
+Cada punto de venta en Konvergo ERP se puede configurar para aplicar redondeo de
 efectivo en los totales de sus cuentas o recibos.
 
 ## Configuración
@@ -34,9 +34,8 @@ Ahora todos los importes totales de este punto de venta agregan una línea para
 aplicar el redondeo según sus ajustes.
 
 ![../../../../_images/cash_rounding03.png](../../../../_images/cash_rounding03.png)
-
-Nota
-
-La aplicación Punto de venta de Odoo solo es compatible con la estrategia de
-redondeo agregar una línea de redondeo.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>La aplicación Punto de venta de Konvergo ERP solo es compatible con la estrategia de redondeo <b>agregar una línea de redondeo</b>.</p>
+</div>
 

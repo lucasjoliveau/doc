@@ -3,17 +3,13 @@
 La connexion d’un terminal de paiement Vantiv vous permet d’offrir un flux de
 paiement fluide à vos clients et facilite le travail de vos caissiers.
 
-Note
-
-Notez que MercuryPay fonctionne uniquement avec des banques américaines et
-canadiennes, ce qui fait que cette procédure ne convient qu’aux entreprises
-nord-américaines.
-
-Avertissement
-
-Les lecteurs de cartes Vantiv doivent être achetés exclusivement auprès de
-Vantiv, car certains terminaux Vantiv achetés sur Amazon n’incluent pas le
-cryptage correcte nécessaire pour être utilisés avec une base de données Odoo.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Notez que MercuryPay fonctionne uniquement avec des banques américaines et canadiennes, ce qui fait que cette procédure ne convient qu’aux entreprises nord-américaines.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Les lecteurs de cartes Vantiv doivent être achetés exclusivement auprès de Vantiv, car certains terminaux Vantiv achetés sur Amazon n’incluent pas le cryptage correcte nécessaire pour être utilisés avec une base de données Konvergo ERP.</p>
+</div>
 
 ## Configuration
 

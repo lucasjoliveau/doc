@@ -2,12 +2,12 @@
 
 ## Configuration
 
-[Install](../../general/apps_modules.html#general-install) the following
+[Install](../../general/apps_modules#general-install) the following
 modules to get all the features of the Italian localization:
 
 Name | Technical name | Description  
 ---|---|---  
-Italy - Accounting | `l10n_it` | Default [fiscal localization package](../fiscal_localizations.html#fiscal-localizations-packages)  
+Italy - Accounting | `l10n_it` | Default [fiscal localization package](../fiscal_localizations#fiscal-localizations-packages)  
 Italy - E-invoicing | `l10n_it_edi` | e-invoice implementation  
 Italy - E-invoicing | `l10n_it_edi_withholding` | e-invoice withholding  
 Italy - Accounting Reports | `l10n_it_reports` | Country-specific reports  
@@ -18,15 +18,16 @@ Italy - Stock DDT | `l10n_it_stock_ddt` | Transport documents - Documento di Tra
 
 Configuring the company’s information ensures your Accounting database is
 properly set up. To add information, go to Settings ‣ General Settings, and in
-the Companies section, click Update info. From here, fill out the fields:
+the **Companies** section, click **Update info**. From here, fill out the
+fields:
 
-  * Address: the address of the company;
+  * **Address** : the address of the company;
 
-  * VAT: VAT of the company;
+  * **VAT** : VAT of the company;
 
-  * Codice Fiscale: the fiscal code of the company;
+  * **Codice Fiscale** : the fiscal code of the company;
 
-  * Tax System: the tax system under which the company falls;
+  * **Tax System** : the tax system under which the company falls;
 
 ![Company information to provide](../../../_images/italy-company.png)
 
@@ -37,8 +38,8 @@ and receive electronic invoices to and from customers. The documents must be
 in XML format and formally validated by the system before being delivered.
 
 To be able to receive invoices and notifications, the SdI service must be
-notified that the user’s files are to be sent to **Odoo** and processed on
-their behalf. To so, you must set up Odoo’s Codice Destinatario on the
+notified that the user’s files are to be sent to **Konvergo ERP** and processed on
+their behalf. To so, you must set up Konvergo ERP’s **Codice Destinatario** on the
 **Agenzia Delle Entrate** portal.
 
   1. Go to <https://ivaservizi.agenziaentrate.gov.it/portale/> and authenticate;
@@ -47,42 +48,39 @@ their behalf. To so, you must set up Odoo’s Codice Destinatario on the
 
   3. Set the user as Legal Party for the VAT number you wish to configure the electronic address;
 
-  4. In Servizi Disponibili ‣ Fatturazione Elettronica ‣ Registrazione dell’indirizzo telematico dove ricevere tutte le fatture elettroniche, insert Odoo’s Codice Destinatario `K95IV18`, and confirm.
+  4. In Servizi Disponibili ‣ Fatturazione Elettronica ‣ Registrazione dell’indirizzo telematico dove ricevere tutte le fatture elettroniche, insert Konvergo ERP’s **Codice Destinatario** `K95IV18`, and confirm.
 
 #### Electronic Data Interchange (EDI)
 
-Odoo uses the **FatturaPA** EDI format for the Italian localization and is
+Konvergo ERP uses the **FatturaPA** EDI format for the Italian localization and is
 enabled on the default journals when installed. When the **file processing
 authorization** has been set, all **invoices** and **bills** are automatically
 sent.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>You can <a href="../accounting/customer_invoices/electronic_invoicing#e-invoicing-configuration"><span class="std std-ref">enable electronic invoicing for other sales and purchase journals</span></a> than the default ones.</p>
+</div>
 
-You can [enable electronic invoicing for other sales and purchase
-journals](../accounting/customer_invoices/electronic_invoicing.html#e-invoicing-
-configuration) than the default ones.
-
-You can check the current status of an invoice by the Electronic invoicing
+You can check the current status of an invoice by the **Electronic invoicing**
 field. The XML file can be found in the **chatter** of the invoice.
 
 ![Electronic invoicing status \(waiting for
-confirmation\)](../../../_images/italy-test.png)
+confirmation\)](../../../_images/italy-test.png) <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../accounting/customer_invoices/electronic_invoicing">Electronic invoicing (EDI)</a></p>
+</div>
 
-See also
+### File processing authorization (Konvergo ERP)
 
-[Electronic invoicing
-(EDI)](../accounting/customer_invoices/electronic_invoicing.html)
-
-### File processing authorization (Odoo)
-
-Since the files are transmitted through Odoo’s server before being sent to the
-SdI or received by your database, you need to authorize Odoo to process your
+Since the files are transmitted through Konvergo ERP’s server before being sent to the
+SdI or received by your database, you need to authorize Konvergo ERP to process your
 files from your database. To do so, go to Accounting ‣ Configuration ‣
 Settings ‣ Electronic Document Invoicing.
 
 There are **three** modes available:
 
-Demo
+**Demo**
 
     
 
@@ -90,7 +88,7 @@ This mode simulates an environment in which invoices are sent to the
 government. In this mode, invoices need to be _manually_ downloaded as XML
 files and uploaded to the **Agenzia delle Entrate** ’s website.
 
-Test (experimental)
+**Test (experimental)**
 
     
 
@@ -98,7 +96,7 @@ This mode sends invoices to a non-production (i.e., test) service made
 available by the **Agenzia delle Entrate**. Saving this change directs all
 companies on the database to use this configuration.
 
-Official
+**Official**
 
     
 
@@ -106,30 +104,27 @@ This is a production mode that sends your invoices directly to the **Agenzia
 delle Entrate**.
 
 Once a mode is selected, you need to accept the **terms and conditions** by
-ticking Allow Odoo to process invoices, and then Save. You can now record your
-transactions in Odoo Accounting.
+ticking **Allow Konvergo ERP to process invoices** , and then **Save**. You can now
+record your transactions in Konvergo ERP Accounting.
 
-Warning
-
-Selecting either Test (experimental) or Official is **irreversible**. Once in
-Official mode, it is not possible to select Test (experimental) or Demo, and
-same for Test (experimental). We recommend creating a separate database for
-testing purposes only.
-
-Note
-
-When in Test (Experimental) mode, all invoices sent _must_ have a partner
-using one of the following fake Codice Destinatario given by the **Agenzia
-Delle Entrate** : `0803HR0` \- `N8MIMM9` \- `X9XX79Z`. Any real production
-Codice Destinario of your customers will not be recognized as valid by the
-test service.
-
-![Italy's electronic document invoicing options](../../../_images/italy-
-edi.png)
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Selecting either <b>Test (experimental)</b> or <b>Official</b> is <b>irreversible</b>.
+Once in <b>Official</b> mode, it is not possible to select <b>Test (experimental)</b>
+or <b>Demo</b>, and same for <b>Test (experimental)</b>. We recommend creating a
+separate database for testing purposes only.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When in <b>Test (Experimental)</b> mode, all invoices sent <em>must</em> have a partner using one
+of the following fake <b>Codice Destinatario</b> given by the <b>Agenzia Delle Entrate</b>:
+<code>0803HR0</code> - <code>N8MIMM9</code> - <code>X9XX79Z</code>. Any real production <b>Codice Destinario</b> of your
+customers will not be recognized as valid by the test service.</p>
+</div> ![Italy's electronic document
+invoicing options](../../../_images/italy-edi.png)
 
 ## Taxes configuration
 
-Many of the e-invoicing features are implemented using Odoo’s tax system. As
+Many of the e-invoicing features are implemented using Konvergo ERP’s tax system. As
 such, it is very important that taxes are properly configured in order to
 generate invoices correctly and handle other billing use cases. For example,
 specific configurations are required for the **reverse charge** type of taxes.
@@ -150,43 +145,43 @@ configured for **reverse charge**. The **Italian** localization contains an
 **example** of a reverse charge tax for export in the EU to be used as
 reference (`0% EU`, invoice label `00eu`), which can be found under Accounting
 ‣ Configuration ‣ Taxes. Exports are exempt from VAT, and therefore **reverse
-charge** taxes require the Has exoneration of tax (Italy) option ticked, with
-both the Exoneration kind and Law Reference filled in.
+charge** taxes require the **Has exoneration of tax (Italy)** option ticked,
+with both the **Exoneration** kind and **Law Reference** filled in.
 
 ![External reverse charge settings](../../../_images/italy-tax.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>If you need to use a different kind of <b>Exoneration</b>, click Action ‣
+Duplicate within the tax menu to create a copy of an existing similar tax. Then, select another
+<b>Exoneration</b>, and <b>Save</b>. Repeat this process as many times as you need
+different kind of <b>Exoneration</b> taxes.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p><b>Rename</b> your taxes in the <b>Name</b> field according to their <b>Exoneration</b> to
+differentiate them easily.</p>
+</div>
 
-Note
+On your invoice, select the corresponding tax you need in the **Taxes** field.
+You can find the following **additional info** by opening the **XML** file of
+the issued invoice:
 
-If you need to use a different kind of Exoneration, click Action ‣ Duplicate
-within the tax menu to create a copy of an existing similar tax. Then, select
-another Exoneration, and Save. Repeat this process as many times as you need
-different kind of Exoneration taxes.
+  * **SdI address (Codice Destinatario)** : must be filled for both **EU** or **non-EU** ;
 
-Tip
+  * **Country Id** : must contain the country of the foreign seller in the two-letter ISO (Alpha-2) code (ex., `IT` for ‘Italy’);
 
-**Rename** your taxes in the Name field according to their Exoneration to
-differentiate them easily.
+  * **CAP** : must be filled with `00000`;
 
-On your invoice, select the corresponding tax you need in the Taxes field. You
-can find the following **additional info** by opening the **XML** file of the
-issued invoice:
+  * **Partita Iva** (**VAT number**): must contain the **VAT** number for **EU businesses** and `OO99999999999` (double ‘O’ **letter** , not ‘zero’) for **non-EU businesses**. In case of private customers without **VAT** number, use `0000000`;
 
-  * SdI address (Codice Destinatario): must be filled for both **EU** or **non-EU** ;
+  * **Fiscal Code** : for foreign entities without an actual **Codice Fiscale** , any recognizable identifier is valid.
 
-  * Country Id: must contain the country of the foreign seller in the two-letter ISO (Alpha-2) code (ex., `IT` for ‘Italy’);
-
-  * CAP: must be filled with `00000`;
-
-  * Partita Iva (**VAT number**): must contain the **VAT** number for **EU businesses** and `OO99999999999` (double ‘O’ **letter** , not ‘zero’) for **non-EU businesses**. In case of private customers without **VAT** number, use `0000000`;
-
-  * Fiscal Code: for foreign entities without an actual **Codice Fiscale** , any recognizable identifier is valid.
-
-Note
-
-Odoo does not support sending user-modified XML files.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Konvergo ERP does not support sending user-modified XML files.</p>
+</div>
 
 For **invoices** , multiple configurations are technically identified by a
-Tipo Documento code:
+**Tipo Documento** code:
 
   * `TD02` \- Down payments;
 
@@ -202,11 +197,11 @@ Tipo Documento code:
 
 > Down payments.
 >
-> **Down payment** invoices are imported/exported with a different Tipo
-> Documento code `TDO2` than regular invoices. Upon import of the invoice, it
-> creates a regular vendor bill.
+> **Down payment** invoices are imported/exported with a different **Tipo
+> Documento** code `TDO2` than regular invoices. Upon import of the invoice,
+> it creates a regular vendor bill.
 >
-> Odoo exports moves as `TD02` if the following conditions are met:
+> Konvergo ERP exports moves as `TD02` if the following conditions are met:
 
   * Is an invoice;
 
@@ -220,17 +215,17 @@ regular invoice, but with fewer information requirements.
 
 For a **simplified** invoice to be established, it must include:
 
-  * Customer Invoice reference: **unique** numbering sequence with **no gaps** ;
+  * **Customer Invoice** reference: **unique** numbering sequence with **no gaps** ;
 
-  * Invoice Date: issue **date** of the invoice;
+  * **Invoice Date** : issue **date** of the invoice;
 
-  * Company Info: the **seller** ’s full credentials (VAT/TIN number, name, full address) under General Settings ‣ Companies (section);
+  * **Company Info** : the **seller** ’s full credentials (VAT/TIN number, name, full address) under General Settings ‣ Companies (section);
 
-  * VAT: the **buyer** ’s VAT/TIN number (on their profile card);
+  * **VAT** : the **buyer** ’s VAT/TIN number (on their profile card);
 
-  * Total: the total **amount** (VAT included) of the invoice.
+  * **Total** : the total **amount** (VAT included) of the invoice.
 
-In the EDI, Odoo exports invoices as simplified if:
+In the EDI, Konvergo ERP exports invoices as simplified if:
 
   * It is a **domestic** transaction (i.e., the partner is from Italy);
 
@@ -240,12 +235,12 @@ In the EDI, Odoo exports invoices as simplified if:
 
   * The total amount VAT included is **less** than **400 EUR**.
 
-Note
-
-The 400 EUR threshold was defined in [the decree of the 10th of May 2019 in
-the Gazzetta
-Ufficiale](https://www.gazzettaufficiale.it/eli/id/2019/05/24/19A03271/sg). We
-advise you to check the current official value.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The 400 EUR threshold was defined in <a href="https://www.gazzettaufficiale.it/eli/id/2019/05/24/19A03271/sg">the decree of the 10th of May 2019 in the Gazzetta
+Ufficiale</a>. We advise you
+to check the current official value.</p>
+</div>
 
 Deferred invoices.
 
@@ -265,12 +260,14 @@ associated **Documento di Transporto (DDT)** , or **Transport Document**. The
 deferred invoice **must** indicate the details of all the **DDTs** information
 for better tracing.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>E-invoicing of deferred invoices requires the <code>l10n_it_stock_ddt</code>
+<a href="#italy-modules"><span class="std std-ref">module</span></a>. In this case, a dedicated <b>Tipo Documento</b> <code>TD24</code>
+is used in the e-invoice.</p>
+</div>
 
-E-invoicing of deferred invoices requires the `l10n_it_stock_ddt` module. In
-this case, a dedicated Tipo Documento `TD24` is used in the e-invoice.
-
-Odoo exports moves as `TD24` if the following conditions are met:
+Konvergo ERP exports moves as `TD24` if the following conditions are met:
 
   * Is an invoice;
 
@@ -282,24 +279,25 @@ Italian companies buying goods or services from EU countries (or services from
 non-EU countries) must send the information contained within the bill received
 to the **Agenzia delle Entrate**. This allows you to complete tax-related
 information on your bill, and to send it. The seller must be set as
-Cedente/Prestatore, and the buyer as Cessionario/Committente. Contained within
-the **XML** document for the vendor bill, the vendor’s credentials show as
-Cedente/Prestatore, and your company’s credentials as Cessionario/Committente.
+**Cedente/Prestatore** , and the buyer as **Cessionario/Committente**.
+Contained within the **XML** document for the vendor bill, the vendor’s
+credentials show as **Cedente/Prestatore** , and your company’s credentials as
+**Cessionario/Committente**.
 
-Note
-
-Self-billing invoices or VAT invoice integrations must be issued and sent to
-the tax agency.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Self-billing invoices or VAT invoice integrations must be issued and sent to the tax agency.</p>
+</div>
 
 When inputting taxes in a vendor bill, it is possible to select **reverse
 charge** taxes. These are automatically activated in the Italian fiscal
 position. By going to Accounting ‣ Configuration ‣ Taxes, the `10%` and `22%`
-Goods and Services tax scopes are activated and preconfigured with the correct
-tax grids. These are set up automatically to ensure the correct booking of
-accounting entries and display of the tax report.
+**Goods** and **Services** tax scopes are activated and preconfigured with the
+correct tax grids. These are set up automatically to ensure the correct
+booking of accounting entries and display of the tax report.
 
 For **vendor bills** , **three** types of configurations are technically
-identified by a code called Tipo Documento:
+identified by a code called **Tipo Documento** :
 
   * `TD17` \- Buying services from **EU** and **non-EU** countries;
 
@@ -323,14 +321,14 @@ identified by a code called Tipo Documento:
 >
 
 >
-> Odoo exports a transaction as `TD17` if the following conditions are met:
+> Konvergo ERP exports a transaction as `TD17` if the following conditions are met:
 >
 >   * Is a vendor bill;
 >
 >   * At least one tax on the invoice lines targets the tax grids VJ;
 >
->   * All invoice lines either have Services as **products** , or a tax with
-> the Services as **tax scope**.
+>   * All invoice lines either have **Services** as **products** , or a tax
+> with the **Services** as **tax scope**.
 >
 >
 
@@ -339,13 +337,13 @@ Buying **goods** from **EU** :
 Invoices issued within the EU follow a **standard format** , therefore only an
 integration of the existing invoice is required.
 
-Odoo exports a transaction as `TD18` if the following conditions are met:
+Konvergo ERP exports a transaction as `TD18` if the following conditions are met:
 
   * Is a vendor bill;
 
   * At least one tax on the invoice lines targets the tax grids VJ;
 
-  * All invoice lines either have Consumable as **products** , or a tax with the Goods as **tax scope**.
+  * All invoice lines either have **Consumable** as **products** , or a tax with the **Goods** as **tax scope**.
 
 Buying **goods** from a **foreign** vendor, but the **goods** are already in
 **Italy** in a **VAT deposit** :
@@ -354,27 +352,25 @@ Buying **goods** from a **foreign** vendor, but the **goods** are already in
 
   * Non-EU: the _buyer_ sends an invoice to _themselves_ (i.e., **self-billing**).
 
-Odoo exports a move as a `TD19` if the following conditions are met:
+Konvergo ERP exports a move as a `TD19` if the following conditions are met:
 
   * Is a vendor bill;
 
   * At least one tax on the invoice lines targets the tax grid VJ3;
 
-  * All invoice lines either have Consumable products, or a tax with Goods as tax scope.
+  * All invoice lines either have **Consumable** products, or a tax with **Goods** as tax scope.
 
-Warning
-
-Odoo does not offer the [Conservazione
-Sostitutiva](https://www.agid.gov.it/index.php/it/piattaforme/conservazione)
-requirements. Other providers and **Agenzia delle Entrate** supply free and
-certified storage to meet the requested conditions.
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../accounting/customer_invoices/electronic_invoicing">Electronic invoicing (EDI)</a></p>
+</div>0
 
 ### Internal reverse charge
 
-Warning
-
-Odoo currently does not support domestic **internal reverse charge**
-processes.
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../accounting/customer_invoices/electronic_invoicing">Electronic invoicing (EDI)</a></p>
+</div>1
 
 ### ‘Reverse Charge’ tax grids
 
@@ -390,22 +386,22 @@ found under Accounting ‣ Reporting ‣ Audit Reports: Tax Report.
 
 San Marino and Italy have special agreements on e-invoicing operations. As
 such, **invoices** follow the regular **reverse charge** rules. Additional
-requirements are not enforced by Odoo, however, the user is requested by the
+requirements are not enforced by Konvergo ERP, however, the user is requested by the
 **State** to:
 
-  * Select a tax with the option Has exoneration of tax (Italy) ticked, and the Exoneration set to `N3.3`;
+  * Select a tax with the option **Has exoneration of tax (Italy)** ticked, and the **Exoneration** set to `N3.3`;
 
-  * Use the generic SdI Codice Destinatario `2R4GT08`. The invoice is then routed by a dedicated office in San Marino to the correct business.
+  * Use the generic SdI **Codice Destinatario** `2R4GT08`. The invoice is then routed by a dedicated office in San Marino to the correct business.
 
 ### Bills
 
 When a **paper bill** is received from San Marino, any Italian company
 **must** submit that invoice to the **Agenzia delle Entrate** by indicating
-the e-invoice’s Tipo Documento field with the special value `TD28`.
+the e-invoice’s **Tipo Documento** field with the special value `TD28`.
 
 `TD28`
 
-Odoo exports a move as `TD28` if the following conditions are met:
+Konvergo ERP exports a move as `TD28` if the following conditions are met:
 
   * Is a vendor bill;
 
@@ -415,12 +411,10 @@ Odoo exports a move as `TD28` if the following conditions are met:
 
 ## Pubblica amministrazione (B2G)
 
-Warning
-
-Odoo does **not** send invoices directly to the government as they need to be
-signed. If we see that the codice destinatario is 6 digits, then it is not
-sent to the PA automatically, but you can download the XML, sign it with an
-external program and send it through the portal.
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../accounting/customer_invoices/electronic_invoicing">Electronic invoicing (EDI)</a></p>
+</div>2
 
 ### Digital qualified signature
 
@@ -449,11 +443,10 @@ and CUP. For each electronic invoice, it is **necessary** to indicate the CUU,
 which represents the unique identifier code that allows the SdI to correctly
 deliver the electronic invoice to the recipient office.
 
-Note
-
-  * The Codice Unico di Progetto) and the CIG must be included in one of the **2.1.2** (DatiOrdineAcquisto), **2.1.3** (Dati Contratto), **2.1.4** (DatiConvenzione), **2.1.5** (Date Ricezione), or **2.1.6** (Dati Fatture Collegate) information blocks. These correspond to the elements named CodiceCUP and CodiceCIG of the electronic invoice **XML** file, whose table can be found on the government [website](http://www.fatturapa.gov.it/).
-
-  * The CUU must be included in the electronic invoice corresponding to the element **1.1.4** (CodiceDestinario).
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../accounting/customer_invoices/electronic_invoicing">Electronic invoicing (EDI)</a></p>
+</div>3
 
   *[SdI]: Sistema di Interscambio
   *[EDI]: Electronic Data Interchange

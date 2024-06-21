@@ -1,6 +1,6 @@
 # Translations
 
-With Odoo, you can translate your website into different languages.
+With Konvergo ERP, you can translate your website into different languages.
 
 In this chapter, you will learn how to:
 
@@ -14,11 +14,11 @@ In this chapter, you will learn how to:
 
 To translate your pages with the Website Builder, go to your website and click
 on the language selector to switch to it. If your website was never translated
-to the target language, click Add a language…, select it in the pop-up window,
-and click Add.
+to the target language, click **Add a language…** , select it in the pop-up
+window, and click **Add**.
 
-Click Translate to start translating. Depending on the language, some text is
-automatically translated and highlighted in green, while everything that
+Click **Translate** to start translating. Depending on the language, some text
+is automatically translated and highlighted in green, while everything that
 should be translated manually is highlighted in yellow.
 
 ![Translate button](../../../_images/translate-button1.png)
@@ -28,7 +28,7 @@ should be translated manually is highlighted in yellow.
 Translating pages directly from the backend allows you to translate several
 languages at the same time. To do so, go to Settings ‣ Technical ‣ User
 Interface: Views, search for the name of the page you want to translate, and
-click the Edit Translations button.
+click the **Edit Translations** button.
 
 ![Edit translations](../../../_images/edit-translations.png)
 
@@ -37,10 +37,10 @@ click the Edit Translations button.
 Once you are done translating, you need to export the translations to
 integrate them into your module. To export everything at once, open your
 database, activate [developer
-mode](../../../applications/general/developer_mode.html#developer-mode), and
-go to Settings ‣ Translations ‣ Export Translation. Select the Language you
-translated, _PO File_ under File Format, and _website_airproof_ as the Apps To
-Export.
+mode](../../../applications/general/developer_mode#developer-mode), and
+go to Settings ‣ Translations ‣ Export Translation. Select the **Language**
+you translated, _PO File_ under **File Format** , and _website_airproof_ as
+the **Apps To Export**.
 
 Download the file and move it to the `i18n` folder. If needed, you can
 manually edit the `.po` file afterward.
@@ -49,7 +49,7 @@ manually edit the `.po` file afterward.
 
 You can translate directly by editing a `.po` file or creating the file
 yourself. Check out the [translating modules
-documentation](../translations.html) to write your translations.
+documentation](../translations) to write your translations.
 
 `/website_coconuts/i18n/fr_BE.po`
 
@@ -63,6 +63,6 @@ documentation](../translations.html) to write your translations.
 
 ## Import
 
-To import your translation files into Odoo, go to Settings ‣ Translations ‣
+To import your translation files into Konvergo ERP, go to Settings ‣ Translations ‣
 Import Translation and upload them.
 

@@ -16,70 +16,73 @@ does **not** have to be available around the clock.
 There is even the option to route callers, depending on where they are calling
 from in the world, thus maximizing efficiency.
 
-Important
-
-For more information on basic dial plans, and how to add elements, visit [Dial
-plan basics](dial_plan_basics.html).
-
-Warning
-
-Using a browser add-on for spelling may hinder the use of the visual editor in
-dial plans. Do **not** use a translator with the Axivox management console.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>For more information on basic dial plans, and how to add elements, visit <a href="dial_plan_basics">Dial plan basics</a>.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Using a browser add-on for spelling may hinder the use of the visual editor in dial plans. Do
+<b>not</b> use a translator with the Axivox management console.</p>
+</div>
 
 ## Advanced elements
 
 In Axivox dial plans (as described in [Dial plan
-basics](dial_plan_basics.html)), there are two advanced elements that can be
+basics](dial_plan_basics)), there are two advanced elements that can be
 used.
 
-  * Record: recording feature is enabled (requires plan change, enabled in Axivox settings).
+  * **Record** : recording feature is enabled (requires plan change, enabled in Axivox settings).
 
-  * Caller ID: replace the caller ID by the called number or free text.
+  * **Caller ID** : replace the caller ID by the called number or free text.
 
-To add one of these elements, navigate to the Dial plans page, located in the
-menu on the left side of the [Axivox management
+To add one of these elements, navigate to the **Dial plans** page, located in
+the menu on the left side of the [Axivox management
 console](https://manage.axivox.com).
 
-Next, click on the Visual Editor button to the right of the desired dial plan
-to edit it. Finally, open the New element drop-down menu, select the element,
-and click Add.
+Next, click on the **Visual Editor** button to the right of the desired dial
+plan to edit it. Finally, open the **New element** drop-down menu, select the
+element, and click **Add**.
 
 ![Visual editor for a dial plan in Axivox, with Add and the dispatcher element
 highlighted.](../../../../_images/visual-editor.png)
 
-For more information, visit [Dial plans](dial_plan_basics.html#voip-axivox-
+For more information, visit [Dial plans](dial_plan_basics#voip-axivox-
 dial-plans).
 
-Important
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>The <b>Record</b> element records calls that are routed through this element, and requires
+an additional plan change in Axivox.</p>
+</div>
 
-The Record element records calls that are routed through this element, and
-requires an additional plan change in Axivox.
+To enable recording on Axivox, navigate to **Settings** in the [Axivox
+management console](https://manage.axivox.com). Then, go to the **Recording**
+drop-down menu, near the bottom of the page. From there, select **Enabled**
+from the drop-down menu to enable recording using the **Record** element in a
+dial plan.
 
-To enable recording on Axivox, navigate to Settings in the [Axivox management
-console](https://manage.axivox.com). Then, go to the Recording drop-down menu,
-near the bottom of the page. From there, select Enabled from the drop-down
-menu to enable recording using the Record element in a dial plan.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>If the <b>Recording</b> drop-down menu is unavailable and unable to change, then consult
+Axivox to enable the feature.</p>
+</div>
 
-Tip
+The **Caller ID** element allows for the replacement of the caller ID
+downstream, after routing.
 
-If the Recording drop-down menu is unavailable and unable to change, then
-consult Axivox to enable the feature.
+Upon adding the **Caller ID** element to the dial plan, and double-clicking it
+to configure it, two options appear.
 
-The Caller ID element allows for the replacement of the caller ID downstream,
-after routing.
+The first is a **Free text** field, where any text can be input to replace the
+caller ID. The second option is **Replace the caller ID by the called
+number**. This option replaces the caller’s ID with the **Incoming number**.
 
-Upon adding the Caller ID element to the dial plan, and double-clicking it to
-configure it, two options appear.
-
-The first is a Free text field, where any text can be input to replace the
-caller ID. The second option is Replace the caller ID by the called number.
-This option replaces the caller’s ID with the Incoming number.
-
-Tip
-
-A company may want to use the Caller ID element to replace the Incoming
-number, so employees, or outside transfers, cannot see the number, and
-information is kept private.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>A company may want to use the <b>Caller ID</b> element to replace the <b>Incoming
+number</b>, so employees, or outside transfers, cannot see the number, and information is kept
+private.</p>
+</div>
 
 ## Basic routing elements
 
@@ -92,17 +95,17 @@ The main difference between the two elements is that the _Digital
 Receptionist_ does **not** need to be pre-configured numerically with actions.
 Instead, it acts as a virtual receptionist.
 
-  * Menu: add a dial-by-number directory and configured downstream actions (not terminal). For example, a dial-by-numbers function could feature an element, wherein clicking ‘2’ takes the caller to the element linked to ‘2’ on the Menu element in the dial plan.
+  * **Menu** : add a dial-by-number directory and configured downstream actions (not terminal). For example, a dial-by-numbers function could feature an element, wherein clicking ‘2’ takes the caller to the element linked to ‘2’ on the Menu element in the dial plan.
 
-  * Digital Receptionist: attach a virtual dispatcher to listen for extensions.
+  * **Digital Receptionist** : attach a virtual dispatcher to listen for extensions.
 
-To add one of these elements, navigate to the Dial plans page, located in the
-menu on the left side of the [Axivox management
-console](https://manage.axivox.com). Next, click on the Visual Editor button
-to the right of the dial plan, to edit the dial plan. Then, open the New
-element drop-down menu, select the element, and click Add.
+To add one of these elements, navigate to the **Dial plans** page, located in
+the menu on the left side of the [Axivox management
+console](https://manage.axivox.com). Next, click on the **Visual Editor**
+button to the right of the dial plan, to edit the dial plan. Then, open the
+**New element** drop-down menu, select the element, and click **Add**.
 
-For more information, visit [Dial plans](dial_plan_basics.html#voip-axivox-
+For more information, visit [Dial plans](dial_plan_basics#voip-axivox-
 dial-plans).
 
 ### Digital receptionist scenario
@@ -115,51 +118,40 @@ Set a _Digital Receptionist_ to eliminate the need of a team, or live
 receptionist, to be on-call all the time. With that element in place, calls
 now reach their destination, without a real person interjecting.
 
-After adding the Digital Receptionist element to a dial plan, connect the
-appropriate endpoints, and double-click on the element to set the Timeout on
-the receptionist pop-up window that appears.
+After adding the **Digital Receptionist** element to a dial plan, connect the
+appropriate endpoints, and double-click on the element to set the **Timeout**
+on the **receptionist** pop-up window that appears.
 
-The Timeout can be set in `5` second increments, from `5` seconds to `60`
+The **Timeout** can be set in `5` second increments, from `5` seconds to `60`
 seconds.
 
-Important
-
-The Digital Receptionist element **requires** a Play a file element on either
-side of it, to explain what action to take, and when a wrong extension is
-entered.
-
-Example
-
-While customizing a dial plan in a Dialplan Editor pop-up window, add a Menu
-element, with a Greeting message that might read, `Press star to dial an
-extension`.
-
-Then, on the Menu element, for the * (star) option, link a Play a file
-element, that plays an Audio message saying, ‘Enter the extension of the
-person you are trying to reach’.
-
-Following the first Play a file element, add the Digital Receptionist element,
-followed by another Play a file element, which states, ‘That is not a valid
-extension’.
-
-This last element is in place to close the loop, should the caller not enter a
-correct extension.
-
-Finally, this last Play a file element is looped back into the Menu element.
-
-![A digital receptionist element highlighted in an example dial
-plan.](../../../../_images/receptionist.png)
-
-Important
-
-Dial plan elements can be configured by double-clicking them, and selecting
-different features of the Axivox console to them.
-
-For example, an Audio message needs to be made, and then selected in a Play a
-file or Menu element.
-
-For more information, see this documentation [Audio
-messages](vm_audio_messages.html#voip-axivox-audio-messages).
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>The <b>Digital Receptionist</b> element <b>requires</b> a <b>Play a file</b> element on
+either side of it, to explain what action to take, and when a wrong extension is entered.</p>
+</div> <div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>While customizing a dial plan in a <b>Dialplan Editor</b> pop-up window, add a
+<b>Menu</b> element, with a <b>Greeting message</b> that might read, <code>Press star to
+dial an extension</code>.</p>
+<p>Then, on the <b>Menu</b> element, for the <b>* (star)</b> option, link a
+<b>Play a file</b> element, that plays an <b>Audio message</b> saying, ‘Enter the
+extension of the person you are trying to reach’.</p>
+<p>Following the first <b>Play a file</b> element, add the <b>Digital Receptionist</b>
+element, followed by another <b>Play a file</b> element, which states, ‘That is not a valid
+extension’.</p>
+<p>This last element is in place to close the loop, should the caller not enter a correct extension.</p>
+<p>Finally, this last <b>Play a file</b> element is looped back into the <b>Menu</b>
+element.</p>
+<img alt="A digital receptionist element highlighted in an example dial plan." class="align-center" src="../../../../_images/receptionist.png"/>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Dial plan elements can be configured by double-clicking them, and selecting different features
+of the Axivox console to them.</p>
+<p>For example, an <b>Audio message</b> needs to be made, and then selected in a
+<b>Play a file</b> or <b>Menu</b> element.</p>
+<p>For more information, see this documentation <a href="vm_audio_messages#voip-axivox-audio-messages"><span class="std std-ref">Audio messages</span></a>.</p>
+</div>
 
 ## Advanced routing elements
 
@@ -170,171 +162,156 @@ their final destination, and are routed, based on the set variable(s).
 
 The following are advanced routing elements:
 
-  * Dispatcher: create a call filter to route traffic, based on the geo-location of the caller ID.
+  * **Dispatcher** : create a call filter to route traffic, based on the geo-location of the caller ID.
 
-  * Access List: create a tailored access list, with VIP customer preference.
+  * **Access List** : create a tailored access list, with VIP customer preference.
 
-  * Time Condition: create time conditions to route incoming traffic around holidays, or other sensitive time-frames.
+  * **Time Condition** : create time conditions to route incoming traffic around holidays, or other sensitive time-frames.
 
-Tip
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Whitelisting is a technical term used to create a list of allowed numbers. Conversely,
+blacklisting is used to create a list of denied numbers.</p>
+</div>
 
-Whitelisting is a technical term used to create a list of allowed numbers.
-Conversely, blacklisting is used to create a list of denied numbers.
-
-To add one of these elements, navigate to the Dial plans page, located in the
-menu on the left side of the [Axivox management
-console](https://manage.axivox.com). Next, click on the Visual Editor button
-to the right of the dial plan, to edit the dial plan. Then, open the New
-element drop-down menu, select the element, and click Add. For more
-information, visit [Dial plans](dial_plan_basics.html#voip-axivox-dial-plans).
+To add one of these elements, navigate to the **Dial plans** page, located in
+the menu on the left side of the [Axivox management
+console](https://manage.axivox.com). Next, click on the **Visual Editor**
+button to the right of the dial plan, to edit the dial plan. Then, open the
+**New element** drop-down menu, select the element, and click **Add**. For
+more information, visit [Dial plans](dial_plan_basics#voip-axivox-dial-
+plans).
 
 ### Dispatcher scenario
 
 A _Dispatcher_ element is a dial plan feature that directs calls, based on
-region or geo-location. In most cases, the Dispatcher element in a dial plan
-is linked to the Start element, in order to filter or screen calls as they
-come into an incoming number.
+region or geo-location. In most cases, the **Dispatcher** element in a dial
+plan is linked to the **Start** element, in order to filter or screen calls as
+they come into an incoming number.
 
-Double-click the Dispatcher element in the Dialplan Editor pop-up window to
-configure it.
+Double-click the **Dispatcher** element in the **Dialplan Editor** pop-up
+window to configure it.
 
 This element checks numbers (routed through this element), according to
-regular expressions. To add a regular expression, click Add a line on the
-bottom of the Dispatcher pop-up window.
+regular expressions. To add a regular expression, click **Add a line** on the
+bottom of the **Dispatcher** pop-up window.
 
-Then, under Name, enter a recognizable name to identify this expression. This
-is the name that appears in the Dispatcher element on the dial plan showcased
-in the Dialplan Editor pop-up window.
+Then, under **Name** , enter a recognizable name to identify this expression.
+This is the name that appears in the **Dispatcher** element on the dial plan
+showcased in the **Dialplan Editor** pop-up window.
 
-In the Regular expression field, enter the country code, or area code, which
-Axivox should route for incoming calls. This is especially helpful when a
-company would like to filter their customers to certain queues, or users based
-on the customer’s geo-location.
+In the **Regular expression** field, enter the country code, or area code,
+which Axivox should route for incoming calls. This is especially helpful when
+a company would like to filter their customers to certain queues, or users
+based on the customer’s geo-location.
 
 To specify all numbers behind a certain country code, or area code, include
 `d+` after the country code, or country code + area code.
 
 ![Dispatcher configuration panel, with name, regular expression and add a line
-highlighted.](../../../../_images/dispatcher.png)
+highlighted.](../../../../_images/dispatcher.png) <div class="alert alert-success">
+<p class="alert-title">
+Example</p><ul>
+<li><p><code>02\d+</code>: validates the numbers starting with <code>02</code></p></li>
+<li><p><code>00\d+</code>: validates all numbers beginning with <code>00</code></p></li>
+<li><p><code>0052\d+</code> validates all numbers beginning with <code>0052</code> (Mexico country code)</p></li>
+<li><p><code>001716\d+</code>: validates all numbers beginning with <code>001716</code> (USA country code + Western New York
+area code)</p></li>
+</ul>
+</div>
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Using a browser add-on for spelling may hinder the use of the visual editor in dial plans. Do
+<b>not</b> use a translator with the Axivox management console.</p>
+</div>0
 
-Example
+When the desired configurations are complete on the **Dispatcher** pop-up
+window, be sure to click **Save**.
 
-  * `02\d+`: validates the numbers starting with `02`
+Upon doing so, the **Dispatcher** element appears with different routes
+available to configure, based on the **Regular Expressions** that were set.
 
-  * `00\d+`: validates all numbers beginning with `00`
+Attach these routes to any **New element** in the **Dialplan Editor** pop-up
+window.
 
-  * `0052\d+` validates all numbers beginning with `0052` (Mexico country code)
+By default, there is an **Unknown** path that appears on the **Dispatcher**
+element after setting at least one **Regular Expression**.
 
-  * `001716\d+`: validates all numbers beginning with `001716` (USA country code + Western New York area code)
-
-Tip
-
-A regular expression (shortened to “regex” or “regexp”), sometimes referred to
-as a “rational expression,” is a sequence of characters that specifies a match
-pattern in text. In other words, a match is made within the given range of
-numbers.
-
-When the desired configurations are complete on the Dispatcher pop-up window,
-be sure to click Save.
-
-Upon doing so, the Dispatcher element appears with different routes available
-to configure, based on the Regular Expressions that were set.
-
-Attach these routes to any New element in the Dialplan Editor pop-up window.
-
-By default, there is an Unknown path that appears on the Dispatcher element
-after setting at least one Regular Expression.
-
-Calls follow this route/path when their number does not match any Regular
-Expression set on the Dispatcher element.
+Calls follow this route/path when their number does not match any **Regular
+Expression** set on the **Dispatcher** element.
 
 ![Dial plan with dispatcher element
 highlighted.](../../../../_images/dispatcher-element.png)
 
 ### Time condition scenario
 
-When a Time Condition element is added to a dial plan, it has a simple True
-and False routing.
+When a **Time Condition** element is added to a dial plan, it has a simple
+**True** and **False** routing.
 
-After adding the Time Condition element to a dial plan, double-click it to
-configure the variables. Hour/Minute, Days of the week, Day of the month, and
-Month can all be configured.
+After adding the **Time Condition** element to a dial plan, double-click it to
+configure the variables. **Hour/Minute** , **Days of the week** , **Day of the
+month** , and **Month** can all be configured.
 
 If the time which the caller contacts the incoming number matches the set time
-conditions, then the True path is followed, otherwise the False path is
-followed.
+conditions, then the **True** path is followed, otherwise the **False** path
+is followed.
 
-Example
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Using a browser add-on for spelling may hinder the use of the visual editor in dial plans. Do
+<b>not</b> use a translator with the Axivox management console.</p>
+</div>1
 
-For a company that is closed yearly for the American Independence Day holiday
-(July 4th) the following time conditions should be set:
-
-  * Hour/Minute \- `0:0 to 23:59`
-
-  * Day of the week \- `All to All`
-
-  * Day of the month \- `From 4 to 4`
-
-  * Month \- `July`
-
-The Time Condition element is especially useful for holidays, weekends, and to
-set working hours. When a caller reaches a destination where they can be
-helped, either with a real person or voicemail, this reduces wasted time and
-hangups.
+The **Time Condition** element is especially useful for holidays, weekends,
+and to set working hours. When a caller reaches a destination where they can
+be helped, either with a real person or voicemail, this reduces wasted time
+and hangups.
 
 ![Time condition element set in a dial plan on Axivox. Time condition is
-highlighted.](../../../../_images/time-condition.png)
-
-Important
-
-To set the Timezone that the Time Condition operates under, navigate to
-[Axivox management console](https://manage.axivox.com), and click Settings in
-the menu on the left. Then, set the Timezone using the second field from the
-bottom, by clicking the drop-down menu.
+highlighted.](../../../../_images/time-condition.png) <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Using a browser add-on for spelling may hinder the use of the visual editor in dial plans. Do
+<b>not</b> use a translator with the Axivox management console.</p>
+</div>2
 
 ### Access list scenario
 
 An _Access List_ element in a dial plan allows for the routing of certain
 numbers, and disallows (denies) other numbers.
 
-After adding an Access List element to a dial plan, it can be configured by
-double-clicking on the element directly in the Dialplan Editor pop-up window.
+After adding an **Access List** element to a dial plan, it can be configured
+by double-clicking on the element directly in the **Dialplan Editor** pop-up
+window.
 
-Two fields appear where regular expressions can based in the Allow and Deny
-fields of the Access List pop-up window.
+Two fields appear where regular expressions can based in the **Allow** and
+**Deny** fields of the **Access List** pop-up window.
 
-Example
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Using a browser add-on for spelling may hinder the use of the visual editor in dial plans. Do
+<b>not</b> use a translator with the Axivox management console.</p>
+</div>3 <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Using a browser add-on for spelling may hinder the use of the visual editor in dial plans. Do
+<b>not</b> use a translator with the Axivox management console.</p>
+</div>4 ![Access list element configuration
+with the allow/deny fields highlighted.](../../../../_images/access-
+config.png) <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Using a browser add-on for spelling may hinder the use of the visual editor in dial plans. Do
+<b>not</b> use a translator with the Axivox management console.</p>
+</div>5
 
-For a very important customer, their number can be set in the Allow field, and
-these callers can be sent directly to management.
+After setting the **Allow** and **Deny** fields with regular expressions or
+numbers, click **Save** on the **Access List** pop-up window.
 
-Tip
+Then, on the **Access list** element in the dial plan, three paths (or routes)
+are available to link to further actions.
 
-A regular expression (shortened to “regex” or “regexp”), sometimes also
-referred to as a “rational expression,” is a sequence of characters that
-specifies a match pattern in text.
-
-![Access list element configuration with the allow/deny fields
-highlighted.](../../../../_images/access-config.png)
-
-Example
-
-  * `2\d\d`: validates numbers from `200 to 299`
-
-  * `02\d*`: validates all numbers beginning with `02`
-
-  * `0017165551212`: validates the number (`0017165551212`)
-
-After setting the Allow and Deny fields with regular expressions or numbers,
-click Save on the Access List pop-up window.
-
-Then, on the Access list element in the dial plan, three paths (or routes) are
-available to link to further actions.
-
-Unknown calls can be routed through the regular menu flow by adding a Menu
-element, and connecting it to the Unknown path. Refused calls can be routed to
-the Hang up element. Lastly, Authorized callers can be sent to a specific
-extension or queue.
+Unknown calls can be routed through the regular menu flow by adding a **Menu**
+element, and connecting it to the **Unknown** path. **Refused** calls can be
+routed to the **Hang up** element. Lastly, **Authorized** callers can be sent
+to a specific extension or queue.
 
 ![Access list element highlighted in an example dial
 plan.](../../../../_images/access-list.png)
@@ -353,38 +330,40 @@ any number of reasons.
 Axivox allows for a simple on/off switch, and a multi-switch, which can have
 several paths to choose from.
 
-  * Switch: a manual on/off control that can divert traffic, based on whether it is opened (on) or closed (off).
+  * **Switch** : a manual on/off control that can divert traffic, based on whether it is opened (on) or closed (off).
 
-  * Multi-Switch: a mechanism to create paths, and turn them on and off, to divert incoming calls.
+  * **Multi-Switch** : a mechanism to create paths, and turn them on and off, to divert incoming calls.
 
 ### Basic switch
 
-A Switch can be set in the [Axivox management
-console](https://manage.axivox.com) by navigating to Switches in the left
-menu. To create a new switch click Add a switch from the Switches dashboard,
-configure a Name for it, and click Save.
+A **Switch** can be set in the [Axivox management
+console](https://manage.axivox.com) by navigating to **Switches** in the left
+menu. To create a new switch click **Add a switch** from the **Switches**
+dashboard, configure a **Name** for it, and click **Save**.
 
-Then, toggle the desired switch to either On or Off, from the State column on
-the Switches dashboard.
+Then, toggle the desired switch to either **On** or **Off** , from the
+**State** column on the **Switches** dashboard.
 
-This On / Off state automatically routes traffic in a dial plan, in which this
-switch is set.
+This **On** / **Off** state automatically routes traffic in a dial plan, in
+which this switch is set.
 
-The traffic travels to the Active route when On is toggled in the switch. The
-call traffic travels to the Inactive route when Off is toggled in the switch.
+The traffic travels to the **Active** route when **On** is toggled in the
+switch. The call traffic travels to the **Inactive** route when **Off** is
+toggled in the switch.
 
-Changes can be made on the fly, just be sure to click Apply changes to
+Changes can be made on the fly, just be sure to click **Apply changes** to
 implement the them.
 
 #### Add a switch to dial plan
 
-To add a Switch to a dial plan, navigate to [Axivox management
-console](https://manage.axivox.com), and click on Dial plans in the left menu.
-Then, click Visual Editor next to the desired dial plan to open the Dialplan
-Editor pop-up window.
+To add a **Switch** to a dial plan, navigate to [Axivox management
+console](https://manage.axivox.com), and click on **Dial plans** in the left
+menu. Then, click **Visual Editor** next to the desired dial plan to open the
+**Dialplan Editor** pop-up window.
 
-Then, from the New element drop-down menu, select Switch, and then click Add.
-Double-click on the element to further configure the Switch element.
+Then, from the **New element** drop-down menu, select **Switch** , and then
+click **Add**. Double-click on the element to further configure the **Switch**
+element.
 
 ![Switch configuration in a dial plan, with inactive and active routes
 highlighted.](../../../../_images/switch.png)
@@ -394,36 +373,38 @@ highlighted.](../../../../_images/switch.png)
 A _Multi-Switch_ element in Axivox is a switch where multiple paths can be
 configured, and switched between.
 
-To configure and set a Multi-Switch element, navigate to [Axivox management
-console](https://manage.axivox.com). Then, click on the Switches menu item in
-the left menu.
+To configure and set a **Multi-Switch** element, navigate to [Axivox
+management console](https://manage.axivox.com). Then, click on the
+**Switches** menu item in the left menu.
 
-Toggle to the Multi-switch tab to create, or set, a pre-configured Multi-
-Switch element.
+Toggle to the **Multi-switch** tab to create, or set, a pre-configured
+**Multi-Switch** element.
 
-To create a new Multi-Switch, click Create new. Then, enter a Name for the
-element, and then enter the Available choice. Enter one Available choice per
-line. Do **not** duplicate any entries.
+To create a new **Multi-Switch** , click **Create new**. Then, enter a
+**Name** for the element, and then enter the **Available choice**. Enter one
+**Available choice** per line. Do **not** duplicate any entries.
 
-Remember to click Save when done.
+Remember to click **Save** when done.
 
-To select the State of the Multi-Switch, click the drop-down menu next to the
-Multi-Switch name, under the Multi-switch tab on the Switches dashboard.
+To select the **State** of the **Multi-Switch** , click the drop-down menu
+next to the **Multi-Switch** name, under the **Multi-switch** tab on the
+**Switches** dashboard.
 
-The State chosen is the route that is followed in the dial plan. The State can
-be edited on the fly, just be sure to click Apply changes.
+The **State** chosen is the route that is followed in the dial plan. The
+**State** can be edited on the fly, just be sure to click **Apply changes**.
 
 #### Add a multi-switch to dial plan
 
-To add a Multi-Switch element to a dial plan, navigate to [Axivox management
-console](https://manage.axivox.com), and click Dial plans in the left menu.
+To add a **Multi-Switch** element to a dial plan, navigate to [Axivox
+management console](https://manage.axivox.com), and click **Dial plans** in
+the left menu.
 
-Then, select or create a dial plan. Next, click Visual Editor on the desired
-dial plan.
+Then, select or create a dial plan. Next, click **Visual Editor** on the
+desired dial plan.
 
-On the Dialplan Editor pop-up window that appears, click on the New element
-drop-down menu, and select Multi-Switch. Then, click Add. Double-click on the
-element to further configure the Switch element.
+On the **Dialplan Editor** pop-up window that appears, click on the **New
+element** drop-down menu, and select **Multi-Switch**. Then, click **Add**.
+Double-click on the element to further configure the **Switch** element.
 
 ![Multi-switch configuration in a dial plan, with chosen route
 highlighted.](../../../../_images/multi-switch.png)

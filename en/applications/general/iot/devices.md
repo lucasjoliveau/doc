@@ -1,15 +1,17 @@
 # Devices
 
-  * [Connect a screen](devices/screen.html)
-  * [Connect a measurement tool](devices/measurement_tool.html)
-  * [Connect a camera](devices/camera.html)
-  * [Connect a footswitch](devices/footswitch.html)
-  * [Connect a printer](devices/printer.html)
-  * [Connect a scale](devices/scale.html)
+  * [Connect a screen](devices/screen)
+  * [Connect a measurement tool](devices/measurement_tool)
+  * [Connect a camera](devices/camera)
+  * [Connect a footswitch](devices/footswitch)
+  * [Connect a printer](devices/printer)
+  * [Connect a scale](devices/scale)
 
-See also
-
-  * [Worldline payment terminal](../../sales/point_of_sale/payment_methods/terminals/worldline.html)
-
-  * [Ingenico payment terminal](../../sales/point_of_sale/payment_methods/terminals/ingenico.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../../sales/point_of_sale/payment_methods/terminals/worldline">Worldline payment terminal</a></p></li>
+<li><p><a href="../../sales/point_of_sale/payment_methods/terminals/ingenico">Ingenico payment terminal</a></p></li>
+</ul>
+</div>
 

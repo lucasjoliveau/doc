@@ -1,4 +1,4 @@
 # Analyser la performance
 
-  * [Contrôler votre ratio gain/perte](performance/win_loss.html)
+  * [Contrôler votre ratio gain/perte](performance/win_loss)
 

@@ -18,11 +18,11 @@ l”**amortissement** cumulé indiqué sur le bilan est de 20.000 $, ce qui nous
 laisse une valeur de 7.000 $ **non amortissable** ou de valeur de
 récupération.
 
-Odoo Comptabilité gère l’amortissement en créant des écritures d’amortissement
+Konvergo ERP Comptabilité gère l’amortissement en créant des écritures d’amortissement
 automatiquement en _mode brouillon_. Elles sont ensuite comptabilisées
 périodiquement.
 
-Odoo prend en charge les **méthodes d’amortissement** suivantes :
+Konvergo ERP prend en charge les **méthodes d’amortissement** suivantes :
 
   * Linéaire
 
@@ -30,11 +30,10 @@ Odoo prend en charge les **méthodes d’amortissement** suivantes :
 
   * Dégressif puis linéaire
 
-Note
-
-Le serveur vérifie une fois par jour si une écriture doit être comptabilisée.
-Il peut donc s’écouler jusqu’à 24 heures avant que l’écriture ne passe du
-statut _brouillon_ à celui de _comptabilisé_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Le serveur vérifie une fois par jour si une écriture doit être comptabilisée. Il peut donc s’écouler jusqu’à 24 heures avant que l’écriture ne passe du statut <em>brouillon</em> à celui de <em>comptabilisé</em>.</p>
+</div>
 
 ## Conditions préalables
 
@@ -47,13 +46,11 @@ Pour configurer votre compte dans le **Plan comptable** , allez à Comptabilité
 ‣ Configuration ‣ Plan comptable, cliquez sur _Créer_ et remplissez le
 formulaire.
 
-![Configuration d'un Compte d'actifs dans Odoo
-Comptabilité](../../../../_images/assets01.png)
-
-Note
-
-Le type de ce compte doit être soit _Immobilisations_ , soit _Actifs
-immobilisés_.
+![Configuration d'un Compte d'actifs dans Konvergo ERP
+Comptabilité](../../../../_images/assets01.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Le type de ce compte doit être soit <em>Immobilisations</em>, soit <em>Actifs immobilisés</em>.</p>
+</div>
 
 ### Comptabiliser une charge sur le bon compte
 
@@ -63,7 +60,7 @@ Sur une facture fournisseur brouillon, sélectionnez le bon compte pour tous
 les actifs que vous achetez.
 
 ![Sélection d'un Compte d'actifs sur une facture fournisseur brouillon dans
-Odoo Comptabilité](../../../../_images/assets02.png)
+Konvergo ERP Comptabilité](../../../../_images/assets02.png)
 
 #### Choisir un compte de charges différent pour des produits spécifiques
 
@@ -71,12 +68,10 @@ Commencez par éditer le produit, allez à l’onglet _Comptabilité_ ,
 sélectionnez le bon **Compte de charges** et enregistrez.
 
 ![Modifiez le compte d'actifs d'un produit dans
-Odoo](../../../../_images/assets03.png)
-
-Astuce
-
-Il est possible d”automatiser la création d’écritures d’actifs pour ces
-produits.
+Konvergo ERP](../../../../_images/assets03.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Il est possible d”<a href="#assets-automation"><span class="std std-ref">automatiser la création d’écritures d’actifs</span></a> pour ces produits.</p>
+</div>
 
 #### Modifier le compte d’une écriture comptable comptabilisée
 
@@ -84,7 +79,7 @@ Pour ce faire, ouvrez votre Journal des achats en allant à Comptabilité ‣
 Comptabilité ‣ Achats, sélectionnez l’écriture comptable que vous souhaitez
 modifier, cliquez sur le compte et sélectionnez le compte approprié.
 
-![Modification du compte d'une écriture comptable enregistrée dans Odoo
+![Modification du compte d'une écriture comptable enregistrée dans Konvergo ERP
 Comptabilité](../../../../_images/assets04.png)
 
 ## Écritures d’actifs
@@ -103,14 +98,14 @@ comptable existante à cette nouvelle écriture. Certains champs sont alors
 remplis automatiquement et l’écriture comptable est désormais répertoriée dans
 l’onglet **Achats associés**.
 
-![Écriture d'actifs dans Odoo Comptabilité](../../../../_images/assets05.png)
+![Écriture d'actifs dans Konvergo ERP Comptabilité](../../../../_images/assets05.png)
 
 Une fois cela fait, vous pouvez cliquer sur _Calcul des amortissements_ (à
 côté du bouton _Confirmer_) pour générer toutes valeurs dans le **Tableau
-d’amortissement**. Ce tableau vous montre toutes les écritures qu’Odoo
+d’amortissement**. Ce tableau vous montre toutes les écritures qu’Konvergo ERP
 enregistrera pour amortir votre actif, et à quelle date.
 
-![Tableau d'amortissement dans Odoo
+![Tableau d'amortissement dans Konvergo ERP
 Comptabilité](../../../../_images/assets06.png)
 
 #### Que signifie « Prorata Temporis » ?
@@ -159,7 +154,7 @@ Ensuite, cliquez sur _Action_ , sélectionnez **Créer un actif** et remplissez
 le formulaire de la même manière que vous le feriez pour créer une nouvelle
 écriture.
 
-![Créez une écriture d'actifs à partir d'une écriture comptable dans Odoo
+![Créez une écriture d'actifs à partir d'une écriture comptable dans Konvergo ERP
 Comptabilité](../../../../_images/assets07.png)
 
 ## Modification d’un actif
@@ -180,7 +175,7 @@ supplémentaires liés aux mouvements de compte et crée une nouvelle écriture
 d’actifs avec l”**augmentation de valeur**. Vous pouvez accéder à l’écriture
 d’actifs d’augmentation brute en cliquant sur le bouton intelligent.
 
-![Bouton de l'augmentation brute dans Odoo
+![Bouton de l'augmentation brute dans Konvergo ERP
 Comptabilité](../../../../_images/assets08.png)
 
 ## Cession d’immobilisations
@@ -191,19 +186,18 @@ du bilan.
 Pour ce faire, ouvrez l’immobilisation que vous voulez céder, cliquez sur
 **Vendre ou céder** et remplissez le formulaire.
 
-![Cession d'immobilisations dans Odoo
+![Cession d'immobilisations dans Konvergo ERP
 Comptabilité](../../../../_images/assets09.png)
 
-Odoo Comptabilité génère ensuite toutes les écritures comptables nécessaires à
+Konvergo ERP Comptabilité génère ensuite toutes les écritures comptables nécessaires à
 la cession de l’immobilisation, y compris le gain ou la perte sur la vente,
 basé sur la différence entre la valeur comptable de l’actif au moment de la
 vente et le montant pour lequel il est vendu.
 
-Note
-
-Pour enregistrer la vente d’un actif, vous devez d’abord comptabiliser la
-facture client correspondante afin de pouvoir relier la vente de l’actif à
-cette facture.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Pour enregistrer la vente d’un actif, vous devez d’abord comptabiliser la facture client correspondante afin de pouvoir relier la vente de l’actif à cette facture.</p>
+</div>
 
 ## Modèles d’actifs
 
@@ -215,11 +209,10 @@ Pour créer un modèle, allez à Comptabilité ‣ Configuration ‣ Modèles d�
 cliquez sur _Créer_ et remplissez le formulaire de la même manière que vous le
 feriez pour créer une nouvelle écriture.
 
-Astuce
-
-Vous pouvez également convertir une _écriture d’actifs confirmée_ en modèle en
-l’ouvrant à partir de Comptabilité ‣ Comptabilité ‣ Actifs et en cliquant
-ensuite sur le bouton _Enregistrer le modèle_.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Vous pouvez également convertir une <em>écriture d’actifs confirmée</em> en modèle en l’ouvrant à partir de Comptabilité ‣ Comptabilité ‣ Actifs et en cliquant ensuite sur le bouton <em>Enregistrer le modèle</em>.</p>
+</div>
 
 ### Appliquer un modèle d’actif à une nouvelle écriture
 
@@ -230,7 +223,7 @@ De nouveaux boutons avec tous les modèles liés à ce compte apparaissent en
 haut du formulaire. En cliquant sur le bouton d’un modèle, le formulaire se
 remplit en fonction de ce modèle.
 
-![Bouton modèle d'actifs dans Odoo
+![Bouton modèle d'actifs dans Konvergo ERP
 Comptabilité](../../../../_images/assets10.png)
 
 ## Automatiser les actifs
@@ -247,16 +240,15 @@ Vous avez trois choix pour le champ **Automatiser des actifs** :
 
   3. **Créer et valider :** vous devez également sélectionner un modèle d’actif (voir : Modèles d’actifs). Chaque fois qu’une transaction est enregistrée sur le compte, une _écriture d’actifs_ est créée et immédiatement validée.
 
-![Automatisez les actifs sur un compte dans Odoo
-Comptabilité](../../../../_images/assets11.png)
-
-Astuce
-
-Vous pouvez, par exemple, sélectionner ce compte comme le **Compte de
-charges** par défaut d’un produit pour automatiser complètement son achat.
-(voir : Choisir un compte de charges différent pour des produits spécifiques).
-
-Pour plus d'infos
-
-  * [Plan comptable](../get_started/chart_of_accounts.html)
+![Automatisez les actifs sur un compte dans Konvergo ERP
+Comptabilité](../../../../_images/assets11.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Vous pouvez, par exemple, sélectionner ce compte comme le <b>Compte de charges</b> par défaut d’un produit pour automatiser complètement son achat. (voir : <a href="#product-assets-account"><span class="std std-ref">Choisir un compte de charges différent pour des produits spécifiques</span></a>).</p>
+</div>
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../get_started/chart_of_accounts">Plan comptable</a></p></li>
+</ul>
+</div>
 

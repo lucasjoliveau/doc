@@ -7,13 +7,15 @@ los siguientes módulos:
 
   * **l10n_pe** : agrega las funciones de contabilidad para la localización peruana, que representan la configuración mínima requerida para que una empresa opere en Perú bajo las regulaciones y lineamientos de la SUNAT. Los principales elementos incluidos en este módulo son: Plan de cuentas, impuestos y tipos de documentos.
 
-  * **l10n_pe_edi** : incluye todos los requisitos técnicos y funcionales tanto para generar como validar facturas electrónicas, con base en las especificaciones de la SUNAT, en la cual se definen los lineamientos para crear y procesar documentos electrónicos válidos, para mayor detalle técnico puede acceder a las [Especificaciones SUNAT](https://cpe.sunat.gob.pe/node/88/), la cual lleva el control de nuevos cambios y actualizaciones. Las características de este módulo se basan en las resoluciones publicadas en la [Legislación SUNAT](https://www.sunat.gob.pe/legislacion/general/index.html/).
+  * **l10n_pe_edi** : incluye todos los requisitos técnicos y funcionales tanto para generar como validar facturas electrónicas, con base en las especificaciones de la SUNAT, en la cual se definen los lineamientos para crear y procesar documentos electrónicos válidos, para mayor detalle técnico puede acceder a las [Especificaciones SUNAT](https://cpe.sunat.gob.pe/node/88/), la cual lleva el control de nuevos cambios y actualizaciones. Las características de este módulo se basan en las resoluciones publicadas en la [Legislación SUNAT](https://www.sunat.gob.pe/legislacion/general/index/).
 
-Ver también
-
-  * [App Tour - Localización de Peru](https://youtu.be/Ic3mGovkf8Y)
-
-  * [Tutorial inteligente - Localización de Perú](https://www.odoo.com/slides/smart-tutorial-localizacion-de-peru-133)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="https://youtu.be/Ic3mGovkf8Y">App Tour - Localización de Peru</a></p></li>
+<li><p><a href="https://www.odoo.com/slides/smart-tutorial-localizacion-de-peru-133">Tutorial inteligente - Localización de Perú</a></p></li>
+</ul>
+</div>
 
 ## Configuración
 
@@ -21,16 +23,14 @@ Ver también
 
 Vaya a _Aplicaciones_ y busque Perú, luego haga clic en Instalar en el módulo
 Perú EDI. Este módulo tiene una dependencia con _Perú - Contabilidad_. En caso
-de que este último no esté instalado, Odoo lo instala automáticamente dentro
+de que este último no esté instalado, Konvergo ERP lo instala automáticamente dentro
 de EDI.
 
 ![El filtro de "Módulo" se establece como "Perú"](../../../_images/peru-
-modules.png)
-
-Nota
-
-Cuando instala una base de datos desde cero seleccionando Perú como país, Odoo
-instala automáticamente el módulo base: Perú - Contabilidad.
+modules.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando instala una base de datos desde cero seleccionando Perú como país, Konvergo ERP instala automáticamente el módulo base: Perú - Contabilidad.</p>
+</div>
 
 #### Configure su empresa
 
@@ -41,18 +41,14 @@ de establecimiento asignado por la SUNAT cuando las empresas registran su RUC
 (Registro Único de Contribuyente):
 
 ![Datos de la empresa para Perú, incluyendo el RUC y el código de tipo de
-dirección](../../../_images/peru-company.png)
-
-Truco
-
-En caso de que se desconozca el código del tipo de dirección, puede
-establecerlo como el valor predeterminado: 0000. Tenga en cuenta que si se
-ingresa un valor incorrecto, la validación de la factura electrónica puede
-tener errores.
-
-Nota
-
-El NIF debe configurarse siguiendo el formato del RUC.
+dirección](../../../_images/peru-company.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>En caso de que se desconozca el código del tipo de dirección, puede establecerlo como el valor predeterminado: 0000. Tenga en cuenta que si se ingresa un valor incorrecto, la validación de la factura electrónica puede tener errores.</p>
+</div>
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El NIF debe configurarse siguiendo el formato del RUC.</p>
+</div>
 
 #### Plan de cuentas
 
@@ -95,9 +91,9 @@ localización peruana:
 Como parte de los requisitos para la factura electrónica en Perú, su empresa
 debe seleccionar un proveedor de firma electrónica que se encargará del
 proceso de firma de documentos y gestionará la respuesta de validación de la
-SUNAT. Odoo ofrece tres opciones:
+SUNAT. Konvergo ERP ofrece tres opciones:
 
-  1. IAP (Compras dentro de la aplicación de Odoo)
+  1. IAP (Compras dentro de la aplicación de Konvergo ERP)
 
   2. Digiflow
 
@@ -106,7 +102,7 @@ SUNAT. Odoo ofrece tres opciones:
 Consulte las secciones a continuación para verificar los detalles y las
 consideraciones de cada opción.
 
-##### IAP (Compras dentro de la aplicación de Odoo)
+##### IAP (Compras dentro de la aplicación de Konvergo ERP)
 
 Esta es la opción predeterminada y sugerida, considerando que el certificado
 digital se incluye como parte del servicio.
@@ -116,7 +112,7 @@ digital se incluye como parte del servicio.
 ###### ¿Qué significa IAP?
 
 Significa Compras dentro de la aplicación y es un servicio de firma
-electrónica ofrecido directamente por Odoo, el servicio se encarga del
+electrónica ofrecido directamente por Konvergo ERP, el servicio se encarga del
 siguiente proceso:
 
   1. Proporciona el certificado de factura electrónica, por lo que no necesita adquirir uno por su cuenta.
@@ -127,7 +123,7 @@ siguiente proceso:
 
 ###### ¿Cómo funciona?
 
-El servicio requiere créditos para procesar sus documentos electrónicos. Odoo
+El servicio requiere créditos para procesar sus documentos electrónicos. Konvergo ERP
 proporciona 1000 créditos gratis en nuevas bases de datos. Una vez consumidos
 estos créditos, debe comprar un paquete de créditos.
 
@@ -140,15 +136,14 @@ Créditos | EUR
   
 Los créditos se consumen por cada documento que se envía al OSE.
 
-Importante
-
-Si tiene un error de validación y el documento debe enviarse una vez más, se
-cobrará un crédito adicional. Por lo tanto, es fundamental que verifique que
-toda la información sea correcta antes de enviar su documento al OSE.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Si tiene un error de validación y el documento debe enviarse una vez más, se cobrará un crédito adicional. Por lo tanto, es fundamental que verifique que toda la información sea correcta antes de enviar su documento al OSE.</p>
+</div>
 
 ###### ¿Qué debe hacer?
 
-  * En Odoo, una vez que se activa su contrato empresarial y comienza a trabajar en producción, debe comprar créditos una vez que se consuman los primeros 1000.
+  * En Konvergo ERP, una vez que se activa su contrato empresarial y comienza a trabajar en producción, debe comprar créditos una vez que se consuman los primeros 1000.
 
   * Digiflow es el OSE que se utiliza en el IAP, debe afiliarlo como el OSE oficial de su empresa en el sitio web de la SUNAT. Este es un proceso simple. Para obtener más información, consulte la [Guía de afiliación de OSE](https://drive.google.com/file/d/1BkrMTZIiJyi5XI0lGMi3rbMzHddOL1pa/view?usp=sharing).
 
@@ -178,28 +173,28 @@ considerar: - Obtener la aceptación del proceso de Certificación SUNAT.
 
   * Proporcione sus credenciales SOL.
 
-Importante
-
-Al usar la conexión directa con la SUNAT, se debe establecer el usuario SOL
-con la empresa RUT + ID de usuario. Ejemplo: `20121888549JOHNSMITH`
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Al usar la conexión directa con la SUNAT, se debe establecer el usuario SOL con la empresa RUT + ID de usuario. Ejemplo: <code>20121888549JOHNSMITH</code></p>
+</div>
 
 #### Entorno de prueba
 
-Odoo proporciona un entorno de prueba que se puede activar antes de que su
+Konvergo ERP proporciona un entorno de prueba que se puede activar antes de que su
 empresa entre en producción.
 
 Al utilizar el entorno de prueba y la firma IAP, no es necesario que compre
 créditos de prueba para sus transacciones, ya que todas se validan de forma
 predeterminada.
 
-Truco
-
-De forma predeterminada, las bases de datos están configuradas para trabajar
-en producción, asegúrese de habilitar el modo de prueba si es necesario.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>De forma predeterminada, las bases de datos están configuradas para trabajar en producción, asegúrese de habilitar el modo de prueba si es necesario.</p>
+</div>
 
 #### Certificado
 
-En caso de que no utilice Odoo IAP, para generar la firma de factura
+En caso de que no utilice Konvergo ERP IAP, para generar la firma de factura
 electrónica, se requiere un certificado digital con la extensión `.pfx` .
 Acceda a esta sección y cargue su archivo y contraseña.
 
@@ -208,7 +203,7 @@ Acceda a esta sección y cargue su archivo y contraseña.
 #### Multidivisa
 
 El Banco Central de Reserva del Perú proporciona el tipo de cambio de divisa
-oficial. Odoo puede conectarse directamente a sus servicios y obtener el tipo
+oficial. Konvergo ERP puede conectarse directamente a sus servicios y obtener el tipo
 de cambio de forma automática o manual.
 
 ![El Banco de Perú se muestra en la opción de Servicios multidivisa
@@ -263,11 +258,10 @@ predeterminada, por lo que el usuario no necesita completar nada en esta
 vista:
 
 ![Lista de tipos de documento](../../../_images/peru-document-type.png)
-
-Advertencia
-
-Actualmente, los documentos compatibles en las facturas de los clientes son:
-factura, boleta, nota de débito y nota de crédito.
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Actualmente, los documentos compatibles en las facturas de los clientes son: factura, boleta, nota de débito y nota de crédito.</p>
+</div>
 
 #### Diarios contables
 
@@ -287,11 +281,10 @@ En esta sección se indica qué flujo de trabajo de EDI se utiliza en la
 factura, para Perú debemos seleccionar “Perú UBL 2.1”.
 
 ![Campo de EDI de diario](../../../_images/peru-journal-edi.png)
-
-Advertencia
-
-De forma predeterminada, el valor Factur-X (FR) siempre se muestra, asegúrese
-de deseleccionarlo manualmente.
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>De forma predeterminada, el valor Factur-X (FR) siempre se muestra, asegúrese de deseleccionarlo manualmente.</p>
+</div>
 
 #### Contacto
 
@@ -354,7 +347,7 @@ que se haya contabilizado la factura.
 ##### Estado de factura electrónica
 
 **Por enviar** : Indica que el documento está listo para ser enviado al OSE.
-Odoo puede hacer esto de forma automática a través de un _cron_ que se ejecuta
+Konvergo ERP puede hacer esto de forma automática a través de un _cron_ que se ejecuta
 cada hora o el usuario puede enviarlo inmediatamente al hacer clic en el botón
 “Enviar ahora”.
 
@@ -371,16 +364,15 @@ En caso de que exista un error de validación, el estado de la factura
 electrónica permanece en “Por enviar” para que se puedan realizar las
 correcciones y la factura se pueda enviar nuevamente.
 
-Advertencia
-
-Se consume un crédito cada vez que envía un documento para su validación, en
-este sentido si se detecta un error en una factura y la envía una vez más, se
-consumen dos créditos en total.
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Se consume un crédito cada vez que envía un documento para su validación, en este sentido si se detecta un error en una factura y la envía una vez más, se consumen dos créditos en total.</p>
+</div>
 
 #### Errores comunes
 
 Hay varias razones detrás de un rechazo por parte del OSE o la SUNAT. Cuando
-esto sucede, Odoo envía un mensaje en la parte superior de la factura que
+esto sucede, Konvergo ERP envía un mensaje en la parte superior de la factura que
 indica los detalles del error y, en los casos más comunes, una pista para
 solucionar el problema.
 
@@ -406,7 +398,7 @@ factura es un documento fiscal válido.
 
 #### Créditos IAP
 
-El IAP electrónico de Odoo ofrece 1000 créditos de forma gratuita. Una vez que
+El IAP electrónico de Konvergo ERP ofrece 1000 créditos de forma gratuita. Una vez que
 estos créditos se consumen en su base de datos de producción, su empresa debe
 comprar nuevos créditos para procesar sus transacciones.
 
@@ -437,7 +429,7 @@ Para cancelar una factura, proporcione un motivo de cancelación.
 ###### Estado de factura electrónica
 
 **Por cancelar** : Indica que la solicitud de cancelación está lista para
-enviarse a la OSE, Odoo puede hacer esto de forma automática mediante un
+enviarse a la OSE, Konvergo ERP puede hacer esto de forma automática mediante un
 _cron_ que se ejecuta cada hora, o el usuario puede enviarlo inmediatamente al
 hacer clic en el botón «Enviar ahora». Una vez que se envía, se crea un ticket
 de cancelación, como resultado, el siguiente mensaje y el archivo CDR se
@@ -452,10 +444,10 @@ registra un mensaje en el chatter que indica la validación gubernamental
 correcta.
 
 ![Factura después de la cancelación](../../../_images/peru-cancelled.png)
-
-Advertencia
-
-Se consume un crédito en cada solicitud de cancelación.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando instala una base de datos desde cero seleccionando Perú como país, Konvergo ERP instala automáticamente el módulo base: Perú - Contabilidad.</p>
+</div>0
 
 ##### Proceso de cancelación
 
@@ -505,12 +497,10 @@ debe generar una nota de crédito. Para esto simplemente haga clic en el botón
 probar un motivo de crédito seleccionando una de las opciones en la lista.
 
 ![Agregar nota de crédito desde la factura](../../../_images/peru-credit-
-note.png)
-
-Truco
-
-Al crear su primera nota de crédito, seleccione el método de crédito:
-Reembolso parcial, esto le permite definir la secuencia de la nota de crédito.
+note.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando instala una base de datos desde cero seleccionando Perú como país, Konvergo ERP instala automáticamente el módulo base: Perú - Contabilidad.</p>
+</div>1
 
 De forma predeterminada, la nota de crédito se establece en el tipo de
 documento:
@@ -519,12 +509,12 @@ documento:
 document.png)
 
 Para terminar el flujo de trabajo, siga las instrucciones de [nuestra página
-sobre notas de crédito](../accounting/customer_invoices/credit_notes.html).
+sobre notas de crédito](../accounting/customer_invoices/credit_notes).
 
-Nota
-
-El flujo de trabajo EDI para las notas de crédito funciona de la misma manera
-que las facturas.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando instala una base de datos desde cero seleccionando Perú como país, Konvergo ERP instala automáticamente el módulo base: Perú - Contabilidad.</p>
+</div>2
 
 ### Notas de débito
 
@@ -539,7 +529,7 @@ documento.
 
 La _Guía de Remisión Electrónica_ (GRE) es un documento electrónico que el
 transportista genera para ayudar al transporte o transferencia de bienes de un
-lugar a otro, como un almacén u otro establecimiento. En Odoo es necesario
+lugar a otro, como un almacén u otro establecimiento. En Konvergo ERP es necesario
 seguir varios pasos de configuración antes de poder usar esta función.
 
 El uso del documento _guía de remisión electrónica_ es obligatorio para los
@@ -557,11 +547,12 @@ misma empresa u otras empresas.
 
 El dueño de los bienes (es decir, el remitente) es quien emite la guía de
 remisión al inicio del envío. La guía de envío de remitente es compatible con
-Odoo.
+Konvergo ERP.
 
-Ver también
-
-[SUNAT guía de remisión](https://www.gob.pe/7899-guia-de-remision)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando instala una base de datos desde cero seleccionando Perú como país, Konvergo ERP instala automáticamente el módulo base: Perú - Contabilidad.</p>
+</div>3
 
 ##### Transportista
 
@@ -571,14 +562,13 @@ transporte que el transportista realiza.
 Esta guía de remisión la emite el transportista y se debe emitir a cada
 remitente cuando el envío pasa por transporte público.
 
-Importante
-
-La guía de remisión - remitente **no** es compatible con Odoo
-
-Ver también
-
-[SUNAT guía de remisión transportista](https://tefacturo.pe/blog/sunat/guia-
-de-remision-electronica/guia-de-remision-transportista/)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando instala una base de datos desde cero seleccionando Perú como país, Konvergo ERP instala automáticamente el módulo base: Perú - Contabilidad.</p>
+</div>4 <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando instala una base de datos desde cero seleccionando Perú como país, Konvergo ERP instala automáticamente el módulo base: Perú - Contabilidad.</p>
+</div>5
 
 #### Tipos de traslado
 
@@ -597,7 +587,7 @@ remisión transportista.
 
 #### Envío directo a la SUNAT
 
-La GRE de Odoo se **debe** enviar directamente a la SUNAT, sin importar el
+La GRE de Konvergo ERP se **debe** enviar directamente a la SUNAT, sin importar el
 proveedor del documento: IAP, Digiflow o SUNAT.
 
 #### Información requerida
@@ -616,9 +606,10 @@ electrónica siempre y cuando se cumplan las siguientes condiciones:
 
   * Si ya se inició el envío, se le **tendrá** que cambiar al destinatario antes de llegar al destino final
 
-Importante
-
-Para cancelaciones la SUNAT ahora usa el término «dar de baja» y no «anular».
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando instala una base de datos desde cero seleccionando Perú como país, Konvergo ERP instala automáticamente el módulo base: Perú - Contabilidad.</p>
+</div>6
 
 #### Prueba
 
@@ -630,42 +621,34 @@ del portal de la SUNAT.
 
 #### Configuración
 
-Importante
-
-  * Por ahora la única carta porte compatible con Odoo es la GRE.
-
-  * La guía de remisión depende de la aplicación _Inventario_ de Odoo y de los módulos l10n_pe_edi y l10n_pe.
-
-  * Se **debe** agregar un segundo usuario para la creación de documentos electrónicos.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando instala una base de datos desde cero seleccionando Perú como país, Konvergo ERP instala automáticamente el módulo base: Perú - Contabilidad.</p>
+</div>7
 
 Después de seguir los pasos para configurar la facturación electrónica y los
-datos maestros, [instale](../../general/apps_modules.html#general-install) el
-módulo Perú - Nota de entrega electrónica 2.0 (`l10n_pe_edi_stock_20`).
+datos maestros, [instale](../../general/apps_modules#general-install) el
+módulo **Perú - Nota de entrega electrónica 2.0** (`l10n_pe_edi_stock_20`).
 
 Ahora debe obtener la _ID de cliente_ y _secreto de cliente_ de la SUNAT. Para
 hacerlo, siga las instrucciones en el [manual de servicios web plataforma
 nueva GRE](https://cpe.sunat.gob.pe/sites/default/files/inline-
 files/Manual_Servicios_GRE.pdf).
 
-Nota
-
-En el portal de la SUNAT es importante tener activados los derechos de acceso
-correctos, ya que pueden diferir de los permisos configurados para el usuario
-de la facturación electrónica.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando instala una base de datos desde cero seleccionando Perú como país, Konvergo ERP instala automáticamente el módulo base: Perú - Contabilidad.</p>
+</div>8
 
 Estas credenciales se deben usar para configurar los ajustes generales de la
 guía de remisión de Contabilidad ‣ Configuración ‣ Ajustes ‣ Facturación
 electrónica peruana.
 
 ![Ejemplo para la sección de configuración de la API de la guía de remisión de
-la SUNAT.](../../../_images/gre-fields-example.png)
-
-Nota
-
-Se requiere seguir el formato `RUC + UsuarioSol` (por ejemplo,
-`20557912879USUARIOSOL`) para el campo Guía de usuario SOL, dependiendo del
-usuario seleccionado al generar las credenciales API GRE en el portal del
-SUNAT.
+la SUNAT.](../../../_images/gre-fields-example.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando instala una base de datos desde cero seleccionando Perú como país, Konvergo ERP instala automáticamente el módulo base: Perú - Contabilidad.</p>
+</div>9
 
 ##### Operador
 
@@ -675,17 +658,17 @@ remisión sea a través de transporte _privado_.
 Para crear un nuevo operador vaya a Contactos ‣ Crear y llene la información
 de contacto.
 
-Primero, seleccione Individual como tipo de empresa. Después agregue la
-Licencia del operador en la pestaña de Contabilidad en el formulario de
-contacto.
+Primero, seleccione **Individual** como **tipo de empresa**. Después agregue
+la **Licencia del operador** en la pestaña de **Contabilidad** en el
+formulario de contacto.
 
 Para la dirección del cliente, asegúrse de llenar los siguientes campos:
 
-  * Distrito
+  * **Distrito**
 
-  * DNI/RUC
+  * **DNI** /**RUC**
 
-  * DNI/RUC
+  * **DNI/RUC**
 
 ![Configuraciones de operador de tipo individual en el formulario de
 contacto.](../../../_images/operator-configuration.png)
@@ -698,17 +681,17 @@ transporte _público_.
 Para crear un transportista nuevo, vaya a Contactos ‣ Crear y llene la
 información de contacto
 
-Primero, seleccione Empresa como tipo de empresa. Después, agregue
-guilabel:`Número de registro MTC`, Entidad que emite la autorización y el
-Número de autorización.
+Primero, seleccione **Empresa** como **tipo de empresa**. Después, agregue
+guilabel:`Número de registro MTC`, **Entidad que emite la autorización** y el
+**Número de autorización**.
 
 Para la dirección de la empresa, asegúrese de llenar los siguientes campos:
 
-  * Distrito
+  * **Distrito**
 
-  * DNI/RUC
+  * **DNI** /**RUC**
 
-  * DNI/RUC
+  * **DNI/RUC**
 
 ![Configuraciones de operador de tipo empresa en el formulario de
 contacto.](../../../_images/company-operator-configuration.png)
@@ -719,27 +702,26 @@ Para configurar los vehículos disponibles, vaya a Inventario ‣ Configuración
 Vehículos y llene el formulario de vehículos con la información necesaria para
 cada vehículo:
 
-  * Nombre del vehículo
+  * **Nombre del vehículo**
 
-  * Matrícula
+  * **Matrícula**
 
-  * ¿Es M1 o L?
+  * **¿Es M1 o L?**
 
-  * Entidad emisora de la autorización especial
+  * **Entidad emisora de la autorización especial**
 
-  * Número de autorización
+  * **Número de autorización**
 
-  * Operador predeterminado
+  * **Operador predeterminado**
 
-  * Empresa
+  * **Empresa**
 
-Importante
-
-Es importante marcar la casilla de verificación ¿Es M1 o L? si el vehículo
-tiene menos de cuatro ruedas u ocho asientos.
-
-![Se muestra un vehículo en el que no se seleccionó que era del tipo M1 y L
-con campos adicionales.](../../../_images/vehicle-not-m1-or-l-pe.png)
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>En caso de que se desconozca el código del tipo de dirección, puede establecerlo como el valor predeterminado: 0000. Tenga en cuenta que si se ingresa un valor incorrecto, la validación de la factura electrónica puede tener errores.</p>
+</div>0 ![Se muestra un vehículo en el que no se seleccionó que
+era del tipo M1 y L con campos adicionales.](../../../_images/vehicle-
+not-m1-or-l-pe.png)
 
 ##### Productos
 
@@ -747,7 +729,7 @@ Para configurar los productos disponibles, vaya a Inventario ‣ Productos y
 abra el producto que configurará.
 
 Asegúrese de que la información aplicable en el formulario del producto está
-completamente configurada. El campo Partida Arancelaria debe llenarse.
+completamente configurada. El campo **Partida Arancelaria** debe llenarse.
 
 #### Generar una GRE
 
@@ -755,17 +737,17 @@ Una vez que se crea la entrega desde el inventario durante un flujo de trabajo
 de ventas, asegúrese de completar los campos GRE en la sección superior
 derecha del formulario de transferencia para los campos:
 
-  * Tipo de transporte
+  * **Tipo de transporte**
 
-  * Razón de la transferencia
+  * **Razón de la transferencia**
 
   * :guilabel:`Fecha de inicio del transporte `
 
-También es necesario llenar los campos Vehículo y Operador en la pestaña Guia
-de Remision PE.
+También es necesario llenar los campos **Vehículo** y **Operador** en la
+pestaña **Guia de Remision PE**.
 
 La transferencia de entrega se debe marcar como _Lista_ para que aparezca el
-botón Generar Guia de Remision en el menú izquierdo del formulario de
+botón **Generar Guia de Remision** en el menú izquierdo del formulario de
 transferencia.
 
 ![Botón Generar Guia de Remision en un formulario de transferencia en la etapa
@@ -782,7 +764,7 @@ generado.](../../../_images/gre-delivery-slip.png)
 
   * `Diferente prefijo para productos (T001 en algunos, T002 en otros)`
 
-Por el momento, Odoo no es compatible con la automatización de prefijos para
+Por el momento, Konvergo ERP no es compatible con la automatización de prefijos para
 productos. Esto se puede hacer de manera manual para cada producto, además de
 que también se puede hacer para productos no almacenables. Sin embargo, tome
 en cuenta que no habrá trazabilidad.
@@ -807,7 +789,7 @@ relacionado_ solo se aplican en facturas y recibos.
 
   * `400 Error del cliente: solicitud de URL mala`
 
-Este error no se puede solucionar desde Odoo, le recomendamos que se ponga en
+Este error no se puede solucionar desde Konvergo ERP, le recomendamos que se ponga en
 contacto con la SUNAT para verificar el usuario. Es posible que necesite crear
 un usuario nuevo
 
@@ -816,7 +798,7 @@ un usuario nuevo
 Este error ocurre cuando el motivo de transferencia se configura como _otro_.
 Seleccione otra opción. Siguiendo la documentación oficial de la guía de
 albaranes de SUNAT, los motivos de transferencia _03 (venta con envío a
-terceros)_ o _12 (otros)_ no funcionan en Odoo, ya que no se debe tener un
+terceros)_ o _12 (otros)_ no funcionan en Konvergo ERP, ya que no se debe tener un
 cliente vacío o en blanco.
 
   * `Duda cliente: consumo de créditos IAP al usar GRE 2.0`
@@ -827,7 +809,7 @@ envían directamente a la SUNAT.
 
   * `Errores con formato credenciales GRE 2.0 (traceback error)`
 
-Odoo envía un error con rastreo en lugar de un mensaje en el que se indica que
+Konvergo ERP envía un error con rastreo en lugar de un mensaje en el que se indica que
 las credenciales no se configuraron correctamente en la base de datos. Si esto
 ocurre en su base de datos, verifique sus credenciales.
 

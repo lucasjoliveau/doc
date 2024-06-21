@@ -2,7 +2,7 @@
 
 ## Overview
 
-Odoo can handle various delivery methods, including third party shippers. Odoo
+Konvergo ERP can handle various delivery methods, including third party shippers. Konvergo ERP
 will be linked with the transportation company tracking system.
 
 It will allow you to manage the transport company, the real prices and the
@@ -31,10 +31,11 @@ use. Confirm it by clicking on the **Send to shipper** button. You will get a
 new tracking number and a new label.
 
 ![../../../../../_images/cancel03.png](../../../../../_images/cancel03.png)
-
-See also
-
-  * [Shipping cost invoicing](invoicing.html)
-
-  * [Multi-package shipments](multipack.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="invoicing">Shipping cost invoicing</a></p></li>
+<li><p><a href="multipack">Multi-package shipments</a></p></li>
+</ul>
+</div>
 

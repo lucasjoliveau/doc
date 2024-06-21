@@ -29,7 +29,7 @@ collaborators.png](../../../_images/interface-settings-collaborators.png)
 
 There are two levels of users:
 
-  * Admin: has access to all features of Odoo.sh.
+  * Admin: has access to all features of Konvergo ERP.sh.
 
   * User: does not have access to the project settings nor to the production and staging databases.
 
@@ -61,10 +61,10 @@ Production & Staging | History | ● | ●
 | Settings | ●* | ●  
 Status |  | ● | ●  
 Settings |  |  | ●  
-  
-Note
-
-* Only in staging branches
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>* Only in staging branches</p>
+</div>
 
 ## Public Access
 
@@ -85,26 +85,23 @@ status.
 ## Custom domains
 
 To configure additional domains please refer to the corresponding branch’s
-[settings tab](branches.html#odoosh-gettingstarted-branches-tabs-settings).
+[settings tab](branches#odoosh-gettingstarted-branches-tabs-settings).
 
 ## Submodules
 
 Configure the deploy keys for the private repositories you use as submodules
-in your branches to allow Odoo.sh to download them.
+in your branches to allow Konvergo ERP.sh to download them.
 
-Warning
-
-These settings are required for **private repositories** only. If you are
-looking on how to set up your submodules, instructions are available in the
-chapter [Submodules](../advanced/submodules.html#odoosh-advanced-submodules)
-of this documentation.
-
-![../../../_images/interface-settings-
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>These settings are required for <b>private repositories</b> only. If you are looking on how to set
+up your submodules, instructions are available in the chapter <a href="../advanced/submodules#odoosh-advanced-submodules"><span class="std std-ref">Submodules</span></a> of this documentation.</p>
+</div> ![../../../_images/interface-settings-
 submodules.png](../../../_images/interface-settings-submodules.png)
 
 When a repository is private, it is not possible to publicly download its
 branches and revisions. For that reason, you need to configure a deploy key
-for Odoo.sh, so the remote Git server allows our platform to download the
+for Konvergo ERP.sh, so the remote Git server allows our platform to download the
 revisions of this private repository.
 
 To configure the deploy key for a private repository, proceed as follows:
@@ -142,10 +139,10 @@ Storage size is computed as follows:
 
   * the size of the disk files available in your container: database filestore, sessions storage directory…
 
-Warning
-
-In case you want to analyze disk usage, you can run the tool
-[ncdu](https://dev.yorhel.nl/ncdu/man) in your Web Shell.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>In case you want to analyze disk usage, you can run the tool <a href="https://dev.yorhel.nl/ncdu/man">ncdu</a> in your Web Shell.</p>
+</div>
 
 Should your production database size grow to exceed what’s provisioned in your
 subscription, it will automatically be synchronized with it.
@@ -157,15 +154,13 @@ the load your production database is able to handle. If you add more, it will
 automatically be synchronized with your subscription.
 
 ![../../../_images/interface-settings-workers.png](../../../_images/interface-
-settings-workers.png)
-
-Warning
-
-Adding more workers will not magically solve all performance issues. It only
-allows the server to handle more connections at the same time. If some
-operations are unusually slow, it’s most likely a problem with the code, if
-it’s not due to your own customizations you can open a ticket
-[here](https://www.odoo.com/help).
+settings-workers.png) <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Adding more workers will not magically solve all performance issues. It only allows the server
+to handle more connections at the same time. If some operations are unusually slow, it’s most
+likely a problem with the code, if it’s not due to your own customizations you can open a ticket
+<a href="https://www.odoo.com/help">here</a>.</p>
+</div>
 
 ## Staging Branches
 

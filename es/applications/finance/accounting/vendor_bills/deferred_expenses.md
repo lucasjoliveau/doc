@@ -18,15 +18,14 @@ contabilizamos este nuevo gasto en una _cuenta de prepago_ y decidimos
 registrarlo mensualmente. Cada mes, durante los próximos 12 meses, se
 reconocerán $100 como gasto.
 
-La aplicación de contabilidad de Odoo maneja los gastos diferidos y los pagos
+La aplicación de contabilidad de Konvergo ERP maneja los gastos diferidos y los pagos
 anticipados distribuyéndolos en múltiples asientos que se crearán
 automáticamente en modo de _borrador_ y se registrarán periódicamente.
 
-Nota
-
-El servidor comprueba una vez al día si se debe publicar un asiento. Pueden
-pasar hasta 24 horas antes de que se refleje el cambio de _borrador_ a
-_registrado_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El servidor comprueba una vez al día si se debe publicar un asiento. Pueden pasar hasta 24 horas antes de que se refleje el cambio de <em>borrador</em> a <em>registrado</em>.</p>
+</div>
 
 ## Prerrequisitos
 
@@ -39,11 +38,10 @@ Para configurar su cuenta en el **Plan de cuentas** , vaya a Contabilidad ‣
 Configuración ‣ Plan de cuentas, haga clic en _Crear_ , y llene el formulario.
 
 ![Configuración de una cuenta de gastos diferidos en Contabilidad de
-Odoo](../../../../_images/deferred_expenses01.png)
-
-Nota
-
-El tipo de esta cuenta debe ser _activo corriente_ o _prepago_.
+Konvergo ERP](../../../../_images/deferred_expenses01.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El tipo de esta cuenta debe ser <em>activo corriente</em> o <em>prepago</em>.</p>
+</div>
 
 ### Contabilizar un gasto en la cuenta correcta
 
@@ -53,7 +51,7 @@ En un borrador de factura, seleccione la cuenta correcta para todos los
 productos cuyos gastos se deben diferir.
 
 ![Selección de la cuenta de gastos diferidos en el borrador de una factura en
-Contabilidad de Odoo](../../../../_images/deferred_expenses02.png)
+Contabilidad de Konvergo ERP](../../../../_images/deferred_expenses02.png)
 
 #### Elija una cuenta de gastos diferente para productos específicos
 
@@ -61,12 +59,10 @@ Comience a editar el producto, vaya a la pestaña de _Contabilidad_ ,
 seleccione la **Cuenta de gastos** correcta y guarde.
 
 ![Cambio de la cuenta de gastos para un producto en
-Odoo](../../../../_images/deferred_expenses03.png)
-
-Truco
-
-Es posible automatizar la creación de asientos de gastos para estos productos
-(ver: Automatizar los gastos diferidos).
+Konvergo ERP](../../../../_images/deferred_expenses03.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Es posible automatizar la creación de asientos de gastos para estos productos (ver: <a href="#automate-the-deferred-expenses">Automatizar los gastos diferidos</a>).</p>
+</div>
 
 #### Modificar la cuenta de un apunte contable registrado
 
@@ -75,7 +71,7 @@ Compras, seleccione el apunte contable que desea modificar, haga clic en la
 cuenta y seleccione la correcta.
 
 ![Modificación de la cuenta de un apunte contable publicado en la aplicación
-Contabilidad de Odoo](../../../../_images/deferred_expenses04.png)
+Contabilidad de Konvergo ERP](../../../../_images/deferred_expenses04.png)
 
 ## Asientos de gastos diferidos
 
@@ -93,15 +89,15 @@ de diario existente a este nuevo asiento. Algunos campos se completarán
 automáticamente y el apunte aparecerá en la pestaña **Gastos relacionados**.
 
 ![Asiento de gastos diferidos en Contabilidad de
-Odoo](../../../../_images/deferred_expenses05.png)
+Konvergo ERP](../../../../_images/deferred_expenses05.png)
 
 Después de hacerlo, puede hacer clic en _calcular diferimiento_ (al lado del
 botón _confirmar_) para generar todos los valores del **tablero de gastos**.
-Este tablero muestra todos los asientos que Odoo registrará para reconocer su
+Este tablero muestra todos los asientos que Konvergo ERP registrará para reconocer su
 gasto, y en qué fecha.
 
 ![Tabla de gastos en Contabilidad de
-Odoo](../../../../_images/deferred_expenses06.png)
+Konvergo ERP](../../../../_images/deferred_expenses06.png)
 
 #### ¿Qué significa «Prorata Temporis»?
 
@@ -132,7 +128,7 @@ A continuación, haga clic en _Acción_ , seleccione **Crear asiento diferido**
 asiento.
 
 ![Cree un asiento diferido desde un apunte contable en Contabilidad de
-Odoo](../../../../_images/deferred_expenses07.png)
+Konvergo ERP](../../../../_images/deferred_expenses07.png)
 
 ## Modelos de gastos diferidos
 
@@ -143,11 +139,10 @@ Para crear un modelo, vaya a Contabilidad ‣ Configuración ‣ Modelos de gast
 diferidos, haga clic en _Crear_ , y complete el formulario de la misma manera
 que lo haría para crear un nuevo asiento.
 
-Truco
-
-También puede convertir un _asiento de gastos diferidos confirmado_ en un
-modelo abriéndolo desde Contabilidad ‣ Contabilidad ‣ Gastos diferidos y
-luego, haciendo clic en el botón _Guardar modelo_.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>También puede convertir un <em>asiento de gastos diferidos confirmado</em> en un modelo abriéndolo desde Contabilidad ‣ Contabilidad ‣ Gastos diferidos y luego, haciendo clic en el botón <em>Guardar modelo</em>.</p>
+</div>
 
 ### Aplicar un modelo de gasto diferido a un nuevo asiento
 
@@ -159,7 +154,7 @@ modelos vinculados a esa cuenta. Al hacer clic en un modelo, se completa el
 formulario según dicho modelo
 
 ![Botón de modelo de gasto diferido en Contabilidad de
-Odoo](../../../../_images/deferred_expenses08.png)
+Konvergo ERP](../../../../_images/deferred_expenses08.png)
 
 ## Automatizar los gastos diferidos
 
@@ -176,15 +171,14 @@ Hay tres opciones para el campo **Automatizar gastos diferidos** :
   3. **Crear y validar:** también debe seleccionar un modelo de gastos diferidos (ver: Modelos de gastos diferidos). Cada vez que se registra una operación en la cuenta, se crea un _asiento de gastos diferidos_ que se valida inmediatamente.
 
 ![Gastos diferidos automáticos en una cuenta de Contabilidad de
-Odoo](../../../../_images/deferred_expenses09.png)
-
-Truco
-
-Puede, por ejemplo, seleccionar esta cuenta como la **cuenta de gastos**
-predeterminada de un producto para automatizar totalmente su compra. (ver:
-Elija una cuenta de gastos diferente para productos específicos).
-
-Ver también
-
-  * [Plan de cuentas](../get_started/chart_of_accounts.html)
+Konvergo ERP](../../../../_images/deferred_expenses09.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Puede, por ejemplo, seleccionar esta cuenta como la <b>cuenta de gastos</b> predeterminada de un producto para automatizar totalmente su compra. (ver: <a href="#choose-a-different-expense-account-for-specific-products">Elija una cuenta de gastos diferente para productos específicos</a>).</p>
+</div>
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../get_started/chart_of_accounts">Plan de cuentas</a></p></li>
+</ul>
+</div>
 

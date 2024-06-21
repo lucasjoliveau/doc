@@ -1,23 +1,22 @@
 # Cambiar idioma
 
-Odoo cuenta con la opción de gestionar Odoo en diferentes idiomas, y cada
-usuario puede utilizar Odoo en el idioma que deseé.
+Konvergo ERP cuenta con la opción de gestionar Konvergo ERP en diferentes idiomas, y cada
+usuario puede utilizar Konvergo ERP en el idioma que deseé.
 
 ## Descargue el idioma deseado
 
 Lo primero que debe hacer es descargar el idioma deseado en la instancia de
-Odoo.
+Konvergo ERP.
 
 Desde el tablero general, haga clic sobre la aplicación **Ajustes** ; en la
 esquina superior izquierda seleccione Traducciones ‣ Descargar traducción,
 seleccione un idioma y haga clic en **DESCARGAR**.
 
 ![../../../_images/choose_language01.png](../../../_images/choose_language01.png)
-
-Nota
-
-Si selecciona la casilla «Sitios web a traducir» tendrá la opción de cambiar
-el idioma de su sitio web.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Si selecciona la casilla «Sitios web a traducir» tendrá la opción de cambiar el idioma de su sitio web.</p>
+</div>
 
 ## Cambiar idioma
 
@@ -35,7 +34,7 @@ Abra un nuevo menú para ver los cambios.
 
 ## Cambiar el idioma de otro usuario
 
-Odoo también ofrece la posibilidad de que cada usuario elija su idioma de
+Konvergo ERP también ofrece la posibilidad de que cada usuario elija su idioma de
 preferencia.
 
 Si desea cambiar el idioma de otro usuario, vaya a Usuarios ‣ Usuarios en los
@@ -45,8 +44,10 @@ al que le gustaría cambiar el idioma. Seleccione el usuario y haga clic en
 idioma previamente instalado y haga clic en **GUARDAR**.
 
 ![../../../_images/choose_language04.png](../../../_images/choose_language04.png)
-
-Ver también
-
-  * [Traducciones](../../websites/website/configuration/translate.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../websites/website/configuration/translate">Traducciones</a></p></li>
+</ul>
+</div>
 

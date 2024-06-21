@@ -30,7 +30,7 @@ collaborators.png](../../../_images/interface-settings-collaborators.png)
 
 Il y a deux niveaux d’utilisateurs :
 
-  * Admin : a accès à toutes les fonctionnalités d’Odoo.sh.
+  * Admin : a accès à toutes les fonctionnalités d’Konvergo ERP.sh.
 
   * Utilisateur : n’a pas accès aux paramètres du projet, ni aux bases de données de production et de simulation.
 
@@ -65,10 +65,10 @@ Production & Simulation | Historique | ● | ●
 | Paramètres | ●* | ●  
 Statut |  | ● | ●  
 Paramètres |  |  | ●  
-  
-Note
-
-* Uniquement dans les branches de simulation
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>* Uniquement dans les branches de simulation</p>
+</div>
 
 ## Accès public
 
@@ -89,29 +89,24 @@ uniquement voir leur statut.
 ## Domaines personnalisés
 
 Pour configurer des domaines additionnels, veuillez aller à l”[onglet des
-paramètres](branches.html#odoosh-gettingstarted-branches-tabs-settings) de la
+paramètres](branches#odoosh-gettingstarted-branches-tabs-settings) de la
 branche correspondante.
 
 ## Sous-modules
 
 Configurez les clés de déploiement pour les dépôts privés que vous utilisez
-comme sous-modules dans vos branches pour permettre à Odoo.sh de les
+comme sous-modules dans vos branches pour permettre à Konvergo ERP.sh de les
 télécharger.
 
-Avertissement
-
-Ces paramètres sont uniquement requis pour les **dépôts privés**. Si vous
-cherchez à savoir comment configurer vos sous-modules, vous trouverez des
-instructions dans le chapitre [Sous-
-modules](../advanced/submodules.html#odoosh-advanced-submodules) de cette
-documentation.
-
-![../../../_images/interface-settings-
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Ces paramètres sont uniquement requis pour les <b>dépôts privés</b>. Si vous cherchez à savoir comment configurer vos sous-modules, vous trouverez des instructions dans le chapitre <a href="../advanced/submodules#odoosh-advanced-submodules"><span class="std std-ref">Sous-modules</span></a> de cette documentation.</p>
+</div> ![../../../_images/interface-settings-
 submodules.png](../../../_images/interface-settings-submodules.png)
 
 Lorsqu’un dépôt est privé, il n’est pas possible de télécharger publiquement
 ses branches et révisions. Pour cette raison, vous devez configurer une clé de
-déploiement pour Odoo.sh, pour que le serveur Git distant permette à notre
+déploiement pour Konvergo ERP.sh, pour que le serveur Git distant permette à notre
 plateforme de télécharger les révisions de ce dépôt privé.
 
 Pour configurer la clé de déploiement pour un dépôt privé, procédez comme suit
@@ -150,10 +145,10 @@ La taille de stockage est calculée comme suit :
 
   * la taille des fichiers disques disponibles dans votre conteneur : filestore de la base de données, répertoire de stockage des sessions, …
 
-Avertissement
-
-Si vous voulez analyser l’utilisateur du disque, vous pouvez exécuter l’outil
-[ncdu](https://dev.yorhel.nl/ncdu/man) dans votre Web Shell.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Si vous voulez analyser l’utilisateur du disque, vous pouvez exécuter l’outil <a href="https://dev.yorhel.nl/ncdu/man">ncdu</a> dans votre Web Shell.</p>
+</div>
 
 Si la taille de votre base de données de production dépasse ce qui est prévu
 dans votre abonnement, elle sera automatiquement synchronisée avec celui-ci.
@@ -166,15 +161,10 @@ base de données de production est en mesure de gérer. Si vous en ajoutez, ils
 seront automatiquement synchronisés avec votre abonnement.
 
 ![../../../_images/interface-settings-workers.png](../../../_images/interface-
-settings-workers.png)
-
-Avertissement
-
-L’ajout de workers ne résoudra pas par magie tous les problèmes de
-performance. Cela permet au serveur de gérer plus de connexions en même temps.
-Si certaines opérations sont anormalement lentes, il s’agit probablement d’un
-problème de code. Si ce n’est pas dû à vos propres personnalisations, vous
-pouvez ouvrir un ticket [ici](https://www.odoo.com/help).
+settings-workers.png) <div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>L’ajout de workers ne résoudra pas par magie tous les problèmes de performance. Cela permet au serveur de gérer plus de connexions en même temps. Si certaines opérations sont anormalement lentes, il s’agit probablement d’un problème de code. Si ce n’est pas dû à vos propres personnalisations, vous pouvez ouvrir un ticket <a href="https://www.odoo.com/help">ici</a>.</p>
+</div>
 
 ## Branches de simulation
 

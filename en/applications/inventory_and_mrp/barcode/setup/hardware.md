@@ -1,7 +1,7 @@
 # Set up your barcode scanner
 
 Follow this guide to choose and set up a barcode scanner compatible with
-Odoo’s _Inventory_ and _Barcode_ apps.
+Konvergo ERP’s _Inventory_ and _Barcode_ apps.
 
 ![An image of an example barcode scanner.](../../../../_images/barcode-
 scanner.png)
@@ -16,19 +16,19 @@ each with their own benefits and use cases:
 
   * **USB scanners** are connected to a computer, and are suitable for businesses that scan products at a fixed location, like at the checkout in a grocery store. Ensure the chosen USB scanner is compatible with the keyboard layout of the computer.
 
-  * **Bluetooth scanners** pair with a smartphone or tablet, making them an ideal cost-effective and portable barcode scanner option. In this scenario, Odoo is installed on the smartphone, allowing warehouse operators to handle operations, and check stock directly through their mobile devices.
+  * **Bluetooth scanners** pair with a smartphone or tablet, making them an ideal cost-effective and portable barcode scanner option. In this scenario, Konvergo ERP is installed on the smartphone, allowing warehouse operators to handle operations, and check stock directly through their mobile devices.
 
-  * **Mobile computer scanners** are mobile devices with a built-in barcode scanner. First, ensure the device can run the Odoo mobile app properly. Recent models that use Android OS with the Google Chrome browser, or Windows OS with Microsoft Edge, should work. However, testing is crucial due to the variety of available models and configurations.
+  * **Mobile computer scanners** are mobile devices with a built-in barcode scanner. First, ensure the device can run the Konvergo ERP mobile app properly. Recent models that use Android OS with the Google Chrome browser, or Windows OS with Microsoft Edge, should work. However, testing is crucial due to the variety of available models and configurations.
 
-See also
-
-[Compatible hardware with Odoo Inventory](https://www.odoo.com/app/inventory-
-hardware)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="https://www.odoo.com/app/inventory-hardware">Compatible hardware with Konvergo ERP Inventory</a></p>
+</div>
 
 ## Configuration
 
 When setting up the barcode scanner, make sure the following configurations
-are correct so the scanner can properly interpret barcodes with Odoo.
+are correct so the scanner can properly interpret barcodes with Konvergo ERP.
 
 ### Keyboard layout
 
@@ -47,11 +47,11 @@ Examples of keyboard language settings in the Zebra scanner user manual.
 
 ### Automatic carriage return
 
-Odoo has a default 100-millisecond delay between scans to prevent accidental
+Konvergo ERP has a default 100-millisecond delay between scans to prevent accidental
 double scanning. To synchronize with the barcode scanner, set it to include a
 _carriage return_ (character like the “Enter” key on a keyboard) after each
-scan. Odoo interprets the carriage return as the end of the barcode input; so
-Odoo accepts the scan, and waits for the next one.
+scan. Konvergo ERP interprets the carriage return as the end of the barcode input; so
+Konvergo ERP accepts the scan, and waits for the next one.
 
 Typically, on the scanner, a carriage return is included by default. Ensure it
 is set by scanning a specific barcode in the user manual, like `CR suffix ON`
@@ -62,16 +62,16 @@ or `Apply Enter for suffix`.
 When using Zebra scanners, ensure the following keystroke configurations are
 set to prevent errors.
 
-Begin on the Zebra scanner’s home screen, and select the DataWedge app (the
-icon for the app is a light blue barcode). On the DataWedge Profiles page,
-select the profile option to access the Zebra scanner’s settings.
+Begin on the Zebra scanner’s home screen, and select the **DataWedge** app
+(the icon for the app is a light blue barcode). On the **DataWedge Profiles**
+page, select the profile option to access the Zebra scanner’s settings.
 
-Scroll down to the Keyboard Output option, and ensure the Enable/disable
-keystroke output option is Enabled.
+Scroll down to the **Keyboard Output** option, and ensure the **Enable/disable
+keystroke output** option is **Enabled**.
 
 ![Show keystroke option in the Zebra scanner's DataWedge
 app.](../../../../_images/enable-keystroke.png)
 
-Now, go back to the Profile options page, and select Key event options. Here,
-ensure the Send Characters as Events option is checked.
+Now, go back to the **Profile** options page, and select **Key event
+options**. Here, ensure the **Send Characters as Events** option is checked.
 

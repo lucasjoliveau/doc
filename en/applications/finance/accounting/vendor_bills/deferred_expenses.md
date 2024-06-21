@@ -20,14 +20,15 @@ this new expense in a _prepayment account_ and decide to recognize it on a
 monthly basis. Each month, for the next 12 months, $ 100 will be recognized as
 an expense.
 
-Odoo Accounting handles deferred expenses and prepayments by spreading them in
+Konvergo ERP Accounting handles deferred expenses and prepayments by spreading them in
 multiple entries that are automatically created in _draft mode_ and then
 posted periodically.
 
-Note
-
-The server checks once a day if an entry must be posted. It might then take up
-to 24 hours before you see a change from _draft_ to _posted_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The server checks once a day if an entry must be posted. It might then take up to 24 hours before
+you see a change from <em>draft</em> to <em>posted</em>.</p>
+</div>
 
 ## Prerequisites
 
@@ -39,12 +40,11 @@ on the default expense account.
 To configure your account in the **Chart of Accounts** , go to Accounting ‣
 Configuration ‣ Chart of Accounts, click on _Create_ , and fill out the form.
 
-![Configuration of a Deferred Expense Account in Odoo
-Accounting](../../../../_images/deferred_expenses01.png)
-
-Note
-
-This account’s type must be either _Current Assets_ or _Prepayments_
+![Configuration of a Deferred Expense Account in Konvergo ERP
+Accounting](../../../../_images/deferred_expenses01.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This account’s type must be either <em>Current Assets</em> or <em>Prepayments</em></p>
+</div>
 
 ### Post an expense to the right account
 
@@ -53,7 +53,7 @@ This account’s type must be either _Current Assets_ or _Prepayments_
 On a draft bill, select the right account for all the products of which the
 expenses must be deferred.
 
-![Selection of a Deferred Expense Account on a draft bill in Odoo
+![Selection of a Deferred Expense Account on a draft bill in Konvergo ERP
 Accounting](../../../../_images/deferred_expenses02.png)
 
 #### Choose a different Expense Account for specific products
@@ -62,12 +62,11 @@ Start editing the product, go to the _Accounting_ tab, select the right
 **Expense Account** , and save.
 
 ![Change of the Expense Account for a product in
-Odoo](../../../../_images/deferred_expenses03.png)
-
-Tip
-
-It is possible to automate the creation of expense entries for these products
-(see: Automate the Deferred Expenses).
+Konvergo ERP](../../../../_images/deferred_expenses03.png) <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>It is possible to automate the creation of expense entries for these products (see:
+<a href="#automate-the-deferred-expenses">Automate the Deferred Expenses</a>).</p>
+</div>
 
 #### Change the account of a posted journal item
 
@@ -75,7 +74,7 @@ To do so, open your Purchases Journal by going to Accounting ‣ Accounting ‣
 Purchases, select the journal item you want to modify, click on the account,
 and select the right one.
 
-![Modification of a posted journal item's account in Odoo
+![Modification of a posted journal item's account in Konvergo ERP
 Accounting](../../../../_images/deferred_expenses04.png)
 
 ## Deferred Expenses entries
@@ -93,14 +92,14 @@ Click on **select related purchases** to link an existing journal item to this
 new entry. Some fields are then automatically filled out, and the journal item
 is now listed under the **Related Expenses** tab.
 
-![Deferred Expense entry in Odoo
+![Deferred Expense entry in Konvergo ERP
 Accounting](../../../../_images/deferred_expenses05.png)
 
 Once done, you can click on _Compute Deferral_ (next to the _Confirm_ button)
 to generate all the values of the **Expense Board**. This board shows you all
-the entries that Odoo will post to recognize your expense, and at which date.
+the entries that Konvergo ERP will post to recognize your expense, and at which date.
 
-![Expense Board in Odoo
+![Expense Board in Konvergo ERP
 Accounting](../../../../_images/deferred_expenses06.png)
 
 #### What does “Prorata Temporis” mean?
@@ -129,7 +128,7 @@ item).
 Then, click on _Action_ , select **Create Deferred Entry** , and fill out the
 form the same way you would do to create a new entry.
 
-![Create Deferred Entry from a journal item in Odoo
+![Create Deferred Entry from a journal item in Konvergo ERP
 Accounting](../../../../_images/deferred_expenses07.png)
 
 ## Deferred Expense Models
@@ -141,11 +140,12 @@ To create a model, go to Accounting ‣ Configuration ‣ Deferred Expense Model
 click on _Create_ , and fill out the form the same way you would do to create
 a new entry.
 
-Tip
-
-You can also convert a _confirmed Deferred Expense entry_ into a model by
-opening it from Accounting ‣ Accounting ‣ Deferred Expenses and then, by
-clicking on the button _Save Model_.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>You can also convert a <em>confirmed Deferred Expense entry</em> into a model by opening it from
+Accounting ‣ Accounting ‣ Deferred Expenses and then, by clicking on the
+button <em>Save Model</em>.</p>
+</div>
 
 ### Apply a Deferred Expense Model to a new entry
 
@@ -156,7 +156,7 @@ New buttons with all the models linked to that account appear at the top of
 the form. Clicking on a model button fills out the form according to that
 model.
 
-![Deferred Expense model button in Odoo
+![Deferred Expense model button in Konvergo ERP
 Accounting](../../../../_images/deferred_expenses08.png)
 
 ## Automate the Deferred Expenses
@@ -173,16 +173,17 @@ You have three choices for the **Automate Deferred Expense** field:
 
   3. **Create and validate:** you must also select a Deferred Expense Model (see: Deferred Expense Models). Whenever a transaction is posted on the account, a _Deferred Expenses entry_ is created and immediately validated.
 
-![Automate Deferred Expense on an account in Odoo
-Accounting](../../../../_images/deferred_expenses09.png)
-
-Tip
-
-You can, for example, select this account as the default **Expense Account**
-of a product to fully automate its purchase. (see: Choose a different Expense
-Account for specific products).
-
-See also
-
-  * [Chart of accounts](../get_started/chart_of_accounts.html)
+![Automate Deferred Expense on an account in Konvergo ERP
+Accounting](../../../../_images/deferred_expenses09.png) <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>You can, for example, select this account as the default <b>Expense Account</b> of a product to
+fully automate its purchase. (see: <a href="#choose-a-different-expense-account-for-specific-products">Choose a different Expense Account for specific
+products</a>).</p>
+</div>
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../get_started/chart_of_accounts">Chart of accounts</a></p></li>
+</ul>
+</div>
 

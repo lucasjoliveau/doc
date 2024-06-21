@@ -5,48 +5,45 @@ variété de caractéristiques ou d’options différentes parmi lesquelles les
 clients peuvent choisir, telles que la taille, le style ou la couleur.
 
 Les variantes de produits peuvent être gérées via leur modèle de produit
-individuel ou en allant aux Variantes de produits ou aux Attributs.
+individuel ou en allant aux **Variantes de produits** ou aux **Attributs**.
 
-Example
-
-An apparel company has the following variant breakdown for one their best-
-selling t-shirts:
-
-  * Unisex Classic Tee
-
-    * Couleur : bleu, rouge, blanc, noir
-
-    * Taille : S, M, L, XL, XXL
-
-Here, the **T-shirt** is the product template, and **T-shirt: Blue, S** is a
-specific product variant.
-
-**Color** and **Size** are _attributes_ , and the corresponding options (like
-**Blue** and **S**) are _values_.
-
-In this instance, there is a total of twenty different product variants: four
-**Color** options multiplied by five **Size** options. Each variant has its
-own inventory count, sales totals, and other similar records in Odoo.
-
-Pour plus d'infos
-
-[Variantes de
-produit](../../../../websites/ecommerce/managing_products/variants.html)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>An apparel company has the following variant breakdown for one their best-selling t-shirts:</p>
+<ul>
+<li><p>Unisex Classic Tee</p>
+<ul>
+<li><p>Couleur : bleu, rouge, blanc, noir</p></li>
+<li><p>Taille : S, M, L, XL, XXL</p></li>
+</ul>
+</li>
+</ul>
+<p>Here, the <b>T-shirt</b> is the product template, and <b>T-shirt: Blue, S</b> is a specific product
+variant.</p>
+<p><b>Color</b> and <b>Size</b> are <em>attributes</em>, and the corresponding options (like <b>Blue</b> and <b>S</b>)
+are <em>values</em>.</p>
+<p>In this instance, there is a total of twenty different product variants: four <b>Color</b> options
+multiplied by five <b>Size</b> options. Each variant has its own inventory count, sales totals, and
+other similar records in Konvergo ERP.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../../../websites/ecommerce/managing_products/variants">Variantes de produit</a></p>
+</div>
 
 ## Configuration
 
 To use product variants, the _Variants_ setting **must** be activated in the
-Odoo _Sales_ application.
+Konvergo ERP _Sales_ application.
 
-To do that, go to Sales app ‣ Configuration ‣ Settings, and locate the Product
-Catalog section at the top of the page.
+To do that, go to Sales app ‣ Configuration ‣ Settings, and locate the
+**Product Catalog** section at the top of the page.
 
-In that section, check the box to enable the Variants feature.
+In that section, check the box to enable the **Variants** feature.
 
-![Activating product variants on the Settings page of the Odoo Sales
+![Activating product variants on the Settings page of the Konvergo ERP Sales
 application.](../../../../../_images/activating-variants-setting.png)
 
-Then, click Save at the top of the Settings page.
+Then, click **Save** at the top of the **Settings** page.
 
 ## Attributs
 
@@ -54,248 +51,228 @@ Before product variants can be set up, attributes **must** be created. To
 create, manage, and modify attributes, navigate to Sales app ‣ Configuration ‣
 Attributes.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>L’ordre des attributs sur la page <b>Attributs</b> détermine la façon dont ils apparaissent sur les pages <b>Configurateur de produts</b>, le tableau de bord du <b>Point de Vente</b> et <b>eCommerce</b>.</p>
+</div>
 
-L’ordre des attributs sur la page Attributs détermine la façon dont ils
-apparaissent sur les pages Configurateur de produts, le tableau de bord du
-Point de Vente et eCommerce.
-
-To create a new attribute from the Attributes page, click New. Doing so
-reveals a blank attributes form that can be customized and configured in a
+To create a new attribute from the **Attributes** page, click **New**. Doing
+so reveals a blank attributes form that can be customized and configured in a
 number of ways.
 
-![A blank attribute creation form in the Odoo Sales
+![A blank attribute creation form in the Konvergo ERP Sales
 application.](../../../../../_images/attribute-creation.png)
 
-First, create an Attribute Name, such as `Color` or `Size`.
+First, create an **Attribute Name** , such as `Color` or `Size`.
 
-Next, in the optional Category field, select a category from a drop-down menu
-to group similar attributes under the same section for added specificity and
-organization.
+Next, in the optional **Category** field, select a category from a drop-down
+menu to group similar attributes under the same section for added specificity
+and organization.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To view the details related to the attribute category selected, click the internal link
+<b>➡️ (arrow)</b> icon to the far-right of the <b>Category</b> field. Doing so reveals
+that attribute category’s detail form.</p>
+<img alt="A standard attribute category detail page accessible via its internal link arrow icon." class="align-center" src="../../../../../_images/attribute-category-internal-link.png"/>
+<p>Here, the <b>Category Name</b> and <b>Sequence</b> is displayed at the top. Followed by
+<b>Related Attributes</b> associated with the category. These attributes can be
+dragged-and-dropped into a desirable order of priority.</p>
+<p>Attributes can be directly added to the category, as well, by clicking <b>Add a line</b>.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>To create an attribute category directly from this field, start typing the name of the new
+category, then select either <b>Create</b> or <b>Create and edit…</b> from the
+drop-down menu that appears.</p>
+<p>Clicking <b>Create</b> creates the category, which can be modified later. Clicking
+<b>Create and edit…</b> creates the category and reveals a <b>Create Category</b>
+pop-up window, in which the new attribute category can be configured and customized.</p>
+</div>
 
-To view the details related to the attribute category selected, click the
-internal link ➡️ (arrow) icon to the far-right of the Category field. Doing so
-reveals that attribute category’s detail form.
+Beneath the **Category** field are the **Display Type** options. The **Display
+Type** determines how this product is shown on the online store, **Point of
+Sale** dashboard, and **Product Configurator**.
 
-![A standard attribute category detail page accessible via its internal link
-arrow icon.](../../../../../_images/attribute-category-internal-link.png)
+The **Display Type** options are:
 
-Here, the Category Name and Sequence is displayed at the top. Followed by
-Related Attributes associated with the category. These attributes can be
-dragged-and-dropped into a desirable order of priority.
+  * **Radio** : options appear in a bullet-style list on the product page of the online store.
 
-Attributes can be directly added to the category, as well, by clicking Add a
-line.
+  * **Pills** : options appear as selectable buttons on the product page of the online store.
 
-Astuce
+  * **Select** : options appear in a drop-down menu on the product page of the online store.
 
-To create an attribute category directly from this field, start typing the
-name of the new category, then select either Create or Create and edit… from
-the drop-down menu that appears.
-
-Clicking Create creates the category, which can be modified later. Clicking
-Create and edit… creates the category and reveals a Create Category pop-up
-window, in which the new attribute category can be configured and customized.
-
-Beneath the Category field are the Display Type options. The Display Type
-determines how this product is shown on the online store, Point of Sale
-dashboard, and Product Configurator.
-
-The Display Type options are:
-
-  * Radio: options appear in a bullet-style list on the product page of the online store.
-
-  * Pills: options appear as selectable buttons on the product page of the online store.
-
-  * Select: options appear in a drop-down menu on the product page of the online store.
-
-  * Color: options appear as small, colored squares, which reflect any HTML color codes set, on the product page of the online store.
+  * **Color** : options appear as small, colored squares, which reflect any HTML color codes set, on the product page of the online store.
 
 ![Display Types on Product Configurator on the online store in
-Odoo.](../../../../../_images/display-types.png)
+Konvergo ERP.](../../../../../_images/display-types.png)
 
-The Variants Creation Mode field informs Odoo when to automatically create a
-new variant once an attribute is added to a product.
+The **Variants Creation Mode** field informs Konvergo ERP when to automatically create
+a new variant once an attribute is added to a product.
 
-  * Instantanément: crée toutes les variantes possibles dès que les attributs et les valeurs sont ajoutés à un modèle de produit.
+  * **Instantanément** : crée toutes les variantes possibles dès que les attributs et les valeurs sont ajoutés à un modèle de produit.
 
-  * Dynamically: creates variants **only** when corresponding attributes and values are added to a sales order.
+  * **Dynamically** : creates variants **only** when corresponding attributes and values are added to a sales order.
 
-  * Never (option): never automatically creates variants.
+  * **Never (option)** : never automatically creates variants.
 
-Avertissement
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Une fois ajouté à un produit, le <b>mode de création de variantes</b> d’un attribut ne peut être modifié.</p>
+</div>
 
-Une fois ajouté à un produit, le mode de création de variantes d’un attribut
-ne peut être modifié.
-
-Lastly, the eCommerce Filter Visibility field determines whether these
+Lastly, the **eCommerce Filter Visibility** field determines whether these
 attribute options are visible to the customer on the front-end, as they shop
 on the online store.
 
-  * Visible: the attribute values are visible to customers on the front-end.
+  * **Visible** : the attribute values are visible to customers on the front-end.
 
-  * Hidden: the attribute values are hidden from customers on the front-end.
+  * **Hidden** : the attribute values are hidden from customers on the front-end.
 
 ### Attribute values
 
-Attribute values should be added to the Attribute Values tab. Values can be
-added to an attribute at any time, if needed.
+Attribute values should be added to the **Attribute Values** tab. Values can
+be added to an attribute at any time, if needed.
 
-To add a value, click Add a line in the Attribute Values tab.
+To add a value, click **Add a line** in the **Attribute Values** tab.
 
-Then, enter the name of the value in the Value column. Next, check the box in
-the Is custom value column, if the value is custom (i.e. the customer gets to
-provide unique specifications that are specific to this particular value).
+Then, enter the name of the value in the **Value** column. Next, check the box
+in the **Is custom value** column, if the value is custom (i.e. the customer
+gets to provide unique specifications that are specific to this particular
+value).
 
-Note
-
-If the Display Type \- Color option is selected, the option to add an HTML
-color code will appear to the far-right of the value line, to make it easier
-for salespeople and customers to know exactly what color option they’re
-choosing.
-
-![Attribute values tab when add a line is clicked, showing the custom
-columns.](../../../../../_images/attribute-value-add-a-line.png)
-
-To choose a color, click the blank circle in the Color column, which reveals
-an HTML color selector pop-up window.
-
-![Selecting a color from the HTML color pop-up window that appears on
-attribute form.](../../../../../_images/picking-a-color.png)
-
-In this pop-up window, select a specific color by dragging the color slider to
-a particular hue, and clicking on the color portion directly on the color
-gradient window.
-
-Or, choose a specific color by clicking the _dropper_ icon, and selecting a
-desired color that’s currently clickable on the screen.
-
-Astuce
-
-Vous pouvez également créer des attributs directement à partir du modèle de
-produit en ajoutant une nouvelle ligne et en tapant le nom dans l’onglet
-Variantes.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>If the <b>Display Type</b> - <b>Color</b> option is selected, the option to add an HTML
+color code will appear to the far-right of the value line, to make it easier for salespeople and
+customers to know exactly what color option they’re choosing.</p>
+<img alt="Attribute values tab when add a line is clicked, showing the custom columns." class="align-center" src="../../../../../_images/attribute-value-add-a-line.png"/>
+<p>To choose a color, click the blank circle in the <b>Color</b> column, which reveals an HTML
+color selector pop-up window.</p>
+<img alt="Selecting a color from the HTML color pop-up window that appears on attribute form." class="align-center" src="../../../../../_images/picking-a-color.png"/>
+<p>In this pop-up window, select a specific color by dragging the color slider to a particular hue,
+and clicking on the color portion directly on the color gradient window.</p>
+<p>Or, choose a specific color by clicking the <em>dropper</em> icon, and selecting a desired color that’s
+currently clickable on the screen.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Vous pouvez également créer des attributs directement à partir du modèle de produit en ajoutant une nouvelle ligne et en tapant le nom dans l’onglet <b>Variantes</b>.</p>
+</div>
 
 Once an attribute is added to a product, that product is listed and
-accessible, via the attribute’s Related Products smart button. That button
+accessible, via the attribute’s **Related Products** smart button. That button
 lists every product in the database currently using that attribute.
 
 ## Variantes de produit
 
 Once an attribute is created, use the attribute (and its values) to create a
 product variant. To do that, go to Sales app ‣ Products ‣ Products, and select
-an existing product to view that desired product’s form. Or, click Create to
-create a new product, to which a product variant can be added.
+an existing product to view that desired product’s form. Or, click **Create**
+to create a new product, to which a product variant can be added.
 
-On the product form, click the Attributes & Variants tab to view, manage, and
-modify attributes and values for the product.
+On the product form, click the **Attributes & Variants** tab to view, manage,
+and modify attributes and values for the product.
 
-![The attributes and values tab on a typical product form in Odoo
+![The attributes and values tab on a typical product form in Konvergo ERP
 Sales.](../../../../../_images/attributes-values-tab.png)
 
-To add an attribute to a product, and subsequent attribute values, click Add a
-line in the Attributes & Variants tab. Then, choose the desired attribute from
-the drop-down menu that appears.
+To add an attribute to a product, and subsequent attribute values, click **Add
+a line** in the **Attributes & Variants** tab. Then, choose the desired
+attribute from the drop-down menu that appears.
 
-Astuce
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Attributes can be created directly from the <b>Attributes &amp; Variants</b> tab of a product
+form. To do that, start typing the name of the new attribute in the blank field, and select
+either <b>Create</b> or <b>Create and edit…</b> from the mini drop-down menu that
+appears.</p>
+<p>Clicking <b>Create</b> creates the attribute, which can be customized later. Clicking
+<b>Create and edit…</b> creates the attribute, and a <b>Create Attribute</b> pop-up
+form appears. In the pop-up form, proceed to modify the attribute in a number of ways.</p>
+</div>
 
-Attributes can be created directly from the Attributes & Variants tab of a
-product form. To do that, start typing the name of the new attribute in the
-blank field, and select either Create or Create and edit… from the mini drop-
-down menu that appears.
+Once an attribute is selected in the **Attribute** column, proceed to select
+the specific attribute values to apply to the product, via the drop-down menu
+available in the **Values** column.
 
-Clicking Create creates the attribute, which can be customized later. Clicking
-Create and edit… creates the attribute, and a Create Attribute pop-up form
-appears. In the pop-up form, proceed to modify the attribute in a number of
-ways.
-
-Once an attribute is selected in the Attribute column, proceed to select the
-specific attribute values to apply to the product, via the drop-down menu
-available in the Values column.
-
-Note
-
-There is no limit to how many values can be added.
-
-Astuce
-
-Des processus similaires de création de variantes de produit sont accessibles
-via les applications Achats, Inventaire et eCommerce.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>There is no limit to how many values can be added.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../../../websites/ecommerce/managing_products/variants">Variantes de produit</a></p>
+</div>0
 
 ### Configure variants
 
-To the far-right of the attribute line is a Configure button. When clicked,
-Odoo reveals a separate page showcasing those specific Product Variant Values.
+To the far-right of the attribute line is a **Configure** button. When
+clicked, Konvergo ERP reveals a separate page showcasing those specific **Product
+Variant Values**.
 
 ![The Product Variant Values page accessible via the Configure button on a
 product form.](../../../../../_images/product-variant-values.png)
 
-Here, the specific Value name, HTML Color Index (if applicable), and Value
-Price Extra are viewable.
+Here, the specific **Value** name, **HTML Color Index** (if applicable), and
+**Value Price Extra** are viewable.
 
-Note
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../../../websites/ecommerce/managing_products/variants">Variantes de produit</a></p>
+</div>1
 
-The Value Price Extra represents the increase in the sales price if the
-attribute is selected.
-
-When a value is clicked on the Product Variant Values page, Odoo reveals a
+When a value is clicked on the **Product Variant Values** page, Konvergo ERP reveals a
 separate page, detailing that value’s related details.
 
 ![A Product Variant Values page accessible via the Product Variants Values
 general page.](../../../../../_images/product-variant-value-page.png)
 
-On the specific product variant detail page, the Value and Value Price Extra
-fields can be found, along with an Exclude for field.
+On the specific product variant detail page, the **Value** and **Value Price
+Extra** fields can be found, along with an **Exclude for** field.
 
-In the Exclude for field, different Product Templates and specific Attribute
-Values can be added. When added, this specific attribute value will be
-excluded from those specific products.
+In the **Exclude for** field, different **Product Templates** and specific
+**Attribute Values** can be added. When added, this specific attribute value
+will be excluded from those specific products.
 
 ### Variants smart button
 
-When a product has attributes and variants configured in its Attributes &
-Variants tab, a Variants smart button appears at the top of the product form.
-The Variants smart button indicates how many variants are currently configured
-for that specific product.
+When a product has attributes and variants configured in its **Attributes &
+Variants** tab, a **Variants** smart button appears at the top of the product
+form. The **Variants** smart button indicates how many variants are currently
+configured for that specific product.
 
-![The variants smart button at the top of the product form in Odoo
+![The variants smart button at the top of the product form in Konvergo ERP
 Sales.](../../../../../_images/variants-smart-button.png)
 
-When the Variants smart button is clicked, Odoo reveals a separate page
+When the **Variants** smart button is clicked, Konvergo ERP reveals a separate page
 showcasing all the specific product variant combinations configured for that
 specific product.
 
 ![The variants page accessible via the variants smart button on the product
-form in Odoo.](../../../../../_images/variants-page.png)
+form in Konvergo ERP.](../../../../../_images/variants-page.png)
 
 ## Impact des variantes
 
 In addition to offering more detailed product options to customers, product
 variants have their own impacts that can be taken advantage of throughout the
-Odoo database.
+Konvergo ERP database.
 
-  * Barcode: barcodes are associated with each variant, instead of the product template. Each individual variant can have its own unique barcode/SKU.
+  * **Barcode** : barcodes are associated with each variant, instead of the product template. Each individual variant can have its own unique barcode/SKU.
 
-  * Price: every product variant has its own public price, which is the sum of the product template price _and_ any extra charges for particular attributes.
+  * **Price** : every product variant has its own public price, which is the sum of the product template price _and_ any extra charges for particular attributes.
 
-Example
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../../../websites/ecommerce/managing_products/variants">Variantes de produit</a></p>
+</div>2
 
-A red shirt’s sales price is $23 – because the shirt’s template price is $20,
-plus an additional $3 for the red color variant. Pricelist rules can be
-configured to apply to the product template, or to the variant.
+  * **Inventaire** : L’inventaire est compté pour chaque variante de produit individuelle. Sur le formulaire du modèle de produit, l’inventaire reflète la somme de toutes les variantes, mais l’inventaire réel est calculé par variante individuelle.
 
-  * Inventaire: L’inventaire est compté pour chaque variante de produit individuelle. Sur le formulaire du modèle de produit, l’inventaire reflète la somme de toutes les variantes, mais l’inventaire réel est calculé par variante individuelle.
+  * **Image** : Chaque variante de produit peut avoir sa propre image spécifique.
 
-  * Image: Chaque variante de produit peut avoir sa propre image spécifique.
-
-Note
-
-Les modifications du modèle de produit s’appliquent automatiquement à chaque
-variante de ce produit.
-
-Pour plus d'infos
-
-[Importer des produits](import.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../../../websites/ecommerce/managing_products/variants">Variantes de produit</a></p>
+</div>3 <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../../../websites/ecommerce/managing_products/variants">Variantes de produit</a></p>
+</div>4
 

@@ -5,7 +5,7 @@ impuestos incluidos (por ejemplo, en la mayoría de los comercios
 electrónicos). Pero, cuando se trabaja en un entorno B2B, las empresas suelen
 negociar los precios sin incluir los impuestos.
 
-Odoo permite el uso de ambos, siempre y cuando registre sus precios en el
+Konvergo ERP permite el uso de ambos, siempre y cuando registre sus precios en el
 producto, sin impuestos o con impuestos incluidos, pero no los dos al mismo
 tiempo. Si usted maneja todos sus precios con impuestos incluidos (o
 excluidos), aún puede crear fácilmente una orden de venta con un precio que
@@ -35,28 +35,19 @@ incluidos y el precio sin impuestos:
 
   * Impuestos incluidos: **8.26€ & 9.99€**
 
-Nota
-
-Si compra 100 piezas a 10€ con impuestos incluidos, el asunto se complica
-todavía más. Obtendrá: **1000€ (impuestos incluidos) = 826.45€ (precio) +
-173.55€ (impuestos)** Lo cual es muy diferente a una pieza a 8.26€ sin
-impuestos.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Si compra 100 piezas a 10€ con impuestos incluidos, el asunto se complica todavía más. Obtendrá: <b>1000€ (impuestos incluidos) = 826.45€ (precio) + 173.55€ (impuestos)</b> Lo cual es muy diferente a una pieza a 8.26€ sin impuestos.</p>
+</div>
 
 Esta documentación explica cómo manejar un caso de uso muy específico en el
 que se necesitan manejar los dos tipos de precios (con y sin impuestos) en el
 formulario de un producto dentro de la misma empresa.
 
-Nota
-
-En términos financieros, no obtendrá más ingresos si vende su producto a 10
-euros en lugar de 9.99 euros (con un impuesto del 21%), pues sus ingresos
-serán exactamente los mismos a 9.99 euros, solo que el impuesto será más alto
-por 0.01 euros. Por lo tanto, si tiene su comercio electrónico en Bélgica,
-ayúdele a sus clientes y establezca el precio en 9.99 EUR en lugar de 10 EUR.
-Tenga en cuenta que esto no aplica a 20 o 30 euros, otras tasas impositivas o
-una cantidad mayor a 1. También facilitará las cosas para usted, ya que podrá
-gestionar todo sin incluir impuestos, lo cual implicará menos errores y será
-más fácil para sus vendedores.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>En términos financieros, no obtendrá más ingresos si vende su producto a 10 euros en lugar de 9.99 euros (con un impuesto del 21%), pues sus ingresos serán exactamente los mismos a 9.99 euros, solo que el impuesto será más alto por 0.01 euros. Por lo tanto, si tiene su comercio electrónico en Bélgica, ayúdele a sus clientes y establezca el precio en 9.99 EUR en lugar de 10 EUR. Tenga en cuenta que esto no aplica a 20 o 30 euros, otras tasas impositivas o una cantidad mayor a 1. También facilitará las cosas para usted, ya que podrá gestionar todo sin incluir impuestos, lo cual implicará menos errores y será más fácil para sus vendedores.</p>
+</div>
 
 ## Configuración
 
@@ -65,7 +56,7 @@ más fácil para sus vendedores.
 La mejor manera de evitar esta complejidad es elegir solo una forma de
 gestionar sus precios y atenerse a ella: usar el precio sin impuestos o con
 impuestos incluidos. Defina cuál es el valor predeterminado almacenado en el
-formulario del producto, deje que Odoo calcule el otro en automático según la
+formulario del producto, deje que Konvergo ERP calcule el otro en automático según la
 lista de precios y la posición fiscal y negocie sus contratos con los clientes
 según corresponda. Esto funciona a la perfección y no tiene que hacer ninguna
 configuración específica.
@@ -96,11 +87,11 @@ adecuados en los ajustes de la aplicación **Sitio web**.
 Si utiliza tanto precios B2B como B2C en un solo sitio web, siga estas
 instrucciones:
 
-  1. Active el [modo de desarrollador](../../../general/developer_mode.html#developer-mode) y vaya a Ajustes generales ‣ Usuarios y empresas ‣ Grupos.
+  1. Active el [modo de desarrollador](../../../general/developer_mode#developer-mode) y vaya a Ajustes generales ‣ Usuarios y empresas ‣ Grupos.
 
   2. Abra `Técnico/Impuesto B2B` o `Técnico/Impuesto B2C`.
 
-  3. En la pestaña usuarios, agregue los usuarios que necesitan acceso al tipo de precio. Agregue usuarios B2C en el grupo B2C y usuarios B2B en el grupo B2B.
+  3. En la pestaña **usuarios** , agregue los usuarios que necesitan acceso al tipo de precio. Agregue usuarios B2C en el grupo B2C y usuarios B2B en el grupo B2B.
 
 ### Gestionar productos
 

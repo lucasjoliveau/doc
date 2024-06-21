@@ -2,43 +2,44 @@
 
 ## Configuration
 
-[Install](../../general/apps_modules.html#general-install) the following
+[Install](../../general/apps_modules#general-install) the following
 modules to get all the features of the Belgian localization, following the
 IFRS rules.
 
 Name | Technical name | Description  
 ---|---|---  
-Belgium - Accounting | `l10n_be` | Default [fiscal localization package](../fiscal_localizations.html#fiscal-localizations-packages).  
-Belgium - Accounting Reports | `l10n_be_reports` | Access to specific accounting reports for Belgium.  
-Belgium - Accounting Reports (post wizard) | `l10n_be_reports_post_wizard` | Enables the VAT wizard when posting a tax return journal entry.  
-Belgium - Import Bank CODA Statements | `l10n_be_coda` | Import CODA bank statements.  
-Belgium - Import SODA files | `l10n_be_soda` | Import SODA files.  
-Belgium - Disallowed Expenses Data | `l10n_be_disallowed_expenses` | Access to the use of disallowed expenses features.  
-Belgium - Payroll | `l10n_be_hr_payroll` | Access to the basic payroll features for Belgium.  
-Belgium - Payroll with Accounting | `l10n_be_hr_payroll_account` | Integration of accounting data with payroll.  
-Belgium - Payroll - Dimona | `l10n_be_hr_payroll_dimona` | Access to Dimona features for payroll.  
-Belgium - Payroll - Fleet | `l10n_be_hr_payroll_fleet` | Fleet features for payroll.  
-Salary Configurator (Belgium) | `l10n_be_hr_contract_salary` | Access to the salary configurator feature.  
+**Belgium - Accounting** | `l10n_be` | Default [fiscal localization package](../fiscal_localizations#fiscal-localizations-packages).  
+**Belgium - Accounting Reports** | `l10n_be_reports` | Access to specific accounting reports for Belgium.  
+**Belgium - Accounting Reports (post wizard)** | `l10n_be_reports_post_wizard` | Enables the VAT wizard when posting a tax return journal entry.  
+**Belgium - Import Bank CODA Statements** | `l10n_be_coda` | Import CODA bank statements.  
+**Belgium - Import SODA files** | `l10n_be_soda` | Import SODA files.  
+**Belgium - Disallowed Expenses Data** | `l10n_be_disallowed_expenses` | Access to the use of disallowed expenses features.  
+**Belgium - Payroll** | `l10n_be_hr_payroll` | Access to the basic payroll features for Belgium.  
+**Belgium - Payroll with Accounting** | `l10n_be_hr_payroll_account` | Integration of accounting data with payroll.  
+**Belgium - Payroll - Dimona** | `l10n_be_hr_payroll_dimona` | Access to Dimona features for payroll.  
+**Belgium - Payroll - Fleet** | `l10n_be_hr_payroll_fleet` | Fleet features for payroll.  
+**Salary Configurator (Belgium)** | `l10n_be_hr_contract_salary` | Access to the salary configurator feature.  
   
 ## Chart of accounts
 
-You can reach the Chart of accounts by going to Accounting ‣ Configuration ‣
-Accounting: Chart of Accounts.
+You can reach the **Chart of accounts** by going to Accounting ‣ Configuration
+‣ Accounting: Chart of Accounts.
 
 The Belgian chart of accounts includes pre-configured accounts as described in
-the PCMN. To add a new account, click New. A new line appears. Fill it in,
-click Save, and then Setup to configure it further.
+the PCMN. To add a new account, click **New**. A new line appears. Fill it in,
+click **Save** , and then **Setup** to configure it further.
 
-See also
-
-[Chart of accounts](../accounting/get_started/chart_of_accounts.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../accounting/get_started/chart_of_accounts">Chart of accounts</a></p>
+</div>
 
 ## Taxes
 
-Default Belgian taxes are created automatically when the Belgium - Accounting
-and the Belgium - Accounting Reports modules are installed. Each tax impacts
-the Belgian Tax Report, available by going to Accounting ‣ Reporting ‣
-Statements Reports: Tax Report.
+Default Belgian taxes are created automatically when the **Belgium -
+Accounting** and the **Belgium - Accounting Reports** modules are installed.
+Each tax impacts the Belgian **Tax Report** , available by going to Accounting
+‣ Reporting ‣ Statements Reports: Tax Report.
 
 In Belgium, the standard VAT rate is **21%** , but there are lower rates for
 some categories of goods and services. An intermediate rate of **12%** is
@@ -53,43 +54,42 @@ In Belgium, some taxes are not fully deductible, such as taxes on the
 maintenance of cars. This means a part of these taxes is considered as an
 expense.
 
-In Odoo, you can configure non-deductible taxes by creating tax rules for
+In Konvergo ERP, you can configure non-deductible taxes by creating tax rules for
 these taxes and linking them to the corresponding accounts. This way, the
 system automatically calculates the taxes and allocates them to the
 appropriate accounts.
 
 To configure a new non-deductible tax, go to Accounting ‣ Configuration ‣
-Accounting: Taxes, and click New:
+Accounting: Taxes, and click **New** :
 
-  1. Add a line and select Base in the Based On column;
+  1. **Add a line** and select **Base** in the **Based On** column;
 
-  2. Add a line, then select on tax in the Based on column and enter the **non-deductible** percentage in the % column;
+  2. **Add a line** , then select **on tax** in the **Based on** column and enter the **non-deductible** percentage in the **%** column;
 
-  3. On the of tax line, select the Tax Grid(s) related to your tax;
+  3. On the **of tax** line, select the **Tax Grid(s)** related to your tax;
 
-  4. Add a line with the **deductible** percentage in the % column;
+  4. **Add a line** with the **deductible** percentage in the **%** column;
 
-  5. Set of tax in Based On;
+  5. Set **of tax** in **Based On** ;
 
-  6. Select 411000 VAT recoverable as account, and select the related tax grid.
+  6. Select **411000 VAT recoverable** as account, and select the related tax grid.
 
 Once you have created a non-deductible tax, you can apply it to your
 transactions by selecting the appropriate tax during the encoding of bills and
 credit notes. The system automatically calculates the tax amount and allocates
 it to the corresponding accounts based on the tax rules configured.
 
-Example
-
-With the Belgian localization, the **21% car** tax is created by default (50%
-non-deductible).
-
-![Example of not-fully deductible tax](../../../_images/deductible-tax.png)
-
-See also
-
-  * [Taxes](../accounting/taxes.html)
-
-  * [Tax return (VAT declaration)](../accounting/reporting/tax_returns.html)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>With the Belgian localization, the <b>21% car</b> tax is created by default (50% non-deductible).</p>
+<img alt="Example of not-fully deductible tax" src="../../../_images/deductible-tax.png"/>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../accounting/taxes">Taxes</a></p></li>
+<li><p><a href="../accounting/reporting/tax_returns">Tax return (VAT declaration)</a></p></li>
+</ul>
+</div>
 
 ## Reports
 
@@ -111,10 +111,10 @@ You can access Belgian-specific versions of reports by clicking on the
 **book** icon when on a report and selecting its Belgian version: **(BE)**.
 
 ![Belgian version of reports](../../../_images/belgian-reports.png)
-
-See also
-
-[Reporting](../accounting/reporting.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../accounting/reporting">Reporting</a></p>
+</div>
 
 ### Disallowed expenses report
 
@@ -126,29 +126,33 @@ Reporting ‣ Management: Disallowed Expenses. It allows financial results in
 real-time, and periodic changes. This report is generated based on the
 **disallowed expenses categories** that you can reach by going to Accounting ‣
 Configuration ‣ Management: Disallowed Expenses Categories. Some categories
-already exist by default but do not have any rates. Click on Set Rates to
+already exist by default but do not have any rates. Click on **Set Rates** to
 update a specific category.
 
-Tip
-
-  * You can add multiple rates for various dates. In that case, the rate used to calculate the expense depends on the date at which it is calculated, and the rate set for that date.
-
-  * If you have the **Fleet** app installed, tick the Car Category box when applicable. This makes the vehicle mandatory while booking a vendor bill.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><ul>
+<li><p>You can add multiple rates for various dates. In that case, the rate used to calculate the
+expense depends on the date at which it is calculated, and the rate set for that date.</p></li>
+<li><p>If you have the <b>Fleet</b> app installed, tick the <b>Car Category</b> box when applicable.
+This makes the vehicle mandatory while booking a vendor bill.</p></li>
+</ul>
+</div>
 
 To link a disallowed expenses category with a specific account, go to
 Accounting ‣ Configuration ‣ Acounting: Chart of Accounts. Find the account
-you want, and click on Setup. Add the Disallowed Expense category in the
-Disallowed Expenses field. From now, when an expense is created with this
-account, the disallowed expense is calculated based on the rate mentioned in
-the Disallowed Expense category.
+you want, and click on **Setup**. Add the **Disallowed Expense category** in
+the **Disallowed Expenses** field. From now, when an expense is created with
+this account, the disallowed expense is calculated based on the rate mentioned
+in the **Disallowed Expense category**.
 
 Let’s take an example reflecting **restaurant** and **car expenses**.
 
 #### Restaurant expenses
 
 In Belgium, 31% of **restaurant** expenses are non-deductible. Create a new
-**disallowed expenses category** and set both Related Account(s) and Current
-Rate.
+**disallowed expenses category** and set both **Related Account(s)** and
+**Current Rate**.
 
 ![Disallowed expenses categories](../../../_images/restaurant-expenses.png)
 
@@ -156,18 +160,18 @@ Rate.
 
 In Belgium, the deductible percentage varies from car to car and, therefore,
 should be indicated for each vehicle. To do so, open Fleet and select a
-vehicle. In the Tax info tab, go to the Disallowed Expenses Rate section and
-click on Add a line. Add a Start Date and a %. The amounts go in the same
-account for all car expenses.
+vehicle. In the **Tax info** tab, go to the **Disallowed Expenses Rate**
+section and click on **Add a line**. Add a **Start Date** and a **%**. The
+amounts go in the same account for all car expenses.
 
 When you create a bill for car expenses, you can link each expense to a
-specific car by filling the Vehicle column, so the right percentage is
+specific car by filling the **Vehicle** column, so the right percentage is
 applied.
 
 ![Disallowed expenses categories](../../../_images/car-bill.png)
 
-The vehicle split option available in the disallowed expenses report allows
-you to see the rate and disallowed amount for each car.
+The **vehicle split** option available in the disallowed expenses report
+allows you to see the rate and disallowed amount for each car.
 
 ![Disallowed expenses categories](../../../_images/vehicle-split.png)
 
@@ -179,26 +183,26 @@ Annually, a **281.50 fee form** must be reported to the fiscal authorities. To
 do so, the tag `281.50` must be added on the **contact form** of the entities
 concerned by the **281.50** fee. To add the tag, open Contacts, select the
 person or company you want to create a **281.50 fee form** for, and add the
-`281.50` tag in the Tags field.
+`281.50` tag in the **Tags** field.
 
 ![add the tag 281.50 on a contact form](../../../_images/281-50.png)
-
-Note
-
-Make sure the **street, zip code, country** , and **VAT number** are also
-informed on the **Contact form**.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Make sure the <b>street, zip code, country</b>, and <b>VAT number</b> are also informed on the
+<b>Contact form</b>.</p>
+</div>
 
 Then, depending on the nature of the expense, add the corresponding `281.50`
 tag on the impact accounts. To do so, go to Accounting ‣ Configuration ‣
-Accounting: Chart of Accounts, and click on Setup to add the corresponding
-`281.50` tag on the impacted accounts, i.e., 281.50 - Commissions, depending
-on the nature of the expense.
+Accounting: Chart of Accounts, and click on **Setup** to add the corresponding
+`281.50` tag on the impacted accounts, i.e., **281.50 - Commissions** ,
+depending on the nature of the expense.
 
 ### Form 325
 
 You can create a **325 form** by going to Accounting ‣ Reporting ‣ Belgium:
 Create 325 form. A new page pops up: select the right options and click
-Generate 325 form. To open an already generated **325 form** , go to
+**Generate 325 form**. To open an already generated **325 form** , go to
 Accounting ‣ Reporting ‣ Belgium: Open 325 forms.
 
 ![Add the tag 281-50 on a contact form](../../../_images/325-form.png)
@@ -208,28 +212,26 @@ Accounting ‣ Reporting ‣ Belgium: Open 325 forms.
 ### CODA
 
 **CODA** is an electronic XML format used to import Belgian bank statements.
-You can download CODA files from your bank and import them directly into Odoo
-by clicking Import Statement from your Bank journal on your dashboard.
+You can download CODA files from your bank and import them directly into Konvergo ERP
+by clicking **Import Statement** from your **Bank** journal on your dashboard.
 
-![Import CODA files](../../../_images/coda-import.png)
-
-Note
-
-The Belgium - Import Bank CODA Statements module is installed by default when
-the Belgium - Accounting and the Belgium - Accounting Reports modules are
-installed.
-
-See also
-
-[Import bank statements
-files](../accounting/bank/transactions.html#transactions-import)
+![Import CODA files](../../../_images/coda-import.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The <b>Belgium - Import Bank CODA Statements</b> module is installed by default when the
+<b>Belgium - Accounting</b> and the <b>Belgium - Accounting Reports</b> modules are
+installed.</p>
+</div>
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../accounting/bank/transactions#transactions-import"><span class="std std-ref">Import bank statements files</span></a></p>
+</div>
 
 ### SODA
 
 **SODA** is an electronic XML format used to import accounting entries related
 to salaries. SODA files can be imported into the journal you use to record
-salaries by going to your Accounting **dashboard** and clicking Upload in the
-related journal card form.
+salaries by going to your Accounting **dashboard** and clicking **Upload** in
+the related journal card form.
 
 Once your **SODA** files are imported, the entries are created automatically
 in your ‘salary’ journal.
@@ -238,15 +240,15 @@ in your ‘salary’ journal.
 
 ## Electronic invoicing
 
-Odoo supports the **E-FFF** and **Peppol BIS Billing 3.0 (UBL)** electronic
+Konvergo ERP supports the **E-FFF** and **Peppol BIS Billing 3.0 (UBL)** electronic
 invoicing formats. To enable them, go to Accounting ‣ Configuration ‣ Journals
-‣ Customer Invoices ‣ Advanced Settings ‣ Electronic Invoicing, and tick E-FFF
-(BE) and Peppol BIS Billing 3.0.
+‣ Customer Invoices ‣ Advanced Settings ‣ Electronic Invoicing, and tick
+**E-FFF (BE)** and **Peppol BIS Billing 3.0**.
 
-See also
-
-[Electronic invoicing
-(EDI)](../accounting/customer_invoices/electronic_invoicing.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../accounting/customer_invoices/electronic_invoicing">Electronic invoicing (EDI)</a></p>
+</div>
 
 ## Cash discount
 
@@ -255,12 +257,12 @@ calculated based on the discounted total amount, whether the customer benefits
 from the discount or not.
 
 To apply the right tax amount and report it correctly in your VAT return, set
-the tax reduction as Always (upon invoice).
+the tax reduction as **Always (upon invoice)**.
 
-See also
-
-[Cash discounts and tax
-reduction](../accounting/customer_invoices/cash_discounts.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../accounting/customer_invoices/cash_discounts">Cash discounts and tax reduction</a></p>
+</div>
 
 ## Fiscal certification: POS restaurant
 
@@ -273,28 +275,29 @@ This government-certified system entails the use of a certified POS system,
 along with a device called a Fiscal Data Module (or **black box**) and a VAT
 Signing Card.
 
-Important
-
-Do not forget to register as _foodservice industry manager_ on the [Federal
-Public Service Finance registration
-form](https://www.systemedecaisseenregistreuse.be/fr/enregistrement).
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>With the Belgian localization, the <b>21% car</b> tax is created by default (50% non-deductible).</p>
+<img alt="Example of not-fully deductible tax" src="../../../_images/deductible-tax.png"/>
+</div>0
 
 ### Certified POS system
 
-The Odoo POS system is certified for the major versions of databases hosted on
-**Odoo Online** and **Odoo.sh**. Please refer to the following table to ensure
+The Konvergo ERP POS system is certified for the major versions of databases hosted on
+**Konvergo ERP Online** and **Konvergo ERP.sh**. Please refer to the following table to ensure
 that your POS system is certified.
 
-| Odoo Online | Odoo.sh | On-Premise  
+| Konvergo ERP Online | Konvergo ERP.sh | On-Premise  
 ---|---|---|---  
-Odoo 16.0 | Certified | Certified | Not certified  
-Odoo 15.2 | Not certified | Not certified | Not certified  
-Odoo 15.0 | Certified | Certified | Not certified  
-Odoo 14.0 | Certified | Certified | Not certified  
-  
-See also
-
-[Supported versions](../../../administration/supported_versions.html)
+Konvergo ERP 16.0 | Certified | Certified | Not certified  
+Konvergo ERP 15.2 | Not certified | Not certified | Not certified  
+Konvergo ERP 15.0 | Certified | Certified | Not certified  
+Konvergo ERP 14.0 | Certified | Certified | Not certified  
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>With the Belgian localization, the <b>21% car</b> tax is created by default (50% non-deductible).</p>
+<img alt="Example of not-fully deductible tax" src="../../../_images/deductible-tax.png"/>
+</div>1
 
 A [certified POS system](https://www.systemedecaisseenregistreuse.be/systemes-
 certifies) must adhere to rigorous government regulations, which means it
@@ -316,15 +319,17 @@ operates differently from a non-certified POS.
 
     * Use a POS that is not connected to an IoT box.
 
-  * The [cash rounding](../../sales/point_of_sale/pricing/cash_rounding.html) feature must be activated and set to a Rounding Precision of `0,05` and a Rounding Method set as Half-Up.
+  * The [cash rounding](../../sales/point_of_sale/pricing/cash_rounding) feature must be activated and set to a **Rounding Precision** of `0,05` and a **Rounding Method** set as **Half-Up**.
 
-  * Taxes must be set as included in the price. To set it up, go to Point of Sale ‣ Configuration ‣ Settings, and from the Accounting section, open the Default Sales Tax form by clicking the arrow next to the default sales tax field. There, click Advanced Options and enable Included in Price.
+  * Taxes must be set as included in the price. To set it up, go to Point of Sale ‣ Configuration ‣ Settings, and from the **Accounting** section, open the **Default Sales Tax** form by clicking the arrow next to the default sales tax field. There, click **Advanced Options** and enable **Included in Price**.
 
-  * At the start of a POS session, users must click Work in to clock in. Doing so allows the registration of POS orders. If users are not clocked in, they cannot make POS orders. Likewise, they must click Work Out to clock out at the end of the session.
+  * At the start of a POS session, users must click **Work in** to clock in. Doing so allows the registration of POS orders. If users are not clocked in, they cannot make POS orders. Likewise, they must click **Work Out** to clock out at the end of the session.
 
-Warning
-
-If you configure a POS to work with a FDM, you cannot use it again without it.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>With the Belgian localization, the <b>21% car</b> tax is created by default (50% non-deductible).</p>
+<img alt="Example of not-fully deductible tax" src="../../../_images/deductible-tax.png"/>
+</div>2
 
 ### Fiscal Data Module (FDM)
 
@@ -334,12 +339,11 @@ information. Concretely, a **hash** (unique code) is generated for each POS
 order and added to its receipt. This allows the government to verify that all
 revenue is declared.
 
-Warning
-
-Only the FDM from **Boîtenoire.be** with the [FDM certificate number
-BMC04](https://www.systemedecaisseenregistreuse.be/fr/systemes-
-certifies#FDM%20certifiés) is supported by Odoo. [Contact the manufacturer
-(GCV BMC)](https://www.boîtenoire.be/contact) to order one.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>With the Belgian localization, the <b>21% car</b> tax is created by default (50% non-deductible).</p>
+<img alt="Example of not-fully deductible tax" src="../../../_images/deductible-tax.png"/>
+</div>3
 
 #### Configuration
 
@@ -358,7 +362,7 @@ following hardware:
 
 ##### Black box module
 
-As a pre-requisite, [activate](../../general/apps_modules.html#general-
+As a pre-requisite, [activate](../../general/apps_modules#general-
 install) the `Belgian Registered Cash Register` module (technical name:
 `pos_blackbox_be`).
 
@@ -366,24 +370,22 @@ install) the `Belgian Registered Cash Register` module (technical name:
 modules.png)
 
 Once the module is activated, add your VAT number to your company information.
-To set it up, go to Settings ‣ Companies ‣ Update Info, and fill in the VAT
-field. Then, enter a national registration number for every staff member who
-operates the POS system. To do so, go to the Employees app and open an
-employee form. There, go to HR settings tab ‣ Attendance/Point of Sale, and
-fill in the INSZ or BIS number field.
+To set it up, go to Settings ‣ Companies ‣ Update Info, and fill in the
+**VAT** field. Then, enter a national registration number for every staff
+member who operates the POS system. To do so, go to the **Employees** app and
+open an employee form. There, go to HR settings tab ‣ Attendance/Point of
+Sale, and fill in the **INSZ or BIS number** field.
 
 ![ISNZ or BIS number field on employee form](../../../_images/bis-number.png)
-
-Tip
-
-To input your information, click on your avatar, go to My Profile ‣ Preference
-tab, and enter your INSZ or BIS number in the designated field.
-
-Warning
-
-You must configure the FDM directly in the production database. Utilizing it
-in a testing environment may result in incorrect data being stored within the
-FDM.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>With the Belgian localization, the <b>21% car</b> tax is created by default (50% non-deductible).</p>
+<img alt="Example of not-fully deductible tax" src="../../../_images/deductible-tax.png"/>
+</div>4 <div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>With the Belgian localization, the <b>21% car</b> tax is created by default (50% non-deductible).</p>
+<img alt="Example of not-fully deductible tax" src="../../../_images/deductible-tax.png"/>
+</div>5
 
 ##### IoT Box
 
@@ -398,20 +400,23 @@ form](https://www.odoo.com/help) and provide the following information:
   * the Mac address of your IoT Box.
 
 Once your IoT box is certified,
-[connect](../../general/iot/config/connect.html) it to your database. To
+[connect](../../general/iot/config/connect) it to your database. To
 verify that the IoT Box recognizes the FDM, go to the IoT homepage and scroll
-down the IOT Device section, which should display the FDM.
+down the **IOT Device** section, which should display the FDM.
 
 ![Hardware status page on a registered IoT Box](../../../_images/iot-
 devices.png)
 
 Then, add the IoT to your POS. To do so, go to Point of Sale ‣ Configuration ‣
-Point of Sale, select your POS, scroll down to the Connected Device section,
-and enable IoT Box. Lastly, add the FMD in the Fiscal Data Module field.
+Point of Sale, select your POS, scroll down to the **Connected Device**
+section, and enable **IoT Box**. Lastly, add the FMD in the **Fiscal Data
+Module** field.
 
-Note
-
-To be able to use an FDM, you must at least connect one Receipt Printer.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>With the Belgian localization, the <b>21% car</b> tax is created by default (50% non-deductible).</p>
+<img alt="Example of not-fully deductible tax" src="../../../_images/deductible-tax.png"/>
+</div>6
 
 ### VAT signing card
 

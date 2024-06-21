@@ -9,11 +9,10 @@ Allez à l’application Fabrication ‣ Configuration ‣ Paramètres et active
 fonctionnalité Programme directeur de production avant de cliquer sur
 Enregistrer.
 
-Astuce
-
-Dans les paramètres du PDP, vous pouvez définir la page de temps de votre PDP
-(mensuel/hebdomadaire/quotidien) et le nombre de périodes que vous voulez
-afficher à tout moment.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Dans les paramètres du PDP, vous pouvez définir la page de temps de votre PDP (mensuel/hebdomadaire/quotidien) et le nombre de périodes que vous voulez afficher à tout moment.</p>
+</div>
 
 Allez à présent à Planning ‣ Programme directeur de production et cliquez sur
 _Ajouter un produit_. Vous pouvez définir le stock de sécurité (= le stock
@@ -56,7 +55,7 @@ facilement y accéder en cliquant sur la cellule _Réassort réel_.
 
 Si vous modifiez manuellement la quantité de _réassort suggéré_ , une petite
 croix apparaîtra à gauche de la cellule. Si vous souhaitiez revenir à la
-valeur calculée automatiquement par Odoo, cliquez simplement sur la croix.
+valeur calculée automatiquement par Konvergo ERP, cliquez simplement sur la croix.
 
 ## Signification de la couleur de la cellule
 

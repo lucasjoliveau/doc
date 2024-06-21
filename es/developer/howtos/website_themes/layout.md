@@ -14,7 +14,7 @@ In this chapter, you will learn how to:
 
 ## Default
 
-An Odoo page combines cross-page and unique elements. Cross-page elements are
+An Konvergo ERP page combines cross-page and unique elements. Cross-page elements are
 the same on every page, while unique elements are only related to a specific
 page. By default, a page has two cross-page elements, the header and the
 footer, and a unique main element that contains the specific content of that
@@ -33,7 +33,7 @@ page.
     </div>
     
 
-Any Odoo XML file starts with encoding specifications. After that, you must
+Any Konvergo ERP XML file starts with encoding specifications. After that, you must
 write your code inside an `<odoo>` tag.
 
     
@@ -44,20 +44,19 @@ write your code inside an `<odoo>` tag.
     </odoo>
     
 
-Nota
-
-Using precise file names is important to find information through all modules
-quickly. File names should only contain lowercase alphanumerics and
-underscores.
-
-Always add an empty line at the end of your file. This can be done
-automatically by configuring your IDE.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Using precise file names is important to find information through all modules quickly. File names
+should only contain lowercase alphanumerics and underscores.</p>
+<p>Always add an empty line at the end of your file. This can be done automatically by configuring
+your IDE.</p>
+</div>
 
 ## XPath
 
 XPath (XML Path Language) is an expression language that enables you to
 navigate through elements and attributes in an XML document easily. XPath is
-used to extend standard Odoo templates.
+used to extend standard Konvergo ERP templates.
 
 A view is coded the following way.
 
@@ -76,31 +75,32 @@ name | Human-readable name of the modified view
   
 For each XPath, you modify two attributes: **expression** and **position**.
 
-Example
-
-`/website_airproof/views/website_templates.xml`
-
-    
-    
-    <template id="layout" inherit_id="website.layout" name="Welcome Message">
-       <xpath expr="//header" position="before">
-          <!-- Content -->
-       </xpath>
-    </template>
-    
-
-This XPath adds a welcome message right before the page content.
-
-Advertencia
-
-Be careful when replacing default elements” attributes. As your theme extends
-the default one, your changes will take priority over any future Odoo update.
-
-Nota
-
-  * You should update your module every time you create a new template or record.
-
-  * _XML IDs_ of inheriting views should use the same _ID_ as the original record. It helps to find all inheritance at a glance. As final _XML IDs_ are prefixed by the module that creates them, there is no overlap.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><code>/website_airproof/views/website_templates.xml</code></span><a href="#id4" title="Enlace permanente a este código fuente">¶</a></div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"layout"</span> <span class="na">inherit_id=</span><span class="s">"website.layout"</span> <span class="na">name=</span><span class="s">"Welcome Message"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;xpath</span> <span class="na">expr=</span><span class="s">"//header"</span> <span class="na">position=</span><span class="s">"before"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- Content --&gt;</span>
+   <span class="nt">&lt;/xpath&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>This XPath adds a welcome message right before the page content.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Be careful when replacing default elements” attributes. As your theme extends the default one,
+your changes will take priority over any future Konvergo ERP update.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><ul>
+<li><p>You should update your module every time you create a new template or record.</p></li>
+<li><p><em>XML IDs</em> of inheriting views should use the same <em>ID</em> as the original record. It helps to find
+all inheritance at a glance. As final <em>XML IDs</em> are prefixed by the module that creates them,
+there is no overlap.</p></li>
+</ul>
+</div>
 
 ### Expressions
 
@@ -132,70 +132,52 @@ inside | Adds the XPath content inside the targeted node.
 before | Adds the XPath content before the targeted node.  
 after | Adds the XPath content after the targeted node.  
 attributes | Adds the XPath content inside an attribute.  
-  
-Example
-
-This XPath adds a `<div>` before the `<nav>` that is a direct child of the
-`<header>`.
-
-    
-    
-    <xpath expr="//header/nav" position="before">
-       <div>Some content before the header</div>
-    </xpath>
-    
-
-This XPath adds `x_airproof_header` in the class attribute of the header. You
-also need to define a `separator` attribute to add a space before the class
-you are adding.
-
-    
-    
-    <xpath expr="//header" position="attributes">
-       <attribute name="class" add="x_airproof_header" separator=" "/>
-    </xpath>
-    
-
-This XPath removes `x_airproof_header` in the class attribute of the header.
-In this case, you don’t need to use the `separator` attribute.
-
-    
-    
-    <xpath expr="//header" position="attributes">
-       <attribute name="class" remove="x_airproof_header" />
-    </xpath>
-    
-
-This XPath removes the first element with a `.breadcrumb` class.
-
-    
-    
-    <xpath expr="//*[hasclass('breadcrumb')]" position="replace"/>
-    
-
-This XPath adds an extra `<li>` element after the last child of the `<ul>`
-element.
-
-    
-    
-    <xpath expr="//ul" position="inside">
-       <li>Last element of the list</li>
-    </xpath>
-    
-
-Ver también
-
-You can find more information about XPath in this [cheat
-sheet](https://devhints.io/xpath).
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>This XPath adds a <code>&lt;div&gt;</code> before the <code>&lt;nav&gt;</code> that is a direct child of the <code>&lt;header&gt;</code>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xpath</span> <span class="na">expr=</span><span class="s">"//header/nav"</span> <span class="na">position=</span><span class="s">"before"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div&gt;</span>Some content before the header<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/xpath&gt;</span>
+</pre></div>
+</div>
+<p>This XPath adds <code>x_airproof_header</code> in the class attribute of the header. You also need to define
+a <code>separator</code> attribute to add a space before the class you are adding.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xpath</span> <span class="na">expr=</span><span class="s">"//header"</span> <span class="na">position=</span><span class="s">"attributes"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">add=</span><span class="s">"x_airproof_header"</span> <span class="na">separator=</span><span class="s">" "</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xpath&gt;</span>
+</pre></div>
+</div>
+<p>This XPath removes <code>x_airproof_header</code> in the class attribute of the header. In this case, you
+don’t need to use the <code>separator</code> attribute.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xpath</span> <span class="na">expr=</span><span class="s">"//header"</span> <span class="na">position=</span><span class="s">"attributes"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">remove=</span><span class="s">"x_airproof_header"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/xpath&gt;</span>
+</pre></div>
+</div>
+<p>This XPath removes the first element with a <code>.breadcrumb</code> class.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xpath</span> <span class="na">expr=</span><span class="s">"//*[hasclass('breadcrumb')]"</span> <span class="na">position=</span><span class="s">"replace"</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>This XPath adds an extra <code>&lt;li&gt;</code> element after the last child of the <code>&lt;ul&gt;</code> element.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xpath</span> <span class="na">expr=</span><span class="s">"//ul"</span> <span class="na">position=</span><span class="s">"inside"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;li&gt;</span>Last element of the list<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/xpath&gt;</span>
+</pre></div>
+</div>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>You can find more information about XPath in this <a href="https://devhints.io/xpath">cheat sheet</a>.</p>
+</div>
 
 ## QWeb
 
-QWeb is the primary templating engine used by Odoo. It is an XML templating
+QWeb is the primary templating engine used by Konvergo ERP. It is an XML templating
 engine mainly used to generate HTML fragments and pages.
 
-Ver también
-
-[QWeb templates documentation](../../reference/frontend/qweb.html).
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="../../reference/frontend/qweb">QWeb templates documentation</a>.</p>
+</div>
 
 ## Background
 
@@ -240,9 +222,10 @@ logo. You can easily add new elements or create your own template.
 
 Enable one of the header default templates.
 
-Importante
-
-Don’t forget that you may need to disable the active header template first.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Don’t forget that you may need to disable the active header template first.</p>
+</div>
 
 `/website_airproof/static/src/scss/primary_variables.scss`
 
@@ -268,9 +251,10 @@ Don’t forget that you may need to disable the active header template first.
 
 Create your own template and add it to the list.
 
-Importante
-
-Don’t forget that you may need to disable the active header template first.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Don’t forget that you may need to disable the active header template first.</p>
+</div>
 
 **Option**
 
@@ -297,7 +281,7 @@ data-customize-website-variable | The name given to the variable
 data-img | The thumbnail of the custom template shown in the templates selection on the Website Builder  
   
 Now you have to explicitly define that you want to use your custom template in
-the Odoo SASS variables.
+the Konvergo ERP SASS variables.
 
 `/website_airproof/static/src/scss/primary_variables.scss`
 
@@ -420,11 +404,11 @@ Don’t forget to record the logo of your website in the database.
     </t>
     
 
-Ver también
-
-You can add a [header overlay](pages.html#header-overlay) to position your
-header over the content of your page. It has to be done on each page
-individually.
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>You can add a <a href="pages#header-overlay"><span class="std std-ref">header overlay</span></a> to position your header over the content of
+your page. It has to be done on each page individually.</p>
+</div>
 
 ## Footer
 
@@ -569,11 +553,20 @@ You can find some hints below to help you make your website responsive.
 
 ### Bootstrap
 
-Ver también
-
-  * [Bootstrap documentation on responsive breakpoints](https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints)
-
-  * [Bootstrap documentation on display property](https://getbootstrap.com/docs/4.6/utilities/display/)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><code>/website_airproof/views/website_templates.xml</code></span><a href="#id4" title="Enlace permanente a este código fuente">¶</a></div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"layout"</span> <span class="na">inherit_id=</span><span class="s">"website.layout"</span> <span class="na">name=</span><span class="s">"Welcome Message"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;xpath</span> <span class="na">expr=</span><span class="s">"//header"</span> <span class="na">position=</span><span class="s">"before"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- Content --&gt;</span>
+   <span class="nt">&lt;/xpath&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>This XPath adds a welcome message right before the page content.</p>
+</div>0
 
 **Font size**
 
@@ -581,9 +574,20 @@ As of v4.3.0, Bootstrap ships with the option to enable responsive font sizes,
 allowing text to scale more naturally across device and viewport sizes. Enable
 them by changing the `$enable-responsive-font-sizes` Sass variable to true.
 
-Ver también
-
-[Responsive Font Size GitHub](https://github.com/twbs/rfs/tree/v8.1.0)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><code>/website_airproof/views/website_templates.xml</code></span><a href="#id4" title="Enlace permanente a este código fuente">¶</a></div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"layout"</span> <span class="na">inherit_id=</span><span class="s">"website.layout"</span> <span class="na">name=</span><span class="s">"Welcome Message"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;xpath</span> <span class="na">expr=</span><span class="s">"//header"</span> <span class="na">position=</span><span class="s">"before"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- Content --&gt;</span>
+   <span class="nt">&lt;/xpath&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>This XPath adds a welcome message right before the page content.</p>
+</div>1
 
 ### Website Builder
 

@@ -19,7 +19,7 @@ Go to Accounting ‣ Configuration ‣ Cash Roundings, and click on _Create_.
 Define here your _Rounding Precision_ , _Rounding Strategy_ , and _Rounding
 Method_.
 
-Odoo supports two **rounding strategies** :
+Konvergo ERP supports two **rounding strategies** :
 
   1. **Add a rounding line** : a _rounding_ line is added on the invoice. You have to define which account records the cash roundings.
 

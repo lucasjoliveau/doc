@@ -1,25 +1,25 @@
 # Building a Website
 
-Peligro
-
-This tutorial is outdated. We recommend reading [Getting
-started](getting_started.html) instead.
-
-Advertencia
-
-  * This guide assumes [basic knowledge of Python](http://docs.python.org/2/tutorial/)
-
-  * This guide assumes [an installed Odoo](../../administration/on_premise.html)
+<div class="alert alert-danger">
+<p class="alert-title">
+Peligro</p><p>This tutorial is outdated. We recommend reading <a href="getting_started">Getting started</a> instead.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><ul>
+<li><p>This guide assumes <a href="http://docs.python.org/2/tutorial/">basic knowledge of Python</a></p></li>
+<li><p>This guide assumes <a href="../../administration/on_premise">an installed Konvergo ERP</a></p></li>
+</ul>
+</div>
 
 ## Creating a basic module
 
-In Odoo, tasks are performed by creating modules.
+In Konvergo ERP, tasks are performed by creating modules.
 
-Modules customize the behavior of an Odoo installation, either by adding new
+Modules customize the behavior of an Konvergo ERP installation, either by adding new
 behaviors or by altering existing ones (including behaviors added by other
 modules).
 
-[Odoo’s scaffolding](../reference/cli.html#reference-cmdline-scaffold) can
+[Konvergo ERP’s scaffolding](../reference/cli#reference-cmdline-scaffold) can
 setup a basic module. To quickly get started simply invoke:
 
     
@@ -37,7 +37,7 @@ We have a «complete» module ready for installation.
 
 Although it does absolutely nothing we can install it:
 
-  * start the Odoo server
+  * start the Konvergo ERP server
     
         $ ./odoo-bin --addons-path addons,my-modules
     
@@ -50,14 +50,14 @@ Although it does absolutely nothing we can install it:
 
   * in the top-right corner remove the _Installed_ filter and search for _academy_
 
-  * click the Install button for the _Academy_ module
+  * click the **Install** button for the _Academy_ module
 
 ## To the browser
 
-[Controllers](../reference/backend/http.html#reference-controllers) interpret
+[Controllers](../reference/backend/http#reference-controllers) interpret
 browser requests and send data back.
 
-Add a simple controller and ensure it is imported by `__init__.py` (so Odoo
+Add a simple controller and ensure it is imported by `__init__.py` (so Konvergo ERP
 can find it):
 
 `academy/controllers.py`
@@ -91,9 +91,9 @@ your «page» appear:
 Generating HTML in Python isn’t very pleasant.
 
 The usual solution is [templates](https://en.wikipedia.org/wiki/Web_template),
-pseudo-documents with placeholders and display logic. Odoo allows any Python
+pseudo-documents with placeholders and display logic. Konvergo ERP allows any Python
 templating system, but provides its own
-[QWeb](../reference/frontend/qweb.html#reference-qweb) templating system which
+[QWeb](../reference/frontend/qweb#reference-qweb) templating system which
 integrates with other features.
 
 Create a template and ensure the template file is registered in the
@@ -131,26 +131,25 @@ Create a template and ensure the template file is registered in the
 The templates iterates (`t-foreach`) on all the teachers (passed through the
 _template context_), and prints each teacher in its own paragraph.
 
-Finally restart Odoo and update the module’s data (to install the template) by
-going to Settings ‣ Modules ‣ Modules ‣ Academy and clicking Upgrade.
+Finally restart Konvergo ERP and update the module’s data (to install the template) by
+going to Settings ‣ Modules ‣ Modules ‣ Academy and clicking **Upgrade**.
 
-Truco
-
-Alternatively, Odoo can be restarted [`and update modules at the same
-time`](../reference/cli.html#cmdoption-odoo-bin-u):
-
-    
-    
-    $ odoo-bin --addons-path addons,my-modules -d academy -u academy
-    
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Alternatively, Konvergo ERP can be restarted <a href="../reference/cli#cmdoption-odoo-bin-u"><code>and update modules at
+the same time</code></a>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> odoo-bin --addons-path addons,my-modules -d academy -u academy
+</pre></div>
+</div>
+</div>
 
 Going to <http://localhost:8069/academy/academy/> should now result in:
 
 ![../../_images/basic-list.png](../../_images/basic-list.png)
 
-## Storing data in Odoo
+## Storing data in Konvergo ERP
 
-[Odoo models](../reference/backend/orm.html#reference-orm-model) map to
+[Konvergo ERP models](../reference/backend/orm#reference-orm-model) map to
 database tables.
 
 In the previous section we just displayed a list of string entered statically
@@ -175,7 +174,7 @@ correctly loaded:
     
 
 Then setup [basic access
-control](../reference/backend/security.html#reference-security-acl) for the
+control](../reference/backend/security#reference-security-acl) for the
 model and add them to the manifest:
 
 `academy/__manifest__.py`
@@ -200,22 +199,22 @@ model and add them to the manifest:
 this simply gives read access (`perm_read`) to all users (`group_id:id` left
 empty).
 
-Nota
-
-[Data files](../reference/backend/data.html#reference-data) (XML or CSV) must
-be added to the module manifest, Python files (models or controllers) don’t
-but have to be imported from `__init__.py` (directly or indirectly)
-
-Advertencia
-
-the administrator user bypasses access control, they have access to all models
-even if not given access
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p><a href="../reference/backend/data#reference-data"><span class="std std-ref">Data files</span></a> (XML or CSV) must be added to the
+module manifest, Python files (models or controllers) don’t but have to
+be imported from <code>__init__.py</code> (directly or indirectly)</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>the administrator user bypasses access control, they have access to all
+models even if not given access</p>
+</div>
 
 ### Demonstration data
 
 The second step is to add some demonstration data to the system so it’s
 possible to test it easily. This is done by adding a `demo` [data
-file](../reference/backend/data.html#reference-data), which must be linked
+file](../reference/backend/data#reference-data), which must be linked
 from the manifest:
 
 `academy/demo.xml`
@@ -237,16 +236,16 @@ from the manifest:
     </odoo>
     
 
-Truco
-
-[Data files](../reference/backend/data.html#reference-data) can be used for
-demo and non-demo data. Demo data are only loaded in «demonstration mode» and
-can be used for flow testing and demonstration, non-demo data are always
-loaded and used as initial system setup.
-
-In this case we’re using demonstration data because an actual user of the
-system would want to input or import their own teachers list, this list is
-only useful for testing.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p><a href="../reference/backend/data#reference-data"><span class="std std-ref">Data files</span></a> can be used for demo and non-demo data.
+Demo data are only loaded in «demonstration mode» and can be used for flow
+testing and demonstration, non-demo data are always loaded and used as
+initial system setup.</p>
+<p>In this case we’re using demonstration data because an actual user of the
+system would want to input or import their own teachers list, this list
+is only useful for testing.</p>
+</div>
 
 ### Accessing the data
 
@@ -294,15 +293,15 @@ identifier for the teacher).
 
 ## Website support
 
-Odoo bundles a module dedicated to building websites.
+Konvergo ERP bundles a module dedicated to building websites.
 
-So far we’ve used controllers fairly directly, but Odoo 8 added deeper
+So far we’ve used controllers fairly directly, but Konvergo ERP 8 added deeper
 integration and a few other services (e.g. default styling, theming) via the
 `website` module.
 
   1. first, add `website` as a dependency to `academy`
 
-  2. then add the `website=True` flag on the controller, this sets up a few new variables on [the request object](../reference/backend/http.html#reference-http-request) and allows using the website layout in our template
+  2. then add the `website=True` flag on the controller, this sets up a few new variables on [the request object](../reference/backend/http#reference-http-request) and allows using the website layout in our template
 
   3. use the website layout in the template
 
@@ -362,19 +361,19 @@ elements (top-level menu, footer, …)
 
 ![../../_images/layout2.png](../../_images/layout2.png)
 
-The website layout also provides support for editing tools: click Sign In (in
-the top-right), fill the credentials in (`admin` / `admin` by default) then
-click Log In.
+The website layout also provides support for editing tools: click **Sign In**
+(in the top-right), fill the credentials in (`admin` / `admin` by default)
+then click **Log In**.
 
-You’re now in Odoo «proper»: the administrative interface. For now click on
-the Website menu item (top-left corner.
+You’re now in Konvergo ERP «proper»: the administrative interface. For now click on
+the **Website** menu item (top-left corner.
 
 We’re back in the website but as an administrator, with access to advanced
 editing features provided by the _website_ support:
 
   * a template code editor (Customize ‣ HTML Editor) where you can see and edit all templates used for the current page
 
-  * the Edit button in the top-left switches to «editing mode» where blocks (snippets) and rich text editing are available
+  * the **Edit** button in the top-left switches to «editing mode» where blocks (snippets) and rich text editing are available
 
   * a number of other features such as mobile preview or SEO
 
@@ -400,7 +399,7 @@ create a new controller method which takes a bit of URL and prints it out:
         return '<h1>{}</h1>'.format(name)
     
 
-restart Odoo, access <http://localhost:8069/academy/Alice/> and
+restart Konvergo ERP, access <http://localhost:8069/academy/Alice/> and
 <http://localhost:8069/academy/Bob/> and see the difference.
 
 As the name indicates, [converter
@@ -417,13 +416,13 @@ new controller to only accept integers:
         return '<h1>{} ({})</h1>'.format(id, type(id).__name__)
     
 
-Restart Odoo, access <http://localhost:8069/academy/2>, note how the old value
+Restart Konvergo ERP, access <http://localhost:8069/academy/2>, note how the old value
 was a string, but the new one was converted to an integers. Try accessing
 <http://localhost:8069/academy/Carol/> and note that the page was not found:
 since «Carol» is not an integer, the route was ignored and no route could be
 found.
 
-Odoo provides an additional converter called `model` which provides records
+Konvergo ERP provides an additional converter called `model` which provides records
 directly when given their id. Let’s use this to create a generic page for
 teacher biographies:
 
@@ -479,7 +478,7 @@ then change the list of model to link to our new controller:
     </template>
     
 
-Restart Odoo and upgrade the module, then you can visit each teacher’s page.
+Restart Konvergo ERP and upgrade the module, then you can visit each teacher’s page.
 As an exercise, try adding blocks to a teacher’s page to write a biography,
 then go to another teacher’s page and so forth. You will discover, that your
 biography is shared between all teachers, because blocks are added to the
@@ -521,7 +520,7 @@ add a new biography field to our teachers:
     </template>
     
 
-Restart Odoo and update the views, reload the teacher’s page and… the field is
+Restart Konvergo ERP and update the views, reload the teacher’s page and… the field is
 invisible since it contains nothing.
 
 For record fields, templates can use a special `t-field` directive which
@@ -540,10 +539,10 @@ interfaces. Change the _person_ template to use `t-field`:
     </div>
     
 
-Restart Odoo and upgrade the module, there is now a placeholder under the
-teacher’s name and a new zone for blocks in Edit mode. Content dropped there
-is stored in the corresponding teacher’s `biography` field, and thus specific
-to that teacher.
+Restart Konvergo ERP and upgrade the module, there is now a placeholder under the
+teacher’s name and a new zone for blocks in **Edit** mode. Content dropped
+there is stored in the corresponding teacher’s `biography` field, and thus
+specific to that teacher.
 
 The teacher’s name is also editable, and when saved the change is visible on
 the index page.
@@ -597,23 +596,23 @@ or a relative display:
 
 ## Administration and ERP integration
 
-### A brief and incomplete introduction to the Odoo administration
+### A brief and incomplete introduction to the Konvergo ERP administration
 
-The Odoo administration was briefly seen during the website support section.
-We can go back to it using Administrator ‣ Administrator in the menu (or Sign
-In if you’re signed out).
+The Konvergo ERP administration was briefly seen during the website support section.
+We can go back to it using Administrator ‣ Administrator in the menu (or
+**Sign In** if you’re signed out).
 
-The conceptual structure of the Odoo backend is simple:
+The conceptual structure of the Konvergo ERP backend is simple:
 
   1. first are menus, a tree (menus can have sub-menus) of records. Menus without children map to…
 
-  2. actions. Actions have various types: links, reports, code which Odoo should execute or data display. Data display actions are called _window actions_ , and tell Odoo to display a given _model_ according to a set of views…
+  2. actions. Actions have various types: links, reports, code which Konvergo ERP should execute or data display. Data display actions are called _window actions_ , and tell Konvergo ERP to display a given _model_ according to a set of views…
 
   3. a view has a type, a broad category to which it corresponds (a list, a graph, a calendar) and an _architecture_ which customises the way the model is displayed inside the view.
 
-### Editing in the Odoo administration
+### Editing in the Konvergo ERP administration
 
-By default, an Odoo model is essentially invisible to a user. To make it
+By default, an Konvergo ERP model is essentially invisible to a user. To make it
 visible it must be available through an action, which itself needs to be
 reachable, generally through a menu.
 
@@ -651,12 +650,12 @@ Let’s create a menu for our model:
     
 
 then accessing <http://localhost:8069/web/> in the top left should be a menu
-Academy, which is selected by default, as it is the first menu, and having
-opened a listing of teachers. From the listing it is possible to Create new
-teacher records, and to switch to the «form» by-record view.
+**Academy** , which is selected by default, as it is the first menu, and
+having opened a listing of teachers. From the listing it is possible to
+**Create** new teacher records, and to switch to the «form» by-record view.
 
 If there is no definition of how to present records (a
-[view](../reference/backend/views.html#reference-views)) Odoo will
+[view](../reference/backend/views#reference-views)) Konvergo ERP will
 automatically create a basic one on-the-fly. In our case it works for the
 «list» view for now (only displays the teacher’s name) but in the «form» view
 the HTML `biography` field is displayed side-by-side with the `name` field and
@@ -684,9 +683,9 @@ editing teacher records a better experience:
 ### Relations between models
 
 We have seen a pair of «basic» fields stored directly in the record. There are
-[a number of basic fields](../reference/backend/orm.html#reference-fields-
+[a number of basic fields](../reference/backend/orm#reference-fields-
 basic). The second broad categories of fields are
-[relational](../reference/backend/orm.html#reference-fields-relational) and
+[relational](../reference/backend/orm#reference-fields-relational) and
 used to link records to one another (within a model or across models).
 
 For demonstration, let’s create a _courses_ model. Each course should have a
@@ -815,11 +814,11 @@ to the _teachers_ model:
 
 ### Discussions and notifications
 
-Odoo provides technical models, which don’t directly fulfill business needs
+Konvergo ERP provides technical models, which don’t directly fulfill business needs
 but which add capabilities to business objects without having to build them by
 hand.
 
-One of these is the _Chatter_ system, part of Odoo’s email and messaging
+One of these is the _Chatter_ system, part of Konvergo ERP’s email and messaging
 system, which can add notifications and discussion threads to any model. The
 model simply has to `_inherit` `mail.thread`, and add the `message_ids` field
 to its form view to display the discussion thread. Discussion threads are per-
@@ -881,9 +880,9 @@ discussions linked to specific courses.
 
 ### Selling courses
 
-Odoo also provides business models which allow using or opting in business
+Konvergo ERP also provides business models which allow using or opting in business
 needs more directly. For instance the `website_sale` module sets up an
-e-commerce site based on the products in the Odoo system. We can easily make
+e-commerce site based on the products in the Konvergo ERP system. We can easily make
 course subscriptions sellable by making our courses specific kinds of
 products.
 
@@ -907,8 +906,8 @@ products (via `sale`) and the ecommerce interface:
     'data': [
     
 
-restart Odoo, update your module, there is now a Shop section in the website,
-listing a number of pre-filled (via demonstration data) products.
+restart Konvergo ERP, update your module, there is now a **Shop** section in the
+website, listing a number of pre-filled (via demonstration data) products.
 
 The second step is to replace the _courses_ model by `product.template`, and
 add a new category of product for courses:
@@ -980,16 +979,20 @@ add a new category of product for courses:
         teacher_id = fields.Many2one('academy.teachers', string="Teacher")
     
 
-With this installed, a few courses are now available in the Shop, though they
-may have to be looked for.
+With this installed, a few courses are now available in the **Shop** , though
+they may have to be looked for.
 
-Nota
-
-  * to extend a model in-place, it’s `inherited` without giving it a new `_name`
-
-  * `product.template` already uses the discussions system, so we can remove it from our extension model
-
-  * we’re creating our courses as _published_ by default so they can be seen without having to log in
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><ul>
+<li><p>to extend a model in-place, it’s <code>inherited</code> without giving it a new
+<code>_name</code></p></li>
+<li><p><code>product.template</code> already uses the discussions system, so we can
+remove it from our extension model</p></li>
+<li><p>we’re creating our courses as <em>published</em> by default so they can be
+seen without having to log in</p></li>
+</ul>
+</div>
 
 ### Altering existing views
 
@@ -1004,7 +1007,7 @@ So far, we have briefly seen:
   * the alteration of existing models
 
 We’re left with the alteration of existing records and the alteration of
-existing views. We’ll do both on the Shop pages.
+existing views. We’ll do both on the **Shop** pages.
 
 View alteration is done by creating _extension_ views, which are applied on
 top of the original view and alter it. These alteration views can be added or
@@ -1043,9 +1046,9 @@ product categories (used to filter the main display) on and off.
 
 This is done via the `customize_show` and `active` fields of extension
 templates: an extension template (such as the one we’ve just created) can be
-_customize_show=True_. This choice will display the view in the Customize menu
-with a check box, allowing administrators to activate or disable them (and
-easily customize their website pages).
+_customize_show=True_. This choice will display the view in the **Customize**
+menu with a check box, allowing administrators to activate or disable them
+(and easily customize their website pages).
 
 We simply need to modify the _Product Categories_ record and set its default
 to _active=»True»_ :

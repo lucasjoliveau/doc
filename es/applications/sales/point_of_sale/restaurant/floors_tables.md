@@ -9,11 +9,10 @@ crear y darle nombre a sus pisos y mesas.
 ![Vista de la función de gestión de mesas. Creación de pisos en un
 PdV](../../../../_images/restaurant_03.png) ![Vista en el backend de un piso
 de restaurante. Nombre de mesa y número de asientos para cada
-mesa](../../../../_images/restaurant_04.png)
-
-Nota
-
-No olvide vincular su piso con su punto de venta.
+mesa](../../../../_images/restaurant_04.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>No olvide vincular su piso con su punto de venta.</p>
+</div>
 
 ## Agregar mesas
 
@@ -26,13 +25,10 @@ Haga clic en el _Modo de edición_ (el icono de lápiz en la esquina superior
 derecha) para poder crear, mover y modificar mesas, entre otras cosas.
 
 ![Vista de la gestión de piso. Se pueden agregar mesas, el número de asientos,
-su nombre y forma.](../../../../_images/restaurant_06.png)
-
-Nota
-
-Para facilitar el encontrar su mesa, puede cambiar su nombre, forma, tamaño o
-incluso color. También es posible agregar el número máximo de asientos que una
-mesa puede tener.
+su nombre y forma.](../../../../_images/restaurant_06.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Para facilitar el encontrar su mesa, puede cambiar su nombre, forma, tamaño o incluso color. También es posible agregar el número máximo de asientos que una mesa puede tener.</p>
+</div>
 
 ## Registrar las órdenes de sus mesas
 
@@ -67,9 +63,8 @@ Posteriormente, puede cambiar entre sus órdenes y procesar el pago cuando sea
 necesario.
 
 ![Vista del botón +, lo que permite a los empleados abrir o agregar una
-orden](../../../../_images/restaurant_10.png)
-
-Truco
-
-El botón de - le permite eliminar la orden en la que se encuentra.
+orden](../../../../_images/restaurant_10.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>El botón de - le permite eliminar la orden en la que se encuentra.</p>
+</div>
 

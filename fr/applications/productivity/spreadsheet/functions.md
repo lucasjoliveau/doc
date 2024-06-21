@@ -20,7 +20,7 @@ Spreadsheet functions are divided in the following categories:
 
   * Misc
 
-  * Odoo
+  * Konvergo ERP
 
   * Operators
 
@@ -28,10 +28,11 @@ Spreadsheet functions are divided in the following categories:
 
   * Text
 
-Note
-
-Formulas containing functions that are not compatible with Excel are replaced
-by their evaluated result when exporting a spreadsheet.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Formulas containing functions that are not compatible with Excel are replaced by their evaluated
+result when exporting a spreadsheet.</p>
+</div>
 
 ## Base de données
 
@@ -254,7 +255,7 @@ Name and arguments | Description or link
 ---|---  
 FORMAT.LARGE.NUMBER(value, [unit]) | Apply a large number format (not compatible with Excel)  
   
-## Odoo
+## Konvergo ERP
 
 Name and arguments | Description or link  
 ---|---  

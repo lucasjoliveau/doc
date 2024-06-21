@@ -15,21 +15,16 @@ URL, siga las instrucciones y copie el código que Google le proporcionará.
 URL.](../../../../_images/add-domain-or-url-prefix.png) ![Verificar dominio o
 prefijo de URL.](../../../../_images/verify.png)
 
-Después, acceda a su base de datos de Odoo, vaya a Sitio web ‣ Configuración ‣
-Ajustes y habilite Google Search Console en la sección de SEO. Pegue el código
-en el campo correspondiente.
+Después, acceda a su base de datos de Konvergo ERP, vaya a Sitio web ‣ Configuración ‣
+Ajustes y habilite **Google Search Console** en la sección de **SEO**. Pegue
+el código en el campo correspondiente.
 
 ![Ajustes del sitio web. Pegar el código de GSC.](../../../../_images/paste-
-gsc-code-settings.png)
-
-Importante
-
-Para evitar que Google indexe tanto su nombre de dominio personalizado
-`www.ejemplo.com` como la URL original de su base de datos de Odoo
-`www.ejemplo.odoo.com` deberá [mapear su nombre de dominio con su sitio web de
-Odoo](domain_names.html#domain-name-website-map).
-
-Ver también
-
-[Nombres de dominio](domain_names.html)
+gsc-code-settings.png) <div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Para evitar que Google indexe tanto su nombre de dominio personalizado <code>www.ejemplo.com</code> como la URL original de su base de datos de Konvergo ERP <code>www.ejemplo.odoo.com</code> deberá <a href="domain_names#domain-name-website-map"><span class="std std-ref">mapear su nombre de dominio con su sitio web de Konvergo ERP</span></a>.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="domain_names">Nombres de dominio</a></p>
+</div>
 

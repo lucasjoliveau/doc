@@ -1,7 +1,7 @@
 # Generate leads/opportunities
 
 Two key ways to generate new leads or opportunities for your business are
-through email aliases and website contact forms. Odoo automatically creates
+through email aliases and website contact forms. Konvergo ERP automatically creates
 leads in your CRM whenever someone sends a message to a Sales Team email alias
 or fills out a contact form on your website.
 
@@ -18,7 +18,7 @@ CRM ‣ Configuration ‣ Sales Teams.
 
 ## Use Contact Forms on your website
 
-By default, your website’s _Contact Us_ page displays Odoo’s ready-to-use
+By default, your website’s _Contact Us_ page displays Konvergo ERP’s ready-to-use
 Contact Form. Whenever someone submits this form, a lead or an opportunity is
 generated in your database.
 
@@ -49,47 +49,48 @@ using the free _Form Builder_ module.
 
 The _Form Builder_ module is installed automatically when a Form element is
 added to a web page via the Website Builder. It can also be installed manually
-from the Apps page.
+from the **Apps** page.
 
 ![Form Builder building blocks](../../../../_images/form-building-block.png)
-
-Tip
-
-Forms can be created from scratch to serve a wide variety of purposes.
-However, Odoo’s default _Contact Us_ page is designed to fit most users’
-needs. Start with the default form and modify from there.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Forms can be created from scratch to serve a wide variety of purposes. However, Konvergo ERP’s default
+<em>Contact Us</em> page is designed to fit most users’ needs. Start with the default form and modify
+from there.</p>
+</div>
 
 ### Edit Contact Form fields
 
 In Edit mode on your website, click on any field to start editing it. The
 following information can be edited for each field on the Contact Form:
 
-  * Type: Choose a custom field option or an existing field. Examples include phone, file upload, language, etc.
+  * **Type** : Choose a custom field option or an existing field. Examples include phone, file upload, language, etc.
 
-  * Input Type: Determine the type of entry customers should input. Available options are text,email, telephone, and URL.
+  * **Input Type** : Determine the type of entry customers should input. Available options are text,email, telephone, and URL.
 
-  * Input Placeholder: Type in an example to guide users how to input information where formatting is important, such as a phone number or email address.
+  * **Input Placeholder** : Type in an example to guide users how to input information where formatting is important, such as a phone number or email address.
 
-  * Label Name: Type in the display name to show users what information is needed from them.
+  * **Label Name** : Type in the display name to show users what information is needed from them.
 
-  * Label Position: Choose the way the label is aligned with the rest of the form. The label can be hidden, above the field, to the far left of the field, or right adjusted and closer to the field.
+  * **Label Position** : Choose the way the label is aligned with the rest of the form. The label can be hidden, above the field, to the far left of the field, or right adjusted and closer to the field.
 
-  * Required: Toggle this option for information that you absolutely need entered.
+  * **Required** : Toggle this option for information that you absolutely need entered.
 
-  * Hidden: Toggle this option to hide the field without deleting it.
+  * **Hidden** : Toggle this option to hide the field without deleting it.
 
-  * Shown on Mobile: Toggle this option to show the field to users on mobile devices.
+  * **Shown on Mobile** : Toggle this option to show the field to users on mobile devices.
 
 ![Editable field options](../../../../_images/editable-field-options.png)
 
 By default, when a Form is submitted, it sends you an email with the
 customer’s inputted information. To have it automatically generate a
-lead/opportunity instead, edit the Form and select Create an Opportunity as
-the Action.
+lead/opportunity instead, edit the Form and select **Create an Opportunity**
+as the Action.
 
-Tip
-
-If leads are activated in your CRM settings, selecting Create an Opportunity
-generates a lead instead. To learn more about activating leads in the CRM
-settings, head over to [Convert leads into opportunities](convert.html).
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>If leads are activated in your CRM settings, selecting <b>Create an Opportunity</b>
+generates a lead instead. To learn more about activating leads in the CRM settings, head over to
+<a href="convert">Convert leads into opportunities</a>.</p>
+</div>
 

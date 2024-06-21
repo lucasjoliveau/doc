@@ -13,7 +13,7 @@ subir a la aplicación **Tax Office e-Faktur**.
 
 Esta información se usa en la línea de FAPR dentro del formato del efecto de
 archivo. Necesita configurar un número de RFC en el partner relacionado a su
-empresa de Odoo. Si no lo hace, no será posible crear un e-Faktur desde una
+empresa de Konvergo ERP. Si no lo hace, no será posible crear un e-Faktur desde una
 factura.
 
   * **Sus clientes**
@@ -32,7 +32,7 @@ partner-nik.png)
 
   1. Vaya a Contabilidad ‣ Clientes ‣ e-Faktur. Para poder exportar facturas del cliente como e-Faktur para el gobierno indonesio, aquí debe ingresar los rangos de números que el gobierno le asignó. Al validar una factura, se le asignará un número de acuerdo con esos rangos. Después, puede filtrar las facturas que aún se deben exportar a la lista de facturas si hace clic en _acción_ y luego en _descargar e-Faktur_.
 
-  2. Después de recibir nuevos números de serie de parte del Indonesian Tax Revenue Department (Departamento de Recaudación de Impuestos de Indonesia) puede crear un conjunto de números de serie para las facturas impositivas en la vista de lista. Solo debe especificar el mínimo y máximo de cada grupo de números de serie y Odoo le proporcionará un formato de 13 dígitos en automático, como lo solicita el Indonesian Tax Revenue Department.
+  2. Después de recibir nuevos números de serie de parte del Indonesian Tax Revenue Department (Departamento de Recaudación de Impuestos de Indonesia) puede crear un conjunto de números de serie para las facturas impositivas en la vista de lista. Solo debe especificar el mínimo y máximo de cada grupo de números de serie y Konvergo ERP le proporcionará un formato de 13 dígitos en automático, como lo solicita el Indonesian Tax Revenue Department.
 
   3. Hay un contador que le hará saber cuántos números sin usar quedan en ese grupo.
 
@@ -42,14 +42,14 @@ count.png)
 #### Generar el archivo CSV de e-faktur desde una factura o un lote de
 facturas
 
-  1. Cree una factura desde Contabilidad ‣ Clientes ‣ Facturas. Si el país del cliente a facturar es Indonesia y si el cliente está configurado como _ID PKP_ , Odoo le permitirá generar un e-Faktur.
+  1. Cree una factura desde Contabilidad ‣ Clientes ‣ Facturas. Si el país del cliente a facturar es Indonesia y si el cliente está configurado como _ID PKP_ , Konvergo ERP le permitirá generar un e-Faktur.
 
   2. Configure un Kode Transaksi para el e-Faktur. Hay un límite sobre los Kode Transaksi y el tipo de IVA que se aplica a las líneas de factura.
 
 ![../../../_images/indonesia-kode-transaksi.png](../../../_images/indonesia-
 kode-transaksi.png)
 
-  3. Odoo elegirá de forma automática el siguiente número de serie disponible de la tabla de números de e-Faktur (consulte la sección anterior) y generará el número de e-Faktur como concatenación del Kode Transaksi y del número de serie. Puede ver esto desde la vista de la plantilla de la factura en la página de _Información adicional_ en la caja _Impuesto electrónico_.
+  3. Konvergo ERP elegirá de forma automática el siguiente número de serie disponible de la tabla de números de e-Faktur (consulte la sección anterior) y generará el número de e-Faktur como concatenación del Kode Transaksi y del número de serie. Puede ver esto desde la vista de la plantilla de la factura en la página de _Información adicional_ en la caja _Impuesto electrónico_.
 
 ![../../../_images/indonesia-e-faktur-sn.png](../../../_images/indonesia-e-
 faktur-sn.png)
@@ -78,7 +78,7 @@ reemplazar la factura
 
   2. Cree una factura nueva y configure la factura cancelada en el campo de _Reemplazar factura_. En este campo solo podemos seleccionar facturas que tengan el estado de _Cancelar_ del mismo cliente.
 
-  3. Al validar, Odoo utilizará automáticamente el mismo número de serie de e-Faktur de la factura cancelada y sustituida, pero cambiará el tercer dígito del número de serie original por _1_ (tal y como se solicita para subir una factura de sustitución en la aplicación de e-Faktur).
+  3. Al validar, Konvergo ERP utilizará automáticamente el mismo número de serie de e-Faktur de la factura cancelada y sustituida, pero cambiará el tercer dígito del número de serie original por _1_ (tal y como se solicita para subir una factura de sustitución en la aplicación de e-Faktur).
 
 ![../../../_images/indonesia-replace-invoice.png](../../../_images/indonesia-
 replace-invoice.png)

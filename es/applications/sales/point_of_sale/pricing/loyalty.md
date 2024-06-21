@@ -32,8 +32,8 @@ definidas en el programa de lealtad.
 Puede ver que el precio se actualiza al instante para reflejar la lista de
 precios. Puede finalizar el pedido de forma habitual.
 
-Nota
-
-Si selecciona un cliente con una lista de precios predeterminada, esta se
-aplicará. Siempre puede cambiarlo.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Si selecciona un cliente con una lista de precios predeterminada, esta se aplicará. Siempre puede cambiarlo.</p>
+</div>
 

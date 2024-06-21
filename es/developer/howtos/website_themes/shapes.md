@@ -105,7 +105,7 @@ Firstly, you need to create an SVG file for your shape.
     </svg>
     
 
-Make sure to use colors from the default Odoo palette for your shape.
+Make sure to use colors from the default Konvergo ERP palette for your shape.
 
     
     
@@ -208,10 +208,9 @@ Attribute | Description
 ---|---  
 data-shape | Location of the shape  
 data-shape-colors | Colors applied to the shape  
-  
-Advertencia
-
-Sometimes, your image shape might not be applied after adding your changes. To
-fix the issue, open the Website Builder and save the page to force the shape
-to load.
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Sometimes, your image shape might not be applied after adding your changes. To fix the issue,
+open the Website Builder and save the page to force the shape to load.</p>
+</div>
 

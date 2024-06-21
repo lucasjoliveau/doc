@@ -2,7 +2,7 @@
 
 [Upgrade utils](https://github.com/odoo/upgrade-util/) is a library that
 contains helper functions to facilitate the writing of upgrade scripts. This
-library, used by Odoo for the upgrade scripts of standard modules, provides
+library, used by Konvergo ERP for the upgrade scripts of standard modules, provides
 reliability and helps speed up the upgrade process:
 
   * The helper functions help make sure the data is consistent in the database.
@@ -24,7 +24,7 @@ path` option.
     $ ./odoo-bin --upgrade-path=/path/to/upgrade-util/src,/path/to/other/upgrade/script/directory [...]
     
 
-On platforms where you do not manage Odoo yourself, you can install this
+On platforms where you do not manage Konvergo ERP yourself, you can install this
 library via `pip`:
 
     
@@ -32,7 +32,7 @@ library via `pip`:
     $ python3 -m pip install git+https://github.com/odoo/upgrade-util@master
     
 
-On [Odoo.sh](https://www.odoo.sh/) it is recommended to add it to the
+On [Konvergo ERP.sh](https://www.odoo.sh/) it is recommended to add it to the
 `requirements.txt` of the custom repository. For this, add the following line
 inside the file:
 
@@ -69,12 +69,11 @@ Here, we describe some of the most useful ones. Refer to the [util
 folder](https://github.com/odoo/upgrade-util/tree/master/src/util) for the
 comprehensive declaration of helper functions.
 
-Nota
-
-The `cr` parameter in util functions always refers to the database cursor.
-Pass the one received as a parameter in
-[`migrate()`](upgrade_scripts.html#migrate "migrate"). Not all functions need
-this parameter.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>The <code>cr</code> parameter in util functions always refers to the database cursor. Pass the one
+received as a parameter in <a href="upgrade_scripts#migrate" title="migrate"><code>migrate()</code></a>. Not all functions need this parameter.</p>
+</div>
 
 ### Modules
 

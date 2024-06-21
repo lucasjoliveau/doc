@@ -1,6 +1,6 @@
 # Firma electrónica
 
-La aplicación **Firma electrónica** de Odoo le permite enviar, firmar y
+La aplicación **Firma electrónica** de Konvergo ERP le permite enviar, firmar y
 aprobar documentos en línea.
 
 Una **firma electrónica** muestra que la persona está de acuerdo con el
@@ -12,18 +12,20 @@ Con la firma, puede subir cualquier documento en PDF y agregarle campos. Estos
 se pueden llenar automáticamente con los detalles del usuario existentes en su
 base de datos.
 
-Ver también
-
-  * [Firma de Odoo: página de producto](https://www.odoo.com/app/sign)
-
-  * [Tutoriales de Odoo: Firma electrónica [video]](https://www.odoo.com/slides/sign-61)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="https://www.odoo.com/app/sign">Firma de Konvergo ERP: página de producto</a></p></li>
+<li><p><a href="https://www.odoo.com/slides/sign-61">Tutoriales de Konvergo ERP: Firma electrónica [video]</a></p></li>
+</ul>
+</div>
 
 ## Validez de firmas electrónicas
 
 Los documentos firmados a través de la aplicación Firma son firmas
 electrónicas válidas en la Unión Europea y en Estados Unidos. También cumplen
 con los requerimentos de firmas electrónicas en la mayoría de países. La
-validez legal de las firmas que genera Odoo dependen de la legislación de su
+validez legal de las firmas que genera Konvergo ERP dependen de la legislación de su
 país. Las empresas que operan en el extranjero también deben considerar las
 legislaciones acerca de las firmas electrónicas.
 
@@ -41,7 +43,7 @@ Reconoce tres tipos de firmas electrónicas:
 
   3. Firmas electrónicas calificadas
 
-Odoo genera el primer tipo, **firmas electrónicas simples** , estas firmas son
+Konvergo ERP genera el primer tipo, **firmas electrónicas simples** , estas firmas son
 legalmente válidas en E.U.A, como lo establecen las normas del eIDAS.
 
 Es posible que las firmas electrónicas no se reconozcan como válidas
@@ -55,7 +57,7 @@ se recopila evidencia de manera automática durante el proceso de firma, como:
 
   3. Registros de accceso con marcas de tiempo, IP y trazabilidad geográfica y sus firmas asociadas.
 
-  4. Trazabilidad e inalterabilidad de documentos (Odoo detecta cualquier alteración hecha a los documentos usando pruebas criptográficas)
+  4. Trazabilidad e inalterabilidad de documentos (Konvergo ERP detecta cualquier alteración hecha a los documentos usando pruebas criptográficas)
 
 ### Estados Unidos
 
@@ -77,31 +79,27 @@ cumplir cinco criterios:
 
   2. El signatario primero debe expresar **consentimiento para realizar transacciones electrónicas**.
 
-  3. **La firma debe estar claramente atribuida**. En Odoo, los metadatos, como la dirección IP del signatario se agrega a cada firma, lo que puede usarse como evidencia probatoria.
+  3. **La firma debe estar claramente atribuida**. En Konvergo ERP, los metadatos, como la dirección IP del signatario se agrega a cada firma, lo que puede usarse como evidencia probatoria.
 
   4. **La firma debe estar asocidada con el documento firmado** , por ejemplo, al tener registro de cómo se capturo la firma.
 
   5. Los documentos firmados de manera electrónica deben ser **conservados y almacenados** por todas las partes involucradas, al proveer al signatario ya sea una copia completa o la posibilidad de descargar una copia.
 
-Importante
-
-La información anterior no tiene valor legal, solo se facilita para
-proporcionar información general. Dado que las leyes que rigen las firmas
-electrónicas evolucionan rápidamente, no podemos garantizar que toda la
-información esté actualizada. Le recomendamos que se ponga en contacto con un
-abogado que le pueda proporcionar asesoramiento legal sobre el cumplimiento y
-validez de las firmas electrónicas.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>La información anterior no tiene valor legal, solo se facilita para proporcionar información general. Dado que las leyes que rigen las firmas electrónicas evolucionan rápidamente, no podemos garantizar que toda la información esté actualizada. Le recomendamos que se ponga en contacto con un abogado que le pueda proporcionar asesoramiento legal sobre el cumplimiento y validez de las firmas electrónicas.</p>
+</div>
 
 ## Enviar un documento para firmar
 
 ### Firma única
 
-Puede hacer clic en Subir un PDF para firmar desde su tablero para realizar
-una firma única. Seleccione su documento, ábralo y arrastre y suelte los
-campos necesarios en su documento. Puede modificar la función asignada a un
-campo, solo tiene que hacer clic en ella y seleccionar la que quiera.
+Puede hacer clic en **Subir un PDF para firmar** desde su tablero para
+realizar una firma única. Seleccione su documento, ábralo y arrastre y suelte
+los campos necesarios en su documento. Puede modificar la función asignada a
+un campo, solo tiene que hacer clic en ella y seleccionar la que quiera.
 
-Cuando esté listo, haga clic en Enviar y llene los campos solicitados. Su
+Cuando esté listo, haga clic en **Enviar** y llene los campos solicitados. Su
 documento seguirá disponible una vez que lo haya enviado. Vaya a Documentos ‣
 Todos los documentos para ver su documento y el estado de las firmas.
 
@@ -110,29 +108,28 @@ Todos los documentos para ver su documento y el estado de las firmas.
 ### Plantillas
 
 Puede crear plantillas de documentos cuando tenga que enviar el mismo
-documento más de una vez. Desde su tablero, haga clic en Subir plantilla PDF.
-Seleccione el documento y agregue los campos. Para modificar la función de un
-campo solo tiene que hacer clic en él y seleccionar la función que quiera.
+documento más de una vez. Desde su tablero, haga clic en **Subir plantilla
+PDF**. Seleccione el documento y agregue los campos. Para modificar la función
+de un campo solo tiene que hacer clic en él y seleccionar la función que
+quiera.
 
-Haga clic en Propiedades de la plantilla para agregar Etiquetas a su
-plantilla, defina un Espacio de trabajo de documentos firmados, agregue
-Etiquetas de documentos firmados, configure un Enlace de redireccionamiento
-que estará disponible en el mensaje de confirmación de la firma recibido
-después de que se firme el documento, o defina Usuarios autorizados si quiere
-restringir el uso de su plantilla a usuarios o grupos autorizados.
+Haga clic en **Propiedades de la plantilla** para agregar **Etiquetas** a su
+plantilla, defina un **Espacio de trabajo de documentos firmados** , agregue
+**Etiquetas de documentos firmados** , configure un **Enlace de
+redireccionamiento** que estará disponible en el mensaje de confirmación de la
+firma recibido después de que se firme el documento, o defina **Usuarios
+autorizados** si quiere restringir el uso de su plantilla a usuarios o grupos
+autorizados.
 
 Sus plantillas son visibles desde el tablero de forma predeterminada. Puede
-hacer clic en Enviar para enviar una plantilla de documento de forma rápida a
-un signatario o Firmar ahora si está listo para firmar el documento de
-inmediato.
+hacer clic en **Enviar** para enviar una plantilla de documento de forma
+rápida a un signatario o **Firmar ahora** si está listo para firmar el
+documento de inmediato.
 
-Truco
-
-Puede **crear una plantilla desde un documento enviado previamente** desde
-Documentos ‣ Todos los documentos. En el documento que quiera recuperar haga
-cic en ⋮ y después en Plantilla. Haga clic en ⋮ otra vez y luego en Restaurar.
-Ahora, su documento aparecerá en su tablero a un lado del resto de sus
-plantillas.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Puede <b>crear una plantilla desde un documento enviado previamente</b> desde Documentos ‣ Todos los documentos. En el documento que quiera recuperar haga cic en ⋮ y después en <b>Plantilla</b>. Haga clic en ⋮ otra vez y luego en <b>Restaurar</b>. Ahora, su documento aparecerá en su tablero a un lado del resto de sus plantillas.</p>
+</div>
 
 ## Roles
 
@@ -142,54 +139,57 @@ persona asignada a ese rol necesita llenar los campos asignados y firmarlos.
 
 Puede ver los roles en Firma ‣ Configuración ‣ Roles.
 
-Es posible actualizar roles existentes o crear nuevos al hacer clic en Nuevo.
-Elija un Nombre de rol, agregue un Paso adicional de autenticación para
-confirmar la identidad del signatario, y si el documento se puede reasignar a
-otro contacto, seleccione Cambio autorizado para el rol. También puede escoger
-un Color para el rol. Este color le puede ayudar a saber qué roles son
-responsables de qué campos al configurar una plantilla.
+Es posible actualizar roles existentes o crear nuevos al hacer clic en
+**Nuevo**. Elija un **Nombre de rol** , agregue un **Paso adicional de
+autenticación** para confirmar la identidad del signatario, y si el documento
+se puede reasignar a otro contacto, seleccione **Cambio autorizado** para el
+rol. También puede escoger un **Color** para el rol. Este color le puede
+ayudar a saber qué roles son responsables de qué campos al configurar una
+plantilla.
 
 ### Identificación asegurada
 
-Como propietario del documento, puede solicitar un Paso adicional de
-autenticación a través de una verificación de SMS o a través de Itsme®
+Como propietario del documento, puede solicitar un **Paso adicional de
+autenticación** a través de una verificación de SMS o a través de Itsme®
 (disponible en Bélgica y Países Bajos). Ambas opciones de autenticación
-requieren [créditos](../essentials/in_app_purchase.html#iap-buying-credits).
+requieren [créditos](../essentials/in_app_purchase#iap-buying-credits).
 Si no tiene créditos disponibles, los pasos de autenticación se omitirán.
 
-Ver también
-
-  * [Compras dentro de la aplicación (IAP)](../essentials/in_app_purchase.html)
-
-  * [Precios por SMS y preguntas frecuentes](../marketing/sms_marketing/pricing/pricing_and_faq.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../essentials/in_app_purchase">Compras dentro de la aplicación (IAP)</a></p></li>
+<li><p><a href="../marketing/sms_marketing/pricing/pricing_and_faq">Precios por SMS y preguntas frecuentes</a></p></li>
+</ul>
+</div>
 
 #### Verificación por SMS
 
-Vaya a Firma ‣ Configuración ‣ Roles. Haga clic en la columna Paso de
-autenticación adicional para el rol, y seleccione Código único via SMS.
+Vaya a Firma ‣ Configuración ‣ Roles. Haga clic en la columna **Paso de
+autenticación adicional** para el rol, y seleccione **Código único via SMS**.
 
-Nota
-
-Para poder enviar mensajes SMS debe registrar su número de teléfono. Para
-hacerlo, vaya a Firma electrónica ‣ Configuración ‣ Ajustes y haga clic en
-Comprar créditos en Autenticar por SMS.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Para poder enviar mensajes SMS debe registrar su número de teléfono. Para hacerlo, vaya a Firma electrónica ‣ Configuración ‣ Ajustes y haga clic en <b>Comprar créditos</b> en <b>Autenticar por SMS</b>.</p>
+</div>
 
 Vaya al documento por firmar, agregue el campo para el que se requiere la
-verficación SMS, por ejemplo el campo Firma y haga clic en Enviar. En la
-página, seleccione el cliente y haga clic en Enviar.
+verficación SMS, por ejemplo el campo **Firma** y haga clic en **Enviar**. En
+la página, seleccione el **cliente** y haga clic en **Enviar**.
 
-El signatario del documento llena el campo Firma, firma el documento y luego
-hace clic en Validar y enviar documento completo. Aparecerá una página de
-Validación final donde puede agregar su número de teléfono. Los códigos de un
-solo uso se envían por SMS.
+El signatario del documento llena el campo **Firma** , firma el documento y
+luego hace clic en **Validar y enviar documento completo**. Aparecerá una
+página de **Validación final** donde puede agregar su número de teléfono. Los
+códigos de un solo uso se envían por SMS.
 
 ![Agregue un hash a su documento](../../_images/sms-verification.png)
-
-Nota
-
-  * Esta función está activada de manera predeterminada.
-
-  * Tan pronto como el paso de autenticación adicional aplique a un rol, se solicitará este paso de validación para cualquier campo asignado a este rol.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><ul>
+<li><p>Esta función está activada de manera predeterminada.</p></li>
+<li><p>Tan pronto como el <b>paso de autenticación adicional</b> aplique a un rol, se solicitará este paso de validación para cualquier campo asignado a este rol.</p></li>
+</ul>
+</div>
 
 #### Itsme®
 
@@ -197,23 +197,23 @@ La autenticación de Itsme® se puede usar para permitir que los signatarios
 puedan verificar su identidad por medio de Itsme®. Esta función solo está
 disponible en **Bélgica** y **Países bajos**.
 
-Puede activar esta funcionalidad desde Ajustes de firma y se aplica de manera
-automática a la función Cliente (identificada con itsme®). Para activarla en
-otras funciones, vaya a Firmar ‣ Configuración ‣ Funciones. Haga clic en la
-columna Paso adicional de autenticación para la función y seleccione Mediante
-itsme®.
+Puede activar esta funcionalidad desde **Ajustes de firma** y se aplica de
+manera automática a la función **Cliente (identificada con itsme®)**. Para
+activarla en otras funciones, vaya a Firmar ‣ Configuración ‣ Funciones. Haga
+clic en la columna **Paso adicional de autenticación** para la función y
+seleccione **Mediante itsme®**.
 
-Vaya al documento que necesita firmar y agregue el campo Firma. Cambie a
+Vaya al documento que necesita firmar y agregue el campo **Firma**. Cambie a
 cualquier función configurada para usar esta funcionalidad, haga clic en
-Validar y después en Enviar.
+**Validar** y después en **Enviar**.
 
 ![seleccione cliente identificado con itsme®](../../_images/itsme-
 identification.png)
 
-Después de que el signatario firme el documento, el campo Firma se completará
-y solo tendrá que hacer clic en Validar y enviar el documento completado. Así
-se activará la página Verificación final, donde se necesitará la autenticación
-mediante itsme®.
+Después de que el signatario firme el documento, el campo **Firma** se
+completará y solo tendrá que hacer clic en **Validar y enviar el documento
+completado**. Así se activará la página **Verificación final** , donde se
+necesitará la autenticación mediante itsme®.
 
 ## Hash signatario
 
@@ -225,7 +225,7 @@ autenticidad y seguridad del documento a lo largo de su ciclo de vida.
 
 Se añade a las firmas un marco de seguridad visual que muestra el inicio del
 hash. Los usuarios internos pueden ocultarlo o mostrarlo si activan o
-desactivan la opción Marco al firmar el documento.
+desactivan la opción **Marco** al firmar el documento.
 
 ![Imagen donde se agrega el marco visual de seguridad a la
 firma.](../../_images/sign-hash.png)
@@ -237,8 +237,8 @@ permitirá que los usuarios busquen y filtren documentos según criterios
 específicos.
 
 Para gestionar las etiquetas puede ir a Configuración ‣ Etiquetas. Para crear
-una etiqueta, haga clic en Nuevo. En la nueva línea, agregue el Nombre de la
-etiqueta y seleccione el índice de color para su etiqueta.
+una etiqueta, haga clic en **Nuevo**. En la nueva línea, agregue el **Nombre
+de la etiqueta** y seleccione el **índice de color** para su etiqueta.
 
 Para aplicar una etiqueta a un documento, use la lista desplegable disponible
 en su documento.
@@ -249,21 +249,21 @@ Cuando necesita que diferentes personas firmen un documento, el orden de firma
 le deja controlar el orden en el que los destinatarios recibirán el documento
 para firmarlo.
 
-En Configuración ‣ Ajustes puede Activar orden de firmas. Cada destinatario
-recibirá la notificación de solicitud de firma solo cuando el destinatario
-precio haya completado la acción.
+En Configuración ‣ Ajustes puede **Activar orden de firmas**. Cada
+destinatario recibirá la notificación de solicitud de firma solo cuando el
+destinatario precio haya completado la acción.
 
-Agregue al menos dos campos de Firma con funciones diferentes a su documento.
-Haga clic en Enviar para ir a la pestaña Opciones y marque la caja Especificar
-orden de firma.
+Agregue al menos dos campos de **Firma** con funciones diferentes a su
+documento. Haga clic en **Enviar** para ir a la pestaña **Opciones** y marque
+la caja **Especificar orden de firma**.
 
-Agregue el Nombre o correo del signatario. Para decidir el Orden de firma
-escriba 1 o 2 en la columna Orden de firma.
+Agregue el **Nombre o correo** del signatario. Para decidir el **Orden de
+firma** escriba **1** o **2** en la columna **Orden de firma**.
 
-Ver también
-
-[Consejos de Odoo: Orden de firma
-[video]](https://www.youtube.com/watch?v=2KUq7RPt1cU/)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="https://www.youtube.com/watch?v=2KUq7RPt1cU/">Consejos de Konvergo ERP: Orden de firma [video]</a></p>
+</div>
 
 ## Tipos de campo
 
@@ -279,51 +279,50 @@ puede ser aún más rápido para sus clientes, partners y empleados.
 Para crear y editar tipos de campo, vaya a Firma ‣ Configuración ‣ Ajustes ‣
 Editar tipos de campo.
 
-Puede seleccionar un campo existente al hacer clic en él o puede Crear uno
-nuevo. Primero, edite el Nombre de campo. Luego, selecciones un Tipo de campo:
+Puede seleccionar un campo existente al hacer clic en él o puede **Crear** uno
+nuevo. Primero, edite el **Nombre de campo**. Luego, selecciones un **Tipo de
+campo** :
 
-  * Firma: se le pide a los usuarios que ingresen su firma ya sea trazándola, generar una basada en su nombre o subiendo una archivo local (generalmente una imagen). Cada tipo de campo de Firma subsecuente reutiliza los datos ingresados en el primer campo.
+  * **Firma** : se le pide a los usuarios que ingresen su firma ya sea trazándola, generar una basada en su nombre o subiendo una archivo local (generalmente una imagen). Cada tipo de campo de **Firma** subsecuente reutiliza los datos ingresados en el primer campo.
 
-  * Inicial: se le pide a los usuarios que ingresen sus iniciales, de manera similar que en el campo Firma.
+  * **Inicial** : se le pide a los usuarios que ingresen sus iniciales, de manera similar que en el campo **Firma**.
 
-  * Texto: se le pide a los usuarios ingresar texto en una sola línea.
+  * **Texto** : se le pide a los usuarios ingresar texto en una sola línea.
 
-  * Texto multilínea: los usuarios ingresan texto en varias líneas.
+  * **Texto multilínea** : los usuarios ingresan texto en varias líneas.
 
-  * Casilla de verificación: los usuarios pueden seleccionar una casilla (para marcar su aprobación o consentimiento).
+  * **Casilla de verificación** : los usuarios pueden seleccionar una casilla (para marcar su aprobación o consentimiento).
 
-  * Selección: los usuarios pueden escoger una sola opción de entre una variedad de opciones.
+  * **Selección** : los usuarios pueden escoger una sola opción de entre una variedad de opciones.
 
-La configuración para autocompletar el campo del partner se usa para completar
-automáticamente un campo durante el proceso de firma. Usa el valor de uno de
-los campos del modelo del contacto (`res.partner`) del signatario del
-documento. Para hacerlo, ingrese el nombre técnico del campo del modelo de
+La configuración para **autocompletar el campo del partner** se usa para
+completar automáticamente un campo durante el proceso de firma. Usa el valor
+de uno de los campos del modelo del contacto (`res.partner`) del signatario
+del documento. Para hacerlo, ingrese el nombre técnico del campo del modelo de
 contacto.
 
-Truco
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Para conocer el nombre técnico de un campo, active el modo desarrollador y deslice el cursor sobre el signo de interrogación junto al campo.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Los valores de autocompletado son sugerencias y se pueden modificar según lo requiera el signatario del documento.</p>
+</div>
 
-Para conocer el nombre técnico de un campo, active el modo desarrollador y
-deslice el cursor sobre el signo de interrogación junto al campo.
+El tamaño de los campos también se puede cambiar al editar el **Ancho
+predeterminado** y la **Altura predeterminada**. Ambos tamaños se definen como
+un porcentaje de la página completa expresados en decimales, 1 siendo igual a
+el ancho y alto de la página completa. De manera predeterminada, el ancho de
+los nuevos campos que cree está establecido en 15% (0.150) del ancho de la
+página completa, mientras que la altura está establecida en 1.5% (0.015) del
+alto de la página completa.
 
-Nota
-
-Los valores de autocompletado son sugerencias y se pueden modificar según lo
-requiera el signatario del documento.
-
-El tamaño de los campos también se puede cambiar al editar el Ancho
-predeterminado y la Altura predeterminada. Ambos tamaños se definen como un
-porcentaje de la página completa expresados en decimales, 1 siendo igual a el
-ancho y alto de la página completa. De manera predeterminada, el ancho de los
-nuevos campos que cree está establecido en 15% (0.150) del ancho de la página
-completa, mientras que la altura está establecida en 1.5% (0.015) del alto de
-la página completa.
-
-Luego, escriba un Consejo. Los consejos aparecen dentro de las flechas del
+Luego, escriba un **Consejo**. Los consejos aparecen dentro de las flechas del
 lado izquierdo de la pantalla del usuario durante el proceso para ayudarlos a
 entender que es lo que conlleva un paso («Firme aquí» or “Intorduzca su fecha
-de nacimiento”). También puede usar un texto de marcador de posición que
+de nacimiento”). También puede usar un texto de **marcador de posición** que
 aparezca dentro del campo antes de llenarlo.
 
 ![Ejemplos de consejos y marcadores de posición en Firma de
-Odoo](../../_images/tip-placeholder.png)
+Konvergo ERP](../../_images/tip-placeholder.png)
 

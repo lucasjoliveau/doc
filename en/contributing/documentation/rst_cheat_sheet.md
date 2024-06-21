@@ -57,9 +57,10 @@ H6 |
     ^^^^^^^
       
   
-Important
-
-Each document must have **exactly one H1 heading**. No less, no more.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Each document must have <b>exactly one H1 heading</b>. No less, no more.</p>
+</div>
 
 ## Markups
 
@@ -115,12 +116,12 @@ to display nicely.
 Use the `abbr` markup to write a self-defining abbreviation that is displayed
 as a tooltip.
 
-Odoo uses OCR and artificial intelligence technologies to recognize the
+Konvergo ERP uses OCR and artificial intelligence technologies to recognize the
 content of the documents.  
 ---  
       
     
-    Odoo uses :abbr:`OCR (optical character recognition)` and artificial intelligence technologies to
+    Konvergo ERP uses :abbr:`OCR (optical character recognition)` and artificial intelligence technologies to
     recognize the content of the documents.
       
   
@@ -129,7 +130,7 @@ content of the documents.
 Use the `guilabel` markup to identify any text of the interactive user
 interface (e.g., button labels, view titles, field names, lists items, …).
 
-Update your credentials, then click on Save.  
+Update your credentials, then click on **Save**.  
 ---  
       
     
@@ -175,13 +176,13 @@ the documentation to HTML.
 ### Icons
 
 Use the `icon` markup to add a class name of an icon. There are two icon sets
-used in Odoo: [FontAwesome4](https://fontawesome.com/v4/icons/) and [Odoo
-UI](../../developer/reference/user_interface/icons.html). It is recommended to
+used in Konvergo ERP: [FontAwesome4](https://fontawesome.com/v4/icons/) and [Konvergo ERP
+UI](../../developer/reference/user_interface/icons). It is recommended to
 accompany an icon with a GUI element as a descriptor, however, it is not
 mandatory.
 
-The graph view is represented by the __(area chart) icon. The pivot view is
-represented by the __icon.  
+The graph view is represented by the __**(area chart)** icon. The pivot view
+is represented by the __icon.  
 ---  
       
     
@@ -230,9 +231,10 @@ represented by the __icon.
     #. The numbering is automatic from there.
       
   
-Tip
-
-Prefer the use of autonumbered lists with `#.` for better code resilience.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Prefer the use of autonumbered lists with <code>#.</code> for better code resilience.</p>
+</div>
 
 ### Nested lists
 
@@ -257,18 +259,19 @@ Prefer the use of autonumbered lists with `#.` for better code resilience.
 External hyperlinks are links to a URL with a custom label. They follow this
 syntax: ``label <URL>`_`
 
-Note
-
-  * The URL can be a relative path to a file within the documentation.
-
-  * Use the documentation pages hyperlinks if you target another documentation page.
-
-For instance, [this is an external hyperlink to Odoo’s
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>The URL can be a relative path to a file within the documentation.</p></li>
+<li><p>Use the <a href="#contributing-doc-pages-hyperlinks"><span class="std std-ref">documentation pages hyperlinks</span></a> if you target
+another documentation page.</p></li>
+</ul>
+</div>  For instance, [this is an external hyperlink to Konvergo ERP’s
 website](https://www.odoo.com).  
 ---  
       
     
-    For instance, `this is an external hyperlink to Odoo's website <https://www.odoo.com>`_.
+    For instance, `this is an external hyperlink to Konvergo ERP's website <https://www.odoo.com>`_.
       
   
 ### External hyperlink aliases
@@ -312,20 +315,21 @@ There are two ways to reference them, both using the `ref` markup:
 
   2. `:ref:`label <target>`` creates a hyperlink to the anchor with the given label.
 
-See [Use relative links for internal URLs](rst_guidelines.html#contributing-
+See [Use relative links for internal URLs](rst_guidelines#contributing-
 relative-links) to learn how to write proper relative links for internal
 references.
 
-Note
-
-  * Custom anchors can be referenced from other files than the ones in which they are defined.
-
-  * Notice that there is no `_` at the end, contrary to what is done with external hyperlinks.
-
-This can easily be done by creating a new product, see [How to create a
-product?](https://example.com/product) for additional help. **How to create a
-product?** As explained at the [start of the page](https://example.com/scroll-
-to-start-of-page), …  
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>Custom anchors can be referenced from other files than the ones in which they are defined.</p></li>
+<li><p>Notice that there is no <code>_</code> at the end, contrary to what is done with <a href="#contributing-external-hyperlinks"><span class="std std-ref">external
+hyperlinks</span></a>.</p></li>
+</ul>
+</div>  This can easily be done by creating a new product, see
+[How to create a product?](https://example.com/product) for additional help.
+**How to create a product?** As explained at the [start of the
+page](https://example.com/scroll-to-start-of-page), …  
 ---  
       
     
@@ -353,8 +357,8 @@ As usual, there are two ways to use the markup:
   2. `:doc:`label <path_to_doc_page>`` creates a hyperlink to the documentation page with the given label.
 
 Please refer to [this
-documentation](https://example.com/doc/accounting/invoices.html) and to [Send
-a pro-forma invoice](https://example.com/doc/sales/proforma.html).  
+documentation](https://example.com/doc/accounting/invoices) and to [Send
+a pro-forma invoice](https://example.com/doc/sales/proforma).  
 ---  
       
     
@@ -390,22 +394,23 @@ The `image` markup allows inserting images in a document.
        :alt: Create an invoice.
       
   
-Tip
-
-Add the `:class: o-no-modal`
-[option](https://docutils.sourceforge.io/docs/ref/rst/directives.html#common-
-options) to an image to prevent opening it in a modal.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Add the <code>:class: o-no-modal</code> <a href="https://docutils.sourceforge.io/docs/ref/rst/directives#common-options">option</a> to an image to
+prevent opening it in a modal.</p>
+</div>
 
 ## Alert blocks (admonitions)
 
 ### See also
 
-See also
-
-  * [Customer invoices](https://example.com/doc/accounting/invoices.html)
-  * [Pro-forma invoices](https://example.com/doc/sales/proforma.html#activate-the-feature)
-
-  
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="https://example.com/doc/accounting/invoices">Customer invoices</a></p></li>
+<li><p><a href="https://example.com/doc/sales/proforma#activate-the-feature">Pro-forma invoices</a></p></li>
+</ul>
+</div>  
 ---  
       
     
@@ -416,8 +421,10 @@ See also
   
 ### Note
 
-NoteUse this alert block to grab the reader’s attention about additional
-information.  
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Use this alert block to grab the reader’s attention about additional information.</p>
+</div>  
 ---  
       
     
@@ -427,8 +434,10 @@ information.
   
 ### Tip
 
-TipUse this alert block to inform the reader about a useful trick that
-requires an action.  
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Use this alert block to inform the reader about a useful trick that requires an action.</p>
+</div>  
 ---  
       
     
@@ -438,7 +447,10 @@ requires an action.
   
 ### Example
 
-ExampleUse this alert block to show an example.  
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Use this alert block to show an example.</p>
+</div>  
 ---  
       
     
@@ -448,7 +460,10 @@ ExampleUse this alert block to show an example.
   
 ### Exercise
 
-ExerciseUse this alert block to suggest an exercise to the reader.  
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Use this alert block to suggest an exercise to the reader.</p>
+</div>  
 ---  
       
     
@@ -458,8 +473,10 @@ ExerciseUse this alert block to suggest an exercise to the reader.
   
 ### Important
 
-ImportantUse this alert block to notify the reader about important
-information.  
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Prefer the use of autonumbered lists with <code>#.</code> for better code resilience.</p>
+</div>0  
 ---  
       
     
@@ -469,8 +486,10 @@ information.
   
 ### Warning
 
-WarningUse this alert block to require the reader to proceed with caution with
-what is described in the warning.  
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Prefer the use of autonumbered lists with <code>#.</code> for better code resilience.</p>
+</div>1  
 ---  
       
     
@@ -481,8 +500,10 @@ what is described in the warning.
   
 ### Danger
 
-DangerUse this alert block to bring the reader’s attention to a serious
-threat.  
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Prefer the use of autonumbered lists with <code>#.</code> for better code resilience.</p>
+</div>2  
 ---  
       
     
@@ -492,7 +513,10 @@ threat.
   
 ### Custom
 
-TitleCustomize this alert block with a **Title** of your choice.  
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Prefer the use of autonumbered lists with <code>#.</code> for better code resilience.</p>
+</div>3  
 ---  
       
     
@@ -551,13 +575,10 @@ Turquoise | Orange
     +-----------------------+--------------+---------------+
       
   
-Tip
-
-  * Use `=` instead of `-` to define header rows.
-
-  * Remove `-` and `|` separators to merge cells.
-
-  * Make use of [this convenient table generator](https://www.tablesgenerator.com/text_tables) to build your tables. Then, copy-paste the generated formatting into your document.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Prefer the use of autonumbered lists with <code>#.</code> for better code resilience.</p>
+</div>4
 
 ## Code blocks
 
@@ -578,7 +599,10 @@ Tip
   
 ## Spoilers
 
-Answer to the Ultimate Question of Life, the Universe, and Everything**42**  
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Prefer the use of autonumbered lists with <code>#.</code> for better code resilience.</p>
+</div>5  
 ---  
       
     
@@ -589,17 +613,10 @@ Answer to the Ultimate Question of Life, the Universe, and Everything**42**
   
 ## Content tabs
 
-Caution
-
-The `tabs` markup may not work well in some situations. In particular:
-
-  * The tabs’ headers cannot be translated.
-
-  * A tab cannot contain headings.
-
-  * An alert block cannot contain tabs.
-
-  * A tab cannot contain custom anchors.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Prefer the use of autonumbered lists with <code>#.</code> for better code resilience.</p>
+</div>6
 
 ### Basic tabs
 
@@ -607,20 +624,20 @@ Basic tabs are useful to split the content into multiple options. The `tabs`
 markup is used to define sequence of tabs. Each tab is then defined with the
 `tab` markup followed by a label.
 
-Odoo OnlineOdoo.shOn-premiseContent dedicated to Odoo Online users.
-Alternative for Odoo.sh users. Third version for On-premise users.  
+Konvergo ERP OnlineKonvergo ERP.shOn-premiseContent dedicated to Konvergo ERP Online users.
+Alternative for Konvergo ERP.sh users. Third version for On-premise users.  
 ---  
       
     
     .. tabs::
     
-       .. tab:: Odoo Online
+       .. tab:: Konvergo ERP Online
     
-          Content dedicated to Odoo Online users.
+          Content dedicated to Konvergo ERP Online users.
     
-       .. tab:: Odoo.sh
+       .. tab:: Konvergo ERP.sh
     
-          Alternative for Odoo.sh users.
+          Alternative for Konvergo ERP.sh users.
     
        .. tab:: On-premise
     
@@ -791,11 +808,11 @@ Hello C++Hello PythonHello JavaScript
 ## Cards
 
 #### [DocumentationUse this guide to acquire the tools and knowledge you need
-to write documentation. Step-by-step guide](../documentation.html)####
+to write documentation. Step-by-step guide](../documentation)####
 [Content guidelinesList of guidelines and trips and tricks to make your
-content shine at its brightest! ](content_guidelines.html)#### [RST
+content shine at its brightest! ](content_guidelines)#### [RST
 guidelinesList of technical guidelines to observe when writing with
-reStructuredText. ](rst_guidelines.html)  
+reStructuredText. ](rst_guidelines)  
 ---  
       
     
@@ -830,7 +847,7 @@ They must be placed between colons (`:`) at the top of the source file.
 ---|---  
 `show-content` | Make a toctree page accessible from the navigation menu.  
 `show-toc` | Show the table of content on a page that has the `show-content` metadata markup.  
-`code-column` |  Show a dynamic side column that can be used to display interactive tutorials or code excerpts. For example, see [Accounting cheat sheet](../../applications/finance/accounting/get_started/cheat_sheet.html).  
+`code-column` |  Show a dynamic side column that can be used to display interactive tutorials or code excerpts. For example, see [Accounting cheat sheet](../../applications/finance/accounting/get_started/cheat_sheet).  
 `hide-page-toc` | Hide the “On this page” sidebar and use full page width for the content.  
 `custom-css` | Link CSS files (comma-separated) to the document.  
 `custom-js` | Link JS files (comma-separated) to the document.  

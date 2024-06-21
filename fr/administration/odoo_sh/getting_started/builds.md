@@ -2,8 +2,8 @@
 
 ## Vue d’ensemble
 
-Dans Odoo.sh, un build est considéré comme une base de données chargée par un
-serveur Odoo ([odoo/odoo](https://github.com/odoo/odoo) &
+Dans Konvergo ERP.sh, un build est considéré comme une base de données chargée par un
+serveur Konvergo ERP ([odoo/odoo](https://github.com/odoo/odoo) &
 [odoo/enterprise](https://github.com/odoo/enterprise)) fonctionnant sur une
 révision spécifique du dépôt de votre projet dans un environnement
 conteneurisé. Sa finalité est de tester le bon comportement du serveur, de la
@@ -18,7 +18,7 @@ représente un build de cette branche.
 La plupart du temps, les builds sont créés à la suite des poussées vers les
 branches de votre dépôt Github. Ils peuvent également être créés lorsque vous
 effectuez d’autres opérations, telles que l’importation d’une base de données
-sur Odoo.sh ou la demande d’un rebuild pour une branche de votre projet.
+sur Konvergo ERP.sh ou la demande d’un rebuild pour une branche de votre projet.
 
 Un build est considéré comme réussi si aucune erreur ou avertissement
 n’apparaît lors de sa création. Un build réussi est vert.
@@ -93,7 +93,7 @@ considéré comme réussi.
 
 En fonction de la liste des modules à installer et tester, un build de
 développement peut prendre jusqu’à une heure pour être prêt. Ceci est dû au
-grand nombre de tests dans la suite de modules Odoo par défaut.
+grand nombre de tests dans la suite de modules Konvergo ERP par défaut.
 
 ## Fonctionnalités
 
@@ -124,7 +124,7 @@ utilisant le bouton _Connect as_ dans le menu déroulant du bouton _Connect_.
 dropdown.png](../../../_images/interface-builds-build-dropdown.png)
 
 Dans le menu déroulant du build, vous pouvez accéder aux mêmes fonctionnalités
-que dans [la vue des branches](branches.html#odoosh-gettingstarted-branches-
+que dans [la vue des branches](branches#odoosh-gettingstarted-branches-
 tabs) : _Journaux_ , _Web Shell_ , _Editor_ , _Emails sortants_. Vous avez
 également la possibilité de _télécharger un dump_ de la base de données du
 build.

@@ -3,16 +3,15 @@
 ## ISR (In-payment Slip with Reference number)
 
 The ISRs are payment slips used in Switzerland. You can print them directly
-from Odoo. On the customer invoices, there is a new button called _Print ISR_.
+from Konvergo ERP. On the customer invoices, there is a new button called _Print ISR_.
 
 ![../../../_images/switzerland00.png](../../../_images/switzerland00.png)
-
-Tip
-
-The button _Print ISR_ only appears there is well a bank account defined on
-the invoice. You can use CH6309000000250097798 as bank account number and
-010391391 as CHF ISR reference.
-
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>The button <em>Print ISR</em> only appears there is well a bank account
+defined on the invoice. You can use CH6309000000250097798 as bank
+account number and 010391391 as CHF ISR reference.</p>
+</div>
 ![../../../_images/switzerland01.png](../../../_images/switzerland01.png)
 
 Then you open a pdf with the ISR.
@@ -38,7 +37,7 @@ modify (By default, the Journal is named _Customer Invoices_), click en _Edit_
 field, select _Switzerland_ , and click on _Save_.
 
 ![Configure your Journal to display your ISR as payment reference on your
-invoices in Odoo](../../../_images/switzerland-isr-reference.png)
+invoices in Konvergo ERP](../../../_images/switzerland-isr-reference.png)
 
 ## Currency Rate Live Update
 
@@ -54,7 +53,7 @@ Starting from the 1st January 2018, new reduced VAT rates will be applied in
 Switzerland. The normal 8.0% rate will switch to 7.7% and the specific rate
 for the hotel sector will switch from 3.8% to 3.7%.
 
-### How to update your taxes in Odoo Enterprise (Odoo Online or On-premise)?
+### How to update your taxes in Konvergo ERP Enterprise (Konvergo ERP Online or On-premise)?
 
 If you have the V11.1 version, all the work is already been done, you don’t
 have to do anything.
@@ -69,12 +68,13 @@ module ‣ click on “upgrade”.
 Once it has been done, you can work on creating new taxes for the updated
 rates.
 
-Tip
-
-**Do not suppress or modify the existing taxes** (8.0% and 3.8%). You want to
-keep them since you may have to use both rates for a short period of time.
-Instead, remember to archive them once you have encoded all your 2017
-transactions.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p><b>Do not suppress or modify the existing taxes</b> (8.0% and 3.8%).
+You want to keep them since you may have to use both rates for a short
+period of time. Instead, remember to archive them once you have encoded
+all your 2017 transactions.</p>
+</div>
 
 The creation of such taxes should be done in the following manner:
 
@@ -87,7 +87,7 @@ The creation of such taxes should be done in the following manner:
     * For 3.7% taxes: Switzerland VAT Form: grid 342 base, Switzerland VAT Form: grid 342 tax
 
 You’ll find below, as examples, the correct configuration for all taxes
-included in Odoo by default
+included in Konvergo ERP by default
 
 **Tax Name** | **Rate** | **Label on Invoice** | **Tax Group (effective from V10)** | **Tax Scope** | **Tag**  
 ---|---|---|---|---|---  
@@ -107,9 +107,10 @@ TVA due a 3.7% (Incl. TS) | 3.7% | 3.7% Incl. | TVA 3.7% | Sales | Switzerland V
 If you have questions or remarks, please contact our support using
 odoo.com/help.
 
-Tip
-
-Don’t forget to update your fiscal positions. If you have a version 11.1 (or
-higher), there is nothing to do. Otherwise, you will also have to update your
-fiscal positions accordingly.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Don’t forget to update your fiscal positions. If you have a version
+11.1 (or higher), there is nothing to do. Otherwise, you will also
+have to update your fiscal positions accordingly.</p>
+</div>
 

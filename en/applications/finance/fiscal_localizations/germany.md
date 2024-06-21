@@ -2,20 +2,21 @@
 
 ## German Chart of Accounts
 
-The chart of accounts SKR03 and SKR04 are both supported in Odoo. You can
+The chart of accounts SKR03 and SKR04 are both supported in Konvergo ERP. You can
 choose the one you want by going in Accounting ‣ Configuration then choose the
 package you want in the Fiscal Localization section.
 
 Be careful, you can only change the accounting package as long as you have not
 created any accounting entry.
 
-Tip
-
-When you create a new Odoo Online database, the SKR03 is installed by default.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>When you create a new Konvergo ERP Online database, the SKR03 is installed by default.</p>
+</div>
 
 ## German Accounting Reports
 
-Here is the list of German-specific reports available on Odoo Enterprise:
+Here is the list of German-specific reports available on Konvergo ERP Enterprise:
 
   * Balance Sheet
 
@@ -25,48 +26,47 @@ Here is the list of German-specific reports available on Odoo Enterprise:
 
   * Partner VAT Intra
 
-## Export from Odoo to Datev
+## Export from Konvergo ERP to Datev
 
-It is possible to export your accounting entries from Odoo to Datev. To be
+It is possible to export your accounting entries from Konvergo ERP to Datev. To be
 able to use this feature, the german accounting localization needs to be
-installed on your Odoo Enterprise database. Then you can go in Accounting ‣
+installed on your Konvergo ERP Enterprise database. Then you can go in Accounting ‣
 Reporting ‣ General Ledger then click on the **Export Datev (csv)** button.
 
 ## Point of Sale in Germany: Technical Security System
 
 The **Kassensicherungsverordnung** (The Act on Protection against Manipulation
 of Digital Records) requires that electronic record-keeping systems -
-including the [point of sale](../../sales/point_of_sale.html) systems - must
+including the [point of sale](../../sales/point_of_sale) systems - must
 be equipped with a **Technical Security System** (also called **TSS** or
 **TSE**).
 
-Odoo offers a service that is compliant with the help of
+Konvergo ERP offers a service that is compliant with the help of
 [fiskaly](https://fiskaly.com), a _cloud-based solution_.
 
-Important
-
-Since this solution is cloud-based, a working internet connection is required.
-
-Note
-
-The only VAT rates allowed are given by fiskaly. You can check these rates by
-consulting: [fiskaly DSFinV-K API: VAT
-Definition](https://developer.fiskaly.com/api/dsfinvk/v0/#tag/VAT-Definition).
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Since this solution is cloud-based, a working internet connection is required.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The only VAT rates allowed are given by fiskaly. You can check these rates by consulting:
+<a href="https://developer.fiskaly.com/api/dsfinvk/v0/#tag/VAT-Definition">fiskaly DSFinV-K API: VAT Definition</a>.</p>
+</div>
 
 ### Configuration
 
 #### Modules installation
 
-  1. If your database was created before June 2021, [upgrade](../../general/apps_modules.html#general-upgrade) your **Point of Sale** app (`point_of_sale`) and the **Restaurant** module (`pos_restaurant`).
+  1. If your database was created before June 2021, [upgrade](../../general/apps_modules#general-upgrade) your **Point of Sale** app (`point_of_sale`) and the **Restaurant** module (`pos_restaurant`).
 
-  2. [Install](../../general/apps_modules.html#general-install) the **Germany - Certification for Point of Sale** (`l10n_de_pos_cert`) and **Germany - Certification for Point of Sale of type restaurant** (`l10n_de_pos_res_cert`) modules.
+  2. [Install](../../general/apps_modules#general-install) the **Germany - Certification for Point of Sale** (`l10n_de_pos_cert`) and **Germany - Certification for Point of Sale of type restaurant** (`l10n_de_pos_res_cert`) modules.
 
-Tip
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>If these modules are not listed, <a href="../../general/apps_modules#general-install"><span class="std std-ref">update the app list</span></a>.</p>
+</div>
 
-If these modules are not listed, [update the app
-list](../../general/apps_modules.html#general-install).
-
-![Upgrading Odoo Point of Sale from the Apps dashboard](../../../_images/pos-
+![Upgrading Konvergo ERP Point of Sale from the Apps dashboard](../../../_images/pos-
 upgrade.png)
 
 #### Register your company at the financial authority
@@ -88,12 +88,11 @@ You can then **register your company through fiskaly** by opening the
 _fiskaly_ tab and clicking on the _fiskaly Registration_ button.
 
 ![Button to register a company through fiskaly in
-Odoo](../../../_images/fiskaly-registration.png)
-
-Tip
-
-If you do not see the _fiskaly Registration_ button, make sure that you
-_saved_ your company details and are not in _editing mode_ anymore.
+Konvergo ERP](../../../_images/fiskaly-registration.png) <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>If you do not see the <em>fiskaly Registration</em> button, make sure that you <em>saved</em> your company
+details and are not in <em>editing mode</em> anymore.</p>
+</div>
 
 Once the registration has been finalized, new fields appear:
 
@@ -101,12 +100,11 @@ Once the registration has been finalized, new fields appear:
 
   * **fiskaly API key** and **secret** are the credentials the system uses to access the services offered by fiskaly.
 
-![fiskaly keys as displayed on Odoo](../../../_images/fiskaly-keys.png)
-
-Note
-
-It is possible to request new credentials if there is any issue with the
-current ones.
+![fiskaly keys as displayed on Konvergo ERP](../../../_images/fiskaly-keys.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>It is possible to request new credentials if there is any issue with the current ones.</p>
+</div>
 
 #### Create and link a Technical Security System to your PoS
 
@@ -118,7 +116,7 @@ To do so, go to Point of Sale ‣ Configuration ‣ Point of Sale, open the poin
 of sale you want to edit, then check the box next to **Create TSS** and
 _Save_.
 
-![Example of TSS ID and Client ID from fiskaly in Odoo Point of
+![Example of TSS ID and Client ID from fiskaly in Konvergo ERP Point of
 Sale](../../../_images/tss-ids.png)
 
 Once the creation of the TSS is successful, you can find your **TSS ID** and
@@ -152,14 +150,14 @@ specific PoS’ data only.
 
 The creation of a DSFinV-K export triggers on export at fiskaly’s side.
 
-![Pending DSFinV-K export on Odoo](../../../_images/dsfinv-k-export-
+![Pending DSFinV-K export on Konvergo ERP](../../../_images/dsfinv-k-export-
 fields.png)
 
 As you can see, the **State** is _Pending_. This means that the export has
 been successfully triggered and is being processed. You have to click on
 _Refresh State_ to check if it is ready.
 
-## German Tax Accounting Standards: Odoo’s guide to GoBD Compliance
+## German Tax Accounting Standards: Konvergo ERP’s guide to GoBD Compliance
 
 **GoBD** stands for [Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung
 von Büchern, Aufzeichnungen und Unterlagen in elektronischer Form sowie zum
@@ -175,18 +173,18 @@ accounting. Several changes have been made by the BMF in 2019 and January 2020
 to specify some of the content and due to the development of digital solutions
 (cloud hosting, paperless companies, etc.).
 
-Important
-
-Odoo gives you **the means to be compliant with GoBD**.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Konvergo ERP gives you <b>the means to be compliant with GoBD</b>.</p>
+</div>
 
 ### What do you need to know about GoBD when relying on accounting software?
 
-Note
-
-If you can, the best way to understand GoBD is to Read the [Official GoBD
-text](https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Weitere_Steuerthemen/Abgabenordnung/2019-11-28-GoBD.pdf).
-It is a bit long but quite readable for non-experts. But in short, here is
-what to expect:
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>If you can, the best way to understand GoBD is to Read the <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Weitere_Steuerthemen/Abgabenordnung/2019-11-28-GoBD.pdf">Official GoBD text</a>.
+It is a bit long but quite readable for non-experts. But in short, here is what to expect:</p>
+</div>
 
 The **GoBD is binding for companies that have to present accounts, which
 includes SMEs, freelancers, and entrepreneurs, to the financial authorities**.
@@ -226,20 +224,20 @@ guidelines.
 Once bookings have been finally posted, they can no longer be changed or
 deleted via the application.
 
-  * If Odoo is used in the cloud, regular backups are part of the Odoo Online service. In addition, regular backups can be downloaded and backed up on external systems.
+  * If Konvergo ERP is used in the cloud, regular backups are part of the Konvergo ERP Online service. In addition, regular backups can be downloaded and backed up on external systems.
 
-See also
-
-[Odoo Cloud Hosting - Service Level Agreement](https://www.odooo.com/cloud-
-sla)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="https://www.odooo.com/cloud-sla">Konvergo ERP Cloud Hosting - Service Level Agreement</a></p>
+</div>
 
   * If the server is operated locally, it is the responsibility of the user to create the necessary backup infrastructure.
 
-Important
-
-In some cases, data has to be kept for ten years or more, so always have
-backups saved. It is even more important if you decide to change software
-provider.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>In some cases, data has to be kept for ten years or more, so always have backups saved. It is
+even more important if you decide to change software provider.</p>
+</div>
 
 ### Responsibility of the software editor
 
@@ -249,15 +247,15 @@ accurate and compliant documentation of financial transactional data of their
 users**. It can merely provide the necessary tools for the user to respect the
 software related guidelines described in the GoBD.
 
-### How can Odoo help you achieve Compliance?
+### How can Konvergo ERP help you achieve Compliance?
 
 The key words, when it comes to GoBD, are: **traceable, verifiable, true,
 clear, and continuous**. In short, you need to have audit-proof archiving in
-place and Odoo provides you with the means to achieve all of these objectives:
+place and Konvergo ERP provides you with the means to achieve all of these objectives:
 
   1. **Traceability and verifiability**
 
-Each record in Odoo is stamped with the creator of the document, the creation
+Each record in Konvergo ERP is stamped with the creator of the document, the creation
 date, the modification date, and who modified it. In addition, relevant fields
 are tracked thus it can be seen which value was changed by whom in the chatter
 of the relevant object.
@@ -265,39 +263,39 @@ of the relevant object.
   2. **Completeness**
 
 All financial data must be recorded in the system, and there can be no gaps.
-Odoo ensures that there is no gap in the numbering of the financial
+Konvergo ERP ensures that there is no gap in the numbering of the financial
 transactions. It is the responsibility of the user to encode all financial
-data in the system. As most financial data in Odoo is generated automatically,
+data in the system. As most financial data in Konvergo ERP is generated automatically,
 it remains the responsibility of the user to encode all vendor bills and
 miscellaneous operations completely.
 
   3. **Accuracy**
 
-Odoo ensures with the correct configuration that the correct accounts are
+Konvergo ERP ensures with the correct configuration that the correct accounts are
 used. In addition, the control mechanisms between purchase orders and sales
 orders and their respective invoices reflect the business reality. It is the
 responsibility of the user to scan and attach the paper-based vendor bill to
-the respective record in Odoo. _Odoo Document helps you automate this task_.
+the respective record in Konvergo ERP. _Konvergo ERP Document helps you automate this task_.
 
   4. **Timely booking and record-keeping**
 
-As most financial data in Odoo is generated by the transactional objects (for
-example, the invoice is booked at confirmation), Odoo ensures out-of-the-box
+As most financial data in Konvergo ERP is generated by the transactional objects (for
+example, the invoice is booked at confirmation), Konvergo ERP ensures out-of-the-box
 timely record-keeping. It is the responsibility of the user to encode all
 incoming vendor bills in a timely manner, as well as the miscellaneous
 operations.
 
   5. **Order**
 
-Financial data stored in Odoo is per definition ordered and can be reordered
+Financial data stored in Konvergo ERP is per definition ordered and can be reordered
 according to most fields present in the model. A specific ordering is not
 enforced by the GoBD, but the system must ensure that a given financial
-transaction can be quickly found by a third-party expert. Odoo ensures this
+transaction can be quickly found by a third-party expert. Konvergo ERP ensures this
 out-of-the-box.
 
   6. **Inalterability**
 
-With the German Odoo localization, Odoo is in standard configured in such a
+With the German Konvergo ERP localization, Konvergo ERP is in standard configured in such a
 way that the inalterability clause can be adhered to without any further
 customization.
 
@@ -310,7 +308,7 @@ device.
 
 In case of a handover of the financial data on a storage device, the format is
 **not** enforced by the GoBD. It can be, for example, in XLS, CSV, XML, Lotus
-123, SAP-format, AS/400-format, or else. Odoo supports the CSV and XLS-export
+123, SAP-format, AS/400-format, or else. Konvergo ERP supports the CSV and XLS-export
 of financial data out-of-the-box. The GoBD **recommends** the export in a
 specific XML-based GoBD-format (see “Ergänzende Informationen zur
 Datenntträgerüberlassung” §3) but it is not binding.
@@ -332,20 +330,10 @@ and their value is very relative. Thus we focus our efforts on ensuring GoBD
 compliance rather than pay for a marketing tool which does not, however, offer
 our customer any legal certainty.
 
-Important
-
-The BMF actually states the following in the [Official GoBD
-text](https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Weitere_Steuerthemen/Abgabenordnung/2019-11-28-GoBD.pdf):
-
-  * 180\. Positive attestations on the correctness of the bookkeeping - and thus on the correctness of IT-based bookkeeping systems - are not issued either in the context of a tax field audit or in the context of binding information.
-
-  * 181\. “Certificates” or “attestations” from third parties can serve as a decision criterion for the company when selecting a software product, but develop from the in margin no. 179 is not binding on the tax authorities.
-
-Note
-
-The previous content was [automatically translated from German with Google
-Translate](https://translate.google.com/?sl=de&tl=en&text=180.%0APositivtestate%20zur%20Ordnungsm%C3%A4%C3%9Figkeit%20der%20Buchf%C3%BChrung%20-%20und%20damit%20zur%20Ordnungsm%C3%A4%C3%9Figkeit%20DV-
-gest%C3%BCtzter%20Buchf%C3%BChrungssysteme%20-%20werden%20weder%20im%20Rahmen%20einer%20steuerlichen%20Au%C3%9Fenpr%C3%BCfung%20noch%20im%20Rahmen%20einer%20verbindlichen%20Auskunft%20erteilt.%0A%0A181.%0A%E2%80%9EZertifikate%E2%80%9C%20oder%20%E2%80%9ETestate%E2%80%9C%20Dritter%20k%C3%B6nnen%20bei%20der%20Auswahl%20eines%20Softwareproduktes%20dem%20Unternehmen%20als%20Entscheidungskriterium%20dienen%2C%20entfalten%20jedoch%20aus%20den%20in%20Rz.%20179%20genannten%20Gr%C3%BCnden%20gegen%C3%BCber%20der%20Finanzbeh%C3%B6rde%20keine%20Bindungswirkung.%20&op=translate).
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Since this solution is cloud-based, a working internet connection is required.</p>
+</div>0
 
 ### What happens if you are not compliant?
 

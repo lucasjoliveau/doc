@@ -5,18 +5,17 @@ guidelines, tips and tricks that will make your content shine at its
 brightest! While we encourage you to adopt your own writing style, some rules
 still apply to give the reader more clarity and comprehension.
 
-Note
-
-We strongly recommend contributors to carefully read the other documents
-related to this section of the documentation. Good knowledge of the ins and
-outs of **RST writing** is required to write and submit your contribution.
-Note that it also affects your writing style itself.
-
-  * [Documentation](../documentation.html)
-
-  * [RST cheat sheet](rst_cheat_sheet.html)
-
-  * [RST guidelines](rst_guidelines.html)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>We strongly recommend contributors to carefully read the other documents related to this section
+of the documentation. Good knowledge of the ins and outs of <b>RST writing</b> is required to write
+and submit your contribution. Note that it also affects your writing style itself.</p>
+<ul>
+<li><p><a href="../documentation">Documentation</a></p></li>
+<li><p><a href="rst_cheat_sheet">RST cheat sheet</a></p></li>
+<li><p><a href="rst_guidelines">RST guidelines</a></p></li>
+</ul>
+</div>
 
 ## Writing style
 
@@ -58,9 +57,12 @@ break_ as it is common to do in some other languages. _Line breaks_ are useful
 for layout purposes but shouldn’t be used as a grammatical way of separating
 ideas.
 
-Pour plus d'infos
-
-  * [RST cheat sheet: Break the line but not the paragraph](rst_cheat_sheet.html#contributing-line-break)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="rst_cheat_sheet#contributing-line-break"><span class="std std-ref">RST cheat sheet: Break the line but not the paragraph</span></a></p></li>
+</ul>
+</div>
 
 ### Titles and headings
 
@@ -80,39 +82,37 @@ To write good titles and headings:
 
     * proper nouns (brands, product and service names, etc.)
 
-Note
-
-  * Most titles and headings generally refer to a concept and do _not_ represent the name of a feature or a model.
-
-  * Do not capitalize the words of an acronym if they don’t entail a proper noun.
-
-  * Verbs in headings are fine since they often describe an action.
-
-Example
-
-  * **Titles** (H1)
-
-    * Quotation templates
-
-    * Lead mining
-
-    * Resupply from another warehouse
-
-    * Synchronize Google Calendar with Odoo
-
-    * Batch payments: SEPA Direct Debit (SDD)
-
-    * Digitize vendor bills with optical character recognition (OCR)
-
-  * **Headings** (H2, H3)
-
-    * Project stages
-
-    * Email alias
-
-    * Confirm the quotation
-
-    * Generate SEPA Direct Debit XML files to submit payments
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>Most titles and headings generally refer to a concept and do <em>not</em> represent the name of a
+feature or a model.</p></li>
+<li><p>Do not capitalize the words of an acronym if they don’t entail a proper noun.</p></li>
+<li><p>Verbs in headings are fine since they often describe an action.</p></li>
+</ul>
+</div> <div class="alert alert-success">
+<p class="alert-title">
+Example</p><ul>
+<li><p><b>Titles</b> (H1)</p>
+<ul>
+<li><p>Quotation templates</p></li>
+<li><p>Lead mining</p></li>
+<li><p>Resupply from another warehouse</p></li>
+<li><p>Synchronize Google Calendar with Konvergo ERP</p></li>
+<li><p>Batch payments: SEPA Direct Debit (SDD)</p></li>
+<li><p>Digitize vendor bills with optical character recognition (OCR)</p></li>
+</ul>
+</li>
+<li><p><b>Headings</b> (H2, H3)</p>
+<ul>
+<li><p>Project stages</p></li>
+<li><p>Email alias</p></li>
+<li><p>Confirm the quotation</p></li>
+<li><p>Generate SEPA Direct Debit XML files to submit payments</p></li>
+</ul>
+</li>
+</ul>
+</div>
 
 ## Document structure
 
@@ -124,7 +124,7 @@ H6).
 **H1: Page title** Your _page title_ gives your reader a quick and clear
 understanding of what your content is about. The _content_ in this section
 describes the upcoming content from a **business point of view** , and
-shouldn’t put the emphasis on Odoo, as this is documentation and not
+shouldn’t put the emphasis on Konvergo ERP, as this is documentation and not
 marketing. Start first with a **lead paragraph** , which helps the reader make
 sure that they’ve found the right page, then explain the **business aspects of
 this topic** in the following paragraphs.  
@@ -139,12 +139,13 @@ have actions or features to distinguish. The title can start with a verb, but
 try to avoid using « Create … ».  
 |  |  **H3: Subsection** Subsections are perfect for assessing very specific points. The title can be in the form of a question, if appropriate.  
 | **H2: Next Section**  
-  
-Pour plus d'infos
-
-  * [RST cheat sheet: headings](rst_cheat_sheet.html#contributing-headings)
-
-  * [RST cheat sheet: markups](rst_cheat_sheet.html#contributing-markups)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="rst_cheat_sheet#contributing-headings"><span class="std std-ref">RST cheat sheet: headings</span></a></p></li>
+<li><p><a href="rst_cheat_sheet#contributing-markups"><span class="std std-ref">RST cheat sheet: markups</span></a></p></li>
+</ul>
+</div>
 
 ## Organizing the documentation
 
@@ -163,7 +164,7 @@ page. If you are documenting a complex topic from scratch, organize your
 content between one parent page (the TOC page) and several child pages.
 Whenever possible, write content on the parent page and not only on the child
 pages. Make the parent page accessible from the navigation menu by using the
-[show-content](rst_cheat_sheet.html#contributing-document-metadata) metadata
+[show-content](rst_cheat_sheet#contributing-document-metadata) metadata
 directive.
 
 ## Images
@@ -172,11 +173,10 @@ Adding a few images to illustrate your text helps the readers to understand
 and memorize your content. However, avoid adding too many images: it isn’t
 necessary to illustrate all steps and features, and it may overload your page.
 
-Important
-
-Don’t forget to [compress your PNG files with
-pngquant](../documentation.html#contributing-documentation-first-
-contribution).
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Don’t forget to <a href="../documentation#contributing-documentation-first-contribution"><span class="std std-ref">compress your PNG files with pngquant</span></a>.</p>
+</div>
 
 ### Screenshots
 
@@ -193,16 +193,14 @@ A few tips to improve your screenshots:
 
   3. **Select** the relevant area, rather than keeping the full window.
 
-  4. If necessary, you can **edit** the screenshot to remove unnecessary fields and to narrow even more Odoo’s display.
+  4. If necessary, you can **edit** the screenshot to remove unnecessary fields and to narrow even more Konvergo ERP’s display.
 
-![Three tips to take good screenshots for the Odoo
-documentation.](../../_images/screenshot-tips.gif)
-
-Note
-
-Resizing the window’s width is the most important step to do as Odoo’s
-responsive design automatically resizes all fields to match the window’s
-width.
+![Three tips to take good screenshots for the Konvergo ERP
+documentation.](../../_images/screenshot-tips.gif) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Resizing the window’s width is the most important step to do as Konvergo ERP’s responsive design
+automatically resizes all fields to match the window’s width.</p>
+</div>
 
 ### Media files
 
@@ -229,14 +227,14 @@ placed in the folder `doc_filename`.
     │   └── doc_filename.rst
     
 
-Note
-
-Previously, image filenames would mostly be named with numbers (e.g.,
-`feature01.png`) and placed in a single `media` folder. While it is advised
-not to name your _new_ images in that fashion, it is also essential **not to
-rename unchanged files** , as doing this would double the weight of renamed
-image files on the repository. They will eventually all be replaced as the
-content referencing those images is updated.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Previously, image filenames would mostly be named with numbers (e.g., <code>feature01.png</code>) and
+placed in a single <code>media</code> folder. While it is advised not to name your <em>new</em> images in that
+fashion, it is also essential <b>not to rename unchanged files</b>, as doing this would double the
+weight of renamed image files on the repository. They will eventually all be replaced as the
+content referencing those images is updated.</p>
+</div>
 
 ### ALT tags
 
@@ -256,9 +254,12 @@ Good ALT tags are:
 
   * Easily **understandable** if read aloud
 
-Pour plus d'infos
-
-  * [RST cheat sheet: image directive](rst_cheat_sheet.html#contributing-image)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="rst_cheat_sheet#contributing-image"><span class="std std-ref">RST cheat sheet: image directive</span></a></p></li>
+</ul>
+</div>
 
   *[TOC]: Tree Of Contents
   *[SEO]: Search Engine Optimization

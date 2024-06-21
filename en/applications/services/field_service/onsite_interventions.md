@@ -8,43 +8,43 @@ approve before the work even starts.
 
 Go to Field Service ‣ Configuration ‣ Products and create or edit a product.
 
-  1. Under the General Information tab, select Service as Product Type.
+  1. Under the **General Information** tab, select **Service** as **Product Type**.
 
-  2. Under the Sales tab, select Timesheets on tasks as Service Invoicing Policy.
+  2. Under the **Sales** tab, select **Timesheets on tasks** as **Service Invoicing Policy**.
 
-  3. Select Create a task in an existing project as Service Tracking.
+  3. Select **Create a task in an existing project** as **Service Tracking**.
 
-  4. Select your Project.
+  4. Select your **Project**.
 
-  5. If you use them, select your Worksheet Template, and save.
+  5. If you use them, select your **Worksheet Template** , and save.
 
-![Product configuration to create tasks from sales orders in Odoo Field
+![Product configuration to create tasks from sales orders in Konvergo ERP Field
 Service](../../../_images/product-configuration1.png)
 
-From the [Sales](../../sales/sales.html) app, create a quotation with the
+From the [Sales](../../sales/sales) app, create a quotation with the
 product and confirm it. A task is automatically set up under your Field
 Service project. It is directly accessible from the sales order.
 
-![Field Service task on a sales order in Odoo Sales](../../../_images/task-on-
+![Field Service task on a sales order in Konvergo ERP Sales](../../../_images/task-on-
 so.png)
 
 ## From helpdesk tickets
 
-The integration with the [Helpdesk](../helpdesk.html) app lets your helpdesk
+The integration with the [Helpdesk](../helpdesk) app lets your helpdesk
 team manage intervention requests directly. Planning field service tasks from
 tickets speeds up your processes.
 
 ### Configure the helpdesk team
 
 Go to Helpdesk ‣ Configuration ‣ Helpdesk Teams. Select a team and enable
-Onsite Interventions.
+**Onsite Interventions**.
 
-![Onsite interventions settings in Odoo Helpdesk](../../../_images/helpdesk-
+![Onsite interventions settings in Konvergo ERP Helpdesk](../../../_images/helpdesk-
 settings.png)
 
-The helpdesk tickets of the team now display the Plan Intervention button.
+The helpdesk tickets of the team now display the **Plan Intervention** button.
 Click on it to create a new task under your field service project.
 
-![Plan intervention from helpdesk tickets in Odoo
+![Plan intervention from helpdesk tickets in Konvergo ERP
 Helpdesk](../../../_images/plan-intervention-from-ticket.png)
 

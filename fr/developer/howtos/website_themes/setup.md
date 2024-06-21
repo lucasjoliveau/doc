@@ -4,34 +4,34 @@ In this chapter, you will learn:
 
   * To set up your local development environment.
 
-  * The outline of the Odoo database structure.
+  * The outline of the Konvergo ERP database structure.
 
-  * To export and import an Odoo database in your local environment.
+  * To export and import an Konvergo ERP database in your local environment.
 
-  * To have an Odoo instance up and running.
+  * To have an Konvergo ERP instance up and running.
 
 ## Install
 
 There are multiple ways to [install
-Odoo](../../../administration/on_premise.html), depending on the intended use
+Konvergo ERP](../../../administration/on_premise), depending on the intended use
 case. This documentation assumes you use the [source
-install](../../../administration/on_premise/source.html) (running Odoo from
-the source code), which is best suited for Odoo designers and developers.
+install](../../../administration/on_premise/source) (running Konvergo ERP from
+the source code), which is best suited for Konvergo ERP designers and developers.
 
 ## Databases
 
 ### Structure
 
-Every Odoo application works similarly; they are built with the same logic. A
+Every Konvergo ERP application works similarly; they are built with the same logic. A
 model contains fields and relational fields that link to other models. Each
 model has views representing all its fields, with backend and frontend views.
 
 #### Models
 
-The basis of Odoo is models. Models use fields to record the data. Records are
-stored in a database: they are therefore linked to a model. In Odoo, you can
+The basis of Konvergo ERP is models. Models use fields to record the data. Records are
+stored in a database: they are therefore linked to a model. In Konvergo ERP, you can
 find the different models in the backend by enabling the [developer
-mode](../../../applications/general/developer_mode.html#developer-mode) and
+mode](../../../applications/general/developer_mode#developer-mode) and
 then going to Settings ‣ Technical ‣ Database Structure: Models.
 
 ![Models page](../../../_images/models-page.png)
@@ -41,9 +41,10 @@ then going to Settings ‣ Technical ‣ Database Structure: Models.
 In a model, we will centralize fields (field names we need to target in our
 code).
 
-Pour plus d'infos
-
-[Champs et widgets](../../../applications/studio/fields.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../../applications/studio/fields">Champs et widgets</a></p>
+</div>
 
 ##### Classic fields
 
@@ -90,40 +91,41 @@ control.
 
 ##### Standard vs. Inherited
 
-  * **Standard views** are base views implemented by Odoo. They are directly derived from their model. You should never change them as they allow updating an Odoo database without overwriting a client’s modifications.
+  * **Standard views** are base views implemented by Konvergo ERP. They are directly derived from their model. You should never change them as they allow updating an Konvergo ERP database without overwriting a client’s modifications.
 
   * **Inherited views** are duplicated views. Modifications always take place in an inherited view. If there is a duplicate view, there will be two views with the same name in the database, but the duplicated view will not have an ID like for standard view.
 
 ### Import an existing database
 
-Note
-
-You can directly go to the [Theming](theming.html) chapter if you do not need
-to import an existing database.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>You can directly go to the <a href="theming">Theming</a> chapter if you do not need to import an existing
+database.</p>
+</div>
 
 #### Dump
 
-##### Odoo SaaS
+##### Konvergo ERP SaaS
 
 Go to `<database_url>/saas_worker/dump`.
 
-##### Odoo.sh
+##### Konvergo ERP.sh
 
-  1. Connect to Odoo.sh.
+  1. Connect to Konvergo ERP.sh.
 
   2. Select the branch you want to back up.
 
-  3. Choose the BACKUPS tab.
+  3. Choose the **BACKUPS** tab.
 
-  4. Click the Create Backup button.
+  4. Click the **Create Backup** button.
 
-  5. When the process is over, a notification appears. Open it and click the Go to Backup button.
+  5. When the process is over, a notification appears. Open it and click the **Go to Backup** button.
 
-  6. Click the Download icon. Select Testing under Purpose and With filestore under Filestore.
+  6. Click the **Download** icon. Select **Testing** under **Purpose** and **With filestore** under **Filestore**.
 
 ![Download backup](../../../_images/download-backup.png)
 
-  7. You will receive a notification when the dump is ready to be downloaded. Open it and click on Download to get your dump.
+  7. You will receive a notification when the dump is ready to be downloaded. Open it and click on **Download** to get your dump.
 
 ![Database backup](../../../_images/database-backup.png)
 
@@ -132,13 +134,14 @@ Go to `<database_url>/saas_worker/dump`.
 Copy all the folders included in the filestore folder and paste them to the
 following location on your computer:
 
-  * macOS: `/Users/<User>/Library/Application Support/Odoo/filestore/<database_name>`
+  * macOS: `/Users/<User>/Library/Application Support/Konvergo ERP/filestore/<database_name>`
 
-  * Linux: `/home/<User>/.local/share/Odoo/filestore/<database_name>`
+  * Linux: `/home/<User>/.local/share/Konvergo ERP/filestore/<database_name>`
 
-Note
-
-`/Library` is a hidden folder.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><code>/Library</code> is a hidden folder.</p>
+</div>
 
 #### Database setup
 
@@ -167,45 +170,43 @@ Reset the admin user password.
 
 ## Getting started
 
-### Running Odoo
+### Running Konvergo ERP
 
-Once all dependencies are set up, Odoo can be launched by running `odoo-bin`,
+Once all dependencies are set up, Konvergo ERP can be launched by running `odoo-bin`,
 the command-line interface of the server. It is located at the root of the
-Odoo Community directory.
+Konvergo ERP Community directory.
 
-  * [Running Odoo](../../../administration/on_premise/source.html#install-source-running-odoo)
+  * [Running Konvergo ERP](../../../administration/on_premise/source#install-source-running-odoo)
 
   * [Docker](https://hub.docker.com/_/odoo/)
 
 To configure the server, you can specify command-line arguments or a
 configuration file. The first method is presented below.
 
-The [CLI](../../reference/cli.html#reference-cmdline) offers several
-functionalities related to Odoo. You can use it to [run the
-server](../../reference/cli.html#reference-cmdline-server), scaffold an Odoo
+The [CLI](../../reference/cli#reference-cmdline) offers several
+functionalities related to Konvergo ERP. You can use it to [run the
+server](../../reference/cli#reference-cmdline-server), scaffold an Konvergo ERP
 theme, populate a database, or count the number of lines of code.
 
 ### Shell script
 
-A typical way to [run the server](../../reference/cli.html#reference-cmdline-
+A typical way to [run the server](../../reference/cli#reference-cmdline-
 server) would be to add all command line arguments to a `.sh` script.
 
-Example
-
-    
-    
-    ./odoo-bin --addons-path=../enterprise,addons --db-filter=<database> -d <database> --without-demo=all -i website --dev=xml
-    
-
-Folder | Description  
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>./odoo-bin --addons-path=../enterprise,addons --db-filter=<span class="nt">&lt;database&gt;</span> -d <span class="nt">&lt;database&gt;</span> --without-demo=all -i website --dev=xml
+</pre></div>
+</div>
+</div>  Folder | Description  
 ---|---  
-[`--addons-path`](../../reference/cli.html#cmdoption-odoo-bin-addons-path) | Comma-separated list of directories in which modules are stored. These directories are scanned for modules.  
-[`-d`](../../reference/cli.html#cmdoption-odoo-bin-d) [`--database`](../../reference/cli.html#cmdoption-odoo-bin-d) | database(s) used when installing or updating modules.  
-[`--db-filter`](../../reference/cli.html#cmdoption-odoo-bin-db-filter) | Hides databases that do not match the filter.  
-[`-i`](../../reference/cli.html#cmdoption-odoo-bin-i) [`--init`](../../reference/cli.html#cmdoption-odoo-bin-i) | Comma-separated list of modules to install before running the server. (requires `-d`)  
-[`-u`](../../reference/cli.html#cmdoption-odoo-bin-u) [`--update`](../../reference/cli.html#cmdoption-odoo-bin-u) | Comma-separated list of modules to update before running the server. (requires `-d`)  
-[`--without-demo`](../../reference/cli.html#cmdoption-odoo-bin-without-demo) | Disables demo data loading for modules installed comma-separated; use `all` for all modules. (requires `-d` and `-i`)  
-[`--dev`](../../reference/cli.html#cmdoption-odoo-bin-dev) | Comma-separated list of features. For development purposes only. [More info](../../reference/cli.html#reference-cmdline-dev)  
+[`--addons-path`](../../reference/cli#cmdoption-odoo-bin-addons-path) | Comma-separated list of directories in which modules are stored. These directories are scanned for modules.  
+[`-d`](../../reference/cli#cmdoption-odoo-bin-d) [`--database`](../../reference/cli#cmdoption-odoo-bin-d) | database(s) used when installing or updating modules.  
+[`--db-filter`](../../reference/cli#cmdoption-odoo-bin-db-filter) | Hides databases that do not match the filter.  
+[`-i`](../../reference/cli#cmdoption-odoo-bin-i) [`--init`](../../reference/cli#cmdoption-odoo-bin-i) | Comma-separated list of modules to install before running the server. (requires `-d`)  
+[`-u`](../../reference/cli#cmdoption-odoo-bin-u) [`--update`](../../reference/cli#cmdoption-odoo-bin-u) | Comma-separated list of modules to update before running the server. (requires `-d`)  
+[`--without-demo`](../../reference/cli#cmdoption-odoo-bin-without-demo) | Disables demo data loading for modules installed comma-separated; use `all` for all modules. (requires `-d` and `-i`)  
+[`--dev`](../../reference/cli#cmdoption-odoo-bin-dev) | Comma-separated list of features. For development purposes only. [More info](../../reference/cli#reference-cmdline-dev)  
   
 ### Sign in
 
@@ -215,11 +216,10 @@ in with the base administrator account.
 
 Type **admin** for the email and **admin** for the password.
 
-![Welcome homepage](../../../_images/welcome-homepage.png)
-
-Astuce
-
-Hit _CTRL+C_ to stop the server. Do it twice if needed.
+![Welcome homepage](../../../_images/welcome-homepage.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Hit <em>CTRL+C</em> to stop the server. Do it twice if needed.</p>
+</div>
 
 ### Developer mode
 
@@ -227,8 +227,8 @@ The developer mode, also known as debug mode, is useful for development as it
 gives access to additional tools. In the next chapters, it is assumed that you
 have enabled the developer mode.
 
-Pour plus d'infos
-
-[Developer mode (debug
-mode)](../../../applications/general/developer_mode.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../../applications/general/developer_mode">Developer mode (debug mode)</a></p>
+</div>
 

@@ -59,7 +59,7 @@ Tags are used to prefix your commit. They should be one of the following
 
   * **[MERGE]** for merge commits: used in forward port of bug fixes but also as main commit for feature involving several separated commits;
 
-  * **[CLA]** for signing the Odoo Individual Contributor License;
+  * **[CLA]** for signing the Konvergo ERP Individual Contributor License;
 
   * **[I18N]** for changes in translation files;
 
@@ -93,7 +93,7 @@ the purpose of the change.
 
 What you did can be found in the commit itself. If there was some technical
 choices involved it is a good idea to explain it also in the commit message
-after the why. For Odoo R&D developers «PO team asked me to do it» is not a
+after the why. For Konvergo ERP R&D developers «PO team asked me to do it» is not a
 valid why, by the way.
 
 Please avoid commits which simultaneously impact multiple modules. Try to
@@ -107,7 +107,7 @@ sentences. No pressure at all.
 **You spend several hours, days or weeks working on meaningful features. Take
 some time to calm down and write clear and understandable commit messages.**
 
-If you are an Odoo R&D developer the WHY should be the purpose of the task you
+If you are an Konvergo ERP R&D developer the WHY should be the purpose of the task you
 are working on. Full specifications make the core of the commit message. **If
 you are working on a task that lacks purpose and specifications please
 consider making them clear before continuing.**
@@ -136,8 +136,9 @@ Finally here are some examples of correct commit messages :
      and useless alert.
     
 
-Nota
-
-Use the long description to explain the _why_ not the _what_ , the _what_ can
-be seen in the diff
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Use the long description to explain the <em>why</em> not the
+<em>what</em>, the <em>what</em> can be seen in the diff</p>
+</div>
 

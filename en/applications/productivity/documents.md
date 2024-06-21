@@ -1,53 +1,55 @@
 # Documents
 
-**Odoo Documents** allows you to store, view and manage files within Odoo.
+**Konvergo ERP Documents** allows you to store, view and manage files within Konvergo ERP.
 
-You can upload any type of file (max 64MB per file on Odoo Online), and
+You can upload any type of file (max 64MB per file on Konvergo ERP Online), and
 organize them in various workspaces.
 
-See also
-
-  * [Odoo Documents: product page](https://www.odoo.com/app/documents)
-
-  * [Odoo Tutorials: Documents basics](https://www.odoo.com/slides/slide/documents-basics-674)
-
-  * [Odoo Tutorials: Using Documents with your Accounting App](https://www.odoo.com/slides/slide/using-documents-with-your-accounting-app-675?fullscreen=1#)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="https://www.odoo.com/app/documents">Konvergo ERP Documents: product page</a></p></li>
+<li><p><a href="https://www.odoo.com/slides/slide/documents-basics-674">Konvergo ERP Tutorials: Documents basics</a></p></li>
+<li><p><a href="https://www.odoo.com/slides/slide/using-documents-with-your-accounting-app-675?fullscreen=1#">Konvergo ERP Tutorials: Using Documents with your Accounting App</a></p></li>
+</ul>
+</div>
 
 ## Configuration
 
 By going to Documents ‣ Configuration ‣ Settings, you can enable the
 centralization of files attached to a specific area of your activity. For
-example, by ticking Human Resources, your HR documents are automatically
+example, by ticking **Human Resources** , your HR documents are automatically
 available in the HR workspace, while documents related to Payroll are
 automatically available in the Payroll sub-workspace . You can change the
 default workspace by using the dropdown menu and edit its properties by
-clicking the internal link button (➔).
+clicking the internal link button (**➔**).
 
 ![Enable the centralization of files attached to a specific area of your
-activity.](../../_images/files-centralization.png)
-
-Note
-
-  * If you enable the centralization of your accounting files and documents, it is necessary to click on Journals and define each journal independently to allow automatic synchronization.
-
-![Enable the centralization of files attached to your
-accounting.](../../_images/accounting-files-centralization.png)
-
-  * If you select a new workspace, existing documents aren’t moved. Only newly created documents will be found under the new workspace.
+activity.](../../_images/files-centralization.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>If you enable the centralization of your accounting files and documents, it is necessary to
+click on <b>Journals</b> and define each journal independently to allow automatic
+synchronization.</p>
+<img alt="Enable the centralization of files attached to your accounting." class="align-center" src="../../_images/accounting-files-centralization.png"/>
+</li>
+<li><p>If you select a new workspace, existing documents aren’t moved. Only newly created documents
+will be found under the new workspace.</p></li>
+</ul>
+</div>
 
 ## Workspaces
 
 Workspaces are hierarchical folders having their own set of tags and actions.
 Default workspaces exist, but you can create your own by going to Documents ‣
-Configuration ‣ Workspaces and clicking on Create.
+Configuration ‣ Workspaces and clicking on **Create**.
 
-Note
-
-Workspaces and Sub-workspaces can be created, edited, or deleted by clicking
-on the gear icon ⚙ on the left menu.
-
-![Create sub-workspaces from the left menu](../../_images/sub-workspaces-
-creation.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Workspaces</b> and <b>Sub-workspaces</b> can be created, edited, or deleted by
+clicking on the gear icon <b>⚙</b> on the left menu.</p>
+</div> ![Create sub-workspaces from the left
+menu](../../_images/sub-workspaces-creation.png)
 
 ## Tags
 
@@ -55,34 +57,43 @@ Tags are used within workspaces to add a level of differentiation between
 documents. They are organized per category and filters can be used to sort
 them.
 
-Note
-
-  * The tags of a parent workspace apply to the child workspaces automatically.
-
-  * Tags can be created and modified by going to Configuration ‣ Tags.
-
-  * Tags can also be created, edited, or deleted, by clicking on the gear icon ⚙, on the left menu.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>The tags of a parent workspace apply to the child workspaces automatically.</p></li>
+<li><p>Tags can be created and modified by going to Configuration ‣ Tags.</p></li>
+<li><p>Tags can also be created, edited, or deleted, by clicking on the gear icon <b>⚙</b>, on
+the left menu.</p></li>
+</ul>
+</div>
 
 ## Documents management
 
 When clicking on a specific document, the right panel displays different
-options. On the top, additional options might be available: Download, Share,
-Replace, Lock or Split. It is also possible to Open chatter or Archive the
-document.
+options. On the top, additional options might be available: **Download** ,
+**Share** , **Replace** , **Lock** or **Split**. It is also possible to **Open
+chatter** or **Archive** the document.
 
 ![right panel options](../../_images/right-panel-options.png)
 
-Then, you can modify the name of your file by clicking on Document. A Contact
-or an Owner can be assigned. The related Workspace can be modified and it is
-possible to access the related Journal Entry or to add Tags.
+Then, you can modify the name of your file by clicking on **Document**. A
+**Contact** or an **Owner** can be assigned. The related **Workspace** can be
+modified and it is possible to access the related **Journal Entry** or to add
+**Tags**.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>The <b>Contact</b> is the person related to the document and assigned to it. He can only
+view the document and not modify it. I.e.: an existing supplier in your database is the contact
+for their bill.</p></li>
+<li><p>The person who creates a document is, by default <b>Owner</b> of it and has complete
+rights to the document. It is possible to replace the owner of a document. I.e.: an employee
+must be owner of a document to be able to see it in “My Profile”.</p></li>
+</ul>
+</div>
 
-  * The Contact is the person related to the document and assigned to it. He can only view the document and not modify it. I.e.: an existing supplier in your database is the contact for their bill.
-
-  * The person who creates a document is, by default Owner of it and has complete rights to the document. It is possible to replace the owner of a document. I.e.: an employee must be owner of a document to be able to see it in “My Profile”.
-
-Finally, different Actions are available at the bottom of the right panel,
+Finally, different **Actions** are available at the bottom of the right panel,
 depending on the workspace where your document is stored.
 
 ## Workflow actions
@@ -97,68 +108,70 @@ panel when it meets the criteria you set.
 ### Create workflow actions
 
 To create workflow actions, go to Documents ‣ Configuration ‣ Actions and then
-click on Create.
+click on **Create**.
 
-Note
-
-An action applies to all Child Workspaces under the Parent Workspace you
-selected.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>An action applies to all <b>Child Workspaces</b> under the <b>Parent Workspace</b> you
+selected.</p>
+</div>
 
 ### Set the conditions
 
-You can Create a new Action or edit an existing one. You can define the Action
-Name and then set the conditions that trigger the appearance of the action
-button (▶) on the right-side panel when selecting a file.
+You can **Create** a new **Action** or edit an existing one. You can define
+the **Action Name** and then set the conditions that trigger the appearance of
+the action button (**▶**) on the right-side panel when selecting a file.
 
 There are three basic types of conditions you can set:
 
-  1. Tags: you can both use the Contains and Does not contain conditions, meaning the files _must have_ or _mustn’t have_ the tags set here.
+  1. **Tags** : you can both use the **Contains** and **Does not contain** conditions, meaning the files _must have_ or _mustn’t have_ the tags set here.
 
-  2. Contact: the files must be associated with the contact set here.
+  2. **Contact** : the files must be associated with the contact set here.
 
-  3. Owner: the files must be associated with the owner set here.
+  3. **Owner** : the files must be associated with the owner set here.
 
-![Example of a workflow action's basic condition in Odoo
-Documents](../../_images/basic-condition-example.png)
-
-Tip
-
-If you don’t set any conditions, the action button appears for all files
-located inside the selected workspace.
+![Example of a workflow action's basic condition in Konvergo ERP
+Documents](../../_images/basic-condition-example.png) <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>If you don’t set any conditions, the action button appears for all files located inside the
+selected workspace.</p>
+</div>
 
 #### Advanced condition type: domain
 
-Important
-
-It is recommended to have some knowledge of Odoo development to properly
-configure _Domain_ filters.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>It is recommended to have some knowledge of Konvergo ERP development to properly configure <em>Domain</em>
+filters.</p>
+</div>
 
 To access the _Domain_ condition, the [developer
-mode](../general/developer_mode.html#developer-mode) needs to be activated.
-Once that’s done, select the Domain condition type, and click on Add Filter.
+mode](../general/developer_mode#developer-mode) needs to be activated.
+Once that’s done, select the **Domain** condition type, and click on **Add
+Filter**.
 
-![Activating the domain condition type in Odoo
+![Activating the domain condition type in Konvergo ERP
 Documents](../../_images/activate-domain-condition.png)
 
-To create a rule, you typically select a field, an operator, and a value. For
-example, if you want to add a workflow action to all the PDF files inside a
-workspace, set the field to _Mime Type_ , the operator to _contains_ , and the
-value to _pdf_.
+To create a rule, you typically select a **field** , an **operator** , and a
+**value**. For example, if you want to add a workflow action to all the PDF
+files inside a workspace, set the **field** to _Mime Type_ , the **operator**
+to _contains_ , and the **value** to _pdf_.
 
-![Example of a workflow action's domain condition in Odoo
+![Example of a workflow action's domain condition in Konvergo ERP
 Documents](../../_images/domain-condition-example.png)
 
-Click on Add node (plus-circle icon) and Add branch (ellipsis icon) to add
-conditions and sub-conditions. You can then specify if your rule should match
-ALL or ANY conditions. You can also edit the rule directly using the Code
-editor.
+Click on **Add node** (plus-circle icon) and **Add branch** (ellipsis icon) to
+add conditions and sub-conditions. You can then specify if your rule should
+match **ALL** or **ANY** conditions. You can also edit the rule directly using
+the **Code editor**.
 
-![Add a node or a branch to a workflow action's condition in Odoo
+![Add a node or a branch to a workflow action's condition in Konvergo ERP
 Documents](../../_images/use-domain-condition.png)
 
 ### Configure the actions
 
-Select the Actions tab to set up your action. You can simultaneously:
+Select the **Actions** tab to set up your action. You can simultaneously:
 
   * **Set Contact** : add a contact to the file, or replace an existing contact with a new one.
 
@@ -196,17 +209,18 @@ Select the Actions tab to set up your action. You can simultaneously:
 
   * **Activities - Schedule Activity** : create a new activity linked to the file as configured in the action. You can choose to set the activity on the document owner.
 
-![Example of a workflow action Odoo Documents](../../_images/workflow-action-
+![Example of a workflow action Konvergo ERP Documents](../../_images/workflow-action-
 example.png)
 
 ## Digitize documents with AI and optical character recognition (OCR)
 
 Documents available in the Finance workspace can be digitized. Select the
-document you want to digitize, click on Create Bill, Create Customer Invoice
-or Create credit note, and then click on Send for Digitization.
+document you want to digitize, click on **Create Bill** , **Create Customer
+Invoice** or **Create credit note** , and then click on **Send for
+Digitization**.
 
-See also
-
-[AI-powered document
-digitization](../finance/accounting/vendor_bills/invoice_digitization.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../finance/accounting/vendor_bills/invoice_digitization">AI-powered document digitization</a></p>
+</div>
 

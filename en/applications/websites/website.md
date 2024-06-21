@@ -3,34 +3,33 @@
 Discover the best **Open-Source Website Builder** and learn how to build
 beautiful websites that convert visitors into leads or revenues.
 
-Important
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Konvergo ERP offers a <a href="website/configuration/domain_names#domain-name-register"><span class="std std-ref">free custom domain name</span></a> to all Konvergo ERP Online databases
+for one year. Visitors can then access your website with an address such as <code>www.example.com</code>
+rather than the default <code>example.odoo.com</code>.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="https://www.odoo.com/slides/website-25">Konvergo ERP Tutorials: Website</a></p></li>
+<li><p><a href="https://www.odoo.com/slides/ecommerce-26">Konvergo ERP Tutorials: eCommerce</a></p></li>
+</ul>
+</div>
 
-Odoo offers a [free custom domain
-name](website/configuration/domain_names.html#domain-name-register) to all
-Odoo Online databases for one year. Visitors can then access your website with
-an address such as `www.example.com` rather than the default
-`example.odoo.com`.
-
-See also
-
-  * [Odoo Tutorials: Website](https://www.odoo.com/slides/website-25)
-
-  * [Odoo Tutorials: eCommerce](https://www.odoo.com/slides/ecommerce-26)
-
-  * [Pages](website/pages.html)
-    * [Menus](website/pages/menus.html)
-    * [Search Engine Optimization (SEO)](website/pages/seo.html)
+  * [Pages](website/pages)
+    * [Menus](website/pages/menus)
+    * [Search Engine Optimization (SEO)](website/pages/seo)
   * Configuration
-    * [Domain names](website/configuration/domain_names.html)
-    * [Address autocomplete](website/configuration/address_autocomplete.html)
-    * [Google Search Console](website/configuration/google_search_console.html)
-    * [Cookies bar](website/configuration/cookies_bar.html)
-    * [Translations](website/configuration/translate.html)
-    * [Multiple websites](website/configuration/multi_website.html)
-    * [reCAPTCHA v3 on forms](website/configuration/recaptcha.html)
-    * [Set up a content delivery network (CDN)](website/configuration/cdn.html)
+    * [Domain names](website/configuration/domain_names)
+    * [Address autocomplete](website/configuration/address_autocomplete)
+    * [Google Search Console](website/configuration/google_search_console)
+    * [Cookies bar](website/configuration/cookies_bar)
+    * [Translations](website/configuration/translate)
+    * [Multiple websites](website/configuration/multi_website)
+    * [reCAPTCHA v3 on forms](website/configuration/recaptcha)
+    * [Set up a content delivery network (CDN)](website/configuration/cdn)
   * Reporting
-    * [Website analytics](website/reporting/analytics.html)
-    * [Link trackers](website/reporting/link_tracker.html)
-  * [Mail groups](website/mail_groups.html)
+    * [Website analytics](website/reporting/analytics)
+    * [Link trackers](website/reporting/link_tracker)
+  * [Mail groups](website/mail_groups)
 

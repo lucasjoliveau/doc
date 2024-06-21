@@ -16,7 +16,7 @@ produce a partir de las materias primas «A» y «B».
 
 ![](../../../../_images/subcontracting_01.png)
 
-Gracias a la función de subcontratación de Odoo podrá gestionar este flujo con
+Gracias a la función de subcontratación de Konvergo ERP podrá gestionar este flujo con
 facilidad.
 
 ## Configuración
@@ -51,7 +51,7 @@ subcontratista en la _LdM_ de estos productos.
 
 Una vez que se valida la _orden de compra_ (1) se crea un recibo pendiente.
 Cuando se reciben los productos, se valida el recibo (2) con la cantidad real
-recibida. Como resultado de estas acciones, Odoo realiza lo siguiente:
+recibida. Como resultado de estas acciones, Konvergo ERP realiza lo siguiente:
 
   * Consume los componentes correspondientes en la ubicación del subcontratista basándose en la _LdM_ y su entrada (3);
 
@@ -59,12 +59,10 @@ recibida. Como resultado de estas acciones, Odoo realiza lo siguiente:
 
   * Traslada los productos desde la ubicación del subcontratista a SuEmpresa a través del recibo validado (5).
 
-Nota
-
-La _orden de compra_ es opcional. Si crea manualmente un recibo, con el
-subcontratista adecuado, Odoo seguirá realizando todos los movimientos.
-Resulta útil si el subcontratista no factura un precio fijo por artículo, sino
-por el tiempo y los materiales utilizados.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>La <em>orden de compra</em> es opcional. Si crea manualmente un recibo, con el subcontratista adecuado, Konvergo ERP seguirá realizando todos los movimientos. Resulta útil si el subcontratista no factura un precio fijo por artículo, sino por el tiempo y los materiales utilizados.</p>
+</div>
 
 ## Valoración del inventario
 
@@ -96,11 +94,10 @@ producto en la contabilidad.
 Por último, la factura del subcontratista coincide con la orden de compra y el
 precio previsto procede de los productos C terminados.
 
-Nota
-
-Si la gestión de la reabastecimiento de las materias primas **B** en la
-ubicación de su subcontratista no es necesaria, solo incluya el costo de **B**
-en el precio del subcontratista **s** y elimine los productos _B_ de la _LdM_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Si la gestión de la reabastecimiento de las materias primas <b>B</b> en la ubicación de su subcontratista no es necesaria, solo incluya el costo de <b>B</b> en el precio del subcontratista <b>s</b> y elimine los productos <em>B</em> de la <em>LdM</em>.</p>
+</div>
 
 ## Trazabilidad
 

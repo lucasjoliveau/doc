@@ -3,20 +3,23 @@
 [Alipay](https://www.alipay.com/) es una plataforma de pago en línea
 establecida en China por Alibaba Group.
 
-Advertencia
-
-El proveedor Alipay es obsoleto. En su lugar, se recomienda usar
-[AsiaPay](asiapay.html)
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>El proveedor Alipay es obsoleto. En su lugar, se recomienda usar <a href="asiapay">AsiaPay</a></p>
+</div>
 
 ## Configuración
 
-Ver también
-
-  * [Activar un proveedor de pago](../payment_providers.html#payment-providers-add-new)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../payment_providers#payment-providers-add-new"><span class="std std-ref">Activar un proveedor de pago</span></a></p></li>
+</ul>
+</div>
 
 ### Pestaña de credenciales
 
-Odoo necesita sus **credenciales API** para conectarse a su cuenta de Alipay,
+Konvergo ERP necesita sus **credenciales API** para conectarse a su cuenta de Alipay,
 que comprenden:
 
   * **Cuenta** : según su ubicación: `Pago exprés` si es un comerciante chino. `Transfronterizo` si no lo es.
@@ -33,13 +36,13 @@ relacionados en la pestaña de **Credenciales**.
 Para obtenerlas, inicie sesión en su cuenta de Alipay, se encuentran en la
 página principal.
 
-Importante
-
-Si está probando Alipay, en el _sandbox_ , cambie el **Estado** a _Modo de
-prueba_. Le recomendamos hacer esto en una base de datos de prueba en lugar de
-su base de datos principal.
-
-Ver también
-
-  * [Pagos en línea](../payment_providers.html)
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Si está probando Alipay, en el <em>sandbox</em>, cambie el <b>Estado</b> a <em>Modo de prueba</em>. Le recomendamos hacer esto en una base de datos de prueba en lugar de su base de datos principal.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../payment_providers">Pagos en línea</a></p></li>
+</ul>
+</div>
 

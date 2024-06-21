@@ -4,7 +4,7 @@ When working with consumers, prices are usually expressed with taxes included
 in the price (e.g., in most eCommerce). But, when you work in a B2B
 environment, companies usually negotiate prices with taxes excluded.
 
-Odoo manages both use cases easily, as long as you register your prices on the
+Konvergo ERP manages both use cases easily, as long as you register your prices on the
 product with taxes excluded or included, but not both together. If you manage
 all your prices with tax included (or excluded) only, you can still easily do
 sales order with a price having taxes excluded (or included): that’s easy.
@@ -32,26 +32,29 @@ taxes:
 
   * Taxes Included: **8.26€ & 9.99€**
 
-Note
-
-If you buy 100 pieces at 10€ taxes included, it gets even more tricky. You
-will get: **1000€ (taxes included) = 826.45€ (price) + 173.55€ (taxes)** Which
-is very different from a price per piece at 8.26€ tax excluded.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>If you buy 100 pieces at 10€ taxes included, it gets even more
+tricky. You will get: <b>1000€ (taxes included) = 826.45€ (price) +
+173.55€ (taxes)</b> Which is very different from a price per piece at
+8.26€ tax excluded.</p>
+</div>
 
 This documentation explains how to handle the very specific use case where you
 need to handle the two prices (tax excluded and included) on the product form
 within the same company.
 
-Note
-
-In terms of finance, you have no more revenues selling your product at 10€
-instead of 9.99€ (for a 21% tax), because your revenue will be exactly the
-same at 9.99€, only the tax is 0.01€ higher. So, if you run an eCommerce in
-Belgium, make your customer a favor and set your price at 9.99€ instead of
-10€. Please note that this does not apply to 20€ or 30€, or other tax rates,
-or a quantity >1\. You will also make you a favor since you can manage
-everything tax excluded, which is less error prone and easier for your
-salespeople.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>In terms of finance, you have no more revenues selling your
+product at 10€ instead of 9.99€ (for a 21% tax), because your revenue
+will be exactly the same at 9.99€, only the tax is 0.01€ higher. So, if
+you run an eCommerce in Belgium, make your customer a favor and set your
+price at 9.99€ instead of 10€. Please note that this does not apply to
+20€ or 30€, or other tax rates, or a quantity &gt;1. You will also make you
+a favor since you can manage everything tax excluded, which is less
+error prone and easier for your salespeople.</p>
+</div>
 
 ## Configuration
 
@@ -60,7 +63,7 @@ salespeople.
 The best way to avoid this complexity is to choose only one way of managing
 your prices and stick to it: price without taxes or price with taxes included.
 Define which one is the default stored on the product form (on the default tax
-related to the product), and let Odoo compute the other one automatically,
+related to the product), and let Konvergo ERP compute the other one automatically,
 based on the pricelist and fiscal position. Negotiate your contracts with
 customers accordingly. This perfectly works out-of-the-box and you have no
 specific configuration to do.
@@ -90,11 +93,11 @@ appropriate setting in the **Website** app settings.
 If you have both B2B and B2C prices on a single website, please follow these
 instructions:
 
-  1. Activate the [developer mode](../../../general/developer_mode.html#developer-mode) and go to General Settings ‣ Users & Companies ‣ Groups.
+  1. Activate the [developer mode](../../../general/developer_mode#developer-mode) and go to General Settings ‣ Users & Companies ‣ Groups.
 
   2. Open either `Technical / Tax display B2B` or `Technical / Tax display B2C`.
 
-  3. Under the Users tab, add the users requiring access to the price type. Add B2C users in the B2C group and B2B users in the B2B group.
+  3. Under the **Users** tab, add the users requiring access to the price type. Add B2C users in the B2C group and B2B users in the B2B group.
 
 ### Setting your products
 

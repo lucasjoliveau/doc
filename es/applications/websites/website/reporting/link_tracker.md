@@ -13,7 +13,7 @@ de enlaces_.
 
 ![Vista de la página de ajustes Sitio web con énfasis en el campo de
 rastreadores de enlaces en la aplicación Sitio web de
-Odoo](../../../../_images/enable_link_tracker.png)
+Konvergo ERP](../../../../_images/enable_link_tracker.png)
 
 ### Configurar URLs rastreables
 
@@ -22,7 +22,7 @@ podrá obtener un URL rastreado específico según la campaña, medio y origen q
 se utiliza.
 
 ![Vista de los campos de rastreador de enlaces de la aplicación Sitio web de
-Odoo](../../../../_images/link_tracker_fields.png)
+Konvergo ERP](../../../../_images/link_tracker_fields.png)
 
   * **URL** : URL de la página que desea rastrear (por ejemplo, la página de inicio o una página de producto).
 
@@ -43,13 +43,13 @@ clics_ y los _usados recientemente_ , puede ver las estadísticas completas al
 hacer clic en _Estadísticas_ , incluso el número de clics y su país de origen.
 
 ![Vista de la lista rastreada con énfasis en los botones de estadísticas en la
-aplicación Sitio web de Odoo](../../../../_images/links_statistics.png)
-
-Truco
-
-  1. También puede acceder al rastreador de enlaces en _odoo.com/r_ a través de su navegador.
-
-  2. Active el modo de desarrollador (Ajustes ‣ Activar modo de desarrollador) y obtenga acceso al módulo de _Rastreador de enlaces_ y sus funciones en el backend.
-
-  3. Estos rastreadores están integrados con [Google Analytics](analytics.html#analytics-google-analytics) y le permiten ver el número de clics y visitantes para llevar un buen control de sus campañas de marketing.
+aplicación Sitio web de Konvergo ERP](../../../../_images/links_statistics.png)
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><ol class="arabic simple">
+<li><p>También puede acceder al rastreador de enlaces en <em>odoo.com/r</em> a través de su navegador.</p></li>
+<li><p>Active el modo de desarrollador (Ajustes ‣ Activar modo de desarrollador) y obtenga acceso al módulo de <em>Rastreador de enlaces</em> y sus funciones en el backend.</p></li>
+<li><p>Estos rastreadores están integrados con <a href="analytics#analytics-google-analytics"><span class="std std-ref">Google Analytics</span></a> y le permiten ver el número de clics y visitantes para llevar un buen control de sus campañas de marketing.</p></li>
+</ol>
+</div>
 

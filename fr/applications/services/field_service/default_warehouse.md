@@ -10,24 +10,25 @@ Les produits figurant dans les commandes créées lors des interventions sur le
 terrain sont toujours prélevés dans l’entrepôt par défaut, permettant de
 conserver un inventaire précis.
 
-Pour plus d'infos
-
-[Inventaire](../../inventory_and_mrp/inventory.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../inventory_and_mrp/inventory">Inventaire</a></p>
+</div>
 
 ## Configuration
 
 Pour configurer un entrepôt par défaut de l’utilisateur, la fonctionnalité
 [emplacements de
-stockage](../../inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses_locations.html)
+stockage](../../inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses_locations)
 doit être activée dans l’application **Inventaire**. Il est également
 nécessaire d’avoir plus d’un entrepôt dans votre base de données.
 
 Vous pouvez le configurer pour votre profil ou pour tous les utilisateurs.
 
-Pour plus d'infos
-
-[Gérer les entrepôts et les
-emplacements](../../inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses_locations.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses_locations">Gérer les entrepôts et les emplacements</a></p>
+</div>
 
 ### Pour votre profil
 
@@ -40,8 +41,8 @@ dans le menu déroulant.
 
 Pour configurer un entrepôt par défaut pour un utilisateur spécifique, allez
 aux Paramètres ‣ Utilisateurs ‣ Gérer les utilisateurs, sélectionnez un
-utilisateur et allez à l’onglet Préférences. Faites défiler jusqu’à Inventaire
-et sélectionnez l’entrepôt par défaut dans le menu déroulant.
+utilisateur et allez à l’onglet **Préférences**. Faites défiler jusqu’à
+**Inventaire** et sélectionnez l’entrepôt par défaut dans le menu déroulant.
 
 ![Sélection d'un entrepôt par défaut sur un profil
 d'utilisateur.](../../../_images/user-default.png)
@@ -51,8 +52,8 @@ d'utilisateur.](../../../_images/user-default.png)
 Une fois qu’un entrepôt par défaut a été configuré pour un utilisateur, les
 matériaux utilisés pour une commande liée à une tâche de Services sur site
 sont prélevés de cet entrepôt particulier. Ouvrez la commande liée, allez à
-l’onglet Autres informations, faites défiler jusqu’à Livraison. L’entrepôt par
-défaut est appliqué correctement.
+l’onglet **Autres informations** , faites défiler jusqu’à **Livraison**.
+L’entrepôt par défaut est appliqué correctement.
 
 Une fois que la tâche de services sur site est marquée comme achevée, le stock
 de l’entrepôt par défaut est mis à jour automatiquement.

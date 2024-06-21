@@ -5,13 +5,16 @@ línea de la multinacional Worldline.
 
 ## Configuración
 
-Ver también
-
-  * [Activar un proveedor de pago](../payment_providers.html#payment-providers-add-new)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../payment_providers#payment-providers-add-new"><span class="std std-ref">Activar un proveedor de pago</span></a></p></li>
+</ul>
+</div>
 
 ### Pestaña de credenciales
 
-Odoo necesita sus **Credenciales API** para conectarse con su cuenta de SIPS,
+Konvergo ERP necesita sus **Credenciales API** para conectarse con su cuenta de SIPS,
 que incluye:
 
   * **ID de comerciante** : Este ID solo se utiliza para identificar la cuenta del comerciante con SIPS.
@@ -26,14 +29,13 @@ Puede copiar sus credenciales desde la información de la documentación de su
 entorno SIPS, en la sección **PROD** y pegarlas en los campos correspondientes
 en la pestaña **Credenciales**.
 
-Importante
-
-Si está utilizando SIPS en modo prueba, con las credenciales de _PRUEBA_ ,
-cambie el **Estado** a **Modo de prueba**. Le recomendamos que lo haga en una
-base de datos de prueba de Odoo, en vez de hacerlo en su base de datos
-principal.
-
-Ver también
-
-  * [Pagos en línea](../payment_providers.html)
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Si está utilizando SIPS en modo prueba, con las credenciales de <em>PRUEBA</em>, cambie el <b>Estado</b> a <b>Modo de prueba</b>. Le recomendamos que lo haga en una base de datos de prueba de Konvergo ERP, en vez de hacerlo en su base de datos principal.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../payment_providers">Pagos en línea</a></p></li>
+</ul>
+</div>
 

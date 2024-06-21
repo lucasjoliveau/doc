@@ -1,6 +1,6 @@
 # ORM API
 
-  * [Changelog](orm/changelog.html)
+  * [Changelog](orm/changelog)
 
 ## Models
 
@@ -15,10 +15,11 @@ Model fields are defined as attributes on the model itself:
         field1 = fields.Char()
     
 
-Avertissement
-
-this means you cannot define a field and a method with the same name, the last
-one will silently overwrite the former ones.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>this means you cannot define a field and a method with the same
+name, the last one will silently overwrite the former ones.</p>
+</div>
 
 By default, the field’s label (user-visible name) is a capitalized version of
 the field name, this can be overridden with the `string` parameter.
@@ -66,7 +67,7 @@ API
 
 `Dates` and `Datetimes` are very important fields in any kind of business
 application. Their misuse can create invisible yet painful bugs, this section
-aims to provide Odoo developers with the knowledge required to avoid misusing
+aims to provide Konvergo ERP developers with the knowledge required to avoid misusing
 these fields.
 
 When assigning a value to a Date/Datetime field, the following options are
@@ -85,18 +86,17 @@ valid:
 The Date and Datetime fields class have helper methods to attempt conversion
 into a compatible type:
 
-  * `to_date()` will convert to a [`datetime.date`](https://docs.python.org/3/library/datetime.html#datetime.date "\(disponible dans Python v3.12\)")
+  * `to_date()` will convert to a [`datetime.date`](https://docs.python.org/3/library/datetime#datetime.date "\(disponible dans Python v3.12\)")
 
-  * `to_datetime()` will convert to a [`datetime.datetime`](https://docs.python.org/3/library/datetime.html#datetime.datetime "\(disponible dans Python v3.12\)").
+  * `to_datetime()` will convert to a [`datetime.datetime`](https://docs.python.org/3/library/datetime#datetime.datetime "\(disponible dans Python v3.12\)").
 
-Example
-
-To parse date/datetimes coming from external sources:
-
-    
-    
-    fields.Date.to_date(self._context.get('date_from'))
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>To parse date/datetimes coming from external sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">to_date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'date_from'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 
 Date / Datetime comparison best practices:
 
@@ -104,26 +104,27 @@ Date / Datetime comparison best practices:
 
   * Datetime fields can **only** be compared to datetime objects.
 
-Avertissement
-
-Strings representing dates and datetimes can be compared between each other,
-however the result may not be the expected result, as a datetime string will
-always be greater than a date string, therefore this practice is **heavily**
-discouraged.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Strings representing dates and datetimes can be compared
+between each other, however the result may not be the expected
+result, as a datetime string will always be greater than a
+date string, therefore this practice is <b>heavily</b>
+discouraged.</p>
+</div>
 
 Common operations with dates and datetimes such as addition, subtraction or
 fetching the start/end of a period are exposed through both `Date` and
 `Datetime`. These helpers are also available by importing
 `odoo.tools.date_utils`.
 
-Note
-
-Timezones
-
-Datetime fields are stored as `timestamp without timezone` columns in the
-database and are stored in the UTC timezone. This is by design, as it makes
-the Odoo database independent from the timezone of the hosting server system.
-Timezone conversion is managed entirely by the client side.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Timezones</p>
+<p>Datetime fields are stored as <code>timestamp without timezone</code> columns in the database and are stored
+in the UTC timezone. This is by design, as it makes the Konvergo ERP database independent from the timezone
+of the hosting server system. Timezone conversion is managed entirely by the client side.</p>
+</div>
 
 #### Relational Fields
 
@@ -200,20 +201,20 @@ search on the model. It must return a domain equivalent to the condition:
             record.total = record.value - discount
     
 
-Avertissement
-
-While it is possible to use the same compute method for multiple fields, it is
-not recommended to do the same for the inverse method.
-
-During the computation of the inverse, **all** fields that use said inverse
-are protected, meaning that they can’t be computed, even if their value is not
-in the cache.
-
-If any of those fields is accessed and its value is not in cache, the ORM will
-simply return a default value of `False` for these fields. This means that the
-value of the inverse fields (other than the one triggering the inverse method)
-may not give their correct value and this will probably break the expected
-behavior of the inverse method.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>While it is possible to use the same compute method for multiple
+fields, it is not recommended to do the same for the inverse
+method.</p>
+<p>During the computation of the inverse, <b>all</b> fields that use
+said inverse are protected, meaning that they can’t be computed,
+even if their value is not in the cache.</p>
+<p>If any of those fields is accessed and its value is not in cache,
+the ORM will simply return a default value of <code>False</code> for these fields.
+This means that the value of the inverse fields (other than the one
+triggering the inverse method) may not give their correct value and
+this will probably break the expected behavior of the inverse method.</p>
+</div>
 
 #### Related fields
 
@@ -250,44 +251,39 @@ Add the attribute `store=True` to make it stored, just like computed fields.
 Related fields are automatically recomputed when their dependencies are
 modified.
 
-Astuce
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>You can specify precise field dependencies if you don’t want
+the related field to be recomputed on any dependency change:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nickname</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span>
+    <span class="n">related</span><span class="o">=</span><span class="s1">'partner_id.name'</span><span class="p">,</span> <span class="n">store</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">depends</span><span class="o">=</span><span class="p">[</span><span class="s1">'partner_id'</span><span class="p">])</span>
+<span class="c1"># The nickname will only be recomputed when the partner_id</span>
+<span class="c1"># is modified, not when the name is modified on the partner.</span>
+</pre></div>
+</div>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>You cannot chain <code>Many2many</code> or <code>One2many</code> fields in <code>related</code> fields dependencies.</p>
+<p><code>related</code> can be used to refer to a <code>One2many</code> or
+<code>Many2many</code> field on another model on the
+condition that it’s done through a <code>Many2one</code> relation on the current model.
+<code>One2many</code> and <code>Many2many</code> are not supported and the results will not be
+aggregated correctly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m2o_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">()</span>
+<span class="n">m2m_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2many</span><span class="p">()</span>
+<span class="n">o2m_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">One2many</span><span class="p">()</span>
 
-You can specify precise field dependencies if you don’t want the related field
-to be recomputed on any dependency change:
+<span class="c1"># Supported</span>
+<span class="n">d_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2many</span><span class="p">(</span><span class="n">related</span><span class="o">=</span><span class="s2">"m2o_id.m2m_ids"</span><span class="p">)</span>
+<span class="n">e_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">One2many</span><span class="p">(</span><span class="n">related</span><span class="o">=</span><span class="s2">"m2o_id.o2m_ids"</span><span class="p">)</span>
 
-    
-    
-    nickname = fields.Char(
-        related='partner_id.name', store=True,
-        depends=['partner_id'])
-    # The nickname will only be recomputed when the partner_id
-    # is modified, not when the name is modified on the partner.
-    
-
-Avertissement
-
-You cannot chain `Many2many` or `One2many` fields in `related` fields
-dependencies.
-
-`related` can be used to refer to a `One2many` or `Many2many` field on another
-model on the condition that it’s done through a `Many2one` relation on the
-current model. `One2many` and `Many2many` are not supported and the results
-will not be aggregated correctly:
-
-    
-    
-    m2o_id = fields.Many2one()
-    m2m_ids = fields.Many2many()
-    o2m_ids = fields.One2many()
-    
-    # Supported
-    d_ids = fields.Many2many(related="m2o_id.m2m_ids")
-    e_ids = fields.One2many(related="m2o_id.o2m_ids")
-    
-    # Won't work: use a custom Many2many computed field instead
-    f_ids = fields.Many2many(related="m2m_ids.m2m_ids")
-    g_ids = fields.One2many(related="o2m_ids.o2m_ids")
-    
+<span class="c1"># Won't work: use a custom Many2many computed field instead</span>
+<span class="n">f_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2many</span><span class="p">(</span><span class="n">related</span><span class="o">=</span><span class="s2">"m2m_ids.m2m_ids"</span><span class="p">)</span>
+<span class="n">g_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">One2many</span><span class="p">(</span><span class="n">related</span><span class="o">=</span><span class="s2">"o2m_ids.o2m_ids"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 
 ### Automatic fields
 
@@ -333,9 +329,11 @@ Model.write_uid
 
 Stores who last updated the record, `Many2one` to a `res.users`.
 
-Avertissement
-
-`_log_access` _must_ be enabled on `TransientModel`.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p><code>_log_access</code> <em>must</em> be enabled on
+<code>TransientModel</code>.</p>
+</div>
 
 ### Reserved Field names
 
@@ -395,7 +393,7 @@ Model.company_id
 
     
 
-Main field name used for Odoo multi-company behavior.
+Main field name used for Konvergo ERP multi-company behavior.
 
 Used by `:meth:~odoo.models._check_company` to check multi company
 consistency. Defines whether a record is shared between companies (no value)
@@ -408,10 +406,11 @@ or only accessible by the users of a given company.
 Interactions with models and records are performed through recordsets, an
 ordered collection of records of the same model.
 
-Avertissement
-
-Contrary to what the name implies, it is currently possible for recordsets to
-contain duplicates. This may change in the future.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Contrary to what the name implies, it is currently possible for
+recordsets to contain duplicates. This may change in the future.</p>
+</div>
 
 Methods defined on a model are executed on a recordset, and their `self` is a
 recordset:
@@ -443,15 +442,14 @@ single characters:
 Recordsets provide an « Active Record » interface: model fields can be read
 and written directly from the record as attributes.
 
-Note
-
-When accessing non-relational fields on a recordset of potentially multiple
-records, use `mapped()`:
-
-    
-    
-    total_qty = sum(self.mapped('qty'))
-    
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When accessing non-relational fields on a recordset of potentially multiple
+records, use <code>mapped()</code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">total_qty</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mapped</span><span class="p">(</span><span class="s1">'qty'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 
 Field values can also be accessed like dict items, which is more elegant and
 safer than `getattr()` for dynamic field names. Setting a field’s value
@@ -469,17 +467,20 @@ triggers an update to the database:
     Bob
     
 
-Avertissement
-
-Trying to read a field on multiple records will raise an error for non
-relational fields.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>To parse date/datetimes coming from external sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">to_date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'date_from'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>0
 
 Accessing a relational field (`Many2one`, `One2many`, `Many2many`) _always_
 returns a recordset, empty if the field is not set.
 
 ### Record cache and prefetching
 
-Odoo maintains a cache for the fields of the records, so that not every field
+Konvergo ERP maintains a cache for the fields of the records, so that not every field
 access issues a database request, which would be terrible for performance. The
 following example queries the database only for the first statement:
 
@@ -489,7 +490,7 @@ following example queries the database only for the first statement:
     record.name             # second access gets value from cache
     
 
-To avoid reading one field on one record at a time, Odoo _prefetches_ records
+To avoid reading one field on one record at a time, Konvergo ERP _prefetches_ records
 and fields following some heuristics to get good performance. Once a field
 must be read on a given record, the ORM actually reads that field on a larger
 recordset, and stores the returned values in cache for later use. The
@@ -572,11 +573,13 @@ reasons:
     self.env.cr.execute("some_sql", params)
     
 
-Avertissement
-
-Executing raw SQL bypasses the ORM and, by consequent, Odoo security rules.
-Please make sure your queries are sanitized when using user input and prefer
-using ORM utilities if you don’t really need to use SQL queries.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>To parse date/datetimes coming from external sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">to_date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'date_from'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>1
 
 One important thing to know about models is that they don’t necessarily
 perform database updates right away. Indeed, for performance reasons, the
@@ -585,16 +588,13 @@ database updates are delayed, too. Therefore, before querying the database,
 one has to make sure that it contains the relevant data for the query. This
 operation is called _flushing_ and performs the expected database updates.
 
-Example
-
-    
-    
-    # make sure that 'partner_id' is up-to-date in database
-    self.env['model'].flush_model(['partner_id'])
-    
-    self.env.cr.execute("SELECT id FROM model WHERE partner_id IN %s", [ids])
-    ids = [row[0] for row in self.env.cr.fetchall()]
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>To parse date/datetimes coming from external sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">to_date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'date_from'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>2
 
 Before every SQL query, one has to flush the data needed for that query. There
 are three levels for flushing, each with its own API. One can flush either
@@ -608,18 +608,13 @@ further uses of models may become incoherent. It is necessary to clear caches
 when using `CREATE`, `UPDATE` or `DELETE` in SQL, but not `SELECT` (which
 simply reads the database).
 
-Example
-
-    
-    
-    # make sure 'state' is up-to-date in database
-    self.env['model'].flush_model(['state'])
-    
-    self.env.cr.execute("UPDATE model SET state=%s WHERE state=%s", ['new', 'old'])
-    
-    # invalidate 'state' from the cache
-    self.env['model'].invalidate_model(['state'])
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>To parse date/datetimes coming from external sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">to_date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'date_from'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>3
 
 Just like flushing, one can invalidate either the whole cache, the cache of
 all the records of a model, or the cache of specific records. One can even
@@ -633,22 +628,13 @@ one has to inform the models for the computed fields to be recomputed. The
 only thing the framework needs to know is _what_ fields have changed on
 _which_ records.
 
-Example
-
-    
-    
-    # make sure 'state' is up-to-date in database
-    self.env['model'].flush_model(['state'])
-    
-    # use the RETURNING clause to retrieve which rows have changed
-    self.env.cr.execute("UPDATE model SET state=%s WHERE state=%s RETURNING id", ['new', 'old'])
-    ids = [row[0] for row in self.env.cr.fetchall()]
-    
-    # invalidate the cache, and notify the update to the framework
-    records = self.env['model'].browse(ids)
-    records.invalidate_recordset(['state'])
-    records.modified(['state'])
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>To parse date/datetimes coming from external sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">to_date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'date_from'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>4
 
 One has to figure out which records have been modified. There are many ways to
 do this, possibly involving extra SQL queries. In the example above, we take
@@ -822,33 +808,21 @@ logical _OR_ , arity 2.
 
 logical _NOT_ , arity 1.
 
-Note
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>To parse date/datetimes coming from external sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">to_date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'date_from'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>5
 
-Mostly to negate combinations of criteria Individual criterion generally have
-a negative form (e.g. `=` -> `!=`, `<` -> `>=`) which is simpler than negating
-the positive.
-
-Example
-
-To search for partners named _ABC_ , from belgium or germany, whose language
-is not english:
-
-    
-    
-    [('name','=','ABC'),
-     ('language.code','!=','en_US'),
-     '|',('country_id.code','=','be'),
-         ('country_id.code','=','de')]
-    
-
-This domain is interpreted as:
-
-    
-    
-        (name is 'ABC')
-    AND (language is NOT english)
-    AND (country is Belgium OR Germany)
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>To parse date/datetimes coming from external sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">to_date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'date_from'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>6
 
 ### Unlink
 
@@ -884,13 +858,13 @@ various set operations, returning new recordsets.
   * `set1 - set2` returns a new recordset containing only records of `set1` which are _not_ in `set2`
 
 Recordsets are iterable so the usual Python tools are available for
-transformation ([`map()`](https://docs.python.org/3/library/functions.html#map
+transformation ([`map()`](https://docs.python.org/3/library/functions#map
 "\(disponible dans Python v3.12\)"),
-[`sorted()`](https://docs.python.org/3/library/functions.html#sorted
+[`sorted()`](https://docs.python.org/3/library/functions#sorted
 "\(disponible dans Python v3.12\)"), `ifilter()`, …) however these return
-either a [`list`](https://docs.python.org/3/library/stdtypes.html#list
+either a [`list`](https://docs.python.org/3/library/stdtypes#list
 "\(disponible dans Python v3.12\)") or an
-[iterator](https://docs.python.org/3/glossary.html#term-iterator "\(disponible
+[iterator](https://docs.python.org/3/glossary#term-iterator "\(disponible
 dans Python v3.12\)"), removing the ability to call methods on their result,
 or to use set operations.
 
@@ -901,23 +875,19 @@ themselves (when possible):
 
 #### Map
 
-Note
-
-Since V13, multi-relational field access is supported and works like a mapped
-call:
-
-    
-    
-    records.partner_id  # == records.mapped('partner_id')
-    records.partner_id.bank_ids  # == records.mapped('partner_id.bank_ids')
-    records.partner_id.mapped('name')  # == records.mapped('partner_id.name')
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>To parse date/datetimes coming from external sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">to_date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'date_from'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>7
 
 #### Sort
 
 ## Inheritance and extension
 
-Odoo provides three different mechanisms to extend models in a modular way:
+Konvergo ERP provides three different mechanisms to extend models in a modular way:
 
   * creating a new model from an existing one, adding new information to the copy but leaving the original module as-is
 
@@ -929,7 +899,7 @@ Odoo provides three different mechanisms to extend models in a modular way:
 
 ### Classical inheritance
 
-When using the `_inherit` and `_name` attributes together, Odoo creates a new
+When using the `_inherit` and `_name` attributes together, Konvergo ERP creates a new
 model using the existing one (provided via `_inherit`) as a base. The new
 model gets all the fields, methods and meta-information (defaults & al) from
 its base.
@@ -974,7 +944,7 @@ will yield:
 
 the second model has inherited from the first model’s `check` method and its
 `name` field, but overridden the `call` method, as when using standard [Python
-inheritance](https://docs.python.org/3/tutorial/classes.html#tut-inheritance
+inheritance](https://docs.python.org/3/tutorial/classes#tut-inheritance
 "\(disponible dans Python v3.12\)").
 
 ### Extension
@@ -1010,9 +980,13 @@ will yield:
     {'name': "A", 'description': "Extended"}
     
 
-Note
-
-It will also yield the various automatic fields unless they’ve been disabled
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>To parse date/datetimes coming from external sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">to_date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'date_from'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>8
 
 ### Delegation
 
@@ -1082,15 +1056,20 @@ and it’s possible to write directly on the delegated field:
     record.write({'size': 14.0})
     
 
-Avertissement
-
-when using delegation inheritance, methods are _not_ inherited, only fields
-
-Avertissement
-
-  * `_inherits` is more or less implemented, avoid it if you can;
-
-  * chained `_inherits` is essentially not implemented, we cannot guarantee anything on the final behavior.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>To parse date/datetimes coming from external sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">to_date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'date_from'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>9 <div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Strings representing dates and datetimes can be compared
+between each other, however the result may not be the expected
+result, as a datetime string will always be greater than a
+date string, therefore this practice is <b>heavily</b>
+discouraged.</p>
+</div>0
 
 ### Fields Incremental Definition
 

@@ -7,7 +7,7 @@ For example, some countries require their companies to round up or down the
 total amount of an invoice to the nearest five cents, when the payment is made
 in cash.
 
-Each point of sale in Odoo can be configured to apply cash rounding to the
+Each point of sale in Konvergo ERP can be configured to apply cash rounding to the
 totals of its bills or receipts.
 
 ## Configuration
@@ -32,8 +32,8 @@ All total amounts of this point of sale now add a line to apply the rounding
 according to your settings.
 
 ![../../../../_images/cash_rounding03.png](../../../../_images/cash_rounding03.png)
-
-Note
-
-Odoo Point of Sale only supports the Add a rounding line rounding strategy.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Konvergo ERP Point of Sale only supports the <b>Add a rounding line</b> rounding strategy.</p>
+</div>
 

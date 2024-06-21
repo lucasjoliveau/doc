@@ -49,7 +49,7 @@ crediting multiple accounts in a journal entry. In a way, a chart of accounts
 is like a company’s DNA!
 
 Every account listed in the chart of accounts belongs to a specific category.
-In Odoo, each account has a unique code and belongs to one of these
+In Konvergo ERP, each account has a unique code and belongs to one of these
 categories:
 
   * **Equity and subordinated debts**
@@ -97,7 +97,7 @@ examples of accounting entries for various transactions. (see entries.js)
 
 ## Reconciliation
 
-[Reconciliation](../bank/reconciliation.html) is the process of linking
+[Reconciliation](../bank/reconciliation) is the process of linking
 journal items of a specific account and matching credits and debits.
 
 Its primary purpose is to link payments to their related invoices to mark them
@@ -135,9 +135,9 @@ customers). For each line in a bank statement, it can be:
 
   * **recorded as another transaction** : bank transfer, direct charge, etc.
 
-Odoo should automatically reconcile most transactions; only a few should need
+Konvergo ERP should automatically reconcile most transactions; only a few should need
 manual review. When the bank reconciliation process is finished, the balance
-on the bank account in Odoo should match the bank statement’s balance.
+on the bank account in Konvergo ERP should match the bank statement’s balance.
 
 ## Checks Handling
 

@@ -2,7 +2,7 @@
 
 ## Manifest
 
-The manifest file serves to declare a python package as an Odoo module and to
+The manifest file serves to declare a python package as an Konvergo ERP module and to
 specify module metadata.
 
 It is a file called `__manifest__.py` and contains a single Python dictionary,
@@ -83,9 +83,9 @@ distribution license for the module. Possible values:
 
   * `Other OSI approved licence`
 
-  * `OEEL-1` (Odoo Enterprise Edition License v1.0)
+  * `OEEL-1` (Konvergo ERP Enterprise Edition License v1.0)
 
-  * `OPL-1` (Odoo Proprietary License v1.0)
+  * `OPL-1` (Konvergo ERP Proprietary License v1.0)
 
   * `Other proprietary`
 
@@ -93,7 +93,7 @@ distribution license for the module. Possible values:
 
     
 
-classification category within Odoo, rough business domain for the module.
+classification category within Konvergo ERP, rough business domain for the module.
 
 Although using [existing
 categories](https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml)
@@ -106,17 +106,17 @@ the-fly. Category hierarchies can be created using the separator `/` e.g. `Foo
 
     
 
-Odoo modules which must be loaded before this one, either because this module
+Konvergo ERP modules which must be loaded before this one, either because this module
 uses features they create or because it alters resources they define.
 
 When a module is installed, all of its dependencies are installed before it.
 Likewise dependencies are loaded before a module is loaded.
 
-Note
-
-Module `base` is always installed in any Odoo instance. But you still need to
-specify it as dependency to make sure your module is updated when `base` is
-updated.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Module <code>base</code> is always installed in any Konvergo ERP instance.
+But you still need to specify it as dependency to make sure your module is updated when <code>base</code> is updated.</p>
+</div>
 
 `data` (`list(str)`)
 
@@ -181,7 +181,7 @@ functionality to an existing application module.
     
 
 A definition of how all static files are loaded in various assets bundles. See
-the [assets](../frontend/assets.html#reference-assets) page for more details
+the [assets](../frontend/assets#reference-assets) page for more details
 on how to describe bundles.
 
 `installable` (`bool` default: `True`)

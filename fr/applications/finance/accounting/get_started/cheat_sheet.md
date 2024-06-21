@@ -52,7 +52,7 @@ débitant et en créditant plusieurs comptes dans une pièce comptable. Le plan
 comptable est en quelque sorte l’ADN de l’entreprise !
 
 Chaque compte répertorié dans le plan comptable appartient à une catégorie
-spécifique. Dans Odoo, chaque compte a un code unique et appartient à une de
+spécifique. Dans Konvergo ERP, chaque compte a un code unique et appartient à une de
 ces catégories :
 
   * **Fonds propres et emprunts subordonnés**
@@ -100,7 +100,7 @@ exemples d’écritures pour diverses transactions. (voir entries.js)
 
 ## Lettrage
 
-Le [lettrage](../bank/reconciliation.html) est le processus qui consiste à
+Le [lettrage](../bank/reconciliation) est le processus qui consiste à
 relier les écritures comptables d’un compte spécifique et à faire correspondre
 les crédits et les débits.
 
@@ -140,9 +140,9 @@ peut être :
 
   * **enregistrée comme une autre transaction** : virement bancaire, prélèvement automatique, etc.
 
-Odoo devrait rapprocher automatiquement la plupart des transactions : seules
+Konvergo ERP devrait rapprocher automatiquement la plupart des transactions : seules
 quelques unes devraient nécessiter un examen manuel. À la fin du processus de
-rapprochement bancaire, le solde du compte bancaire dans Odoo doit
+rapprochement bancaire, le solde du compte bancaire dans Konvergo ERP doit
 correspondre au solde du relevé bancaire.
 
 ## Traitement des chèques

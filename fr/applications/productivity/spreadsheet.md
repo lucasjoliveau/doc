@@ -1,17 +1,17 @@
 # Feuille de calcul
 
-  * [Lier des données Odoo](spreadsheet/insert.html)
-  * [Functions](spreadsheet/functions.html)
-  * [Modèles](spreadsheet/templates.html)
+  * [Lier des données Konvergo ERP](spreadsheet/insert)
+  * [Functions](spreadsheet/functions)
+  * [Modèles](spreadsheet/templates)
 
 Les feuilles de calcul vous permettent d’organiser, d’analyser et de
 visualiser vos données sous forme de tableaux. Entre autres, vous pouvez :
 
-  * [Insérer et lier vos données Odoo (tableaux croisés dynamiques, graphiques, listes et menus)](spreadsheet/insert.html).
+  * [Insérer et lier vos données Konvergo ERP (tableaux croisés dynamiques, graphiques, listes et menus)](spreadsheet/insert).
 
-  * [Use formulas and functions](spreadsheet/functions.html).
+  * [Use formulas and functions](spreadsheet/functions).
 
-  * [Utiliser des modèles par défaut ou créer de nouveaux modèles](spreadsheet/templates.html).
+  * [Utiliser des modèles par défaut ou créer de nouveaux modèles](spreadsheet/templates).
 
   * Formater des données.
 

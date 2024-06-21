@@ -3,22 +3,24 @@
 **Ponto** es un servicio que permite que empresas y profesionales agreguen sus
 cuentas a un solo lugar y vean directamente todas sus transacciones dentro de
 una aplicación. Es una solución de terceros que está expandiendo continuamente
-la cantidad de instituciones bancarias que se pueden sincronizar con Odoo.
+la cantidad de instituciones bancarias que se pueden sincronizar con Konvergo ERP.
 
 ![Logo de la marca Ponto](../../../../../_images/ponto-logo.png)
 
-**Odoo** se puede sincronizar directamente con su banco para obtener todos los
+**Konvergo ERP** se puede sincronizar directamente con su banco para obtener todos los
 extractos bancarios importados de manera automática a su base de datos.
 
 Ponto es un proveedor externo de pago que puede gestionar la sincronización
-entre sus cuentas bancarias y Odoo. [Cuesta 4 € al mes por
+entre sus cuentas bancarias y Konvergo ERP. [Cuesta 4 € al mes por
 cuenta/integración](https://myponto.com/en#pricing).
 
-Ver también
-
-  * [Sincronización bancaria](../bank_synchronization.html)
-
-  * [Transacciones](../transactions.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../bank_synchronization">Sincronización bancaria</a></p></li>
+<li><p><a href="../transactions">Transacciones</a></p></li>
+</ul>
+</div>
 
 ## Configuración
 
@@ -42,9 +44,9 @@ Es posible que primero deba agregar su **Información de facturación**.
 ![Añadir cuentas bancarias a su cuenta Ponto](../../../../../_images/ponto-
 add-account.png)
 
-  6. Asegúrese de agregar todas las cuentas bancarias que desea sincronizar con su base de datos de Odoo antes de continuar con los siguientes pasos.
+  6. Asegúrese de agregar todas las cuentas bancarias que desea sincronizar con su base de datos de Konvergo ERP antes de continuar con los siguientes pasos.
 
-### Vincule su cuenta Ponto con su base de datos Odoo
+### Vincule su cuenta Ponto con su base de datos Konvergo ERP
 
   1. Vaya a :menuselection: `Contabilidad --> Configuración --> Agregar una cuenta bancaria`.
 
@@ -52,18 +54,17 @@ add-account.png)
 
   3. Haga clic en _Conectar_ y siga los pasos.
 
-  4. En algún momento, deberá autorizar las cuentas a las que desea acceder en Odoo. Seleccione **todas las cuentas** que desee sincronizar, incluso aquellas que pertenezcan a otras instituciones bancarias.
+  4. En algún momento, deberá autorizar las cuentas a las que desea acceder en Konvergo ERP. Seleccione **todas las cuentas** que desee sincronizar, incluso aquellas que pertenezcan a otras instituciones bancarias.
 
 ![Selección de las cuentas que desea sincronizar con
-Odoo.](../../../../../_images/ponto-select-accounts.png)
+Konvergo ERP.](../../../../../_images/ponto-select-accounts.png)
 
   5. Termine el flujo.
 
-Nota
-
-Debe autorizar todas las cuentas a las que desea acceder en Odoo, pero
-filtraremos las cuentas en función de la institución que seleccionó en el
-segundo paso.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Debe autorizar todas las cuentas a las que desea acceder en Konvergo ERP, pero filtraremos las cuentas en función de la institución que seleccionó en el segundo paso.</p>
+</div>
 
 ### Actualice sus credenciales de sincronización
 
@@ -105,11 +106,11 @@ estas cuentas.
 ### Tengo algunos errores con mi institución en estado beta
 
 Ponto proporciona instituciones en _beta_ , estas instituciones no cuentan con
-el apoyo directo de Odoo y le recomendamos que se ponga en contacto
+el apoyo directo de Konvergo ERP y le recomendamos que se ponga en contacto
 directamente con Ponto.
 
-Importante
-
-El uso de una institución en versión beta beneficia a Ponto, les permite tener
-comentarios reales sobre la conexión con la institución.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>El uso de una institución en versión beta beneficia a Ponto, les permite tener comentarios reales sobre la conexión con la institución.</p>
+</div>
 

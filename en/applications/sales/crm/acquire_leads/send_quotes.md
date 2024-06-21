@@ -1,7 +1,7 @@
 # Send quotations
 
 When you qualify a lead into an opportunity you will most likely need to send
-them a quotation. You can directly do this in the CRM App with Odoo.
+them a quotation. You can directly do this in the CRM App with Konvergo ERP.
 
 ![../../../../_images/send_quotes01.png](../../../../_images/send_quotes01.png)
 

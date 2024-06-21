@@ -1,35 +1,35 @@
-# Configure los registros DNS para enviar correos en Odoo
+# Configure los registros DNS para enviar correos en Konvergo ERP
 
 ## Resumen de las etiquetas SPAM
 
-De vez en cuando, los proveedores de correo clasifican mal los correos de Odoo
-y los mandan a la carpeta de spam. Por el momento, Odoo no puede controlar
+De vez en cuando, los proveedores de correo clasifican mal los correos de Konvergo ERP
+y los mandan a la carpeta de spam. Por el momento, Konvergo ERP no puede controlar
 algunos ajustes, sobre todo la forma en la que los proveedores de correo
-electrónico clasifican los correos provenientes de Odoo según sus propias
+electrónico clasifican los correos provenientes de Konvergo ERP según sus propias
 políticas de restricción o sus limitaciones.
 
-En Odoo es estándar recibir correos de `"nombre del autor"
+En Konvergo ERP es estándar recibir correos de `"nombre del autor"
 <notifications@mycompany.odoo.com>``, que se puede traducir a `"nombre del
 autor" <{ICP.mail.from.filter}@{mail.catchall.domain}>`. En este caso, ICP son
 las siglas de `ir.config.parameters`, que son los parámetros del sistema.
-Gracias a la [configuración de notificaciones](email_servers.html#email-
+Gracias a la [configuración de notificaciones](email_servers#email-
 servers-notifications) mejoramos las entregas.
 
-Para que sea más fácil que los servidores acepten correos de Odoo, una de las
+Para que sea más fácil que los servidores acepten correos de Konvergo ERP, una de las
 soluciones es que el cliente cree reglas deontro de su propia bandeja de
 entrega. Se puede agregar un filtro a la bandeja de entrada de manera que
-cuando se reciba un correo de Odoo (`notifications@mycompany.odoo.com`) este
+cuando se reciba un correo de Konvergo ERP (`notifications@mycompany.odoo.com`) este
 se mueva a la bandeja de entrada. También es posible agregar el dominio de la
-base de datos de Odoo a la lista de remitentes seguros o a la lista blanca del
+base de datos de Konvergo ERP a la lista de remitentes seguros o a la lista blanca del
 proveedor de correos.
 
-Si el servidor de correo de Odoo aparece en una lista negra, notifíquenos
+Si el servidor de correo de Konvergo ERP aparece en una lista negra, notifíquenos
 mediante un [ticket de soporte nuevo](https://www.odoo.com/help) y el equipo
 de soporte técnico trabajará para que el servidor ya no esté en la lista
 negra.
 
 Si la base de datos usa un dominio personalizado para enviar correos desde
-Odoo, entonces debe implementar tres registros en el DNS del dominio
+Konvergo ERP, entonces debe implementar tres registros en el DNS del dominio
 personalizado para asegurar la entrega del correo. Es necesario que configure
 registros para el SPF, DKIM y DMARC. Sin embargo, todo depende del correo que
 recibe los mensajes.
@@ -42,12 +42,10 @@ enviar correos desde ese dominio. Cuando un servidor recibe un correo, revisa
 si la dirección IP del servidor saliente está en la lista de IP permitidas
 según el registro SPF del remitente.
 
-Nota
-
-La verificación del SPF se realiza en el dominio que aparece en el campo
-`Return-Path` del correo electrónico. En caso de que se trate de un correo
-electrónico enviado por Odoo, este dominio corresponde al valor de la clave
-`mail.catchall.domain` en los parámetros de sistema de la base de datos.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>La verificación del <abbr title="Convenio de remitentes">SPF</abbr> se realiza en el dominio que aparece en el campo <code>Return-Path</code> del correo electrónico. En caso de que se trate de un correo electrónico enviado por Konvergo ERP, este dominio corresponde al valor de la clave <code>mail.catchall.domain</code> en los parámetros de sistema de la base de datos.</p>
+</div>
 
 La política SPF de un dominio se establece mediante un registro TXT y la
 creación o modificación de un registro TXT depende del proveedor que aloja a
@@ -60,11 +58,10 @@ include:_spf.odoo.com ~all` para crear uno.
 Si el nombre de dominio ya tiene un registro SPF, debe actualizar el registro
 (no cree uno nuevo).
 
-Example
-
-Si el registro TXT es `v=spf1 include:_spf.google.com ~all`, edítelo para
-agregar `include:_spf.odoo.com`: `v=spf1 include:_spf.odoo.com
-include:_spf.google.com ~all`
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Si el registro TXT es <code>v=spf1 include:_spf.google.com ~all</code>, edítelo para agregar <code>include:_spf.odoo.com</code>: <code>v=spf1 include:_spf.odoo.com include:_spf.google.com ~all</code></p>
+</div>
 
 Verifique si el registro SPF es válido con una herramienta gratuita como
 [MXToolbox SPF](https://mxtoolbox.com/spf.aspx).
@@ -75,7 +72,7 @@ El correo identificado con claves de dominio (DKIM, mejor conocido como
 DomainKeys Identified Mail) permite que los usuarios autentiquen sus correos
 electrónicos con una firma digital.
 
-Al enviar un correo electrónico, el servidor de Odoo incluye una firma DKIM
+Al enviar un correo electrónico, el servidor de Konvergo ERP incluye una firma DKIM
 única en los encabezados. El servidor del destinatario descifra esta firma
 mediante el registro DKIM en el nombre de dominio de la base de datos. Si la
 firma y la clave en el registro coinciden, confirma que el mensaje es
@@ -86,11 +83,10 @@ dominio:
 
 `odoo._domainkey IN CNAME odoo._domainkey.odoo.com.`
 
-Truco
-
-Si el nombre de dominio es `mycompany.com`, asegúrese de crear un subdominio
-`odoo._domainkey.mycompany.com` cuyo nombre canónico sea
-`odoo._domainkey.odoo.com.`.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Si el nombre de dominio es <code>mycompany.com</code>, asegúrese de crear un subdominio <code>odoo._domainkey.mycompany.com</code> cuyo nombre canónico sea <code>odoo._domainkey.odoo.com.</code>.</p>
+</div>
 
 La creación o modificación de un registro CNAME depende del proveedor que da
 alojamiento a la zona DNS del nombre de dominio. Puede consultar una lista de
@@ -108,11 +104,11 @@ instrucciones en el registro DMARC de un nombre de dominio indican al servidor
 de destino lo que debe hacer con un correo entrante que no cumple con las
 verificaciones del SPF o el DKIM.
 
-Example
-
-DMARC: registro TXT
-
-`v=DMARC1; p=none;`
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>DMARC: registro TXT</p>
+<p><code>v=DMARC1; p=none;</code></p>
+</div>
 
 Hay tres políticas DMARC:
 
@@ -130,12 +126,10 @@ Si el nombre de dominio utiliza la DMARC y tiene definida una de estas
 políticas, entonces el dominio debe cumplir con el SPF o debe tener activo el
 DKIM.
 
-Advertencia
-
-Yahoo y AOL son ejemplos de proveedores de correo electrónico con una política
-de DMARC configurada con `p=reject`. Odoo le recomienda que no use direcciones
-_@yahoo.com_ o _@aol.com_ para los usuarios de la base de datos, ya que estos
-correos nunca llegarán a su destinatario.
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Yahoo y AOL son ejemplos de proveedores de correo electrónico con una política de <abbr title="Autenticación basada en dominios para mensajes, reportes y conformidad">DMARC</abbr> configurada con <code>p=reject</code>. Konvergo ERP le recomienda que no use direcciones <em>@yahoo.com</em> o <em>@aol.com</em> para los usuarios de la base de datos, ya que estos correos nunca llegarán a su destinatario.</p>
+</div>
 
 El propiertario del dominio utiliza `p=none` para recibir reportes sobre
 entidades que utilizan su dominio. No pasar la verificación DMARC no debería
@@ -163,10 +157,10 @@ aspf | Modo de alineación para SPF | `aspf=r`
 Verifique el registro DMARC de un nombre de dominio con una herramienta como
 [MXToolbox DMARC](https://mxtoolbox.com/DMARC.aspx).
 
-Ver también
-
-[DMARC.org es un excelente recurso para aprender más sobre los registros
-DMARC.](https://dmarc.org/overview/)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="https://dmarc.org/overview/">DMARC.org es un excelente recurso para aprender más sobre los registros DMARC.</a></p>
+</div>
 
 ## Documentación de SPF, DKIM y DMARC de los proveedores más comunes
 
@@ -194,10 +188,10 @@ contenido y la configuración en un único correo electrónico enviado. También
 puede utilizar Mail-Tester para configurar los registros de otros proveedores
 menos conocidos.
 
-Ver también
-
-[Usar Mail-Tester para establecer registros SPF para proveedores
-determinados](https://www.mail-tester.com/spf/)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="https://www.mail-tester.com/spf/">Usar Mail-Tester para establecer registros SPF para proveedores determinados</a></p>
+</div>
 
   *[SPF]: Convenio de remitentes
   *[DKIM]: DomainKeys Identified Mail

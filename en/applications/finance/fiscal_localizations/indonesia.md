@@ -12,7 +12,7 @@ application.
   * **Your Company**
 
 This information is used in the FAPR line in the effect file format. You need
-to set a VAT number on the related partner of your Odoo company. If you don’t,
+to set a VAT number on the related partner of your Konvergo ERP company. If you don’t,
 it won’t be possible to create an e-Faktur from an invoice.
 
   * **Your Clients**
@@ -31,7 +31,7 @@ partner-nik.png)
 
   1. Go to Accounting ‣ Customers ‣ e-Faktur. In order to be able to export customer invoices as e-Faktur for the Indonesian government, you need to put here the ranges of numbers you were assigned by the government. When you validate an invoice, a number will be assigned based on these ranges. Afterwards, you can filter the invoices still to export in the invoices list and click on _Action_ , then on _Download e-Faktur_.
 
-  2. After receiving new serial numbers from the Indonesian Revenue Department, you can create a set of tax invoice serial numbers group through this list view. You only have to specify the Min and Max of each serial numbers’ group and Odoo will format the number automatically to a 13-digits number, as requested by the Indonesia Tax Revenue Department.
+  2. After receiving new serial numbers from the Indonesian Revenue Department, you can create a set of tax invoice serial numbers group through this list view. You only have to specify the Min and Max of each serial numbers’ group and Konvergo ERP will format the number automatically to a 13-digits number, as requested by the Indonesia Tax Revenue Department.
 
   3. There is a counter to inform you how many unused numbers are left in that group.
 
@@ -40,14 +40,14 @@ count.png)
 
 #### Generate e-faktur csv for a single invoice or a batch invoices
 
-  1. Create an invoice from Accounting ‣ Customers ‣ Invoices. If the invoice customer’s country is Indonesia and the customer is set as _ID PKP_ , Odoo will allow you to create an e-Faktur.
+  1. Create an invoice from Accounting ‣ Customers ‣ Invoices. If the invoice customer’s country is Indonesia and the customer is set as _ID PKP_ , Konvergo ERP will allow you to create an e-Faktur.
 
   2. Set a Kode Transaksi for the e-Faktur. There are constraints related to the Kode transaksi and the type of VAT applied to invoice lines.
 
 ![../../../_images/indonesia-kode-transaksi.png](../../../_images/indonesia-
 kode-transaksi.png)
 
-  3. Odoo will automatically pick the next available serial number from the e-Faktur number table (see the section above) and generate the e-faktur number as a concatenation of Kode Transaksi and serial number. You can see this from the invoice form view under the page _Extra Info_ in the box _Electronic Tax_.
+  3. Konvergo ERP will automatically pick the next available serial number from the e-Faktur number table (see the section above) and generate the e-faktur number as a concatenation of Kode Transaksi and serial number. You can see this from the invoice form view under the page _Extra Info_ in the box _Electronic Tax_.
 
 ![../../../_images/indonesia-e-faktur-sn.png](../../../_images/indonesia-e-
 faktur-sn.png)
@@ -72,11 +72,11 @@ Aktiva (Pasal 16D UU PPN)
 #### Correct an invoice that has been posted and downloaded: Replace Invoice
 feature
 
-  1. Cancel the original wrong invoice in Odoo. For instance, we will change the Kode Transakski from 01 to 03 for the INV/2020/0001.
+  1. Cancel the original wrong invoice in Konvergo ERP. For instance, we will change the Kode Transakski from 01 to 03 for the INV/2020/0001.
 
   2. Create a new invoice and set the canceled invoice in the _Replace Invoice_ field. In this field, we can only select invoices in _Cancel_ state from the same customer.
 
-  3. As you validate, Odoo will automatically use the same e-Faktur serial number as the canceled and replaced invoice replacing the third digit of the original serial number with _1_ (as requested to upload a replacement invoice in the e-Faktur app).
+  3. As you validate, Konvergo ERP will automatically use the same e-Faktur serial number as the canceled and replaced invoice replacing the third digit of the original serial number with _1_ (as requested to upload a replacement invoice in the e-Faktur app).
 
 ![../../../_images/indonesia-replace-invoice.png](../../../_images/indonesia-
 replace-invoice.png)

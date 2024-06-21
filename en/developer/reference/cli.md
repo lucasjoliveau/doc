@@ -1,32 +1,27 @@
 # Command-line interface (CLI)
 
-The CLI command-line interface offers several functionalities related to Odoo.
-You can use it to run the server, launch Odoo as a Python console environment,
-scaffold an Odoo module, populate a database, or count the number of lines of
+The CLI command-line interface offers several functionalities related to Konvergo ERP.
+You can use it to run the server, launch Konvergo ERP as a Python console environment,
+scaffold an Konvergo ERP module, populate a database, or count the number of lines of
 code.
 
-Important
-
-The command to use to call the CLI depends on how you installed Odoo. In the
-examples below, we assume that you are [running Odoo from
-source](../../administration/on_premise/source.html) with the `odoo-bin` file.
-If you installed Odoo [from a distribution
-package](../../administration/on_premise/packages.html) or with
-[Docker](https://hub.docker.com/_/odoo/), you must adapt the command.
-
-Run Odoo from sourceOdoo was installed from a distribution packageOdoo was
-installed with Docker
-
-  1. Navigate to the root of the directory where you downloaded the source files of Odoo Community.
-
-  2. Run all CLI commands with **./odoo-bin**
-
-When Odoo was installed, an executable named `odoo` was added to your user’s
-PATH. Replace all occurrences of **odoo-bin** with **odoo** in the examples
-below.
-
-Please refer to the [documentation of the official Docker image of
-Odoo](https://hub.docker.com/_/odoo/).
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>The command to use to call the CLI depends on how you installed Konvergo ERP. In the examples below, we
+assume that you are <a href="../../administration/on_premise/source">running Konvergo ERP from source</a> with the
+<code>odoo-bin</code> file. If you installed Konvergo ERP <a href="../../administration/on_premise/packages">from a distribution package</a> or with <a href="https://hub.docker.com/_/odoo/">Docker</a>, you
+must adapt the command.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Run Konvergo ERP from source</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Konvergo ERP was installed from a distribution package</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Konvergo ERP was installed with Docker</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><ol class="arabic simple">
+<li><p>Navigate to the root of the directory where you downloaded the source files of Konvergo ERP
+Community.</p></li>
+<li><p>Run all CLI commands with <b class="command o_code">./odoo-bin</b></p></li>
+</ol>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>When Konvergo ERP was installed, an executable named <code>odoo</code> was added to your user’s PATH. Replace
+all occurrences of <b class="command o_code">odoo-bin</b> with <b class="command o_code">odoo</b> in the examples below.</p>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>Please refer to the <a href="https://hub.docker.com/_/odoo/">documentation of the official Docker image of Konvergo ERP</a>.</p>
+</div></div>
+</div>
 
 ## Help & version
 
@@ -39,18 +34,17 @@ shows help text with all available options
 
     
 
-shows Odoo version e.g. “Odoo Server 16.0”
+shows Konvergo ERP version e.g. “Konvergo ERP Server 16.0”
 
-Tip
-
-You can enable auto-completion in your shell by running
-
-    
-    
-    echo "complete -W '`./odoo-bin --help | \
-      sed -e 's/[^a-z_-]\(-\+[a-z0-9_-]\+\)/\n\1\n/' | \
-      grep -- '^-' | sort | uniq | tr '\n' ' '`' odoo-bin" >> ~/.bash_completion
-    
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>You can enable auto-completion in your shell by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">"complete -W '`./odoo-bin --help | \</span>
+<span class="s2">  sed -e 's/[^a-z_-]\(-\+[a-z0-9_-]\+\)/\n\1\n/' | \</span>
+<span class="s2">  grep -- '^-' | sort | uniq | tr '\n' ' '`' odoo-bin"</span> &gt;&gt; ~/.bash_completion
+</pre></div>
+</div>
+</div>
 
 ## Running the server
 
@@ -94,22 +88,22 @@ specify an additional upgrade path.
 list of server-wide modules to load. Those modules are supposed to provide
 features not necessarily tied to a particular database. This is in contrast to
 modules that are always bound to a specific database when they are installed
-(i.e. the majority of Odoo addons). Default is `base,web`.
+(i.e. the majority of Konvergo ERP addons). Default is `base,web`.
 
 -c <config>, \--config <config>
     
 
-path to an alternate configuration file. If not defined, Odoo checks `ODOO_RC`
+path to an alternate configuration file. If not defined, Konvergo ERP checks `ODOO_RC`
 environmental variable and default location `_$HOME_ /.odoorc`. See
 configuration file section below.
 
 -D <data-dir-path>, \--data-dir <data-dir-path>
     
 
-directory path where to store Odoo data (eg. filestore, sessions). If not
-specified, Odoo will fallback to a predefined path. On Unix systems its one
-defined in `$XDG_DATA_HOME` environmental variable or `~/.local/share/Odoo` or
-`/var/lib/Odoo`.
+directory path where to store Konvergo ERP data (eg. filestore, sessions). If not
+specified, Konvergo ERP will fallback to a predefined path. On Unix systems its one
+defined in `$XDG_DATA_HOME` environmental variable or `~/.local/share/Konvergo ERP` or
+`/var/lib/Konvergo ERP`.
 
 -s, \--save
     
@@ -167,7 +161,7 @@ Example: `--test-tags :TestClass.test_func,/test_module,external`
 
   * The `-` specifies if we want to include or exclude tests matching this spec.
 
-  * The tag will match tags added on a class with a `tagged()` decorator (all [test classes](backend/testing.html#reference-testing) have `standard` and `at_install` tags until explicitly removed, see the decorator documentation).
+  * The tag will match tags added on a class with a `tagged()` decorator (all [test classes](backend/testing#reference-testing) have `standard` and `at_install` tags until explicitly removed, see the decorator documentation).
 
   * `*` will match all tags.
 
@@ -209,7 +203,7 @@ database username, used to connect to PostgreSQL.
 
 database password, if using [password
 authentication](https://www.postgresql.org/docs/12/static/auth-
-methods.html#AUTH-PASSWORD).
+methods#AUTH-PASSWORD).
 
 \--db_host <hostname>
 
@@ -232,7 +226,7 @@ port the database listens on, defaults to 5432
     
 
 hides databases that do not match `<filter>`. The filter is a [regular
-expression](https://docs.python.org/3/library/re.html), with the additions
+expression](https://docs.python.org/3/library/re), with the additions
 that:
 
   * `%h` is replaced by the whole hostname the request is made on.
@@ -240,7 +234,7 @@ that:
   * `%d` is replaced by the subdomain the request is made on, with the exception of `www` (so domain `odoo.com` and `www.odoo.com` both match the database `odoo`).
 
 These operations are case sensitive. Add option `(?i)` to match all databases
-(so domain `odoo.com` using `(?i)%d` matches the database `Odoo`).
+(so domain `odoo.com` using `(?i)%d` matches the database `Konvergo ERP`).
 
 Since version 11, it’s also possible to restrict access to a given database
 listen by using the –database parameter and specifying a comma-separated list
@@ -290,7 +284,7 @@ the database is created and base modules is installed
 when creating new databases from the database-management screens, use the
 specified [template
 database](https://www.postgresql.org/docs/12/static/manage-ag-
-templatedbs.html). Defaults to `template0`.
+templatedbs). Defaults to `template0`.
 
 \--pg_path </path/to/postgresql/binaries>
 
@@ -310,7 +304,7 @@ Suppresses the ability to list databases available on the system
 
     
 
-Control the SSL security of the connection between Odoo and PostgreSQL. Value
+Control the SSL security of the connection between Konvergo ERP and PostgreSQL. Value
 should be one of ‘disable’, ‘allow’, ‘prefer’, ‘require’, ‘verify-ca’ or
 ‘verify-full’ Default value is ‘prefer’
 
@@ -326,7 +320,7 @@ Try to enable the unaccent extension when creating new databases
 
     
 
-Email address used as <FROM> when Odoo needs to send mails
+Email address used as <FROM> when Konvergo ERP needs to send mails
 
 \--from-filter <address or domain>
 
@@ -383,7 +377,7 @@ certificate` is required.
 
 ### Internationalisation
 
-Use these options to translate Odoo to another language. See i18n section of
+Use these options to translate Konvergo ERP to another language. See i18n section of
 the user manual. Option ‘-d’ is mandatory. Option ‘-l’ is mandatory in case of
 importation
 
@@ -457,12 +451,13 @@ in production. Possible features are:
     
 
 do not start the HTTP or long-polling workers (may still start
-[cron](backend/actions.html#reference-actions-cron) workers)
+[cron](backend/actions#reference-actions-cron) workers)
 
-Warning
-
-has no effect if `--test-enable` is set, as tests require an accessible HTTP
-server
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>has no effect if <a href="#cmdoption-odoo-bin-test-enable"><code>--test-enable</code></a> is set, as tests
+require an accessible HTTP server</p>
+</div>
 
 \--http-interface <interface>
 
@@ -500,19 +495,21 @@ from the request.
 
 It always gets the real IP from the last entry of the `X-Forwarded-For` chain.
 Configure your web server accordingly using directives such as nginx’s
-[set_real_ip_from](https://nginx.org/en/docs/http/ngx_http_realip_module.html)
+[set_real_ip_from](https://nginx.org/en/docs/http/ngx_http_realip_module)
 in case there are other trusted proxies along the chain that must be ignored.
 
 `X-Forwarded-Proto` and `X-Forwarded-Host` are used to update the request root
 URL, which in turn is used to update the `web.base.url` system parameter upon
 a successful admin authentication. This system parameter is used to generate
 all links for the current database; see [Web base URL of a
-database](../../applications/websites/website/configuration/domain_names.html#domain-
+database](../../applications/websites/website/configuration/domain_names#domain-
 name-web-base-url).
 
-Warning
-
-proxy mode _must not_ be enabled outside of a reverse proxy scenario
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>proxy mode <em>must not</em> be enabled outside of a reverse proxy
+scenario</p>
+</div>
 
 \--x-sendfile
 
@@ -521,13 +518,13 @@ proxy mode _must not_ be enabled outside of a reverse proxy scenario
 delegates serving attachments files to the static web server and sets both
 `X-Sendfile` (apache) and `X-Accel-*` (nginx) http headers on stream
 responses. See [Serving static files and
-attachments](../../administration/on_premise/deploy.html#deploy-streaming) for
+attachments](../../administration/on_premise/deploy#deploy-streaming) for
 web server configuration.
 
 #### Logging
 
-By default, Odoo displays all logging of
-[level](https://docs.python.org/3/library/logging.html#logging.Logger.setLevel)
+By default, Konvergo ERP displays all logging of
+[level](https://docs.python.org/3/library/logging#logging.Logger.setLevel)
 `INFO`, `WARNING` and `ERROR`. All logs independently of the level are output
 on `stderr`. Various options are available to redirect logging to other
 destinations and to customize the verbosity.
@@ -538,7 +535,7 @@ destinations and to customize the verbosity.
 
 sends logging output to the specified file instead of `stderr`. On Unix, the
 file [can be managed by external log rotation
-programs](https://docs.python.org/3/library/logging.handlers.html#watchedfilehandler)
+programs](https://docs.python.org/3/library/logging.handlers#watchedfilehandler)
 and will automatically be reopened when replaced
 
 \--syslog
@@ -546,9 +543,9 @@ and will automatically be reopened when replaced
     
 
 logs to the system’s event logger: [syslog on
-unices](https://docs.python.org/3/library/logging.handlers.html#sysloghandler)
+unices](https://docs.python.org/3/library/logging.handlers#sysloghandler)
 and [the Event Log on
-Windows](https://docs.python.org/3/library/logging.handlers.html#nteventloghandler).
+Windows](https://docs.python.org/3/library/logging.handlers#nteventloghandler).
 
 Neither is configurable
 
@@ -559,7 +556,7 @@ Neither is configurable
 logs to the `ir.logging` model (`ir_logging` table) of the specified database.
 The database can be the name of a database in the “current” PostgreSQL, or [a
 PostgreSQL URI](https://www.postgresql.org/docs/12/static/libpq-
-connect.html#AEN38208) for e.g. log aggregation.
+connect#AEN38208) for e.g. log aggregation.
 
 \--log-handler <handler-spec>
 
@@ -604,7 +601,7 @@ Shortcut to more easily set predefined levels on specific loggers. “real”
 levels (`critical`, `error`, `warn`, `debug`) are set on the `odoo` and
 `werkzeug` loggers (except for `debug` which is only set on `odoo`).
 
-Odoo also provides debugging pseudo-levels which apply to different sets of
+Konvergo ERP also provides debugging pseudo-levels which apply to different sets of
 loggers:
 
 `debug_sql`
@@ -631,10 +628,11 @@ sets the `odoo` and HTTP request and response loggers to `debug`
 
 equivalent to `--log-level debug --log-request --log-response`
 
-Note
-
-In case of conflict between `--log-level` and `--log-handler`, the latter is
-used
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>In case of conflict between <a href="#cmdoption-odoo-bin-log-level"><code>--log-level</code></a> and
+<a href="#cmdoption-odoo-bin-log-handler"><code>--log-handler</code></a>, the latter is used</p>
+</div>
 
 #### Multiprocessing
 
@@ -646,9 +644,10 @@ if `count` is not 0 (the default), enables multiprocessing and sets up the
 specified number of HTTP workers (sub-processes processing HTTP and RPC
 requests).
 
-Note
-
-multiprocessing mode is only available on Unix-based systems
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>multiprocessing mode is only available on Unix-based systems</p>
+</div>
 
 A number of options allow limiting and recycling workers:
 
@@ -704,7 +703,7 @@ Defaults to _120_.
 
     
 
-number of workers dedicated to [cron](backend/actions.html#reference-actions-
+number of workers dedicated to [cron](backend/actions#reference-actions-
 cron) jobs. Defaults to _2_. The workers are threads in multi-threading mode
 and processes in multi-processing mode.
 
@@ -746,55 +745,54 @@ Here is a sample file:
 
 ## Shell
 
-The Odoo command line also allows launching Odoo as a Python console
+The Konvergo ERP command line also allows launching Konvergo ERP as a Python console
 environment, enabling direct interaction with the
-[orm](backend/orm.html#reference-orm) and its functionalities.
+[orm](backend/orm#reference-orm) and its functionalities.
 
     
     
     $ odoo-bin shell
     
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Adding an exclamation mark to all contacts’ names:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">records</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s2">"res.partner"</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">([])</span>
 
-Adding an exclamation mark to all contacts’ names:
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">records</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">res</span><span class="o">.</span><span class="n">partner</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 
-    
-    
-    In [1]: records = env["res.partner"].search([])
-    
-    In [2]: records
-    Out[2]: res.partner(14, 26, 33, 21, 10)
-    
-    In [3]: for partner in records:
-       ...:     partner.name = "%s !" % partner.name
-       ...:
-    
-    In [4]: env.cr.commit()
-    
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="k">for</span> <span class="n">partner</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="n">partner</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"</span><span class="si">%s</span><span class="s2"> !"</span> <span class="o">%</span> <span class="n">partner</span><span class="o">.</span><span class="n">name</span>
+   <span class="o">...</span><span class="p">:</span>
 
-Important
-
-By default, the shell is running in transaction mode. This means that any
-change made to the database is rolled back when exiting the shell. To commit
-changes, use `env.cr.commit()`.
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">env</span><span class="o">.</span><span class="n">cr</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>By default, the shell is running in transaction mode. This means that any change made to the
+database is rolled back when exiting the shell. To commit changes, use <code>env.cr.commit()</code>.</p>
+</div>
+</div>
 
 \--shell-interface (ipython|ptpython|bpython|python)
 
     
 
 Specify a preferred REPL to use in shell mode. This shell is started with the
-`env` variable already initialized to be able to access the ORM and other Odoo
+`env` variable already initialized to be able to access the ORM and other Konvergo ERP
 modules.
 
-See also
-
-[Environment](backend/orm.html#reference-orm-environment)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="backend/orm#reference-orm-environment"><span class="std std-ref">Environment</span></a></p>
+</div>
 
 ## Scaffolding
 
 Scaffolding is the automated creation of a skeleton structure to simplify
-bootstrapping (of new modules, in the case of Odoo). While not necessary it
+bootstrapping (of new modules, in the case of Konvergo ERP). While not necessary it
 avoids the tedium of setting up basic structures and looking up what all
 starting requirements are.
 
@@ -829,8 +827,8 @@ This will create module _my_module_ in directory _/addons/_.
 
 ## Database Population
 
-Odoo CLI supports database population features. If the feature is [implemented
-on a given model](backend/performance.html#reference-performance-populate-
+Konvergo ERP CLI supports database population features. If the feature is [implemented
+on a given model](backend/performance#reference-performance-populate-
 methods), it allows automatic data generation of the model’s records to test
 your modules in databases containing non-trivial amounts of records.
 
@@ -854,13 +852,14 @@ population size, the actual records number depends on the model’s
 `_populate_factories()` method of a given model (cf. the `populate` folder of
 modules for further details).
 
-See also
-
-[Database population](backend/performance.html#reference-performance-populate)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="backend/performance#reference-performance-populate"><span class="std std-ref">Database population</span></a></p>
+</div>
 
 ## Cloc
 
-Odoo Cloc is a tool to count the number of relevant lines written in Python,
+Konvergo ERP Cloc is a tool to count the number of relevant lines written in Python,
 Javascript, CSS, SCSS, or XML. This can be used as a rough metric for pricing
 maintenance of extra modules.
 
@@ -885,9 +884,15 @@ required to specify which code to process.
     $ odoo-bin cloc --addons-path=addons -d my_database
     
 
-See also
-
-  * With the --database option
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>You can enable auto-completion in your shell by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">"complete -W '`./odoo-bin --help | \</span>
+<span class="s2">  sed -e 's/[^a-z_-]\(-\+[a-z0-9_-]\+\)/\n\1\n/' | \</span>
+<span class="s2">  grep -- '^-' | sort | uniq | tr '\n' ' '`' odoo-bin"</span> &gt;&gt; ~/.bash_completion
+</pre></div>
+</div>
+</div>0
 
 -p <path>, \--path <path>
     
@@ -910,9 +915,15 @@ Multiple paths can be provided by repeating the option.
     $ odoo-bin cloc -p addons/account -p addons/sale
     
 
-See also
-
-  * With the --path option
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>You can enable auto-completion in your shell by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">"complete -W '`./odoo-bin --help | \</span>
+<span class="s2">  sed -e 's/[^a-z_-]\(-\+[a-z0-9_-]\+\)/\n\1\n/' | \</span>
+<span class="s2">  grep -- '^-' | sort | uniq | tr '\n' ' '`' odoo-bin"</span> &gt;&gt; ~/.bash_completion
+</pre></div>
+</div>
+</div>1
 
 \--addons-path <directories>
 
@@ -942,7 +953,7 @@ Show the details of lines counted for each file.
 
 #### With the `--database` option
 
-Odoo Cloc counts the lines in each file of extra installed modules in a given
+Konvergo ERP Cloc counts the lines in each file of extra installed modules in a given
 database. In addition, it counts the Python lines of server actions and custom
 computed fields that have been directly created in the database or imported.
 Finally, it counts the lines of code of Javascript, CSS, and SCSS files, and
@@ -960,7 +971,7 @@ Some files are excluded from the count by default:
 
   * The XML files declared in the `demo` or `demo_xml` sections of the manifest
 
-For special cases, a list of files that should be ignored by Odoo Cloc can be
+For special cases, a list of files that should be ignored by Konvergo ERP Cloc can be
 defined per module. This is specified by the `cloc_exclude` entry of the
 manifest:
 
@@ -978,7 +989,7 @@ The pattern `**/*` can be used to ignore an entire module. This can be useful
 to exclude a module from maintenance service costs.
 
 For more information about the pattern syntax, see
-[glob](https://docs.python.org/3/library/pathlib.html#pathlib.Path.glob).
+[glob](https://docs.python.org/3/library/pathlib#pathlib.Path.glob).
 
 #### With the `--path` option
 
@@ -987,7 +998,7 @@ present in the given folder. Otherwise, it counts all files.
 
 ### Identifying Extra Modules
 
-To distinguish between standard and extra modules, Odoo Cloc uses the
+To distinguish between standard and extra modules, Konvergo ERP Cloc uses the
 following heuristic: modules that are located (real file system path, after
 following symbolic links) in the same parent directory as the `base`, `web` or
 `web_enterprise` standard modules are considered standard. Other modules are
@@ -995,12 +1006,12 @@ treated as extra modules.
 
 ### Error Handling
 
-Some file cannot be counted by Odoo Cloc. Those file are reported at the end
+Some file cannot be counted by Konvergo ERP Cloc. Those file are reported at the end
 of the output.
 
 #### Max file size exceeded
 
-Odoo Cloc rejects any file larger than 25MB. Usually, source files are smaller
+Konvergo ERP Cloc rejects any file larger than 25MB. Usually, source files are smaller
 than 1 MB. If a file is rejected, it may be:
 
   * A generated XML file that contains lots of data. It should be excluded in the manifest.
@@ -1009,7 +1020,7 @@ than 1 MB. If a file is rejected, it may be:
 
 #### Syntax Error
 
-Odoo Cloc cannot count the lines of code of a Python file with a syntax
+Konvergo ERP Cloc cannot count the lines of code of a Python file with a syntax
 problem. If an extra module contains such files, they should be fixed to allow
 the module to load. If the module works despite the presence of those files,
 they are probably not loaded and should therefore be removed from the module,

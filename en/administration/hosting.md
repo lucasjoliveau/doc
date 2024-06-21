@@ -7,15 +7,17 @@ current solution used and to which solution the database should be moved.
 
 ## Transferring an on-premise database
 
-### To Odoo Online
+### To Konvergo ERP Online
 
-Important
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><ul>
+<li><p>Konvergo ERP Online is <em>not</em> compatible with <b>non-standard apps</b>.</p></li>
+<li><p>The database’s current version must be <a href="supported_versions">supported</a>.</p></li>
+</ul>
+</div>
 
-  * Odoo Online is _not_ compatible with **non-standard apps**.
-
-  * The database’s current version must be [supported](supported_versions.html).
-
-  1. Create a [duplicate of the database](on_premise.html#on-premise-duplicate).
+  1. Create a [duplicate of the database](on_premise#on-premise-duplicate).
 
   2. In this duplicate, uninstall all **non-standard apps**.
 
@@ -29,65 +31,66 @@ Important
 
      * the **dump** as an attachment or as a link to the file (required for 60 MB+ files).
 
-  5. Odoo then makes sure the database is compatible before putting it online. In case of technical issues during the process, Odoo might contact you.
+  5. Konvergo ERP then makes sure the database is compatible before putting it online. In case of technical issues during the process, Konvergo ERP might contact you.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>If you have time constraints, <a href="https://www.odoo.com/help">submit a support ticket</a> as soon as
+possible to schedule the transfer.</p>
+</div>
 
-If you have time constraints, [submit a support
-ticket](https://www.odoo.com/help) as soon as possible to schedule the
-transfer.
-
-### To Odoo.sh
+### To Konvergo ERP.sh
 
 Follow the instructions found in [the Import your database
-section](odoo_sh/getting_started/create.html#odoo-sh-import-your-database) of
-the Odoo.sh _Create your project_ documentation.
+section](odoo_sh/getting_started/create#odoo-sh-import-your-database) of
+the Konvergo ERP.sh _Create your project_ documentation.
 
-## Transferring an Odoo Online database
+## Transferring an Konvergo ERP Online database
 
-Important
-
-Odoo Online’s [intermediary versions](supported_versions.html#supported-
-versions) are not supported by Odoo.sh or on-premise. Therefore, if the
-database to transfer is running an intermediary version, it must be upgraded
-first to the next [major version](supported_versions.html#supported-versions),
-waiting for its release if necessary.
-
-Example
-
-Transferring an online database running on Odoo 16.3 would require first
-upgrading it to Odoo 17.0.
-
-Tip
-
-Click the gear icon (⚙) next to the database name on the [Odoo Online database
-manager](https://www.odoo.com/my/databases/) to display its version number.
-
-Warning
-
-If there is an active Odoo subscription linked to the database being migrated,
-reach out to the Customer Service Manager or [submit a support
-ticket](https://www.odoo.com/help) to complete the subscription transfer.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Konvergo ERP Online’s <a href="supported_versions#supported-versions"><span class="std std-ref">intermediary versions</span></a> are not supported by Konvergo ERP.sh or
+on-premise. Therefore, if the database to transfer is running an intermediary version, it must be
+upgraded first to the next <a href="supported_versions#supported-versions"><span class="std std-ref">major version</span></a>, waiting for its release if
+necessary.</p>
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Transferring an online database running on Konvergo ERP 16.3 would require first upgrading it to Konvergo ERP
+17.0.</p>
+</div>
+<div class="alert alert-tip">
+<p class="alert-title">
+Tip</p><p>Click the gear icon (<b>⚙</b>) next to the database name on the <a href="https://www.odoo.com/my/databases/">Konvergo ERP Online database
+manager</a> to display its version number.</p>
+</div>
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>If there is an active Konvergo ERP subscription linked to the database being migrated, reach out to
+the Customer Service Manager or <a href="https://www.odoo.com/help">submit a support ticket</a>  to
+complete the subscription transfer.</p>
+</div>
+</div>
 
 ### To on-premise
 
-  1. Sign in to [the Odoo Online database manager](https://www.odoo.com/my/databases/) and click the gear icon (⚙) next to the database name to Download a backup. If the download fails due to the file being too large, [contact Odoo support](https://www.odoo.com/help).
+  1. Sign in to [the Konvergo ERP Online database manager](https://www.odoo.com/my/databases/) and click the gear icon (**⚙**) next to the database name to **Download** a backup. If the download fails due to the file being too large, [contact Konvergo ERP support](https://www.odoo.com/help).
 
   2. Restore the database from the database manager on your local server using the backup.
 
-### To Odoo.sh
+### To Konvergo ERP.sh
 
-  1. Sign in to [the Odoo Online database manager](https://www.odoo.com/my/databases/) and click the gear icon (⚙) next to the database name to Download a backup. If the download fails due to the file being too large, [contact Odoo support](https://www.odoo.com/help).
+  1. Sign in to [the Konvergo ERP Online database manager](https://www.odoo.com/my/databases/) and click the gear icon (**⚙**) next to the database name to **Download** a backup. If the download fails due to the file being too large, [contact Konvergo ERP support](https://www.odoo.com/help).
 
-  2. Follow the instructions found in [the Import your database section](odoo_sh/getting_started/create.html#odoo-sh-import-your-database) of the Odoo.sh _Create your project_ documentation.
+  2. Follow the instructions found in [the Import your database section](odoo_sh/getting_started/create#odoo-sh-import-your-database) of the Konvergo ERP.sh _Create your project_ documentation.
 
-## Transferring an Odoo.sh database
+## Transferring an Konvergo ERP.sh database
 
-### To Odoo Online
+### To Konvergo ERP Online
 
-Important
-
-Odoo Online is _not_ compatible with **non-standard apps**.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Konvergo ERP Online is <em>not</em> compatible with <b>non-standard apps</b>.</p>
+</div>
 
   1. Uninstall all **non-standard apps** in a staging build before doing it in the production build.
 
@@ -105,23 +108,24 @@ Odoo Online is _not_ compatible with **non-standard apps**.
 
      * **when** (and in which timezone) you want the database to be up and running.
 
-  3. Odoo then makes sure the database is compatible before putting it online. In case of technical issues during the process, Odoo might contact you.
+  3. Konvergo ERP then makes sure the database is compatible before putting it online. In case of technical issues during the process, Konvergo ERP might contact you.
 
-Note
-
-  * If you have time constraints, [submit a support ticket](https://www.odoo.com/help) as soon as possible to schedule the transfer.
-
-  * Select the **region** closest to most of your users to reduce latency.
-
-  * Future **administrator(s)** must have an Odoo.com account.
-
-  * The **date and time** you want the database to be up and running are helpful to organize the switch from the Odoo.sh server to the Odoo Online servers.
-
-  * Databases are **not reachable** during their migration.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>If you have time constraints, <a href="https://www.odoo.com/help">submit a support ticket</a> as soon as
+possible to schedule the transfer.</p></li>
+<li><p>Select the <b>region</b> closest to most of your users to reduce latency.</p></li>
+<li><p>Future <b>administrator(s)</b> must have an Konvergo ERP.com account.</p></li>
+<li><p>The <b>date and time</b> you want the database to be up and running are helpful to organize the
+switch from the Konvergo ERP.sh server to the Konvergo ERP Online servers.</p></li>
+<li><p>Databases are <b>not reachable</b> during their migration.</p></li>
+</ul>
+</div>
 
 ### To on-premise
 
-  1. Download a [backup of your Odoo.sh production database](odoo_sh/getting_started/branches.html#odoo-sh-branches-backups).
+  1. Download a [backup of your Konvergo ERP.sh production database](odoo_sh/getting_started/branches#odoo-sh-branches-backups).
 
   2. Restore the database from the database manager on your local server using the backup.
 

@@ -11,29 +11,30 @@ operation of IoT box processes and devices.
 
 ## Flashing the SD card on IoT box
 
-Important
-
-This update does **not** apply to the Windows IoT box (Odoo 16 and higher).
-
-To update the Windows IoT, first, uninstall the previous version of the Odoo
-Windows program, and then reinstall it using the most up-to-date installation
-package.
-
-To begin the installation, navigate to the Odoo 16 (or higher) installation
-package for Enterprise or Community - Windows edition, at [Odoo’s download
-page](https://odoo.com/download).
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>This update does <b>not</b> apply to the Windows <abbr title="Internet of Things">IoT</abbr> box (Konvergo ERP 16 and
+higher).</p>
+<p>To update the Windows <abbr title="Internet of Things">IoT</abbr>, first, uninstall the previous version of
+the Konvergo ERP Windows program, and then reinstall it using the most up-to-date installation package.</p>
+<p>To begin the installation, navigate to the Konvergo ERP 16 (or higher) installation package for
+Enterprise or Community - Windows edition, at <a href="https://odoo.com/download">Konvergo ERP’s download page</a>.</p>
+</div>
 
 In some circumstances, the IoT box’s micro SD Card may need to be re-flashed
-with _Etcher_ software to benefit from Odoo’s latest IoT image update. This
-means the Odoo IoT box software may need to be updated in instances of a new
+with _Etcher_ software to benefit from Konvergo ERP’s latest IoT image update. This
+means the Konvergo ERP IoT box software may need to be updated in instances of a new
 IoT box, or when a handler’s update, or an update from the IoT box home page,
 does not resolve issues.
 
-Note
-
-  * It is often necessary to re-flash the IoT box’s image after upgrading the Odoo database to a new version.
-
-  * A computer with a micro SD card reader/adapter is **required** to re-flash the micro SD card.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>It is often necessary to re-flash the <abbr title="Internet of Things">IoT</abbr> box’s image after
+upgrading the Konvergo ERP database to a new version.</p></li>
+<li><p>A computer with a micro SD card reader/adapter is <b>required</b> to re-flash the micro SD card.</p></li>
+</ul>
+</div>
 
 First, begin by downloading [Etcher](https://www.balena.io/etcher#download-
 etcher). It is a free, open-source utility, used for burning image files onto
@@ -43,34 +44,26 @@ computer.
 Then, download the latest IoT image from
 [nightly](http://nightly.odoo.com/master/iotbox), which will be labeled as
 `iotbox-latest.zip`. This particular image is compatible with _all_ supported
-versions of Odoo.
+versions of Konvergo ERP.
 
 After this step is complete, insert the IoT box’s micro SD card into the
-computer or reader. Open _Etcher_ , and select Flash from file, then find and
-select the `iotbox-latest.zip` image and extract it. Next, select the drive
-the image should be burned to.
+computer or reader. Open _Etcher_ , and select **Flash from file** , then find
+and select the `iotbox-latest.zip` image and extract it. Next, select the
+drive the image should be burned to.
 
-Lastly, click Flash, and wait for the process to finish.
+Lastly, click **Flash** , and wait for the process to finish.
 
 ![Tableau de bord du logiciel Etcher de Balena.](../../../../_images/etcher-
-app.png)
-
-Astuce
-
-Balena’s _Etcher_ software also allows for the administrator to flash the SD
-card from a URL. To flash from a URL, simply click Flash from URL, instead of
-Flash from file.
-
-Then, enter the following: `http://nightly.odoo.com/master/iotbox/iotbox-
-latest.zip`.
-
-![A view of Balena's Etcher software, with the flash from URL option
-highlighted.](../../../../_images/url-flash.png)
-
-Note
-
-An alternative software for flashing the micro SD card is [Raspberry Pi
-Imager](https://www.raspberrypi.com/software/).
+app.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Balena’s <em>Etcher</em> software also allows for the administrator to flash the <abbr title="Secure Digital">SD</abbr> card from a <abbr title="Uniform Resource Locator">URL</abbr>. To flash from a <abbr title="Uniform Resource Locator">URL</abbr>, simply click <b>Flash from URL</b>, instead of <b>Flash from
+file</b>.</p>
+<p>Then, enter the following: <code>http://nightly.odoo.com/master/iotbox/iotbox-latest.zip</code>.</p>
+<img alt="A view of Balena's Etcher software, with the flash from URL option highlighted." class="align-center" src="../../../../_images/url-flash.png"/>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>An alternative software for flashing the micro SD card is <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a>.</p>
+</div>
 
 ## Windows IoT update
 
@@ -84,115 +77,113 @@ Windows virtual IoT box.
 Prior to upgrading the Windows virtual IoT box, the previous version should be
 uninstalled first.
 
-Important
-
-Before uninstalling a previous version of the Windows virtual IoT box, ensure
-that there is a newer version of Windows virtual IoT box available, compared
-to the version currently installed. To do so, navigate to the [Odoo Nightly
-builds](https://nightly.odoo.com/) page.
-
-On the Odoo Nightly builds page, navigate to Builds (stable version) ‣
-windows/ to view the date next to the `odoo_(version).latest.exe` file; where
-_(version)_ is equal to the version of Odoo (e.g. 16.0, 17.0). The latest
-version of the Windows virtual IoT box can be downloaded by selecting this
-file, or it is always available at the [Odoo
-Download](https://odoo.com/download/) page.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Before uninstalling a previous version of the Windows virtual <abbr title="Internet of Things">IoT</abbr>
+box, ensure that there is a newer version of Windows virtual <abbr title="Internet of Things">IoT</abbr> box
+available, compared to the version currently installed. To do so, navigate to the <a href="https://nightly.odoo.com/">Konvergo ERP Nightly
+builds</a> page.</p>
+<p>On the <b>Konvergo ERP Nightly builds</b> page, navigate to Builds (stable version)
+‣ windows/ to view the date next to the <code>odoo_(version).latest.exe</code> file; where
+<em>(version)</em> is equal to the version of Konvergo ERP (e.g. 16.0, 17.0). The latest version of the Windows
+virtual <abbr title="Internet of Things">IoT</abbr> box can be downloaded by selecting this file, or it is
+always available at the <a href="https://odoo.com/download/">Konvergo ERP Download</a> page.</p>
+</div>
 
 Uninstalling the Windows virtual IoT box is done through the Windows program
 manager.
 
 On any version of Windows, search for `program` to open the Programs ‣
-Programs and Features section of the Control Panel. Then, select Uninstall or
-change a program. Next, search for `Odoo`, and click the … (three dot) menu on
-the Odoo.exe program to uninstall.
+Programs and Features section of the **Control Panel**. Then, select
+**Uninstall or change a program**. Next, search for `Konvergo ERP`, and click the **…
+(three dot)** menu on the **Konvergo ERP.exe** program to uninstall.
 
-Confirm the uninstallation, and follow the steps to uninstall through the Odoo
+Confirm the uninstallation, and follow the steps to uninstall through the Konvergo ERP
 uninstall wizard.
 
 ### Download and re-install
 
 The latest version of the Windows virtual IoT box can be downloaded from the
-[Odoo Nightly builds](https://nightly.odoo.com/) page or it is always
-available at the [Odoo Download](https://odoo.com/download/) page.
+[Konvergo ERP Nightly builds](https://nightly.odoo.com/) page or it is always
+available at the [Konvergo ERP Download](https://odoo.com/download/) page.
 
-To download from the Odoo Nightly builds page, navigate to Builds (stable
+To download from the **Konvergo ERP Nightly builds** page, navigate to Builds (stable
 version) ‣ windows/ to and select the `odoo_(version).latest.exe` file; where
-_(version)_ is equal to the version of Odoo (e.g. 16.0, 17.0).
+_(version)_ is equal to the version of Konvergo ERP (e.g. 16.0, 17.0).
 
-To download from the Odoo Download page, find the section for the version of
-Odoo (e.g. 16.0, 17.0), and select the Download button for Windows.
+To download from the **Konvergo ERP Download** page, find the section for the version
+of Konvergo ERP (e.g. 16.0, 17.0), and select the **Download** button for **Windows**.
 
-Next, install and setup the downloaded Odoo `.exe` file. After the
-instructions screen, click Next to start the installation, and agree to the
-TOS.
+Next, install and setup the downloaded Konvergo ERP `.exe` file. After the
+instructions screen, click **Next** to start the installation, and agree to
+the TOS.
 
-During the next step of the re-installation, select Odoo IoT from the Select
-the type of install drop-down menu.
+During the next step of the re-installation, select **Konvergo ERP IoT** from the
+**Select the type of install** drop-down menu.
 
-Example
-
-Pour référence, les éléments suivants doivent être installés :
-
-  * Odoo server
-
-  * Odoo IoT
-
-  * Nginx WebServer
-
-  * Ghostscript interpreter
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Pour référence, les éléments suivants doivent être installés :</p>
+<ul>
+<li><p><b>Konvergo ERP server</b></p></li>
+<li><p><b>Konvergo ERP IoT</b></p></li>
+<li><p><b>Nginx WebServer</b></p></li>
+<li><p><b>Ghostscript interpreter</b></p></li>
+</ul>
+</div>
 
 Ensure there is enough space on the computer for the installation, then click
-Next.
+**Next**.
 
 ### Set the destination and complete the installation
 
-To complete the re-installation, select the Destination Folder, and click
-Install.
+To complete the re-installation, select the **Destination Folder** , and click
+**Install**.
 
-Avertissement
-
-Choosing `C:\odoo` as the install location allows for the _Nginx_ server to
-start. Odoo’s Windows virtual IoT box software should **not** be installed
-inside any of the Windows user’s directories. Doing so does **not** allow for
-_Nginx_ to initialize.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Choosing <code>C:\odoo</code> as the install location allows for the <em>Nginx</em> server to start. Konvergo ERP’s
+Windows virtual <abbr title="Internet of Things">IoT</abbr> box software should <b>not</b> be installed inside
+any of the Windows user’s directories. Doing so does <b>not</b> allow for <em>Nginx</em> to initialize.</p>
+</div>
 
 L’installation peut prendre quelques minutes. Une fois l’installation
-terminée, cliquez sur Suivant pour continuer.
+terminée, cliquez sur **Suivant** pour continuer.
 
-Then, ensure that the Start Odoo box is checked, and click Finish. After
-installation, the Odoo server runs, and automatically opens
+Then, ensure that the **Start Konvergo ERP** box is checked, and click **Finish**.
+After installation, the Konvergo ERP server runs, and automatically opens
 `http://localhost:8069` on a web browser. The webpage should display the IoT
 box homepage.
 
-Astuce
-
-A [restart](windows_iot.html#iot-restart-windows-iot) of the Windows IoT
-program may be necessary if the web browser does not display anything.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>A <a href="windows_iot#iot-restart-windows-iot"><span class="std std-ref">restart</span></a> of the Windows IoT program may be necessary if the web
+browser does not display anything.</p>
+</div>
 
 ## Update from the IoT box home page
 
-In the background, the IoT box uses a version of Odoo code to run and connect
-to the Odoo database. This code may need to be updated in order for the IoT
+In the background, the IoT box uses a version of Konvergo ERP code to run and connect
+to the Konvergo ERP database. This code may need to be updated in order for the IoT
 box to operate effectively. This operation should be completed on a routine
 basis, to ensure the IoT system, and its processes, stay up-to-date.
 
 Go to the IoT box home page by navigating to IoT app ‣ IoT Boxes, and clicking
-on the IP address of the IoT box. Then, click on Update (next to the version
-number).
+on the **IP address** of the IoT box. Then, click on **Update** (next to the
+version number).
 
-If a new version of the IoT box image is available, an Upgrade to _xx.xx_
+If a new version of the IoT box image is available, an **Upgrade to _xx.xx_**
 button appears at the bottom of the page. Click this button to upgrade the
 unit, at which point the IoT box flashes itself to the newer version. All of
 the previous configurations are then saved.
 
-Important
-
-This process can take more than 30 minutes. Do **not** turn off, or unplug,
-the IoT box, as it would leave it in an inconsistent state. This means the IoT
-box needs to be re-flashed with a new image.
-
-![Mise à niveau du logiciel de l'IoT Box depuis la page d'accueil de l'IoT
-Box.](../../../../_images/flash-upgrade.png)
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>This process can take more than 30 minutes. Do <b>not</b> turn off, or unplug, the <abbr title="Internet of Things">IoT</abbr> box, as it would leave it in an inconsistent state. This means the
+<abbr title="Internet of Things">IoT</abbr> box needs to be <a href="#iot-config-flash"><span class="std std-ref">re-flashed</span></a> with a new
+image.</p>
+</div> ![Mise à niveau du logiciel de l'IoT Box depuis la page
+d'accueil de l'IoT Box.](../../../../_images/flash-upgrade.png)
 
 ## Handler (driver) update
 
@@ -204,32 +195,29 @@ configured server handler’s code.
 This can be helpful in instances where IoT devices (e.g. scales, measurement
 tools, etc.) are not working properly with the IoT box.
 
-For both the Windows IoT (Odoo 16 and higher) and physical IoT box, this
+For both the Windows IoT (Konvergo ERP 16 and higher) and physical IoT box, this
 process can be performed manually from the IoT box home page. Go to the IoT
-box home page by navigating to IoT app ‣ IoT Boxes, and clicking on the IP
-address of the IoT box.
+box home page by navigating to IoT app ‣ IoT Boxes, and clicking on the **IP
+address** of the IoT box.
 
-Next, click Handlers list, and then select Load Handlers at the bottom of the
-page.
+Next, click **Handlers list** , and then select **Load Handlers** at the
+bottom of the page.
 
 ![Handlers list on an IoT box with the load handlers button
-highlighted.](../../../../_images/load-handlers.png)
-
-Important
-
-Handler’s code is fetched from the configured server, and it needs to be up-
-to-date to have the latest fixes and patches.
-
-Note
-
-A handler update is also performed automatically each time the IoT box is
-restarted. The only exception to this process is if the _Automatic drivers
-update_ is unchecked in the form view of the IoT box on the Odoo server. This
-setting can be reached by going to IoT App ‣ Select the IoT box ‣ Automatic
-drivers update.
+highlighted.](../../../../_images/load-handlers.png) <div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Handler’s code is fetched from the configured server, and it needs to be up-to-date to have the
+latest fixes and patches.</p>
+</div>
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>It is often necessary to re-flash the <abbr title="Internet of Things">IoT</abbr> box’s image after
+upgrading the Konvergo ERP database to a new version.</p></li>
+<li><p>A computer with a micro SD card reader/adapter is <b>required</b> to re-flash the micro SD card.</p></li>
+</ul>
+</div>0
 
   *[IoT]: Internet of Things
-  *[SD]: Secure Digital
-  *[URL]: Uniform Resource Locator
   *[TOS]: Terms of Service
 

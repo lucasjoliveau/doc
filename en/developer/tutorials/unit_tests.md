@@ -1,16 +1,15 @@
 # Safeguard your code with unit tests
 
-Important
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>This tutorial is an extension of the <a href="getting_started">Getting started</a> tutorial. Make sure you have
+completed it and use the <code>estate</code> module you have built as a base for the exercises in this
+tutorial. Fetch the branch <code>16.0-core</code> from the <a href="https://github.com/odoo/technical-training-solutions/tree/16.0-core">technical-training-solutions</a> repository if you
+want to start from a clean base.</p>
+</div>
 
-This tutorial is an extension of the [Getting started](getting_started.html)
-tutorial. Make sure you have completed it and use the `estate` module you have
-built as a base for the exercises in this tutorial. Fetch the branch
-`16.0-core` from the [technical-training-
-solutions](https://github.com/odoo/technical-training-
-solutions/tree/16.0-core) repository if you want to start from a clean base.
-
-**Reference** : [Odoo’s Test Framework: Learn Best
-Practices](https://www.youtube.com/watch?v=JEIscps0OOQ) (Odoo Experience 2020)
+**Reference** : [Konvergo ERP’s Test Framework: Learn Best
+Practices](https://www.youtube.com/watch?v=JEIscps0OOQ) (Konvergo ERP Experience 2020)
 on YouTube.
 
 Writing tests is a necessity for multiple reasons. Here is a non-exhaustive
@@ -82,16 +81,17 @@ Before knowing how to write tests, we need to know how to run them.
 
 ## Integration Bots
 
-Note
-
-This section is only for Odoo employees and people that are contributing to
-`github.com/odoo`. We highly recommend having your own CI otherwise.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This section is only for Konvergo ERP employees and people that are contributing to
+<code>github.com/odoo</code>. We highly recommend having your own CI otherwise.</p>
+</div>
 
 When a test is written, it is important to make sure it always passes when
 modifications are applied to the source code. To automate this task, we use a
 development practice called Continuous Integration (CI). This is why we have
 some bots running all the tests at different moments. Whether you are working
-at Odoo or not, if you are trying to merge something inside `odoo/odoo`,
+at Konvergo ERP or not, if you are trying to merge something inside `odoo/odoo`,
 `odoo/enterprise`, `odoo/upgrade` or on odoo.sh, you will have to go through
 the CI. If you are working on another project, you should think of adding your
 own CI.
@@ -122,13 +122,20 @@ speed up the CI process. Generally it is used to split the post install tests
 in 4 parallel instances. A sub-build is green if all the tests are passing and
 there are no errors/warnings logged.
 
-Note
-
-  * All tests are run regardless of the modifications done. Correcting a typo in an error message or refactoring a whole module triggers the same tests. All modules will be installed as well. This means something might not work even if the Runbot is green, i.e. your changes depend on a module that the module the changes are in doesn’t depend on.
-
-  * The localization modules (i.e. country-specific modules) are not installed on Runbot (except the generic one). Some modules with external dependencies can also be excluded.
-
-  * There is a nightly build running additional tests: module operations, localization, single module installs, multi-builds for nondeterministic bugs, etc. These are not kept in the standard CI to shorten the time of execution.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>All tests are run regardless of the modifications done. Correcting a typo in an error message or
+refactoring a whole module triggers the same tests. All modules will be installed as well. This means
+something might not work even if the Runbot is green, i.e. your changes depend on a module that the
+module the changes are in doesn’t depend on.</p></li>
+<li><p>The localization modules (i.e. country-specific modules) are not installed on Runbot (except
+the generic one). Some modules with external dependencies can also be excluded.</p></li>
+<li><p>There is a nightly build running additional tests: module operations, localization, single
+module installs, multi-builds for nondeterministic bugs, etc.
+These are not kept in the standard CI to shorten the time of execution.</p></li>
+</ul>
+</div>
 
 You can also login to a build built by Runbot. There are 3 users usable:
 `admin`, `demo` and `portal`. The password is the same as the login. This is
@@ -157,7 +164,7 @@ you are only changing something in community.
 
 This step can fail with a `Staging failed` error message. This could be due to
 
-  * a nondeterministic bug that is already on the target. If you are an Odoo employee, you can check those here: <https://runbot.odoo.com/runbot/errors>
+  * a nondeterministic bug that is already on the target. If you are an Konvergo ERP employee, you can check those here: <https://runbot.odoo.com/runbot/errors>
 
   * a nondeterministic bug that you introduced but wasn’t detected in the CI before
 
@@ -170,13 +177,13 @@ to retry: rebase your branch on the target and rerun the tests locally.
 
 ## Modules
 
-Because Odoo is modular, the tests need to be also modular. This means tests
+Because Konvergo ERP is modular, the tests need to be also modular. This means tests
 are defined in the module that adds the functionality you are adding in, and
 tests cannot depend on functionality coming from modules your module doesn’t
 depend on.
 
 **Reference** : the documentation related to this topic can be found in
-[Special Tags](../reference/backend/testing.html#reference-testing-tags).
+[Special Tags](../reference/backend/testing#reference-testing-tags).
 
     
     
@@ -204,8 +211,8 @@ if it shouldn’t.
 ## Writing a test
 
 **Reference** : the documentation related to this topic can be found in
-[Python unittest](https://docs.python.org/3/library/unittest.html) and
-[Testing Odoo](../reference/backend/testing.html#reference-testing).
+[Python unittest](https://docs.python.org/3/library/unittest) and
+[Testing Konvergo ERP](../reference/backend/testing#reference-testing).
 
 Here are a few things to take into consideration before writing a test
 
@@ -219,11 +226,12 @@ Here are a few things to take into consideration before writing a test
 
   * You shouldn’t need to flush data into the database.
 
-Note
-
-Remember that `onchange` only applies in the Form views, not by changing the
-attributes in python. This also applies in the tests. If you want to emulate a
-Form view, you can use `odoo.tests.common.Form`.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Remember that <code>onchange</code> only applies in the Form views, not by changing the attributes
+in python. This also applies in the tests. If you want to emulate a Form view, you can use
+<code>odoo.tests.common.Form</code>.</p>
+</div>
 
 The tests should be in a `tests` folder at the root of your module. Each test
 file name should start with `test_` and be imported in the `__init__.py` of
@@ -291,31 +299,28 @@ These test classes are built on top of the `unittest` python module.
                 self.properties.forbidden_action_on_sold_property()
     
 
-Note
-
-For better readability, split your tests into multiple files depending on the
-scope of the tests. You can also have a Common class that most of the tests
-should inherit from; this common class can define the whole setup for the
-module. For instance, in
-[account](https://github.com/odoo/odoo/blob/16.0/addons/account/tests/common.py).
-
-Exercise
-
-Update the code so no one can:
-
-  * Create an offer for a sold property
-
-  * Sell a property with no accepted offers on it
-
-and create tests for both of these cases. Additionally check that selling a
-property that can be sold is correctly marked as sold after selling it.
-
-Exercise
-
-Someone keeps breaking the reset of Garden Area and Orientation when you
-uncheck the Garden checkbox. Make sure it doesn’t happen again.
-
-Tip
-
-Tip: remember the note about `Form` a little bit above.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>For better readability, split your tests into multiple files depending on the scope of the
+tests. You can also have a Common class that most of the tests should inherit from; this common
+class can define the whole setup for the module. For instance, in
+<a href="https://github.com/odoo/odoo/blob/16.0/addons/account/tests/common.py">account</a>.</p>
+</div> <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Update the code so no one can:</p>
+<ul>
+<li><p>Create an offer for a sold property</p></li>
+<li><p>Sell a property with no accepted offers on it</p></li>
+</ul>
+<p>and create tests for both of these cases. Additionally check that selling a property that can
+be sold is correctly marked as sold after selling it.</p>
+</div> <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Someone keeps breaking the reset of Garden Area and Orientation when you uncheck the
+Garden checkbox. Make sure it doesn’t happen again.</p>
+<div class="alert alert-tip">
+<p class="alert-title">
+Tip</p><p>Tip: remember the note about <code>Form</code> a little bit above.</p>
+</div>
+</div>
 

@@ -18,32 +18,32 @@ recommended to offer _Discounts_. To activate this option, go to Sales ‣
 Configuration ‣ Settings and, under the _Pricing_ category, you have the
 possibility to grant discounts on sales order lines.
 
-![Activation of the discount option in Odoo
+![Activation of the discount option in Konvergo ERP
 Sales](../../../_images/configuration-to-upsell-a-subscription.png)
 
 ## Upsell your first subscription
 
 Before upselling a subscription, be sure to check out our documentation on how
-to [Create a quotation](../subscriptions.html) using subscription products.
+to [Create a quotation](../subscriptions) using subscription products.
 Indeed, once confirmed, a quotation becomes a sales order and a new
 subscription is automatically created. Therefore, this subscription has the
 status _In progress_. From there, you have the possibility to upsell your
 subscription.
 
-![Upsell your subscription with Odoo Subscriptions](../../../_images/upsell-
+![Upsell your subscription with Konvergo ERP Subscriptions](../../../_images/upsell-
 your-subscription.png)
 
 By using the smart button _Upsell_ , you are able to create a new quotation
 with new subscription products and send it to your customers for approval.
 
-![Add products to your subscription via the upsell option in Odoo
+![Add products to your subscription via the upsell option in Konvergo ERP
 Subscriptions](../../../_images/use-of-the-upsell-button-in-odoo-sales.png)
-
-Important
-
-When the quotation is confirmed by your customers, the products are added to
-the initial subscription. Quotation prices are, then, prorated to the
-remaining time of the current invoicing period.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>When the quotation is confirmed by your customers, the products are added to the initial
+subscription. Quotation prices are, then, prorated to the remaining time of the current invoicing
+period.</p>
+</div>
 
 Of course, before sending this new quotation to your customers, you can change
 the unit price, taxes, and, even the discount you want to offer. The smart
@@ -54,7 +54,7 @@ quotation, and click on the smart button _Subscriptions_ to visualize all
 updates. From there, you can see that an additional line has been added to the
 subscription with the new extra service the customer wanted to purchase.
 
-![Visualize all your subscriptions updates with Odoo
+![Visualize all your subscriptions updates with Konvergo ERP
 Subscriptions](../../../_images/subscriptions-updates.png)
 
 In addition, by clicking on the _Sales_ button, you have a summary of your
@@ -67,11 +67,12 @@ The only difference between your two sales orders is the description
 underneath the _Subscription Management_ category. There, you can easily
 visualize which one is your upselling.
 
-See also
-
-  * [Subscriptions](../subscriptions.html)
-
-  * [Subscription plans](plans.html)
-
-  * [Subscription products](products.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../subscriptions">Subscriptions</a></p></li>
+<li><p><a href="plans">Subscription plans</a></p></li>
+<li><p><a href="products">Subscription products</a></p></li>
+</ul>
+</div>
 

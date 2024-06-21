@@ -7,13 +7,15 @@ next modules are available:
 
   * **l10n_pe** : Adds accounting features for the Peruvian localization, which represent the minimal configuration required for a company to operate in Peru and under the SUNAT regulations and guidelines. The main elements included in this module are: Chart of account, taxes, document types.
 
-  * **l10n_pe_edi** : includes all technical and functional requirements to generate and validate Electronic Invoice, based on the SUNAT specification to create and process valid electronic documents, for more technical detail you can access the [SUNAT EDI specifications](https://cpe.sunat.gob.pe/node/88/), that keeps track of new changes and updates. The features of this module are based on the resolutions published on the [SUNAT Legislation](https://www.sunat.gob.pe/legislacion/general/index.html/).
+  * **l10n_pe_edi** : includes all technical and functional requirements to generate and validate Electronic Invoice, based on the SUNAT specification to create and process valid electronic documents, for more technical detail you can access the [SUNAT EDI specifications](https://cpe.sunat.gob.pe/node/88/), that keeps track of new changes and updates. The features of this module are based on the resolutions published on the [SUNAT Legislation](https://www.sunat.gob.pe/legislacion/general/index/).
 
-See also
-
-  * [App Tour - Localización de Peru](https://youtu.be/Ic3mGovkf8Y)
-
-  * [Smart Tutorial - Localización de Peru](https://www.odoo.com/slides/smart-tutorial-localizacion-de-peru-133)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="https://youtu.be/Ic3mGovkf8Y">App Tour - Localización de Peru</a></p></li>
+<li><p><a href="https://www.odoo.com/slides/smart-tutorial-localizacion-de-peru-133">Smart Tutorial - Localización de Peru</a></p></li>
+</ul>
+</div>
 
 ## Configuration
 
@@ -21,14 +23,14 @@ See also
 
 Go to _Apps_ and search for Peru, then click Install in the module Peru EDI.
 This module has a dependency with _Peru - Accounting_. In case this last one
-is not installed, Odoo installs it automatically within EDI.
+is not installed, Konvergo ERP installs it automatically within EDI.
 
 ![The "Module" filter is set on "Peru"](../../../_images/peru-modules.png)
-
-Note
-
-When you install a database from scratch selecting Peru as country, Odoo
-automatically installs the base module: Peru - Accounting.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you install a database from scratch selecting Peru as country, Konvergo ERP automatically
+installs the base module: Peru - Accounting.</p>
+</div>
 
 #### Configure your company
 
@@ -38,17 +40,15 @@ The field **Address Type Code** represents the establishment code assigned by
 the SUNAT when companies register their RUC (Unique Contributor Registration):
 
 ![Company data for Peru including RUC and Address type
-code](../../../_images/peru-company.png)
-
-Tip
-
-In case the Address type code is unknown, you can set it as the default value:
-0000. Be aware that if an incorrect value is entered, the Electronic invoice
-validation might have errors.
-
-Note
-
-The NIF should be set following the RUC format.
+code](../../../_images/peru-company.png) <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>In case the Address type code is unknown,  you can set it as the default value: 0000. Be aware
+that if an incorrect value is entered, the Electronic invoice validation might have errors.</p>
+</div>
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The NIF should be set following the RUC format.</p>
+</div>
 
 #### Chart of Account
 
@@ -89,9 +89,9 @@ Here are some terms that are essential on the Peruvian localization:
 
 As part of the requirements for Electronic Invoice in Peru, your company needs
 to select a Signature Provider that will take care of the document signing
-process and manage the SUNAT validation response. Odoo offers three options:
+process and manage the SUNAT validation response. Konvergo ERP offers three options:
 
-  1. IAP (Odoo In-App Purchase)
+  1. IAP (Konvergo ERP In-App Purchase)
 
   2. Digiflow
 
@@ -100,7 +100,7 @@ process and manage the SUNAT validation response. Odoo offers three options:
 Please refer to the sections below to check the details and considerations for
 each option.
 
-##### IAP (Odoo In-App Purchase)
+##### IAP (Konvergo ERP In-App Purchase)
 
 This is the default and the suggested option, considering the digital
 ceritificate is included as part of the service.
@@ -109,7 +109,7 @@ ceritificate is included as part of the service.
 
 ###### What is the IAP?
 
-This is a signature service offered directly by Odoo, the service takes care
+This is a signature service offered directly by Konvergo ERP, the service takes care
 of the next process:
 
   1. Provides the Electronic invoice Certificate, so you do not need to acquire one by yourself.
@@ -121,7 +121,7 @@ of the next process:
 ###### How does it work?
 
 The service requires Credits in order to process your electronic documents.
-Odoo provides 1000 credits for free in new databases. After these credits are
+Konvergo ERP provides 1000 credits for free in new databases. After these credits are
 consumed, you need to buy a Credit Package.
 
 Credits | EUR  
@@ -133,15 +133,16 @@ Credits | EUR
   
 The credits are consumed per each document that is sent to the OSE.
 
-Important
-
-If you have a validation error and the document needs to be sent one more
-time, one additional credit will be charged. Therefore, it is paramount that
-you verify all information is correct before sending your document to the OSE.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>If you have a validation error and the document needs to be sent one more time, one additional
+credit will be charged. Therefore, it is paramount that you verify all information is correct
+before sending your document to the OSE.</p>
+</div>
 
 ###### What do you need to do?
 
-  * In Odoo, once your enterprise contract is activated and you start working in Production, you need to buy credits once the first 1000 are consumed.
+  * In Konvergo ERP, once your enterprise contract is activated and you start working in Production, you need to buy credits once the first 1000 are consumed.
 
   * As Digiflow is the OSE used in the IAP, you need to affiliate it as the official OSE for your company on the SUNAT website. This is a simple process. For more information, please check [OSE Affiliation guide](https://drive.google.com/file/d/1BkrMTZIiJyi5XI0lGMi3rbMzHddOL1pa/view?usp=sharing).
 
@@ -171,28 +172,30 @@ select this option in your configuration. In this case you need to consider:
 
   * Provide you SOL credentials.
 
-Important
-
-When using direct connection with the SUNAT, the SOL User must be set with the
-Company RUT + User Id. Example: `20121888549JOHNSMITH`
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>When using direct connection with the SUNAT, the SOL User must be set with the Company RUT + User
+Id. Example: <code>20121888549JOHNSMITH</code></p>
+</div>
 
 #### Testing environment
 
-Odoo provides a testing environment that can be activated before your company
+Konvergo ERP provides a testing environment that can be activated before your company
 goes into production.
 
 When using the testing environment and the IAP signature, you don’t need to
 buy testing credits for your transactions as all of them are validated by
 default.
 
-Tip
-
-By default the databases are set to work on production, make sure to enable
-the testing mode if needed.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>By default the databases are set to work on production, make sure to enable the testing mode
+if needed.</p>
+</div>
 
 #### Certificate
 
-In case you don’t use Odoo IAP, in order to generate the electronic invoice
+In case you don’t use Konvergo ERP IAP, in order to generate the electronic invoice
 signature, a digital certificate with the extension `.pfx` is required.
 Proceed to this section and load your file and password.
 
@@ -201,14 +204,14 @@ Proceed to this section and load your file and password.
 #### Multicurrency
 
 The official currency exchange rate in Peru is provided by the Bank of Peru.
-Odoo can connect directly to its services and get the currency rate either
+Konvergo ERP can connect directly to its services and get the currency rate either
 automatically or manually.
 
 ![Bank of Peru is displayed in Multicurrency Service
 option](../../../_images/peru-multicurrency.png)
 
 Please refer to the next section in our documentation for more information
-about [multicurrencies](../accounting/get_started/multi_currency.html).
+about [multicurrencies](../accounting/get_started/multi_currency).
 
 ### Configure Master data
 
@@ -252,11 +255,11 @@ The information required for the document types is included by default so the
 user does not need to fill anything on this view:
 
 ![Document Type list](../../../_images/peru-document-type.png)
-
-Warning
-
-Currently the documents supported on customer invoices are: Invoice, Boleta,
-Debit Note and Credit Note.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Currently the documents supported on customer invoices are: Invoice, Boleta, Debit Note and
+Credit Note.</p>
+</div>
 
 #### Journals
 
@@ -276,11 +279,10 @@ This section indicates which EDI workflow is used in the invoice, for Peru we
 must select “Peru UBL 2.1”.
 
 ![Journal EDI field](../../../_images/peru-journal-edi.png)
-
-Warning
-
-By default, the value Factur-X (FR) is always displayed, make sure you can
-uncheck it manually.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>By default, the value Factur-X (FR) is always displayed, make sure you can uncheck it manually.</p>
+</div>
 
 #### Partner
 
@@ -310,7 +312,7 @@ configured.
 Once you have configured your master data, the invoices can be created from
 your sales order or manually. Additional to the basic invoice information
 described on [our page about the invoicing
-process](../accounting/customer_invoices/overview.html), there are a couple of
+process](../accounting/customer_invoices/overview), there are a couple of
 fields required as part of the Peru EDI:
 
   * **Document type** : The default value is “Factura Electronica” but you can manually change the document type if needed and select Boleta for example.
@@ -343,7 +345,7 @@ invoice has been posted.
 ##### Electronic Invoice Status
 
 **To be Sent** : Indicates the document is ready to be sent to the OSE, this
-can be done either automatically by Odoo with a _cron_ that runs every hour,
+can be done either automatically by Konvergo ERP with a _cron_ that runs every hour,
 or the user can send it immediately by clicking on the button “Sent now”.
 
 ![Send EDI manually](../../../_images/peru-sent-manual.png)
@@ -358,16 +360,17 @@ sent.png)
 In case there is a validation error the Electronic Invoice status remains in
 “To be sent” so the corrections can be made and the invoice can be sent again.
 
-Warning
-
-One credit is consumed each time that you send a document for validation, in
-this sense if an error is detected on an invoice and you send it one more
-time, two credits are consumed in total.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>One credit is consumed each time that you send a document for validation, in this sense if an
+error is detected on an invoice and you send it one more time, two credits are consumed in
+total.</p>
+</div>
 
 #### Common Errors
 
 There are multiple reasons behind a rejection from the OSE or the SUNAT, when
-this happens Odoo sends a message at the top of the invoice indicating the
+this happens Konvergo ERP sends a message at the top of the invoice indicating the
 error details and in the most common cases a hint to fix the issue.
 
 If a validation error is received, you have two options:
@@ -391,7 +394,7 @@ is a valid fiscal document.
 
 #### IAP Credits
 
-Odoo’s Electronic IAP offers 1000 credits for free, after these credits are
+Konvergo ERP’s Electronic IAP offers 1000 credits for free, after these credits are
 consumed in your production database, your company must buy new credits in
 order to process your transactions.
 
@@ -420,7 +423,7 @@ In order to cancel an invoice, please provide a cancellation Reason.
 ###### Electronic Invoice Status
 
 **To Cancel** : Indicates the cancellation request is ready to be sent to the
-OSE, this can be done either automatically by Odoo with a _cron_ that runs
+OSE, this can be done either automatically by Konvergo ERP with a _cron_ that runs
 every hour, or the user can send it immediately by clicking on the button
 “Send now”. Once it is sent, a cancellation ticket is created, as a result the
 next message and CDR File are logged in the chatter:
@@ -434,10 +437,11 @@ a message is logged in the chatter indicating the correct Government
 validation.
 
 ![nvoice after cancellation](../../../_images/peru-cancelled.png)
-
-Warning
-
-One credit is consumed on each cancellation request.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you install a database from scratch selecting Peru as country, Konvergo ERP automatically
+installs the base module: Peru - Accounting.</p>
+</div>0
 
 ##### Cancellation process
 
@@ -484,22 +488,24 @@ of the Peruvian localization you need to prove a Credit Reason selecting one
 of the options in the list.
 
 ![Add Credit Note from invoice](../../../_images/peru-credit-note.png)
-
-Tip
-
-When creating your first credit Note, select the Credit Method: Partial
-Refund, this allows you to define the credit note sequence.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you install a database from scratch selecting Peru as country, Konvergo ERP automatically
+installs the base module: Peru - Accounting.</p>
+</div>1
 
 By default the Credit Note is set in the document type:
 
 ![Credit Note document type](../../../_images/peru-credit-note-document.png)
 
 To finish the workflow please follow the instructions on [our page about
-Credit Notes](../accounting/customer_invoices/credit_notes.html).
+Credit Notes](../accounting/customer_invoices/credit_notes).
 
-Note
-
-The EDI workflow for the Credit notes works in the same way as the invoices.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you install a database from scratch selecting Peru as country, Konvergo ERP automatically
+installs the base module: Peru - Accounting.</p>
+</div>2
 
 ### Debit Notes
 
@@ -513,7 +519,7 @@ By default the Debit Note is set in the document type.
 
 The _Guía de Remisión Electrónica_ (GRE) is an electronic document generated
 by the shipper to support the transportation or transfer of goods from one
-place to another, such as a warehouse or establishment. In Odoo, there are
+place to another, such as a warehouse or establishment. In Konvergo ERP, there are
 several configuration steps needed before you can successfully use this
 feature.
 
@@ -531,11 +537,13 @@ rendered (including processing), goods are assigned for use, or goods are
 transferred between premises of the same company and others.
 
 This delivery guide is issued by the owner of the goods (i.e., the sender) at
-the beginning of the shipment. The sender delivery guide is supported in Odoo.
+the beginning of the shipment. The sender delivery guide is supported in Konvergo ERP.
 
-See also
-
-[SUNAT guía de remisión](https://www.gob.pe/7899-guia-de-remision)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you install a database from scratch selecting Peru as country, Konvergo ERP automatically
+installs the base module: Peru - Accounting.</p>
+</div>3
 
 ##### Carrier
 
@@ -545,14 +553,15 @@ driver (or carrier) performs.
 This delivery guide is issued by the carrier and must be issued to each
 shipper when the shipment goes through public transport.
 
-Important
-
-The carrier delivery guide is **not** supported in Odoo.
-
-See also
-
-[SUNAT guía de remisión transportista](https://tefacturo.pe/blog/sunat/guia-
-de-remision-electronica/guia-de-remision-transportista/)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you install a database from scratch selecting Peru as country, Konvergo ERP automatically
+installs the base module: Peru - Accounting.</p>
+</div>4 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you install a database from scratch selecting Peru as country, Konvergo ERP automatically
+installs the base module: Peru - Accounting.</p>
+</div>5
 
 #### Transportation types
 
@@ -570,7 +579,7 @@ delivery guide and the carrier’s delivery guide.
 
 #### Direct submission to SUNAT
 
-The creation of the GRE delivery guide in Odoo **must** be sent directly to
+The creation of the GRE delivery guide in Konvergo ERP **must** be sent directly to
 the SUNAT, regardless of the electronic document provider: IAP, Digiflow, or
 SUNAT.
 
@@ -590,10 +599,11 @@ as the following conditions are met:
 
   * If the shipment has been initiated, the receiver **must** be changed before reaching the final destination.
 
-Important
-
-The SUNAT no longer uses the term “Anula”, but now uses the term “Dar de baja”
-for cancellations.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you install a database from scratch selecting Peru as country, Konvergo ERP automatically
+installs the base module: Peru - Accounting.</p>
+</div>6
 
 #### Testing
 
@@ -605,40 +615,37 @@ to delete it from the SUNAT portal.
 
 #### Configuration
 
-Important
-
-  * Electronic sender’s GRE is currently the only supported type of waybill in Odoo.
-
-  * The delivery guide is dependent on the Odoo _Inventory_ app, the l10n_pe_edi and l10n_pe modules.
-
-  * A second user **must** be added for the creation of electronic documents.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you install a database from scratch selecting Peru as country, Konvergo ERP automatically
+installs the base module: Peru - Accounting.</p>
+</div>7
 
 After following the steps to configure the electronic invoicing and the master
-data, [install](../../general/apps_modules.html#general-install) the Peruvian
-- Electronic Delivery Note 2.0 module (`l10n_pe_edi_stock_20`).
+data, [install](../../general/apps_modules#general-install) the
+**Peruvian - Electronic Delivery Note 2.0** module (`l10n_pe_edi_stock_20`).
 
 Next, you need to retrieve the _client ID_ and _client secret_ from SUNAT. To
 do so, follow the [manual de servicios web plataforma nueva
 GRE](https://cpe.sunat.gob.pe/sites/default/files/inline-
 files/Manual_Servicios_GRE.pdf).
 
-Note
-
-In the SUNAT portal, it is important to have the correct access rights
-enabled, as they may differ from the user set for electronic invoicing.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you install a database from scratch selecting Peru as country, Konvergo ERP automatically
+installs the base module: Peru - Accounting.</p>
+</div>8
 
 These credentials should be used to configure the delivery guide general
 settings from Accounting ‣ Configuration ‣ Settings ‣ Peruvian Electronic
 Invoicing.
 
 ![Example for the SUNAT Delivery Guide API section
-configuration.](../../../_images/gre-fields-example.png)
-
-Note
-
-It is required to follow the format `RUC + UsuarioSol` (e.g.,
-`20557912879SOLUSER`) for the Guide SOL User field, depending on the user
-selected when generating the GRE API credentials in the SUNAT portal.
+configuration.](../../../_images/gre-fields-example.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you install a database from scratch selecting Peru as country, Konvergo ERP automatically
+installs the base module: Peru - Accounting.</p>
+</div>9
 
 ##### Operator
 
@@ -648,16 +655,16 @@ through _private_ transport.
 To create a new operator, navigate to Contacts ‣ Create and fill out the
 contact information.
 
-First, select Individual as the Company Type. Then, add the Operator License
-in the Accounting tab of the contact form.
+First, select **Individual** as the **Company Type**. Then, add the **Operator
+License** in the **Accounting** tab of the contact form.
 
 For the customer address, make sure the following fields are complete:
 
-  * District
+  * **District**
 
-  * Tax ID (DNI/RUC)
+  * **Tax ID** (**DNI** /**RUC**)
 
-  * Tax ID Number
+  * **Tax ID Number**
 
 ![Individual type operator configurations in the Contact
 form.](../../../_images/operator-configuration.png)
@@ -669,16 +676,17 @@ The _carrier_ is used when the delivery guide is through _public_ transport.
 To create a new carrier, navigate to Contacts ‣ Create and fill out the
 contact information.
 
-First, select Company as the Company Type. Then, add the MTC Registration
-Number, Authorization Issuing Entity, and the Authorization Number.
+First, select **Company** as the **Company Type**. Then, add the **MTC
+Registration Number** , **Authorization Issuing Entity** , and the
+**Authorization Number**.
 
 For the company address, make sure the following fields are complete:
 
-  * District
+  * **District**
 
-  * Tax ID (DNI/RUC)
+  * **Tax ID** (**DNI** /**RUC**)
 
-  * Tax ID Number
+  * **Tax ID Number**
 
 ![Company type operator configurations in the Contact
 form.](../../../_images/company-operator-configuration.png)
@@ -689,27 +697,26 @@ To configure the available vehicles, navigate to Inventory ‣ Configuration ‣
 Vehicles and fill in the vehicle form with the information needed for the
 vehicle:
 
-  * Vehicle Name
+  * **Vehicle Name**
 
-  * License Plate
+  * **License Plate**
 
-  * Is M1 or L?
+  * **Is M1 or L?**
 
-  * Special Authorization Issuing Entity
+  * **Special Authorization Issuing Entity**
 
-  * Authorization Number
+  * **Authorization Number**
 
-  * Default Operator
+  * **Default Operator**
 
-  * Company
+  * **Company**
 
-Important
-
-It is important to check the Is M1 or L? checkbox if the vehicle has fewer
-than four wheels or fewer than eight seats.
-
-![Vehicle not selected as an M1 or L type with extra fields
-shown.](../../../_images/vehicle-not-m1-or-l-pe.png)
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>In case the Address type code is unknown,  you can set it as the default value: 0000. Be aware
+that if an incorrect value is entered, the Electronic invoice validation might have errors.</p>
+</div>0 ![Vehicle not selected as an M1 or L type with extra
+fields shown.](../../../_images/vehicle-not-m1-or-l-pe.png)
 
 ##### Products
 
@@ -717,7 +724,8 @@ To configure the available products, navigate to Inventory ‣ Products and open
 the product to be configured.
 
 Make sure that the applicable information in the product form is fully
-configured. The Partida Arancelaria (Tariff Item) field needs to be completed.
+configured. The **Partida Arancelaria** (Tariff Item) field needs to be
+completed.
 
 #### Generating a GRE
 
@@ -725,17 +733,17 @@ Once the delivery from inventory is created during the sales workflow, make
 sure you complete the GRE fields on the top-right section of the transfer form
 for the fields:
 
-  * Transport Type
+  * **Transport Type**
 
-  * Reason for Transfer
+  * **Reason for Transfer**
 
-  * Departure start date
+  * **Departure start date**
 
-It is also required to complete the Vehicle and Operator fields under the Guia
-de Remision PE tab.
+It is also required to complete the **Vehicle** and **Operator** fields under
+the **Guia de Remision PE** tab.
 
-The delivery transfer has to be marked as _Done_ for the Generar Guia de
-Remision button to appear on the left menu of the transfer form.
+The delivery transfer has to be marked as _Done_ for the **Generar Guia de
+Remision** button to appear on the left menu of the transfer form.
 
 ![Generar Guia de Remision button on a transfer form in the Done
 stage.](../../../_images/generate-gre-transferview.png)
@@ -751,7 +759,7 @@ slip.](../../../_images/gre-delivery-slip.png)
 
   * `Diferente prefijo para productos (T001 en algunos, T002 en otros)`
 
-At the moment, Odoo does not support the automation of prefixes for products.
+At the moment, Konvergo ERP does not support the automation of prefixes for products.
 This can be done manually for each product output. This can also be done for
 non-storable products. However, keep in mind that there will be no
 traceability.
@@ -776,7 +784,7 @@ invoices and receipts.
 
   * `400 Client error: Bad Request for URL`
 
-This error is not solvable from Odoo; it is advised you reach out to the SUNAT
+This error is not solvable from Konvergo ERP; it is advised you reach out to the SUNAT
 and verify the user. It may be necessary to create a new user.
 
   * `Invalid content was found starting with element 'cac:BuyerCustomerParty'`
@@ -784,7 +792,7 @@ and verify the user. It may be necessary to create a new user.
 This error occurs when the transfer reason is set as _other_. Please select
 another option. Following to the official documentation of the SUNAT’s waybill
 guide, the transfer reasons _03 (sale with shipment to third party)_ or _12
-(others)_ does not work in Odoo, since you should not have an empty or blank
+(others)_ does not work in Konvergo ERP, since you should not have an empty or blank
 customer.
 
   * `Duda cliente: consumo de créditos IAP al usar GRE 2.0`
@@ -794,7 +802,7 @@ not go through the OSE, i.e., these documents are directly sent to the SUNAT.
 
   * `Errores con formato credenciales GRE 2.0 (traceback error)`
 
-Odoo currently throws an error with a traceback instead of a message that the
+Konvergo ERP currently throws an error with a traceback instead of a message that the
 credentials are not correctly configured in the database. If this occurs on
 your database, please verify your credentials.
 

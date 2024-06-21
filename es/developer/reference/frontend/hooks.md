@@ -9,7 +9,7 @@ provide a way to build specific hooks.
 
 Using these hooks, it is possible to build many customized hooks that help
 solve a specific problem, or make some common tasks easier. The rest of this
-page documents the list of hooks provided by the Odoo web framework.
+page documents the list of hooks provided by the Konvergo ERP web framework.
 
 Name | Short Description  
 ---|---  
@@ -27,7 +27,7 @@ usePosition | position an element relative to a target
 
 ### Description
 
-See the section on [lazy loading assets](assets.html#frontend-assets-lazy-
+See the section on [lazy loading assets](assets#frontend-assets-lazy-
 loading) for more details.
 
 ## useAutofocus
@@ -119,7 +119,7 @@ Argumentos
 
 ### Description
 
-Display the [Pager](owl_components.html#frontend-pager) of the control panel
+Display the [Pager](owl_components#frontend-pager) of the control panel
 of a view. This hooks correctly sets `env.config` to provide the props to the
 pager.
 
@@ -189,10 +189,10 @@ when the window is resized/scrolled.
     `;
     
 
-Importante
-
-You should indicate your `popper` element using a [t-ref
-directive](https://github.com/odoo/owl/blob/master/doc/reference/hooks.md#useref).
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>You should indicate your <code>popper</code> element using a <a href="https://github.com/odoo/owl/blob/master/doc/reference/hooks.md#useref">t-ref directive</a>.</p>
+</div>
 
 ### API
 
@@ -215,36 +215,35 @@ Option | Type | Description
 `margin` | number | added margin between popper and reference elements (default: `0`)  
 `position` | Direction[-Variant] | the desired position. It is a string composed of one `Direction` and one `Variant` separated by a dash character. `Direction` could be: `top`, `bottom`, `right`, `left`. `Variant` could be: `start`, `middle`, `end`. The variant can be omitted (default variant is `middle`). Examples of valid positions: `right-end`, `top-start`, `left-middle`, `left`. (default position: `bottom`)  
 `onPositioned` | (el: HTMLElement, position: PositioningSolution) => void | a callback that will be called everytime a positioning occurs (e.g. on component mounted/patched, document scroll, window resize…). Can be used i.e. for dynamic styling regarding the current position. The `PositioningSolution` is an object having the following type: `{ direction: Direction, variant: Variant, top: number, left: number }`.  
-  
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">usePosition</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"@web/core/position_hook"</span><span class="p">;</span>
 
-    
-    
-    import { usePosition } from "@web/core/position_hook";
-    
-    class DropMenu extends owl.Component {
-      setup() {
-        const toggler = owl.useRef("toggler");
-        usePosition(
-          () => toggler.el,
-          {
-            popper: "menu",
-            position: "right-start",
-            onPositioned: (el, { direction, variant }) => {
-              el.classList.add(`dm-${direction}`); // -> "dm-top" "dm-right" "dm-bottom" "dm-left"
-              el.style.backgroundColor = variant === "middle" ? "red" : "blue";
-            },
-          },
-        );
-      }
-    }
-    DropMenu.template = owl.tags.xml`
-      <button t-ref="toggler">Toggle Menu</button>
-      <div t-ref="menu">
-        <t t-slot="default">
-          This is the menu default content.
-        </t>
-      </div>
-    `;
-    
+<span class="kr">class</span> <span class="nx">DropMenu</span> <span class="kr">extends</span> <span class="nx">owl</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">toggler</span> <span class="o">=</span> <span class="nx">owl</span><span class="p">.</span><span class="nx">useRef</span><span class="p">(</span><span class="s2">"toggler"</span><span class="p">);</span>
+    <span class="nx">usePosition</span><span class="p">(</span>
+      <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">toggler</span><span class="p">.</span><span class="nx">el</span><span class="p">,</span>
+      <span class="p">{</span>
+        <span class="nx">popper</span><span class="o">:</span> <span class="s2">"menu"</span><span class="p">,</span>
+        <span class="nx">position</span><span class="o">:</span> <span class="s2">"right-start"</span><span class="p">,</span>
+        <span class="nx">onPositioned</span><span class="o">:</span> <span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="p">{</span> <span class="nx">direction</span><span class="p">,</span> <span class="nx">variant</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+          <span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="sb">`dm-</span><span class="si">${</span><span class="nx">direction</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span> <span class="c1">// -&gt; "dm-top" "dm-right" "dm-bottom" "dm-left"</span>
+          <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="nx">variant</span> <span class="o">===</span> <span class="s2">"middle"</span> <span class="o">?</span> <span class="s2">"red"</span> <span class="o">:</span> <span class="s2">"blue"</span><span class="p">;</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">DropMenu</span><span class="p">.</span><span class="nx">template</span> <span class="o">=</span> <span class="nx">owl</span><span class="p">.</span><span class="nx">tags</span><span class="p">.</span><span class="nx">xml</span><span class="sb">`</span>
+<span class="sb">  &lt;button t-ref="toggler"&gt;Toggle Menu&lt;/button&gt;</span>
+<span class="sb">  &lt;div t-ref="menu"&gt;</span>
+<span class="sb">    &lt;t t-slot="default"&gt;</span>
+<span class="sb">      This is the menu default content.</span>
+<span class="sb">    &lt;/t&gt;</span>
+<span class="sb">  &lt;/div&gt;</span>
+<span class="sb">`</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
 

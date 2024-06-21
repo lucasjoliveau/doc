@@ -33,8 +33,8 @@ de points selon les règles définies dans le programme de fidélité.
 Vous pouvez voir que le prix est instantanément mis à jour pour refléter la
 liste de prix. Vous pouvez finaliser la commande de votre manière habituelle.
 
-Note
-
-Si vous sélectionnez un client avec une liste de prix par défaut, celle-ci
-sera appliquée. Vous pouvez bien sûr la changer.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Si vous sélectionnez un client avec une liste de prix par défaut, celle-ci sera appliquée. Vous pouvez bien sûr la changer.</p>
+</div>
 

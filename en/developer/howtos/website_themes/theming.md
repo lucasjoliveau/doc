@@ -13,11 +13,11 @@ skeleton of your theme module. In this chapter, you will discover how to:
 
 ## Theme module
 
-Odoo comes with a default theme that provides minimal structure and layout.
+Konvergo ERP comes with a default theme that provides minimal structure and layout.
 When you create a new theme, you are extending the default theme.
 
 Remember to add the directory containing your module to the `addons-path`
-command-line argument when running Odoo in your development environment.
+command-line argument when running Konvergo ERP in your development environment.
 
 ### Technical naming
 
@@ -28,17 +28,15 @@ The first step is to create a new directory.
     website_airproof
     
 
-Note
-
-Prefix it with `website_` and use only lowercase ASCII alphanumeric characters
-and underscores.
-
-In this documentation, we will use **Airproof** (a fictional project) as an
-example.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Prefix it with <code>website_</code> and use only lowercase ASCII alphanumeric characters and underscores.</p>
+<p>In this documentation, we will use <b>Airproof</b> (a fictional project) as an example.</p>
+</div>
 
 ### File structure
 
-Themes are packaged like any Odoo module. Even if you are designing a basic
+Themes are packaged like any Konvergo ERP module. Even if you are designing a basic
 website, you need to package its theme like a module.
 
     
@@ -74,14 +72,14 @@ views | Custom views and templates (`*.xml`)
   
 ### Initialization
 
-An Odoo module is also a Python package with a `__init__.py` file containing
+An Konvergo ERP module is also a Python package with a `__init__.py` file containing
 import instructions for various Python files in the module. This file can
 remain empty for now.
 
 ### Declaration
 
-An Odoo module is declared by its manifest file. This file declares a Python
-package as an Odoo module and specifies the module’s metadata. It must at
+An Konvergo ERP module is declared by its manifest file. This file declares a Python
+package as an Konvergo ERP module and specifies the module’s metadata. It must at
 least contain the `name` field, which is always required. It usually contains
 much more information.
 
@@ -110,44 +108,43 @@ Field | Description
 ---|---  
 name | Human-readable name of the module (required)  
 description | Extended description of the module, in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText)  
-category | Classification category within Odoo  
-version | Odoo version this module is addressing  
+category | Classification category within Konvergo ERP  
+version | Konvergo ERP version this module is addressing  
 author | Name of the module author  
 license | Distribution license for the module  
-depends | Odoo modules must be loaded before this one, either because this module uses features they create or because it alters resources they define  
+depends | Konvergo ERP modules must be loaded before this one, either because this module uses features they create or because it alters resources they define  
 data | List of XML files  
 assets | List of SCSS and JS files  
-  
-Note
-
-To create a website theme, you only need to install the Website app. If you
-need other apps (Blogs, Events, eCommerce, …), you can also add them.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To create a website theme, you only need to install the Website app. If you need other apps
+(Blogs, Events, eCommerce, …), you can also add them.</p>
+</div>
 
 ## Default options
 
-First, try to construct your theme by using Odoo’s default options. This
+First, try to construct your theme by using Konvergo ERP’s default options. This
 ensures two things:
 
-  1. You do not re-invent something which already exists. For example, as Odoo provides an option to add a border on the footer, you shouldn’t recode it yourself. Instead, enable the default option first, then extend it if needed.
+  1. You do not re-invent something which already exists. For example, as Konvergo ERP provides an option to add a border on the footer, you shouldn’t recode it yourself. Instead, enable the default option first, then extend it if needed.
 
-  2. The user can still use all of Odoo’s features with your theme. For example, if you recode the border on the footer, you may break the default option or make it useless, giving the user a bad experience. Also, your recode might not work as well as the default option, as other Odoo features may rely on it.
+  2. The user can still use all of Konvergo ERP’s features with your theme. For example, if you recode the border on the footer, you may break the default option or make it useless, giving the user a bad experience. Also, your recode might not work as well as the default option, as other Konvergo ERP features may rely on it.
 
-Tip
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><ul>
+<li><p>Use four spaces per indentation level.</p></li>
+<li><p>Do not use tabs.</p></li>
+<li><p>Never mix spaces and tabs.</p></li>
+</ul>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../../../contributing/development/coding_guidelines">Konvergo ERP coding guidelines</a></p>
+</div>
 
-  * Use four spaces per indentation level.
+### Konvergo ERP variables
 
-  * Do not use tabs.
-
-  * Never mix spaces and tabs.
-
-See also
-
-[Odoo coding
-guidelines](../../../contributing/development/coding_guidelines.html)
-
-### Odoo variables
-
-Odoo declares many CSS rules, most entirely customizable by overriding the
+Konvergo ERP declares many CSS rules, most entirely customizable by overriding the
 related SCSS variables. To do so, create a `primary_variables.scss` file and
 add it to the `_assets_primary_variables` bundle.
 
@@ -198,15 +195,13 @@ for example.
     );
     
 
-Tip
-
-That file must only contain definitions and overrides of SCSS variables and
-mixins.
-
-See also
-
-[Primary variables
-SCSS](https://github.com/odoo/odoo/blob/34c0c9c1ae00aba391932129d4cefd027a9c6bbd/addons/website/static/src/scss/primary_variables.scss#L1954)
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>That file must only contain definitions and overrides of SCSS variables and mixins.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="https://github.com/odoo/odoo/blob/34c0c9c1ae00aba391932129d4cefd027a9c6bbd/addons/website/static/src/scss/primary_variables.scss#L1954">Primary variables SCSS</a></p>
+</div>
 
 #### Fonts
 
@@ -312,9 +307,10 @@ your website.
     );
     
 
-Tip
-
-It is recommended to use the .woff format for your fonts.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>It is recommended to use the .woff format for your fonts.</p>
+</div>
 
 #### Colors
 
@@ -412,32 +408,28 @@ combination`).
     );
     
 
-Note
-
-For each `o-cc*`, replace the `*` with the digit (1 - 5) corresponding to the
-desired color combination.
-
-The default text color is `o-color-5`. If the background is too dark, it will
-automatically change to the `o-color-4` color.
-
-See also
-
-[Color combinations
-SCSS](https://github.com/odoo/odoo/blob/34c0c9c1ae00aba391932129d4cefd027a9c6bbd/addons/web_editor/static/src/scss/web_editor.common.scss#L711)
-
-Demo page
-
-The Website Builder automatically generates a page to view the color
-combinations of the theme color palette:
-<http://localhost:8069/website/demo/color-combinations>
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>For each <code>o-cc*</code>, replace the <code>*</code> with the digit (1 - 5) corresponding to the desired color
+combination.</p>
+<p>The default text color is <code>o-color-5</code>. If the background is too dark, it will automatically
+change to the <code>o-color-4</code> color.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="https://github.com/odoo/odoo/blob/34c0c9c1ae00aba391932129d4cefd027a9c6bbd/addons/web_editor/static/src/scss/web_editor.common.scss#L711">Color combinations SCSS</a></p>
+</div> <div class="admonition-demo-page alert">
+<p class="alert-title">
+Demo page</p><p>The Website Builder automatically generates a page to view the color combinations of the theme
+color palette: <a href="http://localhost:8069/website/demo/color-combinations">http://localhost:8069/website/demo/color-combinations</a></p>
+</div>
 
 ### Bootstrap variables
 
-Odoo includes Bootstrap by default. You can use all variables and mixins of
+Konvergo ERP includes Bootstrap by default. You can use all variables and mixins of
 the framework.
 
-If Odoo does not provide the variable you are looking for, there could be a
-Bootstrap variable that allows it. Indeed all Odoo layouts respect Bootstrap
+If Konvergo ERP does not provide the variable you are looking for, there could be a
+Bootstrap variable that allows it. Indeed all Konvergo ERP layouts respect Bootstrap
 structures and use Bootstrap components or their extensions. If you customize
 a Bootstrap variable, you add a generic style for the whole user website.
 
@@ -476,25 +468,24 @@ override Bootstrap values and _not_ the `primary_variables.scss` file.
     $card-border-width:            0 !default;
     
 
-Tip
-
-That file must only contain definitions and overrides of SCSS variables and
-mixins.
-
-Warning
-
-Don’t override Bootstrap variables that depend on Odoo variables. Otherwise,
-you might break the possibility for the user to customize them using the
-Website Builder.
-
-See also
-
-[Bootstrap overridden
-SCSS](https://github.com/odoo/odoo/blob/16.0/addons/website/static/src/scss/bootstrap_overridden.scss)
-
-Demo page
-
-<http://localhost:8069/website/demo/bootstrap>
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To create a website theme, you only need to install the Website app. If you need other apps
+(Blogs, Events, eCommerce, …), you can also add them.</p>
+</div>0 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To create a website theme, you only need to install the Website app. If you need other apps
+(Blogs, Events, eCommerce, …), you can also add them.</p>
+</div>1 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To create a website theme, you only need to install the Website app. If you need other apps
+(Blogs, Events, eCommerce, …), you can also add them.</p>
+</div>2
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To create a website theme, you only need to install the Website app. If you need other apps
+(Blogs, Events, eCommerce, …), you can also add them.</p>
+</div>3
 
 ### Views
 
@@ -517,38 +508,11 @@ By reading the source code, templates related to options are easily found.
     <template id="..." inherit_id="..." name="..." active="False"/>
     
 
-Example
-
-**Changing the menu items’ horizontal alignment**
-
-`/website_airproof/data/presets.xml`
-
-    
-    
-    <record id="website.template_header_default_align_center" model="ir.ui.view">
-       <field name="active" eval="True"/>
-    </record>
-    
-
-The same logic can be used for others Odoo apps as well.
-
-**eCommerce - Display products categories**
-
-    
-    
-    <record id="website_sale.products_categories" model="ir.ui.view">
-       <field name="active" eval="False"/>
-    </record>
-    
-
-**Portal - Disable the language selector**
-
-    
-    
-    <record id="portal.footer_language_selector" model="ir.ui.view">
-       <field name="active" eval="False"/>
-    </record>
-    
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To create a website theme, you only need to install the Website app. If you need other apps
+(Blogs, Events, eCommerce, …), you can also add them.</p>
+</div>4
 
 ## Assets
 
@@ -576,42 +540,33 @@ further. For this, you can easily add any SCSS file to your theme.
     
 
 Feel free to reuse the variables from your Bootstrap file and the ones used by
-Odoo in your `theme.scss` file.
+Konvergo ERP in your `theme.scss` file.
 
-Example
-
-`/website_airproof/static/src/scss/theme.scss`
-
-    
-    
-     blockquote {
-       border-radius: $rounded-pill;
-       color: o-color('o-color-3');
-       font-family: o-website-value('headings-font');
-     }
-    
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To create a website theme, you only need to install the Website app. If you need other apps
+(Blogs, Events, eCommerce, …), you can also add them.</p>
+</div>5
 
 ### Interactivity
 
-Odoo supports three different kinds of JavaScript files:
+Konvergo ERP supports three different kinds of JavaScript files:
 
-  * [plain JavaScript files](../../reference/frontend/javascript_modules.html#frontend-modules-plain-js) (no module system),
+  * [plain JavaScript files](../../reference/frontend/javascript_modules#frontend-modules-plain-js) (no module system),
 
-  * [native JavaScript module](../../reference/frontend/javascript_modules.html#frontend-modules-native-js), and
+  * [native JavaScript module](../../reference/frontend/javascript_modules#frontend-modules-native-js), and
 
-  * [Odoo modules](../../reference/frontend/javascript_modules.html#frontend-modules-odoo-module) (using a custom module system).
+  * [Konvergo ERP modules](../../reference/frontend/javascript_modules#frontend-modules-odoo-module) (using a custom module system).
 
-Most new Odoo JavaScript codes should use the native JavaScript module system.
+Most new Konvergo ERP JavaScript codes should use the native JavaScript module system.
 It’s simpler and brings the benefit of a better developer experience with
 better integration with the IDE.
 
-Important
-
-Odoo needs to know which files should be translated into [Odoo
-modules](../../reference/frontend/javascript_modules.html#frontend-js-modules)
-and which files should not. It’s an opt-in system: Odoo looks at the first
-line of a JavaScript file and checks if it contains the string `@odoo-module`.
-If so, it will automatically be converted to an Odoo module.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To create a website theme, you only need to install the Website app. If you need other apps
+(Blogs, Events, eCommerce, …), you can also add them.</p>
+</div>6
 
     
     
@@ -631,34 +586,17 @@ If so, it will automatically be converted to an Odoo module.
     },
     
 
-Note
-
-If you want to include files from an external library, you can add them to the
-`/lib` folder of your module.
-
-Tip
-
-  * Use a linter (JSHint, …).
-
-  * Never add minified JavaScript libraries.
-
-  * Add `'use strict';` on top of every Odoo JavaScript module.
-
-  * Variables and functions should be _camelcased_ (`myVariable`) instead of _snakecased_ (`my_variable`).
-
-  * Do not name a variable `event`; use `ev.` instead. This is to avoid bugs on non-Chrome browsers, as Chrome is magically assigning a global event variable (so if you use the event variable without declaring it, it will work fine on Chrome but crash on every other browser).
-
-  * Use strict comparisons (`===` instead of `==`).
-
-  * Use double quotes for all textual strings (such as `"Hello"`) and single quotes for all other strings, such as a CSS selector `.x_nav_item`.
-
-  * Always use `this._super.apply(this, arguments)`.
-
-See also
-
-  * [Odoo JavaScript coding guidelines](https://github.com/odoo/odoo/wiki/Javascript-coding-guidelines)
-
-  * [Overview of the Odoo JavaScript framework](../../reference/frontend/javascript_reference.html)
-
-  * [Odoo Experience Talk: 10 Tips to take your website design to the next level!](https://www.youtube.com/watch?v=vAgE_fPVXUQ&ab_channel=Odoo)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To create a website theme, you only need to install the Website app. If you need other apps
+(Blogs, Events, eCommerce, …), you can also add them.</p>
+</div>7 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To create a website theme, you only need to install the Website app. If you need other apps
+(Blogs, Events, eCommerce, …), you can also add them.</p>
+</div>8 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To create a website theme, you only need to install the Website app. If you need other apps
+(Blogs, Events, eCommerce, …), you can also add them.</p>
+</div>9
 

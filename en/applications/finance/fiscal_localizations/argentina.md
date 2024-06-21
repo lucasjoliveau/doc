@@ -9,42 +9,41 @@ how to configure it.
 
   * [eCommerce - Localización de Argentina](https://www.youtube.com/watch?v=5gUi2WWfRuI).
 
-See also
-
-[Smart Tutorial - Localización de
-Argentina](https://www.odoo.com/slides/smart-tutorial-localizacion-de-
-argentina-130)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="https://www.odoo.com/slides/smart-tutorial-localizacion-de-argentina-130">Smart Tutorial - Localización de Argentina</a></p>
+</div>
 
 ## Configuration
 
 ### Modules installation
 
-[Install](../../general/apps_modules.html#general-install) the following
+[Install](../../general/apps_modules#general-install) the following
 modules to get all the features of the Argentinean localization:
 
 Name | Technical name | Description  
 ---|---|---  
-Argentina - Accounting | `l10n_ar` | Default [fiscal localization package](../fiscal_localizations.html#fiscal-localizations-packages), which represents the minimal configuration to operate in Argentina under the AFIP regulations and guidelines.  
-Argentinean Accounting Reports | `l10n_ar_reports` | VAT Book report and VAT summary report.  
-Argentinean Electronic Invoicing | `l10n_ar_edi` | Includes all technical and functional requirements to generate electronic invoices via web service, based on the AFIP regulations.  
-Argentinean eCommerce | `l10n_ar_website_sale` | (optional) Allows the user to see Identification Type and AFIP Responsibility in the eCommerce checkout form in order to create electronic invoices.  
+**Argentina - Accounting** | `l10n_ar` | Default [fiscal localization package](../fiscal_localizations#fiscal-localizations-packages), which represents the minimal configuration to operate in Argentina under the AFIP regulations and guidelines.  
+**Argentinean Accounting Reports** | `l10n_ar_reports` | VAT Book report and VAT summary report.  
+**Argentinean Electronic Invoicing** | `l10n_ar_edi` | Includes all technical and functional requirements to generate electronic invoices via web service, based on the AFIP regulations.  
+**Argentinean eCommerce** | `l10n_ar_website_sale` | (optional) Allows the user to see Identification Type and AFIP Responsibility in the eCommerce checkout form in order to create electronic invoices.  
   
 ### Configure your company
 
 Once the localization modules are installed, the first step is to set up the
 company’s data. In addition to the basic information, a key field to fill in
-is the AFIP Responsibility Type, which represents the fiscal obligation and
-structure of the company.
+is the **AFIP Responsibility Type** , which represents the fiscal obligation
+and structure of the company.
 
 ![Select AFIP Responsibility Type.](../../../_images/select-responsibility-
 type.png)
 
 ### Chart of account
 
-In Accounting, there are three different Chart of Accounts packages to choose
-from. They are based on a company’s AFIP responsibility type, and consider the
-difference between companies that do not require as many accounts as the
-companies that have more complex fiscal requirements:
+In Accounting, there are three different **Chart of Accounts** packages to
+choose from. They are based on a company’s AFIP responsibility type, and
+consider the difference between companies that do not require as many accounts
+as the companies that have more complex fiscal requirements:
 
   * Monotributista (227 accounts);
 
@@ -70,41 +69,39 @@ environments are completely isolated from each other, the digital certificates
 of one instance are not valid in the other one.
 
 To select a database environment, go to Accounting ‣ Settings ‣ Argentinean
-Localization and choose either Prueba (Testing) or Produccion (Production).
+Localization and choose either **Prueba (Testing)** or **Produccion
+(Production)**.
 
 ![Select AFIP database environment: Testing or
 Production.](../../../_images/select-environment.png)
 
 ##### AFIP certificates
 
-The electronic invoice and other AFIP services work with Web Services (WS)
+The electronic invoice and other AFIP services work with **Web Services (WS)**
 provided by the AFIP.
 
 In order to enable communication with the AFIP, the first step is to request a
-Digital Certificate if you do not have one already.
+**Digital Certificate** if you do not have one already.
 
-  1. Generate Certificate Sign Request (Odoo). When this option is selected, a file with extension `.csr` (certificate signing request) is generated to be used in the AFIP portal to request the certificate.
+  1. **Generate Certificate Sign Request (Konvergo ERP)**. When this option is selected, a file with extension `.csr` (certificate signing request) is generated to be used in the AFIP portal to request the certificate.
 
 ![Request a certificate.](../../../_images/request-certificate.png)
 
-  2. Generate Certificate (AFIP). Access the AFIP portal and follow the instructions described in [this document](https://drive.google.com/file/d/17OKX2lNWd1bjUt3NxfqcCKBkBh-Xlpo-/view) to get a certificate.
+  2. **Generate Certificate (AFIP)**. Access the AFIP portal and follow the instructions described in [this document](https://drive.google.com/file/d/17OKX2lNWd1bjUt3NxfqcCKBkBh-Xlpo-/view) to get a certificate.
 
-  3. Upload Certificate and Private Key (Odoo). Once the certificate is generated, upload it to Odoo using the Pencil icon next to the field Certificado and select the corresponding file.
+  3. **Upload Certificate and Private Key (Konvergo ERP)**. Once the certificate is generated, upload it to Konvergo ERP using the **Pencil** icon next to the field **Certificado** and select the corresponding file.
 
 ![Upload Certificate and Private Key.](../../../_images/upload-certificate-
 private-key.png)
 
-Tip
-
-In case you need to configure the Homologation Certificate, please refer to
-the AFIP official documentation: [Homologation
-Certificate](http://www.afip.gob.ar/ws/documentacion/certificados.asp).
-Furthermore, Odoo allows the user to test electronic invoicing locally without
-a Homologation Certificate. The following message will be in the chatter when
-testing locally:
-
-![Invoice validated locally because it is in a testing environment without
-testing certificate/keys.](../../../_images/local-testing.png)
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>In case you need to configure the Homologation Certificate, please refer to the AFIP official
+documentation: <a href="http://www.afip.gob.ar/ws/documentacion/certificados.asp">Homologation Certificate</a>. Furthermore, Konvergo ERP allows the user
+to test electronic invoicing locally without a Homologation Certificate. The following message
+will be in the chatter when testing locally:</p>
+<img alt="Invoice validated locally because it is in a testing environment without testing certificate/keys." class="align-center" src="../../../_images/local-testing.png"/>
+</div>
 
 #### Partner
 
@@ -112,16 +109,15 @@ testing certificate/keys.](../../../_images/local-testing.png)
 
 As part of the Argentinean localization, document types defined by the AFIP
 are now available in the **Partner form**. Information is essential for most
-transactions. There are six Identification Types available by default, as well
-as 32 inactive types.
+transactions. There are six **Identification Types** available by default, as
+well as 32 inactive types.
 
-![A list of AR Localization document types in Odoo, as defined by
-AFIP.](../../../_images/identification-types.png)
-
-Note
-
-The complete list of Identification Types defined by the AFIP is included in
-Odoo, but only the common ones are active.
+![A list of AR Localization document types in Konvergo ERP, as defined by
+AFIP.](../../../_images/identification-types.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The complete list of <b>Identification Types</b> defined by the AFIP is included in Konvergo ERP,
+but only the common ones are active.</p>
+</div>
 
 ##### AFIP responsibility type
 
@@ -136,29 +132,29 @@ responsibility-type.png)
 
 As part of the localization module, the taxes are created automatically with
 their related financial account and configuration, e.g., 73 taxes for
-Responsable Inscripto.
+**Responsable Inscripto**.
 
 ![A list of AR Localization taxes with financial amount and configuration in
-Odoo.](../../../_images/automatic-tax-configuration.png)
+Konvergo ERP.](../../../_images/automatic-tax-configuration.png)
 
 ##### Taxes types
 
 Argentina has several tax types, the most common ones are:
 
-  * VAT: this is the regular VAT and can have various percentages;
+  * **VAT** : this is the regular VAT and can have various percentages;
 
-  * Perception: advance payment of a tax that is applied on invoices;
+  * **Perception** : advance payment of a tax that is applied on invoices;
 
-  * Retention: advance payment of a tax that is applied on payments.
+  * **Retention** : advance payment of a tax that is applied on payments.
 
 ##### Special taxes
 
 Some Argentinean taxes are not commonly used for all companies, and those less
-common options are labeled as inactive in Odoo by default. Before creating a
+common options are labeled as inactive in Konvergo ERP by default. Before creating a
 new tax, be sure to check if that tax is not already included as inactive.
 
 ![A list showing less common Argentinean tax options, which are labeled as
-inactive in Odoo by default.](../../../_images/special-inactive-taxes.png)
+inactive in Konvergo ERP by default.](../../../_images/special-inactive-taxes.png)
 
 #### Document types
 
@@ -177,31 +173,30 @@ assigned. As part of the localization, the document type includes the country
 in which the document is applicable (this data is created automatically when
 the localization module is installed).
 
-The information required for the Document Types is included by default so the
-user does not need to fill anything on this view:
+The information required for the **Document Types** is included by default so
+the user does not need to fill anything on this view:
 
-![A list of document types in Odoo.](../../../_images/default-document-type-
-info.png)
-
-Note
-
-There are several Document Types types that are inactive by default, but can
-be activated as needed.
+![A list of document types in Konvergo ERP.](../../../_images/default-document-type-
+info.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>There are several <b>Document Types</b> types that are inactive by default, but can be
+activated as needed.</p>
+</div>
 
 ##### Letters
 
-For Argentina, the Document Types include a letter that helps indicate the
+For Argentina, the **Document Types** include a letter that helps indicate the
 type of transaction or operation. For example, when an invoice is related to
 a(n):
 
-  * B2B transaction, a document type A must be used;
+  * **B2B transaction** , a document type **A** must be used;
 
-  * B2C transaction, a document type B must be used;
+  * **B2C transaction** , a document type **B** must be used;
 
-  * Exportation Transaction, a document type E must be used.
+  * **Exportation Transaction** , a document type **E** must be used.
 
 The documents included in the localization already have the proper letter
-associated with each Document Type, so there is no further configuration
+associated with each **Document Type** , so there is no further configuration
 necessary.
 
 ![document types grouped by letters.](../../../_images/document-types-grouped-
@@ -209,7 +204,7 @@ by-letters.png)
 
 ##### Use on invoices
 
-The Document Type on each transaction will be determined by:
+The **Document Type** on each transaction will be determined by:
 
   * The journal entry related to the invoice (if the journal uses documents);
 
@@ -221,19 +216,19 @@ In the Argentinean localization, the journal can have a different approach
 depending on its usage and internal type. To configure journals, go to
 Accounting ‣ Configuration ‣ Journals.
 
-For sales and purchase journals, it’s possible to activate the option Use
-Documents, which enables a list of Document Types that can be related to the
-invoices and vendor bills. For more detail on invoices, please refer to the
-section 2.3 document types.
+For sales and purchase journals, it’s possible to activate the option **Use
+Documents** , which enables a list of **Document Types** that can be related
+to the invoices and vendor bills. For more detail on invoices, please refer to
+the section 2.3 document types.
 
-If the sales or purchase journals do not have the Use Documents option
+If the sales or purchase journals do not have the **Use Documents** option
 activated, they will not be able to generate fiscal invoices, meaning, their
 use case will be mostly limited to monitoring account moves related to
 internal control processes.
 
 #### AFIP information (also known as AFIP Point of Sale)
 
-The AFIP POS System is a field only visible for the **Sales** journals and
+The **AFIP POS System** is a field only visible for the **Sales** journals and
 defines the type of AFIP POS that will be used to manage the transactions for
 which the journal is created.
 
@@ -244,28 +239,28 @@ The AFIP POS defines the following:
   2. the structure and data of the electronic invoice file.
 
 ![A AFIP POS System field which is available on Sales journals in
-Odoo.](../../../_images/sales-journal.png)
+Konvergo ERP.](../../../_images/sales-journal.png)
 
 ##### Web services
 
 **Web services** help generate invoices for different purposes. Below are a
 few options to choose from:
 
-  * wsfev1: Electronic Invoice: is the most common service, which is used to generate invoices for document types A, B, C, M with no detail per item;
+  * **wsfev1: Electronic Invoice** : is the most common service, which is used to generate invoices for document types A, B, C, M with no detail per item;
 
-  * wsbfev1: Electronic Fiscal Bond: is for those who invoice capital goods and wish to access the benefit of the Electronic Tax Bonds granted by the Ministry of Economy. For more details go to: [Fiscal Bond](https://www.argentina.gob.ar/acceder-un-bono-por-fabricar-bienes-de-capital);
+  * **wsbfev1: Electronic Fiscal Bond** : is for those who invoice capital goods and wish to access the benefit of the Electronic Tax Bonds granted by the Ministry of Economy. For more details go to: [Fiscal Bond](https://www.argentina.gob.ar/acceder-un-bono-por-fabricar-bienes-de-capital);
 
-  * wsfexv1: Electronic Exportation Invoice: is used to generate invoices for international customers and transactions that involve exportation processes, the document type related is type “E”.
+  * **wsfexv1: Electronic Exportation Invoice** : is used to generate invoices for international customers and transactions that involve exportation processes, the document type related is type “E”.
 
 ![Web Services.](../../../_images/web-services.png)
 
 Here are some useful fields to know when working with web services:
 
-  * AFIP POS Number: is the number configured in the AFIP to identify the operations related to this AFIP POS;
+  * **AFIP POS Number** : is the number configured in the AFIP to identify the operations related to this AFIP POS;
 
-  * AFIP POS Address: is the field related to the commercial address registered for the POS, which is usually the same address as the company. For example, if a company has multiple stores (fiscal locations) then the AFIP will require the company to have one AFIP POS per location. This location will be printed in the invoice report;
+  * **AFIP POS Address** : is the field related to the commercial address registered for the POS, which is usually the same address as the company. For example, if a company has multiple stores (fiscal locations) then the AFIP will require the company to have one AFIP POS per location. This location will be printed in the invoice report;
 
-  * Unified Book: when the AFIP POS System is Preimpresa, then the document types (applicable to the journal) with the same letter will share the same sequence. For example:
+  * **Unified Book** : when the AFIP POS System is Preimpresa, then the document types (applicable to the journal) with the same letter will share the same sequence. For example:
 
     * Invoice: FA-A 0001-00000002;
 
@@ -275,15 +270,16 @@ Here are some useful fields to know when working with web services:
 
 #### Sequences
 
-For the first invoice, Odoo synchronizes with the AFIP automatically and
+For the first invoice, Konvergo ERP synchronizes with the AFIP automatically and
 displays the last sequence used.
 
-Note
-
-When creating Purchase Journals, it’s possible to define whether they are
-related to document types or not. In the case where the option to use
-documents is selected, there would be no need to manually associate the
-document type sequences, since the document number is provided by the vendor.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When creating <b>Purchase Journals</b>, it’s possible to define whether they are related to
+document types or not. In the case where the option to use documents is selected, there would be
+no need to manually associate the document type sequences, since the document number is provided
+by the vendor.</p>
+</div>
 
 ## Usage and testing
 
@@ -294,7 +290,7 @@ journals are created and properly configured.
 
 #### Document type assignation
 
-When the partner is selected, the Document Type field will be filled in
+When the partner is selected, the **Document Type** field will be filled in
 automatically based on the AFIP document type:
 
   * **Invoice for a customer IVA Responsable Inscripto, prefix A** is the type of document that shows all the taxes in detail along with the customer’s information.
@@ -313,11 +309,11 @@ for-end-customer.png)
 invoice.png)
 
 Even though some invoices use the same journal, the prefix and sequence are
-given by the Document Type field.
+given by the **Document Type** field.
 
-The most common Document Type will be defined automatically for the different
-combinations of AFIP responsibility type but it can be updated manually by the
-user before confirming the invoice.
+The most common **Document Type** will be defined automatically for the
+different combinations of AFIP responsibility type but it can be updated
+manually by the user before confirming the invoice.
 
 #### Electronic invoice elements
 
@@ -330,24 +326,24 @@ invoice remains in draft until the issue is resolved.
 Once the invoice is posted, the information related to the AFIP validation and
 status is displayed in the AFIP tab, including:
 
-  * AFIP Autorisation: CAE number;
+  * **AFIP Autorisation** : CAE number;
 
-  * Expiration Date: deadline to deliver the invoice to the customers (normally 10 days after the CAE is generated);
+  * **Expiration Date** : deadline to deliver the invoice to the customers (normally 10 days after the CAE is generated);
 
-  * Result: indicates if the invoice has been Aceptado en AFIP and/or Aceptado con Observaciones.
+  * **Result:** indicates if the invoice has been **Aceptado en AFIP** and/or **Aceptado con Observaciones**.
 
 ![AFIP Status.](../../../_images/afip-status.png)
 
 #### Invoice taxes
 
-Based on the AFIP Responsibility type, the VAT tax can apply differently on
-the PDF report:
+Based on the **AFIP Responsibility type** , the VAT tax can apply differently
+on the PDF report:
 
-  * A. Tax excluded: in this case the taxed amount needs to be clearly identified in the report. This condition applies when the customer has the following AFIP Responsibility type of **Responsable Inscripto** ;
+  * **A. Tax excluded** : in this case the taxed amount needs to be clearly identified in the report. This condition applies when the customer has the following AFIP Responsibility type of **Responsable Inscripto** ;
 
 ![Tax excluded.](../../../_images/tax-amount-excluded.png)
 
-  * B. Tax amount included: this means that the taxed amount is included as part of the product price, subtotal, and totals. This condition applies when the customer has the following AFIP Responsibility types:
+  * **B. Tax amount included** : this means that the taxed amount is included as part of the product price, subtotal, and totals. This condition applies when the customer has the following AFIP Responsibility types:
 
     * IVA Sujeto Exento;
 
@@ -363,9 +359,9 @@ the PDF report:
 
 ##### Invoices for services
 
-For electronic invoices that include Services, the AFIP requires to report the
-service starting and ending date, this information can be filled in the tab
-Other Info.
+For electronic invoices that include **Services** , the AFIP requires to
+report the service starting and ending date, this information can be filled in
+the tab **Other Info**.
 
 ![Invoices for Services.](../../../_images/invoices-for-services.png)
 
@@ -377,15 +373,15 @@ invoice’s month.
 
 ##### Exportation invoices
 
-Invoices related to Exportation Transactions require that a journal uses the
-AFIP POS System **Expo Voucher - Web Service** so that the proper document
+Invoices related to **Exportation Transactions** require that a journal uses
+the AFIP POS System **Expo Voucher - Web Service** so that the proper document
 type(s) can be associated.
 
 ![Exporation journal.](../../../_images/exporation-journal.png)
 
 When the customer selected in the invoice is configured with an AFIP
-responsibility type Cliente / Proveedor del Exterior \- Ley N° 19.640, Odoo
-automatically assigns the:
+responsibility type **Cliente / Proveedor del Exterior** \- **Ley N° 19.640**
+, Konvergo ERP automatically assigns the:
 
   * Journal related to the exportation Web Service;
 
@@ -397,19 +393,17 @@ automatically assigns the:
 
   * Exempt Taxes.
 
-![Export invoice fields autofilled in Odoo.](../../../_images/export-
-invoice.png)
-
-Note
-
-The Exportation Documents require Incoterms to be enabled and configured,
-which can be found in Other Info ‣ Accounting.
-
-![Export invoice - Incoterm.](../../../_images/export-invoice-incoterm.png)
+![Export invoice fields autofilled in Konvergo ERP.](../../../_images/export-
+invoice.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The Exportation Documents require Incoterms to be enabled and configured, which can be found in
+Other Info ‣ Accounting.</p>
+</div> ![Export invoice -
+Incoterm.](../../../_images/export-invoice-incoterm.png)
 
 ##### Fiscal bond
 
-The Electronic Fiscal Bond is used for those who invoice capital goods and
+The **Electronic Fiscal Bond** is used for those who invoice capital goods and
 wish to access the benefit of the Electronic Tax Bonds granted by the Ministry
 of Economy.
 
@@ -460,23 +454,24 @@ For these transactions it’s important to consider the following requirements:
 ![Bank account relation error.](../../../_images/bank-account-relation-
 error.png)
 
-To set up the Transmission Mode, go to settings and select either SDC or ADC.
+To set up the **Transmission Mode** , go to settings and select either **SDC**
+or **ADC**.
 
 ![Transmission Mode.](../../../_images/transmission-mode.png)
 
-To change the Transmission Mode for a specific invoice, go to the Other Info
-tab and change it before confirming.
+To change the **Transmission Mode** for a specific invoice, go to the **Other
+Info** tab and change it before confirming.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Changing the <b>Transmission Mode</b> will not change the mode selected in
+<b>Settings</b>.</p>
+</div> ![Transmission Mode on
+Invoice.](../../../_images/transmission-mode-on-invoice.png)
 
-Changing the Transmission Mode will not change the mode selected in Settings.
+When creating a **Credit/Debit** note related to a FCE document:
 
-![Transmission Mode on Invoice.](../../../_images/transmission-mode-on-
-invoice.png)
-
-When creating a Credit/Debit note related to a FCE document:
-
-  * use the Credit and Debit Note buttons, so all the information from the invoice is transferred to the new Credit and Debit Note;
+  * use the **Credit and Debit Note** buttons, so all the information from the invoice is transferred to the new **Credit and Debit Note** ;
 
   * the document letter should be the same as than the originator document (either A or B);
 
@@ -485,19 +480,20 @@ When creating a Credit/Debit note related to a FCE document:
 ![Credit & debit notes buttons.](../../../_images/credit-debit-notes-
 button.png)
 
-When creating a Credit Note we can have two scenarios:
+When creating a **Credit Note** we can have two scenarios:
 
-  1. the FCE is rejected so the Credit Note should have the field FCE, is Cancellation? as _True_ ; or;
+  1. the FCE is rejected so the **Credit Note** should have the field **FCE, is Cancellation?** as _True_ ; or;
 
-  2. the Credit Note, is created to annulate the FCE document, in this case the field FCE, is Cancellation? must be _empty_ (false).
+  2. the **Credit Note** , is created to annulate the FCE document, in this case the field **FCE, is Cancellation?** must be _empty_ (false).
 
 ![FCE: Es Cancelación?](../../../_images/fce-es-cancelation.png)
 
 #### Invoice printed report
 
-The PDF Report related to electronic invoices that have been validated by the
-AFIP includes a barcode at the bottom of the format which represents the CAE
-number. The expiration date is also displayed as it is a legal requirement.
+The **PDF Report** related to electronic invoices that have been validated by
+the AFIP includes a barcode at the bottom of the format which represents the
+CAE number. The expiration date is also displayed as it is a legal
+requirement.
 
 ![Invoice printed report.](../../../_images/invoice-printed-report.png)
 
@@ -506,8 +502,8 @@ number. The expiration date is also displayed as it is a legal requirement.
 For auditing and troubleshooting purposes, it is possible to obtain detailed
 information of an invoice number that has been previously sent to the AFIP. To
 retrieve this information, activate the [developer
-mode](../../general/developer_mode.html#developer-mode), then go to the
-Accounting menu and click on the button Consult Invoice button in AFIP.
+mode](../../general/developer_mode#developer-mode), then go to the
+Accounting menu and click on the button **Consult Invoice** button in AFIP.
 
 ![Consult invoice in AFIP.](../../../_images/consult-invoice-in-afip.png)
 ![Details of invoice consulted in AFIP.](../../../_images/consult-invoice-in-
@@ -515,24 +511,24 @@ afip-details.png)
 
 It is also possible to retrieve the last number used in AFIP for a specific
 document type and POS Number as a reference for any possible issues on the
-sequence synchronization between Odoo and AFIP.
+sequence synchronization between Konvergo ERP and AFIP.
 
 ![Consult the last invoice number.](../../../_images/consult-last-invoice-
 number.png)
 
 ### Vendor bills
 
-Based on the purchase journal selected for the vendor bill, the Document Type
-is now a required field. This value is auto-populated based on the AFIP
+Based on the purchase journal selected for the vendor bill, the **Document
+Type** is now a required field. This value is auto-populated based on the AFIP
 Responsibility type of Issuer and Customer, but the value can be changed if
 necessary.
 
 ![Changing journal and document type.](../../../_images/changing-journal-
 document-type.png)
 
-The Document Number field needs to be registered manually and the format will
-be validated automatically. However, in case the format is invalid, a user
-error will be displayed indicating the correct format that is expected.
+The **Document Number** field needs to be registered manually and the format
+will be validated automatically. However, in case the format is invalid, a
+user error will be displayed indicating the correct format that is expected.
 
 ![Vendor bill document number.](../../../_images/vendor-bill-document-
 number.png)
@@ -548,25 +544,25 @@ related to an AFIP valid document, an automatic validation can be set in
 Accounting ‣ Settings ‣ Argentinean Localization ‣ Validate document in the
 AFIP, considering the following levels:
 
-  * Not available: the verification is not done (this is the default value);
+  * **Not available:** the verification is not done (this is the default value);
 
-  * Available: the verification is done. In case the number is not valid it, only displays a warning but still allows the vendor bill to be posted;
+  * **Available:** the verification is done. In case the number is not valid it, only displays a warning but still allows the vendor bill to be posted;
 
-  * Required: the verification is done and it does not allow the user to post the vendor bill if the document number is not valid.
+  * **Required:** the verification is done and it does not allow the user to post the vendor bill if the document number is not valid.
 
 ![Verify Vendor Bills validity in AFIP.](../../../_images/verify-vendor-
 bills.png)
 
-##### Validate vendor bills in Odoo
+##### Validate vendor bills in Konvergo ERP
 
 With the vendor validation settings enabled, a new button shows up on the
-vendor bills inside of Odoo, labeled Verify on AFIP, which is located next to
-the AFIP Authorization code field.
+vendor bills inside of Konvergo ERP, labeled **Verify on AFIP** , which is located
+next to the **AFIP Authorization code** field.
 
 ![Verify on AFIP.](../../../_images/verify-on-afip.png)
 
-In case the vendor bill cannot be validated in AFIP, a value of Rejected will
-be displayed on the dashboard and the details of the invalidation will be
+In case the vendor bill cannot be validated in AFIP, a value of **Rejected**
+will be displayed on the dashboard and the details of the invalidation will be
 added to the chatter.
 
 ![AFIP authorization Rejected.](../../../_images/afip-auth-rejected.png)
@@ -589,10 +585,10 @@ the exempt concept.
 The vendor bill will be registered using one item for each product that is
 part of the VAT base amount, and the perception tax can be added in any of the
 product lines. As a result, there will be one tax group for the VAT and
-another for the perception. The perception default value is always 0.10.
+another for the perception. The perception default value is always **0.10**.
 
 To edit the VAT perception and set the correct amount, you should use the
-Pencil icon that is the next to the Perception amount. After the VAT
+**Pencil** icon that is the next to the **Perception** amount. After the VAT
 perception amount has been set, the invoice can then be validated.
 
 ![Enter the perception amount.](../../../_images/enter-perception-amount.png)
@@ -601,7 +597,7 @@ perception amount has been set, the invoice can then be validated.
 
 To install the _Third Party and Deferred/Electronic Checks Management_ module,
 go to Apps and search for the module by its technical name `l10n_latam_check`
-and click the Activate button.
+and click the **Activate** button.
 
 ![l10n_latam_check module.](../../../_images/l10n-latam-check-module.png)
 
@@ -621,38 +617,37 @@ and the third party checks flows.
 
 Configure the bank journal used to create your own checks by going to
 Accounting ‣ Configuration ‣ Journals, selecting the bank journal, and opening
-the Outgoing Payments tab.
+the **Outgoing Payments** tab.
 
-  * Checks should be available as a Payment Method. If not, click Add a line and type `Checks` under Payment Method to add them
+  * **Checks** should be available as a **Payment Method**. If not, click **Add a line** and type `Checks` under **Payment Method** to add them
 
-  * Enable the Use electronic and deferred checks setting.
+  * Enable the **Use electronic and deferred checks** setting.
 
-Note
-
-This last configuration **disables** the printing ability but enables to:
-
-  * Enter check numbers manually
-
-  * Adds a field to allocate the payment date of the check
-
-![Bank journal configurations.](../../../_images/bank-journal-conf.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This last configuration <b>disables</b> the printing ability but enables to:</p>
+<ul>
+<li><p>Enter check numbers manually</p></li>
+<li><p>Adds a field to allocate the payment date of the check</p></li>
+</ul>
+</div> ![Bank journal configurations.](../../../_images/bank-
+journal-conf.png)
 
 ##### Management of own checks
 
 Own checks can be created directly from the vendor bill. For this process,
-click on the Register Payment button.
+click on the **Register Payment** button.
 
 On the payment registration modal, select the bank journal from which the
-payment is to be made and set the Check Cash-In Date, and the Amount.
+payment is to be made and set the **Check Cash-In Date** , and the **Amount**.
 
 ![Payment pop-up window with own check options
-enabled.](../../../_images/payment-popup-vendorbill.png)
-
-Note
-
-To manage current checks, the Check Cash-In Date field must be left blank or
-filled in with the current date. To manage deferred checks, the Check Cash-In
-Date must be set in the future.
+enabled.](../../../_images/payment-popup-vendorbill.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To manage current checks, the <b>Check Cash-In Date</b> field must be left blank or filled
+in with the current date. To manage deferred checks, the <b>Check Cash-In Date</b> must be
+set in the future.</p>
+</div>
 
 To manage your existing own checks, navigate to Accounting ‣ Vendors ‣ Own
 Checks. This window shows critical information such as the dates when checks
@@ -663,17 +658,17 @@ checks.
 
 It is important to note that the list is pre-filtered by checks that are still
 _not reconciled_ with a bank statement - that were not yet debited from the
-bank - which can be verified with the Is Matched with a Bank Statement field.
-If you want to see all of your own checks, delete the No Bank Matching filter
-by clicking on the X symbol.
+bank - which can be verified with the **Is Matched with a Bank Statement**
+field. If you want to see all of your own checks, delete the **No Bank
+Matching** filter by clicking on the **X** symbol.
 
 ![Own checks menu organization and filtering.](../../../_images/check-menu-
 list-vendorbill.png)
 
 ##### Cancel an own check
 
-To cancel an own check created in Odoo, navigate to Accounting ‣ Vendors ‣ Own
-Checks and select the check to be canceled, then click on the Void Check
+To cancel an own check created in Konvergo ERP, navigate to Accounting ‣ Vendors ‣ Own
+Checks and select the check to be canceled, then click on the **Void Check**
 button. This will break the reconciliation with the vendor bills and the bank
 statements and leave the check in a **canceled** state.
 
@@ -690,75 +685,78 @@ Journals and create two new journals:
 
   * `Rejected Third Party Checks`
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>You can manually create more journals if you have multiple points of sale and need journals for
+those.</p>
+</div>
 
-You can manually create more journals if you have multiple points of sale and
-need journals for those.
+To create the _Third Party Checks_ journal, click the **New** button and
+configure the following:
 
-To create the _Third Party Checks_ journal, click the New button and configure
-the following:
+  * Type `Third Party Checks` as the **Journal Name**
 
-  * Type `Third Party Checks` as the Journal Name
+  * Select **Cash** as **Type**
 
-  * Select Cash as Type
-
-  * In the Journal Entries tab, set Cash Account: to `1.1.1.02.010 Cheques de Terceros`, input a Short Code of your choice, and select a Currency
+  * In the **Journal Entries** tab, set **Cash Account** : to `1.1.1.02.010 Cheques de Terceros`, input a **Short Code** of your choice, and select a **Currency**
 
 ![Automatically created cash account.](../../../_images/auto-cash-account.png)
 
 The available payment methods are listed in the _payments_ tabs:
 
-  * For new incoming third party checks, go to Incoming Payments tab ‣ Add a line and select New Third Party Checks. This method is used to create _new_ third party checks.
+  * For new incoming third party checks, go to Incoming Payments tab ‣ Add a line and select **New Third Party Checks**. This method is used to create _new_ third party checks.
 
-  * For incoming and outgoing existing third party checks, go to Incoming Payments tab ‣ Add a line and select Existing Third Party Checks. Repeat the same step for the Outgoing Payments tab. This method is used to receive and/or pay vendor bills using already _existing_ checks, as well as for internal transfers.
+  * For incoming and outgoing existing third party checks, go to Incoming Payments tab ‣ Add a line and select **Existing Third Party Checks**. Repeat the same step for the **Outgoing Payments** tab. This method is used to receive and/or pay vendor bills using already _existing_ checks, as well as for internal transfers.
 
-Tip
-
-You can delete pre-existing payment methods appearing by default when
-configuring the third party checks journals.
-
-![Payment methods automatically created.](../../../_images/auto-payment-
-methods.png)
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>In case you need to configure the Homologation Certificate, please refer to the AFIP official
+documentation: <a href="http://www.afip.gob.ar/ws/documentacion/certificados.asp">Homologation Certificate</a>. Furthermore, Konvergo ERP allows the user
+to test electronic invoicing locally without a Homologation Certificate. The following message
+will be in the chatter when testing locally:</p>
+<img alt="Invoice validated locally because it is in a testing environment without testing certificate/keys." class="align-center" src="../../../_images/local-testing.png"/>
+</div>0 ![Payment methods automatically
+created.](../../../_images/auto-payment-methods.png)
 
 The _Rejected Third Party Checks_ journal also needs to be created and/or
 configured. This journal is used to manage rejected third party checks and can
 be utilized to send checks rejected at the moment of collection or when coming
 from vendors when rejected.
 
-To create the _Rejected Third Party Checks_ journal, click the New button and
-configure the following:
+To create the _Rejected Third Party Checks_ journal, click the **New** button
+and configure the following:
 
-  * Type `Rejected Third Party Checks` as the Journal Name
+  * Type `Rejected Third Party Checks` as the **Journal Name**
 
-  * Select Cash as Type
+  * Select **Cash** as **Type**
 
-  * In the Journal Entries tab, set Cash Account: to `1.1.1.01.002 Rejected Third Party Checks`, input a Short Code of your choice, and select a Currency
+  * In the **Journal Entries** tab, set **Cash Account** : to `1.1.1.01.002 Rejected Third Party Checks`, input a **Short Code** of your choice, and select a **Currency**
 
 Use the same payment methods as the _Third Party Checks_ journal.
 
 ##### New third party checks
 
 To register a _new_ third party check for a customer invoice, click the
-Register Payment button. In the pop-up window, you must select Third Party
-Checks as journal for the payment registration.
+**Register Payment** button. In the pop-up window, you must select **Third
+Party Checks** as journal for the payment registration.
 
-Select New Third Party Checks as Payment Method, and fill in the Check Number,
-Payment Date, and Check Bank. Optionally, you can manually add the Check
-Issuer Vat, but this is automatically filled by the customer’s VAT number
-related to the invoice.
+Select **New Third Party Checks** as **Payment Method** , and fill in the
+**Check Number** , **Payment Date** , and **Check Bank**. Optionally, you can
+manually add the **Check Issuer Vat** , but this is automatically filled by
+the customer’s VAT number related to the invoice.
 
 ![Payment pop-up window with New Third Party Check options
 enabled.](../../../_images/third-party-payment-popup.png)
 
 ##### Existing third party checks
 
-To pay a vendor bill with an _existing_ check, click the Register Payment
-button. In the pop-up window, you must select Third Party Checks as journal
-for the payment registration.
+To pay a vendor bill with an _existing_ check, click the **Register Payment**
+button. In the pop-up window, you must select **Third Party Checks** as
+journal for the payment registration.
 
-Select Existing Third Party Checks as Payment Method, and select a check from
-the Check field. The field shows all **available existing checks** to be used
-as payment for vendor bills.
+Select **Existing Third Party Checks** as **Payment Method** , and select a
+check from the **Check** field. The field shows all **available existing
+checks** to be used as payment for vendor bills.
 
 ![Payment pop-up window with Existing Third Party Check options
 enabled.](../../../_images/existing-third-party-popup.png)
@@ -770,25 +768,25 @@ vendor bill.
 
 To do so, either go to Accounting ‣ Customers ‣ Third Party Checks or
 Accounting ‣ Vendors ‣ Own Checks depending on the case, and click on a check.
-In the Check Current Journal field, click on => Check Operations to bring up
-the check’s history and movements.
+In the **Check Current Journal** field, click on **= > Check Operations** to
+bring up the check’s history and movements.
 
 ![Check Operations menu.](../../../_images/check-operations-menulist.png)
 
 The menu also displays critical information related to these operations, such
 as:
 
-  * The Payment Type, allowing to classify whether it is a payment _sent_ to a vendor or a payment _received_ from a customer
+  * The **Payment Type** , allowing to classify whether it is a payment _sent_ to a vendor or a payment _received_ from a customer
 
-  * The Journal in which the check is currently registered
+  * The **Journal** in which the check is currently registered
 
   * The **partner** associated with the operation (either customer or vendor).
 
 ## Reports
 
 As part of the localization installation, financial reporting for Argentina
-was added to the Accounting dashboard. Access these reports by navigating to
-Accounting ‣ Reporting ‣ Argentinean Reports
+was added to the **Accounting** dashboard. Access these reports by navigating
+to Accounting ‣ Reporting ‣ Argentinean Reports
 
 ![Argentinean reports.](../../../_images/argentinian-reports.png)
 
@@ -799,17 +797,17 @@ Accounting ‣ Reporting ‣ Argentinean Reports
 In this report, all the sales are recorded, which are taken as the basis for
 the accounting records to determine the VAT (Tax Debit).
 
-The Sales VAT book report can be exported in a `.zip` file VAT BOOK (ZIP)
-button in the top left, which contains `.txt` files to upload in the AFIP
-portal.
+The **Sales VAT** book report can be exported in a `.zip` file **VAT BOOK
+(ZIP)** button in the top left, which contains `.txt` files to upload in the
+AFIP portal.
 
 ![Sales VAT book.](../../../_images/sales-vat-book.png)
 
 #### Purchases VAT book
 
-The Purchases VAT book report can be exported in a `.zip` file VAT BOOK (ZIP)
-button in the top left, which contains `.txt` files to upload in the AFIP
-portal.
+The **Purchases VAT** book report can be exported in a `.zip` file **VAT BOOK
+(ZIP)** button in the top left, which contains `.txt` files to upload in the
+AFIP portal.
 
 ![Purchases VAT book.](../../../_images/purchases-vat-book.png)
 

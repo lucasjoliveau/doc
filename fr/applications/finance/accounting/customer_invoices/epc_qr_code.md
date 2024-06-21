@@ -9,31 +9,30 @@ En plus d’apporter une certaine facilité d’utilisation et de la rapidité, 
 codes réduisent considérablement les erreurs de saisie qui pourraient
 entraîner des problèmes de paiement.
 
-Note
-
-Cette fonctionnalité n’est disponible que pour les entreprises de plusieurs
-pays européens tels que l’Autriche, la Belgique, la Finlande, l’Allemagne et
-les Pays-Bas.
-
-Pour plus d'infos
-
-  * [Comptes bancaires et d’espèces](../bank.html)
-
-  * [Odoo Académie : Code QR sur les factures des clients européens](https://www.odoo.com/r/VuU)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Cette fonctionnalité n’est disponible que pour les entreprises de plusieurs pays européens tels que l’Autriche, la Belgique, la Finlande, l’Allemagne et les Pays-Bas.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../bank">Comptes bancaires et d’espèces</a></p></li>
+<li><p><a href="https://www.odoo.com/r/VuU">Konvergo ERP Académie : Code QR sur les factures des clients européens</a></p></li>
+</ul>
+</div>
 
 ## Configuration
 
 Allez à Comptabilité ‣ Configuration ‣ Paramètres et activez la fonctionnalité
-Codes QR dans la section Paiements clients.
+**Codes QR** dans la section **Paiements clients**.
 
 ### Configurer le journal de votre compte bancaire
 
-Assurez-vous que votre Compte bancaire est correctement configuré dans Odoo
-avec votre IBAN et BIC.
+Assurez-vous que votre **Compte bancaire** est correctement configuré dans
+Konvergo ERP avec votre IBAN et BIC.
 
 Pour ce faire, allez à Comptabilité ‣ Configuration ‣ Journaux, ouvrez votre
-journal de banque, puis complétez le Numéro de compte et la Banque dans la
-colonne Numéro de compte bancaire.
+journal de banque, puis complétez le **Numéro de compte** et la **Banque**
+dans la colonne **Numéro de compte bancaire**.
 
 ![Colonne Numéro de compte bancaire dans le journal de
 banque](../../../../_images/bank-journal.png)
@@ -46,24 +45,20 @@ mesure de scanner le code et de payer la facture.
 
 Allez à Comptabilité ‣ Clients ‣ Factures, et créez une nouvelle facture.
 
-Avant de la comptabiliser, ouvrez l’onglet Autres informations. Odoo remplit
-automatiquement le champ Banque destinataire avec votre IBAN.
+Avant de la comptabiliser, ouvrez l’onglet **Autres informations**. Konvergo ERP
+remplit automatiquement le champ **Banque destinataire** avec votre IBAN.
 
-Note
-
-Dans l’onglet Autres informations, le compte indiqué dans le champ Banque
-destinataire est utilisé pour recevoir le paiement de votre client. Odoo
-remplit automatiquement ce champ avec votre IBAN par défaut et l’utilise pour
-générer le code QR de l’EPC.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Dans l’onglet <b>Autres informations</b>, le compte indiqué dans le champ <b>Banque destinataire</b> est utilisé pour recevoir le paiement de votre client. Konvergo ERP remplit automatiquement ce champ avec votre IBAN par défaut et l’utilise pour générer le code QR de l’EPC.</p>
+</div>
 
 Lorsque la facture est imprimée ou prévisualisée, le code QR figure au bas de
 la facture.
 
 ![Code QR sur une facture client](../../../../_images/invoice-qr-code.png)
-
-Astuce
-
-Si vous souhaitez émettre une facture sans code QR de l’EPC, supprimez l’IBAN
-indiqué dans le champ Banque destinataire dans l’onglet Autres informations de
-la facture.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Si vous souhaitez émettre une facture sans code QR de l’EPC, supprimez l’IBAN indiqué dans le champ <b>Banque destinataire</b> dans l’onglet <b>Autres informations</b> de la facture.</p>
+</div>
 

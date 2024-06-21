@@ -1,5 +1,5 @@
 # Calendar
 
-  * [Outlook Calendar synchronization](calendar/outlook.html)
-  * [Synchronize Google calendar with Odoo](calendar/google.html)
+  * [Outlook Calendar synchronization](calendar/outlook)
+  * [Synchronize Google calendar with Konvergo ERP](calendar/google)
 

@@ -1,7 +1,7 @@
 # Nomenclatura de código de barras GS1
 
 La [nomenclatura GS1](https://www.gs1us.org/) consolida varios datos del
-producto y de la cadena de suministro en un solo código de barras. Odoo
+producto y de la cadena de suministro en un solo código de barras. Konvergo ERP
 utiliza los [Números globales de artículos
 comerciales](https://www.gs1.org/standards/get-barcodes) (GTIN), que compran
 las empresas para poder hacer envíos y ventas internacionales, y enlistar sus
@@ -11,55 +11,48 @@ Configure la nomenclatura GS1 para escanear códigos de barrar de cajas
 selladas e identificar la información del producto, como el número global de
 artículos comerciales, el número de lote, la cantidad y más.
 
-Importante
-
-Los números globales de artículos comerciales (GTIN) son la identificación
-única de un producto que **debe** [comprarse a
-GS1](https://www.gs1.org/standards/get-barcodes) para usar los códigos de
-barras GS1.
-
-Ver también
-
-  * [Todos los códigos de barras GS1.](https://www.gs1.org/standards/barcodes/application-identifiers)
-
-  * Las reglas predeterminadas para GS1 de Odoo.
-
-  * ¿Por qué no funciona mi código de barras?
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Los números globales de artículos comerciales (GTIN) son la identificación única de un producto que <b>debe</b> <a href="https://www.gs1.org/standards/get-barcodes">comprarse a GS1</a> para usar los códigos de barras GS1.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="https://www.gs1.org/standards/barcodes/application-identifiers">Todos los códigos de barras GS1.</a></p></li>
+<li><p><a href="#barcode-operations-default-gs1-nomenclature-list"><span class="std std-ref">Las reglas predeterminadas para GS1 de Konvergo ERP.</span></a></p></li>
+<li><p><a href="#barcode-operations-troubleshooting"><span class="std std-ref">¿Por qué no funciona mi código de barras?</span></a></p></li>
+</ul>
+</div>
 
 ## Configurar una nomenclatura de código de barras
 
 Para usar la simbología GS1 vaya a Inventario ‣ Configuración ‣ Ajustes. En la
-sección Código de barras y marque la casilla junto a Lector de códigos de
-barras. Después, seleccione Nomenclatura de código de barras ‣ Default GS1
-Nomenclature (nomenclatura GS1 predeterminada) en el menú desplegable de la
-nomenclatura del código de barras.
+sección **Código de barras** y marque la casilla junto a **Lector de códigos
+de barras**. Después, seleccione Nomenclatura de código de barras ‣ Default
+GS1 Nomenclature (nomenclatura GS1 predeterminada) en el menú desplegable de
+la nomenclatura del código de barras.
 
 ![Elija GS1 desde el menú desplegable y haga clic en el vínculo externo para
 ver una lista de las reglas GS1. ](../../../../_images/setup-
 gs1-nomenclature.png)
 
 Para acceder a la lista de _reglas_ GS1 y _patrones de código de barras_ que
-son compatibles con Odoo de forma predeterminada, haga clic en el icono ➡️
-(flecha) que se encuentra del lado derecho de la selección Nomenclatura de
-código de barras.
+son compatibles con Konvergo ERP de forma predeterminada, haga clic en el icono **➡️
+(flecha)** que se encuentra del lado derecho de la selección **Nomenclatura de
+código de barras**.
 
-En la tabla emergente de Abrir: Nomenclatura puede ver y editar los nombres de
-reglas disponibles en Odoo. La tabla contiene toda la información que se puede
-condensar en un código de barras GS1 junto con el Patrón de código de barras
-correspondiente.
+En la tabla emergente de **Abrir: Nomenclatura** puede ver y editar los
+**nombres de reglas** disponibles en Konvergo ERP. La tabla contiene toda la
+información que se puede condensar en un código de barras GS1 junto con el
+**Patrón de código de barras** correspondiente.
 
-Truco
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Después de configurar la nomenclatura del código de barras como GS1, también podrá acceder a la configuración de las Nomenclaturas de código de barras a través de un menú oculto que aparece al activar el <a href="../../../general/developer_mode#developer-mode"><span class="std std-ref">modo desarrollador</span></a>. Una vez activado, vaya a Inventario ‣ Configuración ‣ Nomenclaturas de código de barras y seleccione la <b>Nomenclatura predeterminada GS1</b>.</p>
+</div>
 
-Después de configurar la nomenclatura del código de barras como GS1, también
-podrá acceder a la configuración de las Nomenclaturas de código de barras a
-través de un menú oculto que aparece al activar el [modo
-desarrollador](../../../general/developer_mode.html#developer-mode). Una vez
-activado, vaya a Inventario ‣ Configuración ‣ Nomenclaturas de código de
-barras y seleccione la Nomenclatura predeterminada GS1.
+## Uso de los códigos de barras GS1 en Konvergo ERP
 
-## Uso de los códigos de barras GS1 en Odoo
-
-Para identificar productos con los códigos de barras GS1 en Odoo, los negocios
+Para identificar productos con los códigos de barras GS1 en Konvergo ERP, los negocios
 obtienen un [GTIN único](https://www.gs1.org/standards/get-barcodes) como un
 identificador internacional distintivo del producto que se compra desde GS1.
 Este número se combina con detalles específicos del producto que siguen los
@@ -71,68 +64,66 @@ interpretación adecuada.
 Cada código de barras empieza con un [identificador de
 aplicación](https://www.gs1.org/standards/barcodes/application-identifiers)
 (A.I.) de 2 a 4 dígitos. Este prefijo obligatorio indica de manera global qué
-tipo de información incluye el código de barras. Odoo sigue las reglas de GS1
+tipo de información incluye el código de barras. Konvergo ERP sigue las reglas de GS1
 para identificar la información, tal como se menciona en la lista de reglas
-predeterminadas de GS1. Al incluir el A.I. correspondiente de la lista, Odoo
+predeterminadas de GS1. Al incluir el A.I. correspondiente de la lista, Konvergo ERP
 puede interpretar los códigos de barras GS1 de forma correcta. Aunque la
 mayoría de los patrones de códigos de barras tienen una longitud fija
 requerida, algunos, como los números de serie y los lotes, tienen una longitud
 más flexible.
 
-Truco
-
-Para patrones de código de barras de longitud flexible que no se ubican al
-final de código de barras GS1, utilice el separador FNC1 (`\x1D`) al final del
-código de barras.
-
-Por ejemplo: el patrón de código de barra para números de lote es de 20
-caracteres de largo. En lugar de crear un número de lote de 20 caracteres,
-como `LOT00000000000000001`, use el separador FNC1 para hacerlo más corto:
-`LOT001x1D`.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Para patrones de código de barras de longitud flexible que no se ubican al final de código de barras GS1, utilice el separador FNC1  (<code>\x1D</code>) al final del código de barras.</p>
+<p>Por ejemplo: el patrón de código de barra para números de lote es de 20 caracteres de largo. En lugar de crear un número de lote de 20 caracteres, como <code>LOT00000000000000001</code>, use el separador FNC1 para hacerlo más corto: <code>LOT001x1D</code>.</p>
+</div>
 
 Consulte la lista de nomenclatura GS1 GS1 para ver una lista completa de todos
 los patrones de código de barras y reglas a seguir. También puede consultar el
-[documento de uso GS1](gs1_usage.html#barcode-operations-gs1-usage) para ver
+[documento de uso GS1](gs1_usage#barcode-operations-gs1-usage) para ver
 ejemplos específicos al combinar el GTIN para la información de los productos
 y configurar el flujo de trabajo.
 
-Ver también
-
-  * [Flujo de trabajo de lotes](gs1_usage.html#barcode-operations-gs1-lots)
-
-  * [Flujo de trabajo para cantidades sin unidad](gs1_usage.html#barcode-operations-quantity-ex)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="gs1_usage#barcode-operations-gs1-lots"><span class="std std-ref">Flujo de trabajo de lotes</span></a></p></li>
+<li><p><a href="gs1_usage#barcode-operations-quantity-ex"><span class="std std-ref">Flujo de trabajo para cantidades sin unidad</span></a></p></li>
+</ul>
+</div>
 
 ### Creación de reglas
 
 Las reglas GS1 son el formato específico de la información dentro del código
 de barras que comienza con el AI y contiene una longitud definida de
 caracteres. Al escanear códigos GS1 de la lista predeterminada GS1 se
-completan automáticamente los datos en la base de datos de Odoo.
+completan automáticamente los datos en la base de datos de Konvergo ERP.
 
-Agregar reglas de código de barras GS1 en Odoo, garantiza una correcta
+Agregar reglas de código de barras GS1 en Konvergo ERP, garantiza una correcta
 interpretación de formatos únicos y no estandarizados GS1.
 
 Para ello, active el [modo
-desarrollador](../../../general/developer_mode.html#developer-mode) y vaya a
-la lista Nomenclaturas de código de barras en Inventario ‣ Configuración ‣
+desarrollador](../../../general/developer_mode#developer-mode) y vaya a
+la lista **Nomenclaturas de código de barras** en Inventario ‣ Configuración ‣
 Nomenclaturas de código de barras. Luego, seleccione la opción de la lista
-Nomenclatura predeterminada GS1.
+**Nomenclatura predeterminada GS1**.
 
-En la parte inferior de la tabla de la página Nomenclatura GS1 predeterminada
-seleccione Agregar una línea, esta acción abrirá una ventana para crear una
-nueva regla. El campo Nombre de la regla se utiliza de forma interna para
-identificar lo que representa el código de barras. Los tipos de código de
-barras son las distintas clasificaciones de información que el sistema puede
-entender (por ejemplo, producto, cantidad, fecha de vencimiento, paquete,
-cupón). La secuencia representa la prioridad de una regla, es decir, entre más
-pequeño sea el valor, la regla aparecerá más arriba en la tabla. Odoo sigue la
-secuencia de esta tabla y utilizará la primera regla que coincida con esta. El
-patrón de código de barras es lo que permite que el sistema reconozca la
-secuencia de letras y números que incluye la información sobre el producto.
+En la parte inferior de la tabla de la página **Nomenclatura GS1
+predeterminada** seleccione **Agregar una línea** , esta acción abrirá una
+ventana para crear una nueva regla. El campo **Nombre de la regla** se utiliza
+de forma interna para identificar lo que representa el código de barras. Los
+**tipos** de código de barras son las distintas clasificaciones de información
+que el sistema puede entender (por ejemplo, producto, cantidad, fecha de
+vencimiento, paquete, cupón). La **secuencia** representa la prioridad de una
+regla, es decir, entre más pequeño sea el valor, la regla aparecerá más arriba
+en la tabla. Konvergo ERP sigue la secuencia de esta tabla y utilizará la primera
+regla que coincida con esta. El **patrón de código de barras** es lo que
+permite que el sistema reconozca la secuencia de letras y números que incluye
+la información sobre el producto.
 
-Después de llenar la infirmación, haga clic en Guardar y crear nuevo para
-hacer otra regla o haga clic en Guardar y cerrar para guardar y regresar a la
-tabla de reglas.
+Después de llenar la infirmación, haga clic en **Guardar y crear nuevo** para
+hacer otra regla o haga clic en **Guardar y cerrar** para guardar y regresar a
+la tabla de reglas.
 
 ## Solución de problemas en códigos de barras
 
@@ -142,41 +133,38 @@ esperaba:
 
   1. Asegúrese de que la opción guilabel:`Nomenclatura del código de barras` sea menuselection:`Default GS1 Nomenclature` (nomenclatura GS1 predeterminada). Vaya a la sección de ajustes de nomenclatura para obtener más detalles.
 
-  2. Asegúrese de que los campos escaneados en el código de barras estén activados en Odoo. Por ejemplo, para escanear un código de barras que contenga lote y número de serie, asegúrese de que la función Lotes y números de serie está activada en los [ajustes de Odoo](gs1_usage.html#barcode-operations-lot-setup) y [en el producto](gs1_usage.html#barcode-operations-lot-setup-on-product).
+  2. Asegúrese de que los campos escaneados en el código de barras estén activados en Konvergo ERP. Por ejemplo, para escanear un código de barras que contenga lote y número de serie, asegúrese de que la función **Lotes y números de serie** está activada en los [ajustes de Konvergo ERP](gs1_usage#barcode-operations-lot-setup) y [en el producto](gs1_usage#barcode-operations-lot-setup-on-product).
 
   3. Omita puntuación como los paréntesis `()` o corchetes `[]` entre el IA y la secuencia del código de barras. Estos símbolos se usan en ejemplos para facilitar su lectura y **no** se deben incluir en el código de barras final. Para más detalles sobre cómo crear códigos de barras GS1, vaya a esta sección.
 
-  4. Cuando un solo código de barras contiene varios campos codificados, Odoo necesita que todas las reglas estén enlistadas en la nomenclatura de código de barras para poder leer el mismo. En esta sección hablamos sobre cómo agregar nuevas reglas en la nomenclatura de código de barras.
+  4. Cuando un solo código de barras contiene varios campos codificados, Konvergo ERP necesita que todas las reglas estén enlistadas en la nomenclatura de código de barras para poder leer el mismo. En esta sección hablamos sobre cómo agregar nuevas reglas en la nomenclatura de código de barras.
 
   5. Los códigos de barras de prueba que contienen varios campos codificados, pieza por pieza, para encontrar el campo problemático.
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Al probar códigos de barras que contienen un GTIN, un número de lote y una cantidad, comience por escanear solo el GTIN. Luego, pruebe el GTIN con el número de lote y por último, intente escanear todo el código de barras.</p>
+</div>
 
-Al probar códigos de barras que contienen un GTIN, un número de lote y una
-cantidad, comience por escanear solo el GTIN. Luego, pruebe el GTIN con el
-número de lote y por último, intente escanear todo el código de barras.
+  6. Después de diagnosticar el campo codificado desconocido, agregue nuevas reglas a la lista predeterminada de Konvergo ERP para reconocer los códigos GS1 con especificaciones únicas.
 
-  6. Después de diagnosticar el campo codificado desconocido, agregue nuevas reglas a la lista predeterminada de Odoo para reconocer los códigos GS1 con especificaciones únicas.
-
-Importante
-
-Aunque se leerá el campo nuevo, la información no se vinculará a un campo
-existente dentro de Odoo si no se realiza un desarrollo. De igual forma, es
-muy útil agregar nuevas reglas para asegurarnos de que el resto del código de
-barras se interprete correctamente.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Aunque se leerá el campo nuevo, la información no se vinculará a un campo existente dentro de Konvergo ERP si no se realiza un desarrollo. De igual forma, es muy útil agregar nuevas reglas para asegurarnos de que el resto del código de barras se interprete correctamente.</p>
+</div>
 
 ## Lista de nomenclatura GS1
 
-La tabla de abajo contiene la lista de reglas predeterminadas GS1 de Odoo. Los
+La tabla de abajo contiene la lista de reglas predeterminadas GS1 de Konvergo ERP. Los
 patrones de código de barras se escriben en expresiones regulares y solo las
 primeras tres reglas requieren de un [dígito de
 control](https://www.gs1.org/services/check-digit-calculator) como carácter
 final.
 
-Nombre de regla | Tipo | Patrón de código de barras | Tipo de contenido GS1 | Campo dentro de Odoo  
+Nombre de regla | Tipo | Patrón de código de barras | Tipo de contenido GS1 | Campo dentro de Konvergo ERP  
 ---|---|---|---|---  
 Código Seriado de la Unidad de Envío | Paquete | (00)(\d{18}) | Identificador numérico | Nombre del paquete  
-Código comercial global de artículo (GTIN) | Unidad de producto | (01)(\d{14}) | Identificador numérico | Campo Código de barras en un formulario de producto  
+Código comercial global de artículo (GTIN) | Unidad de producto | (01)(\d{14}) | Identificador numérico | Campo **Código de barras** en un formulario de producto  
 GTIN de los artículos comerciales contenidos | Unidad de producto | (02)(\d{14}) | Identificador numérico | Empaquetado  
 Enviar a / Entregar a código de país | Ubicación destino | (410)(\d{13}) | Identificador numérico | Ubicación destino  
 Enviar para / Entregar - Reenviar a Número Global de Localización | Ubicación destino | (413)(\d{13}) | Identificador numérico | Referencia a la entidad de origen  

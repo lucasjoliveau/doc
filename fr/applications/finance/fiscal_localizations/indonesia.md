@@ -13,7 +13,7 @@ l’application **e-Faktur de l’administration fiscale**.
 
 Cette information est utilisée dans la ligne FAPR dans le format de fichier
 effect. Vous devez définir un numéro de TVA sur le partenaire concerné de
-votre société Odoo. À défaut, vous ne pourrez pas créer d’e-Facture à partir
+votre société Konvergo ERP. À défaut, vous ne pourrez pas créer d’e-Facture à partir
 d’une facture.
 
   * **Vos clients**
@@ -33,7 +33,7 @@ partner-nik.png)
 
   1. Allez à Comptabilité ‣ Clients ‣ e-Faktur. Pour pouvoir exporter des factures clients en e-Faktur pour le gouvernement indonésien, vous devez indiquer ici les plages des numéros qui vous ont été attribuées par le gouvernement. Lorsque vous validez une facture, un numéro sera assigné en fonction de ces plages. Ensuite, vous pouvez filtrer les factures encore à exporter dans la liste des factures et cliquez sur _Action_ , et sur _Télécharger e-Faktur_.
 
-  2. Après avoir reçu de nouveaux numéros de série de l’administration fiscale indonésienne, vous pouvez créer un ensemble de numéros de série de factures fiscales à partir de cette vue de liste. Vous n’avez qu’à préciser le Min et le Max de chaque groupe de numéros de série et Odoo formatera automatiquement le numéro en un numéro à 13 chiffres, comme il est requis par l’administration fiscale indonésienne.
+  2. Après avoir reçu de nouveaux numéros de série de l’administration fiscale indonésienne, vous pouvez créer un ensemble de numéros de série de factures fiscales à partir de cette vue de liste. Vous n’avez qu’à préciser le Min et le Max de chaque groupe de numéros de série et Konvergo ERP formatera automatiquement le numéro en un numéro à 13 chiffres, comme il est requis par l’administration fiscale indonésienne.
 
   3. Il y a un compteur pour vous informer du nombre de numéros inutilisés restant dans ce groupe.
 
@@ -42,14 +42,14 @@ count.png)
 
 #### Générer e-faktur csv pour une seule facture ou un lot de factures
 
-  1. Créez une facture à partir de Comptabilité ‣ Clients ‣ Factures. Si le pays du client de la facture est l’Indonésie et le client est défini comme _ID PKP_ , Odoo vous permettra de créer une e-Faktur.
+  1. Créez une facture à partir de Comptabilité ‣ Clients ‣ Factures. Si le pays du client de la facture est l’Indonésie et le client est défini comme _ID PKP_ , Konvergo ERP vous permettra de créer une e-Faktur.
 
   2. Définissez un Kode Transaksi pour l’e-Faktur. Il y a des contraintes liées au Kode Transaksi et le type de TVA appliqué aux lignes de facture.
 
 ![../../../_images/indonesia-kode-transaksi.png](../../../_images/indonesia-
 kode-transaksi.png)
 
-  3. Odoo choisira automatiquement le prochain numéro de série disponible dans le tableau des numéros e-Faktur (voir la section ci-dessus) et générera le numéro e-faktur en combinant le Kode Transaksi et le numéro de série. Vous pouvez voir cela dans la vue du formulaire de facturation sous la page _Informations supplémentaires_ dans la case _Taxe électronique_.
+  3. Konvergo ERP choisira automatiquement le prochain numéro de série disponible dans le tableau des numéros e-Faktur (voir la section ci-dessus) et générera le numéro e-faktur en combinant le Kode Transaksi et le numéro de série. Vous pouvez voir cela dans la vue du formulaire de facturation sous la page _Informations supplémentaires_ dans la case _Taxe électronique_.
 
 ![../../../_images/indonesia-e-faktur-sn.png](../../../_images/indonesia-e-
 faktur-sn.png)
@@ -74,11 +74,11 @@ Aktiva (Pasal 16D UU PPN)
 #### Corriger une facture qui a été comptabilisée et téléchargée :
 Fonctionnalité Remplacer la facture
 
-  1. Annulez la facture originale erronée dans Odoo. Par exemple, nous allons changer le Kode Transaksi de 01 à 03 pour INV/2020/0001.
+  1. Annulez la facture originale erronée dans Konvergo ERP. Par exemple, nous allons changer le Kode Transaksi de 01 à 03 pour INV/2020/0001.
 
   2. Créez une nouvelle facture et choisissez la facture annulée dans le champ _Remplacer la facture_. Dans ce champ, nous ne pouvons sélectionner que les factures dont le statut est _Annulé_ du même client.
 
-  3. En validant, Odoo utilisera automatiquement le même numéro de série e-Faktur que la facture annulée et remplacée en remplaçant le troisième chiffre du numéro de série original par _1_ (comme demandé pour charger une facture de remplacement dans l’app e-Faktur).
+  3. En validant, Konvergo ERP utilisera automatiquement le même numéro de série e-Faktur que la facture annulée et remplacée en remplaçant le troisième chiffre du numéro de série original par _1_ (comme demandé pour charger une facture de remplacement dans l’app e-Faktur).
 
 ![../../../_images/indonesia-replace-invoice.png](../../../_images/indonesia-
 replace-invoice.png)

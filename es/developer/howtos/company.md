@@ -1,9 +1,10 @@
 # Multi-company Guidelines
 
-Advertencia
-
-This tutorial requires good knowledge of Odoo. Please refer to the [Getting
-started](../tutorials/getting_started.html) tutorial first if needed.
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>This tutorial requires good knowledge of Konvergo ERP.
+Please refer to the <a href="../tutorials/getting_started">Getting started</a> tutorial first if needed.</p>
+</div>
 
 As of version 13.0, a user can be logged in to multiple companies at once.
 This allows the user to access information from multiple companies, but also
@@ -15,7 +16,7 @@ could create a sales order in company A and add products belonging to company
 B to it. It is only when the user logs out from company B that access errors
 will occur for the sales order.
 
-To correctly manage multi-company behaviors, Odoo’s ORM provides multiple
+To correctly manage multi-company behaviors, Konvergo ERP’s ORM provides multiple
 features:
 
   * Company-dependent fields
@@ -54,12 +55,12 @@ with the attribute `company_dependent` set to `True`.
                 record.display_info = record.info + record.company_info
     
 
-Nota
-
-The `_compute_display_info` method is decorated with
-`depends_context('company')` (see `depends_context`) to ensure that the
-computed field is recomputed depending on the current company
-(`self.env.company`).
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>The <code>_compute_display_info</code> method is decorated with <code>depends_context('company')</code>
+(see <code>depends_context</code>) to ensure that the computed field is recomputed
+depending on the current company (<code>self.env.company</code>).</p>
+</div>
 
 When a company-dependent field is read, the current company is used to
 retrieve its value. In other words, if a user is logged in to companies A and
@@ -80,26 +81,25 @@ This can be done with `with_company()`, which updates the current company.
     # record.with_company(company_B).env.company == company_B
     
 
-Advertencia
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Whenever you are computing/creating/… things that may behave differently
+in different companies, you should make sure whatever you are doing is done
+in the right company. It doesn’t cost much to always use <code>with_company</code> to
+avoid problems later.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@api</span><span class="o">.</span><span class="n">onchange</span><span class="p">(</span><span class="s1">'field_name'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_onchange_field_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+ <span class="bp">self</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_company</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">company_id</span><span class="p">)</span>
+ <span class="o">...</span>
 
-Whenever you are computing/creating/… things that may behave differently in
-different companies, you should make sure whatever you are doing is done in
-the right company. It doesn’t cost much to always use `with_company` to avoid
-problems later.
-
-    
-    
-    @api.onchange('field_name')
-    def _onchange_field_name(self):
-     self = self.with_company(self.company_id)
-     ...
-    
-    @api.depends('field_2')
-    def _compute_field_3(self):
-     for record in self:
-       record = record.with_company(record.company_id)
-       ...
-    
+<span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s1">'field_2'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_compute_field_3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+ <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+   <span class="n">record</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">with_company</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">company_id</span><span class="p">)</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+</div>
 
 ## Multi-company consistency
 
@@ -129,21 +129,19 @@ the multi-company consistency of the record.
         other_record_id = fields.Many2one('other.record', check_company=True)
     
 
-Nota
-
-The field `company_id` must not be defined with `check_company=True`.
-
-Advertencia
-
-The `check_company` feature performs a strict check! It means that if a record
-has no `company_id` (i.e., the field is not required), it cannot be linked to
-a record whose `company_id` is set.
-
-Nota
-
-When no domain is defined on the field and `check_company` is set to `True`, a
-default domain is added: `['|', '('company_id', '=', False), ('company_id',
-'=', company_id)]`
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>The field <code>company_id</code> must not be defined with <code>check_company=True</code>.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>The <code>check_company</code> feature performs a strict check! It means that if a record has no
+<code>company_id</code> (i.e., the field is not required), it cannot be linked to a record whose
+<code>company_id</code> is set.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>When no domain is defined on the field and <code>check_company</code> is set to <code>True</code>, a default domain is
+added: <code>['|', '('company_id', '=', False), ('company_id', '=', company_id)]</code></p>
+</div>
 
 ## Default company
 

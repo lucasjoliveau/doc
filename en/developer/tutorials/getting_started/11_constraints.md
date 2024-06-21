@@ -1,59 +1,56 @@
 # Chapter 11: Constraints
 
-The [previous chapter](10_actions.html#tutorials-getting-started-10-actions)
+The [previous chapter](10_actions#tutorials-getting-started-10-actions)
 introduced the ability to add some business logic to our model. We can now
 link buttons to business code, but how can we prevent users from entering
 incorrect data? For example, in our real estate module nothing prevents users
 from setting a negative expected price.
 
-Odoo provides two ways to set up automatically verified invariants: `Python
+Konvergo ERP provides two ways to set up automatically verified invariants: `Python
 constraints` and `SQL constraints`.
 
 ## SQL
 
 **Reference** : the documentation related to this topic can be found in
-[Models](../../reference/backend/orm.html#reference-orm-models) and in the
+[Models](../../reference/backend/orm#reference-orm-models) and in the
 [PostgreSQL’s documentation](https://www.postgresql.org/docs/12/ddl-
-constraints.html).
+constraints).
 
-Note
-
-**Goal** : at the end of this section:
-
-  * Amounts should be (strictly) positive
-
-![Constraints on amounts](../../../_images/sql_01.gif)
-
-  * Property types and tags should have a unique name
-
-![Constraints on names](../../../_images/sql_02.gif)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section:</p>
+<ul>
+<li><p>Amounts should be (strictly) positive</p></li>
+</ul>
+<img alt="Constraints on amounts" class="align-center" src="../../../_images/sql_01.gif"/>
+<ul>
+<li><p>Property types and tags should have a unique name</p></li>
+</ul>
+<img alt="Constraints on names" class="align-center" src="../../../_images/sql_02.gif"/>
+</div>
 
 SQL constraints are defined through the model attribute `_sql_constraints`.
 This attribute is assigned a list of triples containing strings `(name,
 sql_definition, message)`, where `name` is a valid SQL constraint name,
 `sql_definition` is a
-[table_constraint](https://www.postgresql.org/docs/12/ddl-constraints.html)
+[table_constraint](https://www.postgresql.org/docs/12/ddl-constraints)
 expression and `message` is the error message.
 
 You can find a simple example
 [here](https://github.com/odoo/odoo/blob/24b0b6f07f65b6151d1d06150e376320a44fd20a/addons/analytic/models/analytic_account.py#L20-L23).
 
-Exercise
-
-Add SQL constraints.
-
-Add the following constraints to their corresponding models:
-
-  * A property expected price must be strictly positive
-
-  * A property selling price must be positive
-
-  * An offer price must be strictly positive
-
-  * A property tag name and property type name must be unique
-
-Tip: search for the `unique` keyword in the Odoo codebase for examples of
-unique names.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add SQL constraints.</p>
+<p>Add the following constraints to their corresponding models:</p>
+<ul>
+<li><p>A property expected price must be strictly positive</p></li>
+<li><p>A property selling price must be positive</p></li>
+<li><p>An offer price must be strictly positive</p></li>
+<li><p>A property tag name and property type name must be unique</p></li>
+</ul>
+<p>Tip: search for the <code>unique</code> keyword in the Konvergo ERP codebase for examples of unique names.</p>
+</div>
 
 Restart the server with the `-u estate` option to see the result. Note that
 you might have data that prevents a SQL constraint from being set. An error
@@ -73,12 +70,12 @@ constraints.
 **Reference** : the documentation related to this topic can be found in
 `constrains()`.
 
-Note
-
-**Goal** : at the end of this section, it will not be possible to accept an
-offer lower than 90% of the expected price.
-
-![Python constraint](../../../_images/python.gif)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section, it will not be possible to accept an offer
+lower than 90% of the expected price.</p>
+<img alt="Python constraint" class="align-center" src="../../../_images/python.gif"/>
+</div>
 
 SQL constraints are an efficient way of ensuring data consistency. However it
 may be necessary to make more complex checks which require Python code. In
@@ -107,23 +104,20 @@ invariant is not satisfied:
 A simple example can be found
 [here](https://github.com/odoo/odoo/blob/274dd3bf503e1b612179db92e410b336bfaecfb4/addons/stock/models/stock_quant.py#L239-L244).
 
-Exercise
-
-Add Python constraints.
-
-Add a constraint so that the selling price cannot be lower than 90% of the
-expected price.
-
-Tip: the selling price is zero until an offer is validated. You will need to
-fine tune your check to take this into account.
-
-Warning
-
-Always use the `float_compare()` and `float_is_zero()` methods from
-`odoo.tools.float_utils` when working with floats!
-
-Ensure the constraint is triggered every time the selling price or the
-expected price is changed!
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add Python constraints.</p>
+<p>Add a constraint so that the selling price cannot be lower than 90% of the expected price.</p>
+<p>Tip: the selling price is zero until an offer is validated. You will need to fine tune your
+check to take this into account.</p>
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Always use the <code>float_compare()</code> and
+<code>float_is_zero()</code> methods from <code>odoo.tools.float_utils</code> when
+working with floats!</p>
+</div>
+<p>Ensure the constraint is triggered every time the selling price or the expected price is changed!</p>
+</div>
 
 SQL constraints are usually more efficient than Python constraints. When
 performance matters, always prefer SQL over Python constraints.
@@ -131,5 +125,5 @@ performance matters, always prefer SQL over Python constraints.
 Our real estate module is starting to look good. We added some business logic,
 and now we make sure the data is consistent. However, the user interface is
 still a bit rough. Let’s see how we can improve it in the [next
-chapter](12_sprinkles.html#tutorials-getting-started-12-sprinkles).
+chapter](12_sprinkles#tutorials-getting-started-12-sprinkles).
 

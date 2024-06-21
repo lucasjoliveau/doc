@@ -18,7 +18,7 @@ In this example, the **company** who sent the invoice owes $20 of taxes to the
 
 ## Configuration
 
-In Odoo, a withholding tax is defined by creating a negative tax. For a
+In Konvergo ERP, a withholding tax is defined by creating a negative tax. For a
 retention of 10%, you would configure the following tax (accessible through
 Configuration ‣ Taxes):
 
@@ -32,11 +32,12 @@ specific tax group **Retention** on your tax, in the **Advanced Options** tab.
 Once the tax is defined, you can use it in your products, sales order or
 invoices.
 
-Tip
-
-If the retention is a percentage of a regular tax, create a Tax with a **Tax
-Computation** as a **Tax Group** and set the two taxes in this group (normal
-tax and retention).
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>If the retention is a percentage of a regular tax, create a Tax with a
+<b>Tax Computation</b> as a <b>Tax Group</b> and set the two taxes in this group
+(normal tax and retention).</p>
+</div>
 
 ## Applying retention taxes on invoices
 
@@ -45,18 +46,21 @@ customer invoices. You can apply several taxes on a single customer invoice
 line.
 
 ![../../../../_images/retention01.png](../../../../_images/retention01.png)
-
-Note
-
-When you see the customer invoice on the screen, you get only a **Taxes line**
-summarizing all the taxes (normal taxes & retentions). But when you print or
-send the invoice, Odoo does the correct grouping amongst all the taxes.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you see the customer invoice on the screen, you get only a
+<b>Taxes line</b> summarizing all the taxes (normal taxes &amp; retentions).
+But when you print or send the invoice, Konvergo ERP does the correct
+grouping amongst all the taxes.</p>
+</div>
 
 The printed invoice will show the different amounts in each tax group.
 
 ![../../../../_images/retention03.png](../../../../_images/retention03.png)
-
-See also
-
-  * [Taxes](../taxes.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../taxes">Taxes</a></p></li>
+</ul>
+</div>
 

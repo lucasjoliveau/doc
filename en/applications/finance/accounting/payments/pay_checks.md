@@ -10,20 +10,25 @@ bank statements.
 ### Activate checks payment methods
 
 To activate the checks payment method, go to Accounting ‣ Configuration ‣
-Settings, and scroll down to the Vendor Payments section. There, you can
-activate the payment method as well as set up the Check Layout.
+Settings, and scroll down to the **Vendor Payments** section. There, you can
+activate the payment method as well as set up the **Check Layout**.
 
-Note
-
-  * Once the Checks setting is activated, the **Checks** payment method is automatically set up in the Outgoing Payments tabs of **bank** journals.
-
-  * Some countries require specific modules to print checks; such modules may be installed by default. For instance, the U.S. Checks Layout module is required to print U.S. checks.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><ul>
+<li><p>Once the <b>Checks</b> setting is activated, the <b>Checks</b> payment method is
+automatically set up in the <b>Outgoing Payments</b> tabs of <b>bank</b> journals.</p></li>
+<li><p>Some countries require specific modules to print checks; such modules may be installed by
+default. For instance, the <b>U.S. Checks Layout</b> module is required to print U.S.
+checks.</p></li>
+</ul>
+</div>
 
 ## Compatible check stationery for printing checks
 
 ### United States
 
-For the United States, Odoo supports by default the check formats of:
+For the United States, Konvergo ERP supports by default the check formats of:
 
   * **Quickbooks & Quicken**: check on top, stubs in the middle and bottom;
 
@@ -45,14 +50,14 @@ Paying a supplier with a check is done in three steps:
 
 To register a payment, open any supplier bill from the menu Purchases ‣ Vendor
 Bills. Once the supplier bill is validated, you can register a payment. Set
-the Payment Method to Checks and validate the payment.
+the **Payment Method** to **Checks** and validate the payment.
 
 ### Print checks
 
-On your Accounting Dashboard in the Bank Journal, you can see the number of
-checks registered. By clicking on Checks to print you have got the possibility
-to print the reconciled checks.
+On your **Accounting Dashboard** in the **Bank** Journal, you can see the
+number of checks registered. By clicking on **Checks to print** you have got
+the possibility to print the reconciled checks.
 
 To print all checks in batch, select all payments from the list view and click
-on Print.
+on **Print**.
 

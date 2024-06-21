@@ -12,9 +12,9 @@ En la aplicación _Configuración_ , active _Servidores de correo electrónico
 externos_ y defina el seudónimo de correo electrónico entrante que desee
 utilizar.
 
-**Para más infomración** : [Enviar y recibir correos electrónicos en Odoo con
+**Para más infomración** : [Enviar y recibir correos electrónicos en Konvergo ERP con
 un servidor de correo
-electrónico](../../../general/email_communication/email_servers.html)
+electrónico](../../../general/email_communication/email_servers)
 
 ### Configure el seudónimo de correo electrónico en su proyecto
 
@@ -27,12 +27,10 @@ Además, ahora se puede establecer directamente al crear un nuevo proyecto.
 
 ![En los ajustes de su proyecto, defina los seudónimos de los correos
 electrónicos debajo de la pestaña de correo
-electrónico.](../../../../_images/email_project.png)
-
-Importante
-
-Todos los destinatarios del correo electrónico (Para/Cc/Cco) se añaden
-automáticamente como seguidores de la tarea.
+electrónico.](../../../../_images/email_project.png) <div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Todos los destinatarios del correo electrónico (Para/Cc/Cco) se añaden automáticamente como seguidores de la tarea.</p>
+</div>
 
 El correo electrónico puede verse bajo el nombre de su proyecto en el tablero.
 

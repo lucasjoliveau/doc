@@ -6,414 +6,421 @@ or spreadsheet, fields are the columns where data is stored in the records
 them. How the data is presented and formatted on the UI is defined by their
 widget.
 
-From a technical point of view, there are 15 field types in Odoo. However, you
+From a technical point of view, there are 15 field types in Konvergo ERP. However, you
 can choose from 20 fields in Studio, as some field types are available more
 than once with a different default widget.
 
-Tip
-
-New Fields can only be added to the [Form](views.html#studio-views-general-
-form) and [List](views.html#studio-views-multiple-records-list) views. On
-other views, you can only add Existing Fields (fields already on the model).
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p><b>New Fields</b> can only be added to the <a href="views#studio-views-general-form"><span class="std std-ref">Form</span></a> and
+<a href="views#studio-views-multiple-records-list"><span class="std std-ref">List</span></a> views. On other views, you can only add
+<b>Existing Fields</b> <span class="dfn"><span>(fields already on the model)</span></span>.</p>
+</div>
 
 ## Simple fields
 
 Simple fields contain basic values, such as text, numbers, files, etc.
 
-Note
-
-Non-default widgets, when available, are presented as bullet points below.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Non-default widgets, when available, are presented as bullet points below.</p>
+</div>
 
 ### Text (`char`)
 
-The Text field is used for short text containing any character. One text line
-is displayed when filling out the field.
+The **Text** field is used for short text containing any character. One text
+line is displayed when filling out the field.
 
-  * Badge: displays the value inside a rounded shape, similar to a tag. The value cannot be edited on the UI, but a default value can be set.
+  * **Badge** : displays the value inside a rounded shape, similar to a tag. The value cannot be edited on the UI, but a default value can be set.
 
-  * Copy to Clipboard: users can copy the value by clicking a button.
+  * **Copy to Clipboard** : users can copy the value by clicking a button.
 
-  * E-mail: the value becomes a clickable _mailto_ link.
+  * **E-mail** : the value becomes a clickable _mailto_ link.
 
-  * Image: displays an image using a URL. The value cannot be edited manually, but a default value can be set.
+  * **Image** : displays an image using a URL. The value cannot be edited manually, but a default value can be set.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This works differently than selecting the <a href="#studio-fields-simple-fields-image"><span class="std std-ref">Image field</span></a> directly, as the image is not stored in Konvergo ERP when using a
+<b>Text</b> field with the <b>Image</b> widget. For example, it can be useful if you
+want to save disk space.</p>
+</div>
 
-This works differently than selecting the Image field directly, as the image
-is not stored in Odoo when using a Text field with the Image widget. For
-example, it can be useful if you want to save disk space.
+  * **Phone** : the value becomes a clickable _tel_ link.
 
-  * Phone: the value becomes a clickable _tel_ link.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Tick <b>Enable SMS</b> to add an option to send an SMS directly from Konvergo ERP next to the
+field.</p>
+</div>
 
-Tip
+  * **URL** : the value becomes a clickable URL.
 
-Tick Enable SMS to add an option to send an SMS directly from Odoo next to the
-field.
-
-  * URL: the value becomes a clickable URL.
-
-Example
-
-![Examples of Text fields with different widgets](../../_images/text-
-examples.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><img alt="Examples of Text fields with different widgets" class="align-center" src="../../_images/text-examples.png"/>
+</div>
 
 ### Multiline Text (`text`)
 
-The Multiline Text field is used for longer text containing any type of
+The **Multiline Text** field is used for longer text containing any type of
 character. Two text lines are displayed on the UI when filling out the field.
 
-  * Copy to Clipboard: users can copy the value by clicking a button.
+  * **Copy to Clipboard** : users can copy the value by clicking a button.
 
-Example
-
-![Examples of Multiline Text fields with different
-widgets](../../_images/multiline-text-examples.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><img alt="Examples of Multiline Text fields with different widgets" class="align-center" src="../../_images/multiline-text-examples.png"/>
+</div>
 
 ### Integer (`integer`)
 
-The Integer field is used for all integer numbers (positive, negative, or
+The **Integer** field is used for all integer numbers (positive, negative, or
 zero, without a decimal).
 
-  * Percentage Pie: displays the value inside a percentage circle, usually for a computed value. The value cannot be edited on the UI, but a default value can be set.
+  * **Percentage Pie** : displays the value inside a percentage circle, usually for a computed value. The value cannot be edited on the UI, but a default value can be set.
 
-  * Progress Bar: displays the value next to a percentage bar, usually for a computed value. The field cannot be edited manually, but a default value can be set.
+  * **Progress Bar** : displays the value next to a percentage bar, usually for a computed value. The field cannot be edited manually, but a default value can be set.
 
-  * Handle: displays a drag handle icon to order records manually in [List view](views.html#studio-views-multiple-records-list).
+  * **Handle** : displays a drag handle icon to order records manually in [List view](views#studio-views-multiple-records-list).
 
-Example
-
-![Examples of Integer fields with different widgets](../../_images/integer-
-examples.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><img alt="Examples of Integer fields with different widgets" class="align-center" src="../../_images/integer-examples.png"/>
+</div>
 
 ### Decimal (`float`)
 
-The Decimal field is used for all decimal numbers (positive, negative, or
+The **Decimal** field is used for all decimal numbers (positive, negative, or
 zero, with a decimal).
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Decimal numbers are displayed with two decimals after the decimal point on the UI, but they are
+stored in the database with more precision.</p>
+</div>
 
-Decimal numbers are displayed with two decimals after the decimal point on the
-UI, but they are stored in the database with more precision.
+  * **Monetary** : it is similar to using the Monetary field. It is recommended to use the later as it offers more functionalities.
 
-  * Monetary: it is similar to using the Monetary field. It is recommended to use the later as it offers more functionalities.
+  * **Percentage** : displays a percent character `%` after the value.
 
-  * Percentage: displays a percent character `%` after the value.
+  * **Percentage Pie** : displays the value inside a percentage circle, usually for a computed value. The field cannot be edited manually, but a default value can be set.
 
-  * Percentage Pie: displays the value inside a percentage circle, usually for a computed value. The field cannot be edited manually, but a default value can be set.
+  * **Progress Bar** : displays the value next to a percentage bar, usually for a computed value. The field cannot be edited manually, but a default value can be set.
 
-  * Progress Bar: displays the value next to a percentage bar, usually for a computed value. The field cannot be edited manually, but a default value can be set.
+  * **Time** : the value must follow the _hh:mm_ format, with a maximum of 59 minutes.
 
-  * Time: the value must follow the _hh:mm_ format, with a maximum of 59 minutes.
-
-Example
-
-![Examples of Decimal fields with different widgets](../../_images/decimal-
-examples.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><img alt="Examples of Decimal fields with different widgets" class="align-center" src="../../_images/decimal-examples.png"/>
+</div>
 
 ### Monetary (`monetary`)
 
-The Monetary field is used for all monetary values.
+The **Monetary** field is used for all monetary values.
 
-Note
-
-When you first add a Monetary field, you are prompted to add a Currency field
-if none exists already on the model. Odoo offers to add the Currency field for
-you. Once it is added, add the Monetary field again.
-
-Example
-
-![Example of a Monetary field along with its Currency
-field](../../_images/monetary-example.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When you first add a <b>Monetary</b> field, you are prompted to add a <b>Currency</b>
+field if none exists already on the model. Konvergo ERP offers to add the <b>Currency</b> field for
+you. Once it is added, add the <b>Monetary</b> field again.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Non-default widgets, when available, are presented as bullet points below.</p>
+</div>0
 
 ### Html (`html`)
 
-The Html field is used to add text that can be edited using the Odoo HTML
+The **Html** field is used to add text that can be edited using the Konvergo ERP HTML
 editor.
 
-  * Multiline Text: disables the Odoo HTML editor to allow editing raw HTML.
+  * **Multiline Text** : disables the Konvergo ERP HTML editor to allow editing raw HTML.
 
-Example
-
-![Examples of Html fields with different widgets](../../_images/html-
-example.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Non-default widgets, when available, are presented as bullet points below.</p>
+</div>1
 
 ### Date (`date`)
 
-The Date field is used to select a date on a calendar.
+The **Date** field is used to select a date on a calendar.
 
-  * Remaining Days: the remaining number of days before the selected date is displayed (e.g., _In 5 days_), based on the current date.
+  * **Remaining Days** : the remaining number of days before the selected date is displayed (e.g., _In 5 days_), based on the current date.
 
-Example
-
-![Examples of Date fields with different widgets](../../_images/date-
-examples.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Non-default widgets, when available, are presented as bullet points below.</p>
+</div>2
 
 ### Date & Time (`datetime`)
 
-The Date & Time field is used to select a date on a calendar and a time on a
-clock. The user’s current time is automatically used if no time is set.
+The **Date & Time** field is used to select a date on a calendar and a time on
+a clock. The user’s current time is automatically used if no time is set.
 
-  * Date: used to record the time without displaying it on the UI.
+  * **Date** : used to record the time without displaying it on the UI.
 
-  * Remaining days: displays the remaining number of days before the selected date (e.g., _In 5 days_), based on the current date and time.
+  * **Remaining days** : displays the remaining number of days before the selected date (e.g., _In 5 days_), based on the current date and time.
 
-Example
-
-![Examples of Date & Time fields with different widgets](../../_images/date-
-time-examples.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Non-default widgets, when available, are presented as bullet points below.</p>
+</div>3
 
 ### Checkbox (`boolean`)
 
-The Checkbox field is used when a value should only be true or false,
+The **Checkbox** field is used when a value should only be true or false,
 indicated by checking or unchecking a checkbox.
 
-  * Button: displays a radio button. The widget works without switching to the edit mode.
+  * **Button** : displays a radio button. The widget works without switching to the edit mode.
 
-  * Toggle: displays a toggle button. The widget works without switching to the edit mode.
+  * **Toggle** : displays a toggle button. The widget works without switching to the edit mode.
 
-Example
-
-![Examples of Checkbox fields with different widgets](../../_images/checkbox-
-examples.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Non-default widgets, when available, are presented as bullet points below.</p>
+</div>4
 
 ### Selection (`selection`)
 
-The Selection field is used when users should select a single value from a
+The **Selection** field is used when users should select a single value from a
 group of predefined values.
 
-  * Badge: displays the value inside a rounded shape, similar to a tag. The value cannot be edited on the UI, but a default value can be set.
+  * **Badge** : displays the value inside a rounded shape, similar to a tag. The value cannot be edited on the UI, but a default value can be set.
 
-  * Badges: displays all selectable values simultaneously inside rectangular shapes, organized horizontally.
+  * **Badges** : displays all selectable values simultaneously inside rectangular shapes, organized horizontally.
 
-  * Priority: displays star symbols instead of values, which can be used to indicate an importance or satisfaction level, for example. This has the same effect as selecting the Priority field, although, for the latter, four priority values are already predefined.
+  * **Priority** : displays star symbols instead of values, which can be used to indicate an importance or satisfaction level, for example. This has the same effect as selecting the Priority field, although, for the latter, four priority values are already predefined.
 
-  * Radio: displays all selectable values at the same time as radio buttons.
+  * **Radio** : displays all selectable values at the same time as radio buttons.
 
-Tip
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Non-default widgets, when available, are presented as bullet points below.</p>
+</div>5
 
-By default, radio buttons are organized vertically. Tick display horizontally
-to switch the way they are displayed.
-
-Example
-
-![Examples of Selection fields with different
-widgets](../../_images/selection-examples.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Non-default widgets, when available, are presented as bullet points below.</p>
+</div>6
 
 ### Priority (`selection`)
 
-The Priority field is used to display a three-star rating system, which can be
-used to indicate importance or satisfaction level. This field type is a
-Selection field with the Priority widget selected by default and four priority
-values predefined. Consequently, the Badge, Badges, Radio, and Selection
-widgets have the same effects as described under Selection.
+The **Priority** field is used to display a three-star rating system, which
+can be used to indicate importance or satisfaction level. This field type is a
+Selection field with the **Priority** widget selected by default and four
+priority values predefined. Consequently, the **Badge** , **Badges** ,
+**Radio** , and **Selection** widgets have the same effects as described under
+Selection.
 
-Tip
-
-To change the number of available stars by adding or removing values, click
-Edit Values. Note that the first value is equal to 0 stars (i.e., when no
-selection is made), so having four values results in a three-star rating
-system, for example.
-
-Example
-
-![Example of a Priority field](../../_images/priority-example.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Non-default widgets, when available, are presented as bullet points below.</p>
+</div>7 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Non-default widgets, when available, are presented as bullet points below.</p>
+</div>8
 
 ### File (`binary`)
 
-The File field is used to upload any type of file, or sign a form (Sign
-widget).
+The **File** field is used to upload any type of file, or sign a form
+(**Sign** widget).
 
-  * Image: users can upload an image file, which is then displayed in [Form view](views.html#studio-views-general-form). This has the same effect as using the Image field.
+  * **Image** : users can upload an image file, which is then displayed in [Form view](views#studio-views-general-form). This has the same effect as using the Image field.
 
-  * PDF Viewer: users can upload a PDF file, which can be then browsed from the [Form view](views.html#studio-views-general-form).
+  * **PDF Viewer** : users can upload a PDF file, which can be then browsed from the [Form view](views#studio-views-general-form).
 
-  * Sign: users can electronically sign the form. This has the same effect as selecting the Sign field.
+  * **Sign** : users can electronically sign the form. This has the same effect as selecting the Sign field.
 
-Example
-
-![Examples of File fields with different widgets](../../_images/file-
-examples.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Non-default widgets, when available, are presented as bullet points below.</p>
+</div>9
 
 ### Image (`binary`)
 
-The Image field is used to upload an image and display it in [Form
-view](views.html#studio-views-general-form). This field type is a File field
-with the Image widget selected by default. Consequently, the File, PDF Viewer,
-and Sign widgets have the same effects as described under File.
+The **Image** field is used to upload an image and display it in [Form
+view](views#studio-views-general-form). This field type is a File field
+with the **Image** widget selected by default. Consequently, the **File** ,
+**PDF Viewer** , and **Sign** widgets have the same effects as described under
+File.
 
-Tip
-
-To change the display size of uploaded images, select Small, Medium, or Large
-under the Size option.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This works differently than selecting the <a href="#studio-fields-simple-fields-image"><span class="std std-ref">Image field</span></a> directly, as the image is not stored in Konvergo ERP when using a
+<b>Text</b> field with the <b>Image</b> widget. For example, it can be useful if you
+want to save disk space.</p>
+</div>0
 
 ### Sign (`binary`)
 
-The Sign field is used to sign the form electronically. This field type is a
-File field with the Sign widget selected by default. Consequently, the File,
-Image, and PDF Viewer widgets have the same effects as described under File.
+The **Sign** field is used to sign the form electronically. This field type is
+a File field with the **Sign** widget selected by default. Consequently, the
+**File** , **Image** , and **PDF Viewer** widgets have the same effects as
+described under File.
 
-Tip
-
-To give users the Auto option when having to draw their signature, select one
-of the available Auto-complete with fields (Text, Many2One, and Related Field
-on the model only). The signature is automatically generated using the data
-from the selected field.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This works differently than selecting the <a href="#studio-fields-simple-fields-image"><span class="std std-ref">Image field</span></a> directly, as the image is not stored in Konvergo ERP when using a
+<b>Text</b> field with the <b>Image</b> widget. For example, it can be useful if you
+want to save disk space.</p>
+</div>1
 
 ## Relational fields
 
 Relational fields are used to link and display the data from records on
 another model.
 
-Note
-
-Non-default widgets, when available, are presented as bullet points below.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This works differently than selecting the <a href="#studio-fields-simple-fields-image"><span class="std std-ref">Image field</span></a> directly, as the image is not stored in Konvergo ERP when using a
+<b>Text</b> field with the <b>Image</b> widget. For example, it can be useful if you
+want to save disk space.</p>
+</div>2
 
 ### Many2One (`many2one`)
 
-The Many2One field is used to link another record (from another model) to the
-record being edited. The record’s name from the other model is then displayed
-on the record being edited.
+The **Many2One** field is used to link another record (from another model) to
+the record being edited. The record’s name from the other model is then
+displayed on the record being edited.
 
-Example
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This works differently than selecting the <a href="#studio-fields-simple-fields-image"><span class="std std-ref">Image field</span></a> directly, as the image is not stored in Konvergo ERP when using a
+<b>Text</b> field with the <b>Image</b> widget. For example, it can be useful if you
+want to save disk space.</p>
+</div>3 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This works differently than selecting the <a href="#studio-fields-simple-fields-image"><span class="std std-ref">Image field</span></a> directly, as the image is not stored in Konvergo ERP when using a
+<b>Text</b> field with the <b>Image</b> widget. For example, it can be useful if you
+want to save disk space.</p>
+</div>4
 
-On the _Sales Order_ model, the Customer field is a Many2One field pointing at
-the _Contact_ model. This allows **many** sales orders to be linked to **one**
-contact (customer).
+  * **Badge** : displays the value inside a rounded shape, similar to a tag. The value cannot be edited on the UI.
 
-![Diagram showing a many2one relationship](../../_images/many2one-diagram.png)
-
-Tip
-
-  * To prevent users from creating a new record in the linked model, tick Disable creation.
-
-  * To prevent users from opening records in a pop-up window, tick Disable opening.
-
-  * To help users only select the right record, click on Domain to create a filter.
-
-  * Badge: displays the value inside a rounded shape, similar to a tag. The value cannot be edited on the UI.
-
-  * Radio: displays all selectable values at the same time as radio buttons.
+  * **Radio** : displays all selectable values at the same time as radio buttons.
 
 ### One2Many (`one2many`)
 
-The One2Many field is used to display the existing relations between a record
-on the current model and multiple records from another model.
+The **One2Many** field is used to display the existing relations between a
+record on the current model and multiple records from another model.
 
-Example
-
-You could add a One2Many field on the _Contact_ model to look at **one**
-customer’s **many** sales orders.
-
-![Diagram showing a one2many relationship](../../_images/one2many-diagram.png)
-
-Note
-
-To use a One2Many field, the two models must have been linked already using a
-Many2One field. One2Many relations do not exist independently: a reverse-
-search of existing Many2One relations is performed.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This works differently than selecting the <a href="#studio-fields-simple-fields-image"><span class="std std-ref">Image field</span></a> directly, as the image is not stored in Konvergo ERP when using a
+<b>Text</b> field with the <b>Image</b> widget. For example, it can be useful if you
+want to save disk space.</p>
+</div>5 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This works differently than selecting the <a href="#studio-fields-simple-fields-image"><span class="std std-ref">Image field</span></a> directly, as the image is not stored in Konvergo ERP when using a
+<b>Text</b> field with the <b>Image</b> widget. For example, it can be useful if you
+want to save disk space.</p>
+</div>6
 
 ### Lines (`one2many`)
 
-The Lines field is used to create a table with rows and columns (e.g., the
+The **Lines** field is used to create a table with rows and columns (e.g., the
 lines of products on a sales order).
 
-Tip
-
-To modify the columns, click on the Lines field and then Edit List View. To
-edit the form that pops up when a user clicks on Add a line, click on Edit
-Form View instead.
-
-Example
-
-![Example of a Lines field](../../_images/lines-example.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This works differently than selecting the <a href="#studio-fields-simple-fields-image"><span class="std std-ref">Image field</span></a> directly, as the image is not stored in Konvergo ERP when using a
+<b>Text</b> field with the <b>Image</b> widget. For example, it can be useful if you
+want to save disk space.</p>
+</div>7 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This works differently than selecting the <a href="#studio-fields-simple-fields-image"><span class="std std-ref">Image field</span></a> directly, as the image is not stored in Konvergo ERP when using a
+<b>Text</b> field with the <b>Image</b> widget. For example, it can be useful if you
+want to save disk space.</p>
+</div>8
 
 ### Many2Many (`many2many`)
 
-The Many2Many field is used to link multiple records from another model to
-multiple records on the current model. Many2Many fields can use Disable
-creation, Disable opening, Domain, just like Many2One fields.
+The **Many2Many** field is used to link multiple records from another model to
+multiple records on the current model. Many2Many fields can use **Disable
+creation** , **Disable opening** , **Domain** , just like Many2One fields.
 
-Example
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This works differently than selecting the <a href="#studio-fields-simple-fields-image"><span class="std std-ref">Image field</span></a> directly, as the image is not stored in Konvergo ERP when using a
+<b>Text</b> field with the <b>Image</b> widget. For example, it can be useful if you
+want to save disk space.</p>
+</div>9
 
-On the _Task_ model, the Assignees field is a Many2Many field pointing at the
-_Contact_ model. This allows a single user to be assigned to **many** tasks
-and **many** users to be assigned to a single task.
+  * **Checkboxes** : users can select several values using checkboxes.
 
-![Diagram showing many2many relationships](../../_images/many2many-
-diagram.png)
-
-  * Checkboxes: users can select several values using checkboxes.
-
-  * Tags: users can select several values appearing in rounded shapes, also known as _tags_. This has the same effect as selecting the Tags field.
+  * **Tags** : users can select several values appearing in rounded shapes, also known as _tags_. This has the same effect as selecting the Tags field.
 
 ### Tags (`many2many`)
 
-The Tags field is used to display several values from another model appearing
-in rounded shapes, also known as _tags_. This field type is a Many2Many field
-with the Tags widget selected by default. Consequently, the Checkboxes and
-Many2Many widgets have the same effects as described under Many2Many.
+The **Tags** field is used to display several values from another model
+appearing in rounded shapes, also known as _tags_. This field type is a
+Many2Many field with the **Tags** widget selected by default. Consequently,
+the **Checkboxes** and **Many2Many** widgets have the same effects as
+described under Many2Many.
 
-Tip
-
-To display tags with different background colors, tick Use colors.
-
-Example
-
-![Example of a Tags field](../../_images/tags-example.png)
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Tick <b>Enable SMS</b> to add an option to send an SMS directly from Konvergo ERP next to the
+field.</p>
+</div>0 <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Tick <b>Enable SMS</b> to add an option to send an SMS directly from Konvergo ERP next to the
+field.</p>
+</div>1
 
 ### Related Field (`related`)
 
-A Related Field is not a relational field per se; no relationship is created
-between models. It uses an existing relationship to fetch and display
+A **Related Field** is not a relational field per se; no relationship is
+created between models. It uses an existing relationship to fetch and display
 information from another record.
 
-Example
-
-To display the email address of a customer on the _Sales Order_ model, use the
-Related Field `partner_id.email` by selecting Customer and then Email.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Tick <b>Enable SMS</b> to add an option to send an SMS directly from Konvergo ERP next to the
+field.</p>
+</div>2
 
 ## Properties
 
-  * Invisible: When it is not necessary for users to view a field on the UI, tick Invisible. It helps clear the UI by only showing the essential fields depending on a specific situation.
+  * **Invisible** : When it is not necessary for users to view a field on the UI, tick **Invisible**. It helps clear the UI by only showing the essential fields depending on a specific situation.
 
-Example
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Tick <b>Enable SMS</b> to add an option to send an SMS directly from Konvergo ERP next to the
+field.</p>
+</div>3 <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Tick <b>Enable SMS</b> to add an option to send an SMS directly from Konvergo ERP next to the
+field.</p>
+</div>4
 
-On the _Form_ view of the _Contact_ model, the Title field only appears when
-Individual is selected, as that field would not be helpful for a Company
-contact.
+  * **Required** : If a field should always be completed by the user before being able to proceed, tick **Required**.
 
-Note
+  * **Read only** : If users should not be able to modify a field, tick **Read only**.
 
-The Invisible attribute also applies to Studio. To view hidden fields inside
-Studio, click on a view’s View tab and tick Show Invisible Elements.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Tick <b>Enable SMS</b> to add an option to send an SMS directly from Konvergo ERP next to the
+field.</p>
+</div>5
 
-  * Required: If a field should always be completed by the user before being able to proceed, tick Required.
+  * **Label** : The **Label** is the field’s name on the UI.
 
-  * Read only: If users should not be able to modify a field, tick Read only.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Tick <b>Enable SMS</b> to add an option to send an SMS directly from Konvergo ERP next to the
+field.</p>
+</div>6
 
-Note
+  * **Help Tooltip** : To explain the purpose of a field, write a description under **Help Tooltip**. It is displayed inside a tooltip box when hovering with your mouse over the field’s label.
 
-You can choose to apply these three properties only for specific records by
-clicking on Conditional and creating a filter.
+  * **Placeholder** : To provide an example of how a field should be completed, write it under **Placeholder**. It is displayed in light gray in lieu of the field’s value.
 
-  * Label: The Label is the field’s name on the UI.
+  * **Widget** : To change the default appearance or functionality of a field, select one of the available widgets.
 
-Note
+  * **Default value** : To add a default value to a field when a record is created, use **Default value**.
 
-This is not the same name as used in the PostgreSQL database. To view and
-change the latter, activate the [Developer
-mode](../general/developer_mode.html#developer-mode), and edit the Technical
-Name.
-
-  * Help Tooltip: To explain the purpose of a field, write a description under Help Tooltip. It is displayed inside a tooltip box when hovering with your mouse over the field’s label.
-
-  * Placeholder: To provide an example of how a field should be completed, write it under Placeholder. It is displayed in light gray in lieu of the field’s value.
-
-  * Widget: To change the default appearance or functionality of a field, select one of the available widgets.
-
-  * Default value: To add a default value to a field when a record is created, use Default value.
-
-  * Limit visibility to groups: To limit which users can see the field, select a user access group.
+  * **Limit visibility to groups** : To limit which users can see the field, select a user access group.
 
   *[UI]: User Interface
 

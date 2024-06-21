@@ -1,26 +1,24 @@
 # Building a Module
 
-Danger
+<div class="alert alert-danger">
+<p class="alert-title">
+Danger</p><p>This tutorial is outdated. We recommend reading <a href="getting_started">Getting started</a> instead.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>This tutorial requires <a href="../../administration/on_premise">having installed Konvergo ERP</a></p>
+</div>
 
-This tutorial is outdated. We recommend reading [Getting
-started](getting_started.html) instead.
+## Start/Stop the Konvergo ERP server
 
-Warning
-
-This tutorial requires [having installed
-Odoo](../../administration/on_premise.html)
-
-## Start/Stop the Odoo server
-
-Odoo uses a client/server architecture in which clients are web browsers
-accessing the Odoo server via RPC.
+Konvergo ERP uses a client/server architecture in which clients are web browsers
+accessing the Konvergo ERP server via RPC.
 
 Business logic and extension is generally performed on the server side,
 although supporting client features (e.g. new data representation such as
 interactive maps) can be added to the client.
 
 In order to start the server, simply invoke the command [odoo-
-bin](../reference/cli.html#reference-cmdline) in the shell, adding the full
+bin](../reference/cli#reference-cmdline) in the shell, adding the full
 path to the file if necessary:
 
     
@@ -31,50 +29,50 @@ path to the file if necessary:
 The server is stopped by hitting `Ctrl-C` twice from the terminal, or by
 killing the corresponding OS process.
 
-## Build an Odoo module
+## Build an Konvergo ERP module
 
 Both server and client extensions are packaged as _modules_ which are
 optionally loaded in a _database_.
 
-Odoo modules can either add brand new business logic to an Odoo system, or
+Konvergo ERP modules can either add brand new business logic to an Konvergo ERP system, or
 alter and extend existing business logic: a module can be created to add your
-country’s accounting rules to Odoo’s generic accounting support, while the
+country’s accounting rules to Konvergo ERP’s generic accounting support, while the
 next module adds support for real-time visualisation of a bus fleet.
 
-Everything in Odoo thus starts and ends with modules.
+Everything in Konvergo ERP thus starts and ends with modules.
 
 ### Composition of a module
 
-An Odoo module can contain a number of elements:
+An Konvergo ERP module can contain a number of elements:
 
 Business objects
 
     
 
 Declared as Python classes, these resources are automatically persisted by
-Odoo based on their configuration
+Konvergo ERP based on their configuration
 
-[Object views](../reference/backend/views.html#reference-views)
+[Object views](../reference/backend/views#reference-views)
 
     
 
 Definition of business objects UI display
 
-[Data files](../reference/backend/data.html#reference-data)
+[Data files](../reference/backend/data#reference-data)
 
     
 
 XML or CSV files declaring the model metadata :
 
-  * [views](../reference/backend/views.html#reference-views) or [reports](../reference/backend/reports.html#reference-reports),
+  * [views](../reference/backend/views#reference-views) or [reports](../reference/backend/reports#reference-reports),
 
-  * configuration data (modules parametrization, [security rules](../reference/backend/security.html#reference-security)),
+  * configuration data (modules parametrization, [security rules](../reference/backend/security#reference-security)),
 
   * demonstration data
 
   * and more
 
-[Web controllers](../reference/backend/http.html#reference-controllers)
+[Web controllers](../reference/backend/http#reference-controllers)
 
     
 
@@ -89,19 +87,19 @@ Images, CSS or javascript files used by the web interface or website
 ### Module structure
 
 Each module is a directory within a _module directory_. Module directories are
-specified by using the [`--addons-path`](../reference/cli.html#cmdoption-odoo-
+specified by using the [`--addons-path`](../reference/cli#cmdoption-odoo-
 bin-addons-path) option.
 
-Tip
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>most command-line options can also be set using <a href="../reference/cli#reference-cmdline-config"><span class="std std-ref">a configuration file</span></a></p>
+</div>
 
-most command-line options can also be set using [a configuration
-file](../reference/cli.html#reference-cmdline-config)
-
-An Odoo module is declared by its
-[manifest](../reference/backend/module.html#reference-module-manifest).
+An Konvergo ERP module is declared by its
+[manifest](../reference/backend/module#reference-module-manifest).
 
 A module is also a [Python
-package](http://docs.python.org/2/tutorial/modules.html#packages) with a
+package](http://docs.python.org/2/tutorial/modules#packages) with a
 `__init__.py` file, containing import instructions for various Python files in
 the module.
 
@@ -113,9 +111,9 @@ might contain:
     from . import mymodule
     
 
-Odoo provides a mechanism to help set up a new module, [odoo-
-bin](../reference/cli.html#reference-cmdline-server) has a subcommand
-[scaffold](../reference/cli.html#reference-cmdline-scaffold) to create an
+Konvergo ERP provides a mechanism to help set up a new module, [odoo-
+bin](../reference/cli#reference-cmdline-server) has a subcommand
+[scaffold](../reference/cli#reference-cmdline-scaffold) to create an
 empty module:
 
     
@@ -128,16 +126,15 @@ a bunch of standard files for a module. Most of them simply contain commented
 code or XML. The usage of most of those files will be explained along this
 tutorial.
 
-Exercise
-
-Module creation
-
-Use the command line above to create an empty module Open Academy, and install
-it in Odoo.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Module creation</p>
+<p>Use the command line above to  create an empty module Open Academy, and install it in Konvergo ERP.</p>
+</div>
 
 ### Object-Relational Mapping
 
-A key component of Odoo is the ORM layer. This layer avoids having to write
+A key component of Konvergo ERP is the ORM layer. This layer avoids having to write
 most SQL by hand and provides extensibility and security services2.
 
 Business objects are declared as Python classes extending `Model` which
@@ -145,7 +142,7 @@ integrates them into the automated persistence system.
 
 Models can be configured by setting a number of attributes at their
 definition. The most important attribute is `_name` which is required and
-defines the name for the model in the Odoo system. Here is a minimally
+defines the name for the model in the Konvergo ERP system. Here is a minimally
 complete definition of a model:
 
     
@@ -205,7 +202,7 @@ Long-form, provides a help tooltip to users in the UI.
 
     
 
-Requests that Odoo create a [database index](https://use-the-index-
+Requests that Konvergo ERP create a [database index](https://use-the-index-
 luke.com/sql/preface) on the column.
 
 #### Simple fields
@@ -218,7 +215,7 @@ Example of simple fields are `Boolean`, `Date`, `Char`.
 
 #### Reserved fields
 
-Odoo creates a few fields in all models1. These fields are managed by the
+Konvergo ERP creates a few fields in all models1. These fields are managed by the
 system and shouldn’t be written to. They can be read if useful or necessary:
 
 `id` (`Id`)
@@ -253,29 +250,30 @@ user who last modified the record.
 
 #### Special fields
 
-By default, Odoo also requires a `name` field on all models for various
+By default, Konvergo ERP also requires a `name` field on all models for various
 display and search behaviors. The field used for these purposes can be
 overridden by setting `_rec_name`.
 
-Exercise
-
-Define a model
-
-Define a new data model _Course_ in the _openacademy_ module. A course has a
-title and a description. Courses must have a title.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define a model</p>
+<p>Define a new data model <em>Course</em> in the <em>openacademy</em> module. A course has a title and a
+description. Courses must have a title.</p>
+</div>
 
 ### Data files
 
-Odoo is a highly data driven system. Although behavior is customized using
+Konvergo ERP is a highly data driven system. Although behavior is customized using
 [Python](https://python.org) code part of a module’s value is in the data it
 sets up when loaded.
 
-Tip
-
-some modules exist solely to add data into Odoo
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>some modules exist solely to add data into Konvergo ERP</p>
+</div>
 
 Module data is declared via [data
-files](../reference/backend/data.html#reference-data), XML files with
+files](../reference/backend/data#reference-data), XML files with
 `<record>` elements. Each `<record>` element creates or updates a database
 record.
 
@@ -290,9 +288,9 @@ record.
     </odoo>
     
 
-  * `model` is the name of the Odoo model for the record.
+  * `model` is the name of the Konvergo ERP model for the record.
 
-  * `id` is an [external identifier](../glossary.html#term-external-identifier), it allows referring to the record (without having to know its in-database identifier).
+  * `id` is an [external identifier](../glossary#term-external-identifier), it allows referring to the record (without having to know its in-database identifier).
 
   * `<field>` elements have a `name` which is the name of the field in the model (e.g. `description`). Their body is the field’s value.
 
@@ -300,21 +298,15 @@ Data files have to be declared in the manifest file to be loaded, they can be
 declared in the `'data'` list (always loaded) or in the `'demo'` list (only
 loaded in demonstration mode).
 
-Exercise
-
-Define demonstration data
-
-Create demonstration data filling the _Courses_ model with a few demonstration
-courses.
-
-Tip
-
-The content of the data files is only loaded when a module is installed or
-updated.
-
-After making some changes, do not forget to use [odoo-bin -u
-openacademy](../reference/cli.html#reference-cmdline) to save the changes to
-your database.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define demonstration data</p>
+<p>Create demonstration data filling the <em>Courses</em> model with a few demonstration courses.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>The content of the data files is only loaded when a module is installed or updated.</p>
+<p>After making some changes, do not forget to use <a href="../reference/cli#reference-cmdline"><span class="std std-ref">odoo-bin -u openacademy</span></a> to save the changes to your database.</p>
+</div>
 
 ### Actions and Menus
 
@@ -342,23 +334,21 @@ easily.
               action="action_list_ideas"/>
     
 
-Danger
-
-The action must be declared before its corresponding menu in the XML file.
-
-Data files are executed sequentially, the action’s `id` must be present in the
-database before the menu can be created.
-
-Exercise
-
-Define new menu entries
-
-Define new menu entries to access courses under the OpenAcademy menu entry. A
-user should be able to:
-
-  * display a list of all the courses
-
-  * create/modify courses
+<div class="aphorism alert alert-danger">
+<p class="alert-title">
+Danger</p><p>The action must be declared before its corresponding menu in the XML file.</p>
+<p>Data files are executed sequentially, the action’s <code>id</code> must be present in the database before
+the menu can be created.</p>
+</div> <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define new menu entries</p>
+<p>Define new menu entries to access courses under the OpenAcademy menu entry. A user should be able
+to:</p>
+<ul>
+<li><p>display a list of all the courses</p></li>
+<li><p>create/modify courses</p></li>
+</ul>
+</div>
 
 ## Basic views
 
@@ -369,7 +359,7 @@ aggregation, …). Views can either be requested generically via their type
 requests, the view with the correct type and the lowest priority will be used
 (so the lowest-priority view of each type is the default view for that type).
 
-[View inheritance](../reference/backend/views.html#reference-views-
+[View inheritance](../reference/backend/views#reference-views-
 inheritance) allows altering views declared elsewhere (adding or removing
 content).
 
@@ -390,11 +380,10 @@ implied by the root element of the `arch` field:
     </record>
     
 
-Danger
-
-The view’s content is XML.
-
-The `arch` field must thus be declared as `type="xml"` to be parsed correctly.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>This tutorial requires <a href="../../administration/on_premise">having installed Konvergo ERP</a></p>
+</div>0
 
 ### Tree views
 
@@ -445,19 +434,13 @@ elements (groups, notebooks) and interactive elements (buttons and fields):
     </form>
     
 
-Exercise
-
-Customise form view using XML
-
-Create your own form view for the Course object. Data displayed should be: the
-name and the description of the course.
-
-Exercise
-
-Notebooks
-
-In the Course form view, put the description field under a tab, such that it
-will be easier to add other tabs later, containing additional information.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>This tutorial requires <a href="../../administration/on_premise">having installed Konvergo ERP</a></p>
+</div>1 <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>This tutorial requires <a href="../../administration/on_premise">having installed Konvergo ERP</a></p>
+</div>2
 
 Form views can also use plain HTML for more flexible layouts:
 
@@ -500,14 +483,13 @@ of fields defining which fields can be searched on:
     </search>
     
 
-If no search view exists for the model, Odoo generates one which only allows
+If no search view exists for the model, Konvergo ERP generates one which only allows
 searching on the `name` field.
 
-Exercise
-
-Search courses
-
-Allow searching for courses based on their title or their description.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>This tutorial requires <a href="../../administration/on_premise">having installed Konvergo ERP</a></p>
+</div>3
 
 ## Relations between models
 
@@ -515,16 +497,10 @@ A record from a model may be related to a record from another model. For
 instance, a sale order record is related to a client record that contains the
 client data; it is also related to its sale order line records.
 
-Exercise
-
-Create a session model
-
-For the module Open Academy, we consider a model for _sessions_ : a session is
-an occurrence of a course taught at a given time for a given audience.
-
-Create a model for _sessions_. A session has a name, a start date, a duration
-and a number of seats. Add an action and a menu item to display them. Make the
-new model visible via a menu item.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>This tutorial requires <a href="../../administration/on_premise">having installed Konvergo ERP</a></p>
+</div>4
 
 ### Relational fields
 
@@ -544,9 +520,10 @@ A simple link to an other object:
     print(foo.other_id.name)
     
 
-See also
-
-[foreign keys](http://www.postgresql.org/docs/12/static/tutorial-fk.html)
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>This tutorial requires <a href="../../administration/on_premise">having installed Konvergo ERP</a></p>
+</div>5
 
 `One2many(other_model, related_field)`
 
@@ -562,10 +539,10 @@ records:
         print(other.name)
     
 
-Danger
-
-Because a `One2many` is a virtual relationship, there _must_ be a `Many2one`
-field in the `_other_model_`, and its name _must_ be `_related_field_`
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>This tutorial requires <a href="../../administration/on_premise">having installed Konvergo ERP</a></p>
+</div>6
 
 `Many2many(other_model)`
 
@@ -581,42 +558,22 @@ accessing it also results in a possibly empty set of records:
         print(other.name)
     
 
-Exercise
-
-Many2one relations
-
-Using a many2one, modify the _Course_ and _Session_ models to reflect their
-relation with other models:
-
-  * A course has a _responsible_ user; the value of that field is a record of the built-in model `res.users`.
-
-  * A session has an _instructor_ ; the value of that field is a record of the built-in model `res.partner`.
-
-  * A session is related to a _course_ ; the value of that field is a record of the model `openacademy.course` and is required.
-
-  * Adapt the views.
-
-Exercise
-
-Inverse one2many relations
-
-Using the inverse relational field one2many, modify the models to reflect the
-relation between courses and sessions.
-
-Exercise
-
-Multiple many2many relations
-
-Using the relational field many2many, modify the _Session_ model to relate
-every session to a set of _attendees_. Attendees will be represented by
-partner records, so we will relate to the built-in model `res.partner`. Adapt
-the views accordingly.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>This tutorial requires <a href="../../administration/on_premise">having installed Konvergo ERP</a></p>
+</div>7 <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>This tutorial requires <a href="../../administration/on_premise">having installed Konvergo ERP</a></p>
+</div>8 <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>This tutorial requires <a href="../../administration/on_premise">having installed Konvergo ERP</a></p>
+</div>9
 
 ## Inheritance
 
 ### Model inheritance
 
-Odoo provides two _inheritance_ mechanisms to extend an existing model in a
+Konvergo ERP provides two _inheritance_ mechanisms to extend an existing model in a
 modular way.
 
 The first inheritance mechanism allows a module to modify the behavior of a
@@ -637,16 +594,14 @@ model to a record in a parent model, and provides transparent access to the
 fields of the parent record.
 
 ![../../_images/inheritance_methods.png](../../_images/inheritance_methods.png)
-
-See also
-
-  * `_inherit`
-
-  * `_inherits`
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>most command-line options can also be set using <a href="../reference/cli#reference-cmdline-config"><span class="std std-ref">a configuration file</span></a></p>
+</div>0
 
 ### View inheritance
 
-Instead of modifying existing views in place (by overwriting them), Odoo
+Instead of modifying existing views in place (by overwriting them), Konvergo ERP
 provides view inheritance where children “extension” views are applied on top
 of root views, and can add or remove content from their parent.
 
@@ -716,32 +671,17 @@ inserts the `xpaths`’s body as a sibling after the matched element
 alters the attributes of the matched element using special `attribute`
 elements in the `xpath`’s body
 
-Tip
-
-When matching a single element, the `position` attribute can be set directly
-on the element to be found. Both inheritances below will give the same result.
-
->
->     <xpath expr="//field[@name='description']" position="after">
->         <field name="idea_ids" />
->     </xpath>
->  
->     <field name="description" position="after">
->         <field name="idea_ids" />
->     </field>
->  
-
-Exercise
-
-Alter existing content
-
-  * Using model inheritance, modify the existing _Partner_ model to add an `instructor` boolean field, and a many2many field that corresponds to the session-partner relation
-
-  * Using view inheritance, display this fields in the partner form view
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>most command-line options can also be set using <a href="../reference/cli#reference-cmdline-config"><span class="std std-ref">a configuration file</span></a></p>
+</div>1 <div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>most command-line options can also be set using <a href="../reference/cli#reference-cmdline-config"><span class="std std-ref">a configuration file</span></a></p>
+</div>2
 
 #### Domains
 
-In Odoo, [Search domains](../reference/backend/orm.html#reference-orm-domains)
+In Konvergo ERP, [Search domains](../reference/backend/orm#reference-orm-domains)
 are values that encode conditions on records. A domain is a list of criteria
 used to select a subset of a model’s records. Each criteria is a triple with a
 field name, an operator and a value.
@@ -772,20 +712,13 @@ services _OR_ have a unit price which is _NOT_ between 1000 and 2000”:
 A `domain` parameter can be added to relational fields to limit valid records
 for the relation when trying to select records in the client interface.
 
-Exercise
-
-Domains on relational fields
-
-When selecting the instructor for a _Session_ , only instructors (partners
-with `instructor` set to `True`) should be visible.
-
-Exercise
-
-More complex domains
-
-Create new partner categories _Teacher / Level 1_ and _Teacher / Level 2_. The
-instructor for a session can be either an instructor or a teacher (of any
-level).
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>most command-line options can also be set using <a href="../reference/cli#reference-cmdline-config"><span class="std std-ref">a configuration file</span></a></p>
+</div>3 <div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>most command-line options can also be set using <a href="../reference/cli#reference-cmdline-config"><span class="std std-ref">a configuration file</span></a></p>
+</div>4
 
 ## Computed fields and default values
 
@@ -798,17 +731,10 @@ To create a computed field, create a field and set its attribute `compute` to
 the name of a method. The computation method should simply set the value of
 the field to compute on every record in `self`.
 
-Danger
-
-`self` is a collection
-
-The object `self` is a _recordset_ , i.e., an ordered collection of records.
-It supports the standard Python operations on collections, like `len(self)`
-and `iter(self)`, plus extra set operations like `recs1 + recs2`.
-
-Iterating over `self` gives the records one by one, where each record is
-itself a collection of size 1. You can access/assign fields on single records
-by using the dot notation, like `record.name`.
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>most command-line options can also be set using <a href="../reference/cli#reference-cmdline-config"><span class="std std-ref">a configuration file</span></a></p>
+</div>5
 
     
     
@@ -849,15 +775,10 @@ whenever some of its dependencies have been modified:
                 record.name = "Record with value %s" % record.value
     
 
-Exercise
-
-Computed fields
-
-  * Add the percentage of taken seats to the _Session_ model
-
-  * Display that field in the tree and form views
-
-  * Display the field as a progress bar
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>most command-line options can also be set using <a href="../reference/cli#reference-cmdline-config"><span class="std std-ref">a configuration file</span></a></p>
+</div>6
 
 ### Default values
 
@@ -872,33 +793,13 @@ value:
     user_id = fields.Many2one('res.users', default=lambda self: self.env.user)
     
 
-Note
-
-The object `self.env` gives access to request parameters and other useful
-things:
-
->   * `self.env.cr` or `self._cr` is the database _cursor_ object; it is used
-> for querying the database
->
->   * `self.env.uid` or `self._uid` is the current user’s database id
->
->   * `self.env.user` is the current user’s record
->
->   * `self.env.context` or `self._context` is the context dictionary
->
->   * `self.env.ref(xml_id)` returns the record corresponding to an XML id
->
->   * `self.env[model_name]` returns an instance of the given model
->
->
-
-Exercise
-
-Active objects – Default values
-
-  * Define the start_date default value as today (see `Date`).
-
-  * Add a field `active` in the class Session, and set sessions as active by default.
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>most command-line options can also be set using <a href="../reference/cli#reference-cmdline-config"><span class="std std-ref">a configuration file</span></a></p>
+</div>7 <div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>most command-line options can also be set using <a href="../reference/cli#reference-cmdline-config"><span class="std std-ref">a configuration file</span></a></p>
+</div>8
 
 ## Onchange
 
@@ -940,16 +841,14 @@ For computed fields, valued `onchange` behavior is built-in as can be seen by
 playing with the _Session_ form: change the number of seats or participants,
 and the `taken_seats` progressbar is automatically updated.
 
-Exercise
-
-Warning
-
-Add an explicit onchange to warn about invalid values, like a negative number
-of seats, or more participants than seats.
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>most command-line options can also be set using <a href="../reference/cli#reference-cmdline-config"><span class="std std-ref">a configuration file</span></a></p>
+</div>9
 
 ## Model constraints
 
-Odoo provides two ways to set up automatically verified invariants: `Python
+Konvergo ERP provides two ways to set up automatically verified invariants: `Python
 constraints` and `SQL constraints`.
 
 A Python constraint is defined as a method decorated with `constrains()`, and
@@ -970,40 +869,27 @@ invariant is not satisfied:
         # all records passed the test, don't return anything
     
 
-Exercise
-
-Add Python constraints
-
-Add a constraint that checks that the instructor is not present in the
-attendees of his/her own session.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Module creation</p>
+<p>Use the command line above to  create an empty module Open Academy, and install it in Konvergo ERP.</p>
+</div>0
 
 SQL constraints are defined through the model attribute `_sql_constraints`.
 The latter is assigned to a list of triples of strings `(name, sql_definition,
 message)`, where `name` is a valid SQL constraint name, `sql_definition` is a
 [table_constraint](https://www.postgresql.org/docs/12/static/ddl-
-constraints.html) expression, and `message` is the error message.
+constraints) expression, and `message` is the error message.
 
-Exercise
-
-Add SQL constraints
-
-With the help of [PostgreSQL’s
-documentation](https://www.postgresql.org/docs/12/static/ddl-constraints.html)
-, add the following constraints:
-
-  1. CHECK that the course description and the course title are different
-
-  2. Make the Course’s name UNIQUE
-
-Exercise
-
-Exercise 6 - Add a duplicate option
-
-Since we added a constraint for the Course name uniqueness, it is not possible
-to use the “duplicate” function anymore (Form ‣ Duplicate).
-
-Re-implement your own “copy” method which allows to duplicate the Course
-object, changing the original name into “Copy of [original name]”.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Module creation</p>
+<p>Use the command line above to  create an empty module Open Academy, and install it in Konvergo ERP.</p>
+</div>1 <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Module creation</p>
+<p>Use the command line above to  create an empty module Open Academy, and install it in Konvergo ERP.</p>
+</div>2
 
 ## Advanced Views
 
@@ -1052,12 +938,11 @@ Either `"top"` or `"bottom"`. Makes the tree view editable in-place (rather
 than having to go through the form view), the value is the position where new
 rows appear.
 
-Exercise
-
-List coloring
-
-Modify the Session tree view in such a way that sessions lasting less than 5
-days are colored blue, and the ones lasting more than 15 days are colored red.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Module creation</p>
+<p>Use the command line above to  create an empty module Open Academy, and install it in Konvergo ERP.</p>
+</div>3
 
 ### Calendars
 
@@ -1097,12 +982,11 @@ record’s field to define the label for each calendar event
     </calendar>
     
 
-Exercise
-
-Calendar view
-
-Add a Calendar view to the _Session_ model enabling the user to view the
-events associated to the Open Academy.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Module creation</p>
+<p>Use the command line above to  create an empty module Open Academy, and install it in Konvergo ERP.</p>
+</div>4
 
 ### Search views
 
@@ -1154,20 +1038,19 @@ _field_name_ with the provided value. Search filters must have an optional
 `@name` to have a default and behave as booleans (they can only be enabled by
 default).
 
-Exercise
-
-Search views
-
-  1. Add a button to filter the courses for which the current user is the responsible in the course search view. Make it selected by default.
-
-  2. Add a button to group courses by responsible user.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Module creation</p>
+<p>Use the command line above to  create an empty module Open Academy, and install it in Konvergo ERP.</p>
+</div>5
 
 ### Gantt
 
-Warning
-
-The gantt view requires the web_gantt module which is present in the
-[enterprise edition](../../administration.html#install-editions) version.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Module creation</p>
+<p>Use the command line above to  create an empty module Open Academy, and install it in Konvergo ERP.</p>
+</div>6
 
 Horizontal bar charts typically used to show project planning and advancement,
 their root element is `<gantt>`.
@@ -1181,24 +1064,22 @@ their root element is `<gantt>`.
            default_group_by="inventor_id" />
     
 
-Exercise
-
-Gantt charts
-
-Add a Gantt Chart enabling the user to view the sessions scheduling linked to
-the Open Academy module. The sessions should be grouped by instructor.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Module creation</p>
+<p>Use the command line above to  create an empty module Open Academy, and install it in Konvergo ERP.</p>
+</div>7
 
 ### Graph views
 
 Graph views allow aggregated overview and analysis of models, their root
 element is `<graph>`.
 
-Note
-
-Pivot views (element `<pivot>`) a multidimensional table, allows the selection
-of filers and dimensions to get the right aggregated dataset before moving to
-a more graphical overview. The pivot view shares the same content definition
-as graph views.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Module creation</p>
+<p>Use the command line above to  create an empty module Open Academy, and install it in Konvergo ERP.</p>
+</div>8
 
 Graph views have 4 display modes, the default mode is selected using the
 `@type` attribute.
@@ -1248,17 +1129,16 @@ the field should be aggregated rather than grouped on
     </graph>
     
 
-Warning
-
-Graph views perform aggregations on database values, they do not work with
-non-stored computed fields.
-
-Exercise
-
-Graph view
-
-Add a Graph view in the Session object that displays, for each course, the
-number of attendees under the form of a bar chart.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Module creation</p>
+<p>Use the command line above to  create an empty module Open Academy, and install it in Konvergo ERP.</p>
+</div>9 <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define a model</p>
+<p>Define a new data model <em>Course</em> in the <em>openacademy</em> module. A course has a title and a
+description. Courses must have a title.</p>
+</div>0
 
 ### Kanban
 
@@ -1273,14 +1153,14 @@ stage), or by responsible (each column is a user), and so on.
 
 Kanban views define the structure of each card as a mix of form elements
 (including basic HTML) and [QWeb
-Templates](../reference/frontend/qweb.html#reference-qweb).
+Templates](../reference/frontend/qweb#reference-qweb).
 
-Exercise
-
-Kanban view
-
-Add a Kanban view that displays sessions grouped by course (columns are thus
-courses).
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define a model</p>
+<p>Define a new data model <em>Course</em> in the <em>openacademy</em> module. A course has a title and a
+description. Courses must have a title.</p>
+</div>1
 
 ## Security
 
@@ -1311,22 +1191,17 @@ rights are usually created by a CSV file named after its model:
     access_idea_vote,idea.vote,model_idea_vote,base.group_user,1,1,1,0
     
 
-Exercise
-
-Add access control through the Odoo interface
-
-Create a new user “John Smith”. Then create a group “OpenAcademy / Session
-Read” with read access to the _Session_ model.
-
-Exercise
-
-Add access control through data files in your module
-
-Using data files,
-
-  * Create a group _OpenAcademy / Manager_ with full access to all OpenAcademy models
-
-  * Make _Session_ and _Course_ readable by all users
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define a model</p>
+<p>Define a new data model <em>Course</em> in the <em>openacademy</em> module. A course has a title and a
+description. Courses must have a title.</p>
+</div>2 <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define a model</p>
+<p>Define a new data model <em>Course</em> in the <em>openacademy</em> module. A course has a title and a
+description. Courses must have a title.</p>
+</div>3
 
 ### Record rules
 
@@ -1354,14 +1229,12 @@ same convention as the method `write()` of the ORM.
     </record>
     
 
-Exercise
-
-Record rule
-
-Add a record rule for the model Course and the group “OpenAcademy / Manager”,
-that restricts `write` and `unlink` accesses to the responsible of a course.
-If a course has no responsible, all users of the group must be able to modify
-it.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define a model</p>
+<p>Define a new data model <em>Course</em> in the <em>openacademy</em> module. A course has a title and a
+description. Courses must have a title.</p>
+</div>4
 
 ## Wizards
 
@@ -1378,12 +1251,12 @@ particularities:
 We want to create a wizard that allow users to create attendees for a
 particular session, or for a list of sessions at once.
 
-Exercise
-
-Define the wizard
-
-Create a wizard model with a many2one relationship with the _Session_ model
-and a many2many relationship with the _Partner_ model.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define a model</p>
+<p>Define a new data model <em>Course</em> in the <em>openacademy</em> module. A course has a title and a
+description. Courses must have a title.</p>
+</div>5
 
 ### Launching wizards
 
@@ -1407,85 +1280,71 @@ this field will make the action appear on the views of the model the action is
     </record>
     
 
-Tip
-
-While wizards use regular views and buttons, normally clicking any button in a
-form would first save the form then close the dialog. Because this is often
-undesirable in wizards, a special attribute `special="cancel"` is available
-which immediately closes the wizard without saving the form.
-
-Exercise
-
-Launch the wizard
-
-  1. Define a form view for the wizard.
-
-  2. Add the action to launch it in the context of the _Session_ model.
-
-  3. Define a default value for the session field in the wizard; use the context parameter `self._context` to retrieve the current session.
-
-Exercise
-
-Register attendees
-
-Add buttons to the wizard, and implement the corresponding method for adding
-the attendees to the given session.
-
-Exercise
-
-Register attendees to multiple sessions
-
-Modify the wizard model so that attendees can be registered to multiple
-sessions.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define a model</p>
+<p>Define a new data model <em>Course</em> in the <em>openacademy</em> module. A course has a title and a
+description. Courses must have a title.</p>
+</div>6 <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define a model</p>
+<p>Define a new data model <em>Course</em> in the <em>openacademy</em> module. A course has a title and a
+description. Courses must have a title.</p>
+</div>7 <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define a model</p>
+<p>Define a new data model <em>Course</em> in the <em>openacademy</em> module. A course has a title and a
+description. Courses must have a title.</p>
+</div>8
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Define a model</p>
+<p>Define a new data model <em>Course</em> in the <em>openacademy</em> module. A course has a title and a
+description. Courses must have a title.</p>
+</div>9
 
 ## Internationalization
 
 Each module can provide its own translations within the i18n directory, by
 having files named LANG.po where LANG is the locale code for the language, or
 the language and country combination when they differ (e.g. pt.po or
-pt_BR.po). Translations will be loaded automatically by Odoo for all enabled
+pt_BR.po). Translations will be loaded automatically by Konvergo ERP for all enabled
 languages. Developers always use English when creating a module, then export
-the module terms using Odoo’s gettext POT export feature (Settings ‣
+the module terms using Konvergo ERP’s gettext POT export feature (Settings ‣
 Translations ‣ Import/Export ‣ Export Translation without specifying a
 language), to create the module template POT file, and then derive the
 translated PO files. Many IDE’s have plugins or modes for editing and merging
 PO/POT files.
 
-Tip
-
-The Portable Object files generated by Odoo are published on
-[Transifex](https://www.transifex.com/odoo/public/), making it easy to
-translate the software.
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>some modules exist solely to add data into Konvergo ERP</p>
+</div>0
 
     
     
     |- idea/ # The module directory
        |- i18n/ # Translation files
-          | - idea.pot # Translation Template (exported from Odoo)
+          | - idea.pot # Translation Template (exported from Konvergo ERP)
           | - fr.po # French translation
           | - pt_BR.po # Brazilian Portuguese translation
           | (...)
     
 
-Tip
-
-By default Odoo’s POT export only extracts labels inside XML files or inside
-field definitions in Python code, but any Python string can be translated this
-way by surrounding it with the function `odoo._()` (e.g. `_("Label")`)
-
-Exercise
-
-Translate a module
-
-Choose a second language for your Odoo installation. Translate your module
-using the facilities provided by Odoo.
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>some modules exist solely to add data into Konvergo ERP</p>
+</div>1 <div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>some modules exist solely to add data into Konvergo ERP</p>
+</div>2
 
 ## Reporting
 
 ### Printed reports
 
-Odoo uses a report engine based on [QWeb
-Templates](../reference/frontend/qweb.html#reference-qweb), [Twitter
+Konvergo ERP uses a report engine based on [QWeb
+Templates](../reference/frontend/qweb#reference-qweb), [Twitter
 Bootstrap](https://getbootstrap.com) and
 [Wkhtmltopdf](https://wkhtmltopdf.org).
 
@@ -1507,17 +1366,12 @@ A report is a combination two elements:
     </record>
     
 
-Tip
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>some modules exist solely to add data into Konvergo ERP</p>
+</div>3
 
-Because it largerly a standard action, as with Wizards it is generally useful
-to add the report as a _contextual item_ on the tree and / or form views of
-the model being reported on via the `binding_model_id` field.
-
-Here we are also using `binding_type` in order for the report to be in the
-_report_ contextual menu rather than the _action_ one. There is no technical
-difference but putting elements in the right place helps users.
-
-  * A standard [QWeb view](../reference/backend/views.html#reference-views-qweb) for the actual report:
+  * A standard [QWeb view](../reference/backend/views#reference-views-qweb) for the actual report:
     
         <t t-call="web.html_container">
         <t t-foreach="docs" t-as="o">
@@ -1552,57 +1406,33 @@ version of the _Invoice_ report is available through
 installed) and the PDF version through
 <http://localhost:8069/report/pdf/account.report_invoice/1>.
 
-Danger
-
-If it appears that your PDF report is missing the styles (i.e. the text
-appears but the style/layout is different from the html version), probably
-your [wkhtmltopdf](https://wkhtmltopdf.org) process cannot reach your web
-server to download them.
-
-If you check your server logs and see that the CSS styles are not being
-downloaded when generating a PDF report, most surely this is the problem.
-
-The [wkhtmltopdf](https://wkhtmltopdf.org) process will use the `web.base.url`
-system parameter as the _root path_ to all linked files, but this parameter is
-automatically updated each time the Administrator is logged in. If your server
-resides behind some kind of proxy, that could not be reachable. You can fix
-this by adding one of these system parameters:
-
-  * `report.url`, pointing to an URL reachable from your server (probably `http://localhost:8069` or something similar). It will be used for this particular purpose only.
-
-  * `web.base.url.freeze`, when set to `True`, will stop the automatic updates to `web.base.url`.
-
-Exercise
-
-Create a report for the Session model
-
-For each session, it should display session’s name, its start and end, and
-list the session’s attendees.
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>some modules exist solely to add data into Konvergo ERP</p>
+</div>4 <div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>some modules exist solely to add data into Konvergo ERP</p>
+</div>5
 
 ### Dashboards
 
-Exercise
-
-Define a Dashboard
-
-Define a dashboard containing the graph view you created, the sessions
-calendar view and a list view of the courses (switchable to a form view). This
-dashboard should be available through a menuitem in the menu, and
-automatically displayed in the web client when the OpenAcademy main menu is
-selected.
+<div class="aphorism alert alert-info">
+<p class="alert-title">
+Tip</p><p>some modules exist solely to add data into Konvergo ERP</p>
+</div>6
 
 1
 
     
 
 it is possible to [disable the automatic creation of some
-fields](../reference/backend/orm.html#reference-fields-automatic-log-access)
+fields](../reference/backend/orm#reference-fields-automatic-log-access)
 
 2
 
     
 
-writing raw SQL queries is possible, but requires care as it bypasses all Odoo
+writing raw SQL queries is possible, but requires care as it bypasses all Konvergo ERP
 authentication and security mechanisms.
 
   *[ORM]: Object-Relational Mapping

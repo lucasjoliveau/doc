@@ -11,17 +11,17 @@ Usually, _Removal Strategies_ are defined in picking operations to select the
 best products to optimize the distance for the worker, for quality control
 purposes, or to first move the products with the closest expiration date.
 
-When a product needs to be moved, Odoo finds available products that can be
-assigned to the transfer. The way Odoo assigns these products depends on the
-Removal Strategy defined in either the Product Category or the Location
-dashboards.
+When a product needs to be moved, Konvergo ERP finds available products that can be
+assigned to the transfer. The way Konvergo ERP assigns these products depends on the
+**Removal Strategy** defined in either the **Product Category** or the
+**Location** dashboards.
 
-To change the Removal Strategy, go to Inventory app ‣ Configuration ‣
-Locations or Product Categories. Click on a Location or Product Category, and
-then click Edit. Change the product category Force Removal Strategy or the
-location Removal Strategy by clicking on the drop-down menu and selecting the
-desired removal strategy. After selecting the new removal strategy, click
-Save.
+To change the **Removal Strategy** , go to Inventory app ‣ Configuration ‣
+Locations or Product Categories. Click on a **Location** or **Product
+Category** , and then click **Edit**. Change the product category **Force
+Removal Strategy** or the location **Removal Strategy** by clicking on the
+drop-down menu and selecting the desired removal strategy. After selecting the
+new removal strategy, click **Save**.
 
 ![Change the Force Removal Strategy for either the Product Categories or
 Locations.](../../../../../_images/product-category-location.png)
@@ -39,27 +39,26 @@ docks. Then, operators scan the products in the receiving area, with the
 reception date and expiration date. After that, products are stored in their
 respective storage locations.
 
-Note
-
-Not all products have expiration dates, but in this example, expiration dates
-apply.
-
-![Products entering stock via the receiving
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Not all products have expiration dates, but in this example, expiration dates apply.</p>
+</div> ![Products entering stock via the receiving
 area.](../../../../../_images/entering-stocks.png)
 
-In Odoo, receive products by navigating to the Inventory application, and in
-the kanban view, click on either the Receipts heading or # TO PROCESS button.
-On the Receipts dashboard, find and click on the individual receipt which will
-open the warehouse intake form. Click Edit, and then enter the received
-quantity in the Done column. To finish, Validate to receive the products and
-register them in the Odoo database.
+In Konvergo ERP, receive products by navigating to the Inventory application, and in
+the kanban view, click on either the **Receipts** heading or **# TO PROCESS**
+button. On the **Receipts** dashboard, find and click on the individual
+receipt which will open the warehouse intake form. Click **Edit** , and then
+enter the received quantity in the **Done** column. To finish, **Validate** to
+receive the products and register them in the Konvergo ERP database.
 
-Tip
-
-Receiving products can also be done within the Odoo _Barcode_ application. If
-using the _Barcode_ app, scan the product(s), update the quantity, and
-finally, click Validate. After products are received in Odoo, the products can
-then be moved to their respective storage locations.
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Receiving products can also be done within the Konvergo ERP <em>Barcode</em> application. If using the
+<em>Barcode</em> app, scan the product(s), update the quantity, and finally, click <b>Validate</b>.
+After products are received in Konvergo ERP, the products can then be moved to their respective storage
+locations.</p>
+</div>
 
 Continuing with the same example, below, imagine several sales orders are made
 for the products received earlier, that use expiration dates. In this example,
@@ -67,22 +66,17 @@ the products weren’t received on the same day, and they don’t have the same
 expiration date. In this situation, logically, sending products with the
 closest expiration date is preferred, instead of products received first or
 last. Using the chosen removal strategy configured for those products (in this
-example, FEFO), Odoo generates a transfer for the products with the soonest
+example, FEFO), Konvergo ERP generates a transfer for the products with the soonest
 expiration date to the picking area, then the packing area, and finally, to
 the shipping docks for delivery to the customer.
 
 ![Products being packed at the packing area for delivery, taking the
 expiration dates into account.](../../../../../_images/packing-products.png)
-
-Note
-
-To pick for delivery, the product’s lot/serial number can be found on the
-transfer form. To learn more about picking and shipping, refer to either the
-[Two-step
-delivery](../../shipping_receiving/daily_operations/receipts_delivery_two_steps.html#inventory-
-receipts-delivery-two-steps) or [Three-step
-delivery](../../shipping_receiving/daily_operations/delivery_three_steps.html#inventory-
-delivery-three-steps) documentation.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To pick for delivery, the product’s lot/serial number can be found on the transfer form. To learn
+more about picking and shipping, refer to either the <a href="../../shipping_receiving/daily_operations/receipts_delivery_two_steps#inventory-receipts-delivery-two-steps"><span class="std std-ref">Two-step delivery</span></a> or <a href="../../shipping_receiving/daily_operations/delivery_three_steps#inventory-delivery-three-steps"><span class="std std-ref">Three-step delivery</span></a> documentation.</p>
+</div>
 
 ## How each removal strategy works
 
@@ -91,7 +85,7 @@ orders are confirmed.
 
 ### First In, First Out (FIFO)
 
-When using a First In, First Out (FIFO) strategy, demand for a product
+When using a **First In, First Out (FIFO)** strategy, demand for a product
 triggers a removal rule, which requests a transfer for the lot/serial number
 that entered the stock first (and therefore, has been in stock for the longest
 time).
@@ -113,7 +107,7 @@ removed.](../../../../../_images/fifo-nails-picking.png)
 
 ### Last In, First Out (LIFO)
 
-Similar to the FIFO method, the Last In, First Out (LIFO) removal strategy
+Similar to the FIFO method, the **Last In, First Out (LIFO)** removal strategy
 moves products based on the date they entered a warehouse’s stock. Instead of
 removing the oldest stock on-hand, however, it targets the **newest** stock
 on-hand for removal.
@@ -122,11 +116,11 @@ Every time an order for products with the LIFO method is placed, a transfer is
 created for the lot/serial number that has most recently entered the stock
 (the **last** lot/serial number that entered the warehouse’s inventory).
 
-Warning
-
-In many countries, the LIFO removal strategy in banned, since it can
-potentially result in old, expired, or obsolete products being delivered to
-customers.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>In many countries, the <abbr title="Last In, First Out">LIFO</abbr> removal strategy in banned, since it can
+potentially result in old, expired, or obsolete products being delivered to customers.</p>
+</div>
 
 For example, imagine there are three lots of boxes of screws in the warehouse,
 and have the corresponding lot numbers: `10001`, `10002`, and `10003`, each
@@ -145,8 +139,8 @@ picking.](../../../../../_images/lifo-nails.png)
 ### First Expired, First Out (FEFO)
 
 While the FIFO and LIFO methods target products for removal based on date of
-entry into the warehouse, the First Expired, First Out (FEFO) method targets
-products for removal based on their assigned expiration dates.
+entry into the warehouse, the **First Expired, First Out (FEFO)** method
+targets products for removal based on their assigned expiration dates.
 
 Using the FEFO removal strategy, every sales order that includes products with
 this removal strategy assigned ensures that transfers are requested for
@@ -172,24 +166,26 @@ removed.](../../../../../_images/egg-lots-removal.png)
 ## Using removal strategies
 
 To differentiate some units of products from others, the units need to be
-tracked, either by Lot or by Serial Number. To do so, go to Inventory ‣
-Configuration ‣ Settings. Then, activate the Storage Locations, Multi-Step
-Routes, and Lots & Serial Numbers settings. Click Save to save changes.
+tracked, either by **Lot** or by **Serial Number**. To do so, go to Inventory
+‣ Configuration ‣ Settings. Then, activate the **Storage Locations** ,
+**Multi-Step Routes** , and **Lots & Serial Numbers** settings. Click **Save**
+to save changes.
 
 ![:alt: Traceability settings.](../../../../../_images/traceability.png)
 ![:alt: Warehouse settings.](../../../../../_images/warehouse-settings.png)
-
-Note
-
-To use the FEFO removal strategy, the Expiration Dates setting needs to be
-activated as well. To enable this, go to Inventory app ‣ Configuration ‣
-Settings, scroll down to the Traceability section, and click the checkbox next
-to Expiration Dates. Remember to click Save to save all changes.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To use the <abbr title="First Expired, First Out">FEFO</abbr> removal strategy, the <b>Expiration
+Dates</b> setting needs to be activated as well. To enable this, go to Inventory app
+‣ Configuration ‣ Settings, scroll down to the <b>Traceability</b> section, and click
+the checkbox next to <b>Expiration Dates</b>. Remember to click <b>Save</b> to save all
+changes.</p>
+</div>
 
 Now, specific removal strategies can be defined on product categories. To do
 this, go to Inventory app ‣ Configuration ‣ Product Categories, and choose a
-product category to define the removal strategy on. In the Force Removal
-Strategy field, choose a removal strategy.
+product category to define the removal strategy on. In the **Force Removal
+Strategy** field, choose a removal strategy.
 
 The _First Expired, First Out_ (FEFO) strategy is a bit different from the
 other two removal strategies. For FEFO, the expiration date is important, not
@@ -197,18 +193,18 @@ the date the product entered the stock.
 
 For example, imagine there are three lots of six-egg boxes (in this specific
 case, don’t forget to use [units of
-measure](../../product_management/product_replenishment/uom.html)). Those
-three lots have the following numbers: 20001, 20002, and 20003, each with five
-boxes in it.
+measure](../../product_management/product_replenishment/uom)). Those
+three lots have the following numbers: **20001** , **20002** , and **20003** ,
+each with five boxes in it.
 
-20001 entered the stock on the 1st of July and expires on the 15th of July,
-20002 entered on the 2nd and expires on the 14th of July, and 20003 entered on
-the 4th and expires on the 21st of July. A customer orders six boxes on the
-5th of July. With the FEFO strategy selected, a transfer is requested for the
-five boxes of 20002 and one from 20001. The transfer for all the boxes in lot
-20002 is because they have the closest expiration date. The transfer also
-requests one box from 20001 because has the next closest expiration date after
-lot 20002.
+**20001** entered the stock on the 1st of July and expires on the 15th of
+July, **20002** entered on the 2nd and expires on the 14th of July, and
+**20003** entered on the 4th and expires on the 21st of July. A customer
+orders six boxes on the 5th of July. With the FEFO strategy selected, a
+transfer is requested for the five boxes of **20002** and one from **20001**.
+The transfer for all the boxes in lot **20002** is because they have the
+closest expiration date. The transfer also requests one box from **20001**
+because has the next closest expiration date after lot **20002**.
 
 Basically, for every sales order of a product with the FEFO strategy, a
 transfer is requested for the product that has the nearest expiration date
@@ -223,15 +219,15 @@ not deteriorate with time.
 
 The aim is to avoid making the warehouse worker take a long journey to the
 bottom of the stock when the product is also located at a near location. This
-method is only available if the Storage Locations setting is on. The closest
-location is actually the one that comes first in the alphabetic order.
+method is only available if the **Storage Locations** setting is on. The
+closest location is actually the one that comes first in the alphabetic order.
 
 ## Use removal strategies
 
 To differentiate some units from others, the units need to be tracked, either
 by _lot_ or by _serial number_. To do so, go to Inventory ‣ Configuration ‣
-Settings. Then, activate the Storage Location, Multi-Step Routes, and Lots &
-Serial Numbers settings.
+Settings. Then, activate the **Storage Location** , **Multi-Step Routes** ,
+and **Lots & Serial Numbers** settings.
 
 ![Removal strategy on a product category.](../../../../../_images/enabled-
 features.png)
@@ -240,18 +236,18 @@ To view all products with lots/serial numbers assigned to them, navigate to
 Inventory app ‣ Products ‣ Lots/Serial Numbers. This reveals a page with drop-
 down menus of all products assigned lots or serial numbers, filtered by
 _product_ by default. To change the category these products are filtered by,
-click Product (in the search bar, in the top right of the page) to remove the
-default filter, and select a new filter if desired.
+click **Product** (in the search bar, in the top right of the page) to remove
+the default filter, and select a new filter if desired.
 
 ![Click on Products, then Lots/Serial Numbers to display all the products with
 lots or serial numbers.](../../../../../_images/lot-serial.png)
 
-To view the serial numbers being selected for a sales order, go to the Sales
-app and select the sales order in question. In the sales order, click the
-Delivery smart button in the top right. In the Operations tab, click the ⦙≣
-(Detailed Operations) icon in the far right for the product in question. The
-Detailed Operations window appears, and displays the lot or serial numbers
-selected for that specific product for the delivery order.
+To view the serial numbers being selected for a sales order, go to the **Sales
+app** and select the sales order in question. In the sales order, click the
+**Delivery** smart button in the top right. In the **Operations** tab, click
+the **⦙≣ (Detailed Operations)** icon in the far right for the product in
+question. The **Detailed Operations** window appears, and displays the lot or
+serial numbers selected for that specific product for the delivery order.
 
 ### FIFO (First In, First Out)
 
@@ -262,8 +258,8 @@ not stuck with outdated styles in stock.
 
 In this example, there are three lots of white shirts. The shirts are from the
 _All/Clothes_ category, where _FIFO_ is set as the removal strategy. In the
-Inventory Valuation Report, the three different receipts are listed with the
-amounts.
+**Inventory Valuation Report** , the three different receipts are listed with
+the amounts.
 
 ![View of the lots of white shirts in the inventory valuation
 report.](../../../../../_images/inventory-valuation.png)
@@ -271,12 +267,13 @@ report.](../../../../../_images/inventory-valuation.png)
 Lot `000001` contains five shirts, lot `000002` contains three shirts, and lot
 `000003` contains two shirts.
 
-To see the removal strategy in action, go to the Sales app and click Create to
-create a sales order. Next, select a Customer from the drop-down menu. Then
-click Add a product in the Order Lines tab. Select a product (for this
-example, the White Shirt) from the drop-down menu, or type in the name of the
-product in the field. Enter a quantity (for this example, `6.00`) in the
-Quantity field, then click Save, then click Confirm.
+To see the removal strategy in action, go to the Sales app and click
+**Create** to create a sales order. Next, select a **Customer** from the drop-
+down menu. Then click **Add a product** in the **Order Lines** tab. Select a
+product (for this example, the **White Shirt**) from the drop-down menu, or
+type in the name of the product in the field. Enter a quantity (for this
+example, `6.00`) in the **Quantity** field, then click **Save** , then click
+**Confirm**.
 
 Once the sales order is confirmed, the delivery order will be created and
 linked to the picking, and the oldest lot numbers will be reserved thanks to
@@ -295,8 +292,8 @@ no time-sensitive factors, such as expiration dates.
 
 In this example, there are three lots of cinder blocks. The blocks are from
 the _All/Building Materials_ category, where _FIFO_ is set as the removal
-strategy. In the Inventory Valuation Report, the three different receipts are
-listed with the amounts.
+strategy. In the **Inventory Valuation Report** , the three different receipts
+are listed with the amounts.
 
 ![View of the lots of cinder blocks in the inventory valuation
 report.](../../../../../_images/inventory-valuation-bricks.png)
@@ -306,21 +303,22 @@ blocks, and lot `0000400` contains four cinder blocks.
 
 To see how the LIFO strategy works, first navigate to Inventory app ‣
 Configuration ‣ Product Categories, and select a product category (for this
-example, the All/Building Materials category) to edit. This reveals a product
-category form.
+example, the **All/Building Materials** category) to edit. This reveals a
+product category form.
 
-Once on the product category form, under the Logistics section, change the
-Force Removal Strategy to Last In First Out (LIFO).
+Once on the product category form, under the **Logistics** section, change the
+**Force Removal Strategy** to **Last In First Out (LIFO)**.
 
 ![Last in first out \(LIFO\) strategy set up as forced removal
 strategy.](../../../../../_images/last-in-first-out.png)
 
-To see the removal strategy in action, go to the Sales app and click Create to
-create a sales order. Next, select a Customer from the drop-down menu. Then
-click Add a product in the Order Lines tab. Select a product (for this
-example, the Cinder Block) from the drop-down menu, or type in the name of the
-product in the field. Enter a quantity (for this example, `5.00`) in the
-Quantity field, then click Save, then click Confirm.
+To see the removal strategy in action, go to the Sales app and click
+**Create** to create a sales order. Next, select a **Customer** from the drop-
+down menu. Then click **Add a product** in the **Order Lines** tab. Select a
+product (for this example, the **Cinder Block**) from the drop-down menu, or
+type in the name of the product in the field. Enter a quantity (for this
+example, `5.00`) in the **Quantity** field, then click **Save** , then click
+**Confirm**.
 
 Once the sales order is confirmed, the delivery order will be created and
 linked to the picking, and the newest lot numbers will be reserved thanks to
@@ -343,26 +341,24 @@ Removal dates indicate how many days _before_ the expiration date the product
 needs to be removed from stock. The removal date is set on the product form.
 Lots without a removal date defined are picked after lots with removal dates.
 
-Warning
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>If products are not removed from stock when they should be, lots that are past the expiration
+date may still be picked for delivery orders!</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>For more information about expiration dates, reference the <a href="../../product_management/product_tracking/expiration_dates">Expiration dates</a> document.</p>
+</div>
 
-If products are not removed from stock when they should be, lots that are past
-the expiration date may still be picked for delivery orders!
-
-Note
-
-For more information about expiration dates, reference the [Expiration
-dates](../../product_management/product_tracking/expiration_dates.html)
-document.
-
-First, go to Inventory app ‣ Configuration ‣ Settings and ensure Expiration
-Dates is enabled. Once the Expiration Dates setting is enabled, it’s possible
-to define different expiration dates for individual serialized products, as
-well as for lot numbers containing many products.
+First, go to Inventory app ‣ Configuration ‣ Settings and ensure **Expiration
+Dates** is enabled. Once the **Expiration Dates** setting is enabled, it’s
+possible to define different expiration dates for individual serialized
+products, as well as for lot numbers containing many products.
 
 In this example, there are three lots of hand cream. The creams are from the
 _All/Health & Beauty_ category, where _FEFO_ is set as the removal strategy.
-In the Inventory Valuation Report, the three different receipts are listed
-with the amounts.
+In the **Inventory Valuation Report** , the three different receipts are
+listed with the amounts.
 
 Lot `0000001` contains twenty tubes of hand cream, expiring on Sept 30, lot
 `0000002` contains ten tubes of hand cream, expiring on November 30, and lot
@@ -373,35 +369,36 @@ report.](../../../../../_images/hand-cream-lots.png)
 
 Expiration dates can be entered when validating the received products, or set
 on products by going to Inventory app ‣ Products ‣ Lots/Serial Numbers. Click
-Create, enter the serial number, and select the product from the drop-down
-menu. Next, select the expiration date in the Dates tab. Finally, click Save.
+**Create** , enter the serial number, and select the product from the drop-
+down menu. Next, select the expiration date in the **Dates** tab. Finally,
+click **Save**.
 
 ![View of the removal date for 0000001.](../../../../../_images/removal-
 date.png)
 
 To see how the FEFO strategy works, first navigate to Inventory app ‣
 Configuration ‣ Product Categories, and select a product category (in this
-example, the All/Health & Beauty category) to edit. This reveals a product
+example, the **All/Health & Beauty** category) to edit. This reveals a product
 category form.
 
-Once on the product category form, under the Logistics section, change the
-Force Removal Strategy to FEFO.
+Once on the product category form, under the **Logistics** section, change the
+**Force Removal Strategy** to FEFO.
 
 ![FEFO forced removal strategy set on the product
 category.](../../../../../_images/fefo.png)
 
-Next, go to the Sales app and click Create to create a sales order. Next,
-select a Customer from the drop-down menu. Then click Add a product in the
-Order Lines tab. Select a product (for this example, the Hand Cream) from the
-drop-down menu, or type in the name of the product in the field. Enter a
-quantity (in this example, `25.00`) in the Quantity field, then click Save,
-then click Confirm.
+Next, go to the Sales app and click **Create** to create a sales order. Next,
+select a **Customer** from the drop-down menu. Then click **Add a product** in
+the **Order Lines** tab. Select a product (for this example, the **Hand
+Cream**) from the drop-down menu, or type in the name of the product in the
+field. Enter a quantity (in this example, `25.00`) in the **Quantity** field,
+then click **Save** , then click **Confirm**.
 
 Once the sales order is confirmed, the delivery order will be created and
 linked to the picking, and the lot numbers expiring first will be reserved
 thanks to the FEFO strategy. All twenty tubes of hand cream from lot `0000001`
 and five from lot `0000003` will be selected to be sent to the customer,
-detailed in the Detailed Operations tab in the sales order.
+detailed in the **Detailed Operations** tab in the sales order.
 
 ![Hand cream lot numbers selected for the sales
 order.](../../../../../_images/pick-hand-cream.png)

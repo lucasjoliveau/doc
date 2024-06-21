@@ -8,15 +8,17 @@ mover la base de datos.
 
 ## Transferir una base de datos local
 
-### A Odoo en línea
+### A Konvergo ERP en línea
 
-Importante
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><ul>
+<li><p>Konvergo ERP en línea <em>no</em> es compatible con las <b>aplicaciones que no son estándar</b>.</p></li>
+<li><p>La versión actual de la base de datos debe ser <a href="supported_versions">compatible</a>.</p></li>
+</ul>
+</div>
 
-  * Odoo en línea _no_ es compatible con las **aplicaciones que no son estándar**.
-
-  * La versión actual de la base de datos debe ser [compatible](supported_versions.html).
-
-  1. Cree un [duplicado de la base de datos](on_premise.html#on-premise-duplicate).
+  1. Cree un [duplicado de la base de datos](on_premise#on-premise-duplicate).
 
   2. En este duplicado, desinstale todas las **aplicaciones que no son estándar**.
 
@@ -30,69 +32,58 @@ Importante
 
      * el **dump** como archivo adjunto o un enlace al archivo (es necesario si el archivo pesa más de 60 MB).
 
-  5. Odoo se asegura de que la base de datos sea compatible antes de publicarla en línea. Es posible que Odoo se ponga en contacto con usted si ocurren problemas técnicos durante el proceso.
+  5. Konvergo ERP se asegura de que la base de datos sea compatible antes de publicarla en línea. Es posible que Konvergo ERP se ponga en contacto con usted si ocurren problemas técnicos durante el proceso.
 
-Nota
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>En situaciones donde el tiempo es limitado deberá <a href="https://www.odoo.com/help">enviar un ticket de soporte</a>  tan pronto como le sea posible programar su transferencia.</p>
+</div>
 
-En situaciones donde el tiempo es limitado deberá [enviar un ticket de
-soporte](https://www.odoo.com/help) tan pronto como le sea posible programar
-su transferencia.
-
-### A Odoo.sh
+### A Konvergo ERP.sh
 
 Siga las instrucciones de la [sección Importar su base de
-datos](odoo_sh/getting_started/create.html#odoo-sh-import-your-database) de la
-documentación _Cree su proyecto_ de Odoo.sh.
+datos](odoo_sh/getting_started/create#odoo-sh-import-your-database) de la
+documentación _Cree su proyecto_ de Konvergo ERP.sh.
 
-## Transferir una base de datos de Odoo en línea
+## Transferir una base de datos de Konvergo ERP en línea
 
-Importante
-
-Las [versiones intermedias](supported_versions.html#supported-versions) de
-Odoo en línea no son compatibles con Odoo.sh ni de forma local. Si la base de
-datos que transferirá se ejecuta en una versión intermedia, entonces debe
-actualizarla a la siguiente [versión
-principal](supported_versions.html#supported-versions), espere su lanzamiento
-en caso de que sea necesario.
-
-Example
-
-Para transferir una base de datos en línea que se ejecuta en Odoo 16.3,
-primero tendría que actualizarla a Odoo 17.0.
-
-Truco
-
-Haga clic en el icono de engranaje (⚙) ubicado junto al nombre de la base de
-datos en el [gestor de bases de datos de Odoo en
-línea](https://www.odoo.com/my/databases/) para visualizar su número de
-versión.
-
-Advertencia
-
-Si hay una suscripción activa de Odoo vinculada a la base de datos que está
-migrando, comuníquese con un gerente de servicio al cliente o [envíe un ticket
-de soporte](https://www.odoo.com/help) para completar la transferencia de la
-suscripción.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Las <a href="supported_versions#supported-versions"><span class="std std-ref">versiones intermedias</span></a> de Konvergo ERP en línea no son compatibles con Konvergo ERP.sh ni de forma local. Si la base de datos que transferirá se ejecuta en una versión intermedia, entonces debe actualizarla a la siguiente <a href="supported_versions#supported-versions"><span class="std std-ref">versión principal</span></a>, espere su lanzamiento en caso de que sea necesario.</p>
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Para transferir una base de datos en línea que se ejecuta en Konvergo ERP 16.3, primero tendría que actualizarla a Konvergo ERP 17.0.</p>
+</div>
+<div class="alert alert-tip">
+<p class="alert-title">
+Truco</p><p>Haga clic en el icono de engranaje (<b>⚙</b>) ubicado junto al nombre de la base de datos en el <a href="https://www.odoo.com/my/databases/">gestor de bases de datos de Konvergo ERP en línea</a> para visualizar su número de versión.</p>
+</div>
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Si hay una suscripción activa de Konvergo ERP vinculada a la base de datos que está migrando, comuníquese con un gerente de servicio al cliente o <a href="https://www.odoo.com/help">envíe un ticket de soporte</a> para completar la transferencia de la suscripción.</p>
+</div>
+</div>
 
 ### A local
 
-  1. Inicie sesión en [el gestor de bases de datos de Odoo en línea](https://www.odoo.com/my/databases/) y haga clic en el icono de engranaje (⚙) ubicado junto al nombre de la base de datos para descargar una copia de seguridad. [Contacte al soporte de Odoo](https://www.odoo.com/help) si ocurre un error con la descarga porque el archivo es demasiado grande.
+  1. Inicie sesión en [el gestor de bases de datos de Konvergo ERP en línea](https://www.odoo.com/my/databases/) y haga clic en el icono de engranaje (**⚙**) ubicado junto al nombre de la base de datos para **descargar** una copia de seguridad. [Contacte al soporte de Konvergo ERP](https://www.odoo.com/help) si ocurre un error con la descarga porque el archivo es demasiado grande.
 
   2. Restaure la base de datos desde el gestor en su servidor local con la copia de seguridad.
 
-### A Odoo.sh
+### A Konvergo ERP.sh
 
-  1. Inicie sesión en [el gestor de bases de datos de Odoo en línea](https://www.odoo.com/my/databases/) y haga clic en el icono de engranaje (⚙) ubicado junto al nombre de la base de datos para descargar una copia de seguridad. [Contacte al soporte de Odoo](https://www.odoo.com/help) si ocurre un error con la descarga porque el archivo es demasiado grande.
+  1. Inicie sesión en [el gestor de bases de datos de Konvergo ERP en línea](https://www.odoo.com/my/databases/) y haga clic en el icono de engranaje (**⚙**) ubicado junto al nombre de la base de datos para **descargar** una copia de seguridad. [Contacte al soporte de Konvergo ERP](https://www.odoo.com/help) si ocurre un error con la descarga porque el archivo es demasiado grande.
 
-  2. Siga las instrucciones de la [sección Importar su base de datos](odoo_sh/getting_started/create.html#odoo-sh-import-your-database) de la documentación _Cree su proyecto_ de Odoo.sh.
+  2. Siga las instrucciones de la [sección Importar su base de datos](odoo_sh/getting_started/create#odoo-sh-import-your-database) de la documentación _Cree su proyecto_ de Konvergo ERP.sh.
 
-## Transferir una base de datos de Odoo.sh
+## Transferir una base de datos de Konvergo ERP.sh
 
-### A Odoo en línea
+### A Konvergo ERP en línea
 
-Importante
-
-Odoo en línea _no_ es compatible con las **aplicaciones que no son estándar**.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Konvergo ERP en línea <em>no</em> es compatible con las <b>aplicaciones que no son estándar</b>.</p>
+</div>
 
   1. Desinstale todas las **aplicaciones no estándar** en una compilación de prueba antes de hacerlo en la de producción.
 
@@ -110,23 +101,22 @@ Odoo en línea _no_ es compatible con las **aplicaciones que no son estándar**.
 
      * **cuándo** (y en qué zona horaria) desea que su base de datos esté funcionando.
 
-  3. Odoo se asegura de que la base de datos sea compatible antes de publicarla en línea. Es posible que Odoo se ponga en contacto con usted si ocurren problemas técnicos durante el proceso.
+  3. Konvergo ERP se asegura de que la base de datos sea compatible antes de publicarla en línea. Es posible que Konvergo ERP se ponga en contacto con usted si ocurren problemas técnicos durante el proceso.
 
-Nota
-
-  * En situaciones donde el tiempo es limitado deberá [enviar un ticket de soporte](https://www.odoo.com/help) tan pronto como le sea posible programar su transferencia.
-
-  * Seleccione la **región** más cercana a sus usuarios para reducir la latencia.
-
-  * Los futuros **administradores** deben tener una cuenta en Odoo.com
-
-  * La **fecha y hora** específicas en las que desea que la base de datos esté en funcionamiento son muy útiles para organizar el cambio de un servidor de Odoo.sh a los servidores de Odoo en línea.
-
-  * Las bases de datos **no se pueden utilizar** durante la migración.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><ul>
+<li><p>En situaciones donde el tiempo es limitado deberá <a href="https://www.odoo.com/help">enviar un ticket de soporte</a>  tan pronto como le sea posible programar su transferencia.</p></li>
+<li><p>Seleccione la <b>región</b> más cercana a sus usuarios para reducir la latencia.</p></li>
+<li><p>Los futuros <b>administradores</b> deben tener una cuenta en Konvergo ERP.com</p></li>
+<li><p>La <b>fecha y hora</b> específicas en las que desea que la base de datos esté en funcionamiento son muy útiles para organizar el cambio de un servidor de Konvergo ERP.sh a los servidores de Konvergo ERP en línea.</p></li>
+<li><p>Las bases de datos <b>no se pueden utilizar</b> durante la migración.</p></li>
+</ul>
+</div>
 
 ### A local
 
-  1. Descargue un [respaldo de su base de datos de producción de Odoo.sh](odoo_sh/getting_started/branches.html#odoo-sh-branches-backups).
+  1. Descargue un [respaldo de su base de datos de producción de Konvergo ERP.sh](odoo_sh/getting_started/branches#odoo-sh-branches-backups).
 
   2. Restaure la base de datos desde el gestor en su servidor local con la copia de seguridad.
 

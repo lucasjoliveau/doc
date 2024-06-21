@@ -1,14 +1,15 @@
-# 1\. Odoo Partnership Agreement
+# 1\. Konvergo ERP Partnership Agreement
 
 [Download PDF](../../odoo_partnership_agreement.pdf)
 
-Note
-
-Version 11 - 2023-05-19
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Version 11 - 2023-05-19</p>
+</div>
 
 BETWEEN:
 
-Odoo S.A., having its registered office at Chaussée de Namur, 40, 1367 Grand-
+Konvergo ERP S.A., having its registered office at Chaussée de Namur, 40, 1367 Grand-
 Rosière,
 
 Belgium, and its affiliates (collectively referred to as “ODOO”)
@@ -28,17 +29,17 @@ referred to as « the Parties ».
 ## 1.1. 1 Purpose
 
 The purpose of this agreement is to set forth the conditions under which ODOO
-provides services to PARTNER, access to the Odoo Enterprise Edition software,
+provides services to PARTNER, access to the Konvergo ERP Enterprise Edition software,
 and under which PARTNER complies with the obligations set out hereafter.
 
 ODOO hereby appoints PARTNER, and PARTNER hereby accepts the appointment, to
-be a non-exclusive partner promoting and selling « Odoo Enterprise Edition »
+be a non-exclusive partner promoting and selling « Konvergo ERP Enterprise Edition »
 to customers.
 
-PARTNER commits to doing its best effort to sell Odoo Enterprise contracts to
-its clients. To support that, PARTNER will market in priority the « Odoo
+PARTNER commits to doing its best effort to sell Konvergo ERP Enterprise contracts to
+its clients. To support that, PARTNER will market in priority the « Konvergo ERP
 Enterprise Edition » version to prospects and customers. PARTNER still has the
-option to sell services on other versions of the software, like « Odoo
+option to sell services on other versions of the software, like « Konvergo ERP
 Community Edition », should it be needed.
 
 ## 1.2. 2 Term of the Agreement
@@ -48,13 +49,13 @@ date of the signature. It is automatically renewed for an equal Term unless
 either party provides written notice of termination minimum 30 days before the
 end of the Term to the other party.
 
-## 1.3. 3 Access to Odoo Enterprise Edition
+## 1.3. 3 Access to Konvergo ERP Enterprise Edition
 
 ### 1.3.1. 3.1 Project platform access
 
-To help PARTNER promote Odoo Enterprise Edition, ODOO grants PARTNER access to
-its project code repository for all « Odoo Enterprise Edition » Apps, under
-the terms set forth in 10 Appendix A: Odoo Enterprise Edition License and the
+To help PARTNER promote Konvergo ERP Enterprise Edition, ODOO grants PARTNER access to
+its project code repository for all « Konvergo ERP Enterprise Edition » Apps, under
+the terms set forth in 10 Appendix A: Konvergo ERP Enterprise Edition License and the
 conditions restricted under this Agreement.
 
 In addition, ODOO grants PARTNER free access to the ODOO.SH platform for
@@ -62,39 +63,39 @@ testing and development purposes.
 
 ### 1.3.2. 3.2 Restrictions
 
-PARTNER commits to keeping confidentiality of the source code of Odoo
-Enterprise Edition Apps within its staff. Access to the source code of Odoo
-Enterprise Edition for customers is governed by the Odoo Enterprise
+PARTNER commits to keeping confidentiality of the source code of Konvergo ERP
+Enterprise Edition Apps within its staff. Access to the source code of Konvergo ERP
+Enterprise Edition for customers is governed by the Konvergo ERP Enterprise
 Subscription Agreement. PARTNER agrees to NOT redistribute this code to third
 parties without the written permission of ODOO.
 
-PARTNER commits to not offer services on Odoo Enterprise Edition to customers
-who are not covered by an Odoo Enterprise subscription, even during the
+PARTNER commits to not offer services on Konvergo ERP Enterprise Edition to customers
+who are not covered by an Konvergo ERP Enterprise subscription, even during the
 implementation phase.
 
 Notwithstanding the above, PARTNER commits to wholly preserve the integrity of
-the Odoo Enterprise Edition code that is required to verify the validity of
-usage of Odoo Enterprise Edition and to collect statistics that are needed for
+the Konvergo ERP Enterprise Edition code that is required to verify the validity of
+usage of Konvergo ERP Enterprise Edition and to collect statistics that are needed for
 that purpose.
 
 PARTNER is not allowed to block, restrict or limit in any way the customer’s
-access and use of the Odoo Enterprise Edition License, without prior
+access and use of the Konvergo ERP Enterprise Edition License, without prior
 consultation and written authorisation from ODOO.
 
 ## 1.4. 4 Partnership Services
 
 ### 1.4.1. 4.1 Partnership levels
 
-The Odoo partner program consists of two types of partnerships and four
+The Konvergo ERP partner program consists of two types of partnerships and four
 levels; “Learning Partners” is for companies who want everything necessary to
-start implementing Odoo, without visibility as an official partner until they
+start implementing Konvergo ERP, without visibility as an official partner until they
 get the required experience; “Official Partners” is for companies who want the
 visibility as Ready, Silver, and Gold, according to their experience with
-Odoo.
+Konvergo ERP.
 
-Partnership level granted to PARTNER depends on the _net new Odoo Enterprise
+Partnership level granted to PARTNER depends on the _net new Konvergo ERP Enterprise
 users sold_ in the last 12 months, the number of certified resources and the
-customer Retention Rate. The _net new Odoo Enterprise users sold_ includes new
+customer Retention Rate. The _net new Konvergo ERP Enterprise users sold_ includes new
 customers, upsells on existing customer, downsells on existing customers, and
 customer churn. Renewals of existing contracts do not count towards the number
 of Users Sold, but PARTNER still gets a commission on these contracts as
@@ -104,14 +105,14 @@ The table below summarizes the requirements that have to be met for each
 partnership level.
 
 The customer _Retention Rate_ is calculated by dividing the total number of
-Odoo Enterprise customers acquired by PARTNER in the last 3 years that are
-currently active by the total number of Odoo Enterprise customers acquired by
+Konvergo ERP Enterprise customers acquired by PARTNER in the last 3 years that are
+currently active by the total number of Konvergo ERP Enterprise customers acquired by
 PARTNER in the last 3 years.
 
 | Learning Partner | Official: Ready | Official: Silver | Official: Gold  
 ---|---|---|---|---  
-Annual Net New Odoo Enterprise Users Sold | 0 | 10 | 75 | 300  
-Number of Certified Employees on at least one of the 3 last Odoo versions | 0 | 1 | 3 | 6  
+Annual Net New Konvergo ERP Enterprise Users Sold | 0 | 10 | 75 | 300  
+Number of Certified Employees on at least one of the 3 last Konvergo ERP versions | 0 | 1 | 3 | 6  
 Minimum Retention Rate | n/a | n/a | 70% | 80%  
   
 Certifications are personal, so when a certified staff member leaves or joins
@@ -132,17 +133,17 @@ the table below:
 ---|---|---|---|---  
 **Recognition** |  |  |  |   
 Visibility on odoo.com | No | « Ready Partner » | « Silver Partner » | « Gold Partner »  
-Right to use « Odoo » trademark and Partner Logo | Yes | Yes | Yes | Yes  
+Right to use « Konvergo ERP » trademark and Partner Logo | Yes | Yes | Yes | Yes  
 **Training benefits** |  |  |  |   
 Sales Coaching & Webinars | Yes | Yes | Yes | Yes  
-Access to Odoo Knowledge Base | Yes | Yes | Yes | Yes  
+Access to Konvergo ERP Knowledge Base | Yes | Yes | Yes | Yes  
 **Software benefits** |  |  |  |   
-Access to Odoo Enterprise source code and Github repository | Yes | Yes | Yes | Yes  
-Odoo Enterprise trial extension code | Yes | Yes | Yes | Yes  
-Access to Odoo.sh for testing and development purposes | Yes | Yes | Yes | Yes  
+Access to Konvergo ERP Enterprise source code and Github repository | Yes | Yes | Yes | Yes  
+Konvergo ERP Enterprise trial extension code | Yes | Yes | Yes | Yes  
+Access to Konvergo ERP.sh for testing and development purposes | Yes | Yes | Yes | Yes  
 **Sales benefits** |  |  |  |   
-Commission on Odoo SH platform 1 | 10% | 50% | 50% | 50%  
-Commission on Odoo Enterprise | 10% | 10% | 15% | 20%  
+Commission on Konvergo ERP SH platform 1 | 10% | 50% | 50% | 50%  
+Commission on Konvergo ERP Enterprise | 10% | 10% | 15% | 20%  
 Commission on Maintenance of Extra Modules | 82% | 82% | 82% | 82%  
 Dedicated Account Manager & Partner Dashboard | No | Yes | Yes | Yes  
 **Marketing benefits** |  |  |  |   
@@ -158,10 +159,10 @@ up to a maximum of 150€ (or $180) of monthly commission per subscription, or
 
 ### 1.4.3. 4.3 Partner Recognition
 
-ODOO will promote « Official Partners » on the Odoo Partners list on odoo.com.
+ODOO will promote « Official Partners » on the Konvergo ERP Partners list on odoo.com.
 
 ODOO grants PARTNER, on a non-exclusive basis, the right to use and reproduce
-the ODOO Partner logo of the corresponding partnership level, and the « Odoo »
+the ODOO Partner logo of the corresponding partnership level, and the « Konvergo ERP »
 name in relation to this partnership agreement.
 
 Each Party undertakes to respect all the rights of the other Party in all the
@@ -174,16 +175,16 @@ respective company in the mind of the general public.
 PARTNER has access to the ODOO knowledge base for the duration of this
 Agreement. The ODOO knowledge base is an online e-platform containing a set of
 commercial, marketing and functional documents, to help PARTNER acquire and
-leverage Odoo knowledge, grow its business, attract more customers, and build
+leverage Konvergo ERP knowledge, grow its business, attract more customers, and build
 brand awareness.
 
 PARTNER will have access to commercial coaching provided by their dedicated
 Account Manager, as appointed by ODOO.
 
 PARTNER also has the option to purchase support services or training by
-subscribing to an Odoo Success Pack, for an extra fee.
+subscribing to an Konvergo ERP Success Pack, for an extra fee.
 
-### 1.4.5. 4.5 Commissions on Odoo Services sold by PARTNER
+### 1.4.5. 4.5 Commissions on Konvergo ERP Services sold by PARTNER
 
 For ODOO services purchased by a customer through PARTNER, and as long as
 PARTNER maintains a contractual relationship with the corresponding customer,
@@ -208,8 +209,8 @@ Working with PARTNER.
 
     
 
-“Working with an Odoo Partner” and “Covered Extra Modules” are defined in the
-Odoo Enterprise Subscription Agreement between ODOO and customers.
+“Working with an Konvergo ERP Partner” and “Covered Extra Modules” are defined in the
+Konvergo ERP Enterprise Subscription Agreement between ODOO and customers.
 
 ## 1.5. 5 Fees
 
@@ -247,11 +248,11 @@ On expiry or termination of this Agreement, PARTNER:
 
     
 
-  * shall not use anymore the materials and the Odoo brand name, trademarks and logos or claim the existence of any partnership or relationship with ODOO ;
+  * shall not use anymore the materials and the Konvergo ERP brand name, trademarks and logos or claim the existence of any partnership or relationship with ODOO ;
 
   * shall comply with its obligations during any notice period prior to such termination ;
 
-  * may not use Odoo Enterprise anymore, for development, test or production purpose
+  * may not use Konvergo ERP Enterprise anymore, for development, test or production purpose
 
 ## 1.7. 7 Liability and Indemnities
 
@@ -273,20 +274,20 @@ with the performance of its obligations under this Agreement.
 
 PARTNER acknowledges that he has no expectations and has received no
 assurances that any investment made in execution of this Agreement and the
-Odoo Partnership Program will be recovered or recouped or that he shall obtain
+Konvergo ERP Partnership Program will be recovered or recouped or that he shall obtain
 any anticipated amount of profits by virtue of this Agreement.
 
 ## 1.8. 8 Brand Image
 
-The « Odoo » mark (including the word mark and its visual representations and
+The « Konvergo ERP » mark (including the word mark and its visual representations and
 logos) is the exclusive property of ODOO.
 
-ODOO authorizes PARTNER to use the « Odoo » mark to promote its products and
+ODOO authorizes PARTNER to use the « Konvergo ERP » mark to promote its products and
 services, for the duration of this agreement only, as long as:
 
   * There is no possible confusion that the service is provided by PARTNER, not ODOO;
 
-  * PARTNER does not use the word “Odoo” in their company name, product name, domain name, and does not register any trademark that includes it.
+  * PARTNER does not use the word “Konvergo ERP” in their company name, product name, domain name, and does not register any trademark that includes it.
 
 Both Parties shall refrain from harming the brand image and reputation of the
 other Party, in any way whatsoever, in the performance of this Agreement.
@@ -299,7 +300,7 @@ termination of this Agreement.
 PARTNER grants ODOO the non-exclusive right to use PARTNER’s name or
 trademarks in press releases, advertisements or other public announcements.
 
-In particular, PARTNER accepts to be mentioned in the official list of Odoo
+In particular, PARTNER accepts to be mentioned in the official list of Konvergo ERP
 Partners on odoo.com, and that PARTNER’s logo and trademarks may be used for
 this purpose only.
 
@@ -336,7 +337,7 @@ Signatures
 For ODOO, | For PARTNER  
 ---|---  
   
-## 1.10. 10 Appendix A: Odoo Enterprise Edition License
+## 1.10. 10 Appendix A: Konvergo ERP Enterprise Edition License
 
-See [Odoo 16 Enterprise Edition](../licenses.html#odoo-enterprise-license).
+See [Konvergo ERP 16 Enterprise Edition](../licenses#odoo-enterprise-license).
 

@@ -1,26 +1,26 @@
 # Coding guidelines
 
-This page introduces the Odoo Coding Guidelines. Those aim to improve the
-quality of Odoo Apps code. Indeed proper code improves readability, eases
+This page introduces the Konvergo ERP Coding Guidelines. Those aim to improve the
+quality of Konvergo ERP Apps code. Indeed proper code improves readability, eases
 maintenance, helps debugging, lowers complexity and promotes reliability.
 These guidelines should be applied to every new module and to all new
 development.
 
-Warning
-
-When modifying existing files in **stable version** the original file style
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When modifying existing files in <b>stable version</b> the original file style
 strictly supersedes any other style guidelines. In other words please never
 modify existing files in order to apply these guidelines. It avoids disrupting
 the revision history of code lines. Diff should be kept minimal. For more
-details, see our [pull request guide](https://odoo.com/submit-pr).
-
-Warning
-
-When modifying existing files in **master (development) version** apply those
+details, see our <a href="https://odoo.com/submit-pr">pull request guide</a>.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When modifying existing files in <b>master (development) version</b> apply those
 guidelines to existing code only for modified code or if most of the file is
 under revision. In other words modify existing files structure only if it is
-going under major changes. In that case first do a **move** commit then apply
-the changes related to the feature.
+going under major changes. In that case first do a <b>move</b> commit then apply
+the changes related to the feature.</p>
+</div>
 
 ## Module structure
 
@@ -68,7 +68,7 @@ impacted models.
     |-- models/
     |   |-- plant_nursery.py (first main model)
     |   |-- plant_order.py (another main model)
-    |   |-- res_partner.py (inherited Odoo model)
+    |   |-- res_partner.py (inherited Konvergo ERP model)
     
 
 Concerning _security_ , three main files should be used:
@@ -124,7 +124,7 @@ well as subtypes, activities and mail templates all related to mail module:
 
 Concerning _controllers_ , generally all controllers belong to a single
 controller contained in a file named `<module_name>.py`. An old convention in
-Odoo is to name this file `main.py` but it is considered as outdated. If you
+Konvergo ERP is to name this file `main.py` but it is considered as outdated. If you
 need to inherit an existing controller from another module do it in
 `<inherited_module_name>.py`. For example adding portal controller in an
 application is done in `portal.py`.
@@ -144,7 +144,7 @@ name. For instance, the activity widgets are located in `activity.js` of mail
 module. Subdirectories can also be created to structure the ‘package’ (see web
 module for more details). The same logic should be applied for the templates
 of JS widgets (static XML files) and for their styles (scss files). Don’t link
-data (image, libraries) outside Odoo: do not use an URL to an image but copy
+data (image, libraries) outside Konvergo ERP: do not use an URL to an image but copy
 it in the codebase instead.
 
 Concerning _wizards_ , naming convention is the same of for python models:
@@ -182,7 +182,7 @@ templates naming is the following :
     |   |-- plant_order_templates.xml (xml report templates)
     
 
-The complete tree of our Odoo module therefore looks like
+The complete tree of our Konvergo ERP module therefore looks like
 
     
     
@@ -241,13 +241,14 @@ The complete tree of our Odoo module therefore looks like
     |   |--make_plant_order_views.xml
     
 
-Note
-
-File names should only contain `[a-z0-9_]` (lowercase alphanumerics and `_`)
-
-Warning
-
-Use correct file permissions : folder 755 and file 644.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>File names should only contain <code>[a-z0-9_]</code> (lowercase
+alphanumerics and <code>_</code>)</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Use correct file permissions : folder 755 and file 644.</p>
+</div>
 
 ## XML files
 
@@ -281,7 +282,7 @@ recommended:
     </record>
     
 
-Odoo supports custom tags acting as syntactic sugar:
+Konvergo ERP supports custom tags acting as syntactic sugar:
 
   * menuitem: use it as a shortcut to declare a `ir.ui.menu`
 
@@ -394,15 +395,15 @@ based upon the first one.
 
 ## Python
 
-Warning
-
-Do not forget to read the [Security
-Pitfalls](../../developer/reference/backend/security.html#reference-security-
-pitfalls) section as well to write secure code.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Do not forget to read the <a href="../../developer/reference/backend/security#reference-security-pitfalls"><span class="std std-ref">Security Pitfalls</span></a>
+section as well to write secure code.</p>
+</div>
 
 ### PEP8 options
 
-Using a linter can help show syntax and semantic warnings or errors. Odoo
+Using a linter can help show syntax and semantic warnings or errors. Konvergo ERP
 source code tries to respect Python standard, but some of them can be ignored.
 
   * E501: line too long
@@ -419,7 +420,7 @@ The imports are ordered as
 
   2. Imports of `odoo`
 
-  3. Imports from Odoo modules (rarely, and only if necessary)
+  3. Imports from Konvergo ERP modules (rarely, and only if necessary)
 
 Inside these 3 groups, the imported lines are alphabetically sorted.
 
@@ -515,7 +516,7 @@ Inside these 3 groups, the imported lines are alphabetically sorted.
             return [axis] # single-element list
     
 
-  * Know your builtins : You should at least have a basic understanding of all the Python builtins (<http://docs.python.org/library/functions.html>)
+  * Know your builtins : You should at least have a basic understanding of all the Python builtins (<http://docs.python.org/library/functions>)
 
     
     
@@ -585,9 +586,9 @@ So, you can write `if some_collection:` instead of `if len(some_collection):`.
 
   * In additions to these guidelines, you may also find the following link interesting: <http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html> (a little bit outdated, but quite relevant)
 
-### Programming in Odoo
+### Programming in Konvergo ERP
 
-  * Avoid to create generators and decorators: only use the ones provided by the Odoo API.
+  * Avoid to create generators and decorators: only use the ones provided by the Konvergo ERP API.
 
   * As in python, use `filtered`, `mapped`, `sorted`, … methods to ease code reading and performance.
 
@@ -602,16 +603,15 @@ different context, the `with_context` method should be used :
     records.with_context(**additionnal_context).do_other_stuff() # additionnal_context values override native context ones
     
 
-Warning
-
-Passing parameter in context can have dangerous side-effects.
-
-Since the values are propagated automatically, some unexpected behavior may
-appear. Calling `create()` method of a model with _default_my_field_ key in
-context will set the default value of _my_field_ for the concerned model. But
-if during this creation, other objects (such as sale.order.line, on sale.order
-creation) having a field name _my_field_ are created, their default value will
-be set too.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Passing parameter in context can have dangerous side-effects.</p>
+<p>Since the values are propagated automatically, some unexpected behavior may appear.
+Calling <code>create()</code> method of a model with <em>default_my_field</em> key in context
+will set the default value of <em>my_field</em> for the concerned model.
+But if during this creation, other objects (such as sale.order.line, on sale.order creation)
+having a field name <em>my_field</em> are created, their default value will be set too.</p>
+</div>
 
 If you need to create a key context influencing the behavior of some object,
 choose a good name, and eventually prefix it by the name of the module to
@@ -664,7 +664,7 @@ This recommendation is also relevant for classes, files, modules and packages.
 
 #### Never commit the transaction
 
-The Odoo framework is in charge of providing the transactional context for all
+The Konvergo ERP framework is in charge of providing the transactional context for all
 RPC calls. The principle is that a new database cursor is opened at the
 beginning of each RPC call, and committed when the call has returned, just
 before transmitting the answer to the RPC client, approximately like this:
@@ -733,7 +733,7 @@ can and will be removed !
 
 #### Use translation method correctly
 
-Odoo uses a GetText-like method named “underscore” `_( )` to indicate that a
+Konvergo ERP uses a GetText-like method named “underscore” `_( )` to indicate that a
 static string used in the code needs to be translated at runtime using the
 language of the context. This pseudo-method is accessed within your code by
 importing as follows:
@@ -815,7 +815,7 @@ sensible and obvious manner:
               "Please enter an integer value.", title=question)
     
 
-In general in Odoo, when manipulating strings, prefer `%` over `.format()`
+In general in Konvergo ERP, when manipulating strings, prefer `%` over `.format()`
 (when only one variable to replace in a string), and prefer `%(varname)`
 instead of position (when multiple variables have to be replaced). This makes
 the translation easier for the community translators.
@@ -824,13 +824,13 @@ the translation easier for the community translators.
 
   * Model name (using the dot notation, prefix by the module name) :
     
-    * When defining an Odoo Model : use singular form of the name (_res.partner_ and _sale.order_ instead of _res.partnerS_ and _saleS.orderS_)
+    * When defining an Konvergo ERP Model : use singular form of the name (_res.partner_ and _sale.order_ instead of _res.partnerS_ and _saleS.orderS_)
 
-    * When defining an Odoo Transient (wizard) : use `<related_base_model>.<action>` where _related_base_model_ is the base model (defined in _models/_) related to the transient, and _action_ is the short name of what the transient do. Avoid the _wizard_ word. For instance : `account.invoice.make`, `project.task.delegate.batch`, …
+    * When defining an Konvergo ERP Transient (wizard) : use `<related_base_model>.<action>` where _related_base_model_ is the base model (defined in _models/_) related to the transient, and _action_ is the short name of what the transient do. Avoid the _wizard_ word. For instance : `account.invoice.make`, `project.task.delegate.batch`, …
 
     * When defining _report_ model (SQL views e.i.) : use `<related_base_model>.report.<action>`, based on the Transient convention.
 
-  * Odoo Python Class : use camelcase (Object-oriented style).
+  * Konvergo ERP Python Class : use camelcase (Object-oriented style).
 
     
     
@@ -949,10 +949,10 @@ the translation easier for the community translators.
 
 ### Static files organization
 
-Odoo addons have some conventions on how to structure various files. We
+Konvergo ERP addons have some conventions on how to structure various files. We
 explain here in more details how web assets are supposed to be organized.
 
-The first thing to know is that the Odoo server will serve (statically) all
+The first thing to know is that the Konvergo ERP server will serve (statically) all
 files located in a _static/_ folder, but prefixed with the addon name. So, for
 example, if a file is located in _addons/web/static/src/js/some_file.js_ ,
 then it will be statically available at the url _your-odoo-
@@ -1046,44 +1046,42 @@ SCSSCSS
 
   * meaningful use of whitespace.
 
-Suggested Stylelint settings
+<div class="accordion accordion-flush o_spoiler alert"><div class="accordion-item"><span class="accordion-header" id="o_spoiler_header_0"><button aria-controls="o_spoiler_content_0" aria-expanded="false" class="accordion-button collapsed flex-row-reverse justify-content-end fw-bold p-0 border-bottom-0" data-bs-target="#o_spoiler_content_0" data-bs-toggle="collapse" type="button">Suggested Stylelint settings</button></span><div aria-labelledby="o_spoiler_header_0" class="accordion-collapse collapse border-bottom-0" id="o_spoiler_content_0"><div class="accordion-body"><div class="highlight-html notranslate"><div class="highlight"><pre><span></span>"stylelint.config": {
+    "rules": {
+        // https://stylelint.io/user-guide/rules
 
-    
-    
-    "stylelint.config": {
-        "rules": {
-            // https://stylelint.io/user-guide/rules
-    
-            // Avoid errors
-            "block-no-empty": true,
-            "shorthand-property-no-redundant-values": true,
-            "declaration-block-no-shorthand-property-overrides": true,
-    
-            // Stylistic conventions
-            "indentation": 4,
-    
-            "function-comma-space-after": "always",
-            "function-parentheses-space-inside": "never",
-            "function-whitespace-after": "always",
-    
-            "unit-case": "lower",
-    
-            "value-list-comma-space-after": "always-single-line",
-    
-            "declaration-bang-space-after": "never",
-            "declaration-bang-space-before": "always",
-            "declaration-colon-space-after": "always",
-            "declaration-colon-space-before": "never",
-    
-            "block-closing-brace-empty-line-before": "never",
-            "block-opening-brace-space-before": "always",
-    
-            "selector-attribute-brackets-space-inside": "never",
-            "selector-list-comma-space-after": "always-single-line",
-            "selector-list-comma-space-before": "never-single-line",
-        }
-    },
-    
+        // Avoid errors
+        "block-no-empty": true,
+        "shorthand-property-no-redundant-values": true,
+        "declaration-block-no-shorthand-property-overrides": true,
+
+        // Stylistic conventions
+        "indentation": 4,
+
+        "function-comma-space-after": "always",
+        "function-parentheses-space-inside": "never",
+        "function-whitespace-after": "always",
+
+        "unit-case": "lower",
+
+        "value-list-comma-space-after": "always-single-line",
+
+        "declaration-bang-space-after": "never",
+        "declaration-bang-space-before": "always",
+        "declaration-colon-space-after": "always",
+        "declaration-colon-space-before": "never",
+
+        "block-closing-brace-empty-line-before": "never",
+        "block-opening-brace-space-before": "always",
+
+        "selector-attribute-brackets-space-inside": "never",
+        "selector-list-comma-space-after": "always-single-line",
+        "selector-list-comma-space-before": "never-single-line",
+    }
+},
+</pre></div>
+</div>
+</div></div></div></div>
 
 ### Properties order
 
@@ -1129,33 +1127,33 @@ prefix.
 Avoid creating hyper-specific classes and variable names. When naming nested
 elements, opt for the “Grandchild” approach.
 
-Example
-
-Don’t
-
-    
-    
-    <div class=“o_element_wrapper”>
-       <div class=“o_element_wrapper_entries”>
-          <span class=“o_element_wrapper_entries_entry”>
-             <a class=“o_element_wrapper_entries_entry_link”>Entry</a>
-          </span>
-       </div>
-    </div>
-    
-
-Do
-
-    
-    
-    <div class=“o_element_wrapper”>
-       <div class=“o_element_entries”>
-          <span class=“o_element_entry”>
-             <a class=“o_element_link”>Entry</a>
-          </span>
-       </div>
-    </div>
-    
+<div class="bg-light alert alert-success">
+<p class="alert-title">
+Example</p><div class="alert alert-danger docutils container">
+<p>Don’t</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">“o_element_wrapper”</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">“o_element_wrapper_entries”</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">“o_element_wrapper_entries_entry”</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">“o_element_wrapper_entries_entry_link”</span><span class="p">&gt;</span>Entry<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="alert alert-success docutils container">
+<p>Do</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">“o_element_wrapper”</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">“o_element_entries”</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">“o_element_entry”</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">“o_element_link”</span><span class="p">&gt;</span>Entry<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
 
 Besides being more compact, this approach eases maintenance because it limits
 the need of renaming when changes occur at the DOM.
@@ -1189,39 +1187,35 @@ The property/behavior defined by the variable.
 
 An optional modifier.
 
-Example
-
-    
-    
-    $o-block-color: value;
-    $o-block-title-color: value;
-    $o-block-title-color-hover: value;
-    
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When modifying existing files in <b>master (development) version</b> apply those
+guidelines to existing code only for modified code or if most of the file is
+under revision. In other words modify existing files structure only if it is
+going under major changes. In that case first do a <b>move</b> commit then apply
+the changes related to the feature.</p>
+</div>0
 
 #### SCSS Variables (scoped)
 
 These variables are declared within blocks and are not accessible from the
 outside. Our standard convention is `$-[variable name]`.
 
-Example
-
-    
-    
-    .o_element {
-       $-inner-gap: compute-something;
-    
-       margin-right: $-inner-gap;
-    
-       .o_element_child {
-          margin-right: $-inner-gap * 0.5;
-       }
-    }
-    
-
-See also
-
-[Variables scope on the SASS Documentation](https://sass-
-lang.com/documentation/variables#scope)
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When modifying existing files in <b>master (development) version</b> apply those
+guidelines to existing code only for modified code or if most of the file is
+under revision. In other words modify existing files structure only if it is
+going under major changes. In that case first do a <b>move</b> commit then apply
+the changes related to the feature.</p>
+</div>1 <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When modifying existing files in <b>master (development) version</b> apply those
+guidelines to existing code only for modified code or if most of the file is
+under revision. In other words modify existing files structure only if it is
+going under major changes. In that case first do a <b>move</b> commit then apply
+the changes related to the feature.</p>
+</div>2
 
 #### SCSS Mixins and Functions
 
@@ -1230,32 +1224,25 @@ functions, use verbs in the imperative form (e.g.: `get`, `make`, `apply`…).
 
 Name optional arguments in the scoped variables form, so `$-[argument]`.
 
-Example
-
-    
-    
-    @mixin o-avatar($-size: 1.5em, $-radius: 100%) {
-       width: $-size;
-       height: $-size;
-       border-radius: $-radius;
-    }
-    
-    @function o-invert-color($-color, $-amount: 100%) {
-       $-inverse: change-color($-color, $-hue: hue($-color) + 180);
-    
-       @return mix($-inverse, $-color, $-amount);
-    }
-    
-
-See also
-
-  * [Mixins on the SASS Documentation](https://sass-lang.com/documentation/at-rules/mixin)
-
-  * [Functions on the SASS Documentation](https://sass-lang.com/documentation/at-rules/function)
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When modifying existing files in <b>master (development) version</b> apply those
+guidelines to existing code only for modified code or if most of the file is
+under revision. In other words modify existing files structure only if it is
+going under major changes. In that case first do a <b>move</b> commit then apply
+the changes related to the feature.</p>
+</div>3 <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When modifying existing files in <b>master (development) version</b> apply those
+guidelines to existing code only for modified code or if most of the file is
+under revision. In other words modify existing files structure only if it is
+going under major changes. In that case first do a <b>move</b> commit then apply
+the changes related to the feature.</p>
+</div>4
 
 #### CSS Variables
 
-In Odoo, the use of CSS variables is strictly DOM-related. Use them to
+In Konvergo ERP, the use of CSS variables is strictly DOM-related. Use them to
 **contextually** adapt the design and layout.
 
 Our standard convention is BEM, so
@@ -1281,27 +1268,18 @@ The property/behavior defined by the variable.
 
 An optional modifier.
 
-Example
-
-    
-    
-    .o_kanban_record {
-       --KanbanRecord-width: value;
-       --KanbanRecord__picture-border: value;
-       --KanbanRecord__picture-border--active: value;
-    }
-    
-    // Adapt the component when rendered in another context.
-    .o_form_view {
-       --KanbanRecord-width: another-value;
-       --KanbanRecord__picture-border: another-value;
-       --KanbanRecord__picture-border--active: another-value;
-    }
-    
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When modifying existing files in <b>master (development) version</b> apply those
+guidelines to existing code only for modified code or if most of the file is
+under revision. In other words modify existing files structure only if it is
+going under major changes. In that case first do a <b>move</b> commit then apply
+the changes related to the feature.</p>
+</div>5
 
 ### Use of CSS Variables
 
-In Odoo, the use of CSS variables is strictly DOM-related, meaning that are
+In Konvergo ERP, the use of CSS variables is strictly DOM-related, meaning that are
 used to **contextually** adapt the design and layout rather than to manage the
 global design-system. These are typically used when a component’s properties
 can vary in specific contexts or in other circumstances.
@@ -1309,31 +1287,21 @@ can vary in specific contexts or in other circumstances.
 We define these properties inside the component’s main block, providing
 default fallbacks.
 
-Example
-
-`my_component.scss`
-
-    
-    
-    .o_MyComponent {
-       color: var(--MyComponent-color, #313131);
-    }
-    
-
-`my_dashboard.scss`
-
-    
-    
-    .o_MyDashboard {
-       // Adapt the component in this context only
-       --MyComponent-color: #017e84;
-    }
-    
-
-See also
-
-[CSS variables on MDN web docs](https://developer.mozilla.org/en-
-US/docs/Web/CSS/Using_CSS_custom_properties)
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When modifying existing files in <b>master (development) version</b> apply those
+guidelines to existing code only for modified code or if most of the file is
+under revision. In other words modify existing files structure only if it is
+going under major changes. In that case first do a <b>move</b> commit then apply
+the changes related to the feature.</p>
+</div>6 <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When modifying existing files in <b>master (development) version</b> apply those
+guidelines to existing code only for modified code or if most of the file is
+under revision. In other words modify existing files structure only if it is
+going under major changes. In that case first do a <b>move</b> commit then apply
+the changes related to the feature.</p>
+</div>7
 
 #### CSS and SCSS Variables
 
@@ -1342,12 +1310,16 @@ differently. The main difference is that, while `SCSS` variables are
 **imperative** and compiled away, `CSS` variables are **declarative** and
 included in the final output.
 
-See also
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When modifying existing files in <b>master (development) version</b> apply those
+guidelines to existing code only for modified code or if most of the file is
+under revision. In other words modify existing files structure only if it is
+going under major changes. In that case first do a <b>move</b> commit then apply
+the changes related to the feature.</p>
+</div>8
 
-[CSS/SCSS variables difference on the SASS Documentation](https://sass-
-lang.com/documentation/variables#:~:text=CSS%20variables%20are%20included%20in,use%20will%20stay%20the%20same)
-
-In Odoo, we take the best of both worlds: using the `SCSS` variables to define
+In Konvergo ERP, we take the best of both worlds: using the `SCSS` variables to define
 the design-system while opting for the `CSS` ones when it comes to contextual
 adaptations.
 
@@ -1355,39 +1327,19 @@ The implementation of the previous example should be improved by adding SCSS
 variables in order to gain control at the top-level and ensure consistency
 with other components.
 
-Example
-
-`secondary_variables.scss`
-
-    
-    
-    $o-component-color: $o-main-text-color;
-    $o-dashboard-color: $o-info;
-    // [...]
-    
-
-`component.scss`
-
-    
-    
-    .o_component {
-       color: var(--MyComponent-color, #{$o-component-color});
-    }
-    
-
-`dashboard.scss`
-
-    
-    
-    .o_dashboard {
-       --MyComponent-color: #{$o-dashboard-color};
-    }
-    
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>When modifying existing files in <b>master (development) version</b> apply those
+guidelines to existing code only for modified code or if most of the file is
+under revision. In other words modify existing files structure only if it is
+going under major changes. In that case first do a <b>move</b> commit then apply
+the changes related to the feature.</p>
+</div>9
 
 #### The `:root` pseudo-class
 
 Defining CSS variables on the `:root` pseudo-class is a technique we normally
-**don’t use** in Odoo’s UI. The practice is commonly used to access and modify
+**don’t use** in Konvergo ERP’s UI. The practice is commonly used to access and modify
 CSS variables globally. We perform this using SCSS instead.
 
 Exceptions to this rule should be fairly apparent, such as templates shared

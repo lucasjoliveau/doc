@@ -2,8 +2,8 @@
 
 ## Información general
 
-En Odoo.sh, una compilación se considera una base de datos que cargó un
-servidor de Odoo ([odoo/odoo](https://github.com/odoo/odoo) y
+En Konvergo ERP.sh, una compilación se considera una base de datos que cargó un
+servidor de Konvergo ERP ([odoo/odoo](https://github.com/odoo/odoo) y
 [odoo/enterprise](https://github.com/odoo/enterprise)) y se ejecuta en una
 revisión específica del repositorio de su proyecto en un entorno
 contenedorizado. Su objetivo es probar el comportamiento correcto del
@@ -17,7 +17,7 @@ una compilación de esta rama.
 
 Muchas veces, las compilaciones se crean después de enviar los cambios a las
 ramas de su repositorio de GitHub. También se pueden crear cuando realiza
-otras operaciones, como importar una base de datos a Odoo.sh o solicitar que
+otras operaciones, como importar una base de datos a Konvergo ERP.sh o solicitar que
 se vuelva a crear una compilación para una rama en su proyecto.
 
 Se considera que una compilación tuvo éxito si no aparecen errores o
@@ -93,7 +93,7 @@ considerará exitosa.
 
 Según la lista de módulos a instalar y probar, una compilación de desarrollo
 puede tardar hasta una hora en estar lista. Esto se debe al gran número de
-pruebas establecidas en el conjunto de módulos predeterminado de Odoo.
+pruebas establecidas en el conjunto de módulos predeterminado de Konvergo ERP.
 
 ## Funciones
 
@@ -123,7 +123,7 @@ como_ , en el menú desplegable del botón _Conectar_.
 dropdown.png](../../../_images/interface-builds-build-dropdown.png)
 
 En el menú desplegable de la compilación, puede acceder a las mismas funciones
-que en la [vista de las ramas](branches.html#odoosh-gettingstarted-branches-
+que en la [vista de las ramas](branches#odoosh-gettingstarted-branches-
 tabs): _Registros_ , _Webshell_ , _Editor_ , _Correos de salida_. También
 tiene la posibilidad de _descargar un dump_ de la base de datos de la
 compilación.

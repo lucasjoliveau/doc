@@ -6,18 +6,20 @@ plus de 50 pays.
 
 ![Logo Salt Edge](../../../../../_images/saltedge-logo.png)
 
-Odoo peut être synchronisé directement avec votre banque pour que tous les
+Konvergo ERP peut être synchronisé directement avec votre banque pour que tous les
 relevés bancaires soient automatiquement importés dans votre base de données.
 
-Pour plus d'infos
-
-  * [Synchronisation bancaire](../bank_synchronization.html)
-
-  * [Transactions](../transactions.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../bank_synchronization">Synchronisation bancaire</a></p></li>
+<li><p><a href="../transactions">Transactions</a></p></li>
+</ul>
+</div>
 
 ## Configuration
 
-### Lier ses comptes bancaires avec Odoo
+### Lier ses comptes bancaires avec Konvergo ERP
 
   1. Lancez la synchronisation en cliquant sur Comptabilité ‣ Configuration ‣ Ajouter un compte bancaire.
 
@@ -50,7 +52,7 @@ et sélectionnez l’établissement dont vous souhaitez mettre à jour les
 identifiants. Cliquez sur le bouton _Mettre à jour les identifiants_ pour
 lancer le flux et suivez les étapes.
 
-N’oubliez pas de cocher la case de consentement. Sinon, il se peut qu’Odoo ne
+N’oubliez pas de cocher la case de consentement. Sinon, il se peut qu’Konvergo ERP ne
 puisse pas accéder à vos informations.
 
 ### Récupérer de nouveaux comptes
@@ -62,23 +64,23 @@ et sélectionnez l’établissement pour récupérer les nouveaux comptes. Cliqu
 sur le bouton _Récupérer les comptes_ pour lancer le flux et suivez les
 étapes.
 
-N’oubliez pas de cocher la case de consentement. Sinon, il se peut qu’Odoo ne
+N’oubliez pas de cocher la case de consentement. Sinon, il se peut qu’Konvergo ERP ne
 puisse pas accéder à vos informations.
 
 ## FAQ
 
 ### Une erreur survient lorsque j’essaye de supprimer ma synchronisation dans
-Odoo
+Konvergo ERP
 
-Odoo ne peut pas supprimer définitivement la connexion que vous avez créée
+Konvergo ERP ne peut pas supprimer définitivement la connexion que vous avez créée
 avec l’établissement bancaire. Cependant, il peut révoquer le consentement que
-vous avez donné afin qu’Odoo ne puisse plus accéder à votre compte. L’erreur
+vous avez donné afin qu’Konvergo ERP ne puisse plus accéder à votre compte. L’erreur
 que vous voyez est probablement un message vous indiquant que le consentement
 a été révoqué, mais l’enregistrement n’a pas pu être supprimé, car il existe
 toujours dans Salt Edge. Si vous souhaitez supprimer complètement la
 connexion, veuillez vous connecter à votre [compte Salt
 Edge](https://www.saltedge.com/dashboard) et supprimer manuellement votre
-synchronisation. Une fois cela fait, vous pouvez revenir dans Odoo pour
+synchronisation. Une fois cela fait, vous pouvez revenir dans Konvergo ERP pour
 supprimer l’enregistrement.
 
 ### Une erreur me dit que j’ai déjà synchronisé ce compte
@@ -90,12 +92,12 @@ connexion avec les mêmes identifiants.
 
 Si vous avez déjà une synchronisation avec les mêmes identifiants présents sur
 votre tableau de bord Salt Edge et que cette synchronisation n’a pas été créée
-avec Odoo, veuillez la supprimer et la créer à partir de votre base de données
-Odoo.
+avec Konvergo ERP, veuillez la supprimer et la créer à partir de votre base de données
+Konvergo ERP.
 
 Dans le cas où vous avez déjà une connexion avec les mêmes identifiants
 présents sur votre tableau de bord Salt Edge et que cette synchronisation a
-été créée avec Odoo, vous pourrez normalement la retrouver en allant à
+été créée avec Konvergo ERP, vous pourrez normalement la retrouver en allant à
 Comptabilité ‣ Configuration ‣ Synchronisation en ligne. Veuillez vous assurer
 de _Mettre à jour les identifiants_ pour réactiver la connexion.
 

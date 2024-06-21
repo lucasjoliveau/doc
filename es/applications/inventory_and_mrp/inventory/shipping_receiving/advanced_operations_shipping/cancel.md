@@ -2,8 +2,8 @@
 
 ## Información general
 
-Odoo puede gestionar varios métodos de envío, incluso con transportistas
-externos. Odoo se vinculará al sistema de rastreo de la empresa de transporte.
+Konvergo ERP puede gestionar varios métodos de envío, incluso con transportistas
+externos. Konvergo ERP se vinculará al sistema de rastreo de la empresa de transporte.
 
 Esto le permitirá gestionar la empresa de transporte, los precios reales y el
 destino.
@@ -32,10 +32,11 @@ desea usar. Confírmelo al hacer clic en el botón **Enviar al transportista** ,
 recibirá un nuevo número de seguimiento y una nueva etiqueta.
 
 ![../../../../../_images/cancel03.png](../../../../../_images/cancel03.png)
-
-Ver también
-
-  * [Facturación del costo de envío](invoicing.html)
-
-  * [Envío en varios paquetes](multipack.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="invoicing">Facturación del costo de envío</a></p></li>
+<li><p><a href="multipack">Envío en varios paquetes</a></p></li>
+</ul>
+</div>
 

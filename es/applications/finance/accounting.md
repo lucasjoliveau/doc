@@ -1,92 +1,96 @@
 # Contabilidad y facturación
 
-La aplicación **Facturación de Odoo** es una aplicación autónoma para crear
+La aplicación **Facturación de Konvergo ERP** es una aplicación autónoma para crear
 facturas, enviárselas a sus clientes y gestionar pagos.
 
-**Contabilidad de Odoo** es una aplicación con funciones de contabilidad
+**Contabilidad de Konvergo ERP** es una aplicación con funciones de contabilidad
 completas. La productividad contable es el enfoque al desarrollar las
 diferentes funciones, como facturas reconocidas por inteligencia artificial,
 sincronización con sus cuentas bancarias, coincidencias inteligentemente
 sugeridas, etc.
 
-Ver también
-
-[Tutoriales de Odoo: Contabilidad](https://www.odoo.com/slides/accounting-19)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="https://www.odoo.com/slides/accounting-19">Tutoriales de Konvergo ERP: Contabilidad</a></p>
+</div>
 
 #### [Get startedBasic concepts of accounting and initial setup of your
-accounting ](accounting/get_started.html)#### [TaxesTaxes, fiscal positions,
-and integrations ](accounting/taxes.html)#### [Customer invoicesCustomer
+accounting ](accounting/get_started)#### [TaxesTaxes, fiscal positions,
+and integrations ](accounting/taxes)#### [Customer invoicesCustomer
 invoices, payment terms, and electronic invoicing
-](accounting/customer_invoices.html)#### [Vendor billsVendor bills, assets,
-and invoice digitization (OCR) ](accounting/vendor_bills.html)####
+](accounting/customer_invoices)#### [Vendor billsVendor bills, assets,
+and invoice digitization (OCR) ](accounting/vendor_bills)####
 [PaymentsInvoices and bills payments (online, checks, batches) and follow-up
-on invoices ](accounting/payments.html)#### [Bank and cash accountsBank
+on invoices ](accounting/payments)#### [Bank and cash accountsBank
 synchronization, reconciliation, and cash registers
-](accounting/bank.html)#### [ReportingReporting, declarations, and analytic
-accounting ](accounting/reporting.html)
+](accounting/bank)#### [ReportingReporting, declarations, and analytic
+accounting ](accounting/reporting)
 
 ## Contabilidad de doble entrada
 
-Odoo crea de manera automática todos los asientos de diarios de todas las
+Konvergo ERP crea de manera automática todos los asientos de diarios de todas las
 transacciones de contabilidad, como facturas, órdenes del punto de venta,
 gastos, valoraciones del inventario, etc.
 
-Odoo usa el sistema de partida doble, donde cada asiento requiere una
+Konvergo ERP usa el sistema de partida doble, donde cada asiento requiere una
 contraparte en una cuenta diferente, con una cuenta de débito y otra de
 crédito. De esta manera nos aseguramos de que todas las transacciones se
 registran debidamente y de que todas las cuentas siempre están balanceadas.
 
-Ver también
-
-[Hoja de referencia de contabilidad](accounting/get_started/cheat_sheet.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="accounting/get_started/cheat_sheet">Hoja de referencia de contabilidad</a></p>
+</div>
 
 ## Base de devengo y efectivo
 
-En Odoo es posible llevar la contabilidad con base de devengo y de efectivo.
+En Konvergo ERP es posible llevar la contabilidad con base de devengo y de efectivo.
 De esta manera podrá reportar un ingreso y un gasto ya sea cuando ocurra una
 transacción (base de devengo) o cuando se reciba un pago (base de efectivo).
 
-Ver también
-
-[Base de efectivo](accounting/taxes/cash_basis.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="accounting/taxes/cash_basis">Base de efectivo</a></p>
+</div>
 
 ## Multiempresa
 
 Es posible gestionar varias empresas dentro de una misma base de datos de
-Odoo. Cada empresa tiene su propio [plan de
-cuentas](accounting/get_started/chart_of_accounts.html), que también es útil
+Konvergo ERP. Cada empresa tiene su propio [plan de
+cuentas](accounting/get_started/chart_of_accounts), que también es útil
 para generar reportes de consolidación. Los usuarios tienen acceso a varias
 empresas, pero solo pueden trabajar en la contabilidad de una empresa a la
 vez.
 
 ## Entorno multiempresa
 
-En Odoo está disponible un entorno
-[multiempresa](accounting/get_started/multi_currency.html) con una tasa de
+En Konvergo ERP está disponible un entorno
+[multiempresa](accounting/get_started/multi_currency) con una tasa de
 cambio automática para facilitar transacciones internacionales. Cada
 transacción se registra en automático en la divisa de la empresa, para
-transacciones que se realizan en otra divisa, Odoo guardará el valor tanto en
+transacciones que se realizan en otra divisa, Konvergo ERP guardará el valor tanto en
 la divisa que se usa en la empresa como la divisa de la transacción en sí.
-Odoo genera las ganancias y pérdidas de la divisa después de conciliar los
+Konvergo ERP genera las ganancias y pérdidas de la divisa después de conciliar los
 apuntes de diario.
 
-Ver también
-
-[Gestionar un banco en una divisa
-extranjera](accounting/bank/foreign_currency.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="accounting/bank/foreign_currency">Gestionar un banco en una divisa extranjera</a></p>
+</div>
 
 ## Estándares internacionales
 
-Es posible utilizar Contabilidad de Odoo en más de 70 países. La aplicación
+Es posible utilizar Contabilidad de Konvergo ERP en más de 70 países. La aplicación
 contiene los mecanismos y estándares que son comunes en todas las naciones.
 Además, gracias a que es posible instalar módulos específicos para cada país,
 es fácil cumplir con todos los requisitos locales. Las posiciones fiscales
 existen para poder gestionar cuestiones específicas de cada región, como lo es
 el plan de cuentas, los impuestos y cualquier otro requerimiento.
 
-Ver también
-
-[Paquetes de localización fiscal](fiscal_localizations.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="fiscal_localizations">Paquetes de localización fiscal</a></p>
+</div>
 
 ## Cuentas por pagar y por cobrar
 
@@ -101,7 +105,7 @@ mayor de la empresa.
 
 ## Reportes
 
-Estos [reportes financieros](accounting/reporting.html) están disponibles y se
+Estos [reportes financieros](accounting/reporting) están disponibles y se
 actualizan en tiempo real:
 
 Reportes financieros  
@@ -126,29 +130,24 @@ Gastos rechazados
 Análisis de presupuesto  
 Márgenes de producto  
 Reporte 1099  
-  
-Truco
-
-[Cree y personalice reportes](accounting/reporting/customize.html) con el
-motor de reportes de Odoo.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p><a href="accounting/reporting/customize">Cree y personalice reportes</a> con el motor de reportes de Konvergo ERP.</p>
+</div>
 
 ### Informe de impuestos
 
-Odoo calcula todas las transacciones de contabilidad del periodo fiscal
+Konvergo ERP calcula todas las transacciones de contabilidad del periodo fiscal
 específico y usa los totales para calcular las obligaciones relativas a los
 impuestos.
 
-Importante
-
-Una vez que se crea el reporte de impuestos para un periodo, Odoo lo bloquea y
-evita que se creen nuevos asientos que incluyan IVA. Si necesita corregir
-cualquier factura, lo tendrá que hacer en el siguiente periodo.
-
-Nota
-
-Dependiendo de la localización del país, es posible generar una versión XML
-del reporte de impuestos para poder subirla a la plataforma de IVA de la
-autoridad fiscal correspondiente.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Una vez que se crea el reporte de impuestos para un periodo, Konvergo ERP lo bloquea y evita que se creen nuevos asientos que incluyan IVA. Si necesita corregir cualquier factura, lo tendrá que hacer en el siguiente periodo.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Dependiendo de la localización del país, es posible generar una versión XML del reporte de impuestos para poder subirla a la plataforma de IVA de la autoridad fiscal correspondiente.</p>
+</div>
 
 ## Sincronización bancaria
 
@@ -158,110 +157,112 @@ su base de datos. Podrá obtener un resumen de su flujo de efectivo sin tener
 que iniciar sesión en su sistema de banca en línea y sin tener que esperar a
 que le entreguen sus estados de cuenta físicos.
 
-Ver también
-
-[Sincronización bancaria](accounting/bank/bank_synchronization.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="accounting/bank/bank_synchronization">Sincronización bancaria</a></p>
+</div>
 
 ## Valoración del inventario
 
-En Odoo se pueden realizar tanto valuaciones de inventario de forma periódica
+En Konvergo ERP se pueden realizar tanto valuaciones de inventario de forma periódica
 (manuales) o permanente (automáticas). Los métodos disponibles son precio
 estándar, precio promedio, UEPS y FIFO.
 
-Ver también
-
-[Configuración de la valoración de
-inventario](../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/inventory_valuation_config.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/inventory_valuation_config">Configuración de la valoración de inventario</a></p>
+</div>
 
 ## Ganancias retenidas
 
 Las ganancias retenidas son la porción de los ingresos que un negocio retiene.
-Odoo calcula las ganancias del año actual en tiempo real, así que no se
+Konvergo ERP calcula las ganancias del año actual en tiempo real, así que no se
 necesita un diario de final de año ni renovación. El estado de resultados se
 reporta de manera automática en el reporte del balance general.
 
-Ver también
-
-[Hoja de referencia de contabilidad](accounting/get_started/cheat_sheet.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="accounting/get_started/cheat_sheet">Hoja de referencia de contabilidad</a></p>
+</div>0
 
 ## Fiduciarias
 
-El modo de empresas de contabilidad se puede activar desde Contabilidad ‣
+El modo de **empresas de contabilidad** se puede activar desde Contabilidad ‣
 Configuración ‣ Ajustes ‣ Modo de empresas de contabilidad. Cuando lo active:
 
   * Es posible editar la secuencia del documento en cada uno de ellos.
 
-  * Aparecerá un nuevo campo llamado Total (impuestos incluidos) con el que será posible acelerar y controlar la codificación, ya que las líneas se crearán de inmediato con la cuenta y el impuesto correctos;
+  * Aparecerá un nuevo campo llamado **Total (impuestos incluidos)** con el que será posible acelerar y controlar la codificación, ya que las líneas se crearán de inmediato con la cuenta y el impuesto correctos;
 
-  * Al codificar una transacción, el campo Fecha de la factura se llena de manera predeterminada.
+  * Al codificar una transacción, el campo **Fecha de la factura** se llena de manera predeterminada.
 
-  * La opción de Codificación rápida está disponible en sus facturas.
+  * La opción de **Codificación rápida** está disponible en sus facturas.
 
-  * [Información básica](accounting/get_started.html)
-    * [Hoja de referencia de Contabilidad](accounting/get_started/cheat_sheet.html)
-    * [Plan de cuentas](accounting/get_started/chart_of_accounts.html)
-    * [Sistema multidivisa](accounting/get_started/multi_currency.html)
-    * [Costo promedio en bienes devueltos](accounting/get_started/avg_price_valuation.html)
-    * [Unidades de IVA](accounting/get_started/vat_units.html)
-  * [Impuestos](accounting/taxes.html)
-    * [Impuestos de base de efectivo](accounting/taxes/cash_basis.html)
-    * [Retención fiscal](accounting/taxes/retention.html)
-    * [Comprobar un número de IVA (sistema VIES)](accounting/taxes/vat_verification.html)
-    * [Posiciones fiscales (mapeo de impuestos y cuentas)](accounting/taxes/fiscal_positions.html)
-    * [Integración con AvaTax](accounting/taxes/avatax.html)
-      * [Uso de AvaTax](accounting/taxes/avatax/avatax_use.html)
-      * [Portal de Avalara (AvaTax)](accounting/taxes/avatax/avalara_portal.html)
-    * [Integración con TaxCloud](accounting/taxes/taxcloud.html)
-    * [Ventas a distancia intracomunitarias en la UE](accounting/taxes/eu_distance_selling.html)
-    * [Precios B2B (impuestos no incluidos) y B2C (impuestos incluidos)](accounting/taxes/B2B_B2C.html)
-  * [Facturas de cliente](accounting/customer_invoices.html)
-    * [Procesos de facturación](accounting/customer_invoices/overview.html)
-    * [Direcciones de entrega y de facturación](accounting/customer_invoices/customer_addresses.html)
-    * [Términos de pago y planes de pago a plazos](accounting/customer_invoices/payment_terms.html)
-    * [Términos y condiciones predeterminados](accounting/customer_invoices/terms_conditions.html)
-    * [Descuentos por pronto pago y reducción de impuestos](accounting/customer_invoices/cash_discounts.html)
-    * [Notas de crédito y reembolsos](accounting/customer_invoices/credit_notes.html)
-    * [Redondeo de efectivo](accounting/customer_invoices/cash_rounding.html)
-    * [Ingresos diferidos](accounting/customer_invoices/deferred_revenues.html)
-    * [Facturación electrónica (EDI)](accounting/customer_invoices/electronic_invoicing.html)
-    * [Correo postal](accounting/customer_invoices/snailmail.html)
-    * [Códigos EPC QR](accounting/customer_invoices/epc_qr_code.html)
-    * [Incoterms](accounting/customer_invoices/incoterms.html)
-  * [Facturas de proveedor](accounting/vendor_bills.html)
-    * [Digitalización de documentos con IA](accounting/vendor_bills/invoice_digitization.html)
-    * [Activos no circulantes y fijos](accounting/vendor_bills/assets.html)
-    * [Gastos diferidos y prepagos](accounting/vendor_bills/deferred_expenses.html)
-  * [Pagos](accounting/payments.html)
-    * [Pagos en línea](accounting/payments/online.html)
-      * [Instale el parche para desactivar el pago de factura en línea](accounting/payments/online/install_portal_patch.html)
-    * [Cheques](accounting/payments/checks.html)
-    * [Pagos por lote para depósitos bancarios](accounting/payments/batch.html)
-    * [Pagos por lotes: domiciliación bancaria SEPA (SDD)](accounting/payments/batch_sdd.html)
-    * [Seguimiento en las facturas](accounting/payments/follow_up.html)
-    * [Transferencias internas](accounting/payments/internal_transfers.html)
-    * [Pagos con SEPA](accounting/payments/pay_sepa.html)
-    * [Pagar con cheques](accounting/payments/pay_checks.html)
-    * [Pronóstico de futuras facturas por pagar](accounting/payments/forecast.html)
-  * [Cuentas bancarias y de efectivo](accounting/bank.html)
-    * [Sincronización bancaria](accounting/bank/bank_synchronization.html)
-      * [Salt Edge](accounting/bank/bank_synchronization/saltedge.html)
-      * [Ponto](accounting/bank/bank_synchronization/ponto.html)
-      * [Enable Banking](accounting/bank/bank_synchronization/enablebanking.html)
-    * [Transacciones](accounting/bank/transactions.html)
-    * [Conciliación bancaria](accounting/bank/reconciliation.html)
-    * [Modelos de conciliación](accounting/bank/reconciliation_models.html)
-    * [Gestione una cuenta bancaria en una moneda extranjera](accounting/bank/foreign_currency.html)
-    * [Caja registradora](accounting/bank/cash_register.html)
-  * [Reportes](accounting/reporting.html)
-    * [Declaración de impuestos](accounting/reporting/tax_returns.html)
-    * [Traspaso de impuestos](accounting/reporting/tax_carryover.html)
-    * [Contabilidad analítica](accounting/reporting/analytic_accounting.html)
-    * [Presupuesto financiero](accounting/reporting/budget.html)
-    * [Intrastat](accounting/reporting/intrastat.html)
-    * [Reporte de comprobación de inalterabilidad de datos](accounting/reporting/data_inalterability.html)
-    * [Integración con Silverfin](accounting/reporting/silverfin.html)
-    * [Reportes personalizados](accounting/reporting/customize.html)
-    * [Cierre del ejercicio](accounting/reporting/year_end.html)
+  * [Información básica](accounting/get_started)
+    * [Hoja de referencia de Contabilidad](accounting/get_started/cheat_sheet)
+    * [Plan de cuentas](accounting/get_started/chart_of_accounts)
+    * [Sistema multidivisa](accounting/get_started/multi_currency)
+    * [Costo promedio en bienes devueltos](accounting/get_started/avg_price_valuation)
+    * [Unidades de IVA](accounting/get_started/vat_units)
+  * [Impuestos](accounting/taxes)
+    * [Impuestos de base de efectivo](accounting/taxes/cash_basis)
+    * [Retención fiscal](accounting/taxes/retention)
+    * [Comprobar un número de IVA (sistema VIES)](accounting/taxes/vat_verification)
+    * [Posiciones fiscales (mapeo de impuestos y cuentas)](accounting/taxes/fiscal_positions)
+    * [Integración con AvaTax](accounting/taxes/avatax)
+      * [Uso de AvaTax](accounting/taxes/avatax/avatax_use)
+      * [Portal de Avalara (AvaTax)](accounting/taxes/avatax/avalara_portal)
+    * [Integración con TaxCloud](accounting/taxes/taxcloud)
+    * [Ventas a distancia intracomunitarias en la UE](accounting/taxes/eu_distance_selling)
+    * [Precios B2B (impuestos no incluidos) y B2C (impuestos incluidos)](accounting/taxes/B2B_B2C)
+  * [Facturas de cliente](accounting/customer_invoices)
+    * [Procesos de facturación](accounting/customer_invoices/overview)
+    * [Direcciones de entrega y de facturación](accounting/customer_invoices/customer_addresses)
+    * [Términos de pago y planes de pago a plazos](accounting/customer_invoices/payment_terms)
+    * [Términos y condiciones predeterminados](accounting/customer_invoices/terms_conditions)
+    * [Descuentos por pronto pago y reducción de impuestos](accounting/customer_invoices/cash_discounts)
+    * [Notas de crédito y reembolsos](accounting/customer_invoices/credit_notes)
+    * [Redondeo de efectivo](accounting/customer_invoices/cash_rounding)
+    * [Ingresos diferidos](accounting/customer_invoices/deferred_revenues)
+    * [Facturación electrónica (EDI)](accounting/customer_invoices/electronic_invoicing)
+    * [Correo postal](accounting/customer_invoices/snailmail)
+    * [Códigos EPC QR](accounting/customer_invoices/epc_qr_code)
+    * [Incoterms](accounting/customer_invoices/incoterms)
+  * [Facturas de proveedor](accounting/vendor_bills)
+    * [Digitalización de documentos con IA](accounting/vendor_bills/invoice_digitization)
+    * [Activos no circulantes y fijos](accounting/vendor_bills/assets)
+    * [Gastos diferidos y prepagos](accounting/vendor_bills/deferred_expenses)
+  * [Pagos](accounting/payments)
+    * [Pagos en línea](accounting/payments/online)
+      * [Instale el parche para desactivar el pago de factura en línea](accounting/payments/online/install_portal_patch)
+    * [Cheques](accounting/payments/checks)
+    * [Pagos por lote para depósitos bancarios](accounting/payments/batch)
+    * [Pagos por lotes: domiciliación bancaria SEPA (SDD)](accounting/payments/batch_sdd)
+    * [Seguimiento en las facturas](accounting/payments/follow_up)
+    * [Transferencias internas](accounting/payments/internal_transfers)
+    * [Pagos con SEPA](accounting/payments/pay_sepa)
+    * [Pagar con cheques](accounting/payments/pay_checks)
+    * [Pronóstico de futuras facturas por pagar](accounting/payments/forecast)
+  * [Cuentas bancarias y de efectivo](accounting/bank)
+    * [Sincronización bancaria](accounting/bank/bank_synchronization)
+      * [Salt Edge](accounting/bank/bank_synchronization/saltedge)
+      * [Ponto](accounting/bank/bank_synchronization/ponto)
+      * [Enable Banking](accounting/bank/bank_synchronization/enablebanking)
+    * [Transacciones](accounting/bank/transactions)
+    * [Conciliación bancaria](accounting/bank/reconciliation)
+    * [Modelos de conciliación](accounting/bank/reconciliation_models)
+    * [Gestione una cuenta bancaria en una moneda extranjera](accounting/bank/foreign_currency)
+    * [Caja registradora](accounting/bank/cash_register)
+  * [Reportes](accounting/reporting)
+    * [Declaración de impuestos](accounting/reporting/tax_returns)
+    * [Traspaso de impuestos](accounting/reporting/tax_carryover)
+    * [Contabilidad analítica](accounting/reporting/analytic_accounting)
+    * [Presupuesto financiero](accounting/reporting/budget)
+    * [Intrastat](accounting/reporting/intrastat)
+    * [Reporte de comprobación de inalterabilidad de datos](accounting/reporting/data_inalterability)
+    * [Integración con Silverfin](accounting/reporting/silverfin)
+    * [Reportes personalizados](accounting/reporting/customize)
+    * [Cierre del ejercicio](accounting/reporting/year_end)
 
   *[UEPS]: Últimas entradas, primeras salidas
   *[FIFO]: Primeras entradas, primeras salidas

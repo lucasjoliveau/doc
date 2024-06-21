@@ -4,7 +4,7 @@ Con los descuentos usted puede atraer a sus clientes y aumentar sus ganancias
 drásticamente. Es vital para ofrecer descuentos, ya sea con tiempo limitado,
 por estaciones u ofrecidos manualmente.
 
-Para gestionar los descuentos Odoo tiene excelentes funciones que le ayudan a
+Para gestionar los descuentos Konvergo ERP tiene excelentes funciones que le ayudan a
 configurar una estrategia de fijación de precios que sea específica para cada
 empresa.
 
@@ -45,12 +45,10 @@ del punto de venta](../../../../_images/discounts_03.png)
 Haga clic en él e ingrese el descuento que quiera.
 
 ![Imagen del descuento que se ofrece en el resumen del
-pago](../../../../_images/discounts_04.png)
-
-Nota
-
-En este ejemplo hay un descuento global del 50% así como un descuento
-específico del 50% en las naranjas.
+pago](../../../../_images/discounts_04.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>En este ejemplo hay un descuento global del 50% así como un descuento específico del 50% en las naranjas.</p>
+</div>
 
 ## Aplicar descuentos por tiempo limitado
 
@@ -66,7 +64,7 @@ disponible en su PdV y defina una predeterminada.
 
 ### Crear una lista de precios
 
-De manera predeterminada, Odoo tiene una _Lista de precios pública_
+De manera predeterminada, Konvergo ERP tiene una _Lista de precios pública_
 configurada. Para crear más, vaya a Punto de venta ‣ Productos ‣ Lista de
 precios. Después, haga clic en crear.
 

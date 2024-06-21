@@ -3,8 +3,8 @@
 When you purchase a product, it may happen that your vendor uses a different
 unit of measure than you do when you sell it. This can cause confusion between
 sales and purchase representatives. It is also time-consuming to convert
-measures manually every time. With Odoo, you can configure your product once
-and let Odoo handle the conversion.
+measures manually every time. With Konvergo ERP, you can configure your product once
+and let Konvergo ERP handle the conversion.
 
 Consider the following examples:
 
@@ -17,7 +17,7 @@ Consider the following examples:
 Open your Sales app and go to Configuration ‣ Settings. Under Product Catalog,
 enable _Units of Measure_.
 
-![Enable the units of measure option in Odoo Sales](../../../../_images/uom-
+![Enable the units of measure option in Konvergo ERP Sales](../../../../_images/uom-
 enable-option.png)
 
 ## Specify sales and purchase units of measure
@@ -28,10 +28,10 @@ A variety of units of measure are available by default in your database. Each
 belongs to one of the five pre-configured units of measure categories: _Length
 / Distance_ , _Unit_ , _Volume_ , _Weight_ and _Working Time_.
 
-Tip
-
-You can create your new units of measure and units of measure categories (see
-next section).
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>You can create your new units of measure and units of measure categories (see next section).</p>
+</div>
 
 To specify different units of measures for sales and purchases, open the
 Purchase app and go to Products ‣ Products. Create a product or select an
@@ -45,13 +45,13 @@ Back to the first example, if you purchase orange juice from your vendor in
 (liters) as the _Unit of Measure_ , and _gal (US)_ (gallons) as the _Purchase
 Unit of Measure_ , then click on _Save_.
 
-![Configure a product's units of measure in Odoo](../../../../_images/uom-
+![Configure a product's units of measure in Konvergo ERP](../../../../_images/uom-
 product-configuration.png)
 
 ### Create new units of measure and units of measure categories
 
 Sometimes you need to create your own units and categories, either because the
-measure is not pre-configured in Odoo or because the units do not relate with
+measure is not pre-configured in Konvergo ERP or because the units do not relate with
 each other (e.g. kilos and centimeters).
 
 If you take the second example where you buy curtains from a vendor in the
@@ -62,7 +62,7 @@ units of measure.
 To do so, go to Configuration ‣ Units of Measure Categories. Click on _Create_
 and name the category.
 
-![Create a new units of measure category in Odoo
+![Create a new units of measure category in Konvergo ERP
 Purchase](../../../../_images/uom-new-category.png)
 
 The next step is to create the two units of measures. To do so, go to
@@ -72,25 +72,21 @@ First, create the unit of measure used as the reference point for converting
 to other units of measure inside the category by clicking on _Create_. Name
 the unit and select the units of measure category you just created. For the
 _Type_ , select _Reference Unit of Measure for this category type_. Enter the
-_Rounding Precision_ you would like to use. The quantity computed by Odoo is
+_Rounding Precision_ you would like to use. The quantity computed by Konvergo ERP is
 always a multiple of this value.
 
 In the example, as you cannot purchase less than 1 roll and won’t use
 fractions of a roll as a unit of measure, you can enter 1.
 
-![Create a new reference unit of measure in Odoo
-Purchase](../../../../_images/uom-new-reference-unit.png)
-
-Note
-
-If you use a _Rounding Precision_ inferior to 0.01, a warning message might
-appear stating that it is higher than the _Decimal Accuracy_ and that it might
-cause inconsistencies. If you wish to use a _Rounding Precision_ lower than
-0.01, first activate the [developer
-mode](../../../general/developer_mode.html#developer-mode), then go to
-Settings ‣ Technical ‣ Database Structure ‣ Decimal Accuracy, select _Product
-Unit of Measure_ and edit _Digits_ accordingly. For example, if you want to
-use a rounding precision of 0.00001, set _Digits_ to 5.
+![Create a new reference unit of measure in Konvergo ERP
+Purchase](../../../../_images/uom-new-reference-unit.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>If you use a <em>Rounding Precision</em> inferior to 0.01, a warning message might appear stating
+that it is higher than the <em>Decimal Accuracy</em> and that it might cause inconsistencies. If you
+wish to use a <em>Rounding Precision</em> lower than 0.01, first activate the <a href="../../../general/developer_mode#developer-mode"><span class="std std-ref">developer mode</span></a>, then go to Settings ‣ Technical ‣ Database Structure ‣
+Decimal Accuracy, select <em>Product Unit of Measure</em> and edit <em>Digits</em> accordingly. For example,
+if you want to use a rounding precision of 0.00001, set <em>Digits</em> to 5.</p>
+</div>
 
 Next, create a second unit of measure, name it, and select the same units of
 measure category as your reference unit. As _Type_ , select _Smaller_ or
@@ -104,12 +100,12 @@ the second unit is larger, the ratio should be smaller than 1.
 
 For your curtain roll, the ratio should be set to 100.
 
-![Create a second unit of measure in Odoo Purchase](../../../../_images/uom-
+![Create a second unit of measure in Konvergo ERP Purchase](../../../../_images/uom-
 second-unit.png)
 
-You can now configure your product just as you would using Odoo’s standard
+You can now configure your product just as you would using Konvergo ERP’s standard
 units of measure.
 
-![Set a product's units of measure using your own units in Odoo
+![Set a product's units of measure using your own units in Konvergo ERP
 Purchase](../../../../_images/uom-product-configuration-new-units.png)
 

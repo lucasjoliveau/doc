@@ -1,18 +1,18 @@
 # UI icons
 
-Odoo’s user interface mostly relies on [FontAwesome4
+Konvergo ERP’s user interface mostly relies on [FontAwesome4
 icons](https://fontawesome.com/v4/icons/).
 
 To cover FontAwesome’s lack of iconography for specific functionalities, we
 designed our own icon-font. These icons can be rendered using the main `oi`
 class in conjunction with the specific icon class.
 
-Example
-
-    
-    
-    <i class="oi oi-odoo"/>
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"oi oi-odoo"</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div>
 
 __`oi-apps`
 

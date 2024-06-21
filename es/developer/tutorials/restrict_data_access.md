@@ -1,13 +1,12 @@
 # Restrict access to data
 
-Importante
-
-This tutorial is an extension of the [Getting started](getting_started.html)
-tutorial. Make sure you have completed it and use the `estate` module you have
-built as a base for the exercises in this tutorial. Fetch the branch
-`16.0-core` from the [technical-training-
-solutions](https://github.com/odoo/technical-training-
-solutions/tree/16.0-core) repository if you want to start from a clean base.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>This tutorial is an extension of the <a href="getting_started">Getting started</a> tutorial. Make sure you have
+completed it and use the <code>estate</code> module you have built as a base for the exercises in this
+tutorial. Fetch the branch <code>16.0-core</code> from the <a href="https://github.com/odoo/technical-training-solutions/tree/16.0-core">technical-training-solutions</a> repository if you
+want to start from a clean base.</p>
+</div>
 
 So far we have mostly concerned ourselves with implementing useful features.
 However in most business scenarios _security_ quickly becomes a concern:
@@ -15,7 +14,7 @@ currently,
 
   * Any employee (which is what `group_user` stands for) can create, read, update or delete properties, property types, or property tags.
 
-  * If `estate_account` is installed then only agents allowed to interact with invoicing can confirm sales as that’s necessary to [create an invoice](getting_started/14_other_module.html#tutorials-getting-started-14-other-module-create).
+  * If `estate_account` is installed then only agents allowed to interact with invoicing can confirm sales as that’s necessary to [create an invoice](getting_started/14_other_module#tutorials-getting-started-14-other-module-create).
 
 However:
 
@@ -29,39 +28,38 @@ However:
 
   * All real-estate agents should be able to confirm the sale of a property they can manage, but we do not want them to be able to validate or mark as paid any invoice in the system.
 
-Nota
-
-We may actually be fine with some or most of these for a small business.
-
-Because it’s easier for users to disable unnecessary security rules than it is
-to create them from nothing, it’s better to err on the side of caution and
-limit access: users can relax that access if necessary or convenient.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>We may actually be fine with some or most of these for a small business.</p>
+<p>Because it’s easier for users to disable unnecessary security rules than it
+is to create them from nothing, it’s better to err on the side of caution
+and limit access: users can relax that access if necessary or convenient.</p>
+</div>
 
 ## Groups
 
-Ver también
-
-The documentation related to this topic can be found in [the security
-reference](../reference/backend/security.html#reference-security).
-
-[Coding guidelines](../../contributing/development/coding_guidelines.html)
-document the format and location of master data items.
-
-**Goal**
-
-At the end of this section,
-
-  * We can make employees _real-estate agents_ or _real-estate managers_.
-
-  * The `admin` user is a real-estate manager.
-
-  * We have a new _real-estate agent_ employee with no access to invoicing or administration.
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>The documentation related to this topic can be found in <a href="../reference/backend/security#reference-security"><span class="std std-ref">the security
+reference</span></a>.</p>
+<p><a href="../../contributing/development/coding_guidelines">Coding guidelines</a> document the format and
+location of master data items.</p>
+</div> <div class="admonition-goal alert">
+<p class="alert-title">
+<b>Goal</b></p><p>At the end of this section,</p>
+<ul>
+<li><p>We can make employees <em>real-estate agents</em> or <em>real-estate managers</em>.</p></li>
+<li><p>The <code>admin</code> user is a real-estate manager.</p></li>
+<li><p>We have a new <em>real-estate agent</em> employee with no access to invoicing
+or administration.</p></li>
+</ul>
+</div>
 
 It would not be practical to attach individual security rules to employees any
 time we need a change so _groups_ link security rules and users. They
 correspond to roles that can be assigned to employees.
 
-For most Odoo applications 1 a good baseline is to have _user_ and _manager_
+For most Konvergo ERP applications 1 a good baseline is to have _user_ and _manager_
 (or administrator) roles: the manager can change the configuration of the
 application and oversee the entirety of its use while the user can well, use
 the application 2.
@@ -72,73 +70,74 @@ This baseline seems sufficient for us:
 
   * Real estate agents can manage the properties under their care, or properties which are not specifically under the care of any agent.
 
-In keeping with Odoo’s data-driven nature, a group is no more than a record of
+In keeping with Konvergo ERP’s data-driven nature, a group is no more than a record of
 the `res.groups` model. They are normally part of a module’s [master
-data](define_module_data.html), defined in one of the module’s data files.
+data](define_module_data), defined in one of the module’s data files.
 
 As simple example [can be found
 here](https://github.com/odoo/odoo/blob/532c083cbbe0ee6e7a940e2bdc9c677bd56b62fa/addons/hr/security/hr_security.xml#L9-L14).
 
-Exercise
-
-  1. Create the `security.xml` file in the appropriate folder and add it to the `__manifest__.py` file.
-
-  2. If not already, add a `'category'` field to your `__manifest__.py` with value `Real Estate/Brokerage`.
-
-  3. Add a record creating a group with the id `estate_group_user`, the name «Agent» and the category `base.module_category_real_estate_brokerage`.
-
-  4. Below that, add a record creating a group with the id `estate_group_manager`, the name «Manager» and the category `base.module_category_real_estate_brokerage`. The `estate_group_manager` group needs to imply `estate_group_user`.
-
-Nota
-
-Where does that **category** comes from ? It’s a _module category_. Here we
-used the category id `base.module_category_real_estate_brokerage` which was
-automatically generated by Odoo based on the `category` set in the
-`__manifest__.py` of the module. You can also find here the list of [default
-module
-categories](https://github.com/odoo/odoo/blob/71da80deb044852a2af6b111d695f94aad7803ac/odoo/addons/base/data/ir_module_category_data.xml)
-provided by Odoo.
-
-Truco
-
-Since we modified data files, remember to restart Odoo and update the module
-using `-u estate`.
-
-If you go to Settings ‣ Manage Users and open the `admin` user («Mitchell
-Admin»), you should see a new section:
-
-![../../_images/groups.png](../../_images/groups.png)
-
-Set the admin user to be a _Real Estate manager_.
-
-Exercise
-
-Via the web interface, create a new user with only the «real estate agent»
-access. The user should not have any Invoicing or Administration access.
-
-Use a private tab or window to log in with the new user (remember to set a
-password), as the real-estate agent you should only see the real estate
-application, and possibly the Discuss (chat) application:
-
-![../../_images/agent.png](../../_images/agent.png)
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><ol class="arabic simple">
+<li><p>Create the <code>security.xml</code> file in the appropriate folder and add it to the <code>__manifest__.py</code> file.</p></li>
+<li><p>If not already, add a <code>'category'</code> field to your <code>__manifest__.py</code> with value <code>Real Estate/Brokerage</code>.</p></li>
+<li><p>Add a record creating a group with the id <code>estate_group_user</code>, the name «Agent»
+and the category <code>base.module_category_real_estate_brokerage</code>.</p></li>
+<li><p>Below that, add a record creating a group with the id <code>estate_group_manager</code>,
+the name «Manager» and the category <code>base.module_category_real_estate_brokerage</code>.
+The <code>estate_group_manager</code> group needs to imply <code>estate_group_user</code>.</p></li>
+</ol>
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Where does that <b>category</b> comes from ? It’s a <em>module category</em>.
+Here we used the category id <code>base.module_category_real_estate_brokerage</code>
+which was automatically generated by Konvergo ERP based on the <code>category</code> set in the <code>__manifest__.py</code> of the module.
+You can also find here the list of
+<a href="https://github.com/odoo/odoo/blob/71da80deb044852a2af6b111d695f94aad7803ac/odoo/addons/base/data/ir_module_category_data.xml">default module categories</a>
+provided by Konvergo ERP.</p>
+</div>
+<div class="alert alert-tip">
+<p class="alert-title">
+Truco</p><p>Since we modified data files, remember to restart Konvergo ERP and update the
+module using <code>-u estate</code>.</p>
+</div>
+<p>If you go to Settings ‣ Manage Users and open the
+<code>admin</code> user («Mitchell Admin»), you should see a new section:</p>
+<div class="figure align-default">
+<img alt="../../_images/groups.png" src="../../_images/groups.png"/>
+</div>
+<p>Set the admin user to be a <em>Real Estate manager</em>.</p>
+</div> <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Via the web interface, create a new user with only the «real estate agent»
+access. The user should not have any Invoicing or Administration access.</p>
+<p>Use a private tab or window to log in with the new user (remember to set
+a password), as the real-estate agent you should only see the real estate
+application, and possibly the Discuss (chat) application:</p>
+<div class="figure align-default">
+<img alt="../../_images/agent.png" src="../../_images/agent.png"/>
+</div>
+</div>
 
 ## Access Rights
 
-Ver también
-
-The documentation related to this topic can be found at [Access
-Rights](../reference/backend/security.html#reference-security-acl).
-
-**Goal**
-
-At the end of this section,
-
-  * Employees who are not at least real-estate agents will not see the real-estate application.
-
-  * Real-estate agents will not be able to update the property types or tags.
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>The documentation related to this topic can be found at
+<a href="../reference/backend/security#reference-security-acl"><span class="std std-ref">Access Rights</span></a>.</p>
+</div> <div class="admonition-goal alert">
+<p class="alert-title">
+<b>Goal</b></p><p>At the end of this section,</p>
+<ul>
+<li><p>Employees who are not at least real-estate agents will not see the
+real-estate application.</p></li>
+<li><p>Real-estate agents will not be able to update the property types or tags.</p></li>
+</ul>
+</div>
 
 Access rights were first introduced in [Chapter 5: Security - A Brief
-Introduction](getting_started/05_securityintro.html#tutorials-getting-
+Introduction](getting_started/05_securityintro#tutorials-getting-
 started-05-securityintro).
 
 Access rights are a way to give users access to models _via_ groups: associate
@@ -163,30 +162,19 @@ A user with the groups A and C will be able to do anything but delete the
 object while one with B and C will be able to read and update it, but not
 create or delete it.
 
-Nota
-
-  * The group of an access right can be omitted, this means the ACL applies to _every user_ , this is a useful but risky fallback as depending on the applications installed it can grant even non-users access to the model.
-
-  * If no access right applies to a user, they are not granted access (default-deny).
-
-  * If a menu item points to a model to which a user doesn’t have access and has no submenus which the user can see, the menu will not be displayed.
-
-Exercise
-
-Update the access rights file to:
-
-  * Give full access to all objects to your Real Estate Manager group.
-
-  * Give agents (real estate users) only read access to types and tags.
-
-  * Give nobody the right to delete properties.
-
-  * Check that your agent user is not able to alter types or tags, or to delete properties, but that they can otherwise create or update properties.
-
-Advertencia
-
-Remember to give different xids to your `ir.model.access` records otherwise
-they will overwrite one another.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>We may actually be fine with some or most of these for a small business.</p>
+<p>Because it’s easier for users to disable unnecessary security rules than it
+is to create them from nothing, it’s better to err on the side of caution
+and limit access: users can relax that access if necessary or convenient.</p>
+</div>0 <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>We may actually be fine with some or most of these for a small business.</p>
+<p>Because it’s easier for users to disable unnecessary security rules than it
+is to create them from nothing, it’s better to err on the side of caution
+and limit access: users can relax that access if necessary or convenient.</p>
+</div>1
 
 Since the «demo» user was not made a real-estate agent or manager, they should
 not even be able to see the real-estate application. Use a private tab or
@@ -194,16 +182,19 @@ window to check for this (the «demo» user has the password «demo»).
 
 ## Record Rules
 
-Ver también
-
-The documentation related to this topic can be found at [Record
-Rules](../reference/backend/security.html#reference-security-rules).
-
-**Goal**
-
-At the end of this section, agents will not be able to see the properties
-exclusive to their colleagues; but managers will still be able to see
-everything.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>We may actually be fine with some or most of these for a small business.</p>
+<p>Because it’s easier for users to disable unnecessary security rules than it
+is to create them from nothing, it’s better to err on the side of caution
+and limit access: users can relax that access if necessary or convenient.</p>
+</div>3 <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>We may actually be fine with some or most of these for a small business.</p>
+<p>Because it’s easier for users to disable unnecessary security rules than it
+is to create them from nothing, it’s better to err on the side of caution
+and limit access: users can relax that access if necessary or convenient.</p>
+</div>4
 
 Access rights can grant access to an entire model but often we need to be more
 specific: while an agent can interact with properties in general we may not
@@ -226,50 +217,51 @@ individual records:
     </record>
     
 
-The [Search domains](../reference/backend/orm.html#reference-orm-domains) is
+The [Search domains](../reference/backend/orm#reference-orm-domains) is
 how access is managed: if the record passes then access is granted, otherwise
 access is rejected.
 
-Truco
-
-Because rules tends to be rather complex and not created in bulk, they’re
-usually created in XML rather than the CSV used for access rights.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>We may actually be fine with some or most of these for a small business.</p>
+<p>Because it’s easier for users to disable unnecessary security rules than it
+is to create them from nothing, it’s better to err on the side of caution
+and limit access: users can relax that access if necessary or convenient.</p>
+</div>5
 
 The rule above:
 
   * Only applies to the «create», «update» (write) and «delete» (unlink) operations: here we want every employee to be able to see other users” records but only the author / assignee can update a record.
 
-  * Is [non-global](../reference/backend/security.html#reference-security-rules-global) so we can provide an additional rule for e.g. managers.
+  * Is [non-global](../reference/backend/security#reference-security-rules-global) so we can provide an additional rule for e.g. managers.
 
   * Allows the operation if the current user (`user.id`) is set (e.g. created, or is assigned) on the record, or if the record has no associated user at all.
 
-Nota
-
-If no rule is defined or applies to a model and operation, then the operation
-is allowed (_default-allow_), this can have odd effects if access rights are
-not set up correctly (are too permissive).
-
-Exercise
-
-Define a rule which limits agents to only being able to see or modify
-properties which have no salesperson, or for which they are the salesperson.
-
-You may want to create a second real-estate agent user, or create a few
-properties for which the salesperson is a manager or some other user.
-
-Verify that your real estate manager(s) can still see all properties. If not,
-why not? Remember:
-
-> The `estate_group_manager` group needs to imply `estate_group_user`.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>We may actually be fine with some or most of these for a small business.</p>
+<p>Because it’s easier for users to disable unnecessary security rules than it
+is to create them from nothing, it’s better to err on the side of caution
+and limit access: users can relax that access if necessary or convenient.</p>
+</div>6 <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>We may actually be fine with some or most of these for a small business.</p>
+<p>Because it’s easier for users to disable unnecessary security rules than it
+is to create them from nothing, it’s better to err on the side of caution
+and limit access: users can relax that access if necessary or convenient.</p>
+</div>7
 
 ## Security Override
 
 ### Bypassing Security
 
-**Goal**
-
-At the end of this section, agents should be able to confirm property sales
-without needing invoicing access.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>We may actually be fine with some or most of these for a small business.</p>
+<p>Because it’s easier for users to disable unnecessary security rules than it
+is to create them from nothing, it’s better to err on the side of caution
+and limit access: users can relax that access if necessary or convenient.</p>
+</div>8
 
 If you try to mark a property as «sold» as the real estate agent, you should
 get an access error:
@@ -280,39 +272,42 @@ This happens because `estate_account` tries to create an invoice during the
 process, but creating an invoice requires the right to all invoice management.
 
 We want agents to be able to confirm a sale without them having full invoicing
-access, which means we need to _bypass_ the normal security checks of Odoo in
+access, which means we need to _bypass_ the normal security checks of Konvergo ERP in
 order to create an invoice _despite_ the current user not having the right to
 do so.
 
-There are two main ways to bypass existing security checks in Odoo, either
+There are two main ways to bypass existing security checks in Konvergo ERP, either
 wilfully or as a side-effect:
 
   * The `sudo()` method will create a new recordset in «sudo mode», this ignores all access rights and record rules (although hard-coded group and user checks may still apply).
 
   * Performing raw SQL queries will bypass access rights and record rules as a side-effect of bypassing the ORM itself.
 
-Exercise
-
-Update `estate_account` to bypass access rights and rules when creating the
-invoice.
-
-Peligro
-
-These features should generally be avoided, and only used with extreme care,
-after having checked that the current user and operation should be able to
-bypass normal access rights validation.
-
-Operations performed in such modes should also rely on user input as little as
-possible, and should validate it to the maximum extent they can.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>We may actually be fine with some or most of these for a small business.</p>
+<p>Because it’s easier for users to disable unnecessary security rules than it
+is to create them from nothing, it’s better to err on the side of caution
+and limit access: users can relax that access if necessary or convenient.</p>
+</div>9 <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>The documentation related to this topic can be found in <a href="../reference/backend/security#reference-security"><span class="std std-ref">the security
+reference</span></a>.</p>
+<p><a href="../../contributing/development/coding_guidelines">Coding guidelines</a> document the format and
+location of master data items.</p>
+</div>0
 
 ### Programmatically checking security
 
-**Goal**
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>The documentation related to this topic can be found in <a href="../reference/backend/security#reference-security"><span class="std std-ref">the security
+reference</span></a>.</p>
+<p><a href="../../contributing/development/coding_guidelines">Coding guidelines</a> document the format and
+location of master data items.</p>
+</div>1
 
-At the end of this section, the creation of the invoice should be resilient to
-security issues regardless to changes to `estate`.
-
-In Odoo, access rights and record rules are only checked _when performing data
+In Konvergo ERP, access rights and record rules are only checked _when performing data
 access via the ORM_ e.g. creating, reading, searching, writing, or unlinking a
 record via ORM methods. Other methods do _not_ necessarily check against any
 sort of access rights.
@@ -326,12 +321,15 @@ access right being checked:
         print(" reached ".center(100, '='))
     
 
-You should see `reached` in your Odoo log, followed by an access error.
+You should see `reached` in your Konvergo ERP log, followed by an access error.
 
-Peligro
-
-Just because you’re already in Python code does not mean any access right or
-rule has or will be checked.
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>The documentation related to this topic can be found in <a href="../reference/backend/security#reference-security"><span class="std std-ref">the security
+reference</span></a>.</p>
+<p><a href="../../contributing/development/coding_guidelines">Coding guidelines</a> document the format and
+location of master data items.</p>
+</div>2
 
 _Currently_ the accesses are implicitly checked by accessing data on `self` as
 well as calling `super()` (which does the same and _updates_ `self`),
@@ -357,43 +355,43 @@ Explicit security checks can be performed by:
 
   * Calling `check_access_rule(operations)` on a non-empty recordset, this verifies that the current user is allowed to perform the operation on _every_ record of the set.
 
-Advertencia
-
-Checking access rights and checking record rules are separate operations, if
-you’re checking record rules you usually want to also check access rights
-beforehand.
-
-Exercise
-
-Before creating the invoice, use `check_access_rights` and `check_access_rule`
-to ensure that the current user can update properties in general as well as
-the specific property the invoice is for.
-
-Re-run the bypass script, check that the error occurs before the print.
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>The documentation related to this topic can be found in <a href="../reference/backend/security#reference-security"><span class="std std-ref">the security
+reference</span></a>.</p>
+<p><a href="../../contributing/development/coding_guidelines">Coding guidelines</a> document the format and
+location of master data items.</p>
+</div>3 <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>The documentation related to this topic can be found in <a href="../reference/backend/security#reference-security"><span class="std std-ref">the security
+reference</span></a>.</p>
+<p><a href="../../contributing/development/coding_guidelines">Coding guidelines</a> document the format and
+location of master data items.</p>
+</div>4
 
 ## Multi-company security
 
-Ver también
-
-[Multi-company Guidelines](../howtos/company.html#reference-howtos-company)
-for an overview of multi-company facilities in general, and [multi-company
-security rules](../howtos/company.html#howto-company-security) in particular.
-
-Documentation on rules in general can, again, be found at [Record
-Rules](../reference/backend/security.html#reference-security-rules).
-
-**Goal**
-
-At the end of this section, agents should only have access to properties of
-their agency (or agencies).
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>The documentation related to this topic can be found in <a href="../reference/backend/security#reference-security"><span class="std std-ref">the security
+reference</span></a>.</p>
+<p><a href="../../contributing/development/coding_guidelines">Coding guidelines</a> document the format and
+location of master data items.</p>
+</div>5 <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>The documentation related to this topic can be found in <a href="../reference/backend/security#reference-security"><span class="std std-ref">the security
+reference</span></a>.</p>
+<p><a href="../../contributing/development/coding_guidelines">Coding guidelines</a> document the format and
+location of master data items.</p>
+</div>6
 
 For one reason or another we might need to manage our real-estate business as
 multiple companies e.g. we might have largely autonomous agencies, a franchise
 setup, or multiple brands (possibly from having acquired other real-estate
 businesses) which remain legally or financially separate from one another.
 
-Odoo can be used to manage multiple companies inside the same system, however
-the actual handling is up to individual modules: Odoo itself provides the
+Konvergo ERP can be used to manage multiple companies inside the same system, however
+the actual handling is up to individual modules: Konvergo ERP itself provides the
 tools to manage the issue of company-dependent fields and _multi-company
 rules_ , which is what we’re going to concern ourselves with.
 
@@ -427,44 +425,44 @@ associated with _one_ of the companies the user has access to:
     </record>
     
 
-Peligro
-
-Multi-company rules are usually
-[global](../reference/backend/security.html#reference-security-rules-global),
-otherwise there is a high risk that additional rules would allow bypassing the
-multi-company rules.
-
-Exercise
-
-  * Add a `company_id` field to `estate.property`, it should be required (we don’t want agency-less properties), and should default to the current user’s current company.
-
-  * Create a new company, with a new estate agent in that company.
-
-  * The manager should be a member of both companies.
-
-  * The old agent should only be a member of the old company.
-
-  * Create a few properties in each company (either use the company selector as the manager or use the agents). Unset the default salesman to avoid triggering _that_ rule.
-
-  * All agents can see all companies, which is not desirable, add the record rule restricting this behaviour.
-
-Advertencia
-
-remember to `--update` your module when you change its model or data
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>The documentation related to this topic can be found in <a href="../reference/backend/security#reference-security"><span class="std std-ref">the security
+reference</span></a>.</p>
+<p><a href="../../contributing/development/coding_guidelines">Coding guidelines</a> document the format and
+location of master data items.</p>
+</div>7 <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>The documentation related to this topic can be found in <a href="../reference/backend/security#reference-security"><span class="std std-ref">the security
+reference</span></a>.</p>
+<p><a href="../../contributing/development/coding_guidelines">Coding guidelines</a> document the format and
+location of master data items.</p>
+</div>8 <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>The documentation related to this topic can be found in <a href="../reference/backend/security#reference-security"><span class="std std-ref">the security
+reference</span></a>.</p>
+<p><a href="../../contributing/development/coding_guidelines">Coding guidelines</a> document the format and
+location of master data items.</p>
+</div>9
 
 ## Visibility != security
 
-**Goal**
+<div class="admonition-goal alert">
+<p class="alert-title">
+<b>Goal</b></p><p>At the end of this section,</p>
+<ul>
+<li><p>We can make employees <em>real-estate agents</em> or <em>real-estate managers</em>.</p></li>
+<li><p>The <code>admin</code> user is a real-estate manager.</p></li>
+<li><p>We have a new <em>real-estate agent</em> employee with no access to invoicing
+or administration.</p></li>
+</ul>
+</div>0
 
-At the end of this section, real-estate agents should not see the Settings
-menu of the real-estate application, but should still be able to set the
-property type or tags.
-
-Specific Odoo models can be associated directly with groups (or companies, or
+Specific Konvergo ERP models can be associated directly with groups (or companies, or
 users). It is important to figure out whether this association is a _security_
 or a _visibility_ feature before using it:
 
-  * _Visibility_ features mean a user can still access the model or record otherwise, either through another part of the interface or by [performing operations remotely using RPC](../reference/external_api.html), things might just not be visible in the web interface in some contexts.
+  * _Visibility_ features mean a user can still access the model or record otherwise, either through another part of the interface or by [performing operations remotely using RPC](../reference/external_api), things might just not be visible in the web interface in some contexts.
 
   * _Security_ features mean a user can not access records, fields or operations.
 
@@ -485,13 +483,16 @@ leaves](https://github.com/odoo/odoo/blob/8e19904bcaff8300803a7b596c02ec45fcf36a
 Example: [only system administrators can see the elearning settings
 menu](https://github.com/odoo/odoo/blob/ff828a3e0c5386dc54e6a46fd71de9272ef3b691/addons/website_slides/views/website_slides_menu_views.xml#L64-L69).
 
-Exercise
-
-Real Estate agents can not add property types or tags, but can see their
-options from the Property form view when creating it.
-
-The Settings menu just adds noise to their interface, make it only visible to
-managers.
+<div class="admonition-goal alert">
+<p class="alert-title">
+<b>Goal</b></p><p>At the end of this section,</p>
+<ul>
+<li><p>We can make employees <em>real-estate agents</em> or <em>real-estate managers</em>.</p></li>
+<li><p>The <code>admin</code> user is a real-estate manager.</p></li>
+<li><p>We have a new <em>real-estate agent</em> employee with no access to invoicing
+or administration.</p></li>
+</ul>
+</div>1
 
 Despite not having access to the Property Types and Property Tags menus
 anymore, agents can still access the underlying objects since they can still
@@ -501,7 +502,7 @@ select tags or a type to set on their properties.
 
     
 
-An Odoo Application is a group of related modules covering a business area or
+An Konvergo ERP Application is a group of related modules covering a business area or
 field, usually composed of a base module and a number of expansions on that
 base to add optional or specific features, or link to other business areas.
 

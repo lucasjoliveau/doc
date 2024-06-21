@@ -4,16 +4,16 @@
 
 ### Entrepôt
 
-Dans Odoo, un **Entrepôt** est le bâtiment/l’endroit actuel où les articles
+Dans Konvergo ERP, un **Entrepôt** est le bâtiment/l’endroit actuel où les articles
 d’une entreprise sont stockés. Vous pouvez configurer plusieurs entrepôts dans
-Odoo et l’utilisateur peut créer des mouvements entre les entrepôts.
+Konvergo ERP et l’utilisateur peut créer des mouvements entre les entrepôts.
 
 ### Emplacement
 
 Un **Emplacement** est un lieu spécifique dans l’entrepôt. Il peut s’agir d’un
 sous-emplacement de l’entrepôt (une étagère, un étage, une allée, etc.). Par
 conséquent, un emplacement fait partie d’un seul entrepôt et il est impossible
-de lier un emplacement à plusieurs entrepôts. Dans Odoo, autant d’emplacements
+de lier un emplacement à plusieurs entrepôts. Dans Konvergo ERP, autant d’emplacements
 que nécessaire peuvent être configurés dans un même entrepôt.
 
 Il y a trois types d’emplacements :
@@ -24,7 +24,7 @@ Il y a trois types d’emplacements :
 
   * Les **Emplacements virtuels** sont des zones qui n’existent pas, mais où les produits peuvent être placés lorsqu’ils ne se trouvent pas encore (ou plus) physiquement dans un inventaire. Ils sont utiles pour enregistrer les produits perdus (**Perte d’inventaire**) ou pour comptabiliser les produits qui sont en route vers l’entrepôt (**Approvisionnements**).
 
-Dans Odoo, les emplacements sont organisés hiérarchiquement. Vous pouvez
+Dans Konvergo ERP, les emplacements sont organisés hiérarchiquement. Vous pouvez
 organiser vos emplacements comme une arborescence, avec des relations parent-
 enfant. Cela vous donne des niveaux plus détaillés de l’analyse des opérations
 de stock et de l’organisation de vos entrepôts.
@@ -32,55 +32,50 @@ de stock et de l’organisation de vos entrepôts.
 ## Configuration
 
 Pour activer les emplacements, allez à Configuration ‣ Paramètres et activez
-Emplacements de stockage. Cliquez ensuite sur Enregistrer.
+**Emplacements de stockage**. Cliquez ensuite sur **Enregistrer**.
 
 ![Activer la fonctionnalité des emplacements de stockage dans les paramètres
-d'Odoo Inventaire.](../../../../../_images/storage-location-warehouse-
-setting.png)
-
-Important
-
-To manage several routes within the warehouses, also enable Multi-Step Routes
-and check [Routes and push/pull rules](use_routes.html).
+d'Konvergo ERP Inventaire.](../../../../../_images/storage-location-warehouse-
+setting.png) <div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>To manage several routes within the warehouses, also enable <b>Multi-Step Routes</b> and
+check <a href="use_routes">Routes and push/pull rules</a>.</p>
+</div>
 
 ## Créer un nouvel entrepôt
 
 Pour créer un entrepôt, allez à Configuration ‣ Gestion de l’entrepôt ‣
-Entrepôts et cliquez sur Créer.
+Entrepôts et cliquez sur **Créer**.
 
-Complétez ensuite un Nom d’entrepôt et un Nom court. Le nom court comporte
-cinq caractères au maximum.
+Complétez ensuite un **Nom d’entrepôt** et un **Nom court**. Le nom court
+comporte cinq caractères au maximum.
 
-![Champ nom court d'un entrepôt dans Odoo
+![Champ nom court d'un entrepôt dans Konvergo ERP
 Inventaire.](../../../../../_images/create-new-warehouse.png)
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Le <b>Nom court</b> apparaît sur les ordres de transfert et les autres documents d’entrepôt. Konvergo ERP recommande d’utiliser un nom compréhensible comme « WH/[premières lettres du lieu] ».</p>
+</div>
 
-Important
-
-Le Nom court apparaît sur les ordres de transfert et les autres documents
-d’entrepôt. Odoo recommande d’utiliser un nom compréhensible comme «
-WH/[premières lettres du lieu] ».
-
-À présent, retournez au tableau de bord de l”Inventaire. Vous y verrez que les
-nouvelles opérations liées à l’entrepôt nouvellement créé ont été
+À présent, retournez au tableau de bord de l”**Inventaire**. Vous y verrez que
+les nouvelles opérations liées à l’entrepôt nouvellement créé ont été
 automatiquement générées.
 
 ![Le tableau de bord de l'application Inventaire affichant les nouveaux types
 de transfert pour l'entrepôt nouvellement créé.](../../../../../_images/new-
-transfer-types.png)
-
-Note
-
-L’ajout d’un deuxième entrepôt activera automatiquement le paramètre
-Emplacements.
+transfer-types.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>L’ajout d’un deuxième entrepôt activera automatiquement le paramètre <b>Emplacements</b>.</p>
+</div>
 
 ## Créer un nouvel emplacement
 
 Pour créer un emplacement, allez à Configuration ‣ Gestion de l’entrepôt ‣
-Emplacements et cliquez sur Créer.
+Emplacements et cliquez sur **Créer**.
 
-Complétez ensuite un Nom d’emplacement et un Emplacement parent et cliquez sur
-Enregistrer.
+Complétez ensuite un **Nom d’emplacement** et un **Emplacement parent** et
+cliquez sur **Enregistrer**.
 
-![Créer un nouvel emplacement d'entrepôt dans Odoo
+![Créer un nouvel emplacement d'entrepôt dans Konvergo ERP
 Inventaire.](../../../../../_images/create-new-location.png)
 

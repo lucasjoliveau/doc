@@ -1,9 +1,9 @@
 # Overview
 
-  * [Getting started with Helpdesk](overview/getting_started.html)
-  * [Service Level Agreements (SLA)](overview/sla.html)
-  * [Start receiving tickets](overview/receiving_tickets.html)
-  * [Reporting](overview/reports.html)
-  * [Help center](overview/help_center.html)
-  * [Customer ratings](overview/ratings.html)
+  * [Getting started with Helpdesk](overview/getting_started)
+  * [Service Level Agreements (SLA)](overview/sla)
+  * [Start receiving tickets](overview/receiving_tickets)
+  * [Reporting](overview/reports)
+  * [Help center](overview/help_center)
+  * [Customer ratings](overview/ratings)
 

@@ -3,17 +3,14 @@
 ## BVR (bulletin de versement avec numéro de référence)
 
 Les BVR sont des bulletins de paiement utilisés en Suisse. Vous pouvez les
-imprimer directement depuis Odoo. Sur les factures clients, il y a un nouveau
+imprimer directement depuis Konvergo ERP. Sur les factures clients, il y a un nouveau
 bouton intitulé _Imprimer BVR_.
 
 ![../../../_images/switzerland00.png](../../../_images/switzerland00.png)
-
-Astuce
-
-Le bouton _Imprimer BVR_ s’affiche uniquement lorsqu’un compte bancaire est
-défini sur la facture. Vous pouvez utiliser CH6309000000250097798 en tant que
-numéro de compte bancaire et 010391391 en tant que référence BVR CHF.
-
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Le bouton <em>Imprimer BVR</em> s’affiche uniquement lorsqu’un compte bancaire est défini sur la facture. Vous pouvez utiliser CH6309000000250097798 en tant que numéro de compte bancaire et 010391391 en tant que référence BVR CHF.</p>
+</div>
 ![../../../_images/switzerland01.png](../../../_images/switzerland01.png)
 
 Ouvrez ensuite un pdf avec le BVR.
@@ -41,7 +38,7 @@ l’onglet _Paramètres avancés_. Dans le champ **Standard de référence** ,
 sélectionnez la _Suisse_ et cliquez sur _Enregistrer_.
 
 ![Configurez votre Journal pour afficher votre BVR en tant que référence de
-paiement sur vos factures dans Odoo](../../../_images/switzerland-isr-
+paiement sur vos factures dans Konvergo ERP](../../../_images/switzerland-isr-
 reference.png)
 
 ## Mise à jour du taux de change en direct
@@ -59,7 +56,7 @@ le service que vous souhaitez.
 Suisse. Le taux normal de 8,0% passe à 7,7% et le taux spécifique au secteur
 hôtelier passe de 3,8% à 3,7%.
 
-### Comment mettre à jour vos taxes dans Odoo Enterprise (Odoo Online ou On-
+### Comment mettre à jour vos taxes dans Konvergo ERP Enterprise (Konvergo ERP Online ou On-
 premise) ?
 
 Si vous êtes sur la version V11.1, vous n’avez rien à faire.
@@ -74,12 +71,10 @@ ouvrez le module ‣ et cliquez sur « mettre à niveau ».
 Une fois que cela est fait, vous pouvez créer de nouvelles taxes pour les taux
 mis à jour.
 
-Astuce
-
-**Ne supprimez ou ne modifiez pas les taux existants** (8,0% ou 3,8%). Vous
-devez les conserver, puisqu’il se peut que vous deviez utiliser les deux taux
-pendant une courte période. Pensez plutôt à les archiver une fois que vous
-aurez encodé toutes vos transactions de 2017.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p><b>Ne supprimez ou ne modifiez pas les taux existants</b> (8,0% ou 3,8%). Vous devez les conserver, puisqu’il se peut que vous deviez utiliser les deux taux pendant une courte période. Pensez plutôt à les archiver une fois que vous aurez encodé toutes vos transactions de 2017.</p>
+</div>
 
 La création de ces taxes doit se faire de la manière suivante :
 
@@ -92,7 +87,7 @@ La création de ces taxes doit se faire de la manière suivante :
     * Pour des taxes de 3,7 % : Formulaire suisse pour la déclaration TVA : grille de base 342, Formulaire suisse pour la déclaration TVA : grille d’impôt 342
 
 Vous trouverez ci-dessous, à titre d’exemple, la bonne configuration pour
-toutes les taxes incluses par défaut dans Odoo.
+toutes les taxes incluses par défaut dans Konvergo ERP.
 
 **Nom de la taxe** | **Taux** | **Libellé sur les factures** | **Groupe de taxes (à partir de V10)** | **Portée de la taxe** | **Étiquette**  
 ---|---|---|---|---|---  
@@ -112,9 +107,8 @@ TVA due à 3,7 % (Incl. TS) | 3,7 % | 3,7 % Incl. | TVA 3,7 % | Ventes | Formula
 Si vous avez des questions ou des remarques, veuillez contacter notre
 assistance via odoo.com/help.
 
-Astuce
-
-N’oubliez pas de mettre à jour vos positions fiscales. Si vous avez une
-version 11.1 (ou supérieure), il n’y a rien à faire. Sinon, vous devrez
-également mettre à jour vos positions fiscales en conséquence.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>N’oubliez pas de mettre à jour vos positions fiscales. Si vous avez une version 11.1 (ou supérieure), il n’y a rien à faire. Sinon, vous devrez également mettre à jour vos positions fiscales en conséquence.</p>
+</div>
 

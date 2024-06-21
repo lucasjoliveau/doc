@@ -1,6 +1,6 @@
-# Testing Odoo
+# Testing Konvergo ERP
 
-There are many ways to test an application. In Odoo, we have three kinds of
+There are many ways to test an application. In Konvergo ERP, we have three kinds of
 tests
 
   * Python unit tests (see Testing Python code): useful for testing model business logic
@@ -11,8 +11,8 @@ tests
 
 ## Testing Python code
 
-Odoo provides support for testing modules using [Python’s unittest
-library](https://docs.python.org/3/library/unittest.html).
+Konvergo ERP provides support for testing modules using [Python’s unittest
+library](https://docs.python.org/3/library/unittest).
 
 To write tests, simply define a `tests` sub-package in your module, it will be
 automatically inspected for test modules. Test modules should have a name
@@ -35,13 +35,15 @@ and `__init__.py` contains:
     from . import test_foo, test_bar
     
 
-Warning
-
-test modules which are not imported from `tests/__init__.py` will not be run
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>test modules which are not imported from <code>tests/__init__.py</code> will not be
+run</p>
+</div>
 
 The test runner will simply run any test case, as described in the official
-[unittest documentation](https://docs.python.org/3/library/unittest.html), but
-Odoo provides a number of utilities and helpers related to testing Odoo
+[unittest documentation](https://docs.python.org/3/library/unittest), but
+Konvergo ERP provides a number of utilities and helpers related to testing Konvergo ERP
 content (modules, mainly):
 
 By default, tests are run once right after the corresponding module has been
@@ -76,19 +78,20 @@ model in each method:
         # other tests...
     
 
-Note
-
-Test methods must start with `test_`
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Test methods must start with <code>test_</code></p>
+</div>
 
 ### Running tests
 
 Tests are automatically run when installing or updating modules if [`--test-
-enable`](../cli.html#cmdoption-odoo-bin-test-enable) was enabled when starting
-the Odoo server.
+enable`](../cli#cmdoption-odoo-bin-test-enable) was enabled when starting
+the Konvergo ERP server.
 
 ### Test selection
 
-In Odoo, Python tests can be tagged to facilitate the test selection when
+In Konvergo ERP, Python tests can be tagged to facilitate the test selection when
 running tests.
 
 Subclasses of `odoo.tests.common.BaseCase` (usually through `TransactionCase`,
@@ -97,24 +100,26 @@ Subclasses of `odoo.tests.common.BaseCase` (usually through `TransactionCase`,
 
 #### Invocation
 
-[`--test-tags`](../cli.html#cmdoption-odoo-bin-test-tags) can be used to
+[`--test-tags`](../cli#cmdoption-odoo-bin-test-tags) can be used to
 select/filter tests to run on the command-line. It implies [`--test-
-enable`](../cli.html#cmdoption-odoo-bin-test-enable), so it’s not necessary to
-specify [`--test-enable`](../cli.html#cmdoption-odoo-bin-test-enable) when
-using [`--test-tags`](../cli.html#cmdoption-odoo-bin-test-tags).
+enable`](../cli#cmdoption-odoo-bin-test-enable), so it’s not necessary to
+specify [`--test-enable`](../cli#cmdoption-odoo-bin-test-enable) when
+using [`--test-tags`](../cli#cmdoption-odoo-bin-test-tags).
 
 This option defaults to `+standard` meaning tests tagged `standard`
-(explicitly or implicitly) will be run by default when starting Odoo with
-[`--test-enable`](../cli.html#cmdoption-odoo-bin-test-enable).
+(explicitly or implicitly) will be run by default when starting Konvergo ERP with
+[`--test-enable`](../cli#cmdoption-odoo-bin-test-enable).
 
 When writing tests, the `tagged()` decorator can be used on **test classes**
 to add or remove tags.
 
 The decorator’s arguments are tag names, as strings.
 
-Danger
-
-`tagged()` is a class decorator, it has no effect on functions or methods
+<div class="alert alert-danger">
+<p class="alert-title">
+Danger</p><p><code>tagged()</code> is a class decorator, it has no
+effect on functions or methods</p>
+</div>
 
 Tags can be prefixed with the minus (`-`) sign, to _remove_ them instead of
 add or select them e.g. if you don’t want your test to be executed by default
@@ -139,7 +144,7 @@ have to be selected explicitly:
 
 Note that only the tests tagged `nice` are going to be executed. To run _both_
 `nice` and `standard` tests, provide multiple values to [`--test-
-tags`](../cli.html#cmdoption-odoo-bin-test-tags): on the command-line, values
+tags`](../cli#cmdoption-odoo-bin-test-tags): on the command-line, values
 are _additive_ (you’re selecting all tests with _any_ of the specified tags)
 
     
@@ -175,7 +180,7 @@ simple `unittest.TestCase` as they’re not going to get run:
 
 Besides tags you can also specify specific modules, classes or functions to
 test. The full syntax of the format accepted by [`--test-
-tags`](../cli.html#cmdoption-odoo-bin-test-tags) is:
+tags`](../cli#cmdoption-odoo-bin-test-tags) is:
 
     
     
@@ -208,7 +213,7 @@ functions can be specified at once separated by a `,` like with regular tags.
 
 #### Special tags
 
-  * `standard`: All Odoo tests that inherit from `BaseCase` are implicitly tagged standard. [`--test-tags`](../cli.html#cmdoption-odoo-bin-test-tags) also defaults to `standard`.
+  * `standard`: All Konvergo ERP tests that inherit from `BaseCase` are implicitly tagged standard. [`--test-tags`](../cli#cmdoption-odoo-bin-test-tags) also defaults to `standard`.
 
 That means untagged test will be executed by default when tests are enabled.
 
@@ -222,14 +227,15 @@ when tagging a test class.
 
 #### Examples
 
-Important
-
-Tests will be executed only in installed modules. If you’re starting from a
-clean database, you’ll need to install the modules with the
-[`-i`](../cli.html#cmdoption-odoo-bin-i) switch at least once. After that it’s
-no longer needed, unless you need to upgrade the module, in which case
-[`-u`](../cli.html#cmdoption-odoo-bin-u) can be used. For simplicity, those
-switches are not specified in the examples below.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Tests will be executed only in installed modules. If you’re starting from
+a clean database, you’ll need to install the modules with the
+<a href="../cli#cmdoption-odoo-bin-i"><code>-i</code></a> switch at least once. After that it’s no longer
+needed, unless you need to upgrade the module, in which case
+<a href="../cli#cmdoption-odoo-bin-u"><code>-u</code></a> can be used. For simplicity, those switches are
+not specified in the examples below.</p>
+</div>
 
 Run only the tests from the sale module:
 
@@ -252,21 +258,22 @@ Run only the tests from stock or tagged as slow:
     $ odoo-bin --test-tags '-standard, slow, /stock'
     
 
-Note
-
-`-standard` is implicit (not required), and present for clarity
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><code>-standard</code> is implicit (not required), and present for clarity</p>
+</div>
 
 ## Testing JS code
 
 Testing a complex system is an important safeguard to prevent regressions and
-to guarantee that some basic functionality still works. Since Odoo has a non
+to guarantee that some basic functionality still works. Since Konvergo ERP has a non
 trivial codebase in Javascript, it is necessary to test it. In this section,
 we will discuss the practice of testing JS code in isolation: these tests stay
 in the browser, and are not supposed to reach the server.
 
 ### Qunit test suite
 
-The Odoo framework uses the [QUnit](https://qunitjs.com/) library testing
+The Konvergo ERP framework uses the [QUnit](https://qunitjs.com/) library testing
 framework as a test runner. QUnit defines the concepts of _tests_ and
 _modules_ (a set of related tests), and gives us a web based interface to
 execute the tests.
@@ -287,7 +294,7 @@ For example, here is what a pyUtils test could look like:
     });
     
 
-The main way to run the test suite is to have a running Odoo server, then
+The main way to run the test suite is to have a running Konvergo ERP server, then
 navigate a web browser to `/web/tests`. The test suite will then be executed
 by the web browser Javascript engine.
 
@@ -297,15 +304,15 @@ The web UI has many useful features: it can run only some submodules, or
 filter tests that match a string. It can show every assertions, failed or
 passed, rerun specific tests, …
 
-Warning
-
-While the test suite is running, make sure that:
-
-  * your browser window is focused,
-
-  * it is not zoomed in/out. It needs to have exactly 100% zoom level.
-
-If this is not the case, some tests will fail, without a proper explanation.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>While the test suite is running, make sure that:</p>
+<ul>
+<li><p>your browser window is focused,</p></li>
+<li><p>it is not zoomed in/out. It needs to have exactly 100% zoom level.</p></li>
+</ul>
+<p>If this is not the case, some tests will fail, without a proper explanation.</p>
+</div>
 
 ### Testing Infrastructure
 
@@ -328,7 +335,7 @@ infrastructure:
 
 ### Modularity and testing
 
-With the way Odoo is designed, any addon can modify the behaviour of other
+With the way Konvergo ERP is designed, any addon can modify the behaviour of other
 parts of the system. For example, the _voip_ addon can modify the _FieldPhone_
 widget to use extra features. This is not really good from the perspective of
 the testing system, since this means that a test in the addon web will fail
@@ -396,19 +403,19 @@ is the following:
 
 ### Helper functions and specialized assertions
 
-Without help, it is quite difficult to test some parts of Odoo. In particular,
+Without help, it is quite difficult to test some parts of Konvergo ERP. In particular,
 views are tricky, because they communicate with the server and may perform
 many rpcs, which needs to be mocked. This is why we developed some specialized
 helper functions, located in
 [test_utils.js](https://github.com/odoo/odoo/blob/51ee0c3cb59810449a60dae0b086b49b1ed6f946/addons/web/static/tests/helpers/test_utils.js).
 
-  * Mock test functions: these functions help setting up a test environment. The most important use case is mocking the answers given by the Odoo server. These functions use a [mock server](https://github.com/odoo/odoo/blob/51ee0c3cb59810449a60dae0b086b49b1ed6f946/addons/web/static/tests/helpers/mock_server.js). This is a javascript class that simulates answers to the most common model methods: read, search_read, nameget, …
+  * Mock test functions: these functions help setting up a test environment. The most important use case is mocking the answers given by the Konvergo ERP server. These functions use a [mock server](https://github.com/odoo/odoo/blob/51ee0c3cb59810449a60dae0b086b49b1ed6f946/addons/web/static/tests/helpers/mock_server.js). This is a javascript class that simulates answers to the most common model methods: read, search_read, nameget, …
 
   * DOM helpers: useful to simulate events/actions on some specific target. For example, testUtils.dom.click performs a click on a target. Note that it is safer than doing it manually, because it also checks that the target exists, and is visible.
 
   * create helpers: they are probably the most important functions exported by [test_utils.js](https://github.com/odoo/odoo/blob/51ee0c3cb59810449a60dae0b086b49b1ed6f946/addons/web/static/tests/helpers/test_utils.js). These helpers are useful to create a widget, with a mock environment, and a lot of small detail to simulate as much as possible the real conditions. The most important is certainly [createView](https://github.com/odoo/odoo/blob/51ee0c3cb59810449a60dae0b086b49b1ed6f946/addons/web/static/tests/helpers/test_utils_create.js#L267).
 
-  * [qunit assertions](https://github.com/odoo/odoo/blob/51ee0c3cb59810449a60dae0b086b49b1ed6f946/addons/web/static/tests/helpers/qunit_asserts.js): QUnit can be extended with specialized assertions. For Odoo, we frequently test some DOM properties. This is why we made some assertions to help with that. For example, the _containsOnce_ assertion takes a widget/jQuery/HtmlElement and a selector, then checks if the target contains exactly one match for the css selector.
+  * [qunit assertions](https://github.com/odoo/odoo/blob/51ee0c3cb59810449a60dae0b086b49b1ed6f946/addons/web/static/tests/helpers/qunit_asserts.js): QUnit can be extended with specialized assertions. For Konvergo ERP, we frequently test some DOM properties. This is why we made some assertions to help with that. For example, the _containsOnce_ assertion takes a widget/jQuery/HtmlElement and a selector, then checks if the target contains exactly one match for the css selector.
 
 For example, with these helpers, here is what a simple form test could look
 like:
@@ -509,11 +516,13 @@ You can then:
 
   * update `__init__.py` in the folder `tests` to import `test_calling_the_tour`.
 
-See also
-
-  * [Assets Bundle](../frontend/assets.html#reference-assets-bundle)
-
-  * Testing Python code
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../frontend/assets#reference-assets-bundle"><span class="std std-ref">Assets Bundle</span></a></p></li>
+<li><p><a href="#testing-python"><span class="std std-ref">Testing Python code</span></a></p></li>
+</ul>
+</div>
 
 #### Javascript
 
@@ -537,41 +546,37 @@ or write your own personalized step.
 
 Here are some example of steps:
 
-Example
-
-    
-    
-    // First step
-    tour.stepUtils.showAppsMenuItem(),
-    // Second step
-    {
-        trigger: '.o_app[data-menu-xmlid="your_module.maybe_your_module_menu_root"]',
-        edition: 'community'  // Optional
-    }, {
-        // Third step
-    },
-    
-
-Example
-
-    
-    
-    {
-        trigger: '.js_product:has(strong:contains(Chair floor protection)) .js_add',
-        extra_trigger: '.oe_advanced_configurator_modal',  // This ensure we are in the wizard
-    },
-    
-
-Example
-
-    
-    
-    {
-        trigger: 'a:contains("Add a product")',
-        // Extra-trigger to make sure a line is added before trying to add another one
-        extra_trigger: '.o_field_many2one[name="product_template_id"] .o_external_button',
-    },
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// First step</span>
+<span class="nx">tour</span><span class="p">.</span><span class="nx">stepUtils</span><span class="p">.</span><span class="nx">showAppsMenuItem</span><span class="p">(),</span>
+<span class="c1">// Second step</span>
+<span class="p">{</span>
+    <span class="nx">trigger</span><span class="o">:</span> <span class="s1">'.o_app[data-menu-xmlid="your_module.maybe_your_module_menu_root"]'</span><span class="p">,</span>
+    <span class="nx">edition</span><span class="o">:</span> <span class="s1">'community'</span>  <span class="c1">// Optional</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="c1">// Third step</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+</div> <div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nx">trigger</span><span class="o">:</span> <span class="s1">'.js_product:has(strong:contains(Chair floor protection)) .js_add'</span><span class="p">,</span>
+    <span class="nx">extra_trigger</span><span class="o">:</span> <span class="s1">'.oe_advanced_configurator_modal'</span><span class="p">,</span>  <span class="c1">// This ensure we are in the wizard</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+</div> <div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nx">trigger</span><span class="o">:</span> <span class="s1">'a:contains("Add a product")'</span><span class="p">,</span>
+    <span class="c1">// Extra-trigger to make sure a line is added before trying to add another one</span>
+    <span class="nx">extra_trigger</span><span class="o">:</span> <span class="s1">'.o_field_many2one[name="product_template_id"] .o_external_button'</span><span class="p">,</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+</div>
 
 Here are some possible arguments for your personalized steps:
 
@@ -649,15 +654,13 @@ Simulates the dragging of the **trigger** element over to the `target`.
 
   * **timeout** : How long to wait until the step can `run`, in milliseconds, 10000 (10 seconds).
 
-Important
-
-The last step(s) of a tour should always return the client to a “stable” state
-(e.g. no ongoing editions) and ensure all side-effects (network requests) have
-finished running to avoid race conditions or errors during teardown.
-
-See also
-
-  * [jQuery documentation about find](https://api.jquery.com/find/)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Test methods must start with <code>test_</code></p>
+</div>0 <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Test methods must start with <code>test_</code></p>
+</div>1
 
 #### Python
 
@@ -719,7 +722,7 @@ Tours can also be launched via the browser UI, either by calling
     
 
 in the javascript console, or by enabling [tests
-mode](../frontend/framework_overview.html#frontend-framework-tests-debug-mode)
+mode](../frontend/framework_overview#frontend-framework-tests-debug-mode)
 by setting `?debug=tests` in the URL, then selecting **Start Tour** in the
 debug menu and picking a tour:
 
@@ -743,22 +746,10 @@ debug menu and picking a tour:
 
   * may not work multiple times depending on tour side-effects
 
-Tip
-
-It’s possible to use this method to observe or interact with tours which
-require Python setup:
-
-  * add a _python_ breakpoint before the relevant tour is started (`start_tour` or `browser_js` call)
-
-  * when the breakpoint is hit, open the instance in your browser
-
-  * run the tour
-
-At this point the Python setup will be visible to the browser, and the tour
-will be able to run.
-
-You may want to comment the `start_tour` or `browser_js` call if you also want
-the test to continue afterwards, depending on the tour’s side-effects.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Test methods must start with <code>test_</code></p>
+</div>2
 
 #### Screenshots and screencasts during browser_js tests
 
@@ -771,9 +762,9 @@ screenshot is taken at the moment of the failure and written in
     '/tmp/odoo_tests/{db_name}/screenshots/'
     
 
-Two new command line arguments were added since Odoo 13.0 to control this
-behavior: [`--screenshots`](../cli.html#cmdoption-odoo-bin-screenshots) and
-[`--screencasts`](../cli.html#cmdoption-odoo-bin-screencasts)
+Two new command line arguments were added since Konvergo ERP 13.0 to control this
+behavior: [`--screenshots`](../cli#cmdoption-odoo-bin-screenshots) and
+[`--screencasts`](../cli#cmdoption-odoo-bin-screencasts)
 
 #### Introspecting / debugging steps
 
@@ -835,7 +826,7 @@ visible element of the page).
 One of the ways to test performance is to measure database queries. Manually,
 this can be tested with the `--log-sql` CLI parameter. If you want to
 establish the maximum number of queries for an operation, you can use the
-`assertQueryCount()` method, integrated in Odoo test classes.
+`assertQueryCount()` method, integrated in Konvergo ERP test classes.
 
     
     

@@ -12,7 +12,7 @@ reconnaissance. Or, si le taux de satisfaction de vos clients tombe en dessous
 de 50%, vous voudrez le contacter pour comprendre les raisons de leur
 insatisfaction.
 
-Avec **Odoo Abonnements** , vous pouvez définir des emails automatiques, créer
+Avec **Konvergo ERP Abonnements** , vous pouvez définir des emails automatiques, créer
 une tâche « Appeler » pour l’un de vos vendeurs pour qu’il essaie de
 comprendre l’insatisfaction de votre client et, enfin, pourquoi ne pas envoyer
 automatiquement des enquêtes de satisfaction pour que les clients puissent
@@ -25,46 +25,42 @@ pour envoyer des enquêtes de satisfaction à vos clients, par email, après un
 mois d’abonnement. Pour ce faire, allez à Abonnements ‣ Configuration ‣
 Alertes, et créez une nouvelle alerte.
 
-![Nouvelle alerte automatique dans Odoo Abonnements](../../../_images/create-
+![Nouvelle alerte automatique dans Konvergo ERP Abonnements](../../../_images/create-
 a-new-automatic-alert.png)
 
   1. Dans la section _Appliquer sur_ , donnez d’abord un nom à l’alerte. Vous pouvez ensuite choisir d’appliquer cette alerte sur un modèle d’abonnement, sur un client spécifique ou même sur un produit spécifique. Si vous voulez ajouter plus de spécifications, vous pouvez également préciser la valeur de votre MRR, le taux de variation de votre MRR sur une période donnée, le taux de satisfaction et même l’étape sur laquelle vous voulez appliquer cette alerte.
 
-Note
-
-Dans cet exemple, l’alerte est appliquée sur un produit spécifique et l’étape
-va de _Non défini_ à _En cours_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Dans cet exemple, l’alerte est appliquée sur un produit spécifique et l’étape va de <em>Non défini</em> à <em>En cours</em>.</p>
+</div>
 
   2. Quant à la section _Action_ , définissez les champs dans les cases _Action_ et _Déclencher sur_. Si la fonction _Déclencher sur_ est définie sur _Modification_ , l’action est déclenchée chaque fois qu’un changement ou un ajout est effectué dans l’abonnement, et que toutes les conditions de la section _Appliquer sur_ sont remplies. Maintenant, si l’action _Déclencher sur_ est définie sur _Condition temporisée_ , cela signifie que l’action est déclenchée sur la base du type de _Date de déclenchement_. Ensuite, vous pouvez choisir votre _Action_. Vous avez le choix entre _Créer l’activité suivante_ , _Définir une étiquette sur l’abonnement_ , _Définir une étape sur l’abonnement_ , _Marquer comme À renouveler_ , _Envoyer un email au client_ et _Envoyer un SMS au client_.
 
-Note
-
-Dans l’exemple ci-dessus, l’action _Déclencher sur_ est définie sur _Condition
-temporisée_ , donc il faut préciser une _Date de déclenchement_ et un « Délai
-après déclenchement*. Et comme l’action _Envoyer un email au client_ a été
-choisie, un _Modèle d’email_ peut être choisi.
-
-Note
-
-Sending a SMS text message in Odoo requires In-App Purchase (IAP) credit or
-tokens. For more information on IAP, visit [In-app purchases
-(IAP)](../../essentials/in_app_purchase.html). For more information on sending
-SMS messages, visit [Les essentiels de
-SMS](../../marketing/sms_marketing/essentials/sms_essentials.html).
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Dans l’exemple ci-dessus, l’action <em>Déclencher sur</em> est définie sur <em>Condition temporisée</em>, donc il faut préciser une <em>Date de déclenchement</em> et un « Délai après déclenchement*. Et comme l’action <em>Envoyer un email au client</em> a été choisie, un <em>Modèle d’email</em> peut être choisi.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Sending a SMS text message in Konvergo ERP requires In-App Purchase (IAP) credit or tokens. For more
+information on <abbr title="In-App Purchase">IAP</abbr>, visit
+<a href="../../essentials/in_app_purchase">In-app purchases (IAP)</a>. For more information on sending SMS messages,
+visit <a href="../../marketing/sms_marketing/essentials/sms_essentials">Les essentiels de SMS</a>.</p>
+</div>
 
 As a result, this alert sends a rating survey after one month, to the
 customers who have purchased that specific product. The survey appears in the
 chatter of your respective subscription.
 
-![Enquête de satisfaction dans Odoo Abonnements](../../../_images/rating-
+![Enquête de satisfaction dans Konvergo ERP Abonnements](../../../_images/rating-
 satisfaction-survey.png)
 
 ## Modifier une alerte automatique existante
 
-Par défaut, Odoo vous propose une alerte automatique appelée _Prendre des
+Par défaut, Konvergo ERP vous propose une alerte automatique appelée _Prendre des
 mesures à l’égard des clients moins satisfaits_.
 
-![Modifier une alerte automatique existante dans Odoo
+![Modifier une alerte automatique existante dans Konvergo ERP
 Abonnements](../../../_images/modify-an-existing-automatic-alert.png)
 
 Cette alerte s’applique à l” _Évaluation de la satisfaction_ de vos clients et
@@ -76,20 +72,16 @@ garantit que vos clients sont satisfaits et que des mesures sont prises s’ils
 ne le sont pas. Elle contribue à maintenir un taux de rétention des clients
 très élevé.
 
-Note
-
-En éditant l’alerte, vous pouvez modifier l’action _Appliquer sur_ , les
-sections _Action_ et _Activité_ et les adapter à vos propres besoins.
-
-Pour plus d'infos
-
-  * [Abonnements](../subscriptions.html)
-
-  * [Plans d’abonnement](plans.html)
-
-  * [Produits d’abonnement](products.html)
-
-  * [In-app purchases (IAP)](../../essentials/in_app_purchase.html)
-
-  *[IAP]: In-App Purchase
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>En éditant l’alerte, vous pouvez modifier l’action <em>Appliquer sur</em>, les sections <em>Action</em> et <em>Activité</em> et les adapter à vos propres besoins.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../subscriptions">Abonnements</a></p></li>
+<li><p><a href="plans">Plans d’abonnement</a></p></li>
+<li><p><a href="products">Produits d’abonnement</a></p></li>
+<li><p><a href="../../essentials/in_app_purchase">In-app purchases (IAP)</a></p></li>
+</ul>
+</div>
 

@@ -4,15 +4,15 @@
 
 L’éditeur en ligne vous permet d’modifier le code source de vos builds depuis
 un navigateur web. Il vous permet également d’ouvrir des terminaux, des
-consoles Python, des consoles Shell Odoo et des
-[Notebooks](https://jupyterlab.readthedocs.io/en/stable/user/notebook.html).
+consoles Python, des consoles Shell Konvergo ERP et des
+[Notebooks](https://jupyterlab.readthedocs.io/en/stable/user/notebook).
 
 ![../../../_images/interface-editor.png](../../../_images/interface-
 editor.png)
 
 Vous pouvez accédez à l’éditeur d’un build via [les onglets
-Branches](branches.html#odoosh-gettingstarted-branches-tabs), [le menu
-déroulant des builds](builds.html#odoosh-gettingstarted-builds-dropdown-menu)
+Branches](branches#odoosh-gettingstarted-branches-tabs), [le menu
+déroulant des builds](builds#odoosh-gettingstarted-builds-dropdown-menu)
 ou en ajoutant _/odoo-sh/editor_ au nom de domaine de votre build (par ex.
 _https://odoo-addons-master-1.dev.odoo.com/odoo-sh/editor_).
 
@@ -26,10 +26,10 @@ Le répertoire de travail est constitué des dossiers suivants :
     ├── home
     │    └── odoo
     │         ├── src
-    │         │    ├── odoo                Odoo Community source code
-    │         │    │    └── odoo-bin       Odoo server executable
-    │         │    ├── enterprise          Odoo Enterprise source code
-    │         │    ├── themes              Odoo Themes source code
+    │         │    ├── odoo                Konvergo ERP Community source code
+    │         │    │    └── odoo-bin       Konvergo ERP server executable
+    │         │    ├── enterprise          Konvergo ERP Enterprise source code
+    │         │    ├── themes              Konvergo ERP Themes source code
     │         │    └── user                Your repository branch source code
     │         ├── data
     │         │    ├── filestore           database attachments, as well as the files of binary fields
@@ -44,10 +44,10 @@ Le répertoire de travail est constitué des dossiers suivants :
 Vous pouvez modifier le code source (fichiers sous _/src_) dans les builds de
 développement et de simulation.
 
-Note
-
-Vos changements ne seront pas propagés dans un nouveau build, vous devez les
-commiter dans votre code source si vous voulez qu’ils persistent.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Vos changements ne seront pas propagés dans un nouveau build, vous devez les commiter dans votre code source si vous voulez qu’ils persistent.</p>
+</div>
 
 Pour les builds de production, le code source est en lecture seule, car
 effectuer des changements locaux sur un serveur de production n’est pas une
@@ -55,7 +55,7 @@ bonne pratique.
 
   * Le code source de votre dépôt Github se trouve sous _/src/user_ ,
 
-  * Le code source d’Odoo se trouve sous
+  * Le code source d’Konvergo ERP se trouve sous
 
     * _/src/odoo_ ([odoo/odoo](https://github.com/odoo/odoo)),
 
@@ -77,7 +77,7 @@ changements en allant au menu File ‣ Save .. File ou en utilisant le raccourci
 editor-save-file.png)
 
 Si vous enregistrez un fichier Python qui se trouve dans le chemin des modules
-complémentaires de votre serveur Odoo, Odoo le détectera et rechargera
+complémentaires de votre serveur Konvergo ERP, Konvergo ERP le détectera et rechargera
 automatiquement pour que vos changement soient reflétés immédiatement sans
 avoir à redémarrer le serveur manuellement.
 
@@ -87,7 +87,7 @@ automaticreload.gif](../../../_images/interface-editor-automaticreload.gif)
 Cependant, si le changement concerne une donnée stockée dans la base de
 données, telle que le libellé d’un champ ou une vue, vous devez mettre à jour
 le module correspondant pour appliquer le changement. Vous pouvez mettre à
-jour le module du fichier actuellement ouvert en utilisant le menu Odoo ‣
+jour le module du fichier actuellement ouvert en utilisant le menu Konvergo ERP ‣
 Update current module. Notez que le fichier considéré comme actuellement
 ouvert est le fichier ciblé dans l’éditeur de texte, et non le fichier mis en
 évidence dans le navigateur de fichiers.
@@ -127,32 +127,16 @@ Dans cette dernière commande,
 
 ![../../../_images/interface-editor-commit-
 push.png](../../../_images/interface-editor-commit-push.png)
-
-Note
-
-Le SSH distant Github n’est pas utilisé, car votre clé privée SSH n’est pas
-hébergée dans vos conteneurs de build (pour des raisons évidentes de
-sécurité), ni transmise via un Agent SSH (puisque vous accédez à cet éditeur
-via un navigateur web) et vous ne pouvez donc pas vous authentifier auprès de
-Github en utilisant un SSH. Vous devez utilise le HTTPS distant de votre dépôt
-Github pour pousser vos changements, qui est automatiquement nommé _https_
-dans vos dépôts Git distants. Vous serez invité à saisir votre nom
-d’utilisateur et mot de passe Github. Si vous avez activé l’authentification à
-deux facteurs sur Github, vous pouvez créer un [jeton d’accès
-personnel](https://help.github.com/articles/creating-a-personal-access-token-
-for-the-command-line/) et l’utiliser comme mot de passe. Il suffit d’accorder
-l’autorisation d’accéder au `repo`.
-
-Note
-
-Le dossier source Git _~/src/user_ n’est pas extrait sur une branche, mais
-plutôt sur une révision détachée, puisque les builds fonctionnent sur des
-révisions spécifiques plutôt que sur des branches. En d’autres termes, cela
-signifie que vous pouvez avoir plusieurs builds sur la même branche, mais sur
-des révisions différentes.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Le SSH distant Github n’est pas utilisé, car votre clé privée SSH n’est pas hébergée dans vos conteneurs de build (pour des raisons évidentes de sécurité), ni transmise via un Agent SSH (puisque vous accédez à cet éditeur via un navigateur web) et vous ne pouvez donc pas vous authentifier auprès de Github en utilisant un SSH. Vous devez utilise le HTTPS distant de votre dépôt Github pour pousser vos changements, qui est automatiquement nommé <em>https</em> dans vos dépôts Git distants. Vous serez invité à saisir votre nom d’utilisateur et mot de passe Github. Si vous avez activé l’authentification à deux facteurs sur Github, vous pouvez créer un <a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">jeton d’accès personnel</a> et l’utiliser comme mot de passe. Il suffit d’accorder l’autorisation d’accéder au <code>repo</code>.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Le dossier source Git <em>~/src/user</em> n’est pas extrait sur une branche, mais plutôt sur une révision détachée, puisque les builds fonctionnent sur des révisions spécifiques plutôt que sur des branches. En d’autres termes, cela signifie que vous pouvez avoir plusieurs builds sur la même branche, mais sur des révisions différentes.</p>
+</div>
 
 Une fois que vos changements sont poussés, en fonction du [comportement de
-poussée de votre branche](branches.html#odoosh-gettingstarted-branches-tabs-
+poussée de votre branche](branches#odoosh-gettingstarted-branches-tabs-
 settings), un nouveau build peut être créé. Vous pouvez continuer à travailler
 dans l’éditeur à partir duquel vous avez poussé, car il aura la même révision
 que le nouveau build créé, mais assurez-vous toujours de travailler dans un
@@ -161,32 +145,28 @@ que le nouveau build créé, mais assurez-vous toujours de travailler dans un
 ## Consoles
 
 Vous pouvez ouvrir des consoles Python, qui sont des [shells interactifs
-IPython](https://ipython.readthedocs.io/en/stable/interactive/tutorial.html).
+IPython](https://ipython.readthedocs.io/en/stable/interactive/tutorial).
 L’un des aspects les plus intéressants de l’utilisation d’une console Python
 plutôt que d’un shell IPython dans un terminal est la [richesse des
 possibilités
-d’affichage](https://ipython.readthedocs.io/en/stable/config/integrating.html#rich-
+d’affichage](https://ipython.readthedocs.io/en/stable/config/integrating#rich-
 display). Grâce à cela, vous pouvez afficher des objets en HTML.
 
 Vous pouvez par exemple afficher les cellules d’un fichier CSV en utilisant
-[pandas](https://pandas.pydata.org/pandas-docs/stable/tutorials.html).
+[pandas](https://pandas.pydata.org/pandas-docs/stable/tutorials).
 
 ![../../../_images/interface-editor-console-python-read-
 csv.png](../../../_images/interface-editor-console-python-read-csv.png)
 
-Vous pouvez également ouvrir une console Shell Odoo pour faire tout ce que
-vous voulez avec le registre Odoo et les méthodes de modèle de votre base de
+Vous pouvez également ouvrir une console Shell Konvergo ERP pour faire tout ce que
+vous voulez avec le registre Konvergo ERP et les méthodes de modèle de votre base de
 données. Vous pouvez également directement lire ou écrire sur vos
 enregistrements.
 
-Avertissement
-
-Dans une Console Odoo, les transactions sont automatiquement commitées. Cela
-signifie, par exemple, que les changements apportés aux enregistrements sont
-effectivement appliqués dans la base de données. Si vous changez le nom d’un
-utilisateur, le nom de l’utilisateur est également changé dans votre base de
-données. Vous devez donc utiliser les consoles Odoo avec précaution sur vos
-bases de données de production.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Dans une Console Konvergo ERP, les transactions sont automatiquement commitées. Cela signifie, par exemple, que les changements apportés aux enregistrements sont effectivement appliqués dans la base de données. Si vous changez le nom d’un utilisateur, le nom de l’utilisateur est également changé dans votre base de données. Vous devez donc utiliser les consoles Konvergo ERP avec précaution sur vos bases de données de production.</p>
+</div>
 
 Vous pouvez utiliser _env_ pour invoquer des modèles de votre registre de
 bases de données, par ex. `env['res.users']`.
@@ -202,14 +182,14 @@ bases de données, par ex. `env['res.users']`.
 
 La classe `Pretty` vous permet d’afficher facilement des listes et des dicts
 d’une manière attrayante, en utilisant l”[affichage
-riche](https://ipython.readthedocs.io/en/stable/config/integrating.html#rich-
+riche](https://ipython.readthedocs.io/en/stable/config/integrating#rich-
 display) susmentionné.
 
 ![../../../_images/interface-editor-console-odoo-
 pretty.png](../../../_images/interface-editor-console-odoo-pretty.png)
 
 Vous pouvez également utiliser [pandas](https://pandas.pydata.org/pandas-
-docs/stable/tutorials.html) pour afficher des graphiques.
+docs/stable/tutorials) pour afficher des graphiques.
 
 ![../../../_images/interface-editor-console-odoo-
 graph.png](../../../_images/interface-editor-console-odoo-graph.png)

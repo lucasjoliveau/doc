@@ -21,7 +21,7 @@ categorías:
 
   * Varias
 
-  * Odoo
+  * Konvergo ERP
 
   * Operadores
 
@@ -29,10 +29,10 @@ categorías:
 
   * Texto
 
-Nota
-
-Las fórmulas que contienen funciones que no son compatibles con Excel se
-reemplazan por su resultado evaluado al exportar una hoja de cálculo.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Las fórmulas que contienen funciones que no son compatibles con Excel se reemplazan por su resultado evaluado al exportar una hoja de cálculo.</p>
+</div>
 
 ## Base de datos
 
@@ -255,7 +255,7 @@ Nombre y argumentos | Descripción o enlace
 ---|---  
 FORMAT.LARGE.NUMBER(valor, [unidad]) | Aplica un formato para números grandes (no es compatible con Excel)  
   
-## Odoo
+## Konvergo ERP
 
 Nombre y argumentos | Descripción o enlace  
 ---|---  

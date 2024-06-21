@@ -1,58 +1,55 @@
 # External API
 
-Odoo is usually extended internally via modules, but many of its features and
+Konvergo ERP is usually extended internally via modules, but many of its features and
 all of its data are also available from the outside for external analysis or
 integration with various tools. Part of the
-[Models](backend/orm.html#reference-orm-model) API is easily available over
+[Models](backend/orm#reference-orm-model) API is easily available over
 [XML-RPC](https://en.wikipedia.org/wiki/XML-RPC) and accessible from a variety
 of languages.
 
-Importante
-
-Starting with PHP8, the XML-RPC extension may not be available by default.
-Check out the [manual](https://www.php.net/manual/en/xmlrpc.installation.php)
-for the installation steps.
-
-Nota
-
-Access to data via the external API is only available on _Custom_ Odoo pricing
-plans. Access to the external API is not available on _One App Free_ or
-_Standard_ plans. For more information visit the [Odoo pricing
-page](https://www.odoo.com/pricing-plan) or reach out to your Customer Success
-Manager.
-
-Ver también
-
-  * [Tutorial on web services](../howtos/web_services.html)
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Starting with PHP8, the XML-RPC extension may not be available by default.
+Check out the <a href="https://www.php.net/manual/en/xmlrpc.installation.php">manual</a>
+for the installation steps.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Access to data via the external API is only available on <em>Custom</em> Konvergo ERP pricing plans. Access to
+the external API is not available on <em>One App Free</em> or <em>Standard</em> plans. For more information
+visit the <a href="https://www.odoo.com/pricing-plan">Konvergo ERP pricing page</a> or reach out to your Customer
+Success Manager.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../howtos/web_services">Tutorial on web services</a></p></li>
+</ul>
+</div>
 
 ## Connection
 
 ### Configuration
 
-If you already have an Odoo server installed, you can just use its parameters.
+If you already have an Konvergo ERP server installed, you can just use its parameters.
 
-Importante
-
-For Odoo Online instances (<domain>.odoo.com), users are created without a
-_local_ password (as a person you are logged in via the Odoo Online
-authentication system, not by the instance itself). To use XML-RPC on Odoo
-Online instances, you will need to set a password on the user account you want
-to use:
-
-  * Log in your instance with an administrator account.
-
-  * Go to Settings ‣ Users & Companies ‣ Users.
-
-  * Click on the user you want to use for XML-RPC access.
-
-  * Click on Action and select Change Password.
-
-  * Set a New Password value then click Change Password.
-
-The _server url_ is the instance’s domain (e.g. _https://mycompany.odoo.com_),
-the _database name_ is the name of the instance (e.g. _mycompany_). The
-_username_ is the configured user’s login as shown by the _Change Password_
-screen.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>For Konvergo ERP Online instances (&lt;domain&gt;.odoo.com), users are created without a
+<em>local</em> password (as a person you are logged in via the Konvergo ERP Online
+authentication system, not by the instance itself). To use XML-RPC on Konvergo ERP
+Online instances, you will need to set a password on the user account you
+want to use:</p>
+<ul>
+<li><p>Log in your instance with an administrator account.</p></li>
+<li><p>Go to Settings ‣ Users &amp; Companies ‣ Users.</p></li>
+<li><p>Click on the user you want to use for XML-RPC access.</p></li>
+<li><p>Click on <b>Action</b> and select <b>Change Password</b>.</p></li>
+<li><p>Set a <b>New Password</b> value then click <b>Change Password</b>.</p></li>
+</ul>
+<p>The <em>server url</em> is the instance’s domain (e.g.
+<em>https://mycompany.odoo.com</em>), the <em>database name</em> is the name of the
+instance (e.g. <em>mycompany</em>). The <em>username</em> is the configured user’s login
+as shown by the <em>Change Password</em> screen.</p>
+</div>
 
 PythonRubyPHPJavaGo
 
@@ -98,7 +95,7 @@ PythonRubyPHPJavaGo
 
 Nuevo en la versión 14.0.
 
-Odoo has support for **api keys** and (depending on modules or settings) may
+Konvergo ERP has support for **api keys** and (depending on modules or settings) may
 **require** these keys to perform webservice operations.
 
 The way to use API Keys in your scripts is to simply replace your **password**
@@ -106,12 +103,12 @@ by the key. The login remains in-use. You should store the API Key as
 carefully as the password as they essentially provide the same access to your
 user account (although they can not be used to log-in via the interface).
 
-In order to add a key to your account, simply go to your Preferences (or My
-Profile):
+In order to add a key to your account, simply go to your **Preferences** (or
+**My Profile**):
 
 ![../../_images/preferences1.png](../../_images/preferences1.png)
 
-then open the Account Security tab, and click New API Key:
+then open the **Account Security** tab, and click **New API Key** :
 
 ![../../_images/account-security.png](../../_images/account-security.png)
 
@@ -119,13 +116,14 @@ Input a description for the key, **this description should be as clear and
 complete as possible** : it is the only way you will have to identify your
 keys later and know whether you should remove them or keep them around.
 
-Click Generate Key, then copy the key provided. **Store this key carefully** :
-it is equivalent to your password, and just like your password the system will
-not be able to retrieve or show the key again later on. If you lose this key,
-you will have to create a new one (and probably delete the one you lost).
+Click **Generate Key** , then copy the key provided. **Store this key
+carefully** : it is equivalent to your password, and just like your password
+the system will not be able to retrieve or show the key again later on. If you
+lose this key, you will have to create a new one (and probably delete the one
+you lost).
 
-Once you have keys configured on your account, they will appear above the New
-API Key button, and you will be able to delete them:
+Once you have keys configured on your account, they will appear above the
+**New API Key** button, and you will be able to delete them:
 
 ![../../_images/delete-key.png](../../_images/delete-key.png)
 
@@ -158,17 +156,16 @@ PythonRubyPHPJavaGo
     list($url, $db, $username, $password) = array($info['host'], $info['database'], $info['user'], $info['password']);
     
 
-Nota
-
-These examples use the [Ripcord](https://code.google.com/p/ripcord/) library,
-which provides a simple XML-RPC API. Ripcord requires that [XML-RPC support be
-enabled](https://php.net/manual/en/xmlrpc.installation.php) in your PHP
-installation.
-
-Since calls are performed over
-[HTTPS](https://en.wikipedia.org/wiki/HTTP_Secure), it also requires that the
-[OpenSSL extension](https://php.net/manual/en/openssl.installation.php) be
-enabled.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>These examples use the <a href="https://code.google.com/p/ripcord/">Ripcord</a>
+library, which provides a simple XML-RPC API. Ripcord requires that
+<a href="https://php.net/manual/en/xmlrpc.installation.php">XML-RPC support be enabled</a> in your PHP
+installation.</p>
+<p>Since calls are performed over
+<a href="https://en.wikipedia.org/wiki/HTTP_Secure">HTTPS</a>, it also requires that
+the <a href="https://php.net/manual/en/openssl.installation.php">OpenSSL extension</a> be enabled.</p>
+</div>
 
     
     
@@ -185,13 +182,12 @@ enabled.
             password = info.get("password");
     
 
-Nota
-
-These examples use the [Apache XML-RPC
-library](https://ws.apache.org/xmlrpc/).
-
-The examples do not include imports as these imports couldn’t be pasted in the
-code.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>These examples use the <a href="https://ws.apache.org/xmlrpc/">Apache XML-RPC library</a>.</p>
+<p>The examples do not include imports as these imports couldn’t be
+pasted in the code.</p>
+</div>
 
     
     
@@ -207,17 +203,16 @@ code.
     password = info["password"].(string)
     
 
-Nota
-
-These examples use the [github.com/kolo/xmlrpc
-library](https://github.com/kolo/xmlrpc).
-
-The examples do not include imports as these imports couldn’t be pasted in the
-code.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>These examples use the <a href="https://github.com/kolo/xmlrpc">github.com/kolo/xmlrpc library</a>.</p>
+<p>The examples do not include imports as these imports couldn’t be
+pasted in the code.</p>
+</div>
 
 ### Logging in
 
-Odoo requires users of the API to be authenticated before they can query most
+Konvergo ERP requires users of the API to be authenticated before they can query most
 data.
 
 The `xmlrpc/2/common` endpoint provides meta-calls which don’t require
@@ -324,123 +319,107 @@ Each call to `execute_kw` takes the following parameters:
 
   * a mapping/dict of parameters to pass by keyword (optional)
 
-Example
-
-For instance, to see if we can read the `res.partner` model, we can call
-`check_access_rights` with `operation` passed by position and
-`raise_exception` passed by keyword (in order to get a true/false result
-rather than true/error):
-
-PythonRubyPHPJavaGo
-
-    
-    
-    models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
-    models.execute_kw(db, uid, password, 'res.partner', 'check_access_rights', ['read'], {'raise_exception': False})
-    
-    
-    
-    models = XMLRPC::Client.new2("#{url}/xmlrpc/2/object").proxy
-    models.execute_kw(db, uid, password, 'res.partner', 'check_access_rights', ['read'], {raise_exception: false})
-    
-    
-    
-    $models = ripcord::client("$url/xmlrpc/2/object");
-    $models->execute_kw($db, $uid, $password, 'res.partner', 'check_access_rights', array('read'), array('raise_exception' => false));
-    
-    
-    
-    final XmlRpcClient models = new XmlRpcClient() {{
-        setConfig(new XmlRpcClientConfigImpl() {{
-            setServerURL(new URL(String.format("%s/xmlrpc/2/object", url)));
-        }});
-    }};
-    models.execute("execute_kw", asList(
-        db, uid, password,
-        "res.partner", "check_access_rights",
-        asList("read"),
-        new HashMap() {{ put("raise_exception", false); }}
-    ));
-    
-    
-    
-    models, err := xmlrpc.NewClient(fmt.Sprintf("%s/xmlrpc/2/object", url), nil)
-    if err != nil {
-        log.Fatal(err)
-    }
-    var result bool
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "check_access_rights",
-        []string{"read"},
-        map[string]bool{"raise_exception": false},
-    }, &result); err != nil {
-        log.Fatal(err)
-    }
-    
-
-Result:
-
-    
-    
-    true
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>For instance, to see if we can read the <code>res.partner</code> model, we can call
+<code>check_access_rights</code> with <code>operation</code> passed by position and
+<code>raise_exception</code> passed by keyword (in order to get a true/false result
+rather than true/error):</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-4-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-4-UnVieQ==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-UnVieQ==" name="UnVieQ==" role="tab" tabindex="-1">Ruby</button><button aria-controls="panel-4-UEhQ" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-UEhQ" name="UEhQ" role="tab" tabindex="-1">PHP</button><button aria-controls="panel-4-SmF2YQ==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-SmF2YQ==" name="SmF2YQ==" role="tab" tabindex="-1">Java</button><button aria-controls="panel-4-R28=" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-R28=" name="R28=" role="tab" tabindex="-1">Go</button></div><div aria-labelledby="tab-4-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-4-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">models</span> <span class="o">=</span> <span class="n">xmlrpc</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">'</span><span class="si">{}</span><span class="s1">/xmlrpc/2/object'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+<span class="n">models</span><span class="o">.</span><span class="n">execute_kw</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'check_access_rights'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'read'</span><span class="p">],</span> <span class="p">{</span><span class="s1">'raise_exception'</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-UnVieQ==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-4-UnVieQ==" name="UnVieQ==" role="tabpanel" tabindex="0"><div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">models</span> <span class="o">=</span> <span class="no">XMLRPC</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new2</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">/xmlrpc/2/object"</span><span class="p">)</span><span class="o">.</span><span class="n">proxy</span>
+<span class="n">models</span><span class="o">.</span><span class="n">execute_kw</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'check_access_rights'</span><span class="p">,</span> <span class="o">[</span><span class="s1">'read'</span><span class="o">]</span><span class="p">,</span> <span class="p">{</span><span class="ss">raise_exception</span><span class="p">:</span> <span class="kp">false</span><span class="p">})</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-UEhQ" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-4-UEhQ" name="UEhQ" role="tabpanel" tabindex="0"><div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$models</span> <span class="o">=</span> <span class="nx">ripcord</span><span class="o">::</span><span class="na">client</span><span class="p">(</span><span class="s2">"</span><span class="si">$url</span><span class="s2">/xmlrpc/2/object"</span><span class="p">);</span>
+<span class="nv">$models</span><span class="o">-&gt;</span><span class="na">execute_kw</span><span class="p">(</span><span class="nv">$db</span><span class="p">,</span> <span class="nv">$uid</span><span class="p">,</span> <span class="nv">$password</span><span class="p">,</span> <span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'check_access_rights'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">'read'</span><span class="p">),</span> <span class="k">array</span><span class="p">(</span><span class="s1">'raise_exception'</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">));</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-SmF2YQ==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-4-SmF2YQ==" name="SmF2YQ==" role="tabpanel" tabindex="0"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="n">XmlRpcClient</span> <span class="n">models</span> <span class="o">=</span> <span class="k">new</span> <span class="n">XmlRpcClient</span><span class="p">()</span> <span class="p">{{</span>
+    <span class="n">setConfig</span><span class="p">(</span><span class="k">new</span> <span class="n">XmlRpcClientConfigImpl</span><span class="p">()</span> <span class="p">{{</span>
+        <span class="n">setServerURL</span><span class="p">(</span><span class="k">new</span> <span class="n">URL</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">"%s/xmlrpc/2/object"</span><span class="p">,</span> <span class="n">url</span><span class="p">)));</span>
+    <span class="p">}});</span>
+<span class="p">}};</span>
+<span class="n">models</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="s">"execute_kw"</span><span class="p">,</span> <span class="n">asList</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span>
+    <span class="s">"res.partner"</span><span class="p">,</span> <span class="s">"check_access_rights"</span><span class="p">,</span>
+    <span class="n">asList</span><span class="p">(</span><span class="s">"read"</span><span class="p">),</span>
+    <span class="k">new</span> <span class="n">HashMap</span><span class="p">()</span> <span class="p">{{</span> <span class="n">put</span><span class="p">(</span><span class="s">"raise_exception"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span> <span class="p">}}</span>
+<span class="p">));</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-R28=" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-4-R28=" name="R28=" role="tabpanel" tabindex="0"><div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">models</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">xmlrpc</span><span class="p">.</span><span class="nx">NewClient</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Sprintf</span><span class="p">(</span><span class="s">"%s/xmlrpc/2/object"</span><span class="p">,</span> <span class="nx">url</span><span class="p">),</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="kt">bool</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">Call</span><span class="p">(</span><span class="s">"execute_kw"</span><span class="p">,</span> <span class="p">[]</span><span class="nx">any</span><span class="p">{</span>
+    <span class="nx">db</span><span class="p">,</span> <span class="nx">uid</span><span class="p">,</span> <span class="nx">password</span><span class="p">,</span>
+    <span class="s">"res.partner"</span><span class="p">,</span> <span class="s">"check_access_rights"</span><span class="p">,</span>
+    <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"read"</span><span class="p">},</span>
+    <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">bool</span><span class="p">{</span><span class="s">"raise_exception"</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+<span class="p">},</span> <span class="o">&amp;</span><span class="nx">result</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+<p>Result:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="kc">true</span>
+</pre></div>
+</div>
+</div>
 
 ### List records
 
 Records can be listed and filtered via `search()`.
 
-`search()` takes a mandatory [domain](backend/orm.html#reference-orm-domains)
+`search()` takes a mandatory [domain](backend/orm#reference-orm-domains)
 filter (possibly empty), and returns the database identifiers of all records
 matching the filter.
 
-Example
-
-To list customer companies, for instance:
-
-PythonRubyPHPJavaGo
-
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'search', [[['is_company', '=', True]]])
-    
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'search', [[['is_company', '=', true]]])
-    
-    
-    
-    $models->execute_kw($db, $uid, $password, 'res.partner', 'search', array(array(array('is_company', '=', true))));
-    
-    
-    
-    asList((Object[])models.execute("execute_kw", asList(
-        db, uid, password,
-        "res.partner", "search",
-        asList(asList(
-            asList("is_company", "=", true)))
-    )));
-    
-    
-    
-    var records []int64
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "search",
-        []any{[]any{
-            []any{"is_company", "=", true},
-        }},
-    }, &records); err != nil {
-        log.Fatal(err)
-    }
-    
-
-Result:
-
-    
-    
-    [7, 18, 12, 14, 17, 19, 8, 31, 26, 16, 13, 20, 30, 22, 29, 15, 23, 28, 74]
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>To list customer companies, for instance:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-5-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-5-UnVieQ==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-UnVieQ==" name="UnVieQ==" role="tab" tabindex="-1">Ruby</button><button aria-controls="panel-5-UEhQ" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-UEhQ" name="UEhQ" role="tab" tabindex="-1">PHP</button><button aria-controls="panel-5-SmF2YQ==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-SmF2YQ==" name="SmF2YQ==" role="tab" tabindex="-1">Java</button><button aria-controls="panel-5-R28=" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-R28=" name="R28=" role="tab" tabindex="-1">Go</button></div><div aria-labelledby="tab-5-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-5-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">models</span><span class="o">.</span><span class="n">execute_kw</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'search'</span><span class="p">,</span> <span class="p">[[[</span><span class="s1">'is_company'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="kc">True</span><span class="p">]]])</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-5-UnVieQ==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-5-UnVieQ==" name="UnVieQ==" role="tabpanel" tabindex="0"><div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">models</span><span class="o">.</span><span class="n">execute_kw</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'search'</span><span class="p">,</span> <span class="o">[[[</span><span class="s1">'is_company'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="kp">true</span><span class="o">]]]</span><span class="p">)</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-5-UEhQ" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-5-UEhQ" name="UEhQ" role="tabpanel" tabindex="0"><div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$models</span><span class="o">-&gt;</span><span class="na">execute_kw</span><span class="p">(</span><span class="nv">$db</span><span class="p">,</span> <span class="nv">$uid</span><span class="p">,</span> <span class="nv">$password</span><span class="p">,</span> <span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'search'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">'is_company'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="k">true</span><span class="p">))));</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-5-SmF2YQ==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-5-SmF2YQ==" name="SmF2YQ==" role="tabpanel" tabindex="0"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">asList</span><span class="p">((</span><span class="n">Object</span><span class="o">[]</span><span class="p">)</span><span class="n">models</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="s">"execute_kw"</span><span class="p">,</span> <span class="n">asList</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span>
+    <span class="s">"res.partner"</span><span class="p">,</span> <span class="s">"search"</span><span class="p">,</span>
+    <span class="n">asList</span><span class="p">(</span><span class="n">asList</span><span class="p">(</span>
+        <span class="n">asList</span><span class="p">(</span><span class="s">"is_company"</span><span class="p">,</span> <span class="s">"="</span><span class="p">,</span> <span class="kc">true</span><span class="p">)))</span>
+<span class="p">)));</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-5-R28=" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-5-R28=" name="R28=" role="tabpanel" tabindex="0"><div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">records</span> <span class="p">[]</span><span class="kt">int64</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">Call</span><span class="p">(</span><span class="s">"execute_kw"</span><span class="p">,</span> <span class="p">[]</span><span class="nx">any</span><span class="p">{</span>
+    <span class="nx">db</span><span class="p">,</span> <span class="nx">uid</span><span class="p">,</span> <span class="nx">password</span><span class="p">,</span>
+    <span class="s">"res.partner"</span><span class="p">,</span> <span class="s">"search"</span><span class="p">,</span>
+    <span class="p">[]</span><span class="nx">any</span><span class="p">{[]</span><span class="nx">any</span><span class="p">{</span>
+        <span class="p">[]</span><span class="nx">any</span><span class="p">{</span><span class="s">"is_company"</span><span class="p">,</span> <span class="s">"="</span><span class="p">,</span> <span class="kc">true</span><span class="p">},</span>
+    <span class="p">}},</span>
+<span class="p">},</span> <span class="o">&amp;</span><span class="nx">records</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+<p>Result:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">74</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 
 #### Pagination
 
@@ -448,112 +427,67 @@ By default a search will return the ids of all records matching the condition,
 which may be a huge number. `offset` and `limit` parameters are available to
 only retrieve a subset of all matched records.
 
-Example
-
-PythonRubyPHPJavaGo
-
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'search', [[['is_company', '=', True]]], {'offset': 10, 'limit': 5})
-    
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'search', [[['is_company', '=', true]]], {offset: 10, limit: 5})
-    
-    
-    
-    $models->execute_kw($db, $uid, $password, 'res.partner', 'search', array(array(array('is_company', '=', true))), array('offset'=>10, 'limit'=>5));
-    
-    
-    
-    asList((Object[])models.execute("execute_kw", asList(
-        db, uid, password,
-        "res.partner", "search",
-        asList(asList(
-            asList("is_company", "=", true))),
-        new HashMap() {{ put("offset", 10); put("limit", 5); }}
-    )));
-    
-    
-    
-    var records []int64
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "search",
-        []any{[]any{
-            []any{"is_company", "=", true},
-        }},
-        map[string]int64{"offset": 10, "limit":  5},
-    }, &records); err != nil {
-        log.Fatal(err)
-    }
-    
-
-Result:
-
-    
-    
-    [13, 20, 30, 22, 29]
-    
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-6-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-6-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-6-UnVieQ==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-6-UnVieQ==" name="UnVieQ==" role="tab" tabindex="-1">Ruby</button><button aria-controls="panel-6-UEhQ" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-6-UEhQ" name="UEhQ" role="tab" tabindex="-1">PHP</button><button aria-controls="panel-6-SmF2YQ==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-6-SmF2YQ==" name="SmF2YQ==" role="tab" tabindex="-1">Java</button><button aria-controls="panel-6-R28=" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-6-R28=" name="R28=" role="tab" tabindex="-1">Go</button></div><div aria-labelledby="tab-6-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-6-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">models</span><span class="o">.</span><span class="n">execute_kw</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'search'</span><span class="p">,</span> <span class="p">[[[</span><span class="s1">'is_company'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="kc">True</span><span class="p">]]],</span> <span class="p">{</span><span class="s1">'offset'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">'limit'</span><span class="p">:</span> <span class="mi">5</span><span class="p">})</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-6-UnVieQ==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-6-UnVieQ==" name="UnVieQ==" role="tabpanel" tabindex="0"><div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">models</span><span class="o">.</span><span class="n">execute_kw</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'search'</span><span class="p">,</span> <span class="o">[[[</span><span class="s1">'is_company'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="kp">true</span><span class="o">]]]</span><span class="p">,</span> <span class="p">{</span><span class="ss">offset</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="ss">limit</span><span class="p">:</span> <span class="mi">5</span><span class="p">})</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-6-UEhQ" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-6-UEhQ" name="UEhQ" role="tabpanel" tabindex="0"><div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$models</span><span class="o">-&gt;</span><span class="na">execute_kw</span><span class="p">(</span><span class="nv">$db</span><span class="p">,</span> <span class="nv">$uid</span><span class="p">,</span> <span class="nv">$password</span><span class="p">,</span> <span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'search'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">'is_company'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="k">true</span><span class="p">))),</span> <span class="k">array</span><span class="p">(</span><span class="s1">'offset'</span><span class="o">=&gt;</span><span class="mi">10</span><span class="p">,</span> <span class="s1">'limit'</span><span class="o">=&gt;</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-6-SmF2YQ==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-6-SmF2YQ==" name="SmF2YQ==" role="tabpanel" tabindex="0"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">asList</span><span class="p">((</span><span class="n">Object</span><span class="o">[]</span><span class="p">)</span><span class="n">models</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="s">"execute_kw"</span><span class="p">,</span> <span class="n">asList</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span>
+    <span class="s">"res.partner"</span><span class="p">,</span> <span class="s">"search"</span><span class="p">,</span>
+    <span class="n">asList</span><span class="p">(</span><span class="n">asList</span><span class="p">(</span>
+        <span class="n">asList</span><span class="p">(</span><span class="s">"is_company"</span><span class="p">,</span> <span class="s">"="</span><span class="p">,</span> <span class="kc">true</span><span class="p">))),</span>
+    <span class="k">new</span> <span class="n">HashMap</span><span class="p">()</span> <span class="p">{{</span> <span class="n">put</span><span class="p">(</span><span class="s">"offset"</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="n">put</span><span class="p">(</span><span class="s">"limit"</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> <span class="p">}}</span>
+<span class="p">)));</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-6-R28=" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-6-R28=" name="R28=" role="tabpanel" tabindex="0"><div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">records</span> <span class="p">[]</span><span class="kt">int64</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">Call</span><span class="p">(</span><span class="s">"execute_kw"</span><span class="p">,</span> <span class="p">[]</span><span class="nx">any</span><span class="p">{</span>
+    <span class="nx">db</span><span class="p">,</span> <span class="nx">uid</span><span class="p">,</span> <span class="nx">password</span><span class="p">,</span>
+    <span class="s">"res.partner"</span><span class="p">,</span> <span class="s">"search"</span><span class="p">,</span>
+    <span class="p">[]</span><span class="nx">any</span><span class="p">{[]</span><span class="nx">any</span><span class="p">{</span>
+        <span class="p">[]</span><span class="nx">any</span><span class="p">{</span><span class="s">"is_company"</span><span class="p">,</span> <span class="s">"="</span><span class="p">,</span> <span class="kc">true</span><span class="p">},</span>
+    <span class="p">}},</span>
+    <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int64</span><span class="p">{</span><span class="s">"offset"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s">"limit"</span><span class="p">:</span>  <span class="mi">5</span><span class="p">},</span>
+<span class="p">},</span> <span class="o">&amp;</span><span class="nx">records</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+<p>Result:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 
 ### Count records
 
 Rather than retrieve a possibly gigantic list of records and count them,
 `search_count()` can be used to retrieve only the number of records matching
-the query. It takes the same [domain](backend/orm.html#reference-orm-domains)
+the query. It takes the same [domain](backend/orm#reference-orm-domains)
 filter as `search()` and no other parameter.
 
-Example
-
-PythonRubyPHPJavaGo
-
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'search_count', [[['is_company', '=', True]]])
-    
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'search_count', [[['is_company', '=', true]]])
-    
-    
-    
-    $models->execute_kw($db, $uid, $password, 'res.partner', 'search_count', array(array(array('is_company', '=', true))));
-    
-    
-    
-    (Integer)models.execute("execute_kw", asList(
-        db, uid, password,
-        "res.partner", "search_count",
-        asList(asList(
-            asList("is_company", "=", true)))
-    ));
-    
-    
-    
-    var counter int64
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "search_count",
-        []any{[]any{
-            []any{"is_company", "=", true},
-        }},
-    }, &counter); err != nil {
-        log.Fatal(err)
-    }
-    
-
-Result:
-
-    
-    
-    19
-    
-
-Nota
-
-Calling `search` then `search_count` (or the other way around) may not yield
-coherent results if other users are using the server: stored data could have
-changed between the calls.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Access to data via the external API is only available on <em>Custom</em> Konvergo ERP pricing plans. Access to
+the external API is not available on <em>One App Free</em> or <em>Standard</em> plans. For more information
+visit the <a href="https://www.odoo.com/pricing-plan">Konvergo ERP pricing page</a> or reach out to your Customer
+Success Manager.</p>
+</div>0 <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Access to data via the external API is only available on <em>Custom</em> Konvergo ERP pricing plans. Access to
+the external API is not available on <em>One App Free</em> or <em>Standard</em> plans. For more information
+visit the <a href="https://www.odoo.com/pricing-plan">Konvergo ERP pricing page</a> or reach out to your Customer
+Success Manager.</p>
+</div>1
 
 ### Read records
 
@@ -562,134 +496,19 @@ Record data are accessible via the `read()` method, which takes a list of ids
 default, it fetches all the fields the current user can read, which tends to
 be a huge amount.
 
-Example
-
-PythonRubyPHPJavaGo
-
-    
-    
-    ids = models.execute_kw(db, uid, password, 'res.partner', 'search', [[['is_company', '=', True]]], {'limit': 1})
-    [record] = models.execute_kw(db, uid, password, 'res.partner', 'read', [ids])
-    # count the number of fields fetched by default
-    len(record)
-    
-    
-    
-    ids = models.execute_kw(db, uid, password, 'res.partner', 'search', [[['is_company', '=', true]]], {limit: 1})
-    record = models.execute_kw(db, uid, password, 'res.partner', 'read', [ids]).first
-    # count the number of fields fetched by default
-    record.length
-    
-    
-    
-    $ids = $models->execute_kw($db, $uid, $password, 'res.partner', 'search', array(array(array('is_company', '=', true))), array('limit'=>1));
-    $records = $models->execute_kw($db, $uid, $password, 'res.partner', 'read', array($ids));
-    // count the number of fields fetched by default
-    count($records[0]);
-    
-    
-    
-    final List ids = asList((Object[])models.execute(
-        "execute_kw", asList(
-            db, uid, password,
-            "res.partner", "search",
-            asList(asList(
-                asList("is_company", "=", true))),
-            new HashMap() {{ put("limit", 1); }})));
-    final Map record = (Map)((Object[])models.execute(
-        "execute_kw", asList(
-            db, uid, password,
-            "res.partner", "read",
-            asList(ids)
-        )
-    ))[0];
-    // count the number of fields fetched by default
-    record.size();
-    
-    
-    
-    var ids []int64
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "search",
-        []any{[]any{
-            []any{"is_company", "=", true},
-        }},
-        map[string]int64{"limit": 1},
-    }, &ids); err != nil {
-        log.Fatal(err)
-    }
-    var records []any
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "read",
-        ids,
-    }, &records); err != nil {
-        log.Fatal(err)
-    }
-    // count the number of fields fetched by default
-    count := len(records)
-    
-
-Result:
-
-    
-    
-    121
-    
-
-Conversely, picking only three fields deemed interesting.
-
-PythonRubyPHPJavaGo
-
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'read', [ids], {'fields': ['name', 'country_id', 'comment']})
-    
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'read', [ids], {fields: %w(name country_id comment)})
-    
-    
-    
-    $models->execute_kw($db, $uid, $password, 'res.partner', 'read', array($ids), array('fields'=>array('name', 'country_id', 'comment')));
-    
-    
-    
-    asList((Object[])models.execute("execute_kw", asList(
-        db, uid, password,
-        "res.partner", "read",
-        asList(ids),
-        new HashMap() {{
-            put("fields", asList("name", "country_id", "comment"));
-        }}
-    )));
-    
-    
-    
-    var recordFields []map[string]any
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "read",
-        ids,
-        map[string][]string{
-            "fields": {"name", "country_id", "comment"},
-        },
-    }, &recordFields); err != nil {
-        log.Fatal(err)
-    }
-    
-
-Result:
-
-    
-    
-    [{"comment": false, "country_id": [21, "Belgium"], "id": 7, "name": "Agrolait"}]
-    
-
-Nota
-
-Even if the `id` field is not requested, it is always returned.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Access to data via the external API is only available on <em>Custom</em> Konvergo ERP pricing plans. Access to
+the external API is not available on <em>One App Free</em> or <em>Standard</em> plans. For more information
+visit the <a href="https://www.odoo.com/pricing-plan">Konvergo ERP pricing page</a> or reach out to your Customer
+Success Manager.</p>
+</div>2 <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Access to data via the external API is only available on <em>Custom</em> Konvergo ERP pricing plans. Access to
+the external API is not available on <em>One App Free</em> or <em>Standard</em> plans. For more information
+visit the <a href="https://www.odoo.com/pricing-plan">Konvergo ERP pricing page</a> or reach out to your Customer
+Success Manager.</p>
+</div>3
 
 ### List record fields
 
@@ -702,93 +521,17 @@ items for a human user are `string` (the field’s label), `help` (a help text
 if available) and `type` (to know which values to expect, or to send when
 updating a record).
 
-Example
-
-PythonRubyPHPJavaGo
-
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'fields_get', [], {'attributes': ['string', 'help', 'type']})
-    
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'fields_get', [], {attributes: %w(string help type)})
-    
-    
-    
-    $models->execute_kw($db, $uid, $password, 'res.partner', 'fields_get', array(), array('attributes' => array('string', 'help', 'type')));
-    
-    
-    
-    (Map<String, Map<String, Object>>)models.execute("execute_kw", asList(
-        db, uid, password,
-        "res.partner", "fields_get",
-        emptyList(),
-        new HashMap() {{
-            put("attributes", asList("string", "help", "type"));
-        }}
-    ));
-    
-    
-    
-    recordFields := map[string]string{}
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "fields_get",
-        []any{},
-        map[string][]string{
-            "attributes": {"string", "help", "type"},
-        },
-    }, &recordFields); err != nil {
-        log.Fatal(err)
-    }
-    
-
-Result:
-
-    
-    
-    {
-        "ean13": {
-            "type": "char",
-            "help": "BarCode",
-            "string": "EAN13"
-        },
-        "property_account_position_id": {
-            "type": "many2one",
-            "help": "The fiscal position will determine taxes and accounts used for the partner.",
-            "string": "Fiscal Position"
-        },
-        "signup_valid": {
-            "type": "boolean",
-            "help": "",
-            "string": "Signup Token is Valid"
-        },
-        "date_localization": {
-            "type": "date",
-            "help": "",
-            "string": "Geo Localization Date"
-        },
-        "ref_company_ids": {
-            "type": "one2many",
-            "help": "",
-            "string": "Companies that refers to partner"
-        },
-        "sale_order_count": {
-            "type": "integer",
-            "help": "",
-            "string": "# of Sales Order"
-        },
-        "purchase_order_count": {
-            "type": "integer",
-            "help": "",
-            "string": "# of Purchase Order"
-        },
-    
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Access to data via the external API is only available on <em>Custom</em> Konvergo ERP pricing plans. Access to
+the external API is not available on <em>One App Free</em> or <em>Standard</em> plans. For more information
+visit the <a href="https://www.odoo.com/pricing-plan">Konvergo ERP pricing page</a> or reach out to your Customer
+Success Manager.</p>
+</div>4
 
 ### Search and read
 
-Because it is a very common task, Odoo provides a `search_read()` shortcut
+Because it is a very common task, Konvergo ERP provides a `search_read()` shortcut
 which, as its name suggests, is equivalent to a `search()` followed by a
 `read()`, but avoids having to perform two requests and keep ids around.
 
@@ -796,90 +539,13 @@ Its arguments are similar to `search()`”s, but it can also take a list of
 `fields` (like `read()`, if that list is not provided it will fetch all fields
 of matched records).
 
-Example
-
-PythonRubyPHPJavaGo
-
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'search_read', [[['is_company', '=', True]]], {'fields': ['name', 'country_id', 'comment'], 'limit': 5})
-    
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'search_read', [[['is_company', '=', true]]], {fields: %w(name country_id comment), limit: 5})
-    
-    
-    
-    $models->execute_kw($db, $uid, $password, 'res.partner', 'search_read', array(array(array('is_company', '=', true))), array('fields'=>array('name', 'country_id', 'comment'), 'limit'=>5));
-    
-    
-    
-    asList((Object[])models.execute("execute_kw", asList(
-        db, uid, password,
-        "res.partner", "search_read",
-        asList(asList(
-            asList("is_company", "=", true))),
-        new HashMap() {{
-            put("fields", asList("name", "country_id", "comment"));
-            put("limit", 5);
-        }}
-    )));
-    
-    
-    
-    var recordFields []map[string]any
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "search_read",
-        []any{[]any{
-            []any{"is_company", "=", true},
-        }},
-        map[string]any{
-            "fields": []string{"name", "country_id", "comment"},
-            "limit":  5,
-        },
-    }, &recordFields); err != nil {
-        log.Fatal(err)
-    }
-    
-
-Result:
-
-    
-    
-    [
-        {
-            "comment": false,
-            "country_id": [ 21, "Belgium" ],
-            "id": 7,
-            "name": "Agrolait"
-        },
-        {
-            "comment": false,
-            "country_id": [ 76, "France" ],
-            "id": 18,
-            "name": "Axelor"
-        },
-        {
-            "comment": false,
-            "country_id": [ 233, "United Kingdom" ],
-            "id": 12,
-            "name": "Bank Wealthy and sons"
-        },
-        {
-            "comment": false,
-            "country_id": [ 105, "India" ],
-            "id": 14,
-            "name": "Best Designers"
-        },
-        {
-            "comment": false,
-            "country_id": [ 76, "France" ],
-            "id": 17,
-            "name": "Camptocamp"
-        }
-    ]
-    
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Access to data via the external API is only available on <em>Custom</em> Konvergo ERP pricing plans. Access to
+the external API is not available on <em>One App Free</em> or <em>Standard</em> plans. For more information
+visit the <a href="https://www.odoo.com/pricing-plan">Konvergo ERP pricing page</a> or reach out to your Customer
+Success Manager.</p>
+</div>5
 
 ### Create records
 
@@ -890,59 +556,19 @@ record and returns its database identifier.
 For any field which has a default value and is not set through the mapping
 argument, the default value will be used.
 
-Example
-
-PythonRubyPHPJavaGo
-
-    
-    
-    id = models.execute_kw(db, uid, password, 'res.partner', 'create', [{'name': "New Partner"}])
-    
-    
-    
-    id = models.execute_kw(db, uid, password, 'res.partner', 'create', [{name: "New Partner"}])
-    
-    
-    
-    $id = $models->execute_kw($db, $uid, $password, 'res.partner', 'create', array(array('name'=>"New Partner")));
-    
-    
-    
-    final Integer id = (Integer)models.execute("execute_kw", asList(
-        db, uid, password,
-        "res.partner", "create",
-        asList(new HashMap() {{ put("name", "New Partner"); }})
-    ));
-    
-    
-    
-    var id int64
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "create",
-        []map[string]string{
-            {"name": "New Partner"},
-        },
-    }, &id); err != nil {
-        log.Fatal(err)
-    }
-    
-
-Result:
-
-    
-    
-    78
-    
-
-Advertencia
-
-While most value types are what would expect (integer for `Integer`, string
-for `Char` or `Text`),
-
-  * `Date`, `Datetime` and `Binary` fields use string values
-
-  * `One2many` and `Many2many` use a special command protocol detailed in `the documentation to the write method`.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Access to data via the external API is only available on <em>Custom</em> Konvergo ERP pricing plans. Access to
+the external API is not available on <em>One App Free</em> or <em>Standard</em> plans. For more information
+visit the <a href="https://www.odoo.com/pricing-plan">Konvergo ERP pricing page</a> or reach out to your Customer
+Success Manager.</p>
+</div>6 <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Access to data via the external API is only available on <em>Custom</em> Konvergo ERP pricing plans. Access to
+the external API is not available on <em>One App Free</em> or <em>Standard</em> plans. For more information
+visit the <a href="https://www.odoo.com/pricing-plan">Konvergo ERP pricing page</a> or reach out to your Customer
+Success Manager.</p>
+</div>7
 
 ### Update records
 
@@ -953,162 +579,36 @@ Multiple records can be updated simultaneously, but they will all get the same
 values for the fields being set. It is not possible to perform «computed»
 updates (where the value being set depends on an existing value of a record).
 
-Example
-
-PythonRubyPHPJavaGo
-
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'write', [[id], {'name': "Newer partner"}])
-    # get record name after having changed it
-    models.execute_kw(db, uid, password, 'res.partner', 'name_get', [[id]])
-    
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'write', [[id], {name: "Newer partner"}])
-    # get record name after having changed it
-    models.execute_kw(db, uid, password, 'res.partner', 'name_get', [[id]])
-    
-    
-    
-    $models->execute_kw($db, $uid, $password, 'res.partner', 'write', array(array($id), array('name'=>"Newer partner")));
-    // get record name after having changed it
-    $models->execute_kw($db, $uid, $password,
-        'res.partner', 'name_get', array(array($id)));
-    
-    
-    
-    models.execute("execute_kw", asList(
-        db, uid, password,
-        "res.partner", "write",
-        asList(
-            asList(id),
-            new HashMap() {{ put("name", "Newer Partner"); }}
-        )
-    ));
-    // get record name after having changed it
-    asList((Object[])models.execute("execute_kw", asList(
-        db, uid, password,
-        "res.partner", "name_get",
-        asList(asList(id))
-    )));
-    
-    
-    
-    var result bool
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "write",
-        []any{
-            []int64{id},
-            map[string]string{"name": "Newer partner"},
-        },
-    }, &result); err != nil {
-        log.Fatal(err)
-    }
-    // get record name after having changed it
-    var record []any
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "name_get",
-        []any{
-            []int64{id},
-        },
-    }, &record); err != nil {
-        log.Fatal(err)
-    }
-    
-
-Result:
-
-    
-    
-    [[78, "Newer partner"]]
-    
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Access to data via the external API is only available on <em>Custom</em> Konvergo ERP pricing plans. Access to
+the external API is not available on <em>One App Free</em> or <em>Standard</em> plans. For more information
+visit the <a href="https://www.odoo.com/pricing-plan">Konvergo ERP pricing page</a> or reach out to your Customer
+Success Manager.</p>
+</div>8
 
 ### Delete records
 
 Records can be deleted in bulk by providing their ids to `unlink()`.
 
-Example
-
-PythonRubyPHPJavaGo
-
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'unlink', [[id]])
-    # check if the deleted record is still in the database
-    models.execute_kw(db, uid, password, 'res.partner', 'search', [[['id', '=', id]]])
-    
-    
-    
-    models.execute_kw(db, uid, password, 'res.partner', 'unlink', [[id]])
-    # check if the deleted record is still in the database
-    models.execute_kw(db, uid, password, 'res.partner', 'search', [[['id', '=', id]]])
-    
-    
-    
-    $models->execute_kw($db, $uid, $password, 'res.partner', 'unlink', array(array($id)));
-    // check if the deleted record is still in the database
-    $models->execute_kw(
-        $db, $uid, $password, 'res.partner', 'search', array(array(array('id', '=', $id)))
-    );
-    
-    
-    
-    models.execute("execute_kw", asList(
-        db, uid, password,
-        "res.partner", "unlink",
-        asList(asList(id))));
-    // check if the deleted record is still in the database
-    asList((Object[])models.execute("execute_kw", asList(
-        db, uid, password,
-        "res.partner", "search",
-        asList(asList(asList("id", "=", 78)))
-    )));
-    
-    
-    
-    var result bool
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "unlink",
-        []any{
-            []int64{id},
-        },
-    }, &result); err != nil {
-        log.Fatal(err)
-    }
-    // check if the deleted record is still in the database
-    var record []any
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "res.partner", "search",
-        []any{[]any{
-            []any{"id", "=", id},
-        }},
-    }, &record); err != nil {
-        log.Fatal(err)
-    }
-    
-
-Result:
-
-    
-    
-    []
-    
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Access to data via the external API is only available on <em>Custom</em> Konvergo ERP pricing plans. Access to
+the external API is not available on <em>One App Free</em> or <em>Standard</em> plans. For more information
+visit the <a href="https://www.odoo.com/pricing-plan">Konvergo ERP pricing page</a> or reach out to your Customer
+Success Manager.</p>
+</div>9
 
 ### Inspection and introspection
 
 While we previously used `fields_get()` to query a model and have been using
-an arbitrary model from the start, Odoo stores most model metadata inside a
+an arbitrary model from the start, Konvergo ERP stores most model metadata inside a
 few meta-models which allow both querying the system and altering models and
 fields (with some limitations) on the fly over XML-RPC.
 
 #### `ir.model`
 
-Provides information about Odoo models via its various fields.
+Provides information about Konvergo ERP models via its various fields.
 
 `name`
 
@@ -1139,14 +639,14 @@ list of the model’s fields through a `One2many` to ir.model.fields
 
     
 
-`One2many` to the [Views](backend/views.html#reference-views) defined for the
+`One2many` to the [Views](backend/views#reference-views) defined for the
 model
 
 `access_ids`
 
     
 
-`One2many` relation to the [Access Rights](backend/security.html#reference-
+`One2many` relation to the [Access Rights](backend/security#reference-
 security-acl) set on the model
 
 `ir.model` can be used to
@@ -1157,141 +657,21 @@ security-acl) set on the model
 
   * Create new models dynamically over RPC.
 
-Importante
-
-  * Custom model names must start with `x_`.
-
-  * The `state` must be provided and set to `manual`, otherwise the model will not be loaded.
-
-  * It is not possible to add new _methods_ to a custom model, only fields.
-
-Example
-
-A custom model will initially contain only the «built-in» fields available on
-all models:
-
-PythonPHPRubyJavaGo
-
-    
-    
-    models.execute_kw(db, uid, password, 'ir.model', 'create', [{
-        'name': "Custom Model",
-        'model': "x_custom_model",
-        'state': 'manual',
-    }])
-    models.execute_kw(db, uid, password, 'x_custom_model', 'fields_get', [], {'attributes': ['string', 'help', 'type']})
-    
-    
-    
-    $models->execute_kw($db, $uid, $password, 'ir.model', 'create', array(array(
-        'name' => "Custom Model",
-        'model' => 'x_custom_model',
-        'state' => 'manual'
-    )));
-    $models->execute_kw($db, $uid, $password, 'x_custom_model', 'fields_get', array(), array('attributes' => array('string', 'help', 'type')));
-    
-    
-    
-    models.execute_kw(db, uid, password, 'ir.model', 'create', [{
-        name: "Custom Model",
-        model: 'x_custom_model',
-        state: 'manual'
-    }])
-    fields = models.execute_kw(db, uid, password, 'x_custom_model', 'fields_get', [], {attributes: %w(string help type)})
-    
-    
-    
-    models.execute(
-        "execute_kw", asList(
-            db, uid, password,
-            "ir.model", "create",
-            asList(new HashMap<String, Object>() {{
-                put("name", "Custom Model");
-                put("model", "x_custom_model");
-                put("state", "manual");
-            }})
-    ));
-    final Object fields = models.execute(
-        "execute_kw", asList(
-            db, uid, password,
-            "x_custom_model", "fields_get",
-            emptyList(),
-            new HashMap<String, Object> () {{
-                put("attributes", asList(
-                        "string",
-                        "help",
-                        "type"));
-            }}
-    ));
-    
-    
-    
-    var id int64
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "ir.model", "create",
-        []map[string]string{
-            {
-                "name":  "Custom Model",
-                "model": "x_custom_model",
-                "state": "manual",
-            },
-        },
-    }, &id); err != nil {
-        log.Fatal(err)
-    }
-    recordFields := map[string]string{}
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "x_custom_model", "fields_get",
-        []any{},
-        map[string][]string{
-            "attributes": {"string", "help", "type"},
-        },
-    }, &recordFields); err != nil {
-        log.Fatal(err)
-    }
-    
-
-Result:
-
-    
-    
-    {
-        "create_uid": {
-            "type": "many2one",
-            "string": "Created by"
-        },
-        "create_date": {
-            "type": "datetime",
-            "string": "Created on"
-        },
-        "__last_update": {
-            "type": "datetime",
-            "string": "Last Modified on"
-        },
-        "write_uid": {
-            "type": "many2one",
-            "string": "Last Updated by"
-        },
-        "write_date": {
-            "type": "datetime",
-            "string": "Last Updated on"
-        },
-        "display_name": {
-            "type": "char",
-            "string": "Display Name"
-        },
-        "id": {
-            "type": "integer",
-            "string": "Id"
-        }
-    }
-    
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../howtos/web_services">Tutorial on web services</a></p></li>
+</ul>
+</div>0 <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../howtos/web_services">Tutorial on web services</a></p></li>
+</ul>
+</div>1
 
 #### `ir.model.fields`
 
-Provides information about the fields of Odoo models and allows adding custom
+Provides information about the fields of Konvergo ERP models and allows adding custom
 fields without using Python code.
 
 `model_id`
@@ -1316,7 +696,7 @@ the field’s user-readable label (e.g. `string` in `fields_get`)
 
     
 
-the [type](backend/orm.html#reference-orm-fields) of field to create
+the [type](backend/orm#reference-orm-fields) of field to create
 
 `state`
 
@@ -1335,7 +715,7 @@ enables the corresponding flag on the field
 
     
 
-[field-level access control](backend/security.html#reference-security-fields),
+[field-level access control](backend/security#reference-security-fields),
 a `Many2many` to `res.groups`
 
 `selection`, `size`, `on_delete`, `relation`, `relation_field`, `domain`
@@ -1343,176 +723,17 @@ a `Many2many` to `res.groups`
     
 
 type-specific properties and customizations, see [the fields
-documentation](backend/orm.html#reference-orm-fields) for details
+documentation](backend/orm#reference-orm-fields) for details
 
-Importante
-
-  * Like custom models, only new fields created with `state="manual"` are activated as actual fields on the model.
-
-  * Computed fields can not be added via `ir.model.fields`, some field meta-information (defaults, onchange) can not be set either.
-
-Example
-
-PythonPHPRubyJavaGo
-
-    
-    
-    id = models.execute_kw(db, uid, password, 'ir.model', 'create', [{
-        'name': "Custom Model",
-        'model': "x_custom",
-        'state': 'manual',
-    }])
-    models.execute_kw(db, uid, password, 'ir.model.fields', 'create', [{
-        'model_id': id,
-        'name': 'x_name',
-        'ttype': 'char',
-        'state': 'manual',
-        'required': True,
-    }])
-    record_id = models.execute_kw(db, uid, password, 'x_custom', 'create', [{'x_name': "test record"}])
-    models.execute_kw(db, uid, password, 'x_custom', 'read', [[record_id]])
-    
-    
-    
-    $id = $models->execute_kw($db, $uid, $password, 'ir.model', 'create', array(array(
-        'name' => "Custom Model",
-        'model' => 'x_custom',
-        'state' => 'manual'
-    )));
-    $models->execute_kw($db, $uid, $password, 'ir.model.fields', 'create', array(array(
-        'model_id' => $id,
-        'name' => 'x_name',
-        'ttype' => 'char',
-        'state' => 'manual',
-        'required' => true
-    )));
-    $record_id = $models->execute_kw($db, $uid, $password, 'x_custom', 'create', array(array('x_name' => "test record")));
-    $models->execute_kw($db, $uid, $password, 'x_custom', 'read', array(array($record_id)));
-    
-    
-    
-    id = models.execute_kw(db, uid, password, 'ir.model', 'create', [{
-        name: "Custom Model",
-        model: "x_custom",
-        state: 'manual'
-    }])
-    models.execute_kw(db, uid, password, 'ir.model.fields', 'create', [{
-        model_id: id,
-        name: "x_name",
-        ttype: "char",
-        state: "manual",
-        required: true
-    }])
-    record_id = models.execute_kw(db, uid, password, 'x_custom', 'create', [{x_name: "test record"}])
-    models.execute_kw(db, uid, password, 'x_custom', 'read', [[record_id]])
-    
-    
-    
-    final Integer id = (Integer)models.execute(
-        "execute_kw", asList(
-            db, uid, password,
-            "ir.model", "create",
-            asList(new HashMap<String, Object>() {{
-                put("name", "Custom Model");
-                put("model", "x_custom");
-                put("state", "manual");
-            }})
-    ));
-    models.execute(
-        "execute_kw", asList(
-            db, uid, password,
-            "ir.model.fields", "create",
-            asList(new HashMap<String, Object>() {{
-                put("model_id", id);
-                put("name", "x_name");
-                put("ttype", "char");
-                put("state", "manual");
-                put("required", true);
-            }})
-    ));
-    final Integer record_id = (Integer)models.execute(
-        "execute_kw", asList(
-            db, uid, password,
-            "x_custom", "create",
-            asList(new HashMap<String, Object>() {{
-                put("x_name", "test record");
-            }})
-    ));
-    
-    client.execute(
-        "execute_kw", asList(
-            db, uid, password,
-            "x_custom", "read",
-            asList(asList(record_id))
-    ));
-    
-    
-    
-    var id int64
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "ir.model", "create",
-        []map[string]string{
-            {
-                "name":  "Custom Model",
-                "model": "x_custom",
-                "state": "manual",
-            },
-        },
-    }, &id); err != nil {
-        log.Fatal(err)
-    }
-    var fieldId int64
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "ir.model.fields", "create",
-        []map[string]any{
-            {
-                "model_id": id,
-                "name":     "x_name",
-                "ttype":    "char",
-                "state":    "manual",
-                "required": true,
-            },
-        },
-    }, &fieldId); err != nil {
-        log.Fatal(err)
-    }
-    var recordId int64
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "x_custom", "create",
-        []map[string]string{
-            {"x_name": "test record"},
-        },
-    }, &recordId); err != nil {
-        log.Fatal(err)
-    }
-    var recordFields []map[string]any
-    if err := models.Call("execute_kw", []any{
-        db, uid, password,
-        "x_custom", "read",
-        [][]int64{{recordId}},
-    }, recordFields); err != nil {
-        log.Fatal(err)
-    }
-    
-
-Result:
-
-    
-    
-    [
-        {
-            "create_uid": [1, "Administrator"],
-            "x_name": "test record",
-            "__last_update": "2014-11-12 16:32:13",
-            "write_uid": [1, "Administrator"],
-            "write_date": "2014-11-12 16:32:13",
-            "create_date": "2014-11-12 16:32:13",
-            "id": 1,
-            "display_name": "test record"
-        }
-    ]
-    
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../howtos/web_services">Tutorial on web services</a></p></li>
+</ul>
+</div>2 <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../howtos/web_services">Tutorial on web services</a></p></li>
+</ul>
+</div>3
 

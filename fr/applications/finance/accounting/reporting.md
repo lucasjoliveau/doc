@@ -2,8 +2,8 @@
 
 ## Principaux rapports disponibles
 
-Odoo includes **generic** and **dynamic** reports available for all countries,
-regardless of the [localization package](../fiscal_localizations.html)
+Konvergo ERP includes **generic** and **dynamic** reports available for all countries,
+regardless of the [localization package](../fiscal_localizations)
 installed:
 
   * **Bilan**
@@ -24,12 +24,12 @@ installed:
 
 Reports can be **annotated, printed, and drilled down** to see details
 (payments, invoices, journal items, etc.) by clicking the **down** arrow.
-Reports can also be exported to **PDF** or **XLSX** format by clicking PDF or
-XLSX at the top of the page.
+Reports can also be exported to **PDF** or **XLSX** format by clicking **PDF**
+or **XLSX** at the top of the page.
 
 ![Annotate reports.](../../../_images/reporting-annotate.png)
 
-You can compare values across periods by using the Comparison menu and
+You can compare values across periods by using the **Comparison** menu and
 selecting the periods you want to compare.
 
 ![Comparison menu to compare time periods.](../../../_images/reporting-
@@ -40,14 +40,14 @@ comparison.png)
 The **Balance Sheet** shows a snapshot of your organization’s assets,
 liabilities, and equity at a particular date.
 
-![Balance sheet report of Odoo.](../../../_images/reporting-balance-sheet.png)
+![Balance sheet report of Konvergo ERP.](../../../_images/reporting-balance-sheet.png)
 
 ### Compte de résultat
 
 The **Profit and Loss** report (or **Income Statement**) shows your company’s
 net income by deducting expenses from revenue for the reporting period.
 
-![Profit and Loss report of Odoo](../../../_images/reporting-profit-and-
+![Profit and Loss report of Konvergo ERP](../../../_images/reporting-profit-and-
 loss.png)
 
 ### Résumé général
@@ -107,7 +107,7 @@ Also referred to as **current ratio** , this is the ratio of current assets
 liabilities (liabilities that will be due in the next year). It is typically
 used to measure a company’s ability to service its debt.
 
-![Executive summary report in Odoo.](../../../_images/reporting-executive-
+![Executive summary report in Konvergo ERP.](../../../_images/reporting-executive-
 summary.png)
 
 ### Grand livre
@@ -117,7 +117,7 @@ chosen date range. The initial summary report shows each account’s totals;
 from here, you can view a detailed transaction report or any exceptions. This
 report helps check every transaction that occurred during a specific period.
 
-![General Ledger report in Odoo.](../../../_images/reporting-general-
+![General Ledger report in Konvergo ERP.](../../../_images/reporting-general-
 ledger.png)
 
 ### Balance âgée des fournisseurs
@@ -126,14 +126,14 @@ Run the **Aged Payable Details** report to display information on individual
 bills, credit notes, and overpayments you owe and how long these have gone
 unpaid.
 
-![Aged Payable report in Odoo.](../../../_images/reporting-aged-payable.png)
+![Aged Payable report in Konvergo ERP.](../../../_images/reporting-aged-payable.png)
 
 ### Balance âgée des clients
 
 The **Aged Receivables** report shows the sales invoices awaiting payment
 during a selected month and several months prior.
 
-![Aged Receivable report in Odoo.](../../../_images/reporting-aged-
+![Aged Receivable report in Konvergo ERP.](../../../_images/reporting-aged-
 receivable.png)
 
 ### Flux de trésorerie
@@ -142,7 +142,7 @@ The **Cash Flow Statement** shows how changes in balance sheet accounts and
 income affect cash and cash equivalents and breaks the analysis down to
 operating, investing, and financing activities.
 
-![Cash Flow Statement report in Odoo.](../../../_images/reporting-cash-flow-
+![Cash Flow Statement report in Konvergo ERP.](../../../_images/reporting-cash-flow-
 statement.png)
 
 ### Déclaration de TVA
@@ -150,15 +150,15 @@ statement.png)
 Ce rapport vous permet de voir les montants **nets** et **fiscaux** de toutes
 les taxes regroupées par type (vente/achat).
 
-![Tax report in Odoo.](../../../_images/reporting-tax-report.png)
+![Tax report in Konvergo ERP.](../../../_images/reporting-tax-report.png)
 
-  * [Déclaration d’impôt](reporting/tax_returns.html)
-  * [Report fiscal](reporting/tax_carryover.html)
-  * [Comptabilité analytique](reporting/analytic_accounting.html)
-  * [Budget financier](reporting/budget.html)
-  * [Intrastat](reporting/intrastat.html)
-  * [Rapport de vérification de l’inaltérabilité des données](reporting/data_inalterability.html)
-  * [Intégration Silverfin](reporting/silverfin.html)
-  * [Rapports personnalisés](reporting/customize.html)
-  * [Clôture de l’exercice](reporting/year_end.html)
+  * [Déclaration d’impôt](reporting/tax_returns)
+  * [Report fiscal](reporting/tax_carryover)
+  * [Comptabilité analytique](reporting/analytic_accounting)
+  * [Budget financier](reporting/budget)
+  * [Intrastat](reporting/intrastat)
+  * [Rapport de vérification de l’inaltérabilité des données](reporting/data_inalterability)
+  * [Intégration Silverfin](reporting/silverfin)
+  * [Rapports personnalisés](reporting/customize)
+  * [Clôture de l’exercice](reporting/year_end)
 

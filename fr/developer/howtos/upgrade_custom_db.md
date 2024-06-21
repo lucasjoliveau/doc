@@ -1,15 +1,15 @@
 # Upgrade a customized database
 
-Upgrading to a new version of Odoo can be challenging, especially if the
+Upgrading to a new version of Konvergo ERP can be challenging, especially if the
 database you work on contains custom modules. This page intent is to explain
 the technical process of upgrading a database with customized modules. Refer
-to [Upgrade documentation](../../administration/upgrade.html) for guidance on
+to [Upgrade documentation](../../administration/upgrade) for guidance on
 how to upgrade a database without customized modules.
 
-We consider a custom module, any module that extends the standard code of Odoo
+We consider a custom module, any module that extends the standard code of Konvergo ERP
 and that was not built with the Studio app. Before upgrading such a module, or
 before requesting its upgrade, have a look at the [Accord de niveau de service
-(SLA)](../../administration/upgrade.html#upgrade-sla) to make sure who’s
+(SLA)](../../administration/upgrade#upgrade-sla) to make sure who’s
 responsible for it.
 
 While working on what we refer to as the **custom upgrade** of your database,
@@ -25,7 +25,7 @@ keep in mind the goals of an upgrade:
 
   5. Benefit from security improvements
 
-With every new version of Odoo, changes are introduced. These changes can
+With every new version of Konvergo ERP, changes are introduced. These changes can
 impact modules on which customization have been developed. This is the reason
 why upgrading a database that contains custom modules requires additional
 steps in order to upgrade the source code.
@@ -56,13 +56,13 @@ Once you have stopped development, it is a good practice to assess the
 developments made and compare them with the features introduced between your
 current version and the version you are targeting. Challenge the developments
 as much as possible and find functional workarounds. Removing redundancy
-between your developments and the standard version of Odoo will lead to an
+between your developments and the standard version of Konvergo ERP will lead to an
 eased upgrade process and reduce technical debt.
 
-Note
-
-You can find information on the changes between versions in the [Release
-Notes](https:/odoo.com/page/release-notes).
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>You can find information on the changes between versions in the <a href="https:/odoo.com/page/release-notes">Release Notes</a>.</p>
+</div>
 
 ## Step 2: Request an upgraded database
 
@@ -70,13 +70,13 @@ Once the developments have stopped for the custom modules and the implemented
 features have been challenged to remove redundancy and unnecessary code, the
 next step is to request an upgraded test database. To do so, follow the steps
 mentioned in [Obtenir une base de données test mise à
-niveau](../../administration/upgrade.html#upgrade-request-test-database),
+niveau](../../administration/upgrade#upgrade-request-test-database),
 depending on the hosting type of your database.
 
 The purpose of this stage is not to start working with the custom modules in
 the upgraded database, but to make sure the standard upgrade process works
 seamlessly, and the test database is delivered properly. If that’s not the
-case, and the upgrade request fails, request the assistance of Odoo via the
+case, and the upgrade request fails, request the assistance of Konvergo ERP via the
 [support page](https://odoo.com/help?stage=migration) by selecting the option
 related to testing the upgrade.
 
@@ -85,7 +85,7 @@ related to testing the upgrade.
 Before working on an upgraded test database, we recommend to make the custom
 developments work on an empty database in the targeted version of your
 upgrade. This ensures that the customization is compatible with the new
-version of Odoo, allows to analyze how it behaves and interacts with the new
+version of Konvergo ERP, allows to analyze how it behaves and interacts with the new
 features, and guarantees that they will not cause any issues when upgrading
 the database.
 
@@ -108,10 +108,10 @@ steps:
 
 ### Make custom modules installable
 
-The first step is to make the custom modules installable in the new Odoo
+The first step is to make the custom modules installable in the new Konvergo ERP
 version. This means, starting by ensuring there are no tracebacks or warnings
 during their installation. For this, install the custom modules, one by one,
-in an empty database of the new Odoo version and fix the tracebacks and
+in an empty database of the new Konvergo ERP version and fix the tracebacks and
 warnings that arise from that.
 
 This process will help detect issues during the installation of the modules.
@@ -159,7 +159,7 @@ We recommend to test all the customization, especially the following elements:
 We also encourage to write automated tests to save time during the testing
 iterations, increase the test coverage, and ensure that the changes and fixes
 introduced do not break the existing flows. If there are tests already
-implemented in the customization, make sure they are upgraded to the new Odoo
+implemented in the customization, make sure they are upgraded to the new Konvergo ERP
 version and run successfully, fixing issues that might be present.
 
 ### Clean the code
@@ -169,7 +169,7 @@ much as possible. This includes:
 
   * Remove redundant and unnecessary code.
 
-  * Remove features that are now part of Odoo standard, as described in Step 1: Stop the developments.
+  * Remove features that are now part of Konvergo ERP standard, as described in Step 1: Stop the developments.
 
   * Clean commented code if it is not needed anymore.
 
@@ -193,7 +193,7 @@ their failure:
 
 Once the custom modules are installable and working properly in an empty
 database, it is time to make them work on an [upgraded
-database](../../administration/upgrade.html#upgrade-request-test-database).
+database](../../administration/upgrade#upgrade-request-test-database).
 
 To make sure the custom code is working flawlessly in the new version, follow
 these steps:
@@ -205,40 +205,35 @@ these steps:
 ### Migrate the data
 
 During the upgrade of the custom modules, you might have to use [upgrade
-scripts](../reference/upgrades/upgrade_scripts.html) to reflect changes from
+scripts](../reference/upgrades/upgrade_scripts) to reflect changes from
 the source code to their corresponding data. Together with the upgrade
 scripts, you can also make use of the [Upgrade
-utils](../reference/upgrades/upgrade_utils.html) and its helper functions.
+utils](../reference/upgrades/upgrade_utils) and its helper functions.
 
   * Any technical data that was renamed during the upgrade of the custom code (models, fields, external identifiers) should be renamed using upgrade scripts to avoid data loss during the module upgrade. See also: `rename_field()`, `rename_model()`, `rename_xmlid()`.
 
-  * Data from standard models removed from the source code of the newer Odoo version and from the database during the standard upgrade process might need to be recovered from the old model table if it is still present.
+  * Data from standard models removed from the source code of the newer Konvergo ERP version and from the database during the standard upgrade process might need to be recovered from the old model table if it is still present.
 
-> Example
->
-> Custom fields for model `sale.subscription` are not automatically migrated
-> from Odoo 15 to Odoo 16 (when the model was merged into `sale.order`). In
-> this case, a SQL query can be executed on an upgrade script to move the data
-> from one table to the other. Take into account that all columns/fields must
-> already exist, so consider doing this in a `post-` script (See [Phases of
-> upgrade scripts](../reference/upgrades/upgrade_scripts.html#upgrade-scripts-
-> phases)).
->
-> Spoiler
->  
->     >     def migrate(cr, version):
->        cr.execute(
->           """
->           UPDATE sale_order so
->              SET custom_field = ss.custom_field
->             FROM sale_subscription ss
->            WHERE ss.new_sale_order_id = so.id
->           """
->        )
->  
->
-> Check the documentation for more information on [Upgrade
-> scripts](../reference/upgrades/upgrade_scripts.html).
+> <div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Custom fields for model <code>sale.subscription</code> are not automatically migrated from Konvergo ERP 15 to
+Konvergo ERP 16 (when the model was merged into <code>sale.order</code>). In this case, a SQL query can be
+executed on an upgrade script to move the data from one table to the other. Take into account
+that all columns/fields must already exist, so consider doing this in a <code>post-</code> script (See
+<a href="../reference/upgrades/upgrade_scripts#upgrade-scripts-phases"><span class="std std-ref">Phases of upgrade scripts</span></a>).</p>
+<div class="accordion accordion-flush o_spoiler alert"><div class="accordion-item"><span class="accordion-header" id="o_spoiler_header_0"><button aria-controls="o_spoiler_content_0" aria-expanded="false" class="accordion-button collapsed flex-row-reverse justify-content-end fw-bold p-0 border-bottom-0" data-bs-target="#o_spoiler_content_0" data-bs-toggle="collapse" type="button">Spoiler</button></span><div aria-labelledby="o_spoiler_header_0" class="accordion-collapse collapse border-bottom-0" id="o_spoiler_content_0"><div class="accordion-body"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">migrate</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+   <span class="n">cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+      <span class="sd">"""</span>
+<span class="sd">      UPDATE sale_order so</span>
+<span class="sd">         SET custom_field = ss.custom_field</span>
+<span class="sd">        FROM sale_subscription ss</span>
+<span class="sd">       WHERE ss.new_sale_order_id = so.id</span>
+<span class="sd">      """</span>
+   <span class="p">)</span>
+</pre></div>
+</div>
+<p>Check the documentation for more information on <a href="../reference/upgrades/upgrade_scripts">Upgrade scripts</a>.</p>
+</div></div></div></div></div>
 
 Upgrade scripts can also be used to:
 
@@ -252,15 +247,15 @@ Upgrade scripts can also be used to:
 
 #### Running and testing upgrade scripts
 
-Odoo OnlineOdoo.shOn-premise
+Konvergo ERP OnlineKonvergo ERP.shOn-premise
 
 As the instalation of custom modules containing Python files is not allowed on
-Odoo Online databases, it is not possible to run upgrade scripts on this
+Konvergo ERP Online databases, it is not possible to run upgrade scripts on this
 platform.
 
-As explained on the `Odoo.sh` tab of [Obtenir une base de données test mise à
-niveau](../../administration/upgrade.html#upgrade-request-test-database),
-Odoo.sh is integrated with the upgrade platform.
+As explained on the `Konvergo ERP.sh` tab of [Obtenir une base de données test mise à
+niveau](../../administration/upgrade#upgrade-request-test-database),
+Konvergo ERP.sh is integrated with the upgrade platform.
 
 Once the upgrade of a staging branch is on « Update on commit » mode, each
 time a commit is pushed on the branch, the upgraded backup is restored and all
@@ -273,14 +268,15 @@ upgraded database is restored.
 
 Once you receive the upgraded dump of the database from the [Upgrade
 platform](https://upgrade.odoo.com), deploy the database and update all the
-custom modules by invoking the command [odoo-bin](../reference/cli.html) in
+custom modules by invoking the command [odoo-bin](../reference/cli) in
 the shell. To update the custom modules, use the option: `-u <modules>,
 --update <modules>`.
 
-Important
-
-As mentioned in the [CLI documentation](../reference/cli.html), the command
-used to call the CLI depends on how you installed Odoo.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>As mentioned in the <a href="../reference/cli">CLI documentation</a>, the command used
+to call the CLI depends on how you installed Konvergo ERP.</p>
+</div>
 
 ### Test the custom modules
 
@@ -291,9 +287,9 @@ lost during the upgrade process.
 
 Things to pay attention to:
 
-  * Views not working: During the upgrade, if a view causes issues because of its content, it gets disabled. You can find the information on disabled views on the [Upgrade report](../../administration/upgrade.html#upgrade-upgrade-report). This view needs to be activated again (or removed if not useful anymore). To achieve this, we recommend the use of upgrade scripts.
+  * Views not working: During the upgrade, if a view causes issues because of its content, it gets disabled. You can find the information on disabled views on the [Upgrade report](../../administration/upgrade#upgrade-upgrade-report). This view needs to be activated again (or removed if not useful anymore). To achieve this, we recommend the use of upgrade scripts.
 
-  * [Module data](../tutorials/define_module_data.html) not updated: Custom records that have the `noupdate` flag are not updated when upgrading the module in the new database. For the custom data that needs to be updated due to changes in the new version, we recommend to use upgrade scripts to do so. See also: `update_record_from_xml()`.
+  * [Module data](../tutorials/define_module_data) not updated: Custom records that have the `noupdate` flag are not updated when upgrading the module in the new database. For the custom data that needs to be updated due to changes in the new version, we recommend to use upgrade scripts to do so. See also: `update_record_from_xml()`.
 
 ## Step 5: Testing and rehearsal
 
@@ -302,10 +298,10 @@ crucial to do another round of testing to assess the database usability and
 detect any issues that might have gone unnoticed in previous tests. For
 further information about testing the upgraded database, check [Tester la
 nouvelle version de la base de
-données](../../administration/upgrade.html#upgrade-test-your-db).
+données](../../administration/upgrade#upgrade-test-your-db).
 
 As mentioned in [Mettre à niveau la base de données de
-production](../../administration/upgrade.html#upgrade-upgrade-prod), both
+production](../../administration/upgrade#upgrade-upgrade-prod), both
 standard upgrade scripts and your database are constantly evolving. Therefore
 it is highly recommended to frequently request new upgraded test databases and
 ensure that the upgrade process is still successful.
@@ -319,6 +315,6 @@ data.
 
 Once you are confident about upgrading your production database, follow the
 process described on [Mettre à niveau la base de données de
-production](../../administration/upgrade.html#upgrade-upgrade-prod), depending
+production](../../administration/upgrade#upgrade-upgrade-prod), depending
 on the hosting type of your database.
 

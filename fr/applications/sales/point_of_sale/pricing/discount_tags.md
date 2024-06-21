@@ -5,10 +5,10 @@ produit se rapprochant de sa date de péremption, vous pouvez utiliser des
 étiquettes de remise. Ils vous permettent de scanner des codes-barres de
 remise.
 
-Note
-
-Pour utiliser des étiquettes de remise, vous avez besoin d’un lecteur de
-codes-barres.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Pour utiliser des étiquettes de remise, vous avez besoin d’un lecteur de codes-barres.</p>
+</div>
 
 ## Nomenclature des codes-barres
 

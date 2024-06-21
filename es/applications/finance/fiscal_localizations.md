@@ -9,32 +9,32 @@ adicionales, como la configuración de certificados específicos, también se
 agregan a su aplicación Contabilidad, según sus requisitos de administración
 fiscal.
 
-Nota
-
-Odoo agrega continuamente nuevas localizaciones y mejora los paquetes
-existentes.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Konvergo ERP agrega continuamente nuevas localizaciones y mejora los paquetes existentes.</p>
+</div>
 
 ### Configuración
 
-Odoo instala automáticamente el paquete apropiado para su empresa, según el
+Konvergo ERP instala automáticamente el paquete apropiado para su empresa, según el
 país seleccionado en la creación de la base de datos.
 
-Importante
-
-Mientras no haya registrado ningún asiento, aún puede agregar y seleccionar
-otro paquete.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Mientras no haya registrado ningún asiento, aún puede agregar y seleccionar otro paquete.</p>
+</div>
 
 Para instalar un nuevo paquete, vaya a Contabilidad ‣ Configuración ‣
 Localización fiscal, haga clic en **Instalar más paquetes** , e instale el
 módulo de su país.
 
 ![Instalación del paquete de localización fiscal adecuado en la aplicación
-Contabilidad de Odoo.](../../_images/packages_modules.png)
+Contabilidad de Konvergo ERP.](../../_images/packages_modules.png)
 
 Una vez hecho esto, seleccione el paquete de su país y haga clic en _Guardar_.
 
 ![Seleccionar el paquete de localización fiscal adecuado en la aplicación
-Contabilidad de Odoo.](../../_images/packages_selection.png)
+Contabilidad de Konvergo ERP.](../../_images/packages_selection.png)
 
 ### Uso
 
@@ -42,40 +42,42 @@ Estos paquetes requieren que ajuste su plan de cuentas de acuerdo con sus
 necesidades, active los impuestos que utiliza y configure sus declaraciones y
 certificaciones específicas de su país.
 
-Ver también
-
-  * [Plan de cuentas](accounting/get_started/chart_of_accounts.html)
-
-  * [Impuestos](accounting/taxes.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="accounting/get_started/chart_of_accounts">Plan de cuentas</a></p></li>
+<li><p><a href="accounting/taxes">Impuestos</a></p></li>
+</ul>
+</div>
 
 ## Lista de países compatibles
 
-La aplicación Contabilidad de Odoo se puede utilizar en muchos países de
+La aplicación Contabilidad de Konvergo ERP se puede utilizar en muchos países de
 inmediato mediante la instalación del módulo adecuado. A continuación
 encontrará lista de todos los paquetes de localización fiscal disponibles en
-Odoo.
+Konvergo ERP.
 
   * Argelia - Contabilidad
 
-  * [Argentina - Contabilidad](fiscal_localizations/argentina.html)
+  * [Argentina - Contabilidad](fiscal_localizations/argentina)
 
-  * [Australia - Contabilidad](fiscal_localizations/australia.html)
+  * [Australia - Contabilidad](fiscal_localizations/australia)
 
   * Austria - Contabilidad
 
-  * [Bélgica - Contabilidad](fiscal_localizations/belgium.html)
+  * [Bélgica - Contabilidad](fiscal_localizations/belgium)
 
   * Bolivia - Contabilidad
 
-  * [Brasil - Contabilidad](fiscal_localizations/brazil.html)
+  * [Brasil - Contabilidad](fiscal_localizations/brazil)
 
   * Canadá - Contabilidad
 
-  * [Chile - Contabilidad](fiscal_localizations/chile.html)
+  * [Chile - Contabilidad](fiscal_localizations/chile)
 
   * China - Contabilidad
 
-  * [Colombia - Contabilidad](fiscal_localizations/colombia.html)
+  * [Colombia - Contabilidad](fiscal_localizations/colombia)
 
   * Costa Rica - Contabilidad
 
@@ -87,19 +89,19 @@ Odoo.
 
   * República Dominicana - Contabilidad
 
-  * [Ecuador - Contabilidad](fiscal_localizations/ecuador.html)
+  * [Ecuador - Contabilidad](fiscal_localizations/ecuador)
 
-  * [Egipto - Contabilidad](fiscal_localizations/egypt.html)
+  * [Egipto - Contabilidad](fiscal_localizations/egypt)
 
   * Etiopía - Contabilidad
 
   * Localización finlandesa
 
-  * [Francia - Contabilidad](fiscal_localizations/france.html)
+  * [Francia - Contabilidad](fiscal_localizations/france)
 
   * Genérico - Contabilidad
 
-  * [Alemania](fiscal_localizations/germany.html)
+  * [Alemania](fiscal_localizations/germany)
 
     * Alemania SKR03 - Contabilidad
 
@@ -115,31 +117,31 @@ Odoo.
 
   * Hungria - Contabilidad
 
-  * [India - Contabilidad](fiscal_localizations/india.html)
+  * [India - Contabilidad](fiscal_localizations/india)
 
-  * [Indonesia - Contabilidad](fiscal_localizations/indonesia.html)
+  * [Indonesia - Contabilidad](fiscal_localizations/indonesia)
 
   * Irlanda - Contabilidad
 
   * Israel - Contabilidad
 
-  * [Italia - Contabilidad](fiscal_localizations/italy.html)
+  * [Italia - Contabilidad](fiscal_localizations/italy)
 
   * Japón - Contabilidad
 
-  * [Kenia - Contabilidad](fiscal_localizations/kenya.html)
+  * [Kenia - Contabilidad](fiscal_localizations/kenya)
 
   * Lituania - Contabilidad
 
-  * [Luxemburgo - Contabilidad](fiscal_localizations/luxembourg.html)
+  * [Luxemburgo - Contabilidad](fiscal_localizations/luxembourg)
 
   * Marruecos - Contabilidad
 
-  * [México - Contabilidad](fiscal_localizations/mexico.html)
+  * [México - Contabilidad](fiscal_localizations/mexico)
 
   * Mongolia - Contabilidad
 
-  * [Países Bajos - Contabilidad](fiscal_localizations/netherlands.html)
+  * [Países Bajos - Contabilidad](fiscal_localizations/netherlands)
 
   * Nueva Zelanda - Contabilidad
 
@@ -151,17 +153,17 @@ Odoo.
 
   * Panamá - Contabilidad
 
-  * [Perú - Contabilidad](fiscal_localizations/peru.html)
+  * [Perú - Contabilidad](fiscal_localizations/peru)
 
-  * [Filipinas - Contabilidad](fiscal_localizations/philippines.html)
+  * [Filipinas - Contabilidad](fiscal_localizations/philippines)
 
   * Polonia - Contabilidad
 
   * Portugal - Contabilidad
 
-  * [Rumania - Contabilidad](fiscal_localizations/romania.html)
+  * [Rumania - Contabilidad](fiscal_localizations/romania)
 
-  * [Arabia Saudita - Contabilidad](fiscal_localizations/saudi_arabia.html)
+  * [Arabia Saudita - Contabilidad](fiscal_localizations/saudi_arabia)
 
   * Singapur - Contabilidad
 
@@ -171,21 +173,21 @@ Odoo.
 
   * Sudáfrica - Contabilidad
 
-  * [España - Contabilidad (PGCE 2008)](fiscal_localizations/spain.html)
+  * [España - Contabilidad (PGCE 2008)](fiscal_localizations/spain)
 
   * Suecia - Contabilidad
 
-  * [Suiza - Contabilidad](fiscal_localizations/switzerland.html)
+  * [Suiza - Contabilidad](fiscal_localizations/switzerland)
 
   * Taiwan - Contabilidad
 
-  * [Tailandia - Contabilidad](fiscal_localizations/thailand.html)
+  * [Tailandia - Contabilidad](fiscal_localizations/thailand)
 
   * Turquía - Contabilidad
 
-  * [Emiratos Árabes Unidos - Contabilidad](fiscal_localizations/united_arab_emirates.html)
+  * [Emiratos Árabes Unidos - Contabilidad](fiscal_localizations/united_arab_emirates)
 
-  * [Reino Unido - Contabilidad](fiscal_localizations/united_kingdom.html)
+  * [Reino Unido - Contabilidad](fiscal_localizations/united_kingdom)
 
   * Ucrania - Contabilidad
 
@@ -197,30 +199,30 @@ Odoo.
 
   * Vietnam - Contabilidad
 
-  * [Argentina](fiscal_localizations/argentina.html)
-  * [Australia](fiscal_localizations/australia.html)
-  * [Bélgica](fiscal_localizations/belgium.html)
-  * [Brasil](fiscal_localizations/brazil.html)
-  * [Chile](fiscal_localizations/chile.html)
-  * [Colombia](fiscal_localizations/colombia.html)
-  * [Ecuador](fiscal_localizations/ecuador.html)
-  * [Egipto](fiscal_localizations/egypt.html)
-  * [Francia](fiscal_localizations/france.html)
-  * [Alemania](fiscal_localizations/germany.html)
-  * [India](fiscal_localizations/india.html)
-  * [Indonesia](fiscal_localizations/indonesia.html)
-  * [Italia](fiscal_localizations/italy.html)
-  * [Kenia](fiscal_localizations/kenya.html)
-  * [Luxemburgo](fiscal_localizations/luxembourg.html)
-  * [México](fiscal_localizations/mexico.html)
-  * [Países Bajos](fiscal_localizations/netherlands.html)
-  * [Rumania](fiscal_localizations/romania.html)
-  * [Perú](fiscal_localizations/peru.html)
-  * [Filipinas](fiscal_localizations/philippines.html)
-  * [Arabia Saudita](fiscal_localizations/saudi_arabia.html)
-  * [España](fiscal_localizations/spain.html)
-  * [Suiza](fiscal_localizations/switzerland.html)
-  * [Tailandia](fiscal_localizations/thailand.html)
-  * [Emiratos Árabes Unidos](fiscal_localizations/united_arab_emirates.html)
-  * [Reino Unido](fiscal_localizations/united_kingdom.html)
+  * [Argentina](fiscal_localizations/argentina)
+  * [Australia](fiscal_localizations/australia)
+  * [Bélgica](fiscal_localizations/belgium)
+  * [Brasil](fiscal_localizations/brazil)
+  * [Chile](fiscal_localizations/chile)
+  * [Colombia](fiscal_localizations/colombia)
+  * [Ecuador](fiscal_localizations/ecuador)
+  * [Egipto](fiscal_localizations/egypt)
+  * [Francia](fiscal_localizations/france)
+  * [Alemania](fiscal_localizations/germany)
+  * [India](fiscal_localizations/india)
+  * [Indonesia](fiscal_localizations/indonesia)
+  * [Italia](fiscal_localizations/italy)
+  * [Kenia](fiscal_localizations/kenya)
+  * [Luxemburgo](fiscal_localizations/luxembourg)
+  * [México](fiscal_localizations/mexico)
+  * [Países Bajos](fiscal_localizations/netherlands)
+  * [Rumania](fiscal_localizations/romania)
+  * [Perú](fiscal_localizations/peru)
+  * [Filipinas](fiscal_localizations/philippines)
+  * [Arabia Saudita](fiscal_localizations/saudi_arabia)
+  * [España](fiscal_localizations/spain)
+  * [Suiza](fiscal_localizations/switzerland)
+  * [Tailandia](fiscal_localizations/thailand)
+  * [Emiratos Árabes Unidos](fiscal_localizations/united_arab_emirates)
+  * [Reino Unido](fiscal_localizations/united_kingdom)
 

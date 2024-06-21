@@ -1,9 +1,9 @@
 # Información general
 
-  * [Primeros pasos con Servicio de asistencia](overview/getting_started.html)
-  * [Acuerdos de nivel de servicio (SLA)](overview/sla.html)
-  * [Empezar a recibir tickets](overview/receiving_tickets.html)
-  * [Reportes](overview/reports.html)
-  * [Centro de ayuda](overview/help_center.html)
-  * [Calificación de clientes](overview/ratings.html)
+  * [Primeros pasos con Servicio de asistencia](overview/getting_started)
+  * [Acuerdos de nivel de servicio (SLA)](overview/sla)
+  * [Empezar a recibir tickets](overview/receiving_tickets)
+  * [Reportes](overview/reports)
+  * [Centro de ayuda](overview/help_center)
+  * [Calificación de clientes](overview/ratings)
 

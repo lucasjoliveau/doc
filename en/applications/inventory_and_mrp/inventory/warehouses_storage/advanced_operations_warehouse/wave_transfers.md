@@ -8,19 +8,19 @@ better fit than the other.
 To handle orders of a specific product category, or fetch products that are at
 the same location, wave transfers are the ideal method.
 
-In Odoo, wave transfers are actually batch transfers with an extra step:
+In Konvergo ERP, wave transfers are actually batch transfers with an extra step:
 transfers are split before being grouped in a batch.
 
 ## Configuration
 
-Before a wave transfer can be created, the Batch Transfers and Wave Transfers
-options must be activated.
+Before a wave transfer can be created, the **Batch Transfers** and **Wave
+Transfers** options must be activated.
 
-First, go to Inventory ‣ Configuration ‣ Settings. In the Operations section,
-enable Batch Transfers and Wave Transfers. Then, click Save to apply the
-settings.
+First, go to Inventory ‣ Configuration ‣ Settings. In the **Operations**
+section, enable **Batch Transfers** and **Wave Transfers**. Then, click
+**Save** to apply the settings.
 
-![View of Odoo Inventory app settings to enable the wave transfers
+![View of Konvergo ERP Inventory app settings to enable the wave transfers
 option.](../../../../../_images/wave-transfers-setting.png)
 
 ## Add products to a wave
@@ -30,37 +30,37 @@ to a wave.
 
 Wave transfers can only contain product lines from transfers of the same
 operation type. To view all the transfers and product lines in a specific
-operation, first go to the Inventory dashboard and locate the desired
+operation, first go to the **Inventory** dashboard and locate the desired
 operation type’s card. Then, open the options menu (the three dots icon in the
-corner of the operation type’s card) and click Operations.
+corner of the operation type’s card) and click **Operations**.
 
 ![How to get an operation type's list of
 operations.](../../../../../_images/list-of-operations.png)
 
 On the operations page, select the product lines you want to add in a new or
-existing wave. Then, click Add to Wave.
+existing wave. Then, click **Add to Wave**.
 
 ![Select lines to add to the wave.](../../../../../_images/select-lines.png)
-
-Tip
-
-Use the Filters in the search bar to group lines with the same product,
-location, carrier, etc…
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Use the <b>Filters</b> in the search bar to group lines with the same product, location,
+carrier, etc…</p>
+</div>
 
 After that, a pop-up box appears.
 
-To add the selected lines to an existing wave transfer, select the an existing
-wave transfer option and select the existing wave transfer from the drop-down
-menu.
+To add the selected lines to an existing wave transfer, select the **an
+existing wave transfer** option and select the existing wave transfer from the
+drop-down menu.
 
-To create a new wave transfer, select the a new wave transfer option. If
+To create a new wave transfer, select the **a new wave transfer** option. If
 creating a new wave transfer, an employee can also be set in the optional
-Responsible field. Once the desired options are selected, click Confirm to add
-the product lines to a wave.
+**Responsible** field. Once the desired options are selected, click
+**Confirm** to add the product lines to a wave.
 
 ## View wave transfers
 
 To view all wave transfers and their statuses, go to Inventory ‣ Operations ‣
-Wave Transfers. Wave transfers can also be viewed in the Barcode app by going
-to Barcode ‣ Batch Transfers.
+Wave Transfers. Wave transfers can also be viewed in the **Barcode** app by
+going to Barcode ‣ Batch Transfers.
 

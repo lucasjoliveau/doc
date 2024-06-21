@@ -1,6 +1,6 @@
 # Gestionar productos
 
-  * [Importar productos](products/import.html)
-  * [Variantes de producto](products/variants.html)
-  * [Imágenes para productos con Google Imágenes](products/product_images.html)
+  * [Importar productos](products/import)
+  * [Variantes de producto](products/variants)
+  * [Imágenes para productos con Google Imágenes](products/product_images)
 

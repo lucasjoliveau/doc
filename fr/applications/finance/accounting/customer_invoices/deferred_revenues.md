@@ -21,15 +21,14 @@ constatés d’avance et décidons de le comptabiliser sur une base annuelle.
 Chaque année, pendant les 5 prochaines années, 70 $ seront comptabilisés en
 tant que revenus.
 
-Odoo Comptabilité gère les produits constatés d’avance en les répartissant
+Konvergo ERP Comptabilité gère les produits constatés d’avance en les répartissant
 dans plusieurs écritures qui sont automatiquement créées en _mode brouillon_
 puis comptabilisées périodiquement.
 
-Note
-
-Le serveur vérifie une fois par jour si une écriture doit être comptabilisée.
-Il peut donc s’écouler jusqu’à 24 heures avant que l’écriture ne passe du
-statut _brouillon_ à celui de _comptabilisé_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Le serveur vérifie une fois par jour si une écriture doit être comptabilisée. Il peut donc s’écouler jusqu’à 24 heures avant que l’écriture ne passe du statut <em>brouillon</em> à celui de <em>comptabilisé</em>.</p>
+</div>
 
 ## Conditions préalables
 
@@ -42,13 +41,11 @@ Pour configurer votre compte dans le **Plan comptable** , allez à Comptabilité
 ‣ Configuration ‣ Plan comptable, cliquez sur _Créer_ et remplissez le
 formulaire.
 
-![Configuration d'un compte de produits constatés d'avance dans Odoo
-Comptabilité](../../../../_images/deferred_revenues01.png)
-
-Note
-
-Ce type de compte doit être soit _Passifs circulants_ , soit _Passifs
-immobilisés_.
+![Configuration d'un compte de produits constatés d'avance dans Konvergo ERP
+Comptabilité](../../../../_images/deferred_revenues01.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Ce type de compte doit être soit <em>Passifs circulants</em>, soit <em>Passifs immobilisés</em>.</p>
+</div>
 
 ### Enregistrer un revenu sur le bon compte
 
@@ -58,7 +55,7 @@ Sur une facture brouillon, sélectionnez le bon compte pour tous les produits
 dont les revenus doivent être reportés.
 
 ![Sélection d'un compte de produits constatés d'avance sur une facture
-brouillon dans Odoo Comptabilité](../../../../_images/deferred_revenues02.png)
+brouillon dans Konvergo ERP Comptabilité](../../../../_images/deferred_revenues02.png)
 
 #### Choisir un compte des revenus différent pour des produits spécifiques
 
@@ -66,12 +63,10 @@ Commencez par éditer le produit, allez à l’onglet _Comptabilité_ ,
 sélectionnez le bon **Compte des revenus** et enregistrez.
 
 ![Modifiez le Compte des revenus d'un produit dans
-Odoo.](../../../../_images/deferred_revenues03.png)
-
-Astuce
-
-Il est possible d’automatiser la création des écritures de revenus pour ces
-produits (voir : Automatiser les produits constatés d’avance).
+Konvergo ERP.](../../../../_images/deferred_revenues03.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Il est possible d’automatiser la création des écritures de revenus pour ces produits (voir : <a href="#automate-the-deferred-revenues">Automatiser les produits constatés d’avance</a>).</p>
+</div>
 
 #### Modifier le compte d’une écriture comptable comptabilisée
 
@@ -79,7 +74,7 @@ Pour ce faire, ouvrez votre Journal des ventes en allant à Comptabilité ‣
 Comptabilité ‣ Ventes, sélectionnez l’écriture comptable que vous souhaitez
 modifier, cliquez sur le compte et sélectionnez le compte approprié.
 
-![Modification du compte d'une écriture comptable enregistrée dans Odoo
+![Modification du compte d'une écriture comptable enregistrée dans Konvergo ERP
 Comptabilité](../../../../_images/deferred_revenues04.png)
 
 ## Écritures de produits constatés d’avance
@@ -99,15 +94,15 @@ comptable existante à cette nouvelle écriture. Certains champs sont alors
 remplis automatiquement et l’écriture comptable est désormais répertoriée dans
 l’onglet **Ventes associées**.
 
-![Écriture de produits constatés d'avance dans Odoo
+![Écriture de produits constatés d'avance dans Konvergo ERP
 Comptabilité](../../../../_images/deferred_revenues05.png)
 
 Une fois cela fait, vous pouvez cliquer sur _Calcul des produits_ (à côté du
 bouton _Confirmer_) pour générer toutes les valeurs du **Tableau des
-produits**. Ce tableau vous montre toutes les écritures qu’Odoo enregistrera
+produits**. Ce tableau vous montre toutes les écritures qu’Konvergo ERP enregistrera
 pour comptabiliser vos produits, et à quelle date.
 
-![Tableau des produits dans Odoo
+![Tableau des produits dans Konvergo ERP
 Comptabilité](../../../../_images/deferred_revenues06.png)
 
 #### Que signifie « Prorata Temporis » ?
@@ -138,7 +133,7 @@ Ensuite, cliquez sur _Action_ , sélectionnez **Créer une écriture à reporter
 et remplissez le formulaire de la même manière que vous le feriez pour créer
 une nouvelle écriture.
 
-![Créez une écriture à reporter à partir d'une écriture comptable dans Odoo
+![Créez une écriture à reporter à partir d'une écriture comptable dans Konvergo ERP
 Comptabilité](../../../../_images/deferred_revenues07.png)
 
 ## Modèles de produits constatés d’avance
@@ -150,12 +145,10 @@ Pour créer un modèle, allez à Comptabilité ‣ Configuration ‣ modèles de
 produits constatés d’avance, cliquez sur _Créer_ , et complétez le formulaire
 de la même manière que vous le feriez pour créer une nouvelle écriture.
 
-Astuce
-
-Vous pouvez également convertir une _écriture de produits constatés d’avance
-confirmée_ en un modèle en l’ouvrant à partir de Comptabilité ‣ Comptabilité ‣
-Produits constatés d’avance puis en cliquant sur le bouton _Enregistrer le
-modèle_.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Vous pouvez également convertir une <em>écriture de produits constatés d’avance confirmée</em> en un modèle en l’ouvrant à partir de Comptabilité ‣ Comptabilité ‣ Produits constatés d’avance puis en cliquant sur le bouton <em>Enregistrer le modèle</em>.</p>
+</div>
 
 ### Appliquer un modèle de produits constatés d’avance à une nouvelle
 écriture
@@ -168,7 +161,7 @@ De nouveaux boutons avec tous les modèles liés à ce compte apparaissent en
 haut du formulaire. En cliquant sur le bouton d’un modèle, le formulaire se
 remplit en fonction de ce modèle.
 
-![Bouton du modèle de produits constatés d'avance dans Odoo
+![Bouton du modèle de produits constatés d'avance dans Konvergo ERP
 Comptabilité](../../../../_images/deferred_revenues08.png)
 
 ## Automatiser les produits constatés d’avance
@@ -186,18 +179,16 @@ produits constatés d’avance** :
 
   3. **Créer et valider :** vous devez également sélectionner un modèle de produits constatés d’avance (voir : Modèles de produits constatés d’avance). Chaque fois qu’une transaction est enregistrée sur le compte, une _écriture de produits constatés d’avance_ est créée et immédiatement validée.
 
-![Automatiser les produits constatés d'avance sur un compte dans Odoo
-Comptabilité](../../../../_images/deferred_revenues09.png)
-
-Astuce
-
-Vous pouvez, par exemple, sélectionner ce compte comme le **Compte des
-revenus** par défaut d’un produit pour automatiser complètement sa vente (voir
-: Choisir un compte des revenus différent pour des produits spécifiques).
-
-Pour plus d'infos
-
-  * [Plan comptable](../get_started/chart_of_accounts.html)
-
-  * [Odoo Académie : Produits constatés d’avance (Comptabilisation)](https://www.odoo.com/r/EWO)
+![Automatiser les produits constatés d'avance sur un compte dans Konvergo ERP
+Comptabilité](../../../../_images/deferred_revenues09.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Vous pouvez, par exemple, sélectionner ce compte comme le <b>Compte des revenus</b> par défaut d’un produit pour automatiser complètement sa vente (voir : <a href="#choose-a-different-income-account-for-specific-products">Choisir un compte des revenus différent pour des produits spécifiques</a>).</p>
+</div>
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../get_started/chart_of_accounts">Plan comptable</a></p></li>
+<li><p><a href="https://www.odoo.com/r/EWO">Konvergo ERP Académie : Produits constatés d’avance (Comptabilisation)</a></p></li>
+</ul>
+</div>
 

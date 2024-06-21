@@ -3,17 +3,14 @@
 ## ISR (recibo de pago con número de referencia)
 
 Los ISR son recibos de pago que se utilizan en Suiza. Puede imprimirlos
-directamente desde Odoo. En las facturas de cliente hay un botón nuevo que se
+directamente desde Konvergo ERP. En las facturas de cliente hay un botón nuevo que se
 llama _Imprimir ISR_.
 
 ![../../../_images/switzerland00.png](../../../_images/switzerland00.png)
-
-Truco
-
-El botón _Imprimir ISR_ solo aparece cuando hay una cuenta bancaria definida
-en la factura. Puede usar CH6309000000250097798 como número de cuenta bancario
-y 010391391 como referencia ISR en CHF.
-
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>El botón <em>Imprimir ISR</em> solo aparece cuando hay una cuenta bancaria definida en la factura. Puede usar CH6309000000250097798 como número de cuenta bancario y 010391391 como referencia ISR en CHF.</p>
+</div>
 ![../../../_images/switzerland01.png](../../../_images/switzerland01.png)
 
 Luego abra un PDF con el ISR.
@@ -41,7 +38,7 @@ En el campo de **comunicación estándar** , seleccione _Suiza_ , y haga clic en
 _Guardar_.
 
 ![Configuración de diario para mostrar el ISR como referencia de pago en las
-facturas en Odoo](../../../_images/switzerland-isr-reference.png)
+facturas en Konvergo ERP](../../../_images/switzerland-isr-reference.png)
 
 ## Actualización en vivo de la tasa de cambio
 
@@ -57,7 +54,7 @@ A partir del 1° de enero de 2018, se aplicarán nuevas tasas de IVA reducidas
 en Suiza. La tasa normal de 8.0% cambiará a 7.7% y la tasa específica para el
 sector hotelero cambiará de 3.8% a 3.7%.
 
-### ¿Cómo actualizar sus impuestos en Odoo Enterprise (Odoo en línea o con
+### ¿Cómo actualizar sus impuestos en Konvergo ERP Enterprise (Konvergo ERP en línea o con
 alojamiento local)?
 
 Si tiene la versión V11.1, ya está todo el trabajo hecho, no tiene que hacer
@@ -73,12 +70,10 @@ haga clic en «actualizar».
 Una vez hecho esto, puede trabajar en crear nuevos impuestos para las tasas
 actualizadas.
 
-Truco
-
-**No elimine o modifique los impuestos existentes** (8.0% y 3.8%). Manténgalos
-ya que tal vez use ambas tasas por un periodo corto de tiempo. En lugar de
-esto, recuerde archivarlos una vez que haya codificado todas sus transacciones
-del 2017.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p><b>No elimine o modifique los impuestos existentes</b> (8.0% y 3.8%). Manténgalos ya que tal vez use ambas tasas por un periodo corto de tiempo. En lugar de esto, recuerde archivarlos una vez que haya codificado todas sus transacciones del 2017.</p>
+</div>
 
 La creación de tales impuestos debe hacerse de la siguiente forma:
 
@@ -91,7 +86,7 @@ La creación de tales impuestos debe hacerse de la siguiente forma:
     * Para los impuestos del 3.7%: formulario IVA de Suiza: tabla base 342, formulario IVA de Suiza: tabla de impuesto 342
 
 Encontrará a continuación ejemplos de configuración correcta para todos los
-impuestos incluidos en Odoo de forma predeterminada
+impuestos incluidos en Konvergo ERP de forma predeterminada
 
 **Nombre del impuesto** | **Tasa** | **Etiqueta en factura** | **Grupo de impuestos (efectivo desde la versión V10)** | **Alcance del impuesto** | **Etiqueta**  
 ---|---|---|---|---|---  
@@ -111,9 +106,8 @@ TVA due a 3.7% (Incl. TS) | 3.7% | 3.7% Incl. | TVA 3.7% | Ventas | Formulario I
 Si tiene preguntas o comentarios, contacte a nuestro equipo de soporte a
 través de odoo.com/help.
 
-Truco
-
-No olvide actualizar sus posiciones fiscales. Si tiene la versión 11.1 (o
-superior), no hay nada que hacer. De otra forma, también tendrá que actualizar
-sus posiciones fiscales en conformidad.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>No olvide actualizar sus posiciones fiscales. Si tiene la versión 11.1 (o superior), no hay nada que hacer. De otra forma, también tendrá que actualizar sus posiciones fiscales en conformidad.</p>
+</div>
 

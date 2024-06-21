@@ -1,29 +1,28 @@
 # Build PDF Reports
 
-Important
-
-This tutorial is an extension of the [Getting started](getting_started.html)
-tutorial. Make sure you have completed it and use the `estate` module you have
-built as a base for the exercises in this tutorial. Fetch the branch
-`16.0-core` from the [technical-training-
-solutions](https://github.com/odoo/technical-training-
-solutions/tree/16.0-core) repository if you want to start from a clean base.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>This tutorial is an extension of the <a href="getting_started">Getting started</a> tutorial. Make sure you have
+completed it and use the <code>estate</code> module you have built as a base for the exercises in this
+tutorial. Fetch the branch <code>16.0-core</code> from the <a href="https://github.com/odoo/technical-training-solutions/tree/16.0-core">technical-training-solutions</a> repository if you
+want to start from a clean base.</p>
+</div>
 
 We were previously [introduced to
-QWeb](getting_started/15_qwebintro.html#tutorials-getting-
+QWeb](getting_started/15_qwebintro#tutorials-getting-
 started-15-qwebintro) where it was used to build a kanban view. Now we will
 expand on one of QWeb’s other main uses: creating PDF reports. A common
 business requirement is the ability to create documents to send to customers
 and to use internally. These reports can be used to summarize and display
 information in an organized template to support the business in different
-ways. Odoo can additionally add our company’s header and footer to our reports
+ways. Konvergo ERP can additionally add our company’s header and footer to our reports
 with minimal extra effort.
 
 The documentation related to this topic can be found in [QWeb
-Templates](../reference/frontend/qweb.html#reference-qweb), [QWeb
-Reports](../reference/backend/reports.html#reference-reports-report), and the
+Templates](../reference/frontend/qweb#reference-qweb), [QWeb
+Reports](../reference/backend/reports#reference-reports-report), and the
 [Report Actions
-(ir.actions.report)](../reference/backend/actions.html#reference-actions-
+(ir.actions.report)](../reference/backend/actions#reference-actions-
 report) section of the Actions reference.
 
 ## File Structure
@@ -64,12 +63,12 @@ sequentially!
 
 ## Basic Report
 
-Note
-
-**Goal** : at the end of this section, we will can print a report that
-displays all offers for a property.
-
-![Simple PDF report](../../_images/simple_report.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section, we will can print a report that displays all offers for a
+property.</p>
+<img alt="Simple PDF report" class="align-center" src="../../_images/simple_report.png"/>
+</div>
 
 In our real estate example there are many useful reports that we could create.
 One simple report we can create is one that displays all of a property’s
@@ -89,7 +88,7 @@ your expected use cases. A good representation set for our simple report is:
 
 If you don’t have a set of data like this already, you can either:
 
-  * Complete the [Define module data](define_module_data.html) tutorial (if you haven’t done so already) and add the extra cases to your demo data (you may need to create a new database to load in the demo data).
+  * Complete the [Define module data](define_module_data) tutorial (if you haven’t done so already) and add the extra cases to your demo data (you may need to create a new database to load in the demo data).
 
   * Manually create the data in your database.
 
@@ -104,7 +103,7 @@ your code more difficult in the long run for complicated reports.
 ### Minimal Template
 
 A minimal viable template is viewable under the « Minimal viable template »
-section of the [Report template](../reference/backend/reports.html#reference-
+section of the [Report template](../reference/backend/reports#reference-
 reports-templates) documentation. We can modify this example to build our
 minimal property offers template file:
 
@@ -147,7 +146,7 @@ minimal property offers template file:
     </odoo>
     
 
-Most of the Odoo specific (i.e. non-HTML) items in our file are explained in
+Most of the Konvergo ERP specific (i.e. non-HTML) items in our file are explained in
 the minimal viable template section. Some additional features in our template
 are:
 
@@ -158,13 +157,13 @@ are:
 If you are already familiar with website templating engines, then the QWeb
 directives (i.e. the `t-` commands) probably don’t need much explanation and
 you can just look at its
-[documentation](../reference/frontend/qweb.html#reference-qweb) and skip ahead
+[documentation](../reference/frontend/qweb#reference-qweb) and skip ahead
 to the next subsection.
 
 Otherwise you are encouraged to read more about them (
 [Wikipedia](https://en.wikipedia.org/wiki/Template_processor) has a good high
 level description), but the general idea is that QWeb provides the ability to
-dynamically generate web code based on Odoo data and simple commands. I.e.
+dynamically generate web code based on Konvergo ERP data and simple commands. I.e.
 QWeb can access recordset data (and methods) and process simple programming
 operations such as setting and accessing temporary variables. For example, in
 the above example:
@@ -186,14 +185,14 @@ Now that we have a template, we need to make it accessible in our app via a
 corresponding to [this
 template](https://github.com/odoo/odoo/blob/0e12fa135882cd5095dbf15fe2f64231c6a84336/addons/event/report/event_event_templates.xml#L5).
 Its contents are all explained in [the
-documentation](../reference/backend/actions.html#reference-actions-report).
+documentation](../reference/backend/actions#reference-actions-report).
 
 An `ir.actions.report` is primarily used via the Print menu of a model’s view.
 In the practical example, the `binding_model_id` specifies which model’s views
-the report should show, and Odoo will auto-magically add it for you. Another
+the report should show, and Konvergo ERP will auto-magically add it for you. Another
 common use case of the report action is to link it to a button as we learned
 in [Chapter 10: Ready For Some
-Action?](getting_started/10_actions.html#tutorials-getting-
+Action?](getting_started/10_actions#tutorials-getting-
 started-10-actions). This is handy for reports that only make sense under
 specific conditions. For example, if we wanted to make a « Final Sale »
 report, then we can link it to a « Print Sale Info » button that appears in
@@ -211,26 +210,27 @@ multiple records selected will demonstrate this.
 Finally, you now know where to create your files and how the content of the
 files should look. Happy report making!
 
-Exercise
-
-Make a report.
-
-  * Add the property offers report from the minimal template subsection to the Print menu of the Property views.
-
-  * Improve the report by adding more data. Refer to the **Goal** of this section to see what additional data you can add and feel free to add even more.
-
-  * Bonus: Make an extra flexible report by adding in some logic so that when there are no offers on a property then we don’t create a table and instead write something about how there are no offers yet. Hint: you will need to use `t-if` and `t-else`.
-
-Remember to check that your PDF reports match your data as expected.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Make a report.</p>
+<ul>
+<li><p>Add the property offers report from the minimal template subsection to the Print menu of the Property views.</p></li>
+<li><p>Improve the report by adding more data. Refer to the <b>Goal</b> of this section to see what additional
+data you can add and feel free to add even more.</p></li>
+<li><p>Bonus: Make an extra flexible report by adding in some logic so that when there are no offers on a property
+then we don’t create a table and instead write something about how there are no offers yet. Hint: you will
+need to use <code>t-if</code> and <code>t-else</code>.</p></li>
+</ul>
+<p>Remember to check that your PDF reports match your data as expected.</p>
+</div>
 
 ## Sub-templates
 
-Note
-
-**Goal** : at the end of this section, we will have a sub-template that we use
-in 2 reports.
-
-![Report using a subtemplate](../../_images/report_subtemplate.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section, we will have a sub-template that we use in 2 reports.</p>
+<img alt="Report using a subtemplate" class="align-center" src="../../_images/report_subtemplate.png"/>
+</div>
 
 There are two main reasons for using sub-templates. One is to make the code
 easier to read when working with extra-long or complicated templates. The
@@ -240,36 +240,39 @@ just one report template. One example is a report that lists all of a
 salesman’s properties” offers.
 
 See if you can understand how to call a sub-template by reading the
-[documentation](../reference/frontend/qweb.html#reference-qweb-sub-templates)
+[documentation](../reference/frontend/qweb#reference-qweb-sub-templates)
 on it and/or by looking at an
 [example](https://github.com/odoo/odoo/blob/0e12fa135882cd5095dbf15fe2f64231c6a84336/addons/portal/static/src/xml/portal_chatter.xml#L147-L160)
 (remember QWeb uses the same control flows regardless if it is for a report or
-a view in Odoo.)
+a view in Konvergo ERP.)
 
-Exercise
-
-Create and use a sub-template.
-
-  * Split the table portion of the offers into its own template. Remember to check that your original report still prints correctly afterwards.
-
-  * Add a new report for `res.users` that allows you to print all of the Real Estate Properties that are visible in their form view (i.e. in the « Settings » app). Include the offers for each of those saleman’s properties in the same report. Hint: since the `binding_model_id` in this case will not be within the estate module, you will need to use `ref="base.model_res_users"`.
-
-Your end result should look similar to the image in the **Goal** of this
-section.
-
-Remember to check that your reports match your data as expected!
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Create and use a sub-template.</p>
+<ul>
+<li><p>Split the table portion of the offers into its own template. Remember to check that your
+original report still prints correctly afterwards.</p></li>
+<li><p>Add a new report for <code>res.users</code> that allows you to print all of the Real Estate Properties
+that are visible in their form view (i.e. in the « Settings » app). Include the offers for each
+of those saleman’s properties in the same report. Hint: since the <code>binding_model_id</code> in this
+case will not be within the estate module, you will need to use <code>ref="base.model_res_users"</code>.</p>
+<p>Your end result should look similar to the image in the <b>Goal</b> of this section.</p>
+</li>
+</ul>
+<p>Remember to check that your reports match your data as expected!</p>
+</div>
 
 ## Report Inheritance
 
-Note
-
-**Goal** : at the end of this section, we will inherit the property report in
-the `estate_account` module.
-
-![An inherited report](../../_images/inherited_report.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section, we will inherit the property report in the <code>estate_account</code>
+module.</p>
+<img alt="An inherited report" class="align-center" src="../../_images/inherited_report.png"/>
+</div>
 
 Inheritance in QWeb uses the same `xpath` elements as [views
-inheritance](../reference/backend/views.html#reference-views-inheritance). A
+inheritance](../reference/backend/views#reference-views-inheritance). A
 QWeb template refers to its parent template in a different way though. It is
 even easier to do by just adding the `inherit_id` attribute to the `template`
 element and setting it equal to the _module.parent_template_id_.
@@ -279,23 +282,25 @@ but we can still add information to our existing property report. For example,
 we know that any « Sold » properties will already have an invoice created for
 them, so we can add this information to our report.
 
-Exercise
-
-Inherit a report.
-
-  * Extend the property report to include some information about the invoice. You can look at the **Goal** of this section for inspiration (i.e. print a line when the property is Done, otherwise print nothing).
-
-Again, remember to check that your reports match your data as expected!
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Inherit a report.</p>
+<ul>
+<li><p>Extend the property report to include some information about the invoice. You can look at the <b>Goal</b> of this
+section for inspiration (i.e. print a line when the property is Done, otherwise print nothing).</p></li>
+</ul>
+<p>Again, remember to check that your reports match your data as expected!</p>
+</div>
 
 ## Additional Features
 
 All the following extra features are described further in the [QWeb
-Reports](../reference/backend/reports.html#reference-reports-report)
+Reports](../reference/backend/reports#reference-reports-report)
 documentation, including how to implement each of them.
 
 ### Translations
 
-We all know Odoo is used in multiple languages thanks to automated and manual
+We all know Konvergo ERP is used in multiple languages thanks to automated and manual
 translating. QWeb reports are no exception! Note that sometimes the
 translations do not work properly if there are unnecessary spaces in your
 template’s text content, so try to avoid them when possible (especially
@@ -311,7 +316,7 @@ will still apply to prevent unauthorized users from accessing the reports.
 
 ### Barcodes
 
-Odoo has a built-in barcode image creator that allows for barcodes to be
+Konvergo ERP has a built-in barcode image creator that allows for barcodes to be
 embedded in your reports. Check out the corresponding
 [code](https://github.com/odoo/odoo/blob/0e12fa135882cd5095dbf15fe2f64231c6a84336/addons/web/controllers/main.py#L2044-L2046)
 to see all the supported barcode types.

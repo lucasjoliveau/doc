@@ -8,10 +8,10 @@ of the product and help compute the price accordingly.
 
 ## Create a Barcode Nomenclature
 
-Odoo supports Barcode Nomenclatures, which determine the mapping and
+Konvergo ERP supports Barcode Nomenclatures, which determine the mapping and
 interpretation of the encoded information. You can configure your barcode
 nomenclature being in [developer
-mode](../../../general/developer_mode.html#developer-mode). To do so, go to
+mode](../../../general/developer_mode#developer-mode). To do so, go to
 Inventory ‣ Configuration ‣ Barcode Nomenclature.
 
 You can create a barcode nomenclature from there, and then add a line to
@@ -35,10 +35,12 @@ define the decimals.
 The encoding allows to specify the barcode encoding on which the rule should
 be applied.
 
-Note
-
-You can define different rules and order their priority thanks to the
-sequence. The first rule which matches the scanned barcode will be applied.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>You can define different rules and order their priority thanks to the
+sequence. The first rule which matches the scanned barcode will be
+applied.</p>
+</div>
 
 ### Configure your Product
 
@@ -54,7 +56,7 @@ sequence. The first rule which matches the scanned barcode will be applied.
 
 In case you weight 1,5 Kg of pasta, the balance will print you the following
 barcode 2112345015002. If you scan this barcode in your POS or when receiving
-products in your barcode application, Odoo will automatically create a new
+products in your barcode application, Konvergo ERP will automatically create a new
 line for the Pasta product for a quantity of 1.5 Kg. For the point of sale, a
 price depending on the quantity will also be computed.
 
@@ -80,8 +82,9 @@ price depending on the quantity will also be computed.
 
   * **Unit Product** : allows you to identify a product for both POS and transfers.
 
-Note
-
-When the barcode pattern contains .*, it means that it can contain any number
-of characters, those characters being any number.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When the barcode pattern contains .*, it means that it can contain any
+number of characters, those characters being any number.</p>
+</div>
 

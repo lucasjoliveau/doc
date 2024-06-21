@@ -21,15 +21,14 @@ d’acompte_ et décidons de la comptabiliser sur une base mensuelle. Chaque
 mois, pendant les 12 prochains mois, 100 $ seront comptabilisés en tant que
 charge.
 
-Odoo Comptabilité gère les charges constatées d’avance et les acomptes en les
+Konvergo ERP Comptabilité gère les charges constatées d’avance et les acomptes en les
 répartissant en plusieurs écritures qui sont automatiquement créées en _mode
 brouillon_ puis comptabilisées périodiquement.
 
-Note
-
-Le serveur vérifie une fois par jour si une écriture doit être comptabilisée.
-Il peut donc s’écouler jusqu’à 24 heures avant que l’écriture ne passe du
-statut _brouillon_ à celui de _comptabilisé_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Le serveur vérifie une fois par jour si une écriture doit être comptabilisée. Il peut donc s’écouler jusqu’à 24 heures avant que l’écriture ne passe du statut <em>brouillon</em> à celui de <em>comptabilisé</em>.</p>
+</div>
 
 ## Conditions préalables
 
@@ -42,12 +41,11 @@ Pour configurer votre compte dans le **Plan comptable** , allez à Comptabilité
 ‣ Configuration ‣ Plan comptable, cliquez sur _Créer_ et remplissez le
 formulaire.
 
-![Configuration d'un compte de charges constatées d'avance dans Odoo
-Comptabilité](../../../../_images/deferred_expenses01.png)
-
-Note
-
-Ce type de compte doit être soit _Actifs circulants_ , soit _Acomptes_.
+![Configuration d'un compte de charges constatées d'avance dans Konvergo ERP
+Comptabilité](../../../../_images/deferred_expenses01.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Ce type de compte doit être soit <em>Actifs circulants</em>, soit <em>Acomptes</em>.</p>
+</div>
 
 ### Comptabiliser une charge sur le bon compte
 
@@ -57,7 +55,7 @@ Sur une facture brouillon, sélectionnez le bon compte pour tous les produits
 dont les charges doivent être reportées.
 
 ![Sélection d'un compte de charges constatées d'avance sur une facture
-fournisseur brouillon dans Odoo
+fournisseur brouillon dans Konvergo ERP
 Comptabilité](../../../../_images/deferred_expenses02.png)
 
 #### Choisir un compte de charges différent pour des produits spécifiques
@@ -66,12 +64,10 @@ Commencez par éditer le produit, allez à l’onglet _Comptabilité_ ,
 sélectionnez le bon **Compte de charges** et enregistrez.
 
 ![Modifier le Compte des charges d'un produit dans
-Odoo](../../../../_images/deferred_expenses03.png)
-
-Astuce
-
-Il est possible d’automatiser la création des écritures de charges pour ces
-produits (voir : Automatiser les charges constatées d’avance).
+Konvergo ERP](../../../../_images/deferred_expenses03.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Il est possible d’automatiser la création des écritures de charges pour ces produits (voir : <a href="#automate-the-deferred-expenses">Automatiser les charges constatées d’avance</a>).</p>
+</div>
 
 #### Modifier le compte d’une écriture comptable comptabilisée
 
@@ -79,7 +75,7 @@ Pour ce faire, ouvrez votre Journal des achats en allant à Comptabilité ‣
 Comptabilité ‣ Achats, sélectionnez l’écriture comptable que vous souhaitez
 modifier, cliquez sur le compte et sélectionnez le compte approprié.
 
-![Modification du compte d'une écriture comptable enregistrée dans Odoo
+![Modification du compte d'une écriture comptable enregistrée dans Konvergo ERP
 Comptabilité](../../../../_images/deferred_expenses04.png)
 
 ## Écritures de charges constatées d’avance
@@ -99,15 +95,15 @@ comptable existante à cette nouvelle écriture. Certains champs sont alors
 remplis automatiquement et l’écriture comptable est désormais répertoriée dans
 l’onglet **Charges associées**.
 
-![Écriture de charges constatées d'avance dans Odoo
+![Écriture de charges constatées d'avance dans Konvergo ERP
 Comptabilité](../../../../_images/deferred_expenses05.png)
 
 Une fois cela fait, vous pouvez cliquer sur _Calculer le report_ (à côté du
 bouton _Confirmer_) pour générer toutes les valeurs du **Tableau des
-charges**. Ce tableau vous montre toutes les écritures qu’Odoo enregistrera
+charges**. Ce tableau vous montre toutes les écritures qu’Konvergo ERP enregistrera
 pour comptabiliser votre charge, et à quelle date.
 
-![Tableau des charges dans Odoo
+![Tableau des charges dans Konvergo ERP
 Comptabilité](../../../../_images/deferred_expenses06.png)
 
 #### Que signifie « Prorata Temporis » ?
@@ -138,7 +134,7 @@ Ensuite, cliquez sur _Action_ , sélectionnez **Créer une écriture à reporter
 et remplissez le formulaire de la même manière que vous le feriez pour créer
 une nouvelle écriture.
 
-![Créez une écriture à reporter à partir d'une écriture comptable dans Odoo
+![Créez une écriture à reporter à partir d'une écriture comptable dans Konvergo ERP
 Comptabilité](../../../../_images/deferred_expenses07.png)
 
 ## Modèles de charges constatées d’avance
@@ -150,12 +146,10 @@ Pour créer un modèle, allez à Comptabilité ‣ Configuration ‣ Modèles de
 charges constatées d’avance, cliquez sur _Créer_ et remplissez le formulaire
 de la même manière que vous le feriez pour créer une nouvelle écriture.
 
-Astuce
-
-Vous pouvez également convertir une _écriture de charges constatées d’avance
-confirmées_ en un modèle en l’ouvrant depuis Comptabilité ‣ Comptabilité ‣
-Charges constatées d’avance puis, en cliquant sur le bouton _Enregistrer le
-modèle_.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Vous pouvez également convertir une <em>écriture de charges constatées d’avance confirmées</em> en un modèle en l’ouvrant depuis Comptabilité ‣ Comptabilité ‣ Charges constatées d’avance puis, en cliquant sur le bouton <em>Enregistrer le modèle</em>.</p>
+</div>
 
 ### Appliquer un modèle de charges constatées d’avance à une nouvelle
 écriture
@@ -168,7 +162,7 @@ De nouveaux boutons avec tous les modèles liés à ce compte apparaissent en
 haut du formulaire. En cliquant sur le bouton d’un modèle, le formulaire se
 remplit en fonction de ce modèle.
 
-![Bouton Modèle de charges constatées d'avance dans Odoo
+![Bouton Modèle de charges constatées d'avance dans Konvergo ERP
 Comptabilité](../../../../_images/deferred_expenses08.png)
 
 ## Automatiser les charges constatées d’avance
@@ -186,16 +180,15 @@ constatées d’avance*_ :
 
   3. **Créer et valider :** vous devez également sélectionner un modèle de charges constatées d’avance (voir : Modèles de charges constatées d’avance). Chaque fois qu’une transaction est enregistrée sur le compte, une _écriture de charges constatées d’avance_ est créée et immédiatement validée.
 
-![Automatisez les charges constatées d'avance sur un compte dans Odoo
-Comptabilité](../../../../_images/deferred_expenses09.png)
-
-Astuce
-
-Vous pouvez, par exemple, sélectionner ce compte comme le **Compte des
-charges** par défaut d’un produit pour automatiser complètement son achat
-(voir : Choisir un compte de charges différent pour des produits spécifiques).
-
-Pour plus d'infos
-
-  * [Plan comptable](../get_started/chart_of_accounts.html)
+![Automatisez les charges constatées d'avance sur un compte dans Konvergo ERP
+Comptabilité](../../../../_images/deferred_expenses09.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Vous pouvez, par exemple, sélectionner ce compte comme le <b>Compte des charges</b> par défaut d’un produit pour automatiser complètement son achat (voir : <a href="#choose-a-different-expense-account-for-specific-products">Choisir un compte de charges différent pour des produits spécifiques</a>).</p>
+</div>
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../get_started/chart_of_accounts">Plan comptable</a></p></li>
+</ul>
+</div>
 

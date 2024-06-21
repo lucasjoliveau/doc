@@ -3,27 +3,28 @@
 [Adyen](https://www.adyen.com/) is a Dutch company that offers several online
 payment possibilities.
 
-See also
-
-  * [Enable a payment provider](../payment_providers.html#payment-providers-add-new)
-
-  * [Online payments](../payment_providers.html)
-
-Note
-
-Adyen works only with customers processing **more** than **10 million
-annually** or invoicing a **minimum** of **1.000** transactions **per month**.
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../payment_providers#payment-providers-add-new"><span class="std std-ref">Enable a payment provider</span></a></p></li>
+<li><p><a href="../payment_providers">Online payments</a></p></li>
+</ul>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Adyen works only with customers processing <b>more</b> than <b>10 million annually</b> or invoicing a
+<b>minimum</b> of <b>1.000</b> transactions <b>per month</b>.</p>
+</div>
 
 ## Configuration
 
-See also
-
-[Enable a payment provider](../payment_providers.html#payment-providers-add-
-new)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../payment_providers#payment-providers-add-new"><span class="std std-ref">Enable a payment provider</span></a></p>
+</div>
 
 ### Credentials tab
 
-Odoo needs your **API Credentials** to connect with your Adyen account, which
+Konvergo ERP needs your **API Credentials** to connect with your Adyen account, which
 comprise:
 
   * **Merchant Account** : The code of the merchant account to use with Adyen.
@@ -41,11 +42,13 @@ comprise:
 You can copy your credentials from your Adyen account, and paste them in the
 related fields under the **Credentials** tab.
 
-Important
-
-If you are trying Adyen as a test, with an Adyen _test account_ , head to
-Accounting ‣ Configuration ‣ Payment Providers. There, click on Adyen, enable
-Test Mode and enter your credentials in the Credentials tab.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>If you are trying Adyen as a test, with an Adyen <em>test account</em>, head to
+Accounting ‣ Configuration ‣ Payment Providers. There, click on
+<b>Adyen</b>, enable <b>Test Mode</b> and enter your credentials in the
+<b>Credentials</b> tab.</p>
+</div>
 
 #### API Key and Client Key
 
@@ -91,23 +94,24 @@ To configure the URLs, proceed as follows:
 
   1. Log into your Adyen account, then go to Developers ‣ API URLs.
 
-  2. Copy the Prefix for your live Customer area (i.e., **data center**) and save it for later.
+  2. Copy the **Prefix** for your live Customer area (i.e., **data center**) and save it for later.
 
 ![Copy the prefix for the Adyen APIs](../../../_images/adyen-api-urls.png)
 
-  3. In Odoo, [navigate to the payment provider Adyen](../payment_providers.html#payment-providers-add-new).
+  3. In Konvergo ERP, [navigate to the payment provider Adyen](../payment_providers#payment-providers-add-new).
 
-  4. In the Checkout API URL field, enter the following URL and replace `yourprefix` with the prefix you previously saved: `https://yourprefix-checkout-live.adyenpayments.com/checkout`
+  4. In the **Checkout API URL** field, enter the following URL and replace `yourprefix` with the prefix you previously saved: `https://yourprefix-checkout-live.adyenpayments.com/checkout`
 
-  5. In the Recurring API URL field, enter the following URL and replace `yourprefix` with the prefix you previously saved: `https://yourprefix-pal-live.adyenpayments.com/pal/servlet/Recurring`.
+  5. In the **Recurring API URL** field, enter the following URL and replace `yourprefix` with the prefix you previously saved: `https://yourprefix-pal-live.adyenpayments.com/pal/servlet/Recurring`.
 
-Note
-
-If you are trying Adyen as a test, you can use the following URLs instead:
-
-  * Checkout API URL: `https://checkout-test.adyen.com`
-
-  * Recurring API URL: `https://pal-test.adyen.com/pal/servlet/Recurring`
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>If you are trying Adyen as a test, you can use the following URLs instead:</p>
+<ul>
+<li><p><b>Checkout API URL</b>: <code>https://checkout-test.adyen.com</code></p></li>
+<li><p><b>Recurring API URL</b>: <code>https://pal-test.adyen.com/pal/servlet/Recurring</code></p></li>
+</ul>
+</div>
 
 ### Adyen Account
 
@@ -116,7 +120,7 @@ If you are trying Adyen as a test, you can use the following URLs instead:
 To allow payment originated from your website, follow the steps in API Key and
 Client Key to navigate to your API user and go to Add allowed origins, then
 add the URLs from where payments will be made (the URLs of the servers hosting
-your Odoo instances).
+your Konvergo ERP instances).
 
 ![Allows payments originated from a specific domain.](../../../_images/adyen-
 allowed-origins.png)
@@ -126,27 +130,29 @@ allowed-origins.png)
 Adyen allows you to capture an amount manually instead of having an immediate
 capture.
 
-To set it up, enable the **Capture Amount Manually** option on Odoo, as
+To set it up, enable the **Capture Amount Manually** option on Konvergo ERP, as
 explained in the [payment providers
-documentation](../payment_providers.html#payment-providers-manual-capture).
+documentation](../payment_providers#payment-providers-manual-capture).
 
 Then, open your Adyen Merchant Account, go to Account ‣ Settings, and set the
 **Capture Delay** to **manual**.
 
 ![Capture Delay settings in Adyen](../../../_images/adyen_capture_delay.png)
-
-Caution
-
-  * If you configure Odoo to capture amounts manually, make sure to set the **Capture Delay** to **manual** on Adyen. Otherwise, the transaction will be blocked in the authorized state in Odoo.
-
-  * Odoo doesn’t support the partial capture yet. Be aware that if you make a partial capture from Adyen’s interface, Odoo will manage it as if it was a full capture.
-
-Note
-
-After **7 days** , if the transaction hasn’t been captured yet, the customer
-has the right to **revoke** it.
-
-See also
-
-[Online payments](../payment_providers.html)
+<div class="alert alert-warning">
+<p class="alert-title">
+Caution</p><ul>
+<li><p>If you configure Konvergo ERP to capture amounts manually, make sure to set the <b>Capture Delay</b> to
+<b>manual</b> on Adyen. Otherwise, the transaction will be blocked in the authorized state in
+Konvergo ERP.</p></li>
+<li><p>Konvergo ERP doesn’t support the partial capture yet. Be aware that if you make a partial capture from
+Adyen’s interface, Konvergo ERP will manage it as if it was a full capture.</p></li>
+</ul>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>After <b>7 days</b>, if the transaction hasn’t been captured yet, the customer has the right to
+<b>revoke</b> it.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="../payment_providers">Online payments</a></p>
+</div>
 

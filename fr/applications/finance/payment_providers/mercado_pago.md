@@ -8,29 +8,29 @@ latine.
 
   1. Connectez-vous au tableau de bord [Mercado Pago](https://www.mercadopago.com.mx/developers/panel) et sélectionnez votre application ou créez-en une nouvelle.
 
-  2. Sélectionnez Credenciales de producción dans la partie gauche de la page d’application, puis sélectionnez le secteur, saisissez votre domaine le cas échéant et cliquez sur Activar credenciales de producción.
+  2. Sélectionnez **Credenciales de producción** dans la partie gauche de la page d’application, puis sélectionnez le secteur, saisissez votre domaine le cas échéant et cliquez sur **Activar credenciales de producción**.
 
-  3. Copiez le Jeton d’accès et enregistrez-le pour plus tard.
+  3. Copiez le **Jeton d’accès** et enregistrez-le pour plus tard.
 
-Astuce
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Si vous testez Mercado Pago, sélectionnez <b>Credenciales de prueba</b> dans la partie gauche de la page d’application, puis copiez le <b>Jeton d’accès</b> de test.</p>
+</div> ![Production and testing credentials in Mercado
+Pago.](../../../_images/mp-credentials.png)
 
-Si vous testez Mercado Pago, sélectionnez Credenciales de prueba dans la
-partie gauche de la page d’application, puis copiez le Jeton d’accès de test.
+## Configuration dans Konvergo ERP
 
-![Production and testing credentials in Mercado Pago.](../../../_images/mp-
-credentials.png)
+  1. [Allez au fournisseur de paiement Mercado Pago](../payment_providers#payment-providers-add-new) et définissez son statut sur **Activé**.
 
-## Configuration dans Odoo
-
-  1. [Allez au fournisseur de paiement Mercado Pago](../payment_providers.html#payment-providers-add-new) et définissez son statut sur Activé.
-
-  2. In the Credentials tab, fill in the Access Token with the value you saved at the Configuration sur le tableau de bord Mercado Pago step.
+  2. In the **Credentials** tab, fill in the **Access Token** with the value you saved at the Configuration sur le tableau de bord Mercado Pago step.
 
   3. Configurez les autres options à votre guise.
 
-Pour plus d'infos
-
-  * [Paiements en ligne](../payment_providers.html)
-
-  * [Mercado Pago Odoo webinar](https://www.youtube.com/watch?v=CX8vPHMb1ic)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../payment_providers">Paiements en ligne</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=CX8vPHMb1ic">Mercado Pago Konvergo ERP webinar</a></p></li>
+</ul>
+</div>
 

@@ -63,9 +63,10 @@ The different view types have a wide variety of attributes allowing
 customizations of the generic behaviors. Some main attributes will be
 explained here. They do not all have an impact on all view types.
 
-Note
-
-The current context and user access rights may also impact the view abilities.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The current context and user access rights may also impact the view abilities.</p>
+</div>
 
   * `create`
 
@@ -106,12 +107,12 @@ available in the context:
     </tree>
     
 
-Warning
-
-Supported values differ for the two view types. The Gantt view only supports
-`success`, `info`, `warning`, `danger` and `secondary` displays. The list view
-supports `bf`, `it`, `success`, `info`, `warning`, `danger`, `muted` and
-`primary` displays.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Supported values differ for the two view types. The Gantt view only supports <code>success</code>,
+<code>info</code>, <code>warning</code>, <code>danger</code> and <code>secondary</code> displays. The list view supports <code>bf</code>,
+<code>it</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code>, <code>muted</code> and <code>primary</code> displays.</p>
+</div>
 
   * `sample` (`kanban` & `list` & `gantt` & `graph` & `pivot` & `cohort`)
 
@@ -129,7 +130,7 @@ etc.)
 
   * `banner_route` a route address to be fetched and prepended to the view.
 
-If this attribute is set, the [controller route url](http.html#reference-
+If this attribute is set, the [controller route url](http#reference-
 controllers) will be fetched and displayed above the view. The json response
 from the controller should contain an “html” key.
 
@@ -337,10 +338,11 @@ activity types the columns. The first cell of each row displays a
 the corresponding record. When clicking on others cells, a detailed
 description of all activities of the same type for the record is displayed.
 
-Warning
-
-The Activity view is only available when the `mail` module is installed, and
-for the models that inherit from the `mail.activity.mixin`.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>The Activity view is only available when the <code>mail</code> module is installed,
+and for the models that inherit from the <code>mail.activity.mixin</code>.</p>
+</div>
 
 The root element of the Activity view is `<activity>`, it accepts the
 following attributes:
@@ -372,13 +374,13 @@ the name of the field to fetch
 
     
 
-defines the [QWeb Templates](../frontend/qweb.html#reference-qweb) templates.
+defines the [QWeb Templates](../frontend/qweb#reference-qweb) templates.
 Cards definition may be split into multiple templates for clarity, but
 activity views _must_ define at least one root template `activity-box`, which
 will be rendered once for each record.
 
 The activity view uses mostly-standard [javascript
-qweb](../frontend/qweb.html#reference-qweb-javascript) and provides the
+qweb](../frontend/qweb#reference-qweb-javascript) and provides the
 following context variables (see Kanban for more details):
 
 `widget`
@@ -401,12 +403,13 @@ attributes `value` and `raw_value`
 Calendar views display records as events in a daily, weekly, monthly or yearly
 calendar.
 
-Note
-
-By default the calendar view will be centered around the current date (today).
-You can pass a specific initial date to the context of the action in order to
-set the initial focus of the calendar on the period (see `mode`) around this
-date (the context key to use being `initial_date`)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>By default the calendar view will be centered around the current date
+(today). You can pass a specific initial date to the context of the action in
+order to set the initial focus of the calendar on the period (see <code>mode</code>) around
+this date (the context key to use being <code>initial_date</code>)</p>
+</div>
 
 Their root element is `<calendar>`. Available attributes on the calendar view
 are:
@@ -550,12 +553,13 @@ the service (churn). When clicking on a cell, the cohort view will redirect
 you to a new action in which you will only see the records contained in the
 cell’s time interval; this action contains a list view and a form view.
 
-Note
-
-By default the cohort view will use the same list and form views as those
-defined on the action. You can pass a list view and a form view to the context
-of the action in order to set/override the views that will be used (the
-context keys to use being `form_view_id` and `list_view_id`)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>By default the cohort view will use the same list and form views as those
+defined on the action. You can pass a list view and a form view
+to the context of the action in order to set/override the views that will be
+used (the context keys to use being <code>form_view_id</code> and <code>list_view_id</code>)</p>
+</div>
 
 For example, here is a very simple cohort view:
 
@@ -676,7 +680,7 @@ the title of the tab
 
     
 
-an HTML [accesskey](https://www.w3.org/TR/html5/editing.html#the-accesskey-
+an HTML [accesskey](https://www.w3.org/TR/html5/editing#the-accesskey-
 attribute)
 
 `attrs`
@@ -685,9 +689,10 @@ attribute)
 
 standard dynamic attributes based on record values
 
-Note
-
-Note that `notebook` should not be placed within `group`
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Note that <code>notebook</code> should not be placed within <code>group</code></p>
+</div>
 
 `group`
 
@@ -737,14 +742,14 @@ generally used to display workflow buttons and status widgets
 
 #### Semantic components
 
-Semantic components tie into and allow interaction with the Odoo system.
+Semantic components tie into and allow interaction with the Konvergo ERP system.
 Available semantic components are:
 
 `button`
 
     
 
-call into the Odoo system, similar to list view buttons. In addition, the
+call into the Konvergo ERP system, similar to list view buttons. In addition, the
 following attribute can be specified:
 
 `special`
@@ -759,7 +764,7 @@ dialog, `cancel` to close the dialog without saving.
     
 
 confirmation message to display (and for the user to accept) before performing
-the button’s Odoo call (also works in Kanban views).
+the button’s Konvergo ERP call (also works in Kanban views).
 
 `field`
 
@@ -1113,11 +1118,12 @@ corresponding attribute to `false` (default: `true`).
 
   * `plan`: If enabled and `edit` enabled, a “magnifying glass” button will be displayed on time slots to plan unassigned records into that time slot.
 
-Example
-
-When you do not want to create records on the gantt view and the beginning and
-end dates are required on the model, the planning feature should be disabled
-because no record will ever be found.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>When you do not want to create records on the gantt view and the beginning and end
+dates are required on the model, the planning feature should be disabled
+because no record will ever be found.</p>
+</div>
 
 `offset`
 
@@ -1220,12 +1226,12 @@ are allowed. For possible scale values to use in this list, see
 
     
 
-defines the [QWeb Templates](../frontend/qweb.html#reference-qweb) template
+defines the [QWeb Templates](../frontend/qweb#reference-qweb) template
 `gantt-popover` which is used when the user hovers over one of the records in
 the gantt view.
 
 The gantt view uses mostly-standard [javascript
-qweb](../frontend/qweb.html#reference-qweb-javascript) and provides the
+qweb](../frontend/qweb#reference-qweb-javascript) and provides the
 following context variables:
 
 `widget`
@@ -1375,10 +1381,11 @@ The measures are automatically generated from the model fields; only the
 aggregatable fields are used. Those measures are also alphabetically sorted on
 the string of the field.
 
-Warning
-
-graph view aggregations are performed on database content, non-stored function
-fields can not be used in graph views
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>graph view aggregations are performed on database content, non-stored
+function fields can not be used in graph views</p>
+</div>
 
 ### Grid
 
@@ -1502,15 +1509,16 @@ help content is displayed instead of the grid.
 
     
 
-Regular Odoo action buttons, displayed in the view header
+Regular Konvergo ERP action buttons, displayed in the view header
 
   * mandatory `string` attribute (the button label)
 
   * mandatory `type` attribute, either `object` or `action`
 
-Note
-
-workflow buttons are not supported
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>workflow buttons are not supported</p>
+</div>
 
   * mandatory `name` attribute, either the name of the method to call, or the ID of the action to execute
 
@@ -1779,10 +1787,12 @@ Records may be grouped in columns for use in workflow visualisation or
 manipulation (e.g. tasks or work-progress management), or ungrouped (used
 simply to visualize records).
 
-Note
-
-The kanban view will load and display a maximum of ten columns. Any column
-after that will be closed (but can still be opened by the user).
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The kanban view will load and display a maximum of ten columns.
+Any column after that will be closed (but can still be opened by
+the user).</p>
+</div>
 
 The root element of the Kanban view is `<kanban>`, it can use the following
 attributes:
@@ -1935,13 +1945,13 @@ records)
 
     
 
-defines a list of [QWeb Templates](../frontend/qweb.html#reference-qweb)
+defines a list of [QWeb Templates](../frontend/qweb#reference-qweb)
 templates. Cards definition may be split into multiple templates for clarity,
 but kanban views _must_ define at least one root template `kanban-box`, which
 will be rendered once for each record.
 
 The kanban view uses mostly-standard [javascript
-qweb](../frontend/qweb.html#reference-qweb-javascript) and provides the
+qweb](../frontend/qweb#reference-qweb-javascript) and provides the
 following context variables:
 
 `widget`
@@ -1988,14 +1998,17 @@ self-explanatory
 set to true when kanban view is opened in mobile environment from m2o/m2m
 field for selecting records.
 
-Note
-
-clicking on m2o/m2m field in mobile environment opens kanban view
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Supported values differ for the two view types. The Gantt view only supports <code>success</code>,
+<code>info</code>, <code>warning</code>, <code>danger</code> and <code>secondary</code> displays. The list view supports <code>bf</code>,
+<code>it</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code>, <code>muted</code> and <code>primary</code> displays.</p>
+</div>0
 
 buttons and fields
 
 While most of the Kanban templates are standard [QWeb
-Templates](../frontend/qweb.html#reference-qweb), the Kanban view processes
+Templates](../frontend/qweb#reference-qweb), the Kanban view processes
 `field`, `button` and `a` elements specially:
 
   * by default fields are replaced by their formatted value, unless the `widget` attribute is specified, in which case their rendering and behavior depends on the corresponding widget. Possible values are (among others):
@@ -2007,13 +2020,13 @@ Templates](../frontend/qweb.html#reference-qweb), the Kanban view processes
 for `sequence` (or `integer`) fields by which records are sorted, allows to
 drag&drop records to reorder them.
 
-  * buttons and links with a `type` attribute become perform Odoo-related operations rather than their standard HTML function. Possible types are:
+  * buttons and links with a `type` attribute become perform Konvergo ERP-related operations rather than their standard HTML function. Possible types are:
 
 `action`, `object`
 
     
 
-standard behavior for Odoo buttons, most attributes relevant to standard Odoo
+standard behavior for Konvergo ERP buttons, most attributes relevant to standard Konvergo ERP
 buttons can be used.
 
 `open`
@@ -2055,10 +2068,12 @@ The architecture for the inline form view is derived from the list view. Most
 attributes valid on a form view’s fields and buttons are thus accepted by list
 views although they may not have any meaning if the list view is non-editable
 
-Note
-
-if the `edit` attribute is set to `false`, the `editable` option will be
-ignored.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Supported values differ for the two view types. The Gantt view only supports <code>success</code>,
+<code>info</code>, <code>warning</code>, <code>danger</code> and <code>secondary</code> displays. The list view supports <code>bf</code>,
+<code>it</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code>, <code>muted</code> and <code>primary</code> displays.</p>
+</div>1
 
 `multi_edit`
 
@@ -2147,7 +2162,7 @@ icon to use to display the button
 
     
 
-type of button, indicates how it clicking it affects Odoo:
+type of button, indicates how it clicking it affects Konvergo ERP:
 
 `object`
 
@@ -2200,16 +2215,18 @@ that the model has a `state` field and that it is used in the view.
 Makes the button `invisible` if the record is _not_ in one of the listed
 states
 
-Danger
-
-Using `states` in combination with `attrs` may lead to unexpected results as
-domains are combined with a logical AND.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Supported values differ for the two view types. The Gantt view only supports <code>success</code>,
+<code>info</code>, <code>warning</code>, <code>danger</code> and <code>secondary</code> displays. The list view supports <code>bf</code>,
+<code>it</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code>, <code>muted</code> and <code>primary</code> displays.</p>
+</div>2
 
 `context`
 
     
 
-merged into the view’s context when performing the button’s Odoo call
+merged into the view’s context when performing the button’s Konvergo ERP call
 
 `field`
 
@@ -2321,30 +2338,22 @@ makes the column optional. If set to “hide”, the column is hidden by default
 If set to “show”, the column is visible by default. User visibility choices
 are stored in the browser local storage.
 
-Note
-
-if the list view is `editable`, any field attribute from the form view is also
-valid and will be used when setting up the inline form view.
-
-Note
-
-In case of list sub-views (One2many/Many2many display in a form view), The
-attribute `column_invisible` can be useful to hide a column depending on the
-parent object.
-
-    
-    
-    <field name="product_is_late" attrs="{'column_invisible': [('parent.has_late_products', '=', False)]}"/>
-    
-
-Note
-
-When a list view is grouped, numeric fields are aggregated and displayed for
-each group. Also, if there are too many records in a group, a pager will
-appear on the right of the group row. For this reason, it is not a good
-practice to have a numeric field in the last column, when the list view is in
-a situation where it can be grouped (it is however fine for x2manys field in a
-form view: they cannot be grouped).
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Supported values differ for the two view types. The Gantt view only supports <code>success</code>,
+<code>info</code>, <code>warning</code>, <code>danger</code> and <code>secondary</code> displays. The list view supports <code>bf</code>,
+<code>it</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code>, <code>muted</code> and <code>primary</code> displays.</p>
+</div>3 <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Supported values differ for the two view types. The Gantt view only supports <code>success</code>,
+<code>info</code>, <code>warning</code>, <code>danger</code> and <code>secondary</code> displays. The list view supports <code>bf</code>,
+<code>it</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code>, <code>muted</code> and <code>primary</code> displays.</p>
+</div>4 <div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Supported values differ for the two view types. The Gantt view only supports <code>success</code>,
+<code>info</code>, <code>warning</code>, <code>danger</code> and <code>secondary</code> displays. The list view supports <code>bf</code>,
+<code>it</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code>, <code>muted</code> and <code>primary</code> displays.</p>
+</div>5
 
 `groupby`
 
@@ -2391,9 +2400,12 @@ Does not support any attribute, but can have children:
 
 adds a button to create a new element on the current list.
 
-Note
-
-If any `create` is defined, it will overwrite the default “add a line” button.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Supported values differ for the two view types. The Gantt view only supports <code>success</code>,
+<code>info</code>, <code>warning</code>, <code>danger</code> and <code>secondary</code> displays. The list view supports <code>bf</code>,
+<code>it</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code>, <code>muted</code> and <code>primary</code> displays.</p>
+</div>6
 
 The following attributes are supported:
 
@@ -2453,11 +2465,12 @@ This view is able to display records on a map and the routes between them. The
 records are represented by pins. It also allows the visualization of fields
 from the model in a popup tied to the record’s pin.
 
-Note
-
-The model on which the view is applied should contain a `res.partner` many2one
-since the view relies on the `res.partner`’s address and coordinates fields to
-localize the records.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Supported values differ for the two view types. The Gantt view only supports <code>success</code>,
+<code>info</code>, <code>warning</code>, <code>danger</code> and <code>secondary</code> displays. The list view supports <code>bf</code>,
+<code>it</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code>, <code>muted</code> and <code>primary</code> displays.</p>
+</div>7
 
 #### API
 
@@ -2651,10 +2664,12 @@ The measures are automatically generated from the model fields; only the
 aggregatable fields are used. Those measures are also alphabetically sorted on
 the string of the field.
 
-Warning
-
-like the graph view, the pivot aggregates data on database content which means
-that non-stored function fields can not be used in pivot views
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Supported values differ for the two view types. The Gantt view only supports <code>success</code>,
+<code>info</code>, <code>warning</code>, <code>danger</code> and <code>secondary</code> displays. The list view supports <code>bf</code>,
+<code>it</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code>, <code>muted</code> and <code>primary</code> displays.</p>
+</div>8
 
 In Pivot view a `field` can have a `widget` attribute to dictate its format.
 The widget should be a field formatter, of which the most interesting are
@@ -2673,7 +2688,7 @@ For instance a timesheet pivot view could be defined as:
 
 ### QWeb
 
-QWeb views are standard [QWeb Templates](../frontend/qweb.html#reference-qweb)
+QWeb views are standard [QWeb Templates](../frontend/qweb#reference-qweb)
 templates inside a view’s `arch`. They don’t have a specific root element.
 Because QWeb views don’t have a specific root element, their type must be
 specified explicitly (it can not be inferred from the root element of the
@@ -2681,7 +2696,7 @@ specified explicitly (it can not be inferred from the root element of the
 
 QWeb views have two use cases:
 
-  * they can be used as frontend templates, in which case [template](data.html#reference-data-template) should be used as a shortcut.
+  * they can be used as frontend templates, in which case [template](data#reference-data-template) should be used as a shortcut.
 
   * they can be used as actual qweb views (opened inside an action), in which case they should be defined as regular view with an explicit `type` (it can not be inferred) and a model.
 
@@ -2788,11 +2803,12 @@ allows adding context keys, including the user-provided values (which as for
 `domain` are available as a `self` variable, an array of values e.g. `[id_1,
 id_2]` for a `Many2one` field). By default, fields don’t generate domains.
 
-Note
-
-the domain and context are inclusive and both are generated if a `context` is
-specified. To only generate context values, set `filter_domain` to an empty
-list: `filter_domain="[]"`
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>Supported values differ for the two view types. The Gantt view only supports <code>success</code>,
+<code>info</code>, <code>warning</code>, <code>danger</code> and <code>secondary</code> displays. The list view supports <code>bf</code>,
+<code>it</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code>, <code>muted</code> and <code>primary</code> displays.</p>
+</div>9
 
 `groups`
 
@@ -2828,7 +2844,7 @@ the label of the filter
 
     
 
-an Odoo [domain](orm.html#reference-orm-domains), will be appended to the
+an Konvergo ERP [domain](orm#reference-orm-domains), will be appended to the
 action’s domain as part of the search domain.
 
 `date` (optional)
@@ -2923,11 +2939,11 @@ Example:
     <filter name="groupby_create_date" string="Creation Date" context="{'group_by': 'create_date:week'}"/>
     
 
-Note
-
-The results of read_groups grouped on a field may be influenced by its
-group_expand attribute, allowing to display empty groups when needed. For more
-information, please refer to `Field` attributes documentation.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>The Activity view is only available when the <code>mail</code> module is installed,
+and for the models that inherit from the <code>mail.activity.mixin</code>.</p>
+</div>0
 
 `name`
 
@@ -2948,37 +2964,11 @@ a longer explanatory text for the filter, may be displayed as a tooltip
 
 makes a filter only available to specific users
 
-Tip
-
-New in version 7.0.
-
-Sequences of filters (without non-filters separating them) are treated as
-inclusively composited: they will be composed with `OR` rather than the usual
-`AND`, e.g.
-
-    
-    
-    <filter domain="[('state', '=', 'draft')]"/>
-    <filter domain="[('state', '=', 'done')]"/>
-    
-
-if both filters are selected, will select the records whose `state` is `draft`
-or `done`, but
-
-    
-    
-    <filter domain="[('state', '=', 'draft')]"/>
-    <separator/>
-    <filter domain="[('delay', '&lt;', 15)]"/>
-    
-
-if both filters are selected, will select the records whose `state` is `draft`
-**and** `delay` is below 15.
-
-Note
-
-XML does not allow `<` to be used within XML elements, an entity reference
-(`&lt;`) should be used instead.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>The Activity view is only available when the <code>mail</code> module is installed,
+and for the models that inherit from the <code>mail.activity.mixin</code>.</p>
+</div>1
 
 `separator`
 

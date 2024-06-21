@@ -7,22 +7,18 @@ podrían afectar los datos que sí pertenecen a producción (por ejemplo, enviar
 correos electrónicos a los clientes). El acceso en tiempo real se elimina y se
 convierte en un entorno de prueba.
 
-Nota
-
-**Cualquier base de datos de prueba que cree es una base de datos
-neutralizada:**
-
-  * Bases de datos de respaldo para pruebas.
-
-  * Bases de datos duplicadas.
-
-  * En Odoo.sh: bases de datos de preproducción y desarrollo.
-
-Importante
-
-Una base de datos también se puede neutralizar en una actualización, pues es
-muy importante hacer algunas pruebas antes de comenzar a usar una nueva
-versión.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p><b>Cualquier base de datos de prueba que cree es una base de datos neutralizada:</b></p>
+<ul>
+<li><p>Bases de datos de respaldo para pruebas.</p></li>
+<li><p>Bases de datos duplicadas.</p></li>
+<li><p>En Konvergo ERP.sh: bases de datos de preproducción y desarrollo.</p></li>
+</ul>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Una base de datos también se puede neutralizar en una actualización, pues es muy importante hacer algunas pruebas antes de comenzar a usar una nueva versión.</p>
+</div>
 
 ## Funciones desactivadas
 
@@ -40,10 +36,10 @@ La siguiente lista incluye algunos de los parámetros que se desactivan:
 
   * Tokens de IAP
 
-Nota
-
-**En la parte superior de la pantalla, en la base de datos neutralizada,
-aparece un recuadro rojo que le informa sobre esto de forma inmediata.**
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p><b>En la parte superior de la pantalla, en la base de datos neutralizada, aparece un recuadro rojo que le informa sobre esto de forma inmediata.</b></p>
+</div>
 
   *[IAP]: Compras dentro de la aplicación
 

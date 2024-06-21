@@ -7,10 +7,10 @@ mensaje que aparece en el tablero de la aplicación. Si el registro es exitoso,
 el mensaje cambiará a color verde y aparecerá la fecha de vencimiento de la
 base de datos.
 
-Truco
-
-La fecha de vencimiento también aparece en la parte inferior de la página
-Ajustes.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>La fecha de vencimiento también aparece en la parte inferior de la página Ajustes.</p>
+</div>
 
 ## Duplicar una base de datos
 
@@ -32,16 +32,16 @@ sub-code.png)
 
 Para solucionar este error:
 
-  * Verifique la **validez de su suscripción a la versión Enterprise de Odoo**. Compruebe si los detalles de su suscripción tienen la etiqueta En progreso en su [cuenta de Odoo](https://accounts.odoo.com/my/subscription) o comuníquese con su gerente de cuenta.
+  * Verifique la **validez de su suscripción a la versión Enterprise de Konvergo ERP**. Compruebe si los detalles de su suscripción tienen la etiqueta **En progreso** en su [cuenta de Konvergo ERP](https://accounts.odoo.com/my/subscription) o comuníquese con su gerente de cuenta.
 
   * Asegúrese de que **ninguna otra base de datos esté vinculada** al código de suscripción, ya que solo puede haber una base de datos vinculada por suscripción.
 
-Truco
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Si necesita una base de datos de prueba o de desarrollo, puede <a href="#on-premise-duplicate"><span class="std std-ref">duplicar una base de datos</span></a>.</p>
+</div>
 
-Si necesita una base de datos de prueba o de desarrollo, puede duplicar una
-base de datos.
-
-  * Verifique que **ninguna base de datos comparta el mismo UUID** (es decir, el identificador único universal). Abra su [contrato de Odoo](https://accounts.odoo.com/my/subscription) y si dos o más bases de datos comparten el mismo UUID, entonces aparecerá su nombre.
+  * Verifique que **ninguna base de datos comparta el mismo UUID** (es decir, el identificador único universal). Abra su [contrato de Konvergo ERP](https://accounts.odoo.com/my/subscription) y si dos o más bases de datos comparten el mismo UUID, entonces aparecerá su nombre.
 
 ![Mensaje de error del UUID de la base de datos](../_images/unlink-db-name-
 collision.png)
@@ -49,7 +49,7 @@ collision.png)
 Si eso es lo que ocurre, cambie de forma manual el UUID de las bases de datos
 o [envíe un ticket de soporte](https://www.odoo.com/help).
 
-  * Como la notificación de actualización debe poder conectarse a los servidores de validación de suscripción de Odoo, asegúrese de que los **ajustes de red y firewall** permitan que el servidor de Odoo abra conexiones salientes hacia:
+  * Como la notificación de actualización debe poder conectarse a los servidores de validación de suscripción de Konvergo ERP, asegúrese de que los **ajustes de red y firewall** permitan que el servidor de Konvergo ERP abra conexiones salientes hacia:
 
     * `services.odoo.com` en el puerto `443` (u `80`).
 
@@ -61,7 +61,7 @@ datos, ya que la notificación de actualización se ejecuta una vez a la semana.
 ### Error por demasiados usuarios
 
 El siguiente mensaje aparecerá si tiene más usuarios en una base de datos
-local que el número asignado a su suscripción a la versión Enterprise de Odoo.
+local que el número asignado a su suscripción a la versión Enterprise de Konvergo ERP.
 
 ![Mensaje de error en la base de datos debido a demasiados
 usuarios.](../_images/add-more-users.png)
@@ -71,18 +71,14 @@ la base de datos expire. El conteo regresivo se actualiza diario.
 
 Para solucionar este error puede:
 
-  * **Agregar más usuarios** a su suscripción. Haga clic en el enlace Actualice su suscripción que aparece en el mensaje para validar la cotización adicional y pagar por los usuarios adicionales.
+  * **Agregar más usuarios** a su suscripción. Haga clic en el enlace **Actualice su suscripción** que aparece en el mensaje para validar la cotización adicional y pagar por los usuarios adicionales.
 
-  * [Desactivar usuarios](../applications/general/users.html#users-deactivate) y **rechazar** la cotización adicional.
+  * [Desactivar usuarios](../applications/general/users#users-deactivate) y **rechazar** la cotización adicional.
 
-Importante
-
-Si usa un plan de suscripción mensual, la base de datos se actualizará en
-automático para reflejar los usuarios que agregó. Si contrató un plan anual o
-multianual, aparecerá un mensaje de expiración en la base de datos. Puede
-crear la cotización adicional si hace clic en ese mensaje para actualizar su
-suscripción o [enviar un ticket de soporte](https://www.odoo.com/help) para
-solucionar el problema.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Si usa un plan de suscripción mensual, la base de datos se actualizará en automático para reflejar los usuarios que agregó. Si contrató un plan anual o multianual, aparecerá un mensaje de expiración en la base de datos. Puede crear la cotización adicional si hace clic en ese mensaje para actualizar su suscripción o <a href="https://www.odoo.com/help">enviar un ticket de soporte</a> para solucionar el problema.</p>
+</div>
 
 El mensaje de expiración desaparecerá de forma automática luego de unos días
 después de que su base de datos tenga el número correcto de usuarios, cuando
@@ -101,75 +97,75 @@ de 30 días.
 
 Para solucionar este error puede:
 
-  * Haga clic en el enlace Renueve su suscripción que aparece en el mensaje y complete el proceso. Si paga mediante transferencia bancaria, su suscripción se renovará cuando recibamos el pago, eso puede tardar un par de días. Los pagos con tarjeta de crédito se procesan de inmediato.
+  * Haga clic en el enlace **Renueve su suscripción** que aparece en el mensaje y complete el proceso. Si paga mediante transferencia bancaria, su suscripción se renovará cuando recibamos el pago, eso puede tardar un par de días. Los pagos con tarjeta de crédito se procesan de inmediato.
 
   * [Envíe un ticket de soporte](https://www.odoo.com/help).
 
   * Paquete de instaladores
     * Linux
-      * [Preparar](on_premise/packages.html#prepare)
-      * [Repositorio](on_premise/packages.html#repository)
-      * [Paquete de distribución](on_premise/packages.html#distribution-package)
-    * [Windows](on_premise/packages.html#windows)
+      * [Preparar](on_premise/packages#prepare)
+      * [Repositorio](on_premise/packages#repository)
+      * [Paquete de distribución](on_premise/packages#distribution-package)
+    * [Windows](on_premise/packages#windows)
   * Instalación desde la fuente
     * Extraer los recursos
-      * [Archivar](on_premise/source.html#archive)
-      * [Git](on_premise/source.html#git)
+      * [Archivar](on_premise/source#archive)
+      * [Git](on_premise/source#git)
     * Preparar
-      * [Python](on_premise/source.html#python)
-      * [PostgreSQL](on_premise/source.html#postgresql)
-      * [Dependencias](on_premise/source.html#dependencies)
-    * [Ejecutar Odoo](on_premise/source.html#running-odoo)
+      * [Python](on_premise/source#python)
+      * [PostgreSQL](on_premise/source#postgresql)
+      * [Dependencias](on_premise/source#dependencies)
+    * [Ejecutar Konvergo ERP](on_premise/source#running-odoo)
   * Actualizaciones para solucionar bugs
-    * [Introducción](on_premise/update.html#introduction)
-    * [En resumen](on_premise/update.html#in-a-nutshell)
-    * [Paso 1: descargue una versión actualizada de Odoo](on_premise/update.html#step-1-download-an-updated-odoo-version)
-    * [Paso 2: haga un respaldo de su base de datos](on_premise/update.html#step-2-make-a-backup-of-your-database)
+    * [Introducción](on_premise/update#introduction)
+    * [En resumen](on_premise/update#in-a-nutshell)
+    * [Paso 1: descargue una versión actualizada de Konvergo ERP](on_premise/update#step-1-download-an-updated-odoo-version)
+    * [Paso 2: haga un respaldo de su base de datos](on_premise/update#step-2-make-a-backup-of-your-database)
     * Paso 3: instale la versión actualizada
-      * [Instaladores de paquete](on_premise/update.html#packaged-installers)
-      * [Instalación desde la fuente (Tarball)](on_premise/update.html#source-install-tarball)
-      * [Instalación desde la fuente (GitHub)](on_premise/update.html#source-install-github)
-      * [Docker](on_premise/update.html#docker)
+      * [Instaladores de paquete](on_premise/update#packaged-installers)
+      * [Instalación desde la fuente (Tarball)](on_premise/update#source-install-tarball)
+      * [Instalación desde la fuente (GitHub)](on_premise/update#source-install-github)
+      * [Docker](on_premise/update#docker)
   * Configuración del sistema
     * dbfilter
-      * [Ejemplos de configuración](on_premise/deploy.html#configuration-samples)
+      * [Ejemplos de configuración](on_premise/deploy#configuration-samples)
     * PostgreSQL
-      * [Ejemplo de configuración](on_premise/deploy.html#configuration-sample)
-      * Configurar Odoo
-        * [Ejemplo de configuración](on_premise/deploy.html#id3)
-      * [SSL entre Odoo y PostgreSQL](on_premise/deploy.html#ssl-between-odoo-and-postgresql)
+      * [Ejemplo de configuración](on_premise/deploy#configuration-sample)
+      * Configurar Konvergo ERP
+        * [Ejemplo de configuración](on_premise/deploy#id3)
+      * [SSL entre Konvergo ERP y PostgreSQL](on_premise/deploy#ssl-between-odoo-and-postgresql)
     * Servidor incorporado
-      * [Cálculo del número de workers](on_premise/deploy.html#worker-number-calculation)
-      * [Cálculo del tamaño de la memoria](on_premise/deploy.html#memory-size-calculation)
-      * [Chat en vivo](on_premise/deploy.html#livechat)
-      * [Ejemplo de configuración](on_premise/deploy.html#id5)
+      * [Cálculo del número de workers](on_premise/deploy#worker-number-calculation)
+      * [Cálculo del tamaño de la memoria](on_premise/deploy#memory-size-calculation)
+      * [Chat en vivo](on_premise/deploy#livechat)
+      * [Ejemplo de configuración](on_premise/deploy#id5)
     * HTTPS
-      * [Ejemplo de configuración](on_premise/deploy.html#id7)
-      * [Reforzamiento de HTTPS](on_premise/deploy.html#https-hardening)
-    * Odoo como una aplicación WSGI
-      * [Workers de cron](on_premise/deploy.html#cron-workers)
-      * [Chat en vivo](on_premise/deploy.html#id8)
+      * [Ejemplo de configuración](on_premise/deploy#id7)
+      * [Reforzamiento de HTTPS](on_premise/deploy#https-hardening)
+    * Konvergo ERP como una aplicación WSGI
+      * [Workers de cron](on_premise/deploy#cron-workers)
+      * [Chat en vivo](on_premise/deploy#id8)
     * Gestión de archivos y archivos adjuntos estáticos
-      * [Gestión de archivos estáticos](on_premise/deploy.html#serving-static-files)
-      * [Alojamiento de adjuntos](on_premise/deploy.html#serving-attachments)
+      * [Gestión de archivos estáticos](on_premise/deploy#serving-static-files)
+      * [Alojamiento de adjuntos](on_premise/deploy#serving-attachments)
     * Seguridad
-      * [Bloquear ataques de fuerza bruta](on_premise/deploy.html#blocking-brute-force-attacks)
-      * [Seguridad del gestor de la base de datos](on_premise/deploy.html#database-manager-security)
+      * [Bloquear ataques de fuerza bruta](on_premise/deploy#blocking-brute-force-attacks)
+      * [Seguridad del gestor de la base de datos](on_premise/deploy#database-manager-security)
       * Restablecer la contraseña maestra
-        * [Ubicar el archivo de configuración](on_premise/deploy.html#locate-configuration-file)
-        * [Cambiar la contraseña anterior](on_premise/deploy.html#change-old-password)
-        * [Reiniciar el servidor de Odoo](on_premise/deploy.html#restart-odoo-server)
-        * [Usar la interfaz web para volver a encriptar la contraseña](on_premise/deploy.html#use-web-interface-to-re-encrypt-password)
-    * [Navegadores compatibles](on_premise/deploy.html#supported-browsers)
+        * [Ubicar el archivo de configuración](on_premise/deploy#locate-configuration-file)
+        * [Cambiar la contraseña anterior](on_premise/deploy#change-old-password)
+        * [Reiniciar el servidor de Konvergo ERP](on_premise/deploy#restart-odoo-server)
+        * [Usar la interfaz web para volver a encriptar la contraseña](on_premise/deploy#use-web-interface-to-re-encrypt-password)
+    * [Navegadores compatibles](on_premise/deploy#supported-browsers)
   * Puerta de enlace del correo electrónico
-    * [Prerrequisitos](on_premise/email_gateway.html#prerequisites)
-    * [Para Postfix](on_premise/email_gateway.html#for-postfix)
-    * [Para Exim](on_premise/email_gateway.html#for-exim)
+    * [Prerrequisitos](on_premise/email_gateway#prerequisites)
+    * [Para Postfix](on_premise/email_gateway#for-postfix)
+    * [Para Exim](on_premise/email_gateway#for-exim)
   * IP de localización
-    * [Instalación](on_premise/geo_ip.html#installation)
-    * [Cómo probar la geolocalización GeoIP en su sitio web de Odoo](on_premise/geo_ip.html#how-to-test-geoip-geolocation-in-your-odoo-website)
+    * [Instalación](on_premise/geo_ip#installation)
+    * [Cómo probar la geolocalización GeoIP en su sitio web de Konvergo ERP](on_premise/geo_ip#how-to-test-geoip-geolocation-in-your-odoo-website)
   * Cambiar de Community a Enterprise
-    * [En Linux, mediante un instalador](on_premise/community_to_enterprise.html#on-linux-using-an-installer)
-    * [En Linux, usando el código fuente](on_premise/community_to_enterprise.html#on-linux-using-the-source-code)
-    * [En Windows](on_premise/community_to_enterprise.html#on-windows)
+    * [En Linux, mediante un instalador](on_premise/community_to_enterprise#on-linux-using-an-installer)
+    * [En Linux, usando el código fuente](on_premise/community_to_enterprise#on-linux-using-the-source-code)
+    * [En Windows](on_premise/community_to_enterprise#on-windows)
 

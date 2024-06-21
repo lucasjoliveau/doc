@@ -1,4 +1,4 @@
 # Advanced
 
-  * [Campaign metrics](advanced/understanding_metrics.html)
+  * [Campaign metrics](advanced/understanding_metrics)
 

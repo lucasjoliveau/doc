@@ -1,6 +1,6 @@
-# ¿Cómo obtener las credenciales de DHL para la integración con Odoo?
+# ¿Cómo obtener las credenciales de DHL para la integración con Konvergo ERP?
 
-Para utilizar la API de DHL para Odoo, necesitará:
+Para utilizar la API de DHL para Konvergo ERP, necesitará:
 
   * Un identificador para el sitio de DHL
 

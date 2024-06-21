@@ -7,8 +7,8 @@ plus efficace.
 
 ## Configuration
 
-Go to the [application settings](../configuration.html#configuration-
-settings), scroll down to the Payment Terminals section, and tick your
+Go to the [application settings](../configuration#configuration-
+settings), scroll down to the **Payment Terminals** section, and tick your
 terminal’s checkbox.
 
 ![case à cocher dans les paramètres permettant d'activer un terminal de
@@ -17,25 +17,25 @@ paiement](../../../../_images/settings-pt.png)
 Consultez ensuite la documentation correspondante pour configurer votre
 appareil :
 
-  * [configuration Adyen](terminals/adyen.html)
+  * [configuration Adyen](terminals/adyen)
 
-  * [configuration Ingenico](terminals/ingenico.html)
+  * [configuration Ingenico](terminals/ingenico)
 
-  * [configuration SIX](terminals/six.html)
+  * [configuration SIX](terminals/six)
 
-  * [configuration Stripe](terminals/stripe.html)
+  * [configuration Stripe](terminals/stripe)
 
-  * [configuration Vantiv](terminals/vantiv.html)
+  * [configuration Vantiv](terminals/vantiv)
 
-  * [configuration Worldline](terminals/worldline.html)
+  * [configuration Worldline](terminals/worldline)
 
 Une fois que le terminal est configuré, vous pouvez [créer le mode de paiement
-correspondant et l’ajouter au point de vente](../payment_methods.html).
+correspondant et l’ajouter au point de vente](../payment_methods).
 
-  * [Adyen](terminals/adyen.html)
-  * [Ingenico](terminals/ingenico.html)
-  * [SIX](terminals/six.html)
-  * [Stripe](terminals/stripe.html)
-  * [Vantiv](terminals/vantiv.html)
-  * [Worldline](terminals/worldline.html)
+  * [Adyen](terminals/adyen)
+  * [Ingenico](terminals/ingenico)
+  * [SIX](terminals/six)
+  * [Stripe](terminals/stripe)
+  * [Vantiv](terminals/vantiv)
+  * [Worldline](terminals/worldline)
 

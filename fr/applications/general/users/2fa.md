@@ -14,10 +14,10 @@ difficile que simplement l’un ou l’autre.
 
 ## Exigences
 
-Note
-
-Ces listes ne sont que des exemples et ne constituent pas une recommandation
-d’un logiciel spécifique.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Ces listes ne sont que des exemples et ne constituent pas une recommandation d’un logiciel spécifique.</p>
+</div>
 
 Si vous n’en avez pas déjà un, vous devrez choisir un authenticator.
 
@@ -38,13 +38,14 @@ parce qu’il est meilleur, mais parce qu’il est assez courant).
 
 ## Configuration de l’authentification à deux facteurs
 
-Une fois que vous avez votre authenticator de choix, accédez à l’instance Odoo
-que vous souhaitez configurer 2FA, puis ouvrez Préférences (ou Mon profil):
+Une fois que vous avez votre authenticator de choix, accédez à l’instance Konvergo ERP
+que vous souhaitez configurer 2FA, puis ouvrez **Préférences** (ou **Mon
+profil**):
 
 ![../../../_images/preferences.png](../../../_images/preferences.png)
 
-Ouvrez l’onglet Sécurité du compte, puis cliquez sur le bouton Activer
-l’authentification à deux facteurs:
+Ouvrez l’onglet **Sécurité du compte** , puis cliquez sur le bouton **Activer
+l’authentification à deux facteurs** :
 
 ![../../../_images/sec_tab.png](../../../_images/sec_tab.png)
 
@@ -63,16 +64,16 @@ de toute la configuration :
 
 ![../../../_images/scan_barcode.jpg](../../../_images/scan_barcode.jpg)
 
-Note
-
-Si vous ne pouvez pas scanner l’écran (par exemple, parce que vous effectuez
-cette configuration sur le même téléphone que l’application de
-l’authenticator), vous pouvez cliquer sur le lien fourni ou copier le code
-secret pour configurer manuellement votre authenticator :
-
-![../../../_images/secret_visible.png](../../../_images/secret_visible.png)
-
-![../../../_images/input_secret.png](../../../_images/input_secret.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Si vous ne pouvez pas scanner l’écran (par exemple, parce que vous effectuez cette configuration sur le même téléphone que l’application de l’authenticator), vous pouvez cliquer sur le lien fourni ou copier le code secret pour configurer manuellement votre authenticator :</p>
+<div class="figure align-center">
+<img alt="../../../_images/secret_visible.png" src="../../../_images/secret_visible.png"/>
+</div>
+<div class="figure align-center">
+<img alt="../../../_images/input_secret.png" src="../../../_images/input_secret.png"/>
+</div>
+</div>
 
 Une fois cela fait, l’authenticator doit afficher un _code de vérification_
 avec quelques informations d’identification utiles (par exemple, le domaine et
@@ -80,8 +81,8 @@ la connexion dont le code est) :
 
 ![../../../_images/authenticator.png](../../../_images/authenticator.png)
 
-Vous pouvez maintenant saisir le code dans le champ Code de vérification, puis
-cliquer sur le bouton Activer l’authentification à deux facteurs.
+Vous pouvez maintenant saisir le code dans le champ **Code de vérification** ,
+puis cliquer sur le bouton **Activer l’authentification à deux facteurs**.
 
 Félicitations, votre compte est maintenant protégé par une authentification à
 deux facteurs !
@@ -90,11 +91,11 @@ deux facteurs !
 
 ## Se connecter
 
-Vous devez maintenant vous déconnecter pour poursuivre.
+Vous devez maintenant vous **déconnecter** pour poursuivre.
 
 Sur la page de connexion, saisissez le nom d’utilisateur et le mot de passe du
 compte pour lequel vous avez configuré la 2FA, plutôt que d’entrer
-immédiatement dans Odoo, vous obtiendrez maintenant un deuxième écran de
+immédiatement dans Konvergo ERP, vous obtiendrez maintenant un deuxième écran de
 connexion :
 
 ![../../../_images/2fa_input.png](../../../_images/2fa_input.png)
@@ -106,10 +107,10 @@ Et voilà. À partir de maintenant, à moins que vous ne désactiviez 2FA, vous
 aurez un processus de connexion en deux étapes plutôt que l’ancien processus
 en une étape.
 
-Danger
-
-Ne perdez pas votre authenticator, si cela devait se produire, il faudra qu’un
-_administrateur Odoo_ désactive 2FA sur le compte.
+<div class="alert alert-danger">
+<p class="alert-title">
+Danger</p><p>Ne perdez pas votre authenticator, si cela devait se produire, il faudra qu’un <em>administrateur Konvergo ERP</em> désactive <abbr title="authentification à deux facteurs">2FA</abbr> sur le compte.</p>
+</div>
 
   *[2FA]: authentification à deux facteurs
 

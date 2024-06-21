@@ -1,6 +1,6 @@
-# Comment obtenir des identifiants DHL pour l’intégration avec Odoo ?
+# Comment obtenir des identifiants DHL pour l’intégration avec Konvergo ERP ?
 
-Pour utiliser l’API Odoo DHL, vous aurez besoin de :
+Pour utiliser l’API Konvergo ERP DHL, vous aurez besoin de :
 
   * Un identifiant ID du site DHL.com
 

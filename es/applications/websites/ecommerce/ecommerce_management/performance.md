@@ -1,6 +1,6 @@
 # Control del rendimiento
 
-Odoo integra una variedad de herramientas para analizar y mejorar el
+Konvergo ERP integra una variedad de herramientas para analizar y mejorar el
 rendimiento de su comercio electrónico.
 
 ## Control de datos
@@ -14,27 +14,27 @@ categoría, día, etc.
 ![Reportes de rendimiento del comercio
 electrónico](../../../../_images/reporting.png)
 
-Para seleccionar el tipo de medida utilizada haga clic en Medidas, tendrá las
-siguientes opciones:
+Para seleccionar el tipo de medida utilizada haga clic en **Medidas** , tendrá
+las siguientes opciones:
 
-  * Margen;
+  * **Margen** ;
 
-  * Cantidad facturada;
+  * **Cantidad facturada** ;
 
-  * Total sin impuestos;
+  * **Total sin impuestos** ;
 
-  * Volumen;
+  * **Volumen** ;
 
   * …
 
 Otras opciones incluyen **varios tipos de vistas** (Gantt, tablas dinámicas,
-entre otras), **comparación por periodos o años** , o directamente insertar en
-hoja de cálculo, etc.
+entre otras), **comparación por periodos o años** , o directamente **insertar
+en hoja de cálculo** , etc.
 
 ## Analítica
 
-Puede vincular su sitio web de Odoo con
-[Plausible.io](../../website/reporting/analytics.html#analytics-plausible) y
-[Google Analytics](../../website/reporting/analytics.html#analytics-google-
+Puede vincular su sitio web de Konvergo ERP con
+[Plausible.io](../../website/reporting/analytics#analytics-plausible) y
+[Google Analytics](../../website/reporting/analytics#analytics-google-
 analytics).
 

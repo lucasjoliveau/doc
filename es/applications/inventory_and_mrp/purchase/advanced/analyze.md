@@ -14,7 +14,7 @@ real. De forma predeterminada, el tablero de reportes muestra un gráfico de
 líneas que presenta la cantidad sin impuestos de sus órdenes de compra por
 día, y en la parte inferior, las métricas principales y una tabla dinámica.
 
-![Tablero de reportes en Compras de Odoo ](../../../../_images/analyze-
+![Tablero de reportes en Compras de Konvergo ERP ](../../../../_images/analyze-
 reporting-dashboard.png)
 
 Aunque los datos presentados al principio son útiles, hay varias herramientas
@@ -23,8 +23,8 @@ compras.
 
 ### Uso de filtros para seleccionar los datos necesarios
 
-Odoo cuenta con varios filtros predeterminados que puede usar y combinar al
-hacer clic en _Filtros_. Cuando se selecciona algún filtro, Odoo busca todas
+Konvergo ERP cuenta con varios filtros predeterminados que puede usar y combinar al
+hacer clic en _Filtros_. Cuando se selecciona algún filtro, Konvergo ERP busca todas
 las órdenes que coincidan con al menos un filtro seleccionado y completa el
 gráfico, las métricas principales y la tabla dinámica con los datos. Los
 filtros preconfigurados son:
@@ -39,20 +39,14 @@ filtros preconfigurados son:
 
   5. La _fecha de confirmación_ incluye todas las órdenes confirmadas, incluso las canceladas, dependiendo de su fecha de confirmación
 
-Nota
-
-Cuando tenga que seleccionar un periodo, puede elegir varios años y, si
-selecciona al menos un año, también puede elegir varios trimestres y los
-últimos tres meses del periodo.
-
-Truco
-
-Si utiliza los filtros _Fecha de la orden_ o _Fecha de confirmación_ , la
-función _Comparación_ aparece junto a _Filtros_. Le permite comparar el
-periodo filtrado con el anterior.
-
-![Filtros de reporte en Compras de Odoo ](../../../../_images/analyze-
-filters.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Cuando tenga que seleccionar un periodo, puede elegir varios años y, si selecciona al menos un año, también puede elegir varios trimestres y los últimos tres meses del periodo.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Si utiliza los filtros <em>Fecha de la orden</em> o <em>Fecha de confirmación</em>, la función <em>Comparación</em> aparece junto a <em>Filtros</em>. Le permite comparar el periodo filtrado con el anterior.</p>
+</div> ![Filtros de reporte en Compras de
+Konvergo ERP ](../../../../_images/analyze-filters.png)
 
 #### Añadir filtros personalizados
 
@@ -66,16 +60,11 @@ personalizado. Si desea utilizar el operador _o_ , no haga clic en _Aplicar_ ,
 y en su lugar haga clic en _Añadir una condición_. Una vez que haya incluido
 todas las opciones de filtrado deseadas, haga clic en _Aplicar_.
 
-![Filtros de reportes personalizados en Compras de Odoo
-](../../../../_images/analyze-custom-filter.png)
-
-Truco
-
-Para evitar tener que volver a crear los filtros personalizados en cada
-ocasión, guárdelos haciendo clic en Favoritos ‣ Guardar la búsqueda actual ‣
-Guardar. A continuación, se puede acceder al filtro de búsqueda personalizado
-haciendo clic en _Favoritos_ o incluso se puede establecer como filtro
-predeterminado al acceder al tablero de reportes.
+![Filtros de reportes personalizados en Compras de Konvergo ERP
+](../../../../_images/analyze-custom-filter.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Para evitar tener que volver a crear los filtros personalizados en cada ocasión, guárdelos haciendo clic en Favoritos ‣ Guardar la búsqueda actual ‣ Guardar. A continuación, se puede acceder al filtro de búsqueda personalizado haciendo clic en <em>Favoritos</em> o incluso se puede establecer como filtro predeterminado al acceder al tablero de reportes.</p>
+</div>
 
 ### Seleccionar las medidas deseadas
 
@@ -86,7 +75,7 @@ aplicarán las medidas que seleccione a ambas vistas. Puede acceder a cada
 vista por separado haciendo clic en los iconos de la parte superior derecha
 del tablero.
 
-![Cambiar la vista de reportes en Compras de Odoo
+![Cambiar la vista de reportes en Compras de Konvergo ERP
 ](../../../../_images/analyze-switch-view.png)
 
 #### Visualizar datos
@@ -97,7 +86,7 @@ diferentes, solo puede utilizar una a la vez. En cambio, puede agrupar la
 medida utilizando uno o varios de los 19 _Grupos_.
 
 ![Vista de gráfico de reportes en la aplicación Compras de
-Odoo.](../../../../_images/analyze-graph-view.png)
+Konvergo ERP.](../../../../_images/analyze-graph-view.png)
 
 En el caso de los gráficos de barras y líneas, la medida seleccionada es el
 eje Y, y el primer grupo que seleccione se utilizará para crear el eje X. Si
@@ -116,11 +105,9 @@ cada una en una nueva columna. Si hace clic en el botón _+_ ubicado en la fila
 de _Total_ , podrá agregar _Grupos_. Si hace clic en el botón _+_ de un grupo,
 podrá añadir un subgrupo y así sucesivamente.
 
-![Vista de tabla dinámica en Compras de Odoo ](../../../../_images/analyze-
-pivot-view.png)
-
-Truco
-
-Puede insertar su tabla dinámica directamente en la aplicación Hoja de cálculo
-o exportarla como archivo de Excel.
+![Vista de tabla dinámica en Compras de Konvergo ERP ](../../../../_images/analyze-
+pivot-view.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Puede insertar su tabla dinámica directamente en la aplicación Hoja de cálculo o exportarla como archivo de Excel.</p>
+</div>
 

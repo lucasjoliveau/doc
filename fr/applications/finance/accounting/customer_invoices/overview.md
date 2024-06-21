@@ -1,7 +1,7 @@
 # Processus de facturation
 
 En fonction de vos activités et des applications que vous utilisez, il existe
-différentes façons d’automatiser la création des factures clients dans Odoo.
+différentes façons d’automatiser la création des factures clients dans Konvergo ERP.
 En général, les factures brouillon sont créées par le système (en prenant des
 informations d’autres documents tels que les commandes clients ou les
 contrats) et le comptable n’a plus qu’à valider les factures brouillon et
@@ -36,9 +36,12 @@ pourcentage (acompte), facturer certaines lignes, facturer un acompte fixe.
 
 Ce processus convient aussi bien aux services qu’aux produits physiques.
 
-Pour plus d'infos
-
-  * [Factures pro forma](../../../sales/sales/invoicing/proforma.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../../../sales/sales/invoicing/proforma">Factures pro forma</a></p></li>
+</ul>
+</div>
 
 ### Commande client ‣ Bon de livraison ‣ Facture
 
@@ -53,15 +56,18 @@ que vous avez réellement livré. Si vous effectuez des reliquats (livraison
 partielle et le reste plus tard), le client recevra deux factures, une pour
 chaque bon de livraison.
 
-Pour plus d'infos
-
-  * [Facturation basée sur les quantités livrées ou commandées](../../../sales/sales/invoicing/invoicing_policy.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../../../sales/sales/invoicing/invoicing_policy">Facturation basée sur les quantités livrées ou commandées</a></p></li>
+</ul>
+</div>
 
 ### Commande eCommerce ‣ Facture
 
 Une commande d’eCommerce générera également la création de la commande
 lorsqu’elle est intégralement payée. Si vous autorisez le paiement des
-commandes par chèque ou par virement bancaire, Odoo crée uniquement une
+commandes par chèque ou par virement bancaire, Konvergo ERP crée uniquement une
 commande et la facture sera générée après la réception du paiement.
 
 ## Contrats
@@ -89,13 +95,14 @@ la plupart du temps sur la base du temps et du matériel. Quant aux entreprises
 de services qui facturent un prix fixe, elles utilisent plutôt une commande
 régulière.
 
-Pour plus d'infos
-
-  * [Facturation basée sur le temps et les matériaux](../../../sales/sales/invoicing/time_materials.html)
-
-  * [Refacturer des notes de frais aux clients](../../../sales/sales/invoicing/expense.html)
-
-  * [Facturer les jalons d’un projet](../../../sales/sales/invoicing/milestone.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../../../sales/sales/invoicing/time_materials">Facturation basée sur le temps et les matériaux</a></p></li>
+<li><p><a href="../../../sales/sales/invoicing/expense">Refacturer des notes de frais aux clients</a></p></li>
+<li><p><a href="../../../sales/sales/invoicing/milestone">Facturer les jalons d’un projet</a></p></li>
+</ul>
+</div>
 
 ### Contrats récurrents ‣ Factures
 
@@ -103,9 +110,12 @@ Pour les abonnements, une facture est émise périodiquement et automatiquement.
 La fréquence de la facturation et les services/produits facturés sont définis
 dans le contrat.
 
-Pour plus d'infos
-
-  * [Abonnements](../../../sales/subscriptions.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../../../sales/subscriptions">Abonnements</a></p></li>
+</ul>
+</div>
 
 ## Autres
 
@@ -159,12 +169,15 @@ La **numérisation des factures** consiste à encoder automatiquement des
 factures papier traditionnelles dans les formulaires de factures de votre
 comptabilité.
 
-Odoo utilise les technologies OCR et d’intelligence artificielle pour
+Konvergo ERP utilise les technologies OCR et d’intelligence artificielle pour
 reconnaître le contenu des documents. Les factures fournisseurs et les
 factures clients sont créées automatiquement et remplies sur la base des
 factures numérisées.
 
-Pour plus d'infos
-
-  * [Numérisation de documents assistée par IA](../vendor_bills/invoice_digitization.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../vendor_bills/invoice_digitization">Numérisation de documents assistée par IA</a></p></li>
+</ul>
+</div>
 

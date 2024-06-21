@@ -2,8 +2,8 @@
 
 ## Vue d’ensemble
 
-Odoo peut gérer plusieurs modes de livraison, y compris des expéditeurs
-externes. Odoo sera lié au système de suivi de la société de transport.
+Konvergo ERP peut gérer plusieurs modes de livraison, y compris des expéditeurs
+externes. Konvergo ERP sera lié au système de suivi de la société de transport.
 
 Il vous permet de gérer la société de transport, les prix réels et la
 destination.
@@ -32,10 +32,11 @@ transporteur que vous voulez utiliser. Confirmez-le en cliquant sur le bouton
 nouvelle étiquette.
 
 ![../../../../../_images/cancel03.png](../../../../../_images/cancel03.png)
-
-Pour plus d'infos
-
-  * [Shipping cost invoicing](invoicing.html)
-
-  * [Expédition de plusieurs colis](multipack.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="invoicing">Shipping cost invoicing</a></p></li>
+<li><p><a href="multipack">Expédition de plusieurs colis</a></p></li>
+</ul>
+</div>
 

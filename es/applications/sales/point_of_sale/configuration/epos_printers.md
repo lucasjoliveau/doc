@@ -5,26 +5,26 @@ sistemas de Punto de venta. Una vez que estos dispositivos están conectados se
 encargan de compartir información en automático y podrá imprimir los recibos
 de su sistema PdV con la impresora ePOS.
 
-Importante
-
-  * Las impresoras Epson que usan conexión Wi-Fi o Ethernet y que siguen el [protocolo EPOS SDK JavaScript](https://download4.epson.biz/sec_pubs/pos/reference_en/technology/epson_epos_sdk.html) son compatibles con Odoo **sin** necesidad de una [caja IoT](../../../general/iot/devices/printer.html).
-
-  * Las impresoras térmicas que utilizan el protocolo ESC/POS o StarPRNT son compatibles **con** una [caja IoT](../../../general/iot/devices/printer.html).
-
-  * Las impresoras Epson que solo usan conexión USB son compatibles **con** una [caja IoT](../../../general/iot/devices/printer.html).
-
-  * Las impresoras Epson que se conectan a través de Bluetooth **no son compatibles**.
-
-Ver también
-
-  * [Conexión segura (HTTPS)](https.html)
-
-  * [Certificado autofirmado para impresoras electrónicas del PdV](epos_ssc.html)
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><ul>
+<li><p>Las impresoras Epson que usan conexión Wi-Fi o Ethernet y que siguen el <a href="https://download4.epson.biz/sec_pubs/pos/reference_en/technology/epson_epos_sdk">protocolo EPOS SDK JavaScript</a> son compatibles con Konvergo ERP <b>sin</b> necesidad de una <a href="../../../general/iot/devices/printer">caja IoT</a>.</p></li>
+<li><p>Las impresoras térmicas que utilizan el protocolo ESC/POS o StarPRNT son compatibles <b>con</b> una <a href="../../../general/iot/devices/printer">caja IoT</a>.</p></li>
+<li><p>Las impresoras Epson que solo usan conexión USB son compatibles <b>con</b> una <a href="../../../general/iot/devices/printer">caja IoT</a>.</p></li>
+<li><p>Las impresoras Epson que se conectan a través de Bluetooth <b>no son compatibles</b>.</p></li>
+</ul>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="https">Conexión segura (HTTPS)</a></p></li>
+<li><p><a href="epos_ssc">Certificado autofirmado para impresoras electrónicas del PdV</a></p></li>
+</ul>
+</div>
 
 ## Impresoras ePos compatibles
 
-Las siguientes impresoras ePOS son compatibles con Odoo sin tener que usar una
-[caja IoT](../../../general/iot/devices/printer.html).
+Las siguientes impresoras ePOS son compatibles con Konvergo ERP sin tener que usar una
+[caja IoT](../../../general/iot/devices/printer).
 
   * Epson TM-m30 i/ii/iii (solo los modelos Wi-Fi y Ethernet, estos son los más recomendados)
 
@@ -59,7 +59,7 @@ Las siguientes impresoras ePOS son compatibles con Odoo sin tener que usar una
 ## Impresoras ePOS con integración a la caja IoT
 
 Las siguientes impresoras necesitan una [caja
-IoT](../../../general/iot/devices/printer.html) para ser compatibles con Odoo:
+IoT](../../../general/iot/devices/printer) para ser compatibles con Konvergo ERP:
 
   * La familia de impresoras Epson TM-T20 (el software ePOS es incompatible)
 

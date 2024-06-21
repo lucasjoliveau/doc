@@ -21,7 +21,7 @@ cliquez sur _Créer_.
 Définissez ici la _Précision d’arrondi_ , la _Stratégie d’arrondi_ et la
 _Méthode d’arrondi_.
 
-Odoo prend en charge deux **stratégies d’arrondi** :
+Konvergo ERP prend en charge deux **stratégies d’arrondi** :
 
   1. **Ajouter une ligne d’arrondi** : une ligne d” _arrondi_ est ajoutée à la facture. Vous devez définir quel compte enregistre les arrondis des paiements en espèces.
 

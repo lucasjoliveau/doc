@@ -1,6 +1,6 @@
-# Comment obtenir des identifiants UPS pour l’intégration avec Odoo ?
+# Comment obtenir des identifiants UPS pour l’intégration avec Konvergo ERP ?
 
-Pour utiliser l’API Odoo UPS, vous aurez besoin de :
+Pour utiliser l’API Konvergo ERP UPS, vous aurez besoin de :
 
   * Un ID utilisateur et un mot de passe UPS.com
 
@@ -20,7 +20,7 @@ le service clientèle d’UPS afin d’ouvrir un compte.
 
 Vous trouverez plus d’informations sur l’ouverture d’un compte UPS sur leur
 site web, sur la page [Comment ouvrir un compte UPS en
-ligne](https://www.ups.com/content/us/en/resources/sri/openaccountonline.html?srch_pos=2&srch_phr=open+ups+account)
+ligne](https://www.ups.com/content/us/en/resources/sri/openaccountonline?srch_pos=2&srch_phr=open+ups+account)
 
 Si vous n’avez pas encore de compte UPS, vous pouvez en créer un avec votre
 profil en ligne en suivant les étapes suivantes :

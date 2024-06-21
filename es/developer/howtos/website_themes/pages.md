@@ -4,7 +4,7 @@ In this chapter, you will learn how to declare static pages.
 
 ## Default pages
 
-In Odoo, websites come with a few default static pages (Home, Contact us, 404,
+In Konvergo ERP, websites come with a few default static pages (Home, Contact us, 404,
 …). They are built the following way.
 
     
@@ -99,11 +99,13 @@ Alternatively, replace the default content of these pages using XPath.
     </template>
     
 
-Ver también
-
-  * [Odoo eLearning: Search Engine Optimization (SEO)](https://www.odoo.com/slides/slide/search-engine-optimization-seo-648)
-
-  * [Odoo Documentation on SEO](../../../applications/websites/website/pages/seo.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="https://www.odoo.com/slides/slide/search-engine-optimization-seo-648">Konvergo ERP eLearning: Search Engine Optimization (SEO)</a></p></li>
+<li><p><a href="../../../applications/websites/website/pages/seo">Konvergo ERP Documentation on SEO</a></p></li>
+</ul>
+</div>
 
 ## Theme pages
 
@@ -147,7 +149,7 @@ url | URL where the page is reachable.
 type | View type  
 arch | View architecture  
   
-With `<t t-call="website.layout">` you use the Odoo default page layout with
+With `<t t-call="website.layout">` you use the Konvergo ERP default page layout with
 your code.
 
 ### Header overlay
@@ -217,11 +219,11 @@ Use as a regular image with a color filter.
         data-filter-options="{'filterColor': 'rgba(0, 0, 0, 0.5)'}"/>
     
 
-Truco
-
-The image size greatly influences the user experience, search engine
-optimization, and overall website performance. So, be sure to size your images
-correctly.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>The image size greatly influences the user experience, search engine optimization, and overall
+website performance. So, be sure to size your images correctly.</p>
+</div>
 
 ### Videos
 
@@ -269,9 +271,10 @@ tag for brevity, but using a `<span>` is more semantically correct.
     <span class="fa fa-picture-o"/>
     
 
-Ver también
-
-[Font Awesome v4 icons](https://fontawesome.com/v4/icons/)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="https://fontawesome.com/v4/icons/">Font Awesome v4 icons</a></p>
+</div>
 
 Enable the Website Builder style options.
 

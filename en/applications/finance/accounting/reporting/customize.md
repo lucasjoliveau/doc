@@ -1,14 +1,15 @@
 # Custom reports
 
-Odoo comes with a powerful and easy-to-use reporting framework. The engine
+Konvergo ERP comes with a powerful and easy-to-use reporting framework. The engine
 allows you to create new reports, such as **tax reports** , or **balance
 sheets** and **income statements** with **specific groupings** and
 **layouts**.
 
-Important
-
-Activate the [developer mode](../../../general/developer_mode.html#developer-
-mode) to access the accounting report creation interface.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Activate the <a href="../../../general/developer_mode#developer-mode"><span class="std std-ref">developer mode</span></a> to access the accounting report creation
+interface.</p>
+</div>
 
 To create a new report, go to Accounting ‣ Configuration ‣ Management:
 Accounting Reports. From here, you can either create a root report or a
@@ -23,47 +24,48 @@ Root reports can be regarded as generic, neutral accounting reports. They
 serve as models on which local accounting versions are built. If a report has
 no root report, it is considered to be a root report itself.
 
-Example
-
-A tax report for Belgium and the US would both use the same generic version as
-a base and adapt it for their domestic regulations.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>A tax report for Belgium and the US would both use the same generic version as a base and adapt
+it for their domestic regulations.</p>
+</div>
 
 When creating a new root report, you need to create a **menu item** for it. To
 do so, open the report and then, on that same report, click on Action ‣ Create
 Menu Item. Refresh the page; the report is now available under Accounting ‣
 Reporting.
 
-Note
-
-Cases that require creating a new root report are rare, such as when a
-country’s tax authorities require a new and specific type of report.
-
-![Create Menu Item button.](../../../../_images/engine-create-menu-item.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Cases that require creating a new root report are rare, such as when a country’s tax authorities
+require a new and specific type of report.</p>
+</div> ![Create Menu Item button.](../../../../_images/engine-
+create-menu-item.png)
 
 ## Variants
 
 Variants are country-specific versions of root reports and, therefore, always
 refer to a root report. To create a variant, select a generic (root) report in
-the Root Report field when creating a new report.
+the **Root Report** field when creating a new report.
 
 When a root report is opened from one of the accounting app’s main menus, all
 its variants are displayed in the variant selector in the top right corner of
 the view.
 
-Example
-
-In the following image, VAT Report (BE) is the variant of the root Generic Tax
-report.
-
-![Report variant selection.](../../../../_images/engine-variant.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>In the following image, <b>VAT Report (BE)</b> is the variant of the root <b>Generic
+Tax report</b>.</p>
+<img alt="Report variant selection." class="align-center" src="../../../../_images/engine-variant.png"/>
+</div>
 
 ## Lines
 
 After having created a report (either root or variant), you need to fill it
-with lines. You can either create a new one by clicking on Add a line, or
-modify an existing line by clicking on it. All lines _require_ a Name, and can
-have an optional additional Code (of your choice) if you wish to use their
-value in formulas.
+with lines. You can either create a new one by clicking on **Add a line** , or
+modify an existing line by clicking on it. All lines _require_ a **Name** ,
+and can have an optional additional **Code** (of your choice) if you wish to
+use their value in formulas.
 
 ![Engine lines options.](../../../../_images/engine-lines-options.png)
 
@@ -71,23 +73,24 @@ value in formulas.
 
 Each line can contain one or multiple **expressions**. Expressions can be seen
 as **sub-variables** needed by a report line. To create an expression, click
-on Add a line _within_ a line report.
+on **Add a line** _within_ a line report.
 
-When creating an expression, you must attribute a label used to refer to that
-expression. Therefore, it has to be **unique** among the expressions of each
-line. Both a Computation Engine and a Formula must also be indicated. The
-**engine** defines how your **formula(s)** and **subformula(s)** are
-interpreted. It is possible to mix expressions using different computation
-engines under the same line if you need to.
+When creating an expression, you must attribute a **label** used to refer to
+that expression. Therefore, it has to be **unique** among the expressions of
+each line. Both a **Computation Engine** and a **Formula** must also be
+indicated. The **engine** defines how your **formula(s)** and
+**subformula(s)** are interpreted. It is possible to mix expressions using
+different computation engines under the same line if you need to.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Depending on the engine, <b>subformulas</b> may also be required.</p>
+</div>
 
-Depending on the engine, subformulas may also be required.
+### ‘Konvergo ERP Domain’ engine
 
-### ‘Odoo Domain’ engine
-
-With this engine, a formula is interpreted as an [Odoo
-domain](../../../../developer/reference/backend/orm.html#reference-orm-
+With this engine, a formula is interpreted as an [Konvergo ERP
+domain](../../../../developer/reference/backend/orm#reference-orm-
 domains) targeting `account.move.line` objects.
 
 The subformula allows you to define how the move lines matching the domain are
@@ -137,12 +140,12 @@ When evaluating the expression, the expression computation can roughly be
 expressed as: **(amount of the move lines with** `+` **tag)** `-` **(amount of
 the move lines with** `-` **tag)**.
 
-Example
-
-If the formula is `tag_name`, the engine matches tax tags `+tag_name` and
-`-tag_name`, creating them if necessary. To exemplify further: two tags are
-matched by the formula. If the formula is `A`, it will require (and create, if
-needed) tags `+A` and `-A`.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>If the formula is <code>tag_name</code>, the engine matches tax tags <code>+tag_name</code> and <code>-tag_name</code>, creating
+them if necessary. To exemplify further: two tags are matched by the formula. If the formula
+is <code>A</code>, it will require (and create, if needed) tags <code>+A</code> and <code>-A</code>.</p>
+</div>
 
 ### ‘Aggregate Other Formulas’ engine
 
@@ -204,111 +207,105 @@ another report.
 This engine is used to match amounts made on accounts using the prefixes of
 these accounts’ codes as variables in an arithmetic expression.
 
-Example
-
-`21`
-
-Arithmetic expressions can also be a single prefix, such as here.
-
-Example
-
-`21 + 10 - 5`
-
-This formula adds the balances of the move lines made on accounts whose codes
-start with `21` and `10`, and subtracts the balance of the ones on accounts
-with the prefix `5`.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="line-block">
+<div class="line"><code>21</code></div>
+<div class="line">Arithmetic expressions can also be a single prefix, such as here.</div>
+</div>
+</div> <div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="line-block">
+<div class="line"><code>21 + 10 - 5</code></div>
+<div class="line">This formula adds the balances of the move lines made on accounts whose codes start with <code>21</code>
+and <code>10</code>, and subtracts the balance of the ones on accounts with the prefix <code>5</code>.</div>
+</div>
+</div>
 
 It is also possible to ignore a selection of sub-prefixes.
 
-Example
-
-`21 + 10\(101, 102) - 5\(57)`
-
-This formula works the same way as the previous example but ignores the
-prefixes `101`, `102`, and `57`.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="line-block">
+<div class="line"><code>21 + 10\(101, 102) - 5\(57)</code></div>
+<div class="line">This formula works the same way as the previous example but ignores the prefixes <code>101</code>, <code>102</code>,
+and <code>57</code>.</div>
+</div>
+</div>
 
 You can apply ‘sub-filtering’ on **credits and debits** using the `C` and `D`
 suffixes. In this case, an account will only be considered if its prefix
 matches, _and_ if the total balance of the move lines made on this account is
 **credit/debit**.
 
-Example
-
-Account `210001` has a balance of -42 and account `210002` has a balance of
-25. The formula `21D` only matches the account `210002`, and hence returns 25.
-`210001` is not matched, as its balance is _credit_.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Account <code>210001</code> has a balance of -42 and account <code>210002</code> has a balance of 25. The formula
+<code>21D</code> only matches the account <code>210002</code>, and hence returns 25. <code>210001</code> is not matched, as its
+balance is <em>credit</em>.</p>
+</div>
 
 Prefix exclusions can be mixed with the `C` and `D` suffixes.
 
-Example
-
-`21D + 10\(101, 102)C - 5\(57)`
-
-This formula adds the balances of the move lines made on accounts whose code
-starts with `21` _if_ it is debit (`D`) and `10` _if_ it is credit (`C`), but
-ignores prefixes `101`, `102`, and subtracts the balance of the ones on
-accounts with the prefix `5`, ignoring the prefix `57`.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>A tax report for Belgium and the US would both use the same generic version as a base and adapt
+it for their domestic regulations.</p>
+</div>0
 
 To match the letter `C` or `D` in a prefix and not use it as a suffix, use an
 empty exclusion `()`.
 
-Example
-
-`21D\()`
-
-This formula matches accounts whose code starts with `21D`, regardless of
-their balance sign.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>A tax report for Belgium and the US would both use the same generic version as a base and adapt
+it for their domestic regulations.</p>
+</div>1
 
 In addition to using code prefixes to include accounts, you can also match
 them with **account tags**. This is especially useful, for example, if your
 country lacks a standardized chart of accounts, where the same prefix might be
 used for different purposes across companies.
 
-Example
-
-`tag(25)`
-
-This formula matches accounts whose associated tags contain the one with id
-_25_.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>A tax report for Belgium and the US would both use the same generic version as a base and adapt
+it for their domestic regulations.</p>
+</div>2
 
 If the tag you reference is defined in a data file, an xmlid can be used
 instead of the id.
 
-Example
-
-`tag(my_module.my_tag)`
-
-This formula matches accounts whose associated tags include the tag denoted by
-_my_module.my_tag_.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>A tax report for Belgium and the US would both use the same generic version as a base and adapt
+it for their domestic regulations.</p>
+</div>3
 
 You can also use arithmetic expressions with tags, possibly combining them
 with prefix selections.
 
-Example
-
-`tag(my_module.my_tag) + tag(42) + 10`
-
-The balances of accounts tagged as _my_module.my_tag_ will be summed with
-those of accounts linked to the tag with ID _42_ and accounts with the code
-prefix `10`
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>A tax report for Belgium and the US would both use the same generic version as a base and adapt
+it for their domestic regulations.</p>
+</div>4
 
 `C` and `D` suffixes can be used in the same way with tags.
 
-Example
-
-`tag(my_module.my_tag)C`
-
-This formula matches accounts with the tag _my_module.my_tag_ and a credit
-balance.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>A tax report for Belgium and the US would both use the same generic version as a base and adapt
+it for their domestic regulations.</p>
+</div>5
 
 Prefix exclusion also works with tags.
 
-Example
-
-`tag(my_module.my_tag)\(10)`
-
-This formula matches accounts with the tag _my_module.my_tag_ and a code not
-starting with `10`.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>A tax report for Belgium and the US would both use the same generic version as a base and adapt
+it for their domestic regulations.</p>
+</div>6
 
 ### ‘External Value’ engine
 
@@ -347,17 +344,19 @@ Replacing `X` with a number instructs to round the amount to X decimals.
 Indicates this expression can be edited manually, triggering the display of an
 icon in the report, allowing the user to perform this action.
 
-Note
-
-Manual values are created at the `date_to` currently selected in the report.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>A tax report for Belgium and the US would both use the same generic version as a base and adapt
+it for their domestic regulations.</p>
+</div>7
 
 Both subformulas can be mixed by separating them with a `;`.
 
-Example
-
-`editable;rounding=2`
-
-is a correct subformula mixing both behaviors.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>A tax report for Belgium and the US would both use the same generic version as a base and adapt
+it for their domestic regulations.</p>
+</div>8
 
 ### ‘Custom Python Function’ engine
 
@@ -371,13 +370,13 @@ custom module of your own.
 
 Reports can have an **indefinite number** of columns to display. Each column
 gets its values from the **expressions** declared on the **lines**. The field
-expression_label of the column gives the label of the expressions whose value
-is displayed. If a line has no **expression** in that field, then nothing is
-displayed for it in this column. If multiple columns are required, you must
-use different **expression** labels.
+**expression_label** of the column gives the label of the expressions whose
+value is displayed. If a line has no **expression** in that field, then
+nothing is displayed for it in this column. If multiple columns are required,
+you must use different **expression** labels.
 
 ![Columns of report.](../../../../_images/engine-columns.png)
 
-When using the **period comparison** feature found under the Options tab of an
-accounting report, all columns are repeated in and for each period.
+When using the **period comparison** feature found under the **Options** tab
+of an accounting report, all columns are repeated in and for each period.
 

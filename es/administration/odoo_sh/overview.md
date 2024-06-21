@@ -1,4 +1,4 @@
 # Información general
 
-  * [Introducción a Odoo.sh](overview/introduction.html)
+  * [Introducción a Konvergo ERP.sh](overview/introduction)
 

@@ -10,7 +10,7 @@ branches.png)
 
 ## Phases
 
-Odoo.sh propose trois différentes phases pour vos branches : production,
+Konvergo ERP.sh propose trois différentes phases pour vos branches : production,
 simulation et développement.
 
 Vous pouvez changer la phase d’une branche en la glissant et déposant sur le
@@ -36,7 +36,7 @@ l’instance sera temporairement indisponible pour des raisons de maintenance.
 
 Cette méthode est similaire à la mise à niveau du module via le menu
 Applications ou via le commutateur `-u` de [la ligne de
-commande](../../../developer/reference/cli.html).
+commande](../../../developer/reference/cli).
 
 Si les changements dans le commit empêchent le serveur de redémarrer ou si la
 mise à jour du module échoue, le serveur est automatiquement ramené à la
@@ -81,10 +81,10 @@ données, assurez-vous de les documenter ou de les écrire directement dans les
 modules de la branche, en utilisant des fichiers de données XML qui remplacent
 la configuration ou les vues par défaut.
 
-Les tests unitaires ne sont pas effectués, car, dans Odoo, ils reposent
+Les tests unitaires ne sont pas effectués, car, dans Konvergo ERP, ils reposent
 actuellement sur les données de démonstration, qui ne sont pas chargées dans
-la base de données de production. À l’avenir, si Odoo prend en charge
-l’exécution des tests unitaires sans les données de démonstration, Odoo.sh
+la base de données de production. À l’avenir, si Konvergo ERP prend en charge
+l’exécution des tests unitaires sans les données de démonstration, Konvergo ERP.sh
 envisagera d’exécuter les tests sur les bases de données de simulation.
 
 ### Développement
@@ -93,7 +93,7 @@ Les branches de développement créent de nouvelles bases de données en
 utilisant les données de démonstration pour exécuter les tests unitaires. Les
 modules installés sont ceux compris dans vos branches. Vous pouvez modifier la
 liste des modules à installer dans les [paramètres de votre
-projet](settings.html#odoosh-gettingstarted-settings-modules-installation).
+projet](settings#odoosh-gettingstarted-settings-modules-installation).
 
 Lorsque vous poussez un nouveau commit vers une de ces branches, un nouveau
 serveur est démarré avec une base de données créée à partir de zéro et la
@@ -141,7 +141,7 @@ Vous pouvez fusionner vos branches de développement l’une avec l’autre et v
 branches de simulation l’une avec l’autre.
 
 Bien entendu, vous pouvez également utiliser directement `git merge` sur votre
-poste de travail pour fusionner vos branches. Odoo.sh sera notifié lorsque les
+poste de travail pour fusionner vos branches. Konvergo ERP.sh sera notifié lorsque les
 nouvelles révisions ont été poussées vers vos branches.
 
 La fusion d’une branche de simulation dans la branche de production permet
@@ -198,17 +198,16 @@ branches-shell.png)
 Vous pouvez ouvrir plusieurs onglets et les glisser-déposer pour organiser la
 présentation comme vous le souhaitez, par exemple côte à côte.
 
-Note
-
-Les instances de shell qui fonctionnent longtemps ne sont pas garanties. Les
-shells inactifs peuvent être déconnectés à tout moment afin de libérer des
-ressources.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Les instances de shell qui fonctionnent longtemps ne sont pas garanties. Les shells inactifs peuvent être déconnectés à tout moment afin de libérer des ressources.</p>
+</div>
 
 ### Editor
 
 Un environnement de développement intégré (IDE) en ligne pour modifier le code
 source. Vous pouvez également ouvrir des terminaux, des consoles Python et
-même des consoles shell Odoo.
+même des consoles shell Konvergo ERP.
 
 ![../../../_images/interface-branches-editor.png](../../../_images/interface-
 branches-editor.png)
@@ -265,7 +264,7 @@ une base de données.
 ![../../../_images/interface-branches-backups.png](../../../_images/interface-
 branches-backups.png)
 
-Odoo.sh effectue des sauvegardes quotidiennes de la base de données de
+Konvergo ERP.sh effectue des sauvegardes quotidiennes de la base de données de
 production. Il conserve 7 sauvegardes quotidiennes, 4 hebdomadaires et 3
 mensuelles. Chaque sauvegarde inclut le dump de la base de données, le
 filestore (pièces jointes, champs binaires), les journaux et les sessions.
@@ -287,7 +286,7 @@ contacter](https://www.odoo.com/help).
 
 Si vous fusionnez un commit mettant à jour la version d’un ou plusieurs
 modules (dans `__manifest__.py`), ou leurs dépendances Python liées (dans
-`requirements.txt`), Odoo.sh effectue une sauvegarde automatiquement (signalée
+`requirements.txt`), Konvergo ERP.sh effectue une sauvegarde automatiquement (signalée
 avec le type Mise à jour dans la liste), car soit le conteneur sera modifié
 par l’installation de nouveaux paquets pip, soit la base de données elle-même
 sera modifiée avec la mise à jour du module déclenchée par la suite. Dans ces
@@ -295,7 +294,7 @@ deux cas, nous effectuons une sauvegarde, car cela peut potentiellement casser
 des choses.
 
 Si vous fusionnez un commit qui ne change que du code sans les changements
-susmentionnés, alors aucune sauvegarde n’est effectuée par Odoo.sh, car ni le
+susmentionnés, alors aucune sauvegarde n’est effectuée par Konvergo ERP.sh, car ni le
 conteneur ni la base de données ne sont modifiés et la plateforme considère
 que c’est suffisamment sûr. Bien sûr, comme précaution supplémentaire, vous
 pouvez faire une sauvegarde manuelle avant de faire des changements importants
@@ -306,22 +305,23 @@ sauvegardes manuelles sont disponibles pendant environ une semaine). Pour
 La fonctionnalité d” _importation de la base de données_ accepte les archives
 de base de données dans le format fourni par :
 
-  * le gestionnaire de bases de données Odoo standard (disponible pour les serveurs Odoo On Premise dans `/web/database/manager`)
+  * le gestionnaire de bases de données Konvergo ERP standard (disponible pour les serveurs Konvergo ERP On Premise dans `/web/database/manager`)
 
-  * le gestionnaire de bases de données Odoo Online,
+  * le gestionnaire de bases de données Konvergo ERP Online,
 
-  * le bouton de téléchargement des sauvegardes Odoo.sh de l’onglet _Backups_ ,
+  * le bouton de téléchargement des sauvegardes Konvergo ERP.sh de l’onglet _Backups_ ,
 
-  * le bouton de téléchargement du dump Odoo.sh dans la [vue Builds](builds.html#odoosh-gettingstarted-builds).
+  * le bouton de téléchargement du dump Konvergo ERP.sh dans la [vue Builds](builds#odoosh-gettingstarted-builds).
 
 ### Mettre à niveau
 
 Disponible pour les branches de production et de simulation des projets
 valides.
 
-Pour plus d'infos
-
-[Upgrade documentation](../../upgrade.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../upgrade">Upgrade documentation</a></p>
+</div>
 
 ### Paramètres
 
@@ -353,13 +353,13 @@ développement.
 modulesinstallation.png](../../../_images/interface-settings-
 modulesinstallation.png)
 
-  * L’option _Installer uniquement mes modules_ installera uniquement les modules de la branche. Elle est sélectionnée par défaut. Les [sous-modules](../advanced/submodules.html#odoosh-advanced-submodules) sont exclus.
+  * L’option _Installer uniquement mes modules_ installera uniquement les modules de la branche. Elle est sélectionnée par défaut. Les [sous-modules](../advanced/submodules#odoosh-advanced-submodules) sont exclus.
 
-  * L’option _Installation complète (tous les modules)_ installera les modules de la branche, les modules compris dans les sous-modules et tous les modules standards d’Odoo. Lors de l’installation complète, la suite de tests est désactivée.
+  * L’option _Installation complète (tous les modules)_ installera les modules de la branche, les modules compris dans les sous-modules et tous les modules standards d’Konvergo ERP. Lors de l’installation complète, la suite de tests est désactivée.
 
   * L’option _Installer une liste de modules_ installera les modules précisés dans le champ juste en dessous de cette option. Les noms sont le nom technique des modules et ils doivent être séparés par des virgules.
 
-Si les tests sont désactivés, la suite de modules standards d’Odoo peut
+Si les tests sont désactivés, la suite de modules standards d’Konvergo ERP peut
 prendre jusqu’à une heure. Ce paramètre s’applique uniquement aux builds de
 développement. Les builds de simulation duplique le build de production et le
 build de production n’installe que la base.
@@ -369,22 +369,22 @@ build de production n’installe que la base.
 Pour les branches de développement, vous pouvez choisir d’activer ou de
 désactiver la suite de tests. Elle est désactivée par défaut. Lorsque la suite
 de tests est activée, vous pouvez la limiter en définissant des [étiquettes de
-test](../../../developer/reference/backend/testing.html#developer-reference-
+test](../../../developer/reference/backend/testing#developer-reference-
 testing-selection).
 
-**Version d’Odoo**
+**Version d’Konvergo ERP**
 
 Uniquement pour les branches de développement, vous pouvez modifier la version
-d’Odoo, si vous souhaitez tester un code mis à niveau ou développer des
+d’Konvergo ERP, si vous souhaitez tester un code mis à niveau ou développer des
 fonctionnalités, tandis que votre base de données de production est en cours
 de mise à niveau vers une version plus récente.
 
 De plus, pour chaque version, vous disposez de deux options concernant la mise
 à jour du code :
 
-  * Vous pouvez choisir de bénéficier automatiquement des derniers correctifs de bugs, de sécurité et de performance. Les sources de votre serveur Odoo seront mises à jour chaque semaine. Il s’agit de l’option “Latest”.
+  * Vous pouvez choisir de bénéficier automatiquement des derniers correctifs de bugs, de sécurité et de performance. Les sources de votre serveur Konvergo ERP seront mises à jour chaque semaine. Il s’agit de l’option “Latest”.
 
-  * Vous pouvez choisir d’épingler les sources d’Odoo à une révision spécifique en les sélectionnant dans une liste de dates. Les révisions expirent après 3 mois. Vous serez notifié par email lorsque la date d’expiration approche et si vous ne prenez aucune action, vous serez automatiquement remis à la dernière révision.
+  * Vous pouvez choisir d’épingler les sources d’Konvergo ERP à une révision spécifique en les sélectionnant dans une liste de dates. Les révisions expirent après 3 mois. Vous serez notifié par email lorsque la date d’expiration approche et si vous ne prenez aucune action, vous serez automatiquement remis à la dernière révision.
 
 **Domaines personnalisés**
 
@@ -401,7 +401,7 @@ ou vos propres domaines personnalisés. Pour la dernière option, vous devez :
 Par exemple, pour associer _www.mycompany.com_ à votre base de données
 _mycompany.odoo.com_ :
 
-  * dans Odoo.sh, ajoutez _www.mycompany.com_ aux domaines personnalisés des paramètres de votre projet,
+  * dans Konvergo ERP.sh, ajoutez _www.mycompany.com_ aux domaines personnalisés des paramètres de votre projet,
 
   * dans le gestionnaire de votre nom de domaine (par ex. _godaddy.com_ , _gandi.net_ , _ovh.com_), configurez _www.mycompany.com_ avec un enregistrement `CNAME` ayant pour valeur _mycompany.odoo.com_.
 
@@ -434,26 +434,25 @@ Encrypt](https://letsencrypt.org/about/) dans l’heure et votre domaine sera
 accessible via HTTPS.
 
 Alors qu’il n’est actuellement plus possible de configurer vos propres
-certificats SSL sur la plateforme Odoo.sh, nous envisageons de le faire si la
+certificats SSL sur la plateforme Konvergo ERP.sh, nous envisageons de le faire si la
 demande est suffisante.
 
 **Conformité SPF et DKIM**
 
 Si le domaine des adresses email de vos utilisateurs utilisent SPF (Sender
 Policy Framework) ou DKIM (DomainKeys Identified Mail), n’oubliez pas
-d’autoriser Odoo en tant qu’hôte d’envoi dans les paramètres de votre nom de
+d’autoriser Konvergo ERP en tant qu’hôte d’envoi dans les paramètres de votre nom de
 domaine pour augmenter la délivrabilité de vos emails sortants. Les étapes de
 configuration sont expliquées dans la documentation sur
-[SPF](../../../applications/general/email_communication/email_domain.html#email-
+[SPF](../../../applications/general/email_communication/email_domain#email-
 communication-spf-compliant) et
-[DKIM](../../../applications/general/email_communication/email_domain.html#email-
+[DKIM](../../../applications/general/email_communication/email_domain#email-
 communication-dkim-compliant).
 
-Avertissement
-
-Oublier de configurer votre SPF ou DKIM pour autoriser Odoo en tant qu’hôte
-d’envoi peut conduire à la livraison de vos emails en tant que spam dans la
-boîte de réception de vos contacts.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Oublier de configurer votre SPF ou DKIM pour autoriser Konvergo ERP en tant qu’hôte d’envoi peut conduire à la livraison de vos emails en tant que spam dans la boîte de réception de vos contacts.</p>
+</div>
 
 ## Commandes shell
 
@@ -465,7 +464,7 @@ shellcommands.png](../../../_images/interface-branches-shellcommands.png)
 
 Chaque commande peut être copiée dans le presse-papiers pour l’utiliser dans
 un terminal et certaines commandes peuvent être utilisées directement à partir
-de Odoo.sh en cliquant sur le bouton _run_. Dans ce cas, une fenêtre
+de Konvergo ERP.sh en cliquant sur le bouton _run_. Dans ce cas, une fenêtre
 contextuelle invitera l’utilisateur à définir d’éventuels placeholders, tels
 que `<URL>`, `<PATH>`, …
 
@@ -560,14 +559,14 @@ supérieur droit.
 
 ![../../../_images/SSH-panel.png](../../../_images/SSH-panel.png)
 
-Si vous disposez des [bons droits d’accès](settings.html#odoosh-
+Si vous disposez des [bons droits d’accès](settings#odoosh-
 gettingstarted-settings-collaborators) sur le projet, vous obtiendrez un accès
 ssh au build.
 
-Note
-
-Les connexions ssh de longue durée ne sont pas garanties. Les connexions
-inactives seront déconnectées afin de libérer des ressources.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Les connexions ssh de longue durée ne sont pas garanties. Les connexions inactives seront déconnectées afin de libérer des ressources.</p>
+</div>
 
 ### Sous-module
 
@@ -578,7 +577,7 @@ Les _sous-modules_ vous permettent d’utiliser des modules d’autres dépôts 
 votre projet.
 
 La fonctionnalité des sous-modules est détaillée dans le chapitre [Sous-
-modules](../advanced/submodules.html#odoosh-advanced-submodules) de cette
+modules](../advanced/submodules#odoosh-advanced-submodules) de cette
 documentation.
 
     

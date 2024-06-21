@@ -1,6 +1,6 @@
 # Mixins and Useful Classes
 
-Odoo implements some useful classes and mixins that make it easy for you to
+Konvergo ERP implements some useful classes and mixins that make it easy for you to
 add often-used behaviours on your objects. This guide will details most of
 them, with examples and use cases.
 
@@ -14,44 +14,40 @@ Integrating messaging features to your model is extremely easy. Simply
 inheriting the `mail.thread` model and adding the messaging fields (and their
 appropriate widgets) to your form view will get you up and running in no time.
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Let’s create a simplistic model representing a business trip. Since organizing
+this kind of trip usually involves a lot of people and a lot of discussion, let’s
+add support for message exchange on the model.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BusinessTrip</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">'business.trip'</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'mail.thread'</span><span class="p">]</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s1">'Business Trip'</span>
 
-Let’s create a simplistic model representing a business trip. Since organizing
-this kind of trip usually involves a lot of people and a lot of discussion,
-let’s add support for message exchange on the model.
-
-    
-    
-    class BusinessTrip(models.Model):
-        _name = 'business.trip'
-        _inherit = ['mail.thread']
-        _description = 'Business Trip'
-    
-        name = fields.Char()
-        partner_id = fields.Many2one('res.partner', 'Responsible')
-        guest_ids = fields.Many2many('res.partner', 'Participants')
-    
-
-In the form view:
-
-    
-    
-    <record id="businness_trip_form" model="ir.ui.view">
-        <field name="name">business.trip.form</field>
-        <field name="model">business.trip</field>
-        <field name="arch" type="xml">
-            <form string="Business Trip">
-                <!-- Your usual form view goes here
-                ...
-                Then comes chatter integration -->
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers"/>
-                    <field name="message_ids" widget="mail_thread"/>
-                </div>
-            </form>
-        </field>
-    </record>
-    
+    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">()</span>
+    <span class="n">partner_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'Responsible'</span><span class="p">)</span>
+    <span class="n">guest_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2many</span><span class="p">(</span><span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'Participants'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the form view:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">id=</span><span class="s">"businness_trip_form"</span> <span class="na">model=</span><span class="s">"ir.ui.view"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>business.trip.form<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"model"</span><span class="nt">&gt;</span>business.trip<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"arch"</span> <span class="na">type=</span><span class="s">"xml"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">string=</span><span class="s">"Business Trip"</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- Your usual form view goes here</span>
+<span class="c">            ...</span>
+<span class="c">            Then comes chatter integration --&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"oe_chatter"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"message_follower_ids"</span> <span class="na">widget=</span><span class="s">"mail_followers"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"message_ids"</span> <span class="na">widget=</span><span class="s">"mail_thread"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+</div>
 
 Once you’ve added chatter support on your model, users can easily add messages
 or internal notes on any record of your model; every one of those will send a
@@ -78,13 +74,13 @@ Paramètres
 
     
 
-  * **body** ([_str_](https://docs.python.org/3/library/stdtypes.html#str "\(disponible dans Python v3.12\)")) – body of the message, usually raw HTML that will be sanitized
+  * **body** ([_str_](https://docs.python.org/3/library/stdtypes#str "\(disponible dans Python v3.12\)")) – body of the message, usually raw HTML that will be sanitized
 
-  * **message_type** ([_str_](https://docs.python.org/3/library/stdtypes.html#str "\(disponible dans Python v3.12\)")) – see mail_message.message_type field
+  * **message_type** ([_str_](https://docs.python.org/3/library/stdtypes#str "\(disponible dans Python v3.12\)")) – see mail_message.message_type field
 
-  * **parent_id** ([_int_](https://docs.python.org/3/library/functions.html#int "\(disponible dans Python v3.12\)")) – handle reply to a previous message by adding the parent partners to the message in case of private discussion
+  * **parent_id** ([_int_](https://docs.python.org/3/library/functions#int "\(disponible dans Python v3.12\)")) – handle reply to a previous message by adding the parent partners to the message in case of private discussion
 
-  * **attachments** ([_list_](https://docs.python.org/3/library/stdtypes.html#list "\(disponible dans Python v3.12\)") _(_[_tuple_](https://docs.python.org/3/library/stdtypes.html#tuple "\(disponible dans Python v3.12\)") _(_[_str_](https://docs.python.org/3/library/stdtypes.html#str "\(disponible dans Python v3.12\)") _,_[_str_](https://docs.python.org/3/library/stdtypes.html#str "\(disponible dans Python v3.12\)") _)__)_) – list of attachment tuples in the form `(name,content)`, where content is NOT base64 encoded
+  * **attachments** ([_list_](https://docs.python.org/3/library/stdtypes#list "\(disponible dans Python v3.12\)") _(_[_tuple_](https://docs.python.org/3/library/stdtypes#tuple "\(disponible dans Python v3.12\)") _(_[_str_](https://docs.python.org/3/library/stdtypes#str "\(disponible dans Python v3.12\)") _,_[_str_](https://docs.python.org/3/library/stdtypes#str "\(disponible dans Python v3.12\)") _)__)_) – list of attachment tuples in the form `(name,content)`, where content is NOT base64 encoded
 
   * ****kwargs** – extra keyword arguments will be used as default column values for the new mail.message record
 
@@ -98,7 +94,7 @@ Type renvoyé
 
     
 
-[int](https://docs.python.org/3/library/functions.html#int "\(disponible dans
+[int](https://docs.python.org/3/library/functions#int "\(disponible dans
 Python v3.12\)")
 
 message_post_with_view(views_or_xmlid, **kwargs):
@@ -114,7 +110,7 @@ Paramètres
 
     
 
-**record** ([_str_](https://docs.python.org/3/library/stdtypes.html#str
+**record** ([_str_](https://docs.python.org/3/library/stdtypes#str
 "\(disponible dans Python v3.12\)") _or_ _ir.ui.view_) – external id or record
 of the view that should be sent
 
@@ -155,15 +151,15 @@ Paramètres
 
     
 
-  * **msg_dict** ([_dict_](https://docs.python.org/3/library/stdtypes.html#dict "\(disponible dans Python v3.12\)")) – a map containing the email details and attachments. See `message_process` and `mail.message.parse` for details
+  * **msg_dict** ([_dict_](https://docs.python.org/3/library/stdtypes#dict "\(disponible dans Python v3.12\)")) – a map containing the email details and attachments. See `message_process` and `mail.message.parse` for details
 
-  * **custom_values** ([_dict_](https://docs.python.org/3/library/stdtypes.html#dict "\(disponible dans Python v3.12\)")) – optional dictionary of additional field values to pass to create() when creating the new thread record; be careful, these values may override any other values coming from the message
+  * **custom_values** ([_dict_](https://docs.python.org/3/library/stdtypes#dict "\(disponible dans Python v3.12\)")) – optional dictionary of additional field values to pass to create() when creating the new thread record; be careful, these values may override any other values coming from the message
 
 Type renvoyé
 
     
 
-[int](https://docs.python.org/3/library/functions.html#int "\(disponible dans
+[int](https://docs.python.org/3/library/functions#int "\(disponible dans
 Python v3.12\)")
 
 Renvoie
@@ -186,9 +182,9 @@ Paramètres
 
     
 
-  * **msg_dict** ([_dict_](https://docs.python.org/3/library/stdtypes.html#dict "\(disponible dans Python v3.12\)")) – a map containing the email details and attachments; see `message_process` and `mail.message.parse()` for details.
+  * **msg_dict** ([_dict_](https://docs.python.org/3/library/stdtypes#dict "\(disponible dans Python v3.12\)")) – a map containing the email details and attachments; see `message_process` and `mail.message.parse()` for details.
 
-  * **update_vals** ([_dict_](https://docs.python.org/3/library/stdtypes.html#dict "\(disponible dans Python v3.12\)")) – a dict containing values to update records given their ids; if the dict is None or is void, no write operation is performed.
+  * **update_vals** ([_dict_](https://docs.python.org/3/library/stdtypes#dict "\(disponible dans Python v3.12\)")) – a dict containing values to update records given their ids; if the dict is None or is void, no write operation is performed.
 
 Renvoie
 
@@ -209,11 +205,11 @@ Paramètres
 
     
 
-  * **partner_ids** ([_list_](https://docs.python.org/3/library/stdtypes.html#list "\(disponible dans Python v3.12\)") _(_[_int_](https://docs.python.org/3/library/functions.html#int "\(disponible dans Python v3.12\)") _)_) – IDs of the partners that will be subscribed to the record
+  * **partner_ids** ([_list_](https://docs.python.org/3/library/stdtypes#list "\(disponible dans Python v3.12\)") _(_[_int_](https://docs.python.org/3/library/functions#int "\(disponible dans Python v3.12\)") _)_) – IDs of the partners that will be subscribed to the record
 
-  * **channel_ids** ([_list_](https://docs.python.org/3/library/stdtypes.html#list "\(disponible dans Python v3.12\)") _(_[_int_](https://docs.python.org/3/library/functions.html#int "\(disponible dans Python v3.12\)") _)_) – IDs of the channels that will be subscribed to the record
+  * **channel_ids** ([_list_](https://docs.python.org/3/library/stdtypes#list "\(disponible dans Python v3.12\)") _(_[_int_](https://docs.python.org/3/library/functions#int "\(disponible dans Python v3.12\)") _)_) – IDs of the channels that will be subscribed to the record
 
-  * **subtype_ids** ([_list_](https://docs.python.org/3/library/stdtypes.html#list "\(disponible dans Python v3.12\)") _(_[_int_](https://docs.python.org/3/library/functions.html#int "\(disponible dans Python v3.12\)") _)_) – IDs of the subtypes that the channels/partners will be subscribed to (defaults to the default subtypes if `None`)
+  * **subtype_ids** ([_list_](https://docs.python.org/3/library/stdtypes#list "\(disponible dans Python v3.12\)") _(_[_int_](https://docs.python.org/3/library/functions#int "\(disponible dans Python v3.12\)") _)_) – IDs of the subtypes that the channels/partners will be subscribed to (defaults to the default subtypes if `None`)
 
   * **force** – if True, delete existing followers before creating new one using the subtypes given in the parameters
 
@@ -227,7 +223,7 @@ Type renvoyé
 
     
 
-[bool](https://docs.python.org/3/library/functions.html#bool "\(disponible
+[bool](https://docs.python.org/3/library/functions#bool "\(disponible
 dans Python v3.12\)")
 
 message_unsubscribe(_partner_ids =None_, _channel_ids =None_)
@@ -240,9 +236,9 @@ Paramètres
 
     
 
-  * **partner_ids** ([_list_](https://docs.python.org/3/library/stdtypes.html#list "\(disponible dans Python v3.12\)") _(_[_int_](https://docs.python.org/3/library/functions.html#int "\(disponible dans Python v3.12\)") _)_) – IDs of the partners that will be subscribed to the record
+  * **partner_ids** ([_list_](https://docs.python.org/3/library/stdtypes#list "\(disponible dans Python v3.12\)") _(_[_int_](https://docs.python.org/3/library/functions#int "\(disponible dans Python v3.12\)") _)_) – IDs of the partners that will be subscribed to the record
 
-  * **channel_ids** ([_list_](https://docs.python.org/3/library/stdtypes.html#list "\(disponible dans Python v3.12\)") _(_[_int_](https://docs.python.org/3/library/functions.html#int "\(disponible dans Python v3.12\)") _)_) – IDs of the channels that will be subscribed to the record
+  * **channel_ids** ([_list_](https://docs.python.org/3/library/stdtypes#list "\(disponible dans Python v3.12\)") _(_[_int_](https://docs.python.org/3/library/functions#int "\(disponible dans Python v3.12\)") _)_) – IDs of the channels that will be subscribed to the record
 
 Renvoie
 
@@ -254,7 +250,7 @@ Type renvoyé
 
     
 
-[bool](https://docs.python.org/3/library/functions.html#bool "\(disponible
+[bool](https://docs.python.org/3/library/functions#bool "\(disponible
 dans Python v3.12\)")
 
 message_unsubscribe_users(_user_ids =None_)
@@ -267,9 +263,9 @@ Paramètres
 
     
 
-**user_ids** ([_list_](https://docs.python.org/3/library/stdtypes.html#list
+**user_ids** ([_list_](https://docs.python.org/3/library/stdtypes#list
 "\(disponible dans Python v3.12\)")
-_(_[_int_](https://docs.python.org/3/library/functions.html#int "\(disponible
+_(_[_int_](https://docs.python.org/3/library/functions#int "\(disponible
 dans Python v3.12\)") _)_) – IDs of the users that will be unsubscribed to the
 record; if None, unsubscribe the current user instead.
 
@@ -283,7 +279,7 @@ Type renvoyé
 
     
 
-[bool](https://docs.python.org/3/library/functions.html#bool "\(disponible
+[bool](https://docs.python.org/3/library/functions#bool "\(disponible
 dans Python v3.12\)")
 
 #### Logging changes
@@ -292,26 +288,25 @@ The `mail` module adds a powerful tracking system on fields, allowing you to
 log changes to specific fields in the record’s chatter. To add tracking to a
 field, simple set the tracking attribute to True.
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Let’s track changes on the name and responsible of our business trips:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BusinessTrip</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">'business.trip'</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'mail.thread'</span><span class="p">]</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s1">'Business Trip'</span>
 
-Let’s track changes on the name and responsible of our business trips:
-
-    
-    
-    class BusinessTrip(models.Model):
-        _name = 'business.trip'
-        _inherit = ['mail.thread']
-        _description = 'Business Trip'
-    
-        name = fields.Char(tracking=True)
-        partner_id = fields.Many2one('res.partner', 'Responsible',
-                                     tracking=True)
-        guest_ids = fields.Many2many('res.partner', 'Participants')
-    
-
-From now on, every change to a trip’s name or responsible will log a note on
-the record. The `name` field will be displayed in the notification as well to
-give more context about the notification (even if the name did not change).
+    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">tracking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">partner_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'Responsible'</span><span class="p">,</span>
+                                 <span class="n">tracking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">guest_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2many</span><span class="p">(</span><span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'Participants'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>From now on, every change to a trip’s name or responsible will log a note
+on the record. The <code>name</code> field will be displayed in the notification as
+well to give more context about the notification (even if the name did not
+change).</p>
+</div>
 
 #### Subtypes
 
@@ -397,7 +392,7 @@ Paramètres
 
     
 
-**init_values** ([_dict_](https://docs.python.org/3/library/stdtypes.html#dict
+**init_values** ([_dict_](https://docs.python.org/3/library/stdtypes#dict
 "\(disponible dans Python v3.12\)")) – the original values of the record; only
 modified fields are present in the dict
 
@@ -407,52 +402,47 @@ Renvoie
 
 a subtype’s full external id or False if no subtype is triggered
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Let’s add a <code>state</code> field on our example class and trigger a notification
+with a specific subtype when this field change values.</p>
+<p>First, let’s define our subtype:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">id=</span><span class="s">"mt_state_change"</span> <span class="na">model=</span><span class="s">"mail.message.subtype"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>Trip confirmed<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"res_model"</span><span class="nt">&gt;</span>business.trip<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"default"</span> <span class="na">eval=</span><span class="s">"True"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"description"</span><span class="nt">&gt;</span>Business Trip confirmed!<span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<p>Then, we need to override the <code>track_subtype()</code> function. This function
+is called by the tracking system to know which subtype should be used depending
+on the change currently being applied. In our case, we want to use our shiny new
+subtype when the <code>state</code> field changes from <em>draft</em> to <em>confirmed</em>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BusinessTrip</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">'business.trip'</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'mail.thread'</span><span class="p">]</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s1">'Business Trip'</span>
 
-Let’s add a `state` field on our example class and trigger a notification with
-a specific subtype when this field change values.
+    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">tracking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">partner_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'Responsible'</span><span class="p">,</span>
+                                 <span class="n">tracking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">guest_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2many</span><span class="p">(</span><span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'Participants'</span><span class="p">)</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Selection</span><span class="p">([(</span><span class="s1">'draft'</span><span class="p">,</span> <span class="s1">'New'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'confirmed'</span><span class="p">,</span> <span class="s1">'Confirmed'</span><span class="p">)],</span>
+                             <span class="n">tracking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-First, let’s define our subtype:
-
-    
-    
-    <record id="mt_state_change" model="mail.message.subtype">
-        <field name="name">Trip confirmed</field>
-        <field name="res_model">business.trip</field>
-        <field name="default" eval="True"/>
-        <field name="description">Business Trip confirmed!</field>
-    </record>
-    
-
-Then, we need to override the `track_subtype()` function. This function is
-called by the tracking system to know which subtype should be used depending
-on the change currently being applied. In our case, we want to use our shiny
-new subtype when the `state` field changes from _draft_ to _confirmed_ :
-
-    
-    
-    class BusinessTrip(models.Model):
-        _name = 'business.trip'
-        _inherit = ['mail.thread']
-        _description = 'Business Trip'
-    
-        name = fields.Char(tracking=True)
-        partner_id = fields.Many2one('res.partner', 'Responsible',
-                                     tracking=True)
-        guest_ids = fields.Many2many('res.partner', 'Participants')
-        state = fields.Selection([('draft', 'New'), ('confirmed', 'Confirmed')],
-                                 tracking=True)
-    
-        def _track_subtype(self, init_values):
-            # init_values contains the modified fields' values before the changes
-            #
-            # the applied values can be accessed on the record as they are already
-            # in cache
-            self.ensure_one()
-            if 'state' in init_values and self.state == 'confirmed':
-                return self.env.ref('my_module.mt_state_change')
-            return super(BusinessTrip, self)._track_subtype(init_values)
-    
+    <span class="k">def</span> <span class="nf">_track_subtype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_values</span><span class="p">):</span>
+        <span class="c1"># init_values contains the modified fields' values before the changes</span>
+        <span class="c1">#</span>
+        <span class="c1"># the applied values can be accessed on the record as they are already</span>
+        <span class="c1"># in cache</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensure_one</span><span class="p">()</span>
+        <span class="k">if</span> <span class="s1">'state'</span> <span class="ow">in</span> <span class="n">init_values</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">'confirmed'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="s1">'my_module.mt_state_change'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">BusinessTrip</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_track_subtype</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 
 #### Customizing notifications
 
@@ -488,7 +478,7 @@ Paramètres
 
   * **message** (_record_) – `mail.message` record currently being sent
 
-  * **groups** ([_list_](https://docs.python.org/3/library/stdtypes.html#list "\(disponible dans Python v3.12\)") _(_[_tuple_](https://docs.python.org/3/library/stdtypes.html#tuple "\(disponible dans Python v3.12\)") _)_) – 
+  * **groups** ([_list_](https://docs.python.org/3/library/stdtypes#list "\(disponible dans Python v3.12\)") _(_[_tuple_](https://docs.python.org/3/library/stdtypes#tuple "\(disponible dans Python v3.12\)") _)_) – 
 
 list of tuple of the form (group_name, group_func,group_data) where:
 
@@ -576,7 +566,7 @@ Paramètres
 
     
 
-**link_type** ([_str_](https://docs.python.org/3/library/stdtypes.html#str
+**link_type** ([_str_](https://docs.python.org/3/library/stdtypes#str
 "\(disponible dans Python v3.12\)")) –
 
 link type to be generated; can be any of these values:
@@ -630,54 +620,52 @@ Type renvoyé
 
     
 
-[str](https://docs.python.org/3/library/stdtypes.html#str "\(disponible dans
+[str](https://docs.python.org/3/library/stdtypes#str "\(disponible dans
 Python v3.12\)")
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Let’s add a custom button to the Business Trip state change notification;
+this button will reset the state to Draft and will be only visible to a member
+of the (imaginary) group Travel Manager (<code>business.group_trip_manager</code>)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BusinessTrip</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">'business.trip'</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'mail.thread'</span><span class="p">,</span> <span class="s1">'mail.alias.mixin'</span><span class="p">]</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s1">'Business Trip'</span>
 
-Let’s add a custom button to the Business Trip state change notification; this
-button will reset the state to Draft and will be only visible to a member of
-the (imaginary) group Travel Manager (`business.group_trip_manager`)
+    <span class="c1"># Pevious code goes here</span>
 
-    
-    
-    class BusinessTrip(models.Model):
-        _name = 'business.trip'
-        _inherit = ['mail.thread', 'mail.alias.mixin']
-        _description = 'Business Trip'
-    
-        # Pevious code goes here
-    
-        def action_cancel(self):
-            self.write({'state': 'draft'})
-    
-        def _notify_get_groups(self, message, groups):
-            """ Handle Trip Manager recipients that can cancel the trip at the last
-            minute and kill all the fun. """
-            groups = super(BusinessTrip, self)._notify_get_groups(message, groups)
-    
-            self.ensure_one()
-            if self.state == 'confirmed':
-                app_action = self._notify_get_action_link('method',
-                                    method='action_cancel')
-                trip_actions = [{'url': app_action, 'title': _('Cancel')}]
-    
-            new_group = (
-                'group_trip_manager',
-                lambda partner: bool(partner.user_ids) and
-                any(user.has_group('business.group_trip_manager')
-                for user in partner.user_ids),
-                {
-                    'actions': trip_actions,
-                })
-    
-            return [new_group] + groups
-    
+    <span class="k">def</span> <span class="nf">action_cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">({</span><span class="s1">'state'</span><span class="p">:</span> <span class="s1">'draft'</span><span class="p">})</span>
 
-Note that that I could have defined my evaluation function outside of this
-method and define a global function to do it instead of a lambda, but for the
-sake of being more brief and less verbose in these documentation files that
-can sometimes be boring, I choose the former instead of the latter.
+    <span class="k">def</span> <span class="nf">_notify_get_groups</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">groups</span><span class="p">):</span>
+        <span class="sd">""" Handle Trip Manager recipients that can cancel the trip at the last</span>
+<span class="sd">        minute and kill all the fun. """</span>
+        <span class="n">groups</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">BusinessTrip</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_notify_get_groups</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">groups</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensure_one</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">'confirmed'</span><span class="p">:</span>
+            <span class="n">app_action</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_notify_get_action_link</span><span class="p">(</span><span class="s1">'method'</span><span class="p">,</span>
+                                <span class="n">method</span><span class="o">=</span><span class="s1">'action_cancel'</span><span class="p">)</span>
+            <span class="n">trip_actions</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">'url'</span><span class="p">:</span> <span class="n">app_action</span><span class="p">,</span> <span class="s1">'title'</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s1">'Cancel'</span><span class="p">)}]</span>
+
+        <span class="n">new_group</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">'group_trip_manager'</span><span class="p">,</span>
+            <span class="k">lambda</span> <span class="n">partner</span><span class="p">:</span> <span class="nb">bool</span><span class="p">(</span><span class="n">partner</span><span class="o">.</span><span class="n">user_ids</span><span class="p">)</span> <span class="ow">and</span>
+            <span class="nb">any</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">has_group</span><span class="p">(</span><span class="s1">'business.group_trip_manager'</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">partner</span><span class="o">.</span><span class="n">user_ids</span><span class="p">),</span>
+            <span class="p">{</span>
+                <span class="s1">'actions'</span><span class="p">:</span> <span class="n">trip_actions</span><span class="p">,</span>
+            <span class="p">})</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">new_group</span><span class="p">]</span> <span class="o">+</span> <span class="n">groups</span>
+</pre></div>
+</div>
+<p>Note that that I could have defined my evaluation function outside of this
+method and define a global function to do it instead of a lambda, but for
+the sake of being more brief and less verbose in these documentation files
+that can sometimes be boring, I choose the former instead of the latter.</p>
+</div>
 
 #### Overriding defaults
 
@@ -719,18 +707,18 @@ Aliases are configurable email addresses that are linked to a specific record
 (which usually inherits the `mail.alias.mixin` model) that will create new
 records when contacted via e-mail. They are an easy way to make your system
 accessible from the outside, allowing users or customers to quickly create
-records in your database without needing to connect to Odoo directly.
+records in your database without needing to connect to Konvergo ERP directly.
 
 #### Aliases vs. Incoming Mail Gateway
 
 Some people use the Incoming Mail Gateway for this same purpose. You still
 need a correctly configured mail gateway to use aliases, however a single
-catchall domain will be sufficient since all routing will be done inside Odoo.
+catchall domain will be sufficient since all routing will be done inside Konvergo ERP.
 Aliases have several advantages over Mail Gateways:
 
   * Easier to configure
     
-    * A single incoming gateway can be used by many aliases; this avoids having to configure multiple emails on your domain name (all configuration is done inside Odoo)
+    * A single incoming gateway can be used by many aliases; this avoids having to configure multiple emails on your domain name (all configuration is done inside Konvergo ERP)
 
     * No need for System access rights to configure aliases
 
@@ -748,21 +736,24 @@ Aliases are usually configured on a parent model which will then create
 specific record when contacted by e-mail. For example, Project have aliases to
 create tasks or issues, Sales Team have aliases to generate Leads.
 
-Note
-
-The model that will be created by the alias **must** inherit the `mail_thread`
-model.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The model that will be created by the alias <b>must</b> inherit the
+<code>mail_thread</code> model.</p>
+</div>
 
 Alias support is added by inheriting `mail.alias.mixin`; this mixin will
 generate a new `mail.alias` record for each record of the parent class that
 gets created (for example, every `project.project` record having its
 `mail.alias` record initialized on creation).
 
-Note
-
-Aliases can also be created manually and supported by a simple `Many2one`
-field. This guide assumes you wish a more complete integration with automatic
-creation of the alias, record-specific default values, etc.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Aliases can also be created manually and supported by a simple
+<code>Many2one</code> field. This guide assumes you wish a
+more complete integration with automatic creation of the alias, record-specific
+default values, etc.</p>
+</div>
 
 Unlike `mail.thread` inheritance, the `mail.alias.mixin` **requires** some
 specific overrides to work correctly. These overrides will specify the values
@@ -795,7 +786,7 @@ Type renvoyé
 
     
 
-[str](https://docs.python.org/3/library/stdtypes.html#str "\(disponible dans
+[str](https://docs.python.org/3/library/stdtypes#str "\(disponible dans
 Python v3.12\)")
 
 _get_alias_values()
@@ -818,7 +809,7 @@ Type renvoyé
 
     
 
-[dict](https://docs.python.org/3/library/stdtypes.html#dict "\(disponible dans
+[dict](https://docs.python.org/3/library/stdtypes#dict "\(disponible dans
 Python v3.12\)")
 
 The `_get_alias_values()` override is particularly interesting as it allows
@@ -868,125 +859,117 @@ Policy to post a message on the document using the mailgateway
 
   * _followers_ : only followers of the related document or members of following channels
 
-Note that aliases make use of [delegation inheritance](orm.html#reference-orm-
+Note that aliases make use of [delegation inheritance](orm#reference-orm-
 inheritance), which means that while the alias is stored in another table, you
 have access to all these fields directly from your parent object. This allows
 you to make your alias easily configurable from the record’s form view.
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Let’s add aliases on our business trip class to create expenses on the fly via
+e-mail.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BusinessTrip</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">'business.trip'</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'mail.thread'</span><span class="p">,</span> <span class="s1">'mail.alias.mixin'</span><span class="p">]</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s1">'Business Trip'</span>
 
-Let’s add aliases on our business trip class to create expenses on the fly via
-e-mail.
+    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">tracking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">partner_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'Responsible'</span><span class="p">,</span>
+                                 <span class="n">tracking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">guest_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2many</span><span class="p">(</span><span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'Participants'</span><span class="p">)</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Selection</span><span class="p">([(</span><span class="s1">'draft'</span><span class="p">,</span> <span class="s1">'New'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'confirmed'</span><span class="p">,</span> <span class="s1">'Confirmed'</span><span class="p">)],</span>
+                             <span class="n">tracking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">expense_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">One2many</span><span class="p">(</span><span class="s1">'business.expense'</span><span class="p">,</span> <span class="s1">'trip_id'</span><span class="p">,</span> <span class="s1">'Expenses'</span><span class="p">)</span>
+    <span class="n">alias_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s1">'mail.alias'</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="s1">'Alias'</span><span class="p">,</span> <span class="n">ondelete</span><span class="o">=</span><span class="s2">"restrict"</span><span class="p">,</span>
+                               <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    
-    
-    class BusinessTrip(models.Model):
-        _name = 'business.trip'
-        _inherit = ['mail.thread', 'mail.alias.mixin']
-        _description = 'Business Trip'
-    
-        name = fields.Char(tracking=True)
-        partner_id = fields.Many2one('res.partner', 'Responsible',
-                                     tracking=True)
-        guest_ids = fields.Many2many('res.partner', 'Participants')
-        state = fields.Selection([('draft', 'New'), ('confirmed', 'Confirmed')],
-                                 tracking=True)
-        expense_ids = fields.One2many('business.expense', 'trip_id', 'Expenses')
-        alias_id = fields.Many2one('mail.alias', string='Alias', ondelete="restrict",
-                                   required=True)
-    
-        def _get_alias_model_name(self, vals):
-        """ Specify the model that will get created when the alias receives a message """
-            return 'business.expense'
-    
-        def _get_alias_values(self):
-        """ Specify some default values that will be set in the alias at its creation """
-            values = super(BusinessTrip, self)._get_alias_values()
-            # alias_defaults holds a dictionary that will be written
-            # to all records created by this alias
-            #
-            # in this case, we want all expense records sent to a trip alias
-            # to be linked to the corresponding business trip
-            values['alias_defaults'] = {'trip_id': self.id}
-            # we only want followers of the trip to be able to post expenses
-            # by default
-            values['alias_contact'] = 'followers'
-            return values
-    
-    class BusinessExpense(models.Model):
-        _name = 'business.expense'
-        _inherit = ['mail.thread']
-        _description = 'Business Expense'
-    
-        name = fields.Char()
-        amount = fields.Float('Amount')
-        trip_id = fields.Many2one('business.trip', 'Business Trip')
-        partner_id = fields.Many2one('res.partner', 'Created by')
-    
+    <span class="k">def</span> <span class="nf">_get_alias_model_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vals</span><span class="p">):</span>
+    <span class="sd">""" Specify the model that will get created when the alias receives a message """</span>
+        <span class="k">return</span> <span class="s1">'business.expense'</span>
 
-We would like our alias to be easily configurable from the form view of our
-business trips, so let’s add the following to our form view:
+    <span class="k">def</span> <span class="nf">_get_alias_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">""" Specify some default values that will be set in the alias at its creation """</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">BusinessTrip</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_get_alias_values</span><span class="p">()</span>
+        <span class="c1"># alias_defaults holds a dictionary that will be written</span>
+        <span class="c1"># to all records created by this alias</span>
+        <span class="c1">#</span>
+        <span class="c1"># in this case, we want all expense records sent to a trip alias</span>
+        <span class="c1"># to be linked to the corresponding business trip</span>
+        <span class="n">values</span><span class="p">[</span><span class="s1">'alias_defaults'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'trip_id'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">}</span>
+        <span class="c1"># we only want followers of the trip to be able to post expenses</span>
+        <span class="c1"># by default</span>
+        <span class="n">values</span><span class="p">[</span><span class="s1">'alias_contact'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'followers'</span>
+        <span class="k">return</span> <span class="n">values</span>
 
-    
-    
-    <page string="Emails">
-        <group name="group_alias">
-            <label for="alias_name" string="Email Alias"/>
-            <div name="alias_def">
-                <!-- display a link while in view mode and a configurable field
-                while in edit mode -->
-                <field name="alias_id" class="oe_read_only oe_inline"
-                        string="Email Alias" required="0"/>
-                <div class="oe_edit_only oe_inline" name="edit_alias"
-                     style="display: inline;" >
-                    <field name="alias_name" class="oe_inline"/>
-                    @
-                    <field name="alias_domain" class="oe_inline" readonly="1"/>
-                </div>
-            </div>
-            <field name="alias_contact" class="oe_inline"
-                    string="Accept Emails From"/>
-        </group>
-    </page>
-    
+<span class="k">class</span> <span class="nc">BusinessExpense</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">'business.expense'</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'mail.thread'</span><span class="p">]</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s1">'Business Expense'</span>
 
-Now we can change the alias address directly from the form view and change who
-can send e-mails to the alias.
+    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">()</span>
+    <span class="n">amount</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="s1">'Amount'</span><span class="p">)</span>
+    <span class="n">trip_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s1">'business.trip'</span><span class="p">,</span> <span class="s1">'Business Trip'</span><span class="p">)</span>
+    <span class="n">partner_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s1">'res.partner'</span><span class="p">,</span> <span class="s1">'Created by'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We would like our alias to be easily configurable from the form view of our
+business trips, so let’s add the following to our form view:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;page</span> <span class="na">string=</span><span class="s">"Emails"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">"group_alias"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"alias_name"</span> <span class="na">string=</span><span class="s">"Email Alias"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">name=</span><span class="s">"alias_def"</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- display a link while in view mode and a configurable field</span>
+<span class="c">            while in edit mode --&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"alias_id"</span> <span class="na">class=</span><span class="s">"oe_read_only oe_inline"</span>
+                    <span class="na">string=</span><span class="s">"Email Alias"</span> <span class="na">required=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"oe_edit_only oe_inline"</span> <span class="na">name=</span><span class="s">"edit_alias"</span>
+                 <span class="na">style=</span><span class="s">"display: inline;"</span> <span class="nt">&gt;</span>
+                <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"alias_name"</span> <span class="na">class=</span><span class="s">"oe_inline"</span><span class="nt">/&gt;</span>
+                @
+                <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"alias_domain"</span> <span class="na">class=</span><span class="s">"oe_inline"</span> <span class="na">readonly=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"alias_contact"</span> <span class="na">class=</span><span class="s">"oe_inline"</span>
+                <span class="na">string=</span><span class="s">"Accept Emails From"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/group&gt;</span>
+<span class="nt">&lt;/page&gt;</span>
+</pre></div>
+</div>
+<p>Now we can change the alias address directly from the form view and change
+who can send e-mails to the alias.</p>
+<p>We can then override <code>message_new()</code> on our expense model to fetch the values
+from our email when the expense will be created:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BusinessExpense</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># Previous code goes here</span>
+    <span class="c1"># ...</span>
 
-We can then override `message_new()` on our expense model to fetch the values
-from our email when the expense will be created:
+    <span class="k">def</span> <span class="nf">message_new</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">custom_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">""" Override to set values according to the email.</span>
 
-    
-    
-    class BusinessExpense(models.Model):
-        # Previous code goes here
-        # ...
-    
-        def message_new(self, msg, custom_values=None):
-            """ Override to set values according to the email.
-    
-            In this simple example, we simply use the email title as the name
-            of the expense, try to find a partner with this email address and
-            do a regex match to find the amount of the expense."""
-            name = msg_dict.get('subject', 'New Expense')
-            # Match the last occurrence of a float in the string
-            # Example: '50.3 bar 34.5' becomes '34.5'. This is potentially the price
-            # to encode on the expense. If not, take 1.0 instead
-            amount_pattern = '(\d+(\.\d*)?|\.\d+)'
-            expense_price = re.findall(amount_pattern, name)
-            price = expense_price and float(expense_price[-1][0]) or 1.0
-            # find the partner by looking for it's email
-            partner = self.env['res.partner'].search([('email', 'ilike', email_address)],
-                                                     limit=1)
-            defaults = {
-                'name': name,
-                'amount': price,
-                'partner_id': partner.id
-            }
-            defaults.update(custom_values or {})
-            res = super(BusinessExpense, self).message_new(msg, custom_values=defaults)
-            return res
-    
+<span class="sd">        In this simple example, we simply use the email title as the name</span>
+<span class="sd">        of the expense, try to find a partner with this email address and</span>
+<span class="sd">        do a regex match to find the amount of the expense."""</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">msg_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'subject'</span><span class="p">,</span> <span class="s1">'New Expense'</span><span class="p">)</span>
+        <span class="c1"># Match the last occurrence of a float in the string</span>
+        <span class="c1"># Example: '50.3 bar 34.5' becomes '34.5'. This is potentially the price</span>
+        <span class="c1"># to encode on the expense. If not, take 1.0 instead</span>
+        <span class="n">amount_pattern</span> <span class="o">=</span> <span class="s1">'(\d+(\.\d*)?|\.\d+)'</span>
+        <span class="n">expense_price</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">amount_pattern</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="n">expense_price</span> <span class="ow">and</span> <span class="nb">float</span><span class="p">(</span><span class="n">expense_price</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="ow">or</span> <span class="mf">1.0</span>
+        <span class="c1"># find the partner by looking for it's email</span>
+        <span class="n">partner</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'res.partner'</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">([(</span><span class="s1">'email'</span><span class="p">,</span> <span class="s1">'ilike'</span><span class="p">,</span> <span class="n">email_address</span><span class="p">)],</span>
+                                                 <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">defaults</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+            <span class="s1">'amount'</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span>
+            <span class="s1">'partner_id'</span><span class="p">:</span> <span class="n">partner</span><span class="o">.</span><span class="n">id</span>
+        <span class="p">}</span>
+        <span class="n">defaults</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">custom_values</span> <span class="ow">or</span> <span class="p">{})</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">BusinessExpense</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">message_new</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">custom_values</span><span class="o">=</span><span class="n">defaults</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
 
 ### Activities tracking
 
@@ -1003,43 +986,39 @@ object and the specific widgets to display them (via the field `activity_ids`)
 in the form view and kanban view of your records (`mail_activity` and
 `kanban_activity` widgets, respectively).
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Organizing a business trip is a tedious process and tracking needed activities
+like ordering plane tickets or a cab for the airport could be useful. To do so,
+we will add the activities mixin on our model and display the next planned activities
+in the message history of our trip.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BusinessTrip</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">'business.trip'</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'mail.thread'</span><span class="p">,</span> <span class="s1">'mail.activity.mixin'</span><span class="p">]</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s1">'Business Trip'</span>
 
-Organizing a business trip is a tedious process and tracking needed activities
-like ordering plane tickets or a cab for the airport could be useful. To do
-so, we will add the activities mixin on our model and display the next planned
-activities in the message history of our trip.
-
-    
-    
-    class BusinessTrip(models.Model):
-        _name = 'business.trip'
-        _inherit = ['mail.thread', 'mail.activity.mixin']
-        _description = 'Business Trip'
-    
-        name = fields.Char()
-        # [...]
-    
-
-We modify the form view of our trips to display their next activities:
-
-    
-    
-    <record id="businness_trip_form" model="ir.ui.view">
-        <field name="name">business.trip.form</field>
-        <field name="model">business.trip</field>
-        <field name="arch" type="xml">
-            <form string="Business Trip">
-                <!-- Your usual form view goes here -->
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers"/>
-                    <field name="activity_ids" widget="mail_activity"/>
-                    <field name="message_ids" widget="mail_thread"/>
-                </div>
-            </form>
-        </field>
-    </record>
-    
+    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">()</span>
+    <span class="c1"># [...]</span>
+</pre></div>
+</div>
+<p>We modify the form view of our trips to display their next activities:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">id=</span><span class="s">"businness_trip_form"</span> <span class="na">model=</span><span class="s">"ir.ui.view"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>business.trip.form<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"model"</span><span class="nt">&gt;</span>business.trip<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"arch"</span> <span class="na">type=</span><span class="s">"xml"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">string=</span><span class="s">"Business Trip"</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- Your usual form view goes here --&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"oe_chatter"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"message_follower_ids"</span> <span class="na">widget=</span><span class="s">"mail_followers"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"activity_ids"</span> <span class="na">widget=</span><span class="s">"mail_activity"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"message_ids"</span> <span class="na">widget=</span><span class="s">"mail_thread"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+</div>
 
 You can find concrete examples of integration in the following models:
 
@@ -1118,7 +1097,7 @@ You can find concrete examples of integration in the following models:
 
   * `hr.applicant` in the Recruitment Process (_hr_recruitment_) Application
 
-  * `helpdesk.ticket` in the Helpdesk (_helpdesk_ \- Odoo Enterprise only) Application
+  * `helpdesk.ticket` in the Helpdesk (_helpdesk_ \- Konvergo ERP Enterprise only) Application
 
 ### Website visibility
 
@@ -1325,5 +1304,5 @@ You can find concrete examples of integration in the following models:
 
   * `project.task` in the Project (_rating_project_) Application
 
-  * `helpdesk.ticket` in the Helpdesk (_helpdesk_ \- Odoo Enterprise only) Application
+  * `helpdesk.ticket` in the Helpdesk (_helpdesk_ \- Konvergo ERP Enterprise only) Application
 

@@ -11,25 +11,26 @@ warehouses.
 ## Configure products to be dropshipped
 
 To use dropshipping as a fulfillment strategy, navigate to the Purchase app
-and select Configuration ‣ Settings. Under the Logistics heading, click the
-Dropshipping checkbox, and Save to finish.
+and select Configuration ‣ Settings. Under the **Logistics** heading, click
+the **Dropshipping** checkbox, and **Save** to finish.
 
 Next, go to the Sales app, click Products ‣ Products and choose an existing
-product or select Create to configure a new one. On the Product page, make
-sure that the Can be Sold and Can be Purchased checkboxes are enabled.
+product or select **Create** to configure a new one. On the **Product** page,
+make sure that the **Can be Sold** and **Can be Purchased** checkboxes are
+enabled.
 
 ![Enable the "Can be Sold" and "Can be Purchased" checkboxes on the product
 form.](../../../../../_images/sold-purchased-checkboxes.png)
 
-Click on the Purchase tab and specify a vendor and the price that they sell
-the product for. Multiple vendors can be added, but the vendor at the top of
-the list will be the one automatically selected for purchase orders.
+Click on the **Purchase** tab and specify a vendor and the price that they
+sell the product for. Multiple vendors can be added, but the vendor at the top
+of the list will be the one automatically selected for purchase orders.
 
 ![The product form with a vendor specified.](../../../../../_images/product-
 vendor-config.png)
 
-Finally, select the Inventory tab and enable the Dropship checkbox in the
-Routes section.
+Finally, select the **Inventory** tab and enable the **Dropship** checkbox in
+the **Routes** section.
 
 ![Enable the Dropship option in the product inventory
 tab.](../../../../../_images/enable-dropship-route.png)
@@ -39,35 +40,34 @@ tab.](../../../../../_images/enable-dropship-route.png)
 When a customer completes an online purchase for a dropshipped product, a
 sales order will be automatically created with an associated request for
 quotation (RFQ) for the supplier. Sales orders can be viewed in the Sales app
-by selecting Orders ‣ Orders. Click the Purchase smart button at the top right
-of a sales order to view the associated RFQ.
+by selecting Orders ‣ Orders. Click the **Purchase** smart button at the top
+right of a sales order to view the associated RFQ.
 
-Tip
-
-Dropship sales orders can also be created manually through the Sales app by
+<div class="alert alert-info">
+<p class="alert-title">
+Tip</p><p>Dropship sales orders can also be created manually through the Sales app by
 selecting Orders ‣ Orders ‣ Create and adding a product configured for
-dropshipping.
-
-![A dropship sales order with the Purchase smart button in the top right
-corner.](../../../../../_images/dropship-sales-order.png)
+dropshipping.</p>
+</div> ![A dropship sales order with the Purchase smart button in
+the top right corner.](../../../../../_images/dropship-sales-order.png)
 
 Once the RFQ is confirmed, it becomes a purchase order and a dropship receipt
-is created and linked to it. The receipt can be viewed by clicking the Receipt
-smart button in the top right corner of the purchase order form.
+is created and linked to it. The receipt can be viewed by clicking the
+**Receipt** smart button in the top right corner of the purchase order form.
 
 ![A dropship purchase order with the Receipt smart button in the top right
 corner.](../../../../../_images/dropship-purchase-order.png)
 
-The dropship receipt will list the supplier in the Receive From section and
-the customer in the Destination Location section. Upon delivery of the product
-to the customer, click on the Validate button at the top left of the dropship
-receipt to confirm the delivered quantity.
+The dropship receipt will list the supplier in the **Receive From** section
+and the customer in the **Destination Location** section. Upon delivery of the
+product to the customer, click on the **Validate** button at the top left of
+the dropship receipt to confirm the delivered quantity.
 
 ![Validate the dropship receipt after
 delivery.](../../../../../_images/validate-dropship-receipt.png)
 
-To view all dropship orders, simply navigate to the Inventory Overview
-dashboard and click the teal # TO PROCESS button on the Dropship card.
+To view all dropship orders, simply navigate to the Inventory **Overview**
+dashboard and click the teal **# TO PROCESS** button on the **Dropship** card.
 
 ![Click the green button on the Dropship card to view all dropship
 orders.](../../../../../_images/view-all-dropship-orders.png)

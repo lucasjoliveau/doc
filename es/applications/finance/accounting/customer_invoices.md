@@ -2,7 +2,7 @@
 
 ## Desde la factura de cliente a la cobranza
 
-Odoo es compatible con múltiples flujos de trabajo de facturación y pago,
+Konvergo ERP es compatible con múltiples flujos de trabajo de facturación y pago,
 puede elegir y usar los que satisfagan las necesidades de su negocio. Si
 quiere aceptar un solo pago para una sola factura, o procesar un pago que
 abarca múltiples facturas y tomar descuentos por anticipos, puede hacerlo con
@@ -22,7 +22,7 @@ contractual. Si envía una caja a un cliente, cumplió con los términos del
 contrato y puede facturarle. Si su proveedor le envía una orden, cumplió con
 los términos de ese contrato y pueden facturarle. Además, se han cumplido los
 términos del contrato cuando la caja se mueve a o desde un camión. En este
-punto, Odoo es compatible con la creación de lo que el personal de almacén
+punto, Konvergo ERP es compatible con la creación de lo que el personal de almacén
 denomina Borrador de factura.
 
 ### Creación de facturas
@@ -74,7 +74,7 @@ información de impuestos.
 «Valide» la factura cuando esté listo para aprobarla. Posteriormente, la
 factura se mueve desde el estado de Borrador al estado Abierto.
 
-Cuando valida una factura, Odoo le da un número único de una secuencia
+Cuando valida una factura, Konvergo ERP le da un número único de una secuencia
 definida y modificable.
 
 ![../../../_images/invoice03.png](../../../_images/invoice03.png)
@@ -102,7 +102,7 @@ Ventas |  |  |  | 100
   
 ### Pagos
 
-En Odoo, una factura se considera pagada cuando el asiento contable asociado
+En Konvergo ERP, una factura se considera pagada cuando el asiento contable asociado
 se ha conciliado con los asientos de pago. Si no ha habido una conciliación,
 la factura permanecerá en el estado Abierto hasta que ingrese el pago.
 
@@ -115,7 +115,7 @@ Cuentas por cobrar | Agrolait |  |  | 115
   
 ### Recibir un pago parcial a través del estado de cuenta bancario
 
-Puede ingresar en Odoo sus estados de cuenta bancarios de forma manual, o
+Puede ingresar en Konvergo ERP sus estados de cuenta bancarios de forma manual, o
 puede importarlos desde un archivo csv o desde otros formatos predefinidos de
 acuerdo a la localización de su contabilidad.
 
@@ -150,7 +150,7 @@ Hay una tendencia creciente de clientes que pagan cada vez más tarde. Además,
 los recaudadores deben realizar todo tipo de esfuerzos para cobrar cada vez
 más rápido.
 
-Odoo le ayudará a definir su estrategia de seguimiento. Para recordarle a los
+Konvergo ERP le ayudará a definir su estrategia de seguimiento. Para recordarle a los
 clientes pagar sus facturas pendientes, puede definir diferentes acciones
 dependiendo de que tan atrasado está el pago. Estas acciones son un conjunto
 de niveles de seguimiento que se activan cuando la fecha de vencimiento de una
@@ -196,18 +196,18 @@ Por ejemplo, si gestiona su inventario mediante el método de contabilidad
 perpetua, debe esperar una disminución en la cuenta «Activos circulantes» una
 vez el material ha sido entregado al cliente.
 
-  * [Procesos de facturación](customer_invoices/overview.html)
-  * [Direcciones de entrega y de facturación](customer_invoices/customer_addresses.html)
-  * [Términos de pago y planes de pago a plazos](customer_invoices/payment_terms.html)
-  * [Términos y condiciones predeterminados](customer_invoices/terms_conditions.html)
-  * [Descuentos por pronto pago y reducción de impuestos](customer_invoices/cash_discounts.html)
-  * [Notas de crédito y reembolsos](customer_invoices/credit_notes.html)
-  * [Redondeo de efectivo](customer_invoices/cash_rounding.html)
-  * [Ingresos diferidos](customer_invoices/deferred_revenues.html)
-  * [Facturación electrónica (EDI)](customer_invoices/electronic_invoicing.html)
-  * [Correo postal](customer_invoices/snailmail.html)
-  * [Códigos EPC QR](customer_invoices/epc_qr_code.html)
-  * [Incoterms](customer_invoices/incoterms.html)
+  * [Procesos de facturación](customer_invoices/overview)
+  * [Direcciones de entrega y de facturación](customer_invoices/customer_addresses)
+  * [Términos de pago y planes de pago a plazos](customer_invoices/payment_terms)
+  * [Términos y condiciones predeterminados](customer_invoices/terms_conditions)
+  * [Descuentos por pronto pago y reducción de impuestos](customer_invoices/cash_discounts)
+  * [Notas de crédito y reembolsos](customer_invoices/credit_notes)
+  * [Redondeo de efectivo](customer_invoices/cash_rounding)
+  * [Ingresos diferidos](customer_invoices/deferred_revenues)
+  * [Facturación electrónica (EDI)](customer_invoices/electronic_invoicing)
+  * [Correo postal](customer_invoices/snailmail)
+  * [Códigos EPC QR](customer_invoices/epc_qr_code)
+  * [Incoterms](customer_invoices/incoterms)
 
   *[EDI]: intercambio electrónico de datos
 

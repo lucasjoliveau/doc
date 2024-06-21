@@ -1,6 +1,6 @@
-# ¿Cómo obtener las credenciales de UPS para la integración con Odoo?
+# ¿Cómo obtener las credenciales de UPS para la integración con Konvergo ERP?
 
-Para utilizar la API de UPS para Odoo, necesitará:
+Para utilizar la API de UPS para Konvergo ERP, necesitará:
 
   * Un usuario y contraseña en UPS.com
 
@@ -21,7 +21,7 @@ abrir una cuenta.
 
 Encontrará información adicional sobre la apertura de una cuenta UPS en su
 sitio web, en la página, [Cómo abrir una cuenta UPS en
-línea](https://www.ups.com/content/us/en/resources/sri/openaccountonline.html?srch_pos=2&srch_phr=open+ups+account)
+línea](https://www.ups.com/content/us/en/resources/sri/openaccountonline?srch_pos=2&srch_phr=open+ups+account)
 
 Si aún no tiene una cuenta de UPS, puede crear una junto con su perfil en
 línea siguiendo estos pasos:

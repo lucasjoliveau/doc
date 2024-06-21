@@ -13,7 +13,7 @@ In this chapter, you will learn how to:
 
 ## Default
 
-Odoo automatically generates some basic menu items depending on the apps you
+Konvergo ERP automatically generates some basic menu items depending on the apps you
 installed. For example, the Website app adds two items to the main menu. These
 items are linked to pages, which are also automatically created.
 

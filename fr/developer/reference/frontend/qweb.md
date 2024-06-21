@@ -2,7 +2,7 @@
 
 QWeb is the primary
 [templating](https://en.wikipedia.org/wiki/Template_processor) engine used by
-Odoo2. It is an XML templating engine1 and used mostly to generate
+Konvergo ERP2. It is an XML templating engine1 and used mostly to generate
 [HTML](https://en.wikipedia.org/wiki/HTML) fragments and pages.
 
 Template directives are specified as XML attributes prefixed with `t-`, for
@@ -164,9 +164,10 @@ provided integer exclusive) is still supported but deprecated.
 In addition to the name passed via `t-as`, `foreach` provides a few other
 variables for various data points:
 
-Avertissement
-
-`$as` will be replaced by the name passed to `t-as`
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p><code>$as</code> will be replaced by the name passed to <code>t-as</code></p>
+</div>
 
 `_$as_ _all` (deprecated)
 
@@ -174,9 +175,10 @@ Avertissement
 
 the object being iterated over
 
-Note
-
-This variable is only available on JavaScript QWeb, not Python.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>This variable is only available on JavaScript QWeb, not Python.</p>
+</div>
 
 `_$as_ _value`
 
@@ -279,7 +281,7 @@ will be rendered as:
     
 
 same as previous, but the parameter is a [format
-string](../../glossary.html#term-format-string) instead of just an expression,
+string](../../glossary#term-format-string) instead of just an expression,
 often useful to mix literal and non-literal string (e.g. classes):
 
     
@@ -300,10 +302,11 @@ will be rendered as:
     <li class="row even">3</li>
     
 
-Astuce
-
-There are two equivalent syntaxes for format strings: `"plain_text {{code}}"`
-(aka jinja-style) and `"plain_text #{code}"` (aka ruby-style).
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>There are two equivalent syntaxes for format strings: <code>"plain_text {{code}}"</code> (aka
+jinja-style) and <code>"plain_text #{code}"</code> (aka ruby-style).</p>
+</div>
 
 `t-att=mapping`
 
@@ -469,11 +472,12 @@ templates:
 
   * `markupsafe.Markup`.
 
-Avertissement
-
-`markupsafe.Markup` is an unsafe API, it’s an _assertion_ that you want the
-content to be markup-safe but necessarily can not check that, it should be
-used with care.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p><code>markupsafe.Markup</code> is an unsafe API, it’s an <em>assertion</em>
+that you want the content to be markup-safe but necessarily can
+not check that, it should be used with care.</p>
+</div>
 
   * `to_text()` does not mark the content as safe, but will not strip that information from safe content.
 
@@ -481,7 +485,7 @@ used with care.
 
 See the official documentation for explanations, but the big advantage of
 `Markup` is that it’s a very rich type overriding
-[`str`](https://docs.python.org/3/library/stdtypes.html#str "\(disponible dans
+[`str`](https://docs.python.org/3/library/stdtypes#str "\(disponible dans
 Python v3.12\)") operations to _automatically escape parameters_.
 
 This means that it’s easy to create _safe_ html snippets by using `Markup` on
@@ -510,24 +514,24 @@ though it is a very good thing, note that the effects can be odd at times:
     Markup('<a&amp;')
     
 
-Astuce
-
-Most of the content-safe APIs actually return a `Markup` with all that
-implies.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Most of the content-safe APIs actually return a
+<code>Markup</code> with all that implies.</p>
+</div>
 
 ### Javascript
 
-Avertissement
-
-Due to the lack of operator overriding, `Markup()` is a much more limited type
-than `Markup`.
-
-Therefore it doesn’t override methods either, and any operation involving
-`Markup()` will return a normal `String()` (and in reality not even that, but
-a « primitive string »).
-
-This means the fallback is safe, but it is easy to trigger double-escaping
-when working with `Markup()` objects.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Due to the lack of operator overriding, <code>Markup()</code> is a much more
+limited type than <code>Markup</code>.</p>
+<p>Therefore it doesn’t override methods either, and any operation involving
+<code>Markup()</code> will return a normal <code>String()</code> (and in reality
+not even that, but a « primitive string »).</p>
+<p>This means the fallback is safe, but it is easy to trigger double-escaping
+when working with <code>Markup()</code> objects.</p>
+</div>
 
 ### forcing double-escaping
 
@@ -536,13 +540,16 @@ If content is marked as safe but for some reason needs to be escaped anyway
 a normal string to « strip » the safety flag e.g. `str(content)` in Python and
 `String(content)` in Javascript.
 
-Note
-
-Because `Markup` is a much richer type than `Markup()`, some operations will
-strip the safety information from a `Markup()` but not a `Markup` e.g. string
-concatenation (`'' + content`) in Python will result in a `Markup` with the
-other operand having been properly escaped, while in Javascript will yield a
-`String()` where the other operand was _not_ escaped before the concatenation.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Because <code>Markup</code> is a much richer type than
+<code>Markup()</code>, some operations will strip the safety information from
+a <code>Markup()</code> but not a <code>Markup</code> e.g. string
+concatenation (<code>'' + content</code>) in Python will result in a
+<code>Markup</code> with the other operand having been properly
+escaped, while in Javascript will yield a <code>String()</code> where the
+other operand was <em>not</em> escaped before the concatenation.</p>
+</div>
 
 ### Deprecated output directives
 
@@ -689,7 +696,7 @@ the cached value is discarded.
 
 Values in `t-cache` are scoped, this involves a change in behavior between
 having or not having `t-cache` on one of the parent nodes. Don’t forget to
-take into account that Odoo uses a lot of templates, `t-call` and view
+take into account that Konvergo ERP uses a lot of templates, `t-call` and view
 inheritance. Adding a `t-cache` can therefore modify the rendering of a
 template that you do not see when editing. (`t-foreach` it’s like a `t-set`
 for each iteration)
@@ -841,7 +848,7 @@ The value `cached_value` is cached with the cached template part of
 
 Most Python-side uses of QWeb are in controllers (and during HTTP requests),
 in which case templates stored in the database (as
-[views](../backend/views.html#reference-views-qweb)) can be trivially rendered
+[views](../backend/views#reference-views-qweb)) can be trivially rendered
 by calling `odoo.http.HttpRequest.render()`:
 
     
@@ -865,7 +872,7 @@ _render(_id_[, _values_])
     
 
 Renders a QWeb view/template by database id or [external
-id](../../glossary.html#term-external-id). Templates are automatically loaded
+id](../../glossary#term-external-id). Templates are automatically loaded
 from `ir.qweb` records.
 
 `_prepare_environment` method sets up a number of default values in the
@@ -892,21 +899,21 @@ whether the current request (if any) is in `debug` mode
 
 url-encoding utility function
 
-[`json`](https://docs.python.org/3/library/json.html#module-json "\(disponible
+[`json`](https://docs.python.org/3/library/json#module-json "\(disponible
 dans Python v3.12\)")
 
     
 
 the corresponding standard library module
 
-[`time`](https://docs.python.org/3/library/time.html#module-time "\(disponible
+[`time`](https://docs.python.org/3/library/time#module-time "\(disponible
 dans Python v3.12\)")
 
     
 
 the corresponding standard library module
 
-[`datetime`](https://docs.python.org/3/library/datetime.html#module-datetime
+[`datetime`](https://docs.python.org/3/library/datetime#module-datetime
 "\(disponible dans Python v3.12\)")
 
     
@@ -932,7 +939,7 @@ Paramètres
 
   * **values** – context values to pass to QWeb for rendering
 
-  * **engine** ([_str_](https://docs.python.org/3/library/stdtypes.html#str "\(disponible dans Python v3.12\)")) – name of the Odoo model to use for rendering, can be used to expand or customize QWeb locally (by creating a « new » qweb based on `ir.qweb` with alterations)
+  * **engine** ([_str_](https://docs.python.org/3/library/stdtypes#str "\(disponible dans Python v3.12\)")) – name of the Konvergo ERP model to use for rendering, can be used to expand or customize QWeb locally (by creating a « new » qweb based on `ir.qweb` with alterations)
 
 render(_template_name_ , _values_ , _load_ , _** options_)
 
@@ -1100,10 +1107,12 @@ No operation
 if no `t-operation` is specified, the template body is interpreted as
 javascript code and executed with the context node as `this`
 
-Avertissement
-
-while much more powerful than other operations, this mode is also much harder
-to debug and maintain, it is recommended to avoid it
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>while much more powerful than other operations, this mode is
+also much harder to debug and maintain, it is recommended to
+avoid it</p>
+</div>
 
 ### debugging
 
@@ -1179,7 +1188,7 @@ _class _QWeb2.Engine()
 The QWeb « renderer », handles most of QWeb’s logic (loading, parsing,
 compiling and rendering templates).
 
-Odoo Web instantiates one for the user in the core module, and exports it to
+Konvergo ERP Web instantiates one for the user in the core module, and exports it to
 `core.qweb`. It also loads all the template files of the various modules into
 that QWeb instance.
 
@@ -1208,7 +1217,7 @@ Renvoie
 String
 
 The engine exposes an other method which may be useful in some cases (e.g. if
-you need a separate template namespace with, in Odoo Web, Kanban views get
+you need a separate template namespace with, in Konvergo ERP Web, Kanban views get
 their own `QWeb2.Engine()` instance so their templates don’t collide with more
 general « module » templates):
 
@@ -1267,7 +1276,7 @@ QWeb2.Engine.QWeb2.Engine.preprocess_node
     
 
 A `Function`. If present, called before compiling each DOM node to template
-code. In Odoo Web, this is used to automatically translate text content and
+code. In Konvergo ERP Web, this is used to automatically translate text content and
 some attributes in templates. Defaults to `null`.
 
 1
@@ -1283,6 +1292,6 @@ namespaces](https://en.wikipedia.org/wiki/XML_namespace)
     
 
 although it uses a few others, either for historical reasons or because they
-remain better fits for the use case. Odoo 9.0 still depends on
+remain better fits for the use case. Konvergo ERP 9.0 still depends on
 [Jinja](http://jinja.pocoo.org) and [Mako](https://www.makotemplates.org).
 

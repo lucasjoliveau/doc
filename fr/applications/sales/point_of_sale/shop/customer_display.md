@@ -10,33 +10,30 @@ updates on a secondary display.
 Depending on your POS setup, the feature can be displayed locally on a
 secondary screen or on another monitor connected to an IoT Box.
 
-To activate the feature, go to the POS settings, scroll down to the Connected
-Devices section, and tick the Customer Display checkbox.
+To activate the feature, go to the POS settings, scroll down to the
+**Connected Devices** section, and tick the **Customer Display** checkbox.
 
 ![customer display setting checkbox](../../../../_images/feature-setting.png)
 
 ### Local
 
 Connect a second screen to your POS and [open a POS
-session](../../point_of_sale.html#pos-session-start). Then, click the screen
+session](../../point_of_sale#pos-session-start). Then, click the screen
 icon to open a new window to drag and drop onto the second screen.
 
 ### IoT box
 
 Connect an IoT box to your database and the second screen to the IoT box.
 Then, go to Point of Sale ‣ Configuration ‣ Settings, scroll down to the
-Connected Devices section, tick the IoT Box checkbox, and select the second
-monitor in the Customer Display field.
+**Connected Devices** section, tick the **IoT Box** checkbox, and select the
+second monitor in the **Customer Display** field.
 
 ![iot setting to connect a customer display](../../../../_images/iot-
-setting.png)
-
-Note
-
-Both devices need to be connected to the same local network.
-
-Pour plus d'infos
-
-[Utiliser une IoT box avec un Point de
-Vente](../../../general/iot/config/pos.html)
+setting.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Both devices need to be connected to the same local network.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../../general/iot/config/pos">Utiliser une IoT box avec un Point de Vente</a></p>
+</div>
 

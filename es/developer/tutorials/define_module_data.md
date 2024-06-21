@@ -1,13 +1,12 @@
 # Define module data
 
-Importante
-
-This tutorial is an extension of the [Getting started](getting_started.html)
-tutorial. Make sure you have completed it and use the `estate` module you have
-built as a base for the exercises in this tutorial. Fetch the branch
-`16.0-core` from the [technical-training-
-solutions](https://github.com/odoo/technical-training-
-solutions/tree/16.0-core) repository if you want to start from a clean base.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>This tutorial is an extension of the <a href="getting_started">Getting started</a> tutorial. Make sure you have
+completed it and use the <code>estate</code> module you have built as a base for the exercises in this
+tutorial. Fetch the branch <code>16.0-core</code> from the <a href="https://github.com/odoo/technical-training-solutions/tree/16.0-core">technical-training-solutions</a> repository if you
+want to start from a clean base.</p>
+</div>
 
 ## Data Types
 
@@ -18,8 +17,8 @@ module. In other words, such data is often necessary for the module to work
 properly. This data will always be installed when installing the module.
 
 We already met technical data previously since we have defined
-[views](../reference/backend/views.html#reference-views) and
-[actions](../reference/backend/actions.html#reference-actions). Those are one
+[views](../reference/backend/views#reference-views) and
+[actions](../reference/backend/actions#reference-actions). Those are one
 kind of master data.
 
 On top of technical data, business data can be defined, e.g. countries,
@@ -68,7 +67,7 @@ with the command line.
 ### Manifest
 
 **Reference** : the documentation related to this topic can be found in
-[Module Manifests](../reference/backend/module.html#reference-module-
+[Module Manifests](../reference/backend/module#reference-module-
 manifest).
 
 Data is declared either in CSV or in XML. Each file containing data must be
@@ -128,7 +127,7 @@ Your manifest should look like this:
 ### CSV
 
 **Reference** : the documentation related to this topic can be found in [CSV
-data files](../reference/backend/data.html#reference-data-csvdatafiles).
+data files](../reference/backend/data#reference-data-csvdatafiles).
 
 The easiest way to declare simple data is by using the CSV format. This is
 however limited in terms of features: use it for long lists of simple models,
@@ -141,29 +140,25 @@ but prefer XML otherwise.
     id2,valueA2,valueB2,module.relatedid
     
 
-Truco
-
-Your IDE has probably an extension to have a syntax highlighting of the CSV
-files
-
-  * [Atom](https://atom.io/packages/rainbow-csv).
-
-  * [PyCharm/IntelliJ](https://plugins.jetbrains.com/plugin/10037-csv-plugin).
-
-  * [Vim](https://github.com/mechatroner/rainbow_csv).
-
-  * [Visual Studio](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv).
-
-Exercise
-
-Add some standard Real Estate Property Types for the `estate` module:
-Residential, Commercial, Industrial and Land. These should always be
-installed.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Your IDE has probably an extension to have a syntax highlighting of the CSV files</p>
+<ul>
+<li><p><a href="https://atom.io/packages/rainbow-csv">Atom</a>.</p></li>
+<li><p><a href="https://plugins.jetbrains.com/plugin/10037-csv-plugin">PyCharm/IntelliJ</a>.</p></li>
+<li><p><a href="https://github.com/mechatroner/rainbow_csv">Vim</a>.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv">Visual Studio</a>.</p></li>
+</ul>
+</div> <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add some standard Real Estate Property Types for the <code>estate</code> module: Residential,
+Commercial, Industrial and Land. These should always be installed.</p>
+</div>
 
 ### XML
 
 **Reference** : the documentation related to this topic can be found in [Data
-Files](../reference/backend/data.html#reference-data).
+Files](../reference/backend/data#reference-data).
 
 When the data to create is more complex it can be useful, or even necessary,
 to do it in XML.
@@ -183,31 +178,86 @@ to do it in XML.
     </odoo>
     
 
-Exercise
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Create some demo data for the <code>estate</code> module.</p>
+<table class="table docutils">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 33%"/>
+<col style="width: 37%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Values</p></th>
+<th class="head"><p>Values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Big Villa</p></td>
+<td><p>Trailer home</p></td>
+</tr>
+<tr class="row-odd"><td><p>state</p></td>
+<td><p>New</p></td>
+<td><p>Canceled</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>A nice and big villa</p></td>
+<td><p>Home in a trailer park</p></td>
+</tr>
+<tr class="row-odd"><td><p>postcode</p></td>
+<td><p>12345</p></td>
+<td><p>54321</p></td>
+</tr>
+<tr class="row-even"><td><p>date_availability</p></td>
+<td><p>2020-02-02</p></td>
+<td><p>1970-01-01</p></td>
+</tr>
+<tr class="row-odd"><td><p>expected_price</p></td>
+<td><p>1,600,000</p></td>
+<td><p>100,000</p></td>
+</tr>
+<tr class="row-even"><td><p>selling_price</p></td>
+<td></td>
+<td><p>120,000</p></td>
+</tr>
+<tr class="row-odd"><td><p>bedrooms</p></td>
+<td><p>6</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>living_area</p></td>
+<td><p>100</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>facades</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>garage</p></td>
+<td><p>True</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>garden</p></td>
+<td><p>True</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>garden_area</p></td>
+<td><p>100000</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>garden_orientation</p></td>
+<td><p>South</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 
-Create some demo data for the `estate` module.
-
-Field | Values | Values  
----|---|---  
-name | Big Villa | Trailer home  
-state | New | Canceled  
-description | A nice and big villa | Home in a trailer park  
-postcode | 12345 | 54321  
-date_availability | 2020-02-02 | 1970-01-01  
-expected_price | 1,600,000 | 100,000  
-selling_price |  | 120,000  
-bedrooms | 6 | 1  
-living_area | 100 | 10  
-facades | 4 | 4  
-garage | True | False  
-garden | True |   
-garden_area | 100000 |   
-garden_orientation | South |   
-  
 #### Data Extension
 
 During the Core Training, we saw in the [Chapter 13:
-Inheritance](getting_started/13_inheritance.html#tutorials-getting-
+Inheritance](getting_started/13_inheritance#tutorials-getting-
 started-13-inheritance) chapter we could inherit (extend) an existing view.
 This was a special case of data extension: any data can be extended in a
 module.
@@ -248,22 +298,46 @@ module declaring it).
     </odoo>
     
 
-Exercise
-
-Create some demo data offers for the properties you created.
-
-Create offers using the partners defined in `base`
-
-Partner | Estate | Price | Validity  
----|---|---|---  
-Azure Interior | Big Villa | 10000 | 14  
-Azure Interior | Big Villa | 1500000 | 14  
-Deco Addict | Big Villa | 1500001 | 14  
-  
-Exercise
-
-Ensure both of your demo properties are created with their Property Type set
-to Residential.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Create some demo data offers for the properties you created.</p>
+<p>Create offers using the partners defined in <code>base</code></p>
+<table class="table docutils">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 24%"/>
+<col style="width: 18%"/>
+<col style="width: 21%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Partner</p></th>
+<th class="head"><p>Estate</p></th>
+<th class="head"><p>Price</p></th>
+<th class="head"><p>Validity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Azure Interior</p></td>
+<td><p>Big Villa</p></td>
+<td><p>10000</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>Azure Interior</p></td>
+<td><p>Big Villa</p></td>
+<td><p>1500000</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>Deco Addict</p></td>
+<td><p>Big Villa</p></td>
+<td><p>1500001</p></td>
+<td><p>14</p></td>
+</tr>
+</tbody>
+</table>
+</div> <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Ensure both of your demo properties are created with their Property Type set to Residential.</p>
+</div>
 
 #### `eval`
 
@@ -281,10 +355,11 @@ See :Add X2many fields.
     </odoo>
     
 
-Exercise
-
-The offers you added should always be in a date relative to the installation
-of the module.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>The offers you added should always be in a date relative to the installation of the
+module.</p>
+</div>
 
 #### `search`
 
@@ -317,10 +392,11 @@ You might also need to execute python code when loading data.
     </function>
     
 
-Exercise
-
-Validate one of the demo data offers by using the «Accept Offer» button.
-Refuse the others.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Validate one of the demo data offers by using the «Accept Offer» button. Refuse the
+others.</p>
+</div>
 
 ### Add X2many fields
 
@@ -347,17 +423,19 @@ so by using the `Command` methods.
     </odoo>
     
 
-Exercise
-
-Create one new Property, but this time with some offers created directly
-inside the One2many field linked to the Offers.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Create one new Property, but this time with some offers created directly inside the
+One2many field linked to the Offers.</p>
+</div>
 
 ## Accessing the data
 
-Advertencia
-
-You should never access demo data outside of the demo data declaration, not
-even in tests.
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>You should never access demo data outside of the demo data declaration, not even in
+tests.</p>
+</div>
 
 There are multiple ways to access the master/demo data.
 
@@ -391,10 +469,16 @@ In CSV, the title of the column must be suffixed with `:id` or `/id`.
 
 In SQL, it is more complicated, see the advanced section.
 
-Advertencia
-
-Data can always be deleted by the user. Always code defensively, taking this
-into account.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Your IDE has probably an extension to have a syntax highlighting of the CSV files</p>
+<ul>
+<li><p><a href="https://atom.io/packages/rainbow-csv">Atom</a>.</p></li>
+<li><p><a href="https://plugins.jetbrains.com/plugin/10037-csv-plugin">PyCharm/IntelliJ</a>.</p></li>
+<li><p><a href="https://github.com/mechatroner/rainbow_csv">Vim</a>.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv">Visual Studio</a>.</p></li>
+</ul>
+</div>0
 
 ## Advanced
 
@@ -412,10 +496,16 @@ which it is defined, the model defining it, and the id of it.
 The records created with the `noupdate` flag won’t be updated when upgrading
 the module that created them, but it will be created if it didn’t exist yet.
 
-Nota
-
-`odoo-bin -i module` will bypass this setting and always load the data. But
-normally one shouldn’t do this on a production database.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Your IDE has probably an extension to have a syntax highlighting of the CSV files</p>
+<ul>
+<li><p><a href="https://atom.io/packages/rainbow-csv">Atom</a>.</p></li>
+<li><p><a href="https://plugins.jetbrains.com/plugin/10037-csv-plugin">PyCharm/IntelliJ</a>.</p></li>
+<li><p><a href="https://github.com/mechatroner/rainbow_csv">Vim</a>.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv">Visual Studio</a>.</p></li>
+</ul>
+</div>1
 
     
     
@@ -432,13 +522,16 @@ In some cases, it makes sense to do the import directly in SQL. This is
 however discouraged as it bypasses all the features of the ORM, computed
 fields (including metadata) and python constraints.
 
-Nota
-
-Generally using raw SQL also bypasses ACLs and increases the risks of
-injections.
-
-**Reference** : [Security in
-Odoo](../reference/backend/security.html#reference-security)
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Your IDE has probably an extension to have a syntax highlighting of the CSV files</p>
+<ul>
+<li><p><a href="https://atom.io/packages/rainbow-csv">Atom</a>.</p></li>
+<li><p><a href="https://plugins.jetbrains.com/plugin/10037-csv-plugin">PyCharm/IntelliJ</a>.</p></li>
+<li><p><a href="https://github.com/mechatroner/rainbow_csv">Vim</a>.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv">Visual Studio</a>.</p></li>
+</ul>
+</div>2
 
   * It can help to speed the import time by a lot [with huge files](https://github.com/odoo/enterprise/blob/d46cceef8c594b9056d0115edb7169e207a5986f/product_unspsc/hooks.py#L19).
 

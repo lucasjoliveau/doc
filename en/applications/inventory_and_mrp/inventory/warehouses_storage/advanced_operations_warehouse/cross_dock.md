@@ -6,12 +6,11 @@ unloaded in a _Cross-Dock_ area in order to reorganize products and load
 another truck.
 
 ![../../../../../_images/cross1.png](../../../../../_images/cross1.png)
-
-Note
-
-For more information on how to organize your warehouse, read our blog: [What
-is cross-docking and is it for me?](https://www.odoo.com/blog/business-
-hacks-1/post/what-is-cross-docking-and-is-it-for-me-270)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>For more information on how to organize your warehouse, read our blog: <a href="https://www.odoo.com/blog/business-hacks-1/post/what-is-cross-docking-and-is-it-for-me-270">What is cross-docking and
+is it for me?</a></p>
+</div>
 
 ## Configuration
 
@@ -19,10 +18,10 @@ In the _Inventory_ app, open Configuration ‣ Settings and activate the _Multi-
 Step Routes_.
 
 ![../../../../../_images/cross2.png](../../../../../_images/cross2.png)
-
-Note
-
-Doing so will also enable the _Storage Locations_ feature.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Doing so will also enable the <em>Storage Locations</em> feature.</p>
+</div>
 
 Now, both _Incoming_ and _Outgoing_ shipments should be configured to work
 with 2 steps. To adapt the configuration, go to Inventory ‣ Configuration ‣
@@ -44,7 +43,7 @@ specify the vendor to who you buy the product and set a price for it.
 ![../../../../../_images/cross5.png](../../../../../_images/cross5.png)
 ![../../../../../_images/cross6.png](../../../../../_images/cross6.png)
 
-Once done, create a sale order for the product and confirm it. Odoo will
+Once done, create a sale order for the product and confirm it. Konvergo ERP will
 automatically create two transfers which will be linked to the sale order. The
 first one is the transfer from the _Input Location_ to the _Output Location_ ,
 corresponding to the move of the product in the _Cross-Dock_ area. The second

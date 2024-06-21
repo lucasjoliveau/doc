@@ -9,16 +9,18 @@ l’entrepôt peut différer grandement. Vous pouvez configurer plusieurs
 paramètres pour les réceptions et les livraisons et il n’est pas nécessaire de
 les configurer pour qu’elles aient le même nombre d’étapes.
 
-Pour plus d'infos
-
-  * [Utiliser des routes (Tutoriel eLearning)](https://www.odoo.com/slides/slide/using-routes-1018)
-
-  * [Routes de flux tirés & poussés (Tutoriel eLearning)](https://www.odoo.com/slides/slide/push-pull-rules-1024)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="https://www.odoo.com/slides/slide/using-routes-1018">Utiliser des routes (Tutoriel eLearning)</a></p></li>
+<li><p><a href="https://www.odoo.com/slides/slide/push-pull-rules-1024">Routes de flux tirés &amp; poussés (Tutoriel eLearning)</a></p></li>
+</ul>
+</div>
 
 ## Choisir le bon flux d’inventaire pour gérer les réceptions et les
 livraisons
 
-Par défaut, Odoo gère les expéditions et les réceptions de trois façons
+Par défaut, Konvergo ERP gère les expéditions et les réceptions de trois façons
 différentes : en une, deux ou trois étapes. La configuration la plus simple
 est une étape, qui est la configuration par défaut. Chaque étape
 supplémentaire nécessaire pour les réceptions ou les expéditions d’un entrepôt
@@ -44,10 +46,10 @@ une étape sont les suivantes :
 
   * Les articles directement réceptionnés ou expédiés dans/depuis le stock.
 
-Pour plus d'infos
-
-[Traiter des réceptions et des livraisons en une
-étape](receipts_delivery_one_step.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="receipts_delivery_one_step">Traiter des réceptions et des livraisons en une étape</a></p>
+</div>
 
 ### Flux en deux étapes
 
@@ -64,11 +66,10 @@ deux étapes sont les suivantes :
 
   * Les produits reçus ne seront pas disponibles pour la fabrication, l’expédition, etc. tant qu’ils n’auront pas été transférés dans le stock.
 
-Pour plus d'infos
-
-[Traiter les réceptions et les livraisons en deux
-étapes](receipts_delivery_two_steps.html#inventory-receipts-delivery-two-
-steps)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="receipts_delivery_two_steps#inventory-receipts-delivery-two-steps"><span class="std std-ref">Traiter les réceptions et les livraisons en deux étapes</span></a></p>
+</div>
 
 ### Flux en trois étapes
 
@@ -87,11 +88,13 @@ trois étapes sont les suivantes :
 
   * Les produits reçus ne seront pas disponibles pour la fabrication, l’expédition, etc. tant qu’ils n’auront pas été transférés dans le stock.
 
-Pour plus d'infos
-
-  * [Traiter les réceptions en trois étapes](receipts_three_steps.html#inventory-receipts-three-steps)
-
-  * [Traiter les livraisons en trois étapes](delivery_three_steps.html#inventory-delivery-three-steps)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="receipts_three_steps#inventory-receipts-three-steps"><span class="std std-ref">Traiter les réceptions en trois étapes</span></a></p></li>
+<li><p><a href="delivery_three_steps#inventory-delivery-three-steps"><span class="std std-ref">Traiter les livraisons en trois étapes</span></a></p></li>
+</ul>
+</div>
 
   *[FIFO]: First In, First Out
   *[LIFO]: Last In, First Out

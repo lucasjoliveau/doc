@@ -1,7 +1,7 @@
 # Chapter 9: Computed Fields And Onchanges
 
-The [relations between models](08_relations.html#tutorials-getting-
-started-08-relations) are a key component of any Odoo module. They are
+The [relations between models](08_relations#tutorials-getting-
+started-08-relations) are a key component of any Konvergo ERP module. They are
 necessary for the modelization of any business case. However, we may want
 links between the fields within a given model. Sometimes the value of one
 field is determined from the values of other fields and other times we want to
@@ -16,19 +16,20 @@ field declarations.
 ## Computed Fields
 
 **Reference** : the documentation related to this topic can be found in
-[Computed Fields](../../reference/backend/orm.html#reference-fields-compute).
+[Computed Fields](../../reference/backend/orm#reference-fields-compute).
 
-Nota
-
-**Goal** : at the end of this section:
-
-  * In the property model, the total area and the best offer should be computed:
-
-![Compute fields](../../../_images/compute.gif)
-
-  * In the property offer model, the validity date should be computed and can be updated:
-
-![Compute field with inverse](../../../_images/compute_inverse.gif)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p><b>Goal</b>: at the end of this section:</p>
+<ul>
+<li><p>In the property model, the total area and the best offer should be computed:</p></li>
+</ul>
+<img alt="Compute fields" class="align-center" src="../../../_images/compute.gif"/>
+<ul>
+<li><p>In the property offer model, the validity date should be computed and can be updated:</p></li>
+</ul>
+<img alt="Compute field with inverse" class="align-center" src="../../../_images/compute_inverse.gif"/>
+</div>
 
 In our real estate module, we have defined the living area as well as the
 garden area. It is then natural to define the total area as the sum of both
@@ -46,7 +47,7 @@ computed field for every record in `self`.
 
 By convention, `compute` methods are private, meaning that they cannot be
 called from the presentation tier, only from the business tier (see [Chapter
-1: Architecture Overview](01_architecture.html#tutorials-getting-
+1: Architecture Overview](01_architecture#tutorials-getting-
 started-01-architecture)). Private methods have a name starting with an
 underscore `_`.
 
@@ -74,27 +75,31 @@ whenever some of its dependencies have been modified:
                 record.total = 2.0 * record.amount
     
 
-Nota
+<div class="aphorism alert alert-primary">
+<p class="alert-title">
+Nota</p><p><code>self</code> is a collection.</p>
+<p>The object <code>self</code> is a <em>recordset</em>, i.e. an ordered collection of
+records. It supports the standard Python operations on collections, e.g.
+<code>len(self)</code> and <code>iter(self)</code>, plus extra set operations such as <code>recs1 |
+recs2</code>.</p>
+<p>Iterating over <code>self</code> gives the records one by one, where each record is
+itself a collection of size 1. You can access/assign fields on single
+records by using the dot notation, e.g. <code>record.name</code>.</p>
+</div>
 
-`self` is a collection.
-
-The object `self` is a _recordset_ , i.e. an ordered collection of records. It supports the standard Python operations on collections, e.g. `len(self)` and `iter(self)`, plus extra set operations such as `recs1 | recs2`.
-
-Iterating over `self` gives the records one by one, where each record is
-itself a collection of size 1. You can access/assign fields on single records
-by using the dot notation, e.g. `record.name`.
-
-Many examples of computed fields can be found in Odoo.
+Many examples of computed fields can be found in Konvergo ERP.
 [Here](https://github.com/odoo/odoo/blob/713dd3777ca0ce9d121d5162a3d63de3237509f4/addons/account/models/account_move.py#L3420-L3423)
 is a simple one.
 
-Exercise
-
-Compute the total area.
-
-  * Add the `total_area` field to `estate.property`. It is defined as the sum of the `living_area` and the `garden_area`.
-
-  * Add the field in the form view as depicted on the first image of this section’s **Goal**.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Compute the total area.</p>
+<ul>
+<li><p>Add the <code>total_area</code> field to <code>estate.property</code>. It is defined as the sum of the
+<code>living_area</code> and the <code>garden_area</code>.</p></li>
+<li><p>Add the field in the form view as depicted on the first image of this section’s <b>Goal</b>.</p></li>
+</ul>
+</div>
 
 For relational fields it’s possible to use paths through a field as a
 dependency:
@@ -116,17 +121,18 @@ The example is given with a `Many2one`, but it is valid for `Many2many` or a
 
 Let’s try it in our module with the following exercise!
 
-Exercise
-
-Compute the best offer.
-
-  * Add the `best_price` field to `estate.property`. It is defined as the highest (i.e. maximum) of the offers” `price`.
-
-  * Add the field to the form view as depicted in the first image of this section’s **Goal**.
-
-Tip: you might want to try using the `mapped()` method. See
-[here](https://github.com/odoo/odoo/blob/f011c9aacf3a3010c436d4e4f408cd9ae265de1b/addons/account/models/account_payment.py#L686)
-for a simple example.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Compute the best offer.</p>
+<ul>
+<li><p>Add the <code>best_price</code> field to <code>estate.property</code>. It is defined as the highest (i.e. maximum) of the
+offers” <code>price</code>.</p></li>
+<li><p>Add the field to the form view as depicted in the first image of this section’s <b>Goal</b>.</p></li>
+</ul>
+<p>Tip: you might want to try using the <code>mapped()</code> method. See
+<a href="https://github.com/odoo/odoo/blob/f011c9aacf3a3010c436d4e4f408cd9ae265de1b/addons/account/models/account_payment.py#L686">here</a>
+for a simple example.</p>
+</div>
 
 ### Inverse Function
 
@@ -138,7 +144,7 @@ our real estate example, we can define a validity duration for an offer and
 set a validity date. We would like to be able to set either the duration or
 the date with one impacting the other.
 
-To support this Odoo provides the ability to use an `inverse` function:
+To support this Konvergo ERP provides the ability to use an `inverse` function:
 
     
     
@@ -169,26 +175,44 @@ dependencies.
 Note that the `inverse` method is called when saving the record, while the
 `compute` method is called at each change of its dependencies.
 
-Exercise
-
-Compute a validity date for offers.
-
-  * Add the following fields to the `estate.property.offer` model:
-
-Field | Type | Default  
----|---|---  
-validity | Integer | 7  
-date_deadline | Date |   
-  
-Where `date_deadline` is a computed field which is defined as the sum of two
-fields from the offer: the `create_date` and the `validity`. Define an
-appropriate inverse function so that the user can set either the date or the
-validity.
-
-Tip: the `create_date` is only filled in when the record is created, therefore
-you will need a fallback to prevent crashing at time of creation.
-
-  * Add the fields in the form view and the list view as depicted on the second image of this section’s **Goal**.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Compute a validity date for offers.</p>
+<ul>
+<li><p>Add the following fields to the <code>estate.property.offer</code> model:</p></li>
+</ul>
+<table class="table docutils">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>validity</p></td>
+<td><p>Integer</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>date_deadline</p></td>
+<td><p>Date</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Where <code>date_deadline</code> is a computed field which is defined as the sum of two fields from
+the offer: the <code>create_date</code> and the <code>validity</code>. Define an appropriate inverse function
+so that the user can set either the date or the validity.</p>
+<p>Tip: the <code>create_date</code> is only filled in when the record is created, therefore you will
+need a fallback to prevent crashing at time of creation.</p>
+<ul>
+<li><p>Add the fields in the form view and the list view as depicted on the second image of this section’s <b>Goal</b>.</p></li>
+</ul>
+</div>
 
 ### Additional Information
 
@@ -234,12 +258,12 @@ Not cool :-(
 **Reference** : the documentation related to this topic can be found in
 `onchange()`:
 
-Nota
-
-**Goal** : at the end of this section, enabling the garden will set a default
-area of 10 and an orientation to North.
-
-![Onchange](../../../_images/onchange.gif)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p><b>Goal</b>: at the end of this section, enabling the garden will set a default area of 10 and
+an orientation to North.</p>
+<img alt="Onchange" class="align-center" src="../../../_images/onchange.gif"/>
+</div>
 
 In our real estate module, we also want to help the user with data entry. When
 the “garden” field is set, we want to give a default value for the garden area
@@ -277,13 +301,12 @@ description values afterwards. Also note that we do not loop on `self`, this
 is because the method is only triggered in a form view, where `self` is always
 a single record.
 
-Exercise
-
-Set values for garden area and orientation.
-
-Create an `onchange` in the `estate.property` model in order to set values for
-the garden area (10) and orientation (North) when garden is set to True. When
-unset, clear the fields.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Set values for garden area and orientation.</p>
+<p>Create an <code>onchange</code> in the <code>estate.property</code> model in order to set values for the
+garden area (10) and orientation (North) when garden is set to True. When unset, clear the fields.</p>
+</div>
 
 ### Additional Information
 
@@ -315,6 +338,6 @@ When using stored computed fields, pay close attention to the dependencies.
 When computed fields depend on other computed fields, changing a value can
 trigger a large number of recomputations. This leads to poor performance.
 
-In the [next chapter](10_actions.html#tutorials-getting-started-10-actions),
+In the [next chapter](10_actions#tutorials-getting-started-10-actions),
 we’ll see how we can trigger some business logic when buttons are clicked.
 

@@ -5,18 +5,20 @@ cuentas. Es compatible con ~5000 instituciones en más de 50 países.
 
 ![Logotipo de Salt Edge](../../../../../_images/saltedge-logo.png)
 
-Odoo se puede sincronizar directamente con su banco para obtener todos los
+Konvergo ERP se puede sincronizar directamente con su banco para obtener todos los
 extractos bancarios importados automáticamente a su base de datos.
 
-Ver también
-
-  * [Sincronización bancaria](../bank_synchronization.html)
-
-  * [Transacciones](../transactions.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../bank_synchronization">Sincronización bancaria</a></p></li>
+<li><p><a href="../transactions">Transacciones</a></p></li>
+</ul>
+</div>
 
 ## Configuración
 
-### Vincule sus cuentas bancarias con Odoo
+### Vincule sus cuentas bancarias con Konvergo ERP
 
   1. Inicie la sincronización haciendo clic en :menuselection: `Contabilidad --> Configuración --> Agregar una cuenta bancaria`.
 
@@ -50,7 +52,7 @@ las credenciales. Haga clic en el botón * Actualizar credenciales * para
 iniciar el flujo y siga los pasos.
 
 No olvide marcar la casilla de verificación de consentimiento. De lo
-contrario, es posible que Odoo no pueda acceder a su información.
+contrario, es posible que Konvergo ERP no pueda acceder a su información.
 
 ### Obtener cuentas nuevas
 
@@ -62,21 +64,21 @@ nuevas. Haga clic en el botón * Obtener cuentas * para iniciar el flujo y siga
 los pasos.
 
 No olvide marcar la casilla de verificación de consentimiento. De lo
-contrario, es posible que Odoo no pueda acceder a su información.
+contrario, es posible que Konvergo ERP no pueda acceder a su información.
 
 ## Preguntas frecuentes
 
 ### Aparece un error cuando intento de borrar la sincronización dentro de
-Odoo
+Konvergo ERP
 
-Odoo no puede eliminar de forma permanente la conexión que creó con la
+Konvergo ERP no puede eliminar de forma permanente la conexión que creó con la
 institución bancaria. Sin embargo, puede revocar el consentimiento que
-proporcionó para que Odoo ya no tenga acceso a su cuenta. Es probable que el
+proporcionó para que Konvergo ERP ya no tenga acceso a su cuenta. Es probable que el
 error que está viendo sea un mensaje que menciona que se revocó el
 consentimiento, pero que el registro no se pudo eliminar porque todavía existe
 dentro de Salt Edge. Si desea eliminar la conexión por completo, entre a su
 [cuenta de Salt Edge](https://www.saltedge.com/dashboard) y elimine su
-sincronización de forma manual. Una vez hecho esto, puede volver a Odoo para
+sincronización de forma manual. Una vez hecho esto, puede volver a Konvergo ERP para
 eliminar el registro.
 
 ### Aparece un error en el que dice que ya sincronicé esta cuenta
@@ -86,11 +88,11 @@ verifique en su [tablero](https://www.saltedge.com/dashboard) que no tiene una
 conexión con las mismas credenciales.
 
 En caso de que ya tenga una sincronización que tenga las mismas credenciales
-en su panel de Salt Edge y que no se haya creado con Odoo, elimínela y créela
-desde su base de datos de Odoo.
+en su panel de Salt Edge y que no se haya creado con Konvergo ERP, elimínela y créela
+desde su base de datos de Konvergo ERP.
 
 En caso de que ya tenga una conexión con las mismas credenciales presentes en
-su tablero de Salt Edge y esta sincronización se haya creado con Odoo,
+su tablero de Salt Edge y esta sincronización se haya creado con Konvergo ERP,
 normalmente podrá encontrarla yendo a :menuselection: `Contabilidad -->
 Configuración --> Sincronización en línea`. Asegúrese de realizar una
 _Actualización de credenciales_ para reactivar la conexión.

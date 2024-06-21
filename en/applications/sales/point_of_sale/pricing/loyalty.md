@@ -32,8 +32,9 @@ defined in the loyalty program.
 You can see the price is instantly updated to reflect the pricelist. You can
 finalize the order in your usual way.
 
-Note
-
-If you select a customer with a default pricelist, it will be applied. You can
-of course change it.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>If you select a customer with a default pricelist, it will be
+applied. You can of course change it.</p>
+</div>
 

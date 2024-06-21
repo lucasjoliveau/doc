@@ -7,7 +7,7 @@ Subm%C3%B3dulos) le permite integrar otros proyectos de Git en su código sin
 necesidad de copiar y pegar todo el código.
 
 Sus módulos personalizados pueden depender de los módulos de otros
-repositorios. En cuanto a Odoo, esta función le permite agregar módulos desde
+repositorios. En cuanto a Konvergo ERP, esta función le permite agregar módulos desde
 otros repositorios de Git a las ramas de su repositorio. Agregar estas
 dependencias a su rama mediante submódulos hace que el despliegue de su código
 y su servidor sea más fácil, ya que puede clonar los repositorios que se
@@ -18,28 +18,28 @@ tiene el control de la revisión que desea. Usted decide si quiere anclar el
 submódulo a una revisión específica y cuándo quiere actualizarlo a una
 revisión más reciente.
 
-En Odoo.sh, los submódulos le dan la posibilidad de usar y depender de módulos
+En Konvergo ERP.sh, los submódulos le dan la posibilidad de usar y depender de módulos
 disponibles en otros repositorios. La plataforma detectará que agregó módulos
 mediante submódulos en sus ramas y los agregará a su ruta de complementos de
 forma automática para que pueda instalarlos en su base de datos.
 
 Si agrega repositorios privados como submódulos a sus ramas, debe configurar
-una clave de despliegue en los ajustes de su proyecto de Odoo.sh y en los de
-su repositorio. De otra forma, Odoo.sh no podrá descargarlos. El proceso se
+una clave de despliegue en los ajustes de su proyecto de Konvergo ERP.sh y en los de
+su repositorio. De otra forma, Konvergo ERP.sh no podrá descargarlos. El proceso se
 describe en el capítulo [Ajustes >
-Submódulos](../getting_started/settings.html#odoosh-gettingstarted-settings-
+Submódulos](../getting_started/settings#odoosh-gettingstarted-settings-
 submodules).
 
 ## Agregar un submódulo
 
-### Con Odoo.sh (método simple)
+### Con Konvergo ERP.sh (método simple)
 
-Advertencia
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Por ahora, no es posible agregar repositorios <b>privados</b> con este método pero puede hacerlo <a href="#odoosh-advanced-submodules-withgit"><span class="std std-ref">con Git</span></a>.</p>
+</div>
 
-Por ahora, no es posible agregar repositorios **privados** con este método
-pero puede hacerlo con Git.
-
-En Odoo.sh, en la vista de ramas de su proyecto, elija la rama en la que desea
+En Konvergo ERP.sh, en la vista de ramas de su proyecto, elija la rama en la que desea
 agregar un submódulo.
 
 En la esquina superior derecha, haga clic en el botón de _Submódulo_ y luego

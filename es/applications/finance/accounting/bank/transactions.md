@@ -4,7 +4,7 @@ Importar transacciones desde sus estados de cuenta bancarios permite hacer un
 seguimiento de las transacciones de la cuenta bancaria y conciliarlas con las
 registradas en su contabilidad.
 
-La [sincronización bancaria](bank_synchronization.html) automatiza el proceso.
+La [sincronización bancaria](bank_synchronization) automatiza el proceso.
 Sin embargo, si no desea utilizarlo o si su banco aún no es compatible,
 existen otras opciones:
 
@@ -12,13 +12,14 @@ existen otras opciones:
 
   * Registrar transacciones bancarias manualmente.
 
-Nota
-
-La agrupación de transacciones por estado de cuenta es opcional.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>La <a href="#transactions-statements"><span class="std std-ref">agrupación de transacciones por estado de cuenta</span></a> es opcional.</p>
+</div>
 
 ## Importar transacciones
 
-Odoo admite múltiples formatos de archivo para importar transacciones:
+Konvergo ERP admite múltiples formatos de archivo para importar transacciones:
 
   * Formato de gestión de efectivo recomendado por SEPA (CAMT.053);
 
@@ -30,8 +31,8 @@ Odoo admite múltiples formatos de archivo para importar transacciones:
 
   * Bélgica: Coded Statement of Account (.CODA).
 
-Para importar un archivo vaya al Tablero de contabilidad y en el diario Banco
-haga clic en Importar transacciones.
+Para importar un archivo vaya al **Tablero de contabilidad** y en el diario
+**Banco** haga clic en **Importar transacciones**.
 
 ![Importe transacciones bancarias desde el diario de
 banco](../../../../_images/import-transactions.png)
@@ -39,19 +40,20 @@ banco](../../../../_images/import-transactions.png)
 Después, seleccione al archivo y súbalo.
 
 Después de configurar las opciones de formato necesarias y mapear las columnas
-del archivo con los campos relacionados en Odoo, puede correr una prueba e
-import sus transacciones bancarias.
+del archivo con los campos relacionados en Konvergo ERP, puede correr una **prueba** e
+**import** sus transacciones bancarias.
 
-Ver también
-
-[Exportar e importar datos](../../../essentials/export_import_data.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="../../../essentials/export_import_data">Exportar e importar datos</a></p>
+</div>
 
 ## Registrar transacciones bancarias manualmente
 
 También puede registrar sus transacciones bancarias de manera manual. Para
-hacerlo, vaya al tablero de contabilidad, haga clic en el diario bancario y
-después en Nuevo. Asegúrese de llenar los campos partner y etiqueta para
-facilitar el proceso de conciliación.
+hacerlo, vaya al **tablero de contabilidad** , haga clic en el diario
+**bancario** y después en **Nuevo**. Asegúrese de llenar los campos
+**partner** y **etiqueta** para facilitar el proceso de conciliación.
 
 ## Extractos
 
@@ -64,24 +66,21 @@ según el estado de cuenta en el que aparecen, pero dependiendo del flujo de su
 negocio, puede que quiera registrarlas para llevar un buen control de dichas
 transacciones.
 
-Importante
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Si quiere comparar los balances finales de sus estados bancarios con los de sus registros financieros, <em>no se le olvide crear una transacción de apertura</em> para registrar el balance de su cuenta de banco desde la fecha en la que empezó a sincronizar o importar transacciones. Este paso es necesario para que su contabilidad sea correcta.</p>
+</div>
 
-Si quiere comparar los balances finales de sus estados bancarios con los de
-sus registros financieros, _no se le olvide crear una transacción de apertura_
-para registrar el balance de su cuenta de banco desde la fecha en la que
-empezó a sincronizar o importar transacciones. Este paso es necesario para que
-su contabilidad sea correcta.
-
-Para acceder a la lista de estados, vaya al tablero de contabilidad, haga clic
-en los tres puntos (⋮) junto al diario de banco o efectivo que quiere revisar
-y después vaya a Estados de cuenta.
+Para acceder a la lista de estados, vaya al **tablero de contabilidad** , haga
+clic en los tres puntos (**⋮**) junto al diario de banco o efectivo que quiere
+revisar y después vaya a **Estados de cuenta**.
 
 ### Creación de estados de cuenta desde la vista de kanban
 
 Haga clic en el nombre del diario de banco para abrir la vista de conciliación
 bancaria. Identifique la transacción correspondiente a la última transacción
-en su estado bancario. Haga clic en el botón ESTADO DE CUENTA que aparece al
-pasar el ratón encima de la línea de separación superior.
+en su estado bancario. Haga clic en el botón **ESTADO DE CUENTA** que aparece
+al pasar el ratón encima de la línea de separación superior.
 
 ![Al colocar el cursor arriba de la línea que separa dos transacciones podrá
 ver un botón "ESTADO DE CUENTA".](../../../../_images/statements-kanban.png)
@@ -94,8 +93,8 @@ cuenta.
 
 Haga clic en el nombre del diario de banco para abrir la lista de
 transacciones y cambie a la vista de lista. Seleccione todas las transacciones
-correspondientes al estado de cuenta bancario y en la columna Estado de cuenta
-seleccione un estado existente o escriba una referencia y cree uno nuevo en
-Crear y editar…, donde tendrá que llenar los detalles del estado de cuenta
-para después guardarlos
+correspondientes al estado de cuenta bancario y en la columna **Estado de
+cuenta** seleccione un estado existente o escriba una referencia y cree uno
+nuevo en **Crear y editar…** , donde tendrá que llenar los detalles del estado
+de cuenta para después guardarlos
 

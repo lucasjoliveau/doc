@@ -9,32 +9,31 @@ localisation et la façon de la configurer.
 
   * [eCommerce - Localización de Argentina](https://www.youtube.com/watch?v=5gUi2WWfRuI).
 
-Pour plus d'infos
-
-[Tutoriel intelligent - Localización de
-Argentina](https://www.odoo.com/slides/smart-tutorial-localizacion-de-
-argentina-130)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="https://www.odoo.com/slides/smart-tutorial-localizacion-de-argentina-130">Tutoriel intelligent - Localización de Argentina</a></p>
+</div>
 
 ## Configuration
 
 ### Installation des modules
 
-[Installez](../../general/apps_modules.html#general-install) les modules
+[Installez](../../general/apps_modules#general-install) les modules
 suivants pour bénéficier de toutes les fonctionnalités de la localisation
 argentine :
 
 Nom | Nom technique | Description  
 ---|---|---  
-Argentine - Comptabilité | `l10n_ar` | Le [package de localisation fiscale](../fiscal_localizations.html#fiscal-localizations-packages) par défaut, qui représente la configuration minimale pour qu’une entreprise puisse opérer en Argentine conformément aux réglementations et directives AFIP.  
-Rapports comptables argentins | `l10n_ar_reports` | État comptable de la TVA et état récapitulatif de la TVA.  
-Facturation électronique argentine | `l10n_ar_edi` | Comprend toutes les exigences techniques et fonctionnelles permettant de générer des factures électroniques via un service web, conformément aux réglementations AFIP.  
-eCommerce argentin | `l10n_ar_website_sale` | (facultatif) Permet à l’utilisateur de voir le Type d’identification et la Responsabilité AFIP dans le formulaire de paiement eCommerce afin de créer des factures électroniques.  
+**Argentine - Comptabilité** | `l10n_ar` | Le [package de localisation fiscale](../fiscal_localizations#fiscal-localizations-packages) par défaut, qui représente la configuration minimale pour qu’une entreprise puisse opérer en Argentine conformément aux réglementations et directives AFIP.  
+**Rapports comptables argentins** | `l10n_ar_reports` | État comptable de la TVA et état récapitulatif de la TVA.  
+**Facturation électronique argentine** | `l10n_ar_edi` | Comprend toutes les exigences techniques et fonctionnelles permettant de générer des factures électroniques via un service web, conformément aux réglementations AFIP.  
+**eCommerce argentin** | `l10n_ar_website_sale` | (facultatif) Permet à l’utilisateur de voir le Type d’identification et la Responsabilité AFIP dans le formulaire de paiement eCommerce afin de créer des factures électroniques.  
   
 ### Configurer votre société
 
 Lorsque les modules de localisation sont installés, la première étape consiste
 à configurer les données de la société. En plus des informations essentielles,
-un champ clé à remplir est le Type de responsabilité AFIP, qui représente
+un champ clé à remplir est le **Type de responsabilité AFIP** , qui représente
 l’obligation et la structure fiscale de la société.
 
 ![Sélectionnez le type de responsabilité AFIP.](../../../_images/select-
@@ -43,10 +42,10 @@ responsibility-type.png)
 ### Plan comptable
 
 Dans l’application Comptabilité, vous pouvez choisir entre trois différents
-packages de plan comptable. Ils sont basés sur le type de responsabilité AFIP
-d’une société et tiennent compte de la différence entre les sociétés qui n’ont
-pas besoin d’autant de comptes et celles qui ont des exigences fiscales plus
-complexes :
+packages de **plan comptable**. Ils sont basés sur le type de responsabilité
+AFIP d’une société et tiennent compte de la différence entre les sociétés qui
+n’ont pas besoin d’autant de comptes et celles qui ont des exigences fiscales
+plus complexes :
 
   * Monotributista (227 comptes) ;
 
@@ -73,8 +72,8 @@ l’autre, les certificats numériques d’une instance ne sont pas valides dans
 l’autre.
 
 Pour sélectionner un environnement de la base de données, allez à Comptabilité
-‣ Paramètres ‣ Localisation argentine et choisissez Prueba (Test) ou
-Producción (Production).
+‣ Paramètres ‣ Localisation argentine et choisissez **Prueba (Test)** ou
+**Producción (Production)**.
 
 ![Sélectionnez un environnement de base de données AFIP : Test ou
 Production.](../../../_images/select-environment.png)
@@ -82,33 +81,27 @@ Production.](../../../_images/select-environment.png)
 ##### Certificats AFIP
 
 La facturation électronique et les autres services AFIP fonctionnent avec des
-Web Services (WS) fournis par l’AFIP.
+**Web Services (WS)** fournis par l’AFIP.
 
 Afin de permettre la communication avec l’AFIP, la première étape consiste à
-demander un Certificat numérique si vous n’en avez pas encore un.
+demander un **Certificat numérique** si vous n’en avez pas encore un.
 
-  1. Générer une demande de signature de certificat (Odoo). Lorsque cette option est sélectionnée, un fichier avec l’extension `.csr` (demande de signature de certificat) est généré et vous permet de demander le certificat dans le portail AFIP.
+  1. **Générer une demande de signature de certificat (Konvergo ERP)**. Lorsque cette option est sélectionnée, un fichier avec l’extension `.csr` (demande de signature de certificat) est généré et vous permet de demander le certificat dans le portail AFIP.
 
 ![Demandez un certificat.](../../../_images/request-certificate.png)
 
-  2. Générer un certificat (AFIP). Accédez au portail AFIP et suivez les instructions fournies dans [ce document](https://drive.google.com/file/d/17OKX2lNWd1bjUt3NxfqcCKBkBh-Xlpo-/view) pour obtenir un certificat.
+  2. **Générer un certificat (AFIP)**. Accédez au portail AFIP et suivez les instructions fournies dans [ce document](https://drive.google.com/file/d/17OKX2lNWd1bjUt3NxfqcCKBkBh-Xlpo-/view) pour obtenir un certificat.
 
-  3. Charger un certificat et une clé privée (Odoo). Une fois que le certificat est généré, chargez-le dans Odoo à l’aide de l’icône Crayon à côté du champ Certificat et sélectionnez le fichier correspondant.
+  3. **Charger un certificat et une clé privée (Konvergo ERP)**. Une fois que le certificat est généré, chargez-le dans Konvergo ERP à l’aide de l’icône **Crayon** à côté du champ **Certificat** et sélectionnez le fichier correspondant.
 
 ![Chargez le certificat et la clé privée.](../../../_images/upload-
 certificate-private-key.png)
 
-Astuce
-
-Si vous avez besoin de configurer le Certificat d’homologation, consultez la
-documentation officielle de l’AFIP : [Certificat
-d’homologation](http://www.afip.gob.ar/ws/documentacion/certificados.asp). De
-plus, Odoo permet à l’utilisateur de tester la facturation électronique
-localement sans Certificat d’homologation. Le message suivant s’affiche dans
-le chatter pendant les tests en local :
-
-![Facture validée en local parce que vous êtes dans un environnement de test
-sans certificat/clés de test.](../../../_images/local-testing.png)
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Si vous avez besoin de configurer le Certificat d’homologation, consultez la documentation officielle de l’AFIP : <a href="http://www.afip.gob.ar/ws/documentacion/certificados.asp">Certificat d’homologation</a>. De plus, Konvergo ERP permet à l’utilisateur de tester la facturation électronique localement sans Certificat d’homologation. Le message suivant s’affiche dans le chatter pendant les tests en local :</p>
+<img alt="Facture validée en local parce que vous êtes dans un environnement de test sans certificat/clés de test." class="align-center" src="../../../_images/local-testing.png"/>
+</div>
 
 #### Partenaire
 
@@ -116,16 +109,15 @@ sans certificat/clés de test.](../../../_images/local-testing.png)
 
 Dans le cadre de la localisation argentine, les types de document définis par
 l’AFIP sont désormais disponibles dans le **formulaire partenaire**. Cette
-information est indispensable pour la plupart des transactions. Six Types
-d’identification sont disponibles par défaut, ainsi que 32 types désactivés.
+information est indispensable pour la plupart des transactions. Six **Types
+d’identification** sont disponibles par défaut, ainsi que 32 types désactivés.
 
-![Une liste des types de document de la localisation argentine dans Odoo, tels
+![Une liste des types de document de la localisation argentine dans Konvergo ERP, tels
 que définis par l'AFIP.](../../../_images/identification-types.png)
-
-Note
-
-La liste complète des Types d’identification définis par l’AFIP est incluse
-dans Odoo, mais seuls les plus courants sont activés.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>La liste complète des <b>Types d’identification</b> définis par l’AFIP est incluse dans Konvergo ERP, mais seuls les plus courants sont activés.</p>
+</div>
 
 ##### Type de responsabilité AFIP
 
@@ -140,30 +132,30 @@ responsibility-type.png)
 
 Dans le cadre du module de localisation, les taxes sont créées
 automatiquement, ainsi que leur compte financier et leur configuration, par
-ex. 73 taxes pour Responsable Inscripto.
+ex. 73 taxes pour **Responsable Inscripto**.
 
 ![Une liste des taxes de la localisation argentine, ainsi que le montant
-financier et la configuration dans Odoo.](../../../_images/automatic-tax-
+financier et la configuration dans Konvergo ERP.](../../../_images/automatic-tax-
 configuration.png)
 
 ##### Types de taxes
 
 L’Argentine possède plusieurs types de taxes, les plus courantes sont :
 
-  * TVA : il s’agit de la TVA normale, qui peut avoir différents pourcentages ;
+  * **TVA** : il s’agit de la TVA normale, qui peut avoir différents pourcentages ;
 
-  * Perception : paiement anticipé d’une taxe appliquée aux factures clients ;
+  * **Perception** : paiement anticipé d’une taxe appliquée aux factures clients ;
 
-  * Retention : paiement anticipé d’une taxe appliquée aux paiements.
+  * **Retention** : paiement anticipé d’une taxe appliquée aux paiements.
 
 ##### Taxes spéciales
 
 Certaines taxes argentines ne s’appliquent pas à toutes les entreprises et ces
-options moins courantes sont désactivées dans Odoo par défaut. Avant de créer
+options moins courantes sont désactivées dans Konvergo ERP par défaut. Avant de créer
 une nouvelle taxe, vérifiez d’abord si cette taxe n’est pas désactivée.
 
 ![Une liste affichant les options de taxes argentines moins courantes qui sont
-désactivées dans Odoo par défaut.](../../../_images/special-inactive-
+désactivées dans Konvergo ERP par défaut.](../../../_images/special-inactive-
 taxes.png)
 
 #### Types de document
@@ -183,39 +175,37 @@ est assigné. Dans le cadre de la localisation, le type de document comprend le
 pays dans lequel le document est applicable (ces données sont créées
 automatiquement lors de l’installation du module de localisation).
 
-Les informations requises pour les Types de document sont complétées par
+Les informations requises pour les **Types de document** sont complétées par
 défaut, de sorte que l’utilisateur n’a rien à remplir dans cette vue :
 
-![Une liste des types de documents dans Odoo.](../../../_images/default-
-document-type-info.png)
-
-Note
-
-Plusieurs types de documents sont désactivés par défaut, mais peuvent être
-activés si nécessaire.
+![Une liste des types de documents dans Konvergo ERP.](../../../_images/default-
+document-type-info.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Plusieurs <b>types de documents</b> sont désactivés par défaut, mais peuvent être activés si nécessaire.</p>
+</div>
 
 ##### Lettres
 
-Pour l’Argentine, les Types de documents comprennent une lettre qui permet
+Pour l’Argentine, les **Types de documents** comprennent une lettre qui permet
 d’indiquer le type de transaction ou d’opération. Par exemple, lorsqu’une
 facture client est liée à :
 
-  * une transaction B2B, un document de type A doit être utilisé ;
+  * **une transaction B2B** , un document de type **A** doit être utilisé ;
 
-  * une transaction B2C, un document de type B doit être utilisé ;
+  * **une transaction B2C** , un document de type **B** doit être utilisé ;
 
-  * une transaction d’exportation, un document de type E doit être utilisé.
+  * **une transaction d’exportation** , un document de type **E** doit être utilisé.
 
 Les documents inclus dans la localisation ont déjà la lettre appropriée
-associée à chaque Type de document, il n’est donc pas nécessaire de procéder à
-une configuration supplémentaire.
+associée à chaque **Type de document** , il n’est donc pas nécessaire de
+procéder à une configuration supplémentaire.
 
 ![Les types de documents regroupés par lettre.](../../../_images/document-
 types-grouped-by-letters.png)
 
 ##### Utilisation sur les factures
 
-Le Type de document sur chaque transaction est déterminé par :
+Le **Type de document** sur chaque transaction est déterminé par :
 
   * La pièce comptable liée à la facture (si le journal utilise des documents) ;
 
@@ -228,20 +218,20 @@ en fonction de son utilisation et de son type interne. Pour configurer des
 journaux, allez à Comptabilité ‣ Configuration ‣ Journaux.
 
 Pour les journaux de ventes et d’achats, il est possible d’activer l’option
-Utiliser des documents, qui permet d’activer une liste de types de documents
-associés aux factures clients et fournisseurs. Pour plus de détails sur les
-factures, consultez la section 2.3 types de document.
+**Utiliser des documents** , qui permet d’activer une liste de **types de
+documents** associés aux factures clients et fournisseurs. Pour plus de
+détails sur les factures, consultez la section 2.3 types de document.
 
-Si les journaux de ventes ou d’achats n’ont pas l’option Utiliser des
-documents activée, ils ne pourront pas créer de factures fiscales, ce qui
+Si les journaux de ventes ou d’achats n’ont pas l’option **Utiliser des
+documents** activée, ils ne pourront pas créer de factures fiscales, ce qui
 signifie que leur utilisation sera principalement limitée au suivi des
 mouvements de comptes liés aux processus de contrôle interne.
 
 #### Informations AFIP (ou Point de Vente AFIP)
 
-Le Système PdV AFIP est uniquement visible dans les journaux de **Ventes** et
-définit le type de PdV AFIP qui sera utilisé pour gérer les transactions pour
-lesquelles le journal est créé.
+Le **Système PdV AFIP** est uniquement visible dans les journaux de **Ventes**
+et définit le type de PdV AFIP qui sera utilisé pour gérer les transactions
+pour lesquelles le journal est créé.
 
 Le PdV AFIP définit :
 
@@ -250,29 +240,29 @@ Le PdV AFIP définit :
   2. la structure et les données du fichier de factures électroniques.
 
 ![Le champ Système PdV AFIP disponible dans les journaux de ventes dans
-Odoo.](../../../_images/sales-journal.png)
+Konvergo ERP.](../../../_images/sales-journal.png)
 
 ##### Services web
 
 Les **Services web** permettent de générer des factures à différentes fins.
 Voici quelques options :
 
-  * wsfev1 : Facture électronique : c’est le service le plus courant et est utilisé pour générer des factures pour les types de documents A, B, C, M sans détail par poste ;
+  * **wsfev1 : Facture électronique** : c’est le service le plus courant et est utilisé pour générer des factures pour les types de documents A, B, C, M sans détail par poste ;
 
-  * wsbfev1 : Bon fiscal électronique : pour ceux qui facturent des biens d’équipement et qui souhaitent bénéficier des bons fiscaux électroniques accordés par le ministère de l’Économie. Pour plus d’informations, consultez [Bon fiscal](https://www.argentina.gob.ar/acceder-un-bono-por-fabricar-bienes-de-capital) ;
+  * **wsbfev1 : Bon fiscal électronique** : pour ceux qui facturent des biens d’équipement et qui souhaitent bénéficier des bons fiscaux électroniques accordés par le ministère de l’Économie. Pour plus d’informations, consultez [Bon fiscal](https://www.argentina.gob.ar/acceder-un-bono-por-fabricar-bienes-de-capital) ;
 
-  * wsfexv1 : Facture d’exportation électronique : permet de générer des factures pour les clients internationaux ou les transactions qui impliquent des processus d’exportation, le type de document associé est le type « E ».
+  * **wsfexv1 : Facture d’exportation électronique** : permet de générer des factures pour les clients internationaux ou les transactions qui impliquent des processus d’exportation, le type de document associé est le type « E ».
 
 ![Services web.](../../../_images/web-services.png)
 
 Voici quelques champs utiles à connaître lorsque l’on travaille avec des
 services web :
 
-  * Numéro PdV AFIP : le numéro configuré dans l’AFIP pour identifier les opérations liées à ce PdV AFIP ;
+  * **Numéro PdV AFIP** : le numéro configuré dans l’AFIP pour identifier les opérations liées à ce PdV AFIP ;
 
-  * Adresse PdV AFIP : le champ lié à l’adresse commerciale enregistrée pour le PdV, qui est généralement la même adresse que celle de la société. Par exemple, si une entreprise possède plusieurs boutiques (localisations fiscales), l’AFIP demandera que l’entreprise ait un PdV AFIP par site. Ce lieu figurera sur le rapport de facturation ;
+  * **Adresse PdV AFIP** : le champ lié à l’adresse commerciale enregistrée pour le PdV, qui est généralement la même adresse que celle de la société. Par exemple, si une entreprise possède plusieurs boutiques (localisations fiscales), l’AFIP demandera que l’entreprise ait un PdV AFIP par site. Ce lieu figurera sur le rapport de facturation ;
 
-  * Livre unifié : lorsque le système PdV AFIP est « Preimpresa », les types de documents (applicables au journal) portant la même lettre partageront la même séquence. Par exemple :
+  * **Livre unifié** : lorsque le système PdV AFIP est « Preimpresa », les types de documents (applicables au journal) portant la même lettre partageront la même séquence. Par exemple :
 
     * Facture : FA-A 0001-00000002 ;
 
@@ -282,16 +272,13 @@ services web :
 
 #### Séquences
 
-Sur la première facture, Odoo se synchronise automatiquement avec l’AFIP et
+Sur la première facture, Konvergo ERP se synchronise automatiquement avec l’AFIP et
 affiche la dernière séquence utilisée.
 
-Note
-
-Lors de la création des Journaux d’achats, vous pouvez définir s’ils sont liés
-ou non à des types de documents. Dans le cas où l’option d’utiliser des
-documents est sélectionnée, il n’est pas nécessaire d’associer manuellement
-les séquences de type de document, puisque le numéro de document est fourni
-par le fournisseur.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Lors de la création des <b>Journaux d’achats</b>, vous pouvez définir s’ils sont liés ou non à des types de documents. Dans le cas où l’option d’utiliser des documents est sélectionnée, il n’est pas nécessaire d’associer manuellement les séquences de type de document, puisque le numéro de document est fourni par le fournisseur.</p>
+</div>
 
 ## Utilisation et tests
 
@@ -302,7 +289,7 @@ les partenaires et les journaux sont créés et correctement configurés.
 
 #### Attribution du type de document
 
-Lorsque le partenaire est sélectionné, le champ Type de document est
+Lorsque le partenaire est sélectionné, le champ **Type de document** est
 automatiquement complété en fonction du type de document AFIP :
 
   * **Facture pour un client IVA Responsable Inscripto, préfixe A** est le type de document qui indique toutes les taxes et les informations relatives au client en détail.
@@ -321,9 +308,9 @@ for-end-customer.png)
 invoice.png)
 
 Même si certaines factures utilisent le même journal, le préfixe et la
-séquence sont donnés par le champ Type de document.
+séquence sont donnés par le champ **Type de document**.
 
-Le Type de document le plus courant sera automatiquement défini pour les
+Le **Type de document** le plus courant sera automatiquement défini pour les
 différentes combinaisons de type de responsabilité AFIP, mais il peut être mis
 à jour manuellement par l’utilisateur avant de confirmer la facture.
 
@@ -338,24 +325,24 @@ jusqu’à ce que le problème est résolu.
 Une fois que la facture est comptabilisée, les informations relatives à la
 validation et au statut AFIP s’affichent dans l’onglet AFIP, notamment :
 
-  * Autorisation AFIP : numéro CAE ;
+  * **Autorisation AFIP** : numéro CAE ;
 
-  * Date d’expiration : date limite pour livrer la facture aux clients (normalement 10 jours après la génération du numéro CAE) ;
+  * **Date d’expiration** : date limite pour livrer la facture aux clients (normalement 10 jours après la génération du numéro CAE) ;
 
-  * Résultat : indique si la facture a été Aceptado en AFIP (acceptée par l’AFIP) et/ou Aceptado con Observaciones (acceptée avec remarques).
+  * **Résultat :** indique si la facture a été **Aceptado en AFIP** (acceptée par l’AFIP) et/ou **Aceptado con Observaciones** (acceptée avec remarques).
 
 ![Statut AFIP.](../../../_images/afip-status.png)
 
 #### Taxes sur les factures
 
-En fonction du Type de responsabilité AFIP, la TVA peut s’appliquer
+En fonction du **Type de responsabilité AFIP** , la TVA peut s’appliquer
 différemment sur le rapport PDF :
 
-  * A. Hors taxes : dans ce cas, le montant taxé doit être clairement identifié dans le rapport. Cette condition s’applique lorsque le client a le type de responsabilité AFIP : **Responsable Inscripto** ;
+  * **A. Hors taxes** : dans ce cas, le montant taxé doit être clairement identifié dans le rapport. Cette condition s’applique lorsque le client a le type de responsabilité AFIP : **Responsable Inscripto** ;
 
 ![Hors taxes.](../../../_images/tax-amount-excluded.png)
 
-  * B. Taxes comprises : dans ce cas, le montant taxé est inclus dans le prix du produit, le sous-total et les totaux. Cette condition s’applique lorsque le client a les types de responsabilité AFIP suivants :
+  * **B. Taxes comprises** : dans ce cas, le montant taxé est inclus dans le prix du produit, le sous-total et les totaux. Cette condition s’applique lorsque le client a les types de responsabilité AFIP suivants :
 
     * IVA Sujeto Exento ;
 
@@ -371,9 +358,9 @@ différemment sur le rapport PDF :
 
 ##### Factures pour des services
 
-Pour les factures électroniques qui comprennent des Services, l’AFIP demande
-de déclarer la date de début et la date de fin du service. Vous pouvez
-compléter cette information dans l’onglet Autres informations.
+Pour les factures électroniques qui comprennent des **Services** , l’AFIP
+demande de déclarer la date de début et la date de fin du service. Vous pouvez
+compléter cette information dans l’onglet **Autres informations**.
 
 ![Factures pour des services.](../../../_images/invoices-for-services.png)
 
@@ -385,15 +372,15 @@ et le dernier jour du mois de la facture.
 
 ##### Factures d’exportation
 
-Les factures liées aux Transactions d’exportation exigent que le champ Système
-PdV AFIP du journal est défini sur **Preuve exportation - Web Service** pour
-que le bon type de document puisse être sélectionné.
+Les factures liées aux **Transactions d’exportation** exigent que le champ
+Système PdV AFIP du journal est défini sur **Preuve exportation - Web
+Service** pour que le bon type de document puisse être sélectionné.
 
 ![Journal d'exportation.](../../../_images/exporation-journal.png)
 
 Lorsque le client indiqué dans la facture a un type de responsabilité AFIP
-défini sur Cliente / Proveedor del Exterior \- Ley N° 19.640, Odoo attribue
-automatiquement :
+défini sur **Cliente / Proveedor del Exterior** \- **Ley N° 19.640** , Konvergo ERP
+attribue automatiquement :
 
   * le journal lié au service web d’exportation ;
 
@@ -406,19 +393,15 @@ automatiquement :
   * Exonération d’impôts.
 
 ![Champs de la facture d'exportation complétés automatiquement dans
-Odoo.](../../../_images/export-invoice.png)
-
-Note
-
-Les documents d’exportation nécessitent l’activation et la configuration des
-Incoterms que vous pouvez trouver dans Autres informations ‣ Comptabilité.
-
-![Facture d'exportation - Incoterm.](../../../_images/export-invoice-
-incoterm.png)
+Konvergo ERP.](../../../_images/export-invoice.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Les documents d’exportation nécessitent l’activation et la configuration des Incoterms que vous pouvez trouver dans Autres informations ‣ Comptabilité.</p>
+</div> ![Facture
+d'exportation - Incoterm.](../../../_images/export-invoice-incoterm.png)
 
 ##### Bon fiscal
 
-Le Bon fiscal électronique est utilisé par les personnes qui facturent des
+Le **Bon fiscal électronique** est utilisé par les personnes qui facturent des
 biens d’équipement et qui souhaitent bénéficier des Bons fiscaux électroniques
 accordés par le ministère de l’Économie.
 
@@ -472,26 +455,24 @@ exigences suivantes :
 ![Erreur de relation de compte bancaire.](../../../_images/bank-account-
 relation-error.png)
 
-Pour configurer le Mode de paiement, allez aux paramètres et sélectionnez SDC
-ou ADC.
+Pour configurer le **Mode de paiement** , allez aux paramètres et sélectionnez
+**SDC** ou **ADC**.
 
 ![Mode de paiement.](../../../_images/transmission-mode.png)
 
-Pour changer le Mode de paiement sur une facture particulière, allez à
-l’onglet Autres informations et changez-le avant de confirmer.
+Pour changer le **Mode de paiement** sur une facture particulière, allez à
+l’onglet **Autres informations** et changez-le avant de confirmer.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Le fait de changer le <b>Mode de paiement</b> ne changera pas le mode défini dans les <b>Paramètres</b>.</p>
+</div> ![Mode de paiement sur la
+facture.](../../../_images/transmission-mode-on-invoice.png)
 
-Le fait de changer le Mode de paiement ne changera pas le mode défini dans les
-Paramètres.
+Lors de la création d”**un avoir ou d’une note de débit** lié(e) à un document
+FCE :
 
-![Mode de paiement sur la facture.](../../../_images/transmission-mode-on-
-invoice.png)
-
-Lors de la création d”un avoir ou d’une note de débit lié(e) à un document FCE
-:
-
-  * cliquez sur les boutons Avoir et Note de débit, pour que toutes les informations de la facture soient copiées dans l”Avoir et la Note de crédit ;
+  * cliquez sur les boutons **Avoir et Note de débit** , pour que toutes les informations de la facture soient copiées dans l”**Avoir et la Note de crédit** ;
 
   * le lettre du document doit être la même que celle du document d’origine (soit A, soit B) ;
 
@@ -500,19 +481,19 @@ Lors de la création d”un avoir ou d’une note de débit lié(e) à un docume
 ![Boutons Avoir & Note de débit.](../../../_images/credit-debit-notes-
 button.png)
 
-Lors de la création d’un Avoir, nous avons deux scénarios :
+Lors de la création d’un **Avoir** , nous avons deux scénarios :
 
-  1. le FCE est rejeté, donc le champ FCE, est Annulation ? sur l”Avoir doit être défini sur _Vrai_ ; ou ;
+  1. le FCE est rejeté, donc le champ **FCE, est Annulation ?** sur l”**Avoir** doit être défini sur _Vrai_ ; ou ;
 
-  2. l”Avoir est créé pour annuler le document FCE. Dans ce cas, le champ FCE, est Annulation ? doit être _vide_ (faux).
+  2. l”**Avoir** est créé pour annuler le document FCE. Dans ce cas, le champ **FCE, est Annulation ?** doit être _vide_ (faux).
 
 ![FCE: Es Cancelación?](../../../_images/fce-es-cancelation.png)
 
 #### Rapport imprimé de la facture
 
-Le rapport PDF lié aux factures électroniques qui ont été validées par l’AFIP
-comprend un code-barres en bas du format qui représente le numéro CAE. La date
-d’expiration s’affiche également comme l’exige la loi.
+Le **rapport PDF** lié aux factures électroniques qui ont été validées par
+l’AFIP comprend un code-barres en bas du format qui représente le numéro CAE.
+La date d’expiration s’affiche également comme l’exige la loi.
 
 ![Rapport imprimé de la facture.](../../../_images/invoice-printed-report.png)
 
@@ -521,8 +502,8 @@ d’expiration s’affiche également comme l’exige la loi.
 À des fins de résolution des problèmes et d’audit, il est possible d’obtenir
 des informations détaillées sur un numéro de facture qui a été précédemment
 envoyé à l’AFIP. Pour récupérer ces informations, activez le [mode
-développeur](../../general/developer_mode.html#developer-mode), allez au menu
-Comptabilité et cliquez sur le bouton Consulter la facture dans AFIP.
+développeur](../../general/developer_mode#developer-mode), allez au menu
+Comptabilité et cliquez sur le bouton **Consulter la facture** dans AFIP.
 
 ![Consulter la facture dans AFIP.](../../../_images/consult-invoice-in-
 afip.png) ![Détails de la facture consultée dans
@@ -530,7 +511,7 @@ AFIP.](../../../_images/consult-invoice-in-afip-details.png)
 
 Vous pouvez également récupérer le dernier numéro utilisé dans AFIP pour un
 type de document spécifique et un numéro PdV comme référence, afin d’éviter
-tout problème lors de la synchronisation des séquences entre Odoo et l’AFIP.
+tout problème lors de la synchronisation des séquences entre Konvergo ERP et l’AFIP.
 
 ![Consultez le dernier numéro de facture.](../../../_images/consult-last-
 invoice-number.png)
@@ -538,16 +519,16 @@ invoice-number.png)
 ### Factures fournisseurs
 
 En fonction du journal d’achats sélectionné sur la facture fournisseur, le
-Type de document est désormais un champ obligatoire. Cette valeur est remplie
-automatiquement en fonction du type de responsabilité AFIP de l’expéditeur et
-du client, mais la valeur peut être modifiée si nécessaire.
+**Type de document** est désormais un champ obligatoire. Cette valeur est
+remplie automatiquement en fonction du type de responsabilité AFIP de
+l’expéditeur et du client, mais la valeur peut être modifiée si nécessaire.
 
 ![Modifier le journal et le type de document.](../../../_images/changing-
 journal-document-type.png)
 
-Le champ Numéro de document doit être complété manuellement et le format est
-validé automatiquement. Cependant, si le format n’est pas valide, une erreur
-utilisateur s’affiche et indique le format attendu.
+Le champ **Numéro de document** doit être complété manuellement et le format
+est validé automatiquement. Cependant, si le format n’est pas valide, une
+erreur utilisateur s’affiche et indique le format attendu.
 
 ![Numéro de document de la facture fournisseur.](../../../_images/vendor-bill-
 document-number.png)
@@ -565,24 +546,24 @@ configurer une validation automatique dans Comptabilité ‣ Paramètres ‣
 Localisation argentine ‣ Valider le document dans AFIP avec les niveaux
 suivants :
 
-  * Non disponible : la vérification n’est pas effectuée (c’est la valeur par défaut) ;
+  * **Non disponible :** la vérification n’est pas effectuée (c’est la valeur par défaut) ;
 
-  * Disponible : la vérification est effectuée. Si le numéro n’est pas validé, un avertissement s’affiche et la facture fournisseur peut toujours être enregistrée ;
+  * **Disponible :** la vérification est effectuée. Si le numéro n’est pas validé, un avertissement s’affiche et la facture fournisseur peut toujours être enregistrée ;
 
-  * Obligatoire : la vérification est effectuée et si le numéro de document n’est pas valide, l’utilisateur ne peut pas enregistrer la facture fournisseur.
+  * **Obligatoire :** la vérification est effectuée et si le numéro de document n’est pas valide, l’utilisateur ne peut pas enregistrer la facture fournisseur.
 
 ![Vérifiez la validité des factures fournisseurs dans
 AFIP.](../../../_images/verify-vendor-bills.png)
 
-##### Valider les factures fournisseurs dans Odoo
+##### Valider les factures fournisseurs dans Konvergo ERP
 
 Lorsque les paramètres de validation du fournisseur sont activés, un bouton
-Vérifier dans AFIP s’affiche sur la facture fournisseur dans Odoo à côté du
-champ Code d’autorisation AFIP.
+**Vérifier dans AFIP** s’affiche sur la facture fournisseur dans Konvergo ERP à côté
+du champ **Code d’autorisation AFIP**.
 
 ![Vérifier dans AFIP.](../../../_images/verify-on-afip.png)
 
-Si la facture fournisseur n’est pas validée dans AFIP, la valeur Rejeté
+Si la facture fournisseur n’est pas validée dans AFIP, la valeur **Rejeté**
 s’affiche sur le tableau de bord et les détails de l’échec de la validation
 sont ajoutés dans le chatter.
 
@@ -607,11 +588,11 @@ La facture fournisseur est enregistrée en utilisant un poste pour chaque
 produit qui fait partie du montant de base de la TVA et la taxe de perception
 peut être ajoutée à n’importe quelle ligne de produit. Par conséquent, il y
 aura un groupe de taxe pour la TVA et un autre groupe pour la perception. La
-valeur par défaut de la perception est toujours 0,10.
+valeur par défaut de la perception est toujours **0,10**.
 
 Pour modifier la perception TVA et définir le bon montant, vous devez cliquer
-sur l’icône Crayon à côté du montant de Perception. Après avoir configuré le
-montant de la perception TVA, la facture peut être validée.
+sur l’icône **Crayon** à côté du montant de **Perception**. Après avoir
+configuré le montant de la perception TVA, la facture peut être validée.
 
 ![Saisissez le montant de la perception.](../../../_images/enter-perception-
 amount.png)
@@ -620,7 +601,7 @@ amount.png)
 
 Pour installer le module de _Gestion des chèques de tiers et des chèques
 différés/électroniques_ , allez aux Apps et recherchez le module par son nom
-technique `l10n_latam_check` et cliquez sur le bouton Activer.
+technique `l10n_latam_check` et cliquez sur le bouton **Activer**.
 
 ![Module l10n_latam_check.](../../../_images/l10n-latam-check-module.png)
 
@@ -640,41 +621,36 @@ configurations pour les flux des chèques propres et des chèques de tiers.
 
 Configurez le journal de banque utilisé pour créer vos propres chèques en
 allant à Comptabilité ‣ Configuration ‣ Journaux, en sélectionnant le journal
-de banque et en ouvrant l’onglet Paiements sortants.
+de banque et en ouvrant l’onglet **Paiements sortants**.
 
-  * Les Chèques doivent être disponibles comme Mode de paiement. Si ce n’est pas le cas, cliquez sur Ajouter une ligne et saisissez `Chèques` sous Mode de paiement pour les ajouter.
+  * Les **Chèques** doivent être disponibles comme **Mode de paiement**. Si ce n’est pas le cas, cliquez sur **Ajouter une ligne** et saisissez `Chèques` sous **Mode de paiement** pour les ajouter.
 
-  * Activez le paramètre Utiliser les chèques différés et électroniques.
+  * Activez le paramètre **Utiliser les chèques différés et électroniques**.
 
-Note
-
-La dernière configuration **désactive** la possibilité d’imprimer les chèques,
-mais permet de :
-
-  * Saisir manuellement les numéros de chèque
-
-  * Ajouter un champ pour attribuer la date de paiement du chèque
-
-![Configurations du journal de banque.](../../../_images/bank-journal-
-conf.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>La dernière configuration <b>désactive</b> la possibilité d’imprimer les chèques, mais permet de :</p>
+<ul>
+<li><p>Saisir manuellement les numéros de chèque</p></li>
+<li><p>Ajouter un champ pour attribuer la date de paiement du chèque</p></li>
+</ul>
+</div> ![Configurations du journal de
+banque.](../../../_images/bank-journal-conf.png)
 
 ##### Gestion des chèques propres
 
 Les chèques propres peuvent être créés directement à partir de la facture
-fournisseur. Pour ce faire, cliquez sur le bouton Enregistrer un paiement.
+fournisseur. Pour ce faire, cliquez sur le bouton **Enregistrer un paiement**.
 
 Dans la fenêtre modale d’enregistrement du paiement, sélectionnez le journal
-de banque à partir duquel le paiement doit être effectué et indiquez la Date
-d’encaissement du chèque et le Montant.
+de banque à partir duquel le paiement doit être effectué et indiquez la **Date
+d’encaissement du chèque** et le **Montant**.
 
 ![Fenêtre contextuelle de paiement avec les options de chèques propres
-activées.](../../../_images/payment-popup-vendorbill.png)
-
-Note
-
-Pour gérer les chèques du jour, le champ Date d’encaissement du chèque doit
-être laissé vide ou rempli avec la date du jour. Pour gérer les chèques
-différés, la Date d’encaissement du chèque doit être fixée dans le futur.
+activées.](../../../_images/payment-popup-vendorbill.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Pour gérer les chèques du jour, le champ <b>Date d’encaissement du chèque</b> doit être laissé vide ou rempli avec la date du jour. Pour gérer les chèques différés, la <b>Date d’encaissement du chèque</b> doit être fixée dans le futur.</p>
+</div>
 
 Pour gérer vos propres chèques existants, allez à Comptabilité ‣ Fournisseurs
 ‣ Chèques propres. Cette fenêtre affiche des informations essentielles telles
@@ -686,18 +662,19 @@ vendorbill.png)
 
 Il est important de noter que la liste est préfiltrée par les chèques qui
 n’ont **pas** encore été **lettrés** avec un relevé bancaire - qui n’ont pas
-encore été débités de la banque - ce qui peut être vérifié dans le champ Est
-lettré avec un relevé bancaire. Si vous voulez voir tous vos propres chèques,
-supprimez le filtre Aucun rapprochement bancaire en cliquant sur le symbôle X.
+encore été débités de la banque - ce qui peut être vérifié dans le champ **Est
+lettré avec un relevé bancaire**. Si vous voulez voir tous vos propres
+chèques, supprimez le filtre **Aucun rapprochement bancaire** en cliquant sur
+le symbôle **X**.
 
 ![Organisation et filtrage du menu des Chèques
 propres](../../../_images/check-menu-list-vendorbill.png)
 
 ##### Annuler un chèque propre
 
-Pour annuler un chèque propre créé dans Odoo, allez à Comptabilité ‣
+Pour annuler un chèque propre créé dans Konvergo ERP, allez à Comptabilité ‣
 Fournisseurs ‣ Chèques propres et sélectionnez le chèque à annuler, puis
-cliquez sur le bouton Annuler le chèque. Cette opération interrompt le
+cliquez sur le bouton **Annuler le chèque**. Cette opération interrompt le
 lettrage avec les factures fournisseurs et les relevés bancaires et laisse le
 chèque dans un statut **annulé**.
 
@@ -714,36 +691,35 @@ Configuration ‣ Journaux et créez deux nouveaux journaux :
 
   * `Chèques de tiers rejetés`
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Vous pouvez créer manuellement d’autres journaux si vous avez plusieurs points de vente et que vous avez besoin de journaux pour ceux-ci.</p>
+</div>
 
-Vous pouvez créer manuellement d’autres journaux si vous avez plusieurs points
-de vente et que vous avez besoin de journaux pour ceux-ci.
+Pour créer le journal _Chèques de tiers_ , cliquez sur le bouton **Nouveau**
+et configurez les éléments suivants :
 
-Pour créer le journal _Chèques de tiers_ , cliquez sur le bouton Nouveau et
-configurez les éléments suivants :
+  * Saisissez `Chèques de tiers` en tant que **Nom du journal**
 
-  * Saisissez `Chèques de tiers` en tant que Nom du journal
+  * Sélectionnez **Espèces** comme **Type**
 
-  * Sélectionnez Espèces comme Type
-
-  * Dans l’onglet Pièces comptables, définissez Compte d’espèces sur `1.1.1.02.010 Cheques de Terceros`, saisissez le Code court de votre choix et sélectionnez une Devise
+  * Dans l’onglet **Pièces comptables** , définissez **Compte d’espèces** sur `1.1.1.02.010 Cheques de Terceros`, saisissez le **Code court** de votre choix et sélectionnez une **Devise**
 
 ![Compte d'espèces automatiquement créé.](../../../_images/auto-cash-
 account.png)
 
 Les modes de paiement disponibles sont énumérés dans les onglets _paiements_ :
 
-  * Pour les nouveaux chèques de tiers entrants, allez à l’onglet Paiements entrants ‣ Ajouter une ligne et sélectionnez Nouveaux chèques de tiers. Cette méthode est utilisée pour créer de _nouveaux_ chèques de tiers.
+  * Pour les nouveaux chèques de tiers entrants, allez à l’onglet Paiements entrants ‣ Ajouter une ligne et sélectionnez **Nouveaux chèques de tiers**. Cette méthode est utilisée pour créer de _nouveaux_ chèques de tiers.
 
-  * Pour les chèques de tiers existants entrants et sortants, allez à l’onglet Paiements entrants ‣ Ajouter une ligne et sélectionnez Chèques de tiers existants. Répétez la même étape pour l’onglet des Paiements sortants. Cette méthode est utilisée pour recevoir et/ou payer des factures fournisseurs à l’aide de chèques déjà _existants_ ainsi que pour les virements internes.
+  * Pour les chèques de tiers existants entrants et sortants, allez à l’onglet Paiements entrants ‣ Ajouter une ligne et sélectionnez **Chèques de tiers existants**. Répétez la même étape pour l’onglet des **Paiements sortants**. Cette méthode est utilisée pour recevoir et/ou payer des factures fournisseurs à l’aide de chèques déjà _existants_ ainsi que pour les virements internes.
 
-Astuce
-
-Vous pouvez supprimer des modes de paiement préexistants qui apparaissent par
-défaut lors de la configuration des journaux de chèques de tiers.
-
-![Modes de paiement automatiquement créés.](../../../_images/auto-payment-
-methods.png)
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Si vous avez besoin de configurer le Certificat d’homologation, consultez la documentation officielle de l’AFIP : <a href="http://www.afip.gob.ar/ws/documentacion/certificados.asp">Certificat d’homologation</a>. De plus, Konvergo ERP permet à l’utilisateur de tester la facturation électronique localement sans Certificat d’homologation. Le message suivant s’affiche dans le chatter pendant les tests en local :</p>
+<img alt="Facture validée en local parce que vous êtes dans un environnement de test sans certificat/clés de test." class="align-center" src="../../../_images/local-testing.png"/>
+</div>0 ![Modes de paiement automatiquement
+créés.](../../../_images/auto-payment-methods.png)
 
 Vous devez également créer et/ou configurer le journal des _Chèques de tiers
 rejetés_. Ce journal est utilisé pour gérer les chèques de tiers rejetés et
@@ -751,28 +727,28 @@ peut être utilisé pour envoyer les chèques rejetés au moment de l’encaisse
 ou lorsqu’ils proviennent de fournisseurs.
 
 Pour créer le journal des _Chèques de tiers rejetés_ , cliquez sur le bouton
-Nouveau et configurez les éléments suivants :
+**Nouveau** et configurez les éléments suivants :
 
-  * Saisissez `Chèques de tiers rejetés` en tant que Nom du journal
+  * Saisissez `Chèques de tiers rejetés` en tant que **Nom du journal**
 
-  * Sélectionnez Espèces comme Type
+  * Sélectionnez **Espèces** comme **Type**
 
-  * Dans l’onglet Pièces comptables, définissez Compte d’espèces sur `1.1.1.01.002 Chèques de tiers rejetés`, saisissez un Code court de votre choix et sélectionnez une Devise
+  * Dans l’onglet **Pièces comptables** , définissez **Compte d’espèces** sur `1.1.1.01.002 Chèques de tiers rejetés`, saisissez un **Code court** de votre choix et sélectionnez une **Devise**
 
 Utilisez les mêmes modes de paiement que le journal _Chèques de tiers_.
 
 ##### Nouveau chèques de tiers
 
 Pour enregistrer un _nouveau_ chèque de tiers pour une facture client, cliquez
-sur le bouton Enregistrer le paiement. Dans la fenêtre contextuelle, vous
-devez sélectionner Chèques de tiers comme journal pour l’enregistrement du
+sur le bouton **Enregistrer le paiement**. Dans la fenêtre contextuelle, vous
+devez sélectionner **Chèques de tiers** comme journal pour l’enregistrement du
 paiement.
 
-Sélectionnez Nouveaux chèques de tiers en tant que Mode de paiement et
-remplissez le Numéro de chèque, la Date de paiement et Chèque bancaire. Vous
-pouvez également manuellement ajouter le Numéro de TVA de l’émetteur du
-chèque, mais il est automatiquement rempli par le numéro de TVA du client lié
-à la facture.
+Sélectionnez **Nouveaux chèques de tiers** en tant que **Mode de paiement** et
+remplissez le **Numéro de chèque** , la **Date de paiement** et **Chèque
+bancaire**. Vous pouvez également manuellement ajouter le **Numéro de TVA de
+l’émetteur du chèque** , mais il est automatiquement rempli par le numéro de
+TVA du client lié à la facture.
 
 ![Fenêtre contextuelle de paiement avec les options de Nouveaux chèques tiers
 activées.](../../../_images/third-party-payment-popup.png)
@@ -780,11 +756,12 @@ activées.](../../../_images/third-party-payment-popup.png)
 ##### Chèques de tiers existants
 
 Pour payer une facture fournisseur avec un chèque _existant_ , cliquez sur le
-bouton Enregistrer le paiement. Dans la fenêtre contextuelle, vous devez
-sélectionner Chèques de tiers comme journal pour l’enregistrement du paiement.
+bouton **Enregistrer le paiement**. Dans la fenêtre contextuelle, vous devez
+sélectionner **Chèques de tiers** comme journal pour l’enregistrement du
+paiement.
 
-Sélectionnez Chèques de tiers existants comme Mode de paiement, et
-sélectionnez un chèque dans le champ Chèque. Ce champ affiche **tous les
+Sélectionnez **Chèques de tiers existants** comme **Mode de paiement** , et
+sélectionnez un chèque dans le champ **Chèque**. Ce champ affiche **tous les
 chèques existants disponibles* à utiliser pour le paiement des factures
 fournisseurs.
 
@@ -798,8 +775,8 @@ chèque de tiers existant pour payer une facture fournisseur.
 
 Pour ce faire, allez à Comptabilité ‣ Clients ‣ Chèques de tiers ou
 Comptabilité ‣ Fournisseurs ‣ Chèques propres selon le cas et cliquez sur un
-chèque. Dans le champ Journal du chèque en cours, cliquez sur => Opérations du
-chèque pour afficher l’historique et les mouvements du chèque.
+chèque. Dans le champ **Journal du chèque en cours** , cliquez sur **= >
+Opérations du chèque** pour afficher l’historique et les mouvements du chèque.
 
 ![Menu des opérations du chèque.](../../../_images/check-operations-
 menulist.png)
@@ -807,16 +784,16 @@ menulist.png)
 Le menu affiche également des informations essentielles liées à ces
 opérations, telles que :
 
-  * Le Type de paiement, qui permet de déterminer s’il s’agit d’un paiement _envoyé_ à un fournisseur ou un paiement _reçu_ d’un client
+  * Le **Type de paiement** , qui permet de déterminer s’il s’agit d’un paiement _envoyé_ à un fournisseur ou un paiement _reçu_ d’un client
 
-  * Le Journal dans lequel le chèque est actuellement enregistré
+  * Le **Journal** dans lequel le chèque est actuellement enregistré
 
   * Le **partenaire** associé à l’opération (client ou fournisseur).
 
 ## Rapports
 
 Dans le cadre de la localisation, les rapports financiers de l’Argentine ont
-été ajoutés au tableau de bord de Comptabilité. Accédez à ces rapports en
+été ajoutés au tableau de bord de **Comptabilité**. Accédez à ces rapports en
 allant à Comptabilité ‣ Analyse ‣ Rapports argentins.
 
 ![Rapports argentins.](../../../_images/argentinian-reports.png)
@@ -828,17 +805,17 @@ allant à Comptabilité ‣ Analyse ‣ Rapports argentins.
 Ce rapport enregistre toutes les ventes qui servent de base à la comptabilité
 pour déterminer la TVA (débiteur fiscal).
 
-Le livre des Ventes TVA peut être exporté dans un fichier `.zip`. Cliquez sur
-le bouton LIVRE TVA (ZIP) dans le coin supérieur gauche, qui contient les
-fichiers `.txt` que vous pouvez charger sur le portail AFIP.
+Le livre des **Ventes TVA** peut être exporté dans un fichier `.zip`. Cliquez
+sur le bouton **LIVRE TVA (ZIP)** dans le coin supérieur gauche, qui contient
+les fichiers `.txt` que vous pouvez charger sur le portail AFIP.
 
 ![Livre des ventes TVA.](../../../_images/sales-vat-book.png)
 
 #### Livre des achats TVA
 
-Le livre des Achats TVA peut être exporté dans un fichier `.zip` : cliquez sur
-le bouton LIVRE TVA (ZIP) dans le coin supérieur gauche, qui contient des
-fichiers `.txt` que vous pouvez charger sur le portail AFIP.
+Le livre des **Achats TVA** peut être exporté dans un fichier `.zip` : cliquez
+sur le bouton **LIVRE TVA (ZIP)** dans le coin supérieur gauche, qui contient
+des fichiers `.txt` que vous pouvez charger sur le portail AFIP.
 
 ![Livre des achats TVA.](../../../_images/purchases-vat-book.png)
 

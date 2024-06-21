@@ -4,10 +4,10 @@ Si desea vender sus productos con un descuento, por ejemplo, para un producto
 que se acerca a su fecha de vencimiento, puede usar etiquetas de descuento. Te
 permiten escanear códigos de barras de descuento.
 
-Nota
-
-Para usar etiquetas de descuento necesitará usar un lector de código de
-barras.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Para usar etiquetas de descuento necesitará usar un lector de código de barras.</p>
+</div>
 
 ## Nomenclatura de código de barras
 

@@ -1,5 +1,5 @@
 # Setup
 
-  * [Set up your barcode scanner](setup/hardware.html)
-  * [Activate the Barcodes in Odoo](setup/software.html)
+  * [Set up your barcode scanner](setup/hardware)
+  * [Activate the Barcodes in Konvergo ERP](setup/software)
 

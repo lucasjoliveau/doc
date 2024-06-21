@@ -8,15 +8,17 @@ coming in and out of the warehouse can vary a lot. Different settings can be
 configured for receipts and deliveries; they do not have to be configured to
 have the same number of steps.
 
-See also
-
-  * [Using Routes (eLearning Tutorial)](https://www.odoo.com/slides/slide/using-routes-1018)
-
-  * [Push & Pull Rules (eLearning Tutorial)](https://www.odoo.com/slides/slide/push-pull-rules-1024)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="https://www.odoo.com/slides/slide/using-routes-1018">Using Routes (eLearning Tutorial)</a></p></li>
+<li><p><a href="https://www.odoo.com/slides/slide/push-pull-rules-1024">Push &amp; Pull Rules (eLearning Tutorial)</a></p></li>
+</ul>
+</div>
 
 ## Choosing the right inventory flow to handle receipts and deliveries
 
-By default, Odoo handles shipping and receiving in three different ways: in
+By default, Konvergo ERP handles shipping and receiving in three different ways: in
 one, two, or three steps. The simplest configuration is one step, which is the
 default. Each additional step required for a warehouse for either the
 receiving or shipping process will add an additional layer of operations to
@@ -41,9 +43,10 @@ The receiving and shipping rules for a one-step configuration are as follows:
 
   * Items are received or shipped directly into/from stock.
 
-See also
-
-[Process receipts and deliveries in one step](receipts_delivery_one_step.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="receipts_delivery_one_step">Process receipts and deliveries in one step</a></p>
+</div>
 
 ### Two-step flow
 
@@ -59,10 +62,10 @@ The receiving and shipping rules for a two-step configuration are as follows:
 
   * Products received will not be available for manufacturing, shipping, etc., until they are transferred into stock.
 
-See also
-
-[Process receipts and deliveries in two
-steps](receipts_delivery_two_steps.html#inventory-receipts-delivery-two-steps)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><p><a href="receipts_delivery_two_steps#inventory-receipts-delivery-two-steps"><span class="std std-ref">Process receipts and deliveries in two steps</span></a></p>
+</div>
 
 ### Three-step flow
 
@@ -81,11 +84,13 @@ follows:
 
   * Products received will not be available for manufacturing, shipping, etc., until they are transferred into stock.
 
-See also
-
-  * [Process receipts in three steps](receipts_three_steps.html#inventory-receipts-three-steps)
-
-  * [Process deliveries in three steps](delivery_three_steps.html#inventory-delivery-three-steps)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="receipts_three_steps#inventory-receipts-three-steps"><span class="std std-ref">Process receipts in three steps</span></a></p></li>
+<li><p><a href="delivery_three_steps#inventory-delivery-three-steps"><span class="std std-ref">Process deliveries in three steps</span></a></p></li>
+</ul>
+</div>
 
   *[FIFO]: First In, First Out
   *[LIFO]: Last In, First Out

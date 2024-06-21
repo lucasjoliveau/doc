@@ -2,21 +2,21 @@
 
 ## Plan de cuentas de Alemania
 
-Odoo es compatible con los planes de cuentas SKR03 y SKR04. Puede elegir uno
+Konvergo ERP es compatible con los planes de cuentas SKR03 y SKR04. Puede elegir uno
 desde Contabilidad ‣ Configuración, luego seleccione el paquete que desee en
 la sección de localización fiscal.
 
 Tenga cuidado, solo puede cambiar el paquete contable siempre y cuando no haya
 creado ningún asiento contable.
 
-Truco
-
-Al crear una nueva base de datos de Odoo en línea, se instala SKR03 de forma
-predeterminada.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Al crear una nueva base de datos de Konvergo ERP en línea, se instala SKR03 de forma predeterminada.</p>
+</div>
 
 ## Reportes contables alemanes
 
-Esta es la lista de reportes específicos de Alemania disponibles en Odoo
+Esta es la lista de reportes específicos de Alemania disponibles en Konvergo ERP
 Enterprise:
 
   * Balance general
@@ -27,11 +27,11 @@ Enterprise:
 
   * Partner de IVA Intra
 
-## Exportación de Odoo a Datev
+## Exportación de Konvergo ERP a Datev
 
-Es posible exportar sus asientos contables de Odoo a Datev. Para poder
+Es posible exportar sus asientos contables de Konvergo ERP a Datev. Para poder
 utilizar esta función, la localización de contabilidad alemana debe estar
-instalada en su base de datos de Odoo Enterprise. Vaya a Contabilidad ‣
+instalada en su base de datos de Konvergo ERP Enterprise. Vaya a Contabilidad ‣
 Reportes ‣ Contabilidad general y haga clic en el botón **Exportar Datev
 (CSV)**.
 
@@ -39,38 +39,35 @@ Reportes ‣ Contabilidad general y haga clic en el botón **Exportar Datev
 
 La **Kassensicherungsverordnung** (Ley de protección contra la manipulación de
 registros digitales) requiere que los sistemas de registro electrónico (entre
-ellos los sistemas del [punto de venta](../../sales/point_of_sale.html)) se
+ellos los sistemas del [punto de venta](../../sales/point_of_sale)) se
 encuentren equipados con un **sistema de seguridad técnica** , también
 conocido como **TSS** o **TSE**.
 
-Odoo ofrece un sistema compatible con [fiskaly](https://fiskaly.com), una
+Konvergo ERP ofrece un sistema compatible con [fiskaly](https://fiskaly.com), una
 solución _alojada en la nube_.
 
-Importante
-
-Ya que esta solución está alojada en la nube, necesita una conexión a internet
-estable.
-
-Nota
-
-Las únicas tasas de IVA permitidas las proporciona fiskaly, puede consultarlas
-en: [fiskaly DSFinV-K API: VAT Definition (API: definición del
-IVA)](https://developer.fiskaly.com/api/dsfinvk/v0/#tag/VAT-Definition).
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Ya que esta solución está alojada en la nube, necesita una conexión a internet estable.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Las únicas tasas de IVA permitidas las proporciona fiskaly, puede consultarlas en: <a href="https://developer.fiskaly.com/api/dsfinvk/v0/#tag/VAT-Definition">fiskaly DSFinV-K API: VAT Definition (API: definición del IVA)</a>.</p>
+</div>
 
 ### Configuración
 
 #### Instalación de módulos
 
-  1. Si creó su base de datos antes de junio de 2021, [actualice](../../general/apps_modules.html#general-upgrade) su aplicación **Punto de venta** (`point_of_sale`) y el módulo **Restaurante** (`pos_restaurant`).
+  1. Si creó su base de datos antes de junio de 2021, [actualice](../../general/apps_modules#general-upgrade) su aplicación **Punto de venta** (`point_of_sale`) y el módulo **Restaurante** (`pos_restaurant`).
 
-  2. [Instale](../../general/apps_modules.html#general-install) los módulos **Alemania - Certificación para el Punto de Venta** (`l10n_de_pos_cert`) y **Alemania - Certificación para el Punto de Venta de tipo Restaurante** (`l10n_de_pos_res_cert`).
+  2. [Instale](../../general/apps_modules#general-install) los módulos **Alemania - Certificación para el Punto de Venta** (`l10n_de_pos_cert`) y **Alemania - Certificación para el Punto de Venta de tipo Restaurante** (`l10n_de_pos_res_cert`).
 
-Truco
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Si estos módulos no aparecen en la lista de aplicaciones, <a href="../../general/apps_modules#general-install"><span class="std std-ref">actualícela</span></a>.</p>
+</div>
 
-Si estos módulos no aparecen en la lista de aplicaciones,
-[actualícela](../../general/apps_modules.html#general-install).
-
-![Actualización de la aplicación Punto de venta de Odoo desde el tablero de
+![Actualización de la aplicación Punto de venta de Konvergo ERP desde el tablero de
 aplicaciones.](../../../_images/pos-upgrade.png)
 
 #### Registre su empresa ante la autoridad fiscal
@@ -92,12 +89,10 @@ Ahora puede **registrar a su empresa con fiskaly**. Para hacerlo, abra la
 pestaña de _fiskaly_ y de clic en el botón de _registro de fiskaly_.
 
 ![Botón para registrar una empresa a través de fiskaly en
-Odoo](../../../_images/fiskaly-registration.png)
-
-Truco
-
-Si no puede ver el botón de _registro de fiskaly_ , asegúrese de _guardar_ los
-detalles de su empresa y que ya no se encuentre en el _modo de edición_.
+Konvergo ERP](../../../_images/fiskaly-registration.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Si no puede ver el botón de <em>registro de fiskaly</em>, asegúrese de <em>guardar</em> los detalles de su empresa y que ya no se encuentre en el <em>modo de edición</em>.</p>
+</div>
 
 Una vez que finalice el registro, aparecerán nuevos campos:
 
@@ -105,12 +100,11 @@ Una vez que finalice el registro, aparecerán nuevos campos:
 
   * **Clave API de fiskaly** y un **secreto** , que son las credenciales que el sistema usa para acceder a los servicios que ofrece fiskaly.
 
-![Las claves de fiskaly como se muestran en Odoo.](../../../_images/fiskaly-
-keys.png)
-
-Nota
-
-Puede solicitar nuevas credenciales si tiene problemas con las actuales.
+![Las claves de fiskaly como se muestran en Konvergo ERP.](../../../_images/fiskaly-
+keys.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Puede solicitar nuevas credenciales si tiene problemas con las actuales.</p>
+</div>
 
 #### Cree y vincule un sistema de seguridad técnica a su PdV
 
@@ -124,7 +118,7 @@ que quiere editar, haga clic en la casilla junto a **Crear TSS** y luego en
 _Guardar_.
 
 ![Ejemplo de ID de TSS y de cliente de fiskaly en el Punto de Venta de
-Odoo](../../../_images/tss-ids.png)
+Konvergo ERP](../../../_images/tss-ids.png)
 
 Una vez que haya creado el TSS, podrá encontrar su **ID de TSS y de cliente**
 en la sección _API de fiskaly_.
@@ -158,14 +152,14 @@ PdV en específico.
 La creación de una exportación de DSFinV-K se activa al exportar del lado de
 fiskaly.
 
-![Exportación DSFinV-K pendiente en Odoo](../../../_images/dsfinv-k-export-
+![Exportación DSFinV-K pendiente en Konvergo ERP](../../../_images/dsfinv-k-export-
 fields.png)
 
 Podrá ver que el **estado** se encuentra _pendiente_. Esto significa que la
 exportación se activó de forma correcta y que se está procesando. Haga clic en
 _Actualizar estado_ para verificar si está lista.
 
-## Estándares para la contabilidad tributaria alemana: la guía de Odoo para la
+## Estándares para la contabilidad tributaria alemana: la guía de Konvergo ERP para la
 conformidad con las normas GoBD
 
 **GoBD** significa [Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung
@@ -184,19 +178,17 @@ realizó varios cambios durante el 2019 y enero de 2020 para especificar el
 contenido y debido al desarrollo de soluciones electrónicas (alojamiento en la
 nube, empresas que están dejando de usar papel, etcétera).
 
-Importante
-
-Odoo le proporciona **los medios para cumplir con GoBD**.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Konvergo ERP le proporciona <b>los medios para cumplir con GoBD</b>.</p>
+</div>
 
 ### ¿Qué necesita saber sobre GoBD al confiar en un software de contabilidad?
 
-Nota
-
-Si tiene la posibilidad, la mejor forma de comprender el GoBD es leer el
-[Texto oficial del
-GoBD](https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Weitere_Steuerthemen/Abgabenordnung/2019-11-28-GoBD.pdf).
-Es un poco largo, pero fácil de leer para quienes no son expertos. En resumen,
-esto es lo que debe esperar:
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Si tiene la posibilidad, la mejor forma de comprender el GoBD es leer el <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Weitere_Steuerthemen/Abgabenordnung/2019-11-28-GoBD.pdf">Texto oficial del GoBD</a>. Es un poco largo, pero fácil de leer para quienes no son expertos. En resumen, esto es lo que debe esperar:</p>
+</div>
 
 El **GoBD es vinculante para empresas que tienen cuentas presentes, esto
 incluye pymes, profesionales independientes y emprendedores**. Debido a esto,
@@ -237,20 +229,19 @@ cumple con las normas GoBD.
 Una vez que se publique el registro de libros, ya no se pueden modificar o
 eliminar por medio de la aplicación.
 
-  * Si utiliza Odoo en la nube, las copias de seguridad periódicas forman parte del servicio de Odoo en línea. Además, puede descargar y realizar respaldos periódicos en sistemas externos.
+  * Si utiliza Konvergo ERP en la nube, las copias de seguridad periódicas forman parte del servicio de Konvergo ERP en línea. Además, puede descargar y realizar respaldos periódicos en sistemas externos.
 
-Ver también
-
-[Alojamiento en la nube de Odoo - Acuerdo de nivel de
-servicio](https://www.odooo.com/cloud-sla)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="https://www.odooo.com/cloud-sla">Alojamiento en la nube de Konvergo ERP - Acuerdo de nivel de servicio</a></p>
+</div>
 
   * Si el servidor funciona a nivel local, es responsabilidad del usuario crear la infraestructura de respaldo necesaria.
 
-Importante
-
-En algunos casos, es necesario conservar los datos durante diez años o más,
-así que siempre tenga copias de seguridad almacenadas ya que son aún más
-importantes si decide cambiar de proveedor de software.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>En algunos casos, es necesario conservar los datos durante diez años o más, así que siempre tenga copias de seguridad almacenadas ya que son aún más importantes si decide cambiar de proveedor de software.</p>
+</div>
 
 ### Responsabilidad del editor del software
 
@@ -261,15 +252,15 @@ transaccionales de sus clientes**. Solo puede brindar las herramientas
 necesarias para que el usuario respete las normas relacionadas al software que
 se describen en GoBD.
 
-### ¿Cómo puede ir en conformidad con las normas con la ayuda de Odoo?
+### ¿Cómo puede ir en conformidad con las normas con la ayuda de Konvergo ERP?
 
 Las palabras clave al hablar de GoBD son: **trazable, verificable, verdadero,
 claro y continuo**. En resumen, debe contar con un almacenamiento a prueba de
-auditoría y Odoo le brinda los medios para lograr todos esos objetivos:
+auditoría y Konvergo ERP le brinda los medios para lograr todos esos objetivos:
 
   1. **Trazable y verificable**
 
-Cada registro en Odoo tiene la marca de la persona que creó el documento, la
+Cada registro en Konvergo ERP tiene la marca de la persona que creó el documento, la
 fecha de creación, la fecha de modificación y quién lo modificó. Además, se
 lleva un registro de los campos relevantes y puede observar qué valores
 cambiaron y quién los cambió en el chatter del objeto relevante.
@@ -277,40 +268,40 @@ cambiaron y quién los cambió en el chatter del objeto relevante.
   2. **Completo**
 
 Debe registrar todos los datos financieros en el sistema, no puede faltar
-nada. Odoo se asegura de que no haya espacios en la numeración de las
+nada. Konvergo ERP se asegura de que no haya espacios en la numeración de las
 transacciones financieras. Es responsabilidad del usuario codificar todos los
-datos financieros en el sistema. Como la mayoría de los datos en Odoo se
+datos financieros en el sistema. Como la mayoría de los datos en Konvergo ERP se
 generan en automático, sigue siendo responsabilidad del usuario codificar
 todas las facturas de proveedor y operaciones misceláneas.
 
   3. **Precisión**
 
-Odoo se asegura de que se usen las cuentas correctas con la información
+Konvergo ERP se asegura de que se usen las cuentas correctas con la información
 correcta. Además, los mecanismos de control entre órdenes de compra y órdenes
 de venta y sus respectivas facturas refleja la realidad del negocio. Es
 responsabilidad del usuario escanear y y adjuntar facturas impresas del
-proveedor a su respectivo registro de Odoo. _La aplicación Documentos le ayuda
+proveedor a su respectivo registro de Konvergo ERP. _La aplicación Documentos le ayuda
 a automatizar esta tarea_.
 
   4. **Contabilización y registros puntuales**
 
-Ya que la mayoría de la información financiera en Odoo se genera con objetos
-transaccionales (por ejemplo, la factura se registra al confirmarla), Odoo
+Ya que la mayoría de la información financiera en Konvergo ERP se genera con objetos
+transaccionales (por ejemplo, la factura se registra al confirmarla), Konvergo ERP
 garantiza la puntualidad en el mantenimiento de los registros. Es
 responsabilidad del usuario codificar puntualmente todas las facturas del
 proveedor entrantes, así como las operaciones misceláneas.
 
   5. **Orden**
 
-Los datos financieros almacenados en Odoo se ordenan por definición y se
+Los datos financieros almacenados en Konvergo ERP se ordenan por definición y se
 pueden reordenar de acuerdo con la mayoría de los campos presentes en el
 modelo. El GoBD no impone ningún orden específico, pero el sistema debe
 garantizar que cualquier transacción dada se pueda encontrar rápidamente por
-un tercero. Odoo garantiza esto de forma inmediata.
+un tercero. Konvergo ERP garantiza esto de forma inmediata.
 
   6. **Inalterabilidad**
 
-Al instalar la localización alemana, Odoo se configura de tal manera que se
+Al instalar la localización alemana, Konvergo ERP se configura de tal manera que se
 podrá adherir a la cláusula de inalterabilidad sin tener que realizar más
 personalizaciones.
 
@@ -323,7 +314,7 @@ dispositivo de almacenamiento.
 
 En caso de transferir datos financieros a un dispositivo de almacenamiento, el
 GoBD **no** impone un formato específico. Pueden tener, por ejemplo, formato
-XLS, CSV, XML, Lotus 123, SAP, AS/400 u algún otro. Odoo admite la exportación
+XLS, CSV, XML, Lotus 123, SAP, AS/400 u algún otro. Konvergo ERP admite la exportación
 CSV y XLS de datos financieros listos para usar. El GoBD **recomienda** que se
 exporten en un formato GoBD específico basado en XML (consulte la Sección 3 de
 «Ergänzende Informationen zur Datenntträgerüberlassung»), pero no es
@@ -348,21 +339,10 @@ cumplimos con las normas GoBD en lugar de pagar por una herramienta de
 marketing que de ninguna forma le proporciona a nuestro cliente seguridad
 legal.
 
-Importante
-
-El BMF indica lo siguiente en el [texto oficial de
-GoBD](https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Weitere_Steuerthemen/Abgabenordnung/2019-11-28-GoBD.pdf):
-
-  * 180\. Positive attestations on the correctness of the bookkeeping - and thus on the correctness of IT-based bookkeeping systems - are not issued either in the context of a tax field audit or in the context of binding information.
-
-  * 181\. «Certificates» or «attestations» from third parties can serve as a decision criterion for the company when selecting a software product, but develop from the in margin no. 179 is not binding on the tax authorities.
-
-Nota
-
-El contenido previo [se tradujo al español desde una traducción del alemán al
-inglés que se realizó usando Google
-Translate](https://translate.google.com/?sl=de&tl=en&text=180.%0APositivtestate%20zur%20Ordnungsm%C3%A4%C3%9Figkeit%20der%20Buchf%C3%BChrung%20-%20und%20damit%20zur%20Ordnungsm%C3%A4%C3%9Figkeit%20DV-
-gest%C3%BCtzter%20Buchf%C3%BChrungssysteme%20-%20werden%20weder%20im%20Rahmen%20einer%20steuerlichen%20Au%C3%9Fenpr%C3%BCfung%20noch%20im%20Rahmen%20einer%20verbindlichen%20Auskunft%20erteilt.%0A%0A181.%0A%E2%80%9EZertifikate%E2%80%9C%20oder%20%E2%80%9ETestate%E2%80%9C%20Dritter%20k%C3%B6nnen%20bei%20der%20Auswahl%20eines%20Softwareproduktes%20dem%20Unternehmen%20als%20Entscheidungskriterium%20dienen%2C%20entfalten%20jedoch%20aus%20den%20in%20Rz.%20179%20genannten%20Gr%C3%BCnden%20gegen%C3%BCber%20der%20Finanzbeh%C3%B6rde%20keine%20Bindungswirkung.%20&op=translate).
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Ya que esta solución está alojada en la nube, necesita una conexión a internet estable.</p>
+</div>0
 
 ### ¿Qué pasa si no cumple con las normas adecuadas?
 

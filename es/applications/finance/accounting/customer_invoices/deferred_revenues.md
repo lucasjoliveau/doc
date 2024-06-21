@@ -18,15 +18,14 @@ contabilizamos este nuevo ingreso en una cuenta de ingresos diferidos y
 decidimos reconocerlo anualmente. Cada año, durante los próximos 5 años, se
 reconocerán 70 dólares como ingresos.
 
-La contabilidad de Odoo administra los ingresos diferidos distribuyéndolos en
+La contabilidad de Konvergo ERP administra los ingresos diferidos distribuyéndolos en
 varios asientos que se crean de manera predeterminada como _borrador_ y luego
 se contabilizan periódicamente.
 
-Nota
-
-El servidor comprueba una vez al día si se debe publicar un asiento. Pueden
-pasar hasta 24 horas antes de que se refleje el cambio de _borrador_ a
-_registrado_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El servidor comprueba una vez al día si se debe publicar un asiento. Pueden pasar hasta 24 horas antes de que se refleje el cambio de <em>borrador</em> a <em>registrado</em>.</p>
+</div>
 
 ## Prerrequisitos
 
@@ -39,11 +38,10 @@ Para configurar su cuenta en el **Plan de cuentas** , vaya a Contabilidad ‣
 Configuración ‣ Plan de cuentas, haga clic en _Crear_ , y llene el formulario.
 
 ![Configuración de una cuenta de ingresos diferidos en Contabilidad de
-Odoo](../../../../_images/deferred_revenues01.png)
-
-Nota
-
-Esta cuenta debe ser tipo _Pasivo circulante_ o _Pasivo no circulante_.
+Konvergo ERP](../../../../_images/deferred_revenues01.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Esta cuenta debe ser tipo <em>Pasivo circulante</em> o <em>Pasivo no circulante</em>.</p>
+</div>
 
 ### Contabilizar un ingreso en la cuenta correcta
 
@@ -53,7 +51,7 @@ En un borrador de factura, seleccione la cuenta correcta para todos los
 productos cuyos ingresos se deben diferir.
 
 ![Selección de la cuenta de ingresos diferidos en el borrador de una factura
-en Contabilidad de Odoo](../../../../_images/deferred_revenues02.png)
+en Contabilidad de Konvergo ERP](../../../../_images/deferred_revenues02.png)
 
 #### Elija una cuenta de ingresos diferente para productos específicos
 
@@ -61,12 +59,10 @@ Comience a editar el producto, vaya a la pestaña _Contabilidad_ , seleccione
 la **cuenta de ingresos** correcta y guarde.
 
 ![Cambio de cuenta de ingresos para un producto dentro de
-Odoo](../../../../_images/deferred_revenues03.png)
-
-Truco
-
-Es posible automatizar la creación de asientos de ingresos para estos
-productos ( ver: Automatizar los ingresos diferidos).
+Konvergo ERP](../../../../_images/deferred_revenues03.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Es posible automatizar la creación de asientos de ingresos para estos productos ( ver: <a href="#automate-the-deferred-revenues">Automatizar los ingresos diferidos</a>).</p>
+</div>
 
 #### Modificar la cuenta de un apunte contable registrado
 
@@ -75,7 +71,7 @@ Ventas, seleccione el elemento del diario que desea modificar, haga clic en la
 cuenta y seleccione la correcta.
 
 ![Modificación de la cuenta de un apunte contable publicado en la aplicación
-Contabilidad de Odoo](../../../../_images/deferred_revenues04.png)
+Contabilidad de Konvergo ERP](../../../../_images/deferred_revenues04.png)
 
 ## Apuntes de ingresos diferidos
 
@@ -94,15 +90,15 @@ automáticamente y el apunte del diario aparecerá en la pestaña **Ventas
 Relacionadas**.
 
 ![Asiento de ingresos diferidos en Contabilidad de
-Odoo](../../../../_images/deferred_revenues05.png)
+Konvergo ERP](../../../../_images/deferred_revenues05.png)
 
 Una vez hecho esto, puede hacer clic en _Calcular ingresos_ (al lado del botón
 _Confirmar_) para generar todos los valores del **Tablero de ingresos**. Este
-tablero le muestra todos los asientos que Odoo registrará para reconocer sus
+tablero le muestra todos los asientos que Konvergo ERP registrará para reconocer sus
 ingresos, y la fecha en que lo hará.
 
 ![Tabla de ingresos en Contabilidad de
-Odoo](../../../../_images/deferred_revenues06.png)
+Konvergo ERP](../../../../_images/deferred_revenues06.png)
 
 #### ¿Qué significa «Prorata Temporis»?
 
@@ -133,7 +129,7 @@ A continuación, haga clic en _Acción_ , seleccione **Crear asiento diferido**
 asiento.
 
 ![Cree un asiento diferido desde un apunte contable en Contabilidad de
-Odoo](../../../../_images/deferred_revenues07.png)
+Konvergo ERP](../../../../_images/deferred_revenues07.png)
 
 ## Modelos de ingresos diferidos
 
@@ -144,11 +140,10 @@ Para crear un modelo, vaya a Contabilidad ‣ Configuración ‣ Modelos de
 ingresos diferidos, haga clic en _Crear_ , y complete el formulario de la
 misma manera que lo haría para crear un nuevo asiento.
 
-Truco
-
-También se puede convertir un _ingreso diferido confirmado_ en un modelo si lo
-abre desde Contabilidad ‣ Contabilidad ‣ Ingresos diferidos y luego, hace clic
-en el botón _Guardar modelo_.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>También se puede convertir un <em>ingreso diferido confirmado</em> en un modelo si lo abre desde Contabilidad ‣ Contabilidad ‣ Ingresos diferidos y luego, hace clic en el botón <em>Guardar modelo</em>.</p>
+</div>
 
 ### Aplicar un modelo de ingresos diferidos a un nuevo asiento
 
@@ -160,7 +155,7 @@ modelos vinculados a esa cuenta. Al hacer clic en un modelo, se completa el
 formulario según dicho modelo
 
 ![Botón de modelo de ingreso diferido en Contabilidad de
-Odoo](../../../../_images/deferred_revenues08.png)
+Konvergo ERP](../../../../_images/deferred_revenues08.png)
 
 ## Automatizar los ingresos diferidos
 
@@ -177,17 +172,15 @@ Hay tres opciones para el campo **Automatizar ingresos diferidos** :
   3. **Crear y validar:** también debe seleccionar un modelo de ingresos diferidos (ver: Modelos de ingresos diferidos). Cada vez que se registra una operación en la cuenta, se crea un _ingreso diferido_ que se valida inmediatamente.
 
 ![Ingresos diferidos automáticos en una cuenta de Contabilidad de
-Odoo](../../../../_images/deferred_revenues09.png)
-
-Truco
-
-Puede, por ejemplo, seleccionar esta cuenta como la **cuenta de ingresos**
-predeterminada de un producto para automatizar totalmente su venta. (ver:
-Elija una cuenta de ingresos diferente para productos específicos).
-
-Ver también
-
-  * [Plan de cuentas](../get_started/chart_of_accounts.html)
-
-  * [Odoo Academy: Deferred Revenues (Recognition)](https://www.odoo.com/r/EWO)
+Konvergo ERP](../../../../_images/deferred_revenues09.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Puede, por ejemplo, seleccionar esta cuenta como la <b>cuenta de ingresos</b> predeterminada de un producto para automatizar totalmente su venta. (ver: <a href="#choose-a-different-income-account-for-specific-products">Elija una cuenta de ingresos diferente para productos específicos</a>).</p>
+</div>
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../get_started/chart_of_accounts">Plan de cuentas</a></p></li>
+<li><p><a href="https://www.odoo.com/r/EWO">Konvergo ERP Academy: Deferred Revenues (Recognition)</a></p></li>
+</ul>
+</div>
 

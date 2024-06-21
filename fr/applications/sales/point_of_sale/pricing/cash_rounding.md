@@ -8,7 +8,7 @@ Par exemple, certains pays demandent aux entreprises d’arrondir le total de
 leurs factures aux cinq centimes les plus proches, lorsque le paiement est
 effectué en espèces.
 
-Chaque point de vente dans Odoo peut être configuré pour appliquer l’arrondi
+Chaque point de vente dans Konvergo ERP peut être configuré pour appliquer l’arrondi
 des paiements en espèces aux totaux de ses factures ou de ses reçus.
 
 ## Configuration
@@ -34,9 +34,8 @@ Désormais, une ligne est ajoutée à tous les montants totaux de ce point de
 vente pour appliquer l’arrondi selon vos paramètres.
 
 ![../../../../_images/cash_rounding03.png](../../../../_images/cash_rounding03.png)
-
-Note
-
-Le Point de Vente d’Odoo ne prend en charge que la stratégie d’arrondi Ajotuer
-une ligne d’arrondi.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Le Point de Vente d’Konvergo ERP ne prend en charge que la stratégie d’arrondi <b>Ajotuer une ligne d’arrondi</b>.</p>
+</div>
 

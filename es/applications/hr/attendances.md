@@ -1,13 +1,13 @@
 # Asistencias
 
-La aplicación **Asistencias** de Odoo funciona como un reloj checador. Los
+La aplicación **Asistencias** de Konvergo ERP funciona como un reloj checador. Los
 empleados registran la entrada y salida de sus jornadas laborales, mientras
 que los gerentes pueden ver quién está disponible en un momento determinado.
 
-Ver también
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="https://www.odoo.com/slides/slide/attendances-684">Tutoriales de Konvergo ERP: Asistencias</a></p>
+</div>
 
-[Tutoriales de Odoo:
-Asistencias](https://www.odoo.com/slides/slide/attendances-684)
-
-  * [Hardware](attendances/hardware.html)
+  * [Hardware](attendances/hardware)
 

@@ -2,7 +2,7 @@
 
 ## Plan de cuentas para España
 
-En Odoo están disponibles varios planes de cuentas españoles de forma
+En Konvergo ERP están disponibles varios planes de cuentas españoles de forma
 predeterminada:
 
   * PGCE PYMEs 2008
@@ -12,17 +12,15 @@ predeterminada:
   * PGCE Entidades
 
 Para elegir uno, vaya a Contabilidad ‣ Configuración ‣ Ajustes y luego
-seleccione un paquete en la sección Localización fiscal.
+seleccione un paquete en la sección **Localización fiscal**.
 
-Truco
-
-Cuando crea una nueva base de datos de Odoo en línea, el PGCE PYMEs 2008 se
-instala de forma predeterminada.
-
-Advertencia
-
-Solo puede cambiar el paquete contable siempre y cuando no haya creado ningún
-asiento contable.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Cuando crea una nueva base de datos de Konvergo ERP en línea, el PGCE PYMEs 2008 se instala de forma predeterminada.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Solo puede cambiar el paquete contable siempre y cuando no haya creado ningún asiento contable.</p>
+</div>
 
 ## Informes contables para España
 

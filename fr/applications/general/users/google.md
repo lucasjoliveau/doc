@@ -1,43 +1,39 @@
 # Authentification de connexion Google
 
 L” _authentification de connexion Google_ est une fonctionnalité utile qui
-permet aux utilisateurs d’Odoo de se connecter à leur base de données avec
+permet aux utilisateurs d’Konvergo ERP de se connecter à leur base de données avec
 leur compte Google.
 
 Ceci est particulièrement utile si votre organisation utilise Google Workspace
-et souhaite que ses employés se connectent à Odoo avec leurs comptes Google.
+et souhaite que ses employés se connectent à Konvergo ERP avec leurs comptes Google.
 
-Avertissement
-
-Les bases de données hébergées sur Odoo.com ne doivent pas utiliser la
-connexion OAuth pour le propriétaire ou l’administrateur de la base de
-données, car cela dissocierait la base de données de leur compte Odoo.com. Si
-OAuth est configuré pour cet utilisateur, la base de données ne pourra plus
-être dupliquée, renommée ou autrement gérée à partir du portail Odoo.com.
-
-Pour plus d'infos
-
-  * [Synchroniser Google Agenda avec Odoo](../../productivity/calendar/google.html)
-
-  * [Connecter Gmail à Odoo en utilisant Google OAuth](../email_communication/google_oauth.html)
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Les bases de données hébergées sur Konvergo ERP.com ne doivent pas utiliser la connexion OAuth pour le propriétaire ou l’administrateur de la base de données, car cela dissocierait la base de données de leur compte Konvergo ERP.com. Si OAuth est configuré pour cet utilisateur, la base de données ne pourra plus être dupliquée, renommée ou autrement gérée à partir du portail Konvergo ERP.com.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../../productivity/calendar/google">Synchroniser Google Agenda avec Konvergo ERP</a></p></li>
+<li><p><a href="../email_communication/google_oauth">Connecter Gmail à Konvergo ERP en utilisant Google OAuth</a></p></li>
+</ul>
+</div>
 
 ## Configuration
 
 L’intégration de la fonctionnalité de connexion Google nécessite une
-configuration à la fois sur Google _et_ sur Odoo.
+configuration à la fois sur Google _et_ sur Konvergo ERP.
 
 ### Tableau de bord de l’API Google
 
   1. Allez au [Tableau de bord de l’API Google](https://console.developers.google.com/).
 
-  2. Assurez-vous que le bon projet est ouvert. Si le projet n’existe pas encore, cliquez sur Créer un projet, complétez le nom du projet et les autres détails de la société et cliquez sur Créer.
+  2. Assurez-vous que le bon projet est ouvert. Si le projet n’existe pas encore, cliquez sur **Créer un projet** , complétez le nom du projet et les autres détails de la société et cliquez sur **Créer**.
 
 ![Compléter les détails d'un nouveau projet.](../../../_images/new-project-
-details.png)
-
-Astuce
-
-Choisissez le nom de la société dans le menu déroulant.
+details.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Choisissez le nom de la société dans le menu déroulant.</p>
+</div>
 
 #### Écran de consentement OAuth
 
@@ -46,29 +42,22 @@ Choisissez le nom de la société dans le menu déroulant.
 ![Menu de sélection du consentement Google OAuth.](../../../_images/consent-
 selection.png)
 
-  2. Choisissez une des options (Interne / Externe), et cliquez sur Créer.
+  2. Choisissez une des options (**Interne** / **Externe**), et cliquez sur **Créer**.
 
 ![Choix d'un utilisateur type dans le consentement
-OAuth.](../../../_images/consent.png)
+OAuth.](../../../_images/consent.png) <div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>Les comptes Gmail <em>personnels</em> ne peuvent être que du type d’utilisateur <b>externe</b>, ce qui signifie que Google peut exiger une approbation ou l’ajout de <em>Champs d’application</em>. Cependant, l’utilisation d’un compte <em>Google WorkSpace</em> permet d’utiliser le type d’utilisateur <b>interne</b>.</p>
+<p>Notez également que lorsque la connexion API est en mode de test <em>externe</em>, aucune approbation n’est nécessaire de la part de Google. Les limites d’utilisateurs dans ce mode de test sont fixées à 100 utilisateurs.</p>
+</div>
 
-Avertissement
+  3. Complétez les coordonnées et les informations de domaine demandées, puis cliquez sur **Enregistrer et continuer**.
 
-Les comptes Gmail _personnels_ ne peuvent être que du type d’utilisateur
-**externe** , ce qui signifie que Google peut exiger une approbation ou
-l’ajout de _Champs d’application_. Cependant, l’utilisation d’un compte
-_Google WorkSpace_ permet d’utiliser le type d’utilisateur **interne**.
+  4. Sur la page des Champs d’application, laissez tous les champs tels qu’ils sont et cliquez sur **Enregistrer et continuer**.
 
-Notez également que lorsque la connexion API est en mode de test _externe_ ,
-aucune approbation n’est nécessaire de la part de Google. Les limites
-d’utilisateurs dans ce mode de test sont fixées à 100 utilisateurs.
+  5. Ensuite, si vous continuez en mode de test (_externe_), ajoutez les adresses email en cours de configuration à l’étape **Utilisateurs test** en cliquant sur **Ajouter des utilisateurs** , puis sur le bouton **Enregistrer et continuer**. Un résumé de l’inscription de l’application s’affiche.
 
-  3. Complétez les coordonnées et les informations de domaine demandées, puis cliquez sur Enregistrer et continuer.
-
-  4. Sur la page des Champs d’application, laissez tous les champs tels qu’ils sont et cliquez sur Enregistrer et continuer.
-
-  5. Ensuite, si vous continuez en mode de test (_externe_), ajoutez les adresses email en cours de configuration à l’étape Utilisateurs test en cliquant sur Ajouter des utilisateurs, puis sur le bouton Enregistrer et continuer. Un résumé de l’inscription de l’application s’affiche.
-
-  6. Enfin, faites défiler jusqu’en bas et cliquez sur Revenir au tableau de bord.
+  6. Enfin, faites défiler jusqu’en bas et cliquez sur **Revenir au tableau de bord**.
 
 #### Identifiants
 
@@ -76,63 +65,64 @@ d’utilisateurs dans ce mode de test sont fixées à 100 utilisateurs.
 
 ![Bouton de menu des identifiants.](../../../_images/credentials-button.png)
 
-  2. Cliquez sur Créer des identifiants et sélectionnez ID client OAuth.
+  2. Cliquez sur **Créer des identifiants** et sélectionnez **ID client OAuth**.
 
 ![Sélection de l'ID client OAuth.](../../../_images/client-id.png)
 
-  3. Sélectionnez Application Web comme Type d’application. Configurez à présent les pages autorisées vers lesquelles Odoo sera redirigé.
+  3. Sélectionnez **Application Web** comme **Type d’application**. Configurez à présent les pages autorisées vers lesquelles Konvergo ERP sera redirigé.
 
-Pour ce faire, dans le champ URl de redirection autorisés, saisissez le
+Pour ce faire, dans le champ **URl de redirection autorisés** , saisissez le
 domaine de la base de données immédiatement suivi par `/auth_oauth/signin`.
 Par exemple, `https://mydomain.odoo.com/auth_oauth/signin`, puis cliquez sur
-Créer.
+**Créer**.
 
-  4. Maintenant que le _Client OAuth_ a été créé, un écran avec l”ID client et le code secret du Client apparaîtra. Copiez l”ID client pour plus tard, puisqu’il sera nécessaire pour la configuration dans Odoo, qui sera couverte dans les étapes suivantes.
+  4. Maintenant que le _Client OAuth_ a été créé, un écran avec l”**ID client** et le **code secret du Client** apparaîtra. Copiez l”**ID client** pour plus tard, puisqu’il sera nécessaire pour la configuration dans Konvergo ERP, qui sera couverte dans les étapes suivantes.
 
-### Authentification Google sur Odoo
+### Authentification Google sur Konvergo ERP
 
 #### Récupérer l’ID client
 
 Une fois que vous avez effectué les étapes précédentes, deux clés sont
-générées sur le tableau de bord de l’API Google : ID client et Code secret du
-client. Copiez l”ID client.
+générées sur le tableau de bord de l’API Google : **ID client** et **Code
+secret du client**. Copiez l”**ID client**.
 
 ![L'ID client OAuth Google est généré.](../../../_images/secret-ids.png)
 
-#### Activation sur Odoo
+#### Activation sur Konvergo ERP
 
-  1. Allez aux Paramètres généraux d’Odoo ‣ Intégrations et activez Authentification OAuth.
+  1. Allez aux Paramètres généraux d’Konvergo ERP ‣ Intégrations et activez **Authentification OAuth**.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Konvergo ERP invitera peut-être l’utilisateur à se reconnecter après cette étape.</p>
+</div>
 
-Odoo invitera peut-être l’utilisateur à se reconnecter après cette étape.
+  2. Retournez aux Paramètres généraux ‣ Intégrations ‣ Authentification OAuth, activez la sélection et cliquez sur **Enregistrer**. Ensuite, allez aux Paramètres généraux ‣ Intégrations ‣ Authentification Google et activez la sélection. Complétez ensuite l”**ID client** avec la clé enregistrée du tableau de bord de l’API Google et cliquez sur **Enregistrer**.
 
-  2. Retournez aux Paramètres généraux ‣ Intégrations ‣ Authentification OAuth, activez la sélection et cliquez sur Enregistrer. Ensuite, allez aux Paramètres généraux ‣ Intégrations ‣ Authentification Google et activez la sélection. Complétez ensuite l”ID client avec la clé enregistrée du tableau de bord de l’API Google et cliquez sur Enregistrer.
+![Compléter l'ID client dans les paramètres d'Konvergo ERP.](../../../_images/odoo-
+client-id.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>La configuration de Google OAuth2 est également accessible en cliquant sur <b>Fournisseurs OAuth</b> sous le titre <b>Authentification OAuth</b> dans la section Intégrations.</p>
+</div>
 
-![Compléter l'ID client dans les paramètres d'Odoo.](../../../_images/odoo-
-client-id.png)
+## Se connecter à Konvergo ERP avec Google
 
-Note
-
-La configuration de Google OAuth2 est également accessible en cliquant sur
-Fournisseurs OAuth sous le titre Authentification OAuth dans la section
-Intégrations.
-
-## Se connecter à Odoo avec Google
-
-Pour lier le compte Google au profil d’Odoo, cliquez sur Se connecter avec
-Google lors de votre première connexion à Odoo.
+Pour lier le compte Google au profil d’Konvergo ERP, cliquez sur **Se connecter avec
+Google** lors de votre première connexion à Konvergo ERP.
 
 > ![L'écran de réinitialisation du mot de passe avec le bouton *Se connecter
 > avec Google*.](../../../_images/first-login.png)
 
 Les utilisateurs existants doivent [réinitialiser leur mot de
-passe](../users.html#users-reset-password) pour accéder à la page
+passe](../users#users-reset-password) pour accéder à la page
 Réinitialiser le mot de passe, tandis que les nouveaux utilisateurs peuvent
-directement cliquer sur Se connecter avec Google, au lieu de choisir un
+directement cliquer sur **Se connecter avec Google** , au lieu de choisir un
 nouveau mot de passe.
 
-Pour plus d'infos
-
-  * [Aide Google Cloud Platform Console - Configuration d’OAuth 2.0](https://support.google.com/cloud/answer/6158849)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="https://support.google.com/cloud/answer/6158849">Aide Google Cloud Platform Console - Configuration d’OAuth 2.0</a></p></li>
+</ul>
+</div>
 

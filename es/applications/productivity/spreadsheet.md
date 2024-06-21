@@ -1,17 +1,17 @@
 # Hoja de cálculo
 
-  * [Vincular datos de Odoo](spreadsheet/insert.html)
-  * [Funciones](spreadsheet/functions.html)
-  * [Plantillas](spreadsheet/templates.html)
+  * [Vincular datos de Konvergo ERP](spreadsheet/insert)
+  * [Funciones](spreadsheet/functions)
+  * [Plantillas](spreadsheet/templates)
 
 Las hojas de cálculo le permiten organizar, analizar y visualizar sus datos de
 forma tabular. Entre otras cosas, usted puede:
 
-  * [Insertar y vincular sus datos de Odoo (tablas dinámicas, gráficos, listas y menús)](spreadsheet/insert.html).
+  * [Insertar y vincular sus datos de Konvergo ERP (tablas dinámicas, gráficos, listas y menús)](spreadsheet/insert).
 
-  * [Usar fórmulas y funciones](spreadsheet/functions.html).
+  * [Usar fórmulas y funciones](spreadsheet/functions).
 
-  * [Usar plantillas predeterminadas o crear plantillas nuevas](spreadsheet/templates.html).
+  * [Usar plantillas predeterminadas o crear plantillas nuevas](spreadsheet/templates).
 
   * Formatear datos.
 

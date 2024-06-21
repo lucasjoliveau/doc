@@ -1,13 +1,13 @@
 # Data Files
 
-Odoo is greatly data-driven, and a big part of modules definition is thus the
+Konvergo ERP is greatly data-driven, and a big part of modules definition is thus the
 definition of the various records it manages: UI (menus and views), security
 (access rights and record rules), reports and plain data are all defined via
 records.
 
 ## Structure
 
-The main way to define data in Odoo is via XML data files: The broad structure
+The main way to define data in Konvergo ERP is via XML data files: The broad structure
 of an XML data file is the following:
 
   * Any number of operation elements within the root element `odoo`
@@ -25,25 +25,24 @@ of an XML data file is the following:
 Data files are executed sequentially, operations can only refer to the result
 of operations defined previously
 
-Nota
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>If the content of the data file is expected to be applied only once, you
+can specify the odoo flag <code>noupdate</code> set to 1.  If part of
+the data in the file is expected to be applied once, you can place this part
+of the file in a &lt;data noupdate=»1»&gt; domain.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">noupdate=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- Only loaded when installing the module (odoo-bin -i module) --&gt;</span>
+        <span class="nt">&lt;operation/&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
 
-If the content of the data file is expected to be applied only once, you can
-specify the odoo flag `noupdate` set to 1. If part of the data in the file is
-expected to be applied once, you can place this part of the file in a <data
-noupdate=»1»> domain.
-
-    
-    
-    <odoo>
-        <data noupdate="1">
-            <!-- Only loaded when installing the module (odoo-bin -i module) -->
-            <operation/>
-        </data>
-    
-        <!-- (Re)Loaded at install and update (odoo-bin -i/-u) -->
-        <operation/>
-    </odoo>
-    
+    <span class="c">&lt;!-- (Re)Loaded at install and update (odoo-bin -i/-u) --&gt;</span>
+    <span class="nt">&lt;operation/&gt;</span>
+<span class="nt">&lt;/odoo&gt;</span>
+</pre></div>
+</div>
+</div>
 
 ## Core operations
 
@@ -62,7 +61,7 @@ name of the model to create (or update)
 
     
 
-the [external identifier](../../glossary.html#term-external-identifier) for
+the [external identifier](../../glossary#term-external-identifier) for
 this record. It is strongly recommended to provide one
 
   * for record creation, allows subsequent definitions to either modify or refer to this record
@@ -81,7 +80,7 @@ context to use when creating the record
 
 in update mode whether the record should be created if it doesn’t exist
 
-Requires an [external id](../../glossary.html#term-external-id), defaults to
+Requires an [external id](../../glossary#term-external-id), defaults to
 `True`.
 
 ### `field`
@@ -105,8 +104,8 @@ field.
 
     
 
-for [relational fields](orm.html#reference-fields-relational), should be a
-[domain](orm.html#reference-orm-domains) on the field’s model.
+for [relational fields](orm#reference-fields-relational), should be a
+[domain](orm#reference-orm-domains) on the field’s model.
 
 Will evaluate the domain, search the field’s model using it and set the
 search’s result as the field’s value. Will only use the first result if the
@@ -117,7 +116,7 @@ field is a `Many2one`
     
 
 if a `ref` attribute is provided, its value must be a valid [external
-id](../../glossary.html#term-external-id), which will be looked up and set as
+id](../../glossary#term-external-id), which will be looked up and set as
 the field’s value.
 
 Mostly for `Many2one` and `Reference` fields
@@ -137,7 +136,7 @@ Available types are:
     
 
 extracts the `field`’s children as a single document, evaluates any [external
-id](../../glossary.html#term-external-id) specified with the form
+id](../../glossary#term-external-id) specified with the form
 `%(external_id)s`. `%%` can be used to output actual _%_ signs.
 
 `file`
@@ -157,7 +156,7 @@ sets the field content directly as the field’s value without alterations
 
     
 
-[base64](https://tools.ietf.org/html/rfc3548.html#section-3)-encodes the
+[base64](https://tools.ietf.org/html/rfc3548#section-3)-encodes the
 field’s content, useful combined with the `file` _attribute_ to load e.g.
 image data into attachments
 
@@ -191,7 +190,7 @@ as the field’s value.
 
 The evaluation context contains various modules (`time`, `datetime`,
 `timedelta`, `relativedelta`), a function to resolve [external
-identifiers](../../glossary.html#term-external-identifiers) (`ref`) and the
+identifiers](../../glossary#term-external-identifiers) (`ref`) and the
 model object for the current field if applicable (`obj`)
 
 ### `delete`
@@ -209,13 +208,13 @@ the model in which a specified record should be deleted
 
     
 
-the [external id](../../glossary.html#term-external-id) of a record to remove
+the [external id](../../glossary#term-external-id) of a record to remove
 
 `search`
 
     
 
-a [domain](orm.html#reference-orm-domains) to find records of the model to
+a [domain](orm#reference-orm-domains) to find records of the model to
 remove
 
 `id` and `search` are exclusive
@@ -253,7 +252,7 @@ parameters to call the method with) or `value` elements (see `list` values).
 
 ## Shortcuts
 
-Because some important structural models of Odoo are complex and involved,
+Because some important structural models of Konvergo ERP are complex and involved,
 data files provide shorter alternatives to defining them using record tags:
 
 ### `menuitem`
@@ -264,7 +263,7 @@ Defines an `ir.ui.menu` record with a number of defaults and fallbacks:
 
     
 
-  * If a `parent` attribute is set, it should be the [external id](../../glossary.html#term-external-id) of an other menu item, used as the new item’s parent
+  * If a `parent` attribute is set, it should be the [external id](../../glossary#term-external-id) of an other menu item, used as the new item’s parent
 
   * If no `parent` is provided, tries to interpret the `name` attribute as a `/`-separated sequence of menu names and find a place in the menu hierarchy. In that interpretation, intermediate menus are automatically created
 
@@ -282,8 +281,8 @@ action if any. Otherwise uses the record’s `id`
     
 
 A `groups` attribute is interpreted as a comma-separated sequence of [external
-identifiers](../../glossary.html#term-external-identifiers) for `res.groups`
-models. If an [external identifier](../../glossary.html#term-external-
+identifiers](../../glossary#term-external-identifiers) for `res.groups`
+models. If an [external identifier](../../glossary#term-external-
 identifier) is prefixed with a minus (`-`), the group is _removed_ from the
 menu’s groups
 
@@ -292,32 +291,32 @@ menu’s groups
     
 
 if specified, the `action` attribute should be the [external
-id](../../glossary.html#term-external-id) of an action to execute when the
+id](../../glossary#term-external-id) of an action to execute when the
 menu is open
 
 `id`
 
     
 
-the menu item’s [external id](../../glossary.html#term-external-id)
+the menu item’s [external id](../../glossary#term-external-id)
 
 ### `template`
 
-Creates a [QWeb view](views.html#reference-views-qweb) requiring only the
+Creates a [QWeb view](views#reference-views-qweb) requiring only the
 `arch` section of the view, and allowing a few _optional_ attributes:
 
 `id`
 
     
 
-the view’s [external identifier](../../glossary.html#term-external-identifier)
+the view’s [external identifier](../../glossary#term-external-identifier)
 
 `name`, `inherit_id`, `priority`
 
     
 
 same as the corresponding field on `ir.ui.view` (nb: `inherit_id` should be an
-[external identifier](../../glossary.html#term-external-identifier))
+[external identifier](../../glossary#term-external-identifier))
 
 `primary`
 
@@ -330,7 +329,7 @@ primary
 
     
 
-comma-separated list of group [external identifiers](../../glossary.html#term-
+comma-separated list of group [external identifiers](../../glossary#term-
 external-identifiers)
 
 `page`
@@ -353,11 +352,11 @@ creating a number of simple records of the same model in bulk.
 
 For this case, data files can also use
 [csv](https://en.wikipedia.org/wiki/Comma-separated_values), this is often the
-case for [access rights](security.html#reference-security-acl):
+case for [access rights](security#reference-security-acl):
 
   * the file name is `_model_name_.csv`
 
-  * the first row lists the fields to write, with the special field `id` for [external identifiers](../../glossary.html#term-external-identifiers) (used for creation or update)
+  * the first row lists the fields to write, with the special field `id` for [external identifiers](../../glossary#term-external-identifiers) (used for creation or update)
 
   * each row thereafter creates a new record
 
@@ -404,9 +403,9 @@ state_us_6 | us | Colorado | CO
   
 For each row (record):
 
-  * the first column is the [external id](../../glossary.html#term-external-id) of the record to create or update
+  * the first column is the [external id](../../glossary#term-external-id) of the record to create or update
 
-  * the second column is the [external id](../../glossary.html#term-external-id) of the country object to link to (country objects must have been defined beforehand)
+  * the second column is the [external id](../../glossary#term-external-id) of the country object to link to (country objects must have been defined beforehand)
 
   * the third column is the `name` field for `res.country.state`
 

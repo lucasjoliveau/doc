@@ -17,11 +17,11 @@ Utilizando el método de depreciación lineal, se cargan $4,000 cada año como
 que nos deja un total de $7,000 de **valor no depreciable** , o valor de
 salvamento.
 
-La aplicación Contabilidad de Odoo gestiona la depreciación mediante la
+La aplicación Contabilidad de Konvergo ERP gestiona la depreciación mediante la
 creación de todos los asientos de depreciación automáticamente en _modo de
 borrador_. Luego se contabilizan de forma periódica.
 
-Odoo admite los siguientes **métodos de depreciación** :
+Konvergo ERP admite los siguientes **métodos de depreciación** :
 
   * Línea recta
 
@@ -29,11 +29,10 @@ Odoo admite los siguientes **métodos de depreciación** :
 
   * Declive y luego línea recta
 
-Nota
-
-El servidor comprueba una vez al día si se debe publicar un asiento. Pueden
-pasar hasta 24 horas antes de que se refleje el cambio de _borrador_ a
-_registrado_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El servidor comprueba una vez al día si se debe publicar un asiento. Pueden pasar hasta 24 horas antes de que se refleje el cambio de <em>borrador</em> a <em>registrado</em>.</p>
+</div>
 
 ## Prerrequisitos
 
@@ -46,11 +45,10 @@ Para configurar su cuenta en el **Plan de cuentas** , vaya a Contabilidad ‣
 Configuración ‣ Plan de cuentas, haga clic en _Crear_ , y llene el formulario.
 
 ![Configuración de una cuenta de activos en la aplicación Contabilidad de
-Odoo](../../../../_images/assets01.png)
-
-Nota
-
-El tipo de esta cuenta debe ser _Activo fijo_ o _Activo no circulante_.
+Konvergo ERP](../../../../_images/assets01.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El tipo de esta cuenta debe ser <em>Activo fijo</em> o <em>Activo no circulante</em>.</p>
+</div>
 
 ### Contabilizar un gasto en la cuenta correcta
 
@@ -61,7 +59,7 @@ activos que está comprando.
 
 ![Selección de una cuenta de activos en una factura de proveedor en estado de
 borrador en la aplicación Contabilidad de
-Odoo](../../../../_images/assets02.png)
+Konvergo ERP](../../../../_images/assets02.png)
 
 #### Elija una cuenta de gastos diferente para productos específicos
 
@@ -69,12 +67,10 @@ Comience a editar el producto, vaya a la pestaña de _Contabilidad_ ,
 seleccione la **Cuenta de gastos** correcta y guarde.
 
 ![Cambio de la cuenta de activos para un producto en
-Odoo](../../../../_images/assets03.png)
-
-Truco
-
-Es posible automatizar la creación de asientos de activos para estos
-productos.
+Konvergo ERP](../../../../_images/assets03.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Es posible <a href="#assets-automation"><span class="std std-ref">automatizar la creación de asientos de activos</span></a> para estos productos.</p>
+</div>
 
 #### Modificar la cuenta de un apunte contable registrado
 
@@ -83,7 +79,7 @@ Compras, seleccione el apunte contable que desea modificar, haga clic en la
 cuenta y seleccione la correcta.
 
 ![Modificación de la cuenta de un apunte contable publicado en la aplicación
-Contabilidad de Odoo](../../../../_images/assets04.png)
+Contabilidad de Konvergo ERP](../../../../_images/assets04.png)
 
 ## Asientos contables de activos
 
@@ -101,15 +97,15 @@ forma automática y el apunte contable aparecerá en la pestaña **compras
 relacionadas**.
 
 ![Asiento de activos en la aplicación Contabilidad de
-Odoo](../../../../_images/assets05.png)
+Konvergo ERP](../../../../_images/assets05.png)
 
 Una vez hecho esto, puede hacer clic en _Calcular depreciación_ (al lado del
 botón _Confirmar_) para generar todos los valores de la **tabla de
-depreciación**. Esta tabla le muestra todos los asientos que Odoo registrará
+depreciación**. Esta tabla le muestra todos los asientos que Konvergo ERP registrará
 para depreciar su activo, y la fecha.
 
 ![Tabla de depreciación en la aplicación Contabilidad de
-Odoo](../../../../_images/assets06.png)
+Konvergo ERP](../../../../_images/assets06.png)
 
 #### ¿Qué significa «Prorata Temporis»?
 
@@ -158,7 +154,7 @@ complete el formulario de la misma manera que lo haría para crear un nuevo
 asiento.
 
 ![Crear un asiento de activo desde un apunte contable en la aplicación
-Contabilidad de Odoo](../../../../_images/assets07.png)
+Contabilidad de Konvergo ERP](../../../../_images/assets07.png)
 
 ## Modificación de un activo
 
@@ -189,15 +185,15 @@ eliminar_ y complete el formulario.
 
 ![Disposición de bienes](../../../../_images/assets09.png)
 
-La contabilidad de Odoo genera entonces todos los asientos necesarios para
+La contabilidad de Konvergo ERP genera entonces todos los asientos necesarios para
 deshacerse del activo, incluyendo la ganancia o pérdida en la venta, que se
 basa en la diferencia entre el valor contable del activo en el momento de la
 venta y el importe en el que se vende.
 
-Nota
-
-Para registrar la venta de un activo, primero debe registrar la factura de
-cliente relacionada para poder vincularla con la venta del activo.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Para registrar la venta de un activo, primero debe registrar la factura de cliente relacionada para poder vincularla con la venta del activo.</p>
+</div>
 
 ## Modelos de activos
 
@@ -209,11 +205,10 @@ Para crear un modelo, vaya a Contabilidad ‣ Configuración ‣ Modelos de
 activos, haga clic en _Crear_ , y complete el formulario de la misma manera
 que lo haría para crear un nuevo asiento.
 
-Truco
-
-También puede convertir un _asiento confirmado de activo_ en un modelo
-abriéndolo desde Contabilidad ‣ Contabilidad ‣ Activos y luego, haciendo clic
-en el botón _Guardar modelo_.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>También puede convertir un <em>asiento confirmado de activo</em> en un modelo abriéndolo desde Contabilidad ‣ Contabilidad ‣ Activos y luego, haciendo clic en el botón <em>Guardar modelo</em>.</p>
+</div>
 
 ### Aplicar un modelo de activos a un nuevo asiento
 
@@ -241,15 +236,14 @@ Hay tres opciones para el campo **automatizar activos** :
   3. **Crear y validar:** también debe seleccionar un modelo de activos (ver: Modelos de activos). Cada vez que se registra una operación en la cuenta, se crea un _asiento de activo_ que se valida inmediatamente.
 
 ![ Automatizar activos en Contabilidad de
-Odoo](../../../../_images/assets11.png)
-
-Truco
-
-Puede, por ejemplo, seleccionar esta cuenta como la **cuenta de gastos**
-predeterminada de un producto para automatizar totalmente su compra. (ver:
-Elija una cuenta de gastos diferente para productos específicos).
-
-Ver también
-
-  * [Plan de cuentas](../get_started/chart_of_accounts.html)
+Konvergo ERP](../../../../_images/assets11.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Puede, por ejemplo, seleccionar esta cuenta como la <b>cuenta de gastos</b> predeterminada de un producto para automatizar totalmente su compra. (ver: <a href="#product-assets-account"><span class="std std-ref">Elija una cuenta de gastos diferente para productos específicos</span></a>).</p>
+</div>
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../get_started/chart_of_accounts">Plan de cuentas</a></p></li>
+</ul>
+</div>
 

@@ -14,25 +14,24 @@ Pour configurer une nomenclature à plusieurs niveaux, le produit de niveau
 supérieur et les produits semi-finis doivent être configurés. La première
 étape consiste donc à créer les produits semi-finis et leurs nomenclatures.
 
-Pour plus d'infos
-
-[Bill of materials](bill_configuration.html)
-
-![Une nomenclature d'un produit semi-fini.](../../../../_images/semifinished-
-product-bom.png)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="bill_configuration">Bill of materials</a></p>
+</div> ![Une nomenclature d'un produit semi-
+fini.](../../../../_images/semifinished-product-bom.png)
 
 ## Créer la nomenclature de niveau supérieur
 
 Une fois les produits semi-finis entièrement configurés, allez à Fabrication ‣
-Produits ‣ Produits. Ensuite, créez le produit de niveau supérieur. Configurez
-les spécifications du produit comme vous le souhaitez et assurez-vous de
-Enregistrer.
+Produits ‣ Produits. Ensuite, **créez** le produit de niveau supérieur.
+Configurez les spécifications du produit comme vous le souhaitez et assurez-
+vous de **Enregistrer**.
 
 Une fois le produit de niveau supérieur configuré, cliquez sur le bouton
-intelligent Nomenclature sur la fiche produit et cliquez sur Créer pour créer
-une nomenclature pour le produit de niveau supérieur. Il suffit ensuite
-d’ajouter les produits semi-finis à cette nomenclature, ainsi que tout autre
-composant nécessaire.
+intelligent **Nomenclature** sur la fiche produit et cliquez sur **Créer**
+pour créer une nomenclature pour le produit de niveau supérieur. Il suffit
+ensuite d’ajouter les produits semi-finis à cette nomenclature, ainsi que tout
+autre composant nécessaire.
 
 ![Une nomenclature pour un produit de niveau supérieur, contenant un composant
 de sous-ensemble.](../../../../_images/custom-computer-bom.png)
@@ -42,13 +41,10 @@ de sous-ensemble.](../../../../_images/custom-computer-bom.png)
 Il existe plusieurs méthodes pour gérer l’automatisation de l’ordre de
 fabrication pour les produits ayant des nomenclatures à plusieurs niveaux.
 
-Note
-
-Les produits semi-finis sont généralement utilisés pour gérer des produits
-pouvant être fabriqués avec des nomenclatures à plusieurs niveaux. Si une
-nomenclature est créée simplement pour organiser des composants ou regrouper
-des produits vendables, l’utilisation des [Kits](kit_shipping.html) est
-l’option la plus appropriée.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Les produits semi-finis sont généralement utilisés pour gérer des produits pouvant être fabriqués avec des nomenclatures à plusieurs niveaux. Si une nomenclature est créée simplement pour organiser des composants ou regrouper des produits vendables, l’utilisation des <a href="kit_shipping">Kits</a> est l’option la plus appropriée.</p>
+</div>
 
 Pour automatiquement déclencher des ordres de fabrication pour des produits
 semi-finis après avoir confirmé un ordre de fabrication pour le produit
@@ -56,11 +52,12 @@ principal, il existe deux options :
 
   * **Option 1 (recommandée) :** Créez des _règles de réassort_ pour les produits semi-finis et fixez à la fois les quantités minimales et maximales de stock souhaitées à `0`.
 
-Pour plus d'infos
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="../../purchase/products/reordering">Configurer des règles de réassort</a></p>
+</div>
 
-[Configurer des règles de réassort](../../purchase/products/reordering.html)
-
-  * **Option 2 :** Activez les routes Réapprovisionner sur commande (MTO) et Fabriquer sous l’onglet Inventaire de la fiche produit des produits semi-finis.
+  * **Option 2 :** Activez les routes **Réapprovisionner sur commande (MTO)** et **Fabriquer** sous l’onglet **Inventaire** de la fiche produit des produits semi-finis.
 
 L’option 1 est plus souple que l’option 2 et est donc recommandée. Les règles
 de réassort ne relient pas directement la demande au réassort et permettent

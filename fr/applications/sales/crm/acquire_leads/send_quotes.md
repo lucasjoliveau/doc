@@ -2,7 +2,7 @@
 
 Quand vous qualifiez une piste en opportunité, vous aurez sans doute besoin de
 lui faire parvenir un devis. Vous pouvez faire cela directement dans
-l’application CRM d’Odoo.
+l’application CRM d’Konvergo ERP.
 
 ![../../../../_images/send_quotes01.png](../../../../_images/send_quotes01.png)
 

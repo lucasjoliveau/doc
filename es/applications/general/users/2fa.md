@@ -14,9 +14,10 @@ autentificador, lo cual es mucho más difícil que uno u otro.
 
 ## Requisitos
 
-Nota
-
-Las listas solo son ejemplos, no son respaldos de un software específico.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Las listas solo son ejemplos, no son respaldos de un software específico.</p>
+</div>
 
 Si todavía no tiene uno, tendrá que elegir un autenticador.
 
@@ -37,13 +38,14 @@ porque sea bueno, sino porque es el más común).
 
 ## Configurar la autenticación de dos pasos
 
-Una vez que tenga su autentificador elegido, vaya a la instancia de Odoo que
-quiere configurar con A2P, después, abra las Preferencias (or Mi perfil):
+Una vez que tenga su autentificador elegido, vaya a la instancia de Konvergo ERP que
+quiere configurar con A2P, después, abra las **Preferencias** (or **Mi
+perfil**):
 
 ![../../../_images/preferences.png](../../../_images/preferences.png)
 
-Abra la pestaña Seguridad de la cuenta, después haga clic en el botón
-Habilitar la autenticación en dos pasos:
+Abra la pestaña **Seguridad de la cuenta** , después haga clic en el botón
+**Habilitar la autenticación en dos pasos** :
 
 ![../../../_images/sec_tab.png](../../../_images/sec_tab.png)
 
@@ -62,16 +64,16 @@ toda la configuración:
 
 ![../../../_images/scan_barcode.jpg](../../../_images/scan_barcode.jpg)
 
-Nota
-
-Si no puede escanear la pantalla (por ejemplo, porque realizará la
-configuración en el mismo teléfono que la aplicación de autentificación),
-puede hacer clic en el vínculo proporcionado, o puede copiar el secreto para
-configurar manualmente el autenticador:
-
-![../../../_images/secret_visible.png](../../../_images/secret_visible.png)
-
-![../../../_images/input_secret.png](../../../_images/input_secret.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Si no puede escanear la pantalla (por ejemplo, porque realizará la configuración en el mismo teléfono que la aplicación de autentificación), puede hacer clic en el vínculo proporcionado, o puede copiar el secreto para configurar manualmente el autenticador:</p>
+<div class="figure align-center">
+<img alt="../../../_images/secret_visible.png" src="../../../_images/secret_visible.png"/>
+</div>
+<div class="figure align-center">
+<img alt="../../../_images/input_secret.png" src="../../../_images/input_secret.png"/>
+</div>
+</div>
 
 Una vez que haya hecho esto, el autenticador mostrará un _código de
 verificación_ con información útil de identificación (por ejemplo, el dominio
@@ -79,8 +81,8 @@ e inicio de sesión para el que es el código):
 
 ![../../../_images/authenticator.png](../../../_images/authenticator.png)
 
-Ahora puede poner el código en el campo de Código de verificación, después
-haga clic en el botón de Habilitar la autenticación en dos pasos.
+Ahora puede poner el código en el campo de **Código de verificación** ,
+después haga clic en el botón de **Habilitar la autenticación en dos pasos**.
 
 ¡Felicidades, su cuenta ahora está protegida con la autenticación de dos
 pasos!
@@ -89,11 +91,11 @@ pasos!
 
 ## Iniciar sesión
 
-Ahora debe Cerrar sesión para continuar con el proceso.
+Ahora debe **Cerrar sesión** para continuar con el proceso.
 
 En la página de inicio de sesión, introduzca el nombre de usuario y la
 contraseña de la cuenta con la que configuró la A2P, en lugar de ingresar a
-Odoo inmediatamente ahora verá una segunda pantalla de inicio de sesión:
+Konvergo ERP inmediatamente ahora verá una segunda pantalla de inicio de sesión:
 
 ![../../../_images/2fa_input.png](../../../_images/2fa_input.png)
 
@@ -104,10 +106,10 @@ Eso es todo. De ahora en adelante, a no ser que desactive la `A2P
 (autenticación de 2 pasos)`, tendrá que pasar por un proceso de dos pasos para
 iniciar sesión, en lugar del antiguo proceso de un paso.
 
-Peligro
-
-No pierda su autenticador, si lo hace, necesitará un _Administrador de Odoo_
-para desactivar la `A2P (autenticación de 2 pasos)` en la cuenta.
+<div class="alert alert-danger">
+<p class="alert-title">
+Peligro</p><p>No pierda su autenticador, si lo hace, necesitará un <em>Administrador de Konvergo ERP</em> para desactivar la <code>A2P (autenticación de 2 pasos)</code> en la cuenta.</p>
+</div>
 
   *[A2P]: autenticación de 2 pasos
 

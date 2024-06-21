@@ -1,9 +1,9 @@
 # Pagos en línea
 
   * Instale el parche para desactivar el pago de factura en línea
-    * [Actualizar Odoo a la versión más reciente](online/install_portal_patch.html#update-odoo-to-the-latest-release)
-    * [Actualizar la lista de módulos disponibles](online/install_portal_patch.html#update-the-list-of-available-modules)
-    * [Instalación del módulo Parche de pago de factura en línea](online/install_portal_patch.html#install-the-module-invoice-online-payment-patch)
+    * [Actualizar Konvergo ERP a la versión más reciente](online/install_portal_patch#update-odoo-to-the-latest-release)
+    * [Actualizar la lista de módulos disponibles](online/install_portal_patch#update-the-list-of-available-modules)
+    * [Instalación del módulo Parche de pago de factura en línea](online/install_portal_patch#install-the-module-invoice-online-payment-patch)
 
 Para que sus clientes puedan pagar las facturas emitidas con mayor facilidad,
 puede activar la función **Pago de facturas en línea** , la cual añade el
@@ -17,13 +17,12 @@ ahora"](../../../../_images/online-payment-providers.png)
 ## Configuración
 
 Asegúrese de que [configuró bien los proveedores de
-pago](../../payment_providers.html).
+pago](../../payment_providers).
 
-Nota
-
-De forma predeterminada, la «[transferencia
-bancaria](../../payment_providers/wire_transfer.html)» es el único proveedor
-de pago activado, pero de igual manera debe completar los detalles de pago.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>De forma predeterminada, la «<a href="../../payment_providers/wire_transfer">transferencia bancaria</a>» es el único proveedor de pago activado, pero de igual manera debe completar los detalles de pago.</p>
+</div>
 
 Para activar el pago en línea de facturas, vaya a Contabilidad ‣ Configuración
 ‣ Ajustes ‣ Pagos de clientes, active ** Pago de factura en línea **, y haga
@@ -42,9 +41,10 @@ Los clientes pueden elegir qué método de pago utilizar después de hacer clic
 en **Pagar ahora**.
 
 ![El botón "Pagar ahora" en una factura en el portal del
-cliente.](../../../../_images/pay-now.png)
-
-Ver también
-
-  * [Pagos en línea](../../payment_providers.html)
+cliente.](../../../../_images/pay-now.png) <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../payment_providers">Pagos en línea</a></p></li>
+</ul>
+</div>
 

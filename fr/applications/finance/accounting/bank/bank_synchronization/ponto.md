@@ -4,22 +4,24 @@
 regrouper leurs comptes en un seul endroit et de voir directement toutes leurs
 transactions au sein d’une seule application. Il s’agit d’une solution tierce
 qui augmente en permanence le nombre d’établissements bancaires pouvant être
-synchronisés avec Odoo.
+synchronisés avec Konvergo ERP.
 
 ![Logo de la marque Ponto](../../../../../_images/ponto-logo.png)
 
-**Odoo** peut être directement synchronisé avec votre banque pour importer
+**Konvergo ERP** peut être directement synchronisé avec votre banque pour importer
 automatiquement tous les relevés bancaires dans votre base de données.
 
 Ponto est un fournisseur tiers payant qui peut gérer la synchronisation entre
-vos comptes bancaires et Odoo. [Son tarif est de 4€/mois par
+vos comptes bancaires et Konvergo ERP. [Son tarif est de 4€/mois par
 compte/intégration](https://myponto.com/en#pricing).
 
-Pour plus d'infos
-
-  * [Synchronisation bancaire](../bank_synchronization.html)
-
-  * [Transactions](../transactions.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><ul>
+<li><p><a href="../bank_synchronization">Synchronisation bancaire</a></p></li>
+<li><p><a href="../transactions">Transactions</a></p></li>
+</ul>
+</div>
 
 ## Configuration
 
@@ -44,9 +46,9 @@ facturation**.
 ![Ajoutez vos comptes bancaires à votre compte
 Ponto.](../../../../../_images/ponto-add-account.png)
 
-  6. Assurez-vous d’ajouter tous les comptes bancaires que vous souhaitez synchroniser avec votre base de données Odoo avant de passer aux étapes suivantes.
+  6. Assurez-vous d’ajouter tous les comptes bancaires que vous souhaitez synchroniser avec votre base de données Konvergo ERP avant de passer aux étapes suivantes.
 
-### Lier son compte Ponto à sa base de données Odoo
+### Lier son compte Ponto à sa base de données Konvergo ERP
 
   1. Allez à Comptabilité ‣ Configuration ‣ Ajouter un compte bancaire.
 
@@ -54,18 +56,17 @@ Ponto.](../../../../../_images/ponto-add-account.png)
 
   3. Cliquez sur _Connecter_ et suivez les étapes.
 
-  4. À un moment donné, vous devez autoriser les comptes auxquels vous souhaitez accéder dans Odoo. Veuillez sélectionner **tous les comptes** que vous souhaitez synchroniser, même ceux provenant d’autres établissements bancaires.
+  4. À un moment donné, vous devez autoriser les comptes auxquels vous souhaitez accéder dans Konvergo ERP. Veuillez sélectionner **tous les comptes** que vous souhaitez synchroniser, même ceux provenant d’autres établissements bancaires.
 
 ![Sélection des comptes que vous souhaitez synchroniser avec
-Odoo.](../../../../../_images/ponto-select-accounts.png)
+Konvergo ERP.](../../../../../_images/ponto-select-accounts.png)
 
   5. Terminez le flux.
 
-Note
-
-Tous les comptes auxquels vous souhaitez accéder sur Odoo doivent être
-autorisés, mais Odoo filtre les comptes en fonction de l’établissement
-sélectionné à la deuxième étape.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Tous les comptes auxquels vous souhaitez accéder sur Konvergo ERP doivent être autorisés, mais Konvergo ERP filtre les comptes en fonction de l’établissement sélectionné à la deuxième étape.</p>
+</div>
 
 ### Mettre à jour ses identifiants de synchronisation
 
@@ -107,11 +108,11 @@ synchronisation s’arrêtera pour ces comptes.
 ### J’ai des erreurs avec mon établissement bêta
 
 Ponto met à disposition des établissements en _beta_ , ces établissements ne
-sont pas directement pris en charge par Odoo et nous vous conseillons de
+sont pas directement pris en charge par Konvergo ERP et nous vous conseillons de
 contacter directement Ponto.
 
-Important
-
-Utiliser un établissement en bêta est bénéfique pour Ponto, cela leur permet
-d’avoir un réel retour d’expérience sur la connexion avec l’établissement.
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>Utiliser un établissement en bêta est bénéfique pour Ponto, cela leur permet d’avoir un réel retour d’expérience sur la connexion avec l’établissement.</p>
+</div>
 

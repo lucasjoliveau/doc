@@ -1,219 +1,219 @@
 # Productivité
 
   * Documents
-    * [Configuration](productivity/documents.html#configuration)
-    * [Espaces de travail](productivity/documents.html#workspaces)
-    * [Étiquettes](productivity/documents.html#tags)
-    * [Gestion des documents](productivity/documents.html#documents-management)
+    * [Configuration](productivity/documents#configuration)
+    * [Espaces de travail](productivity/documents#workspaces)
+    * [Étiquettes](productivity/documents#tags)
+    * [Gestion des documents](productivity/documents#documents-management)
     * Actions de flux de travail
-      * [Créer des actions de flux de travail](productivity/documents.html#create-workflow-actions)
+      * [Créer des actions de flux de travail](productivity/documents#create-workflow-actions)
       * Définir les conditions
-        * [Type de condition avancée : domaine](productivity/documents.html#advanced-condition-type-domain)
-      * [Configurer les actions](productivity/documents.html#configure-the-actions)
-    * [Numériser les documents grâce à l’IA et la reconnaissance optique de caractères (OCR)](productivity/documents.html#digitize-documents-with-ai-and-optical-character-recognition-ocr)
+        * [Type de condition avancée : domaine](productivity/documents#advanced-condition-type-domain)
+      * [Configurer les actions](productivity/documents#configure-the-actions)
+    * [Numériser les documents grâce à l’IA et la reconnaissance optique de caractères (OCR)](productivity/documents#digitize-documents-with-ai-and-optical-character-recognition-ocr)
   * Signer
     * Validité des signatures électroniques
-      * [Union européenne](productivity/sign.html#european-union)
-      * [États-Unis d’Amérique](productivity/sign.html#united-states-of-america)
+      * [Union européenne](productivity/sign#european-union)
+      * [États-Unis d’Amérique](productivity/sign#united-states-of-america)
     * Send a document to sign
-      * [One-time signature](productivity/sign.html#one-time-signature)
-      * [Modèles](productivity/sign.html#templates)
+      * [One-time signature](productivity/sign#one-time-signature)
+      * [Modèles](productivity/sign#templates)
     * Rôles
       * Identification sécurisée
-        * [Vérification par SMS](productivity/sign.html#sms-verification)
-        * [Itsme®](productivity/sign.html#itsme)
-    * [Hachage du signataire](productivity/sign.html#signatory-hash)
-    * [Étiquettes](productivity/sign.html#tags)
-    * [Sign order](productivity/sign.html#sign-order)
-    * [Field types](productivity/sign.html#field-types)
-  * [Feuille de calcul](productivity/spreadsheet.html)
-    * Lier des données Odoo
+        * [Vérification par SMS](productivity/sign#sms-verification)
+        * [Itsme®](productivity/sign#itsme)
+    * [Hachage du signataire](productivity/sign#signatory-hash)
+    * [Étiquettes](productivity/sign#tags)
+    * [Sign order](productivity/sign#sign-order)
+    * [Field types](productivity/sign#field-types)
+  * [Feuille de calcul](productivity/spreadsheet)
+    * Lier des données Konvergo ERP
       * Mettre à jour des données
-        * [Données du tableau croisé dynamique](productivity/spreadsheet/insert.html#pivot-data)
+        * [Données du tableau croisé dynamique](productivity/spreadsheet/insert#pivot-data)
     * Functions
-      * [Base de données](productivity/spreadsheet/functions.html#database)
-      * [Date](productivity/spreadsheet/functions.html#date)
-      * [Ingénierie](productivity/spreadsheet/functions.html#engineering)
-      * [Financier](productivity/spreadsheet/functions.html#financial)
-      * [Infos](productivity/spreadsheet/functions.html#info)
-      * [Logique](productivity/spreadsheet/functions.html#logical)
-      * [Recherche](productivity/spreadsheet/functions.html#lookup)
-      * [Mathématiques](productivity/spreadsheet/functions.html#math)
-      * [Divers](productivity/spreadsheet/functions.html#misc)
-      * [Odoo](productivity/spreadsheet/functions.html#odoo)
-      * [Opérateurs](productivity/spreadsheet/functions.html#operators)
-      * [Statistique](productivity/spreadsheet/functions.html#statistical)
-      * [Texte](productivity/spreadsheet/functions.html#text)
+      * [Base de données](productivity/spreadsheet/functions#database)
+      * [Date](productivity/spreadsheet/functions#date)
+      * [Ingénierie](productivity/spreadsheet/functions#engineering)
+      * [Financier](productivity/spreadsheet/functions#financial)
+      * [Infos](productivity/spreadsheet/functions#info)
+      * [Logique](productivity/spreadsheet/functions#logical)
+      * [Recherche](productivity/spreadsheet/functions#lookup)
+      * [Mathématiques](productivity/spreadsheet/functions#math)
+      * [Divers](productivity/spreadsheet/functions#misc)
+      * [Konvergo ERP](productivity/spreadsheet/functions#odoo)
+      * [Opérateurs](productivity/spreadsheet/functions#operators)
+      * [Statistique](productivity/spreadsheet/functions#statistical)
+      * [Texte](productivity/spreadsheet/functions#text)
     * Modèles
       * Modèles par défaut
-        * [Comptabilité : rapports budgétaires](productivity/spreadsheet/templates.html#accounting-budget-reports)
-        * [CRM : rapports sur les revenus du pipeline](productivity/spreadsheet/templates.html#crm-pipeline-revenue-reports)
-        * [Ventes : commission de vente](productivity/spreadsheet/templates.html#sales-sales-commission)
-      * [Enregistrer une feuille de calcul en tant que modèle](productivity/spreadsheet/templates.html#save-a-spreadsheet-as-a-template)
-      * [Gérer et modifier les modèles](productivity/spreadsheet/templates.html#manage-and-edit-templates)
-    * [Glossaire](productivity/spreadsheet.html#glossary)
-  * [Connaissances](productivity/knowledge.html)
+        * [Comptabilité : rapports budgétaires](productivity/spreadsheet/templates#accounting-budget-reports)
+        * [CRM : rapports sur les revenus du pipeline](productivity/spreadsheet/templates#crm-pipeline-revenue-reports)
+        * [Ventes : commission de vente](productivity/spreadsheet/templates#sales-sales-commission)
+      * [Enregistrer une feuille de calcul en tant que modèle](productivity/spreadsheet/templates#save-a-spreadsheet-as-a-template)
+      * [Gérer et modifier les modèles](productivity/spreadsheet/templates#manage-and-edit-templates)
+    * [Glossaire](productivity/spreadsheet#glossary)
+  * [Connaissances](productivity/knowledge)
     * Modifier des articles
       * Ajouter et styliser le contenu
-        * [Éditeur de texte](productivity/knowledge/articles_editing.html#text-editor)
-        * [Images de couverture](productivity/knowledge/articles_editing.html#cover-pictures)
-        * [Icônes](productivity/knowledge/articles_editing.html#icons)
+        * [Éditeur de texte](productivity/knowledge/articles_editing#text-editor)
+        * [Images de couverture](productivity/knowledge/articles_editing#cover-pictures)
+        * [Icônes](productivity/knowledge/articles_editing#icons)
       * Commandes
-        * [Liste des commandes](productivity/knowledge/articles_editing.html#list-of-commands)
-      * [Contenu provenant d’autres applications](productivity/knowledge/articles_editing.html#content-from-other-apps)
+        * [Liste des commandes](productivity/knowledge/articles_editing#list-of-commands)
+      * [Contenu provenant d’autres applications](productivity/knowledge/articles_editing#content-from-other-apps)
     * Gestion des articles
       * Création, partage et suppression d’articles
-        * [Création](productivity/knowledge/management.html#creation)
+        * [Création](productivity/knowledge/management#creation)
         * Partage
-          * [Inviter des utilisateurs](productivity/knowledge/management.html#invite-users)
-          * [Partager en ligne](productivity/knowledge/management.html#share-online)
-        * [Suppression](productivity/knowledge/management.html#removal)
+          * [Inviter des utilisateurs](productivity/knowledge/management#invite-users)
+          * [Partager en ligne](productivity/knowledge/management#share-online)
+        * [Suppression](productivity/knowledge/management#removal)
       * Structure des articles
-        * [Catégories](productivity/knowledge/management.html#categories)
+        * [Catégories](productivity/knowledge/management#categories)
     * Propriétés
-      * [Ajouter des champs de propriété](productivity/knowledge/properties.html#add-property-fields)
-      * [Supprimer les champs de propriété](productivity/knowledge/properties.html#delete-property-fields)
-      * [Masquer le panneau de propriété](productivity/knowledge/properties.html#hide-the-property-panel)
+      * [Ajouter des champs de propriété](productivity/knowledge/properties#add-property-fields)
+      * [Supprimer les champs de propriété](productivity/knowledge/properties#delete-property-fields)
+      * [Masquer le panneau de propriété](productivity/knowledge/properties#hide-the-property-panel)
   * Calendrier
     * Synchronisation du Calendrier Outlook
       * Microsoft Azure setup
-        * [Register application](productivity/calendar/outlook.html#register-application)
-        * [Create client secret](productivity/calendar/outlook.html#create-client-secret)
-      * [Configuration dans Odoo](productivity/calendar/outlook.html#configuration-in-odoo)
+        * [Register application](productivity/calendar/outlook#register-application)
+        * [Create client secret](productivity/calendar/outlook#create-client-secret)
+      * [Configuration dans Konvergo ERP](productivity/calendar/outlook#configuration-in-odoo)
       * Synchroniser avec Outlook
-        * [Synchroniser le calendrier Odoo et Outlook](productivity/calendar/outlook.html#sync-odoo-calendar-and-outlook)
+        * [Synchroniser le calendrier Konvergo ERP et Outlook](productivity/calendar/outlook#sync-odoo-calendar-and-outlook)
       * Troubleshoot sync
-        * [Reset options](productivity/calendar/outlook.html#reset-options)
-    * Synchroniser Google Agenda avec Odoo
+        * [Reset options](productivity/calendar/outlook#reset-options)
+    * Synchroniser Google Agenda avec Konvergo ERP
       * Configuration dans Google
-        * [Sélectionner (ou créer) un projet](productivity/calendar/google.html#select-or-create-a-project)
-        * [Activer l’API Google Agenda](productivity/calendar/google.html#enable-google-calendar-api)
-        * [Écran de consentement OAuth](productivity/calendar/google.html#oauth-consent-screen)
-        * [Créer des identifiants](productivity/calendar/google.html#create-credentials)
-      * [Configuration dans Odoo](productivity/calendar/google.html#setup-in-odoo)
-      * [Synchroniser le calendrier dans Odoo](productivity/calendar/google.html#sync-calendar-in-odoo)
+        * [Sélectionner (ou créer) un projet](productivity/calendar/google#select-or-create-a-project)
+        * [Activer l’API Google Agenda](productivity/calendar/google#enable-google-calendar-api)
+        * [Écran de consentement OAuth](productivity/calendar/google#oauth-consent-screen)
+        * [Créer des identifiants](productivity/calendar/google#create-credentials)
+      * [Configuration dans Konvergo ERP](productivity/calendar/google#setup-in-odoo)
+      * [Synchroniser le calendrier dans Konvergo ERP](productivity/calendar/google#sync-calendar-in-odoo)
       * Troubleshoot sync
-        * [Reset options](productivity/calendar/google.html#reset-options)
+        * [Reset options](productivity/calendar/google#reset-options)
       * FAQ Google OAuth
-        * [Production vs. testing publishing status](productivity/calendar/google.html#production-vs-testing-publishing-status)
-        * [No test users added](productivity/calendar/google.html#no-test-users-added)
-        * [Type d’application](productivity/calendar/google.html#application-type)
-  * [Discussion](productivity/discuss.html)
-    * [Choisir vos préférences de notification](productivity/discuss.html#choose-notifications-preference)
+        * [Production vs. testing publishing status](productivity/calendar/google#production-vs-testing-publishing-status)
+        * [No test users added](productivity/calendar/google#no-test-users-added)
+        * [Type d’application](productivity/calendar/google#application-type)
+  * [Discussion](productivity/discuss)
+    * [Choisir vos préférences de notification](productivity/discuss#choose-notifications-preference)
     * Commencer à discuter
-      * [Mentions dans le chat et le chatter](productivity/discuss.html#mentions-in-the-chat-and-on-the-chatter)
+      * [Mentions dans le chat et le chatter](productivity/discuss#mentions-in-the-chat-and-on-the-chatter)
       * Statut de l’utilisateur
         * Utiliser les canaux pour la communication d’équipe
           * Canaux publics et privés
             * Options de configuration
-              * [Onglets Confidentialité et Membres](productivity/discuss/team_communication.html#privacy-and-members-tabs)
+              * [Onglets Confidentialité et Membres](productivity/discuss/team_communication#privacy-and-members-tabs)
           * Barre de recherche rapide
-            * [Trouver des canaux](productivity/discuss/team_communication.html#finding-channels)
-          * [Lier un canal dans le chatter](productivity/discuss/team_communication.html#linking-channel-in-chatter)
+            * [Trouver des canaux](productivity/discuss/team_communication#finding-channels)
+          * [Lier un canal dans le chatter](productivity/discuss/team_communication#linking-channel-in-chatter)
         * Configurer des serveurs ICE avec Twilio
-          * [Créer un compte Twilio](productivity/discuss/ice_servers.html#create-a-twilio-account)
-          * [Localiser le SID du compte et le jeton d’authentification de Twilio](productivity/discuss/ice_servers.html#locate-the-twilio-account-sid-and-auth-token)
-          * [Connecter Twilio à Odoo](productivity/discuss/ice_servers.html#connect-twilio-to-odoo)
-          * [Définir une liste de serveurs ICE personnalisés](productivity/discuss/ice_servers.html#define-a-list-of-custom-ice-servers)
-  * [VoIP (Voix sur protocole Internet)](productivity/voip.html)
-    * Utiliser les services VoIP dans Odoo avec OnSIP
-      * [Introduction](productivity/voip/onsip.html#introduction)
+          * [Créer un compte Twilio](productivity/discuss/ice_servers#create-a-twilio-account)
+          * [Localiser le SID du compte et le jeton d’authentification de Twilio](productivity/discuss/ice_servers#locate-the-twilio-account-sid-and-auth-token)
+          * [Connecter Twilio à Konvergo ERP](productivity/discuss/ice_servers#connect-twilio-to-odoo)
+          * [Définir une liste de serveurs ICE personnalisés](productivity/discuss/ice_servers#define-a-list-of-custom-ice-servers)
+  * [VoIP (Voix sur protocole Internet)](productivity/voip)
+    * Utiliser les services VoIP dans Konvergo ERP avec OnSIP
+      * [Introduction](productivity/voip/onsip#introduction)
       * Configuration
-        * [Odoo VoIP setting](productivity/voip/onsip.html#odoo-voip-setting)
-        * [Odoo user setting](productivity/voip/onsip.html#odoo-user-setting)
-        * [Incoming calls](productivity/voip/onsip.html#incoming-calls)
+        * [Konvergo ERP VoIP setting](productivity/voip/onsip#odoo-voip-setting)
+        * [Konvergo ERP user setting](productivity/voip/onsip#odoo-user-setting)
+        * [Incoming calls](productivity/voip/onsip#incoming-calls)
         * Aide au dépannage
-          * [Missing parameters](productivity/voip/onsip.html#missing-parameters)
-          * [Incorrect number](productivity/voip/onsip.html#incorrect-number)
-      * [OnSIP on mobile phone](productivity/voip/onsip.html#onsip-on-mobile-phone)
+          * [Missing parameters](productivity/voip/onsip#missing-parameters)
+          * [Incorrect number](productivity/voip/onsip#incorrect-number)
+      * [OnSIP on mobile phone](productivity/voip/onsip#onsip-on-mobile-phone)
     * Axivox configuration
-      * VoIP services in Odoo with Axivox
-        * [Introduction](productivity/voip/axivox/axivox_config.html#introduction)
+      * VoIP services in Konvergo ERP with Axivox
+        * [Introduction](productivity/voip/axivox/axivox_config#introduction)
         * Configuration
-          * [Configure VoIP user in Odoo](productivity/voip/axivox/axivox_config.html#configure-voip-user-in-odoo)
+          * [Configure VoIP user in Konvergo ERP](productivity/voip/axivox/axivox_config#configure-voip-user-in-odoo)
       * Manage users in Axivox
         * Vue d’ensemble
-          * [Incoming numbers](productivity/voip/axivox/manage_users.html#incoming-numbers)
+          * [Incoming numbers](productivity/voip/axivox/manage_users#incoming-numbers)
         * New users
-          * [General tab](productivity/voip/axivox/manage_users.html#general-tab)
-          * [Forwardings tab](productivity/voip/axivox/manage_users.html#forwardings-tab)
-          * [Follow Me tab](productivity/voip/axivox/manage_users.html#follow-me-tab)
-          * [Keys tab](productivity/voip/axivox/manage_users.html#keys-tab)
-          * [SIP Identifiers tab](productivity/voip/axivox/manage_users.html#sip-identifiers-tab)
-          * [Permissions tab](productivity/voip/axivox/manage_users.html#permissions-tab)
-        * [User groups](productivity/voip/axivox/manage_users.html#user-groups)
+          * [General tab](productivity/voip/axivox/manage_users#general-tab)
+          * [Forwardings tab](productivity/voip/axivox/manage_users#forwardings-tab)
+          * [Follow Me tab](productivity/voip/axivox/manage_users#follow-me-tab)
+          * [Keys tab](productivity/voip/axivox/manage_users#keys-tab)
+          * [SIP Identifiers tab](productivity/voip/axivox/manage_users#sip-identifiers-tab)
+          * [Permissions tab](productivity/voip/axivox/manage_users#permissions-tab)
+        * [User groups](productivity/voip/axivox/manage_users#user-groups)
       * Voicemails and audio messages
-        * [Set global language](productivity/voip/axivox/vm_audio_messages.html#set-global-language)
-        * [Activate voicemail](productivity/voip/axivox/vm_audio_messages.html#activate-voicemail)
+        * [Set global language](productivity/voip/axivox/vm_audio_messages#set-global-language)
+        * [Activate voicemail](productivity/voip/axivox/vm_audio_messages#activate-voicemail)
         * Voicemail
-          * [Manually create voicemail](productivity/voip/axivox/vm_audio_messages.html#manually-create-voicemail)
-          * [Notifications](productivity/voip/axivox/vm_audio_messages.html#notifications)
-        * [Forwarding to voicemail](productivity/voip/axivox/vm_audio_messages.html#forwarding-to-voicemail)
+          * [Manually create voicemail](productivity/voip/axivox/vm_audio_messages#manually-create-voicemail)
+          * [Notifications](productivity/voip/axivox/vm_audio_messages#notifications)
+        * [Forwarding to voicemail](productivity/voip/axivox/vm_audio_messages#forwarding-to-voicemail)
         * Audio messages
-          * [Record audio message](productivity/voip/axivox/vm_audio_messages.html#record-audio-message)
-          * [Write audio message](productivity/voip/axivox/vm_audio_messages.html#write-audio-message)
-        * [Music on-hold](productivity/voip/axivox/vm_audio_messages.html#music-on-hold)
+          * [Record audio message](productivity/voip/axivox/vm_audio_messages#record-audio-message)
+          * [Write audio message](productivity/voip/axivox/vm_audio_messages#write-audio-message)
+        * [Music on-hold](productivity/voip/axivox/vm_audio_messages#music-on-hold)
       * Dynamic caller ID
         * Default outgoing number
-          * [Utilisateurs](productivity/voip/axivox/dynamic_caller_id.html#users)
-          * [Advanced options](productivity/voip/axivox/dynamic_caller_id.html#advanced-options)
+          * [Utilisateurs](productivity/voip/axivox/dynamic_caller_id#users)
+          * [Advanced options](productivity/voip/axivox/dynamic_caller_id#advanced-options)
       * Conference calls
-        * [Add a virtual conference](productivity/voip/axivox/conference_calls.html#add-a-virtual-conference)
-        * [Incoming numbers](productivity/voip/axivox/conference_calls.html#incoming-numbers)
-        * [Start call in Odoo](productivity/voip/axivox/conference_calls.html#start-call-in-odoo)
+        * [Add a virtual conference](productivity/voip/axivox/conference_calls#add-a-virtual-conference)
+        * [Incoming numbers](productivity/voip/axivox/conference_calls#incoming-numbers)
+        * [Start call in Konvergo ERP](productivity/voip/axivox/conference_calls#start-call-in-odoo)
       * Dial plan basics
         * Dial plans
-          * [Dialplan editor (visual editor)](productivity/voip/axivox/dial_plan_basics.html#dialplan-editor-visual-editor)
+          * [Dialplan editor (visual editor)](productivity/voip/axivox/dial_plan_basics#dialplan-editor-visual-editor)
           * Dial plan elements
-            * [Basic elements](productivity/voip/axivox/dial_plan_basics.html#basic-elements)
-            * [Basic routing elements](productivity/voip/axivox/dial_plan_basics.html#basic-routing-elements)
-            * [Advanced routing elements](productivity/voip/axivox/dial_plan_basics.html#advanced-routing-elements)
-            * [Advanced elements](productivity/voip/axivox/dial_plan_basics.html#advanced-elements)
+            * [Basic elements](productivity/voip/axivox/dial_plan_basics#basic-elements)
+            * [Basic routing elements](productivity/voip/axivox/dial_plan_basics#basic-routing-elements)
+            * [Advanced routing elements](productivity/voip/axivox/dial_plan_basics#advanced-routing-elements)
+            * [Advanced elements](productivity/voip/axivox/dial_plan_basics#advanced-elements)
         * Attach to incoming number
-          * [Basic dial plan scenario](productivity/voip/axivox/dial_plan_basics.html#basic-dial-plan-scenario)
+          * [Basic dial plan scenario](productivity/voip/axivox/dial_plan_basics#basic-dial-plan-scenario)
       * Advanced dial plans
-        * [Advanced elements](productivity/voip/axivox/dial_plan_advanced.html#advanced-elements)
+        * [Advanced elements](productivity/voip/axivox/dial_plan_advanced#advanced-elements)
         * Basic routing elements
-          * [Digital receptionist scenario](productivity/voip/axivox/dial_plan_advanced.html#digital-receptionist-scenario)
+          * [Digital receptionist scenario](productivity/voip/axivox/dial_plan_advanced#digital-receptionist-scenario)
         * Advanced routing elements
-          * [Dispatcher scenario](productivity/voip/axivox/dial_plan_advanced.html#dispatcher-scenario)
-          * [Time condition scenario](productivity/voip/axivox/dial_plan_advanced.html#time-condition-scenario)
-          * [Access list scenario](productivity/voip/axivox/dial_plan_advanced.html#access-list-scenario)
+          * [Dispatcher scenario](productivity/voip/axivox/dial_plan_advanced#dispatcher-scenario)
+          * [Time condition scenario](productivity/voip/axivox/dial_plan_advanced#time-condition-scenario)
+          * [Access list scenario](productivity/voip/axivox/dial_plan_advanced#access-list-scenario)
         * Switches
           * Basic switch
-            * [Add a switch to dial plan](productivity/voip/axivox/dial_plan_advanced.html#add-a-switch-to-dial-plan)
+            * [Add a switch to dial plan](productivity/voip/axivox/dial_plan_advanced#add-a-switch-to-dial-plan)
           * Multi-switch
-            * [Add a multi-switch to dial plan](productivity/voip/axivox/dial_plan_advanced.html#add-a-multi-switch-to-dial-plan)
+            * [Add a multi-switch to dial plan](productivity/voip/axivox/dial_plan_advanced#add-a-multi-switch-to-dial-plan)
       * Call queues
         * Add a queue
-          * [Nom](productivity/voip/axivox/call_queues.html#name)
-          * [Internal extension](productivity/voip/axivox/call_queues.html#internal-extension)
-          * [Strategy](productivity/voip/axivox/call_queues.html#strategy)
-          * [Maximum waiting time in seconds](productivity/voip/axivox/call_queues.html#maximum-waiting-time-in-seconds)
-          * [Maximum duration of ringing at an agent](productivity/voip/axivox/call_queues.html#maximum-duration-of-ringing-at-an-agent)
+          * [Nom](productivity/voip/axivox/call_queues#name)
+          * [Internal extension](productivity/voip/axivox/call_queues#internal-extension)
+          * [Strategy](productivity/voip/axivox/call_queues#strategy)
+          * [Maximum waiting time in seconds](productivity/voip/axivox/call_queues#maximum-waiting-time-in-seconds)
+          * [Maximum duration of ringing at an agent](productivity/voip/axivox/call_queues#maximum-duration-of-ringing-at-an-agent)
           * Adding agents
-            * [Static agents](productivity/voip/axivox/call_queues.html#static-agents)
-            * [Dynamic agents](productivity/voip/axivox/call_queues.html#dynamic-agents)
+            * [Static agents](productivity/voip/axivox/call_queues#static-agents)
+            * [Dynamic agents](productivity/voip/axivox/call_queues#dynamic-agents)
         * Agent connection
           * Connect via Axivox queue
-            * [Rapport](productivity/voip/axivox/call_queues.html#report)
-          * [Connect to queue on Odoo](productivity/voip/axivox/call_queues.html#connect-to-queue-on-odoo)
+            * [Rapport](productivity/voip/axivox/call_queues#report)
+          * [Connect to queue on Konvergo ERP](productivity/voip/axivox/call_queues#connect-to-queue-on-odoo)
     * VoIP widget
-      * [Phone calls](productivity/voip/voip_widget.html#phone-calls)
-      * [Aide au dépannage](productivity/voip/voip_widget.html#troubleshooting)
+      * [Phone calls](productivity/voip/voip_widget#phone-calls)
+      * [Aide au dépannage](productivity/voip/voip_widget#troubleshooting)
       * Tabulations
-        * [Récent](productivity/voip/voip_widget.html#recent)
-        * [Activités suivantes](productivity/voip/voip_widget.html#next-activities)
-        * [Contacts](productivity/voip/voip_widget.html#contacts)
+        * [Récent](productivity/voip/voip_widget#recent)
+        * [Activités suivantes](productivity/voip/voip_widget#next-activities)
+        * [Contacts](productivity/voip/voip_widget#contacts)
     * Devices and integrations
-      * [Odoo VoIP (laptop/desktop computer)](productivity/voip/devices_integrations.html#odoo-voip-laptop-desktop-computer)
-      * [Odoo VoIP (tablet/mobile device)](productivity/voip/devices_integrations.html#odoo-voip-tablet-mobile-device)
-      * [Zoiper Lite](productivity/voip/devices_integrations.html#zoiper-lite)
-      * [Linphone](productivity/voip/devices_integrations.html#linphone)
+      * [Konvergo ERP VoIP (laptop/desktop computer)](productivity/voip/devices_integrations#odoo-voip-laptop-desktop-computer)
+      * [Konvergo ERP VoIP (tablet/mobile device)](productivity/voip/devices_integrations#odoo-voip-tablet-mobile-device)
+      * [Zoiper Lite](productivity/voip/devices_integrations#zoiper-lite)
+      * [Linphone](productivity/voip/devices_integrations#linphone)
     * Make, receive, transfer, and forward calls
-      * [Make calls](productivity/voip/transfer_forward.html#make-calls)
-      * [Receive calls](productivity/voip/transfer_forward.html#receive-calls)
-      * [Ajouter à la file d’attente](productivity/voip/transfer_forward.html#add-to-call-queue)
-      * [Transfer calls](productivity/voip/transfer_forward.html#transfer-calls)
-      * [Forward calls](productivity/voip/transfer_forward.html#forward-calls)
+      * [Make calls](productivity/voip/transfer_forward#make-calls)
+      * [Receive calls](productivity/voip/transfer_forward#receive-calls)
+      * [Ajouter à la file d’attente](productivity/voip/transfer_forward#add-to-call-queue)
+      * [Transfer calls](productivity/voip/transfer_forward#transfer-calls)
+      * [Forward calls](productivity/voip/transfer_forward#forward-calls)
 

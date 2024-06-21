@@ -5,7 +5,7 @@ Eye-catching animations can bring your website to life.
 ## On appearance
 
 In standard, you can add animations to columns when they appear, thanks to the
-Website Builder. Odoo detects when your element is in the viewport and
+Website Builder. Konvergo ERP detects when your element is in the viewport and
 launches the animation. A large selection of animations is available:
 
   * Fade in
@@ -38,10 +38,8 @@ in the `style` attribute.
     </div>
     
 
-![Animation options](../../../_images/animations.png)
-
-Pour plus d'infos
-
-[Website
-Animate](https://github.com/odoo/odoo/blob/34c0c9c1ae00aba391932129d4cefd027a9c6bbd/addons/website/static/src/scss/website.scss#L1638)
+![Animation options](../../../_images/animations.png) <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="https://github.com/odoo/odoo/blob/34c0c9c1ae00aba391932129d4cefd027a9c6bbd/addons/website/static/src/scss/website.scss#L1638">Website Animate</a></p>
+</div>
 

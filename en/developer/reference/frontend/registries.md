@@ -1,7 +1,7 @@
 # Registries
 
 Registries are (ordered) key/value maps. They are the main web client
-extension points: many features provided by the Odoo javascript framework
+extension points: many features provided by the Konvergo ERP javascript framework
 simply look up into a registry whenever it needs a definition for some object
 (such as fields, views, client actions or services). Customizing the web
 client is then simply done by adding specific values in the correct registry.
@@ -167,7 +167,7 @@ user_menuitems | menu items displayed in the user menu (top right of navbar)
 ### Effect registry
 
 The `effects` registry contains the implementations of all available effects.
-See the section on the [effect service](services.html#frontend-services-
+See the section on the [effect service](services#frontend-services-
 effect-registry) for more details.
 
 ### Formatter registry
@@ -195,9 +195,12 @@ string
 
 Formats a value and returns a string
 
-See also
-
-  * Parsers registry
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="#frontend-registries-parsers"><span class="std std-ref">Parsers registry</span></a></p></li>
+</ul>
+</div>
 
 ### Main components registry
 
@@ -253,15 +256,18 @@ T a valid value
 Parses a string and returns a value. If the string does not represent a valid
 value, parsers can fail and throw errors.
 
-See also
-
-  * Formatters registry
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="#frontend-registries-formatters"><span class="std std-ref">Formatters registry</span></a></p></li>
+</ul>
+</div>
 
 ### Service registry
 
 The service registry (category: `services`) contains all
-[services](services.html#frontend-services) that should be activated by the
-Odoo framework.
+[services](services#frontend-services) that should be activated by the
+Konvergo ERP framework.
 
     
     
@@ -290,7 +296,7 @@ objects with the following three keys:
 
   * `props (optional)`: props that should be given to the component
 
-  * `isDisplayed (optional)`: a function that takes the [env](framework_overview.html#frontend-framework-environment) and returns a boolean. If true, the systray item is displayed. Otherwise it is removed.
+  * `isDisplayed (optional)`: a function that takes the [env](framework_overview#frontend-framework-environment) and returns a boolean. If true, the systray item is displayed. Otherwise it is removed.
 
 For example:
 
@@ -328,7 +334,7 @@ that are shown when opening the user menu (the navbar element with the user
 name, on the top right).
 
 User menu items are defined by a function taking the
-[env](framework_overview.html#frontend-framework-environment) and returning a
+[env](framework_overview#frontend-framework-environment) and returning a
 plain object, containing the following information:
 
   * `description` : the menu item text,

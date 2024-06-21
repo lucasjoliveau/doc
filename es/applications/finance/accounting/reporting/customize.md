@@ -1,15 +1,14 @@
 # Reportes personalizados
 
-Odoo dispone de un marco de reportes avanzado y fácil de usar. Esta
+Konvergo ERP dispone de un marco de reportes avanzado y fácil de usar. Esta
 herramienta le permite crear nuevos reportes como **reportes fiscales** ,
 **balances generales** y **estados de resultados** con **grupos** y
 **diseños** específicos.
 
-Importante
-
-Active el [modo de
-desarrollador](../../../general/developer_mode.html#developer-mode) para
-acceder a la interfaz de creación de reportes contables.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Active el <a href="../../../general/developer_mode#developer-mode"><span class="std std-ref">modo de desarrollador</span></a> para acceder a la interfaz de creación de reportes contables.</p>
+</div>
 
 Para crear un nuevo reporte vaya a Contabilidad ‣ configuración ‣ gestión:
 reportes contables. Aquí, puede crear un reporte raíz o una variante.
@@ -24,49 +23,45 @@ sirven como modelos sobre los que se construyen las versiones de contabilidad
 locales. Si se crea un reporte y no se le asigna un reporte raíz, se considera
 que dicho reporte es un reporte raíz.
 
-Example
-
-Un reporte fiscal para Bélgica y Estados Unidos usará la misma versión general
-como base y se adaptará según sus normativas nacionales.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Un reporte fiscal para Bélgica y Estados Unidos usará la misma versión general como base y se adaptará según sus normativas nacionales.</p>
+</div>
 
 Si desea crear un reporte raíz nuevo, deberá crearle un **elemento de menú**
 primero. Para hacer esto debe abrir el reporte y, en el mismo reporte, hacer
 clic en acción ‣ crear elemento de menú. Vuelva a cargar la página y verá el
 reporte en Contabilidad ‣ reportes.
 
-Nota
-
-No es normal encontrarse casos que requieran crear un nuevo reporte raíz, un
-ejemplo de casos que lo necesitan son los reportes específicos que exigen
-algunas autoridades fiscales.
-
-![Botón de crear elemento de menú.](../../../../_images/engine-create-menu-
-item.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>No es normal encontrarse casos que requieran crear un nuevo reporte raíz, un ejemplo de casos que lo necesitan son los reportes específicos que exigen algunas autoridades fiscales.</p>
+</div> ![Botón de crear elemento de
+menú.](../../../../_images/engine-create-menu-item.png)
 
 ## Variantes
 
 Las variantes son versiones específicas de los reportes raíz, por lo que
 siempre van a referirse a un reporte raíz. Para crear una variante, selecciona
-un reporte raíz general en reporte raíz al crear un nuevo reporte.
+un reporte raíz general en **reporte raíz** al crear un nuevo reporte.
 
 Cuando se abre un reporte raíz desde uno de los menús principales de la
 aplicación Contabilidad, aparecerán todas sus variantes en el selector de
 variantes situado en la esquina superior derecha de la vista.
 
-Example
-
-La siguiente imagen, reporte de IVA (BE) es una variante del reporte raíz
-reporte general de impuestos.
-
-![Selección de variante de reportes.](../../../../_images/engine-variant.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>La siguiente imagen, <b>reporte de IVA (BE)</b> es una variante del reporte raíz <b>reporte general de impuestos</b>.</p>
+<img alt="Selección de variante de reportes." class="align-center" src="../../../../_images/engine-variant.png"/>
+</div>
 
 ## Líneas
 
 Después de haber creado un reporte (raíz o variante), necesita agregar las
-líneas necesarias; las puede crear haciendo clic en agregar línea o modifique
-una línea existente al hacer clic sobre ella. Todas las líneas _necesitan_ un
-nombre, y pueden llegar a tener una opción adicional de Código (de su
-elección) por si desea usar su valor en formulas.
+líneas necesarias; las puede crear haciendo clic en **agregar línea** o
+modifique una línea existente al hacer clic sobre ella. Todas las líneas
+_necesitan_ un **nombre** , y pueden llegar a tener una opción adicional de
+**Código** (de su elección) por si desea usar su valor en formulas.
 
 ![opciones de la herramienta de líneas](../../../../_images/engine-lines-
 options.png)
@@ -75,24 +70,25 @@ options.png)
 
 Cada línea puede contener una o varias **expresiones**. Las expresiones pueden
 actuar como **subvariables** que se necesitan en una línea de reporte. Si
-desea crear una expresión, haga clic en Agregar línea _dentro_ de una línea de
-reporte.
+desea crear una expresión, haga clic en **Agregar línea** _dentro_ de una
+línea de reporte.
 
-Si desea crear una expresión debe atribuirle una etiqueta que se utilizará
+Si desea crear una expresión debe atribuirle una **etiqueta** que se utilizará
 como referencia a dicha expresión. Por lo tanto, cada expresión debe ser
-**única** entre todas las líneas. Se deben indicar tanto motor de cálculo y la
-Formula. El **motor** define la manera en que se interpretan las **fórmulas**
-y **subfórmulas**. Si es necesario, se pueden incluir distintas expresiones
-que utilicen diferentes motores de cálculo en la misma línea.
+**única** entre todas las líneas. Se deben indicar tanto **motor de cálculo**
+y la **Formula**. El **motor** define la manera en que se interpretan las
+**fórmulas** y **subfórmulas**. Si es necesario, se pueden incluir distintas
+expresiones que utilicen diferentes motores de cálculo en la misma línea.
 
-Nota
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>En algunos casos también va a ser necesario definir <b>subfórmulas</b>.</p>
+</div>
 
-En algunos casos también va a ser necesario definir subfórmulas.
-
-### Motor del dominio de Odoo
+### Motor del dominio de Konvergo ERP
 
 Este motor identifica una fórmula como un [dominio de
-Odoo](../../../../developer/reference/backend/orm.html#reference-orm-domains)
+Konvergo ERP](../../../../developer/reference/backend/orm#reference-orm-domains)
 cuyo destino son los objetos account.move.line.
 
 La subformula le permite definir el uso de las líneas de movimiento que
@@ -144,12 +140,10 @@ Cuando se evalúa la expresión, su cálculo puede expresarse de la siguiente
 manera: **(cantidad de líneas de movimiento con** `+` **etiqueta)** `-`
 **(cantidad de líneas de movimiento con** `-` **etiqueta)**.
 
-Example
-
-Si la fórmula es `nombre_etiqueta`, el motor compara las etiquetas de
-impuestos `+nombre_etiqueta` y `-nombre_etiqueta`, y las crea si es necesario.
-Para ejemplificar, la fórmula coincide con dos etiquetas; si la fórmula es
-`A`, necesitará (y creará, si es necesario) las etiquetas `+A` y `-A`.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Si la fórmula es <code>nombre_etiqueta</code>, el motor compara las etiquetas de impuestos <code>+nombre_etiqueta</code> y <code>-nombre_etiqueta</code>, y las crea si es necesario. Para ejemplificar, la fórmula coincide con dos etiquetas; si la fórmula es <code>A</code>, necesitará (y creará, si es necesario) las etiquetas <code>+A</code> y <code>-A</code>.</p>
+</div>
 
 ### Agregar otras fórmulas
 
@@ -213,62 +207,54 @@ Este motor se utiliza para hacer coincidir los importes realizados en las
 cuentas mediante los prefijos de los códigos de estas cuentas como variables
 de una expresión aritmética.
 
-Example
-
-`21`
-
-Las expresiones aritméticas también pueden tener solo un prefijo, como aquí.
-
-Example
-
-`21 + 10 - 5`
-
-Esta fórmula suma los balances de las líneas de movimiento realizadas en
-cuentas cuyos códigos empiezan por `21` y `10`, y resta el balance de las
-realizadas en cuentas con el prefijo `5`.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="line-block">
+<div class="line"><code>21</code></div>
+<div class="line">Las expresiones aritméticas también pueden tener solo un prefijo, como aquí.</div>
+</div>
+</div> <div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="line-block">
+<div class="line"><code>21 + 10 - 5</code></div>
+<div class="line">Esta fórmula suma los balances de las líneas de movimiento realizadas en cuentas cuyos códigos empiezan por <code>21</code> y <code>10</code>, y resta el balance de las realizadas en cuentas con el prefijo <code>5</code>.</div>
+</div>
+</div>
 
 También es posible ignorar una selección de subprefijos.
 
-Example
-
-`21 + 10\(101, 102) - 5\(57)`
-
-Esta fórmula funciona igual que en el ejemplo anterior, solo que en este caso
-no se tienen en cuenta los prefijos `101`, `102` y `57`.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><div class="line-block">
+<div class="line"><code>21 + 10\(101, 102) - 5\(57)</code></div>
+<div class="line">Esta fórmula funciona igual que en el ejemplo anterior, solo que en este caso no se tienen en cuenta los prefijos <code>101</code>, <code>102</code> y <code>57</code>.</div>
+</div>
+</div>
 
 También puede aplicar un «subfiltrado» en los **créditos y débitos**
 utilizando los sufijos `C` y `D`. En este caso, solo se tendrá en cuenta una
 cuenta si su prefijo coincide, _y_ si el balance total de las líneas de
 movimiento realizadas en esta cuenta es de **crédito/débito**.
 
-Example
-
-La cuenta `210001` tiene un balance de -42 y la cuenta `210002` tiene un
-balance de 25. La fórmula `21D` solo coincide con la cuenta `210002`, por lo
-que devuelve 25. La cuenta `210001` no coincide, ya que su saldo es de
-_crédito_.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>La cuenta <code>210001</code> tiene un balance de -42 y la cuenta <code>210002</code> tiene un balance de 25. La fórmula <code>21D</code> solo coincide con la cuenta <code>210002</code>, por lo que devuelve 25. La cuenta <code>210001</code> no coincide, ya que su saldo es de <em>crédito</em>.</p>
+</div>
 
 Se pueden mezclar las exclusiones de los prefijos con los sufijos `C` y `D`.
 
-Example
-
-`21D + 10\(101, 102)C - 5\(57)`
-
-Esta fórmula suma los balances de las líneas de movimiento realizadas en
-cuentas cuyos códigos empiezan por `21` _si_ es débito (`D`) y `10` _si_ es
-crédito (`C`) pero ignora los prefijos `101` y `102`, y resta el balance de
-las realizadas en cuentas con el prefijo `5`, sin tomar en cuenta el prefijo
-`57`.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Un reporte fiscal para Bélgica y Estados Unidos usará la misma versión general como base y se adaptará según sus normativas nacionales.</p>
+</div>0
 
 Si desea que la letra `C` o `D` coincida con un prefijo y no se utilice como
 sufijo, utilice una exclusión vacía `()`.
 
-Example
-
-`21D\()`
-
-Esta fórmula coincide con las cuentas cuyo código empieza con `21D`, sin
-importar el signo de su balance.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Un reporte fiscal para Bélgica y Estados Unidos usará la misma versión general como base y se adaptará según sus normativas nacionales.</p>
+</div>1
 
 Además de utilizar prefijos de código para incluir cuentas, también puede
 hacer que coincidan con las **etiquetas de cuentas**. Esto es muy útil, por
@@ -276,51 +262,40 @@ ejemplo, si su país no tiene un plan de cuentas estandarizado, donde es
 posible que se use el mismo prefijo para diferentes propósitos de una empresa
 a otra.
 
-Example
-
-`etiqueta(25)`
-
-Esta fórmula devuelve las cuentas con las etiquetas asociadas que incluyen el
-ID _25_.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Un reporte fiscal para Bélgica y Estados Unidos usará la misma versión general como base y se adaptará según sus normativas nacionales.</p>
+</div>2
 
 Si la etiqueta a la que hace referencia está definida en un archivo de datos,
 puede usar XMLID en lugar del ID.
 
-Example
-
-`etiqueta(mi_módulo.mi_etiqueta)`
-
-Esta fórmula devuelve las cuentas con las etiquetas asociadas a la etiqueta
-indicada por _mi_módulo.mi_etiqueta_.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Un reporte fiscal para Bélgica y Estados Unidos usará la misma versión general como base y se adaptará según sus normativas nacionales.</p>
+</div>3
 
 También puede usar expresiones aritméticas con etiquetas y tiene la
 posibilidad de combinarlas con selecciones de prefijo.
 
-Example
-
-`etiqueta(mi_módulo.mi_etiqueta) + etiqueta(42) + 10`
-
-Los saldos de las cuentas etiquetadas como _mi_módulo.mi_etiqueta_ se sumarán
-con los de las cuentas vinculadas a la etiqueta con el ID _42_ y las cuentas
-con el prefijo de código `10`.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Un reporte fiscal para Bélgica y Estados Unidos usará la misma versión general como base y se adaptará según sus normativas nacionales.</p>
+</div>4
 
 Los sufijos `C` y `D` se pueden utilizar de la misma forma con las etiquetas.
 
-Example
-
-`etiqueta(mi_módulo.mi_etiqueta)C`
-
-Esta fórmula devuelve las cuentas con la etiqueta _mi_módulo.mi_etiqueta_ y un
-saldo positivo.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Un reporte fiscal para Bélgica y Estados Unidos usará la misma versión general como base y se adaptará según sus normativas nacionales.</p>
+</div>5
 
 La exclusión de prefijos también funciona con las etiquetas.
 
-Example
-
-`etiqueta(mi_módulo.mi_etiqueta)\(10)`
-
-Esta fórmula devuelve las cuentas con la etiqueta _mi_modulo.mi_etiqueta_ y un
-código que no empieza con `10`.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Un reporte fiscal para Bélgica y Estados Unidos usará la misma versión general como base y se adaptará según sus normativas nacionales.</p>
+</div>6
 
 ### Valor externo
 
@@ -360,17 +335,17 @@ Indica que esta expresión se puede editar de forma manual, lo que provoca la
 aparición de un icono en el reporte que permite que el usuario realice esta
 acción.
 
-Nota
-
-Los valores manuales se crean en la `date_to` seleccionada en el reporte.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Un reporte fiscal para Bélgica y Estados Unidos usará la misma versión general como base y se adaptará según sus normativas nacionales.</p>
+</div>7
 
 Ambas fórmulas se pueden usar al mismo tiempo, solo se deben separar por `;`.
 
-Example
-
-`editable;rounding=2`
-
-es una fórmula correcta que mezcla ambos comportamientos.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Un reporte fiscal para Bélgica y Estados Unidos usará la misma versión general como base y se adaptará según sus normativas nacionales.</p>
+</div>8
 
 ### Función python personalizada
 
@@ -384,13 +359,13 @@ su propio módulo personalizado.
 
 Los reportes pueden tener un **número indefinido** de columnas. Cada columna
 obtiene sus valores de las **expresiones** indicadas en las **líneas**. El
-campo expression_label de la columna proporciona la etiqueta de las
+campo **expression_label** de la columna proporciona la etiqueta de las
 expresiones cuyo valor se muestra. Si una línea no tiene ninguna **expresión**
 en ese campo, no se mostrará nada para ella en esta columna. Si se necesitan
 varias columnas, debe utilizar diferentes etiquetas de **expresión**
 
 ![Columnas en el reporte](../../../../_images/engine-columns.png)
 
-Si utiliza la función **comparación de periodos** en la pestaña Opciones de un
-reporte contable, todas las columnas se repiten en y para cada periodo.
+Si utiliza la función **comparación de periodos** en la pestaña **Opciones**
+de un reporte contable, todas las columnas se repiten en y para cada periodo.
 

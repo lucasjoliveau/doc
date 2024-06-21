@@ -3,23 +3,23 @@
 ## «Las acciones planificadas no se ejecutan en el momento exacto en que se
 esperaban»
 
-En la plataforma de Odoo.sh, no podemos garantizar un tiempo de ejecución
+En la plataforma de Konvergo ERP.sh, no podemos garantizar un tiempo de ejecución
 exacto para las acciones planificadas.
 
 Esto se debe a que quizás haya varios clientes en el mismo servidor y debemos
 garantizar una repartición justa del servidor a cada uno. Por lo tanto, las
 acciones planificadas se llevan a cabo de manera algo distinta a como se haría
-en un servidor regular de Odoo y se ejecutan bajo una política de _mayor
+en un servidor regular de Konvergo ERP y se ejecutan bajo una política de _mayor
 esfuerzo_.
 
-Advertencia
-
-No espere que ninguna acción planificada se ejecute con una frecuencia mayor a
-cada 5 minutos.
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>No espere que ninguna acción planificada se ejecute con una frecuencia mayor a cada 5 minutos.</p>
+</div>
 
 ## ¿Hay «mejores prácticas» respecto a las acciones planificadas?
 
-**Odoo.sh siempre limita el tiempo de ejecución de las acciones planificadas
+**Konvergo ERP.sh siempre limita el tiempo de ejecución de las acciones planificadas
 (*también conocidas como* crons).** Por lo tanto, debe tener esto en cuenta
 cuando desarrolle sus propios crons.
 

@@ -1,18 +1,18 @@
 # Chapter 5: Security - A Brief Introduction
 
-In the [previous chapter](04_basicmodel.html#tutorials-getting-
+In the [previous chapter](04_basicmodel#tutorials-getting-
 started-04-basicmodel), we created our first table intended to store business
-data. In a business application such as Odoo, one of the first questions to
-consider is who1 can access the data. Odoo provides a security mechanism to
+data. In a business application such as Konvergo ERP, one of the first questions to
+consider is who1 can access the data. Konvergo ERP provides a security mechanism to
 allow access to the data for specific groups of users.
 
 The topic of security is covered in more detail in [Restrict access to
-data](../restrict_data_access.html). This chapter aims to cover the minimum
+data](../restrict_data_access). This chapter aims to cover the minimum
 required for our new module.
 
 ## Data Files (CSV)
 
-Odoo is a highly data driven system. Although behavior is customized using
+Konvergo ERP is a highly data driven system. Although behavior is customized using
 Python code, part of a module’s value is in the data it sets up when loaded.
 One way to load data is through a CSV file. One example is the [list of
 country
@@ -29,9 +29,9 @@ which is loaded at installation of the `base` module.
     ...
     
 
-  * `id` is an [external identifier](../../glossary.html#term-external-identifier). It can be used to refer to the record (without knowing its in-database identifier).
+  * `id` is an [external identifier](../../glossary#term-external-identifier). It can be used to refer to the record (without knowing its in-database identifier).
 
-  * `country_id:id` refers to the country by using its [external identifier](../../glossary.html#term-external-identifier).
+  * `country_id:id` refers to the country by using its [external identifier](../../glossary#term-external-identifier).
 
   * `name` is the name of the state.
 
@@ -52,17 +52,17 @@ module](https://github.com/odoo/odoo/blob/e8697f609372cd61b045c4ee2c7f0fcfb496f5
 Also note that the content of the data files is only loaded when a module is
 installed or updated.
 
-Avertissement
-
-The data files are sequentially loaded following their order in the
-`__manifest__.py` file. This means that if data `A` refers to data `B`, you
-must make sure that `B` is loaded before `A`.
-
-In the case of the country states, you will note that the [list of
-countries](https://github.com/odoo/odoo/blob/e8697f609372cd61b045c4ee2c7f0fcfb496f58a/odoo/addons/base/__manifest__.py#L22)
-is loaded **before** the [list of country
-states](https://github.com/odoo/odoo/blob/e8697f609372cd61b045c4ee2c7f0fcfb496f58a/odoo/addons/base/__manifest__.py#L29).
-This is because the states refer to the countries.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>The data files are sequentially loaded following their order in the <code>__manifest__.py</code> file.
+This means that if data <code>A</code> refers to data <code>B</code>, you must make sure that <code>B</code>
+is loaded before <code>A</code>.</p>
+<p>In the case of the country states, you will note that the
+<a href="https://github.com/odoo/odoo/blob/e8697f609372cd61b045c4ee2c7f0fcfb496f58a/odoo/addons/base/__manifest__.py#L22">list of countries</a>
+is loaded <b>before</b> the
+<a href="https://github.com/odoo/odoo/blob/e8697f609372cd61b045c4ee2c7f0fcfb496f58a/odoo/addons/base/__manifest__.py#L29">list of country states</a>.
+This is because the states refer to the countries.</p>
+</div>
 
 Why is all this important for security? Because all the security configuration
 of a model is loaded through data files, as we’ll see in the next section.
@@ -70,19 +70,17 @@ of a model is loaded through data files, as we’ll see in the next section.
 ## Access Rights
 
 **Reference** : the documentation related to this topic can be found in
-[Access Rights](../../reference/backend/security.html#reference-security-acl).
+[Access Rights](../../reference/backend/security#reference-security-acl).
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section, the following warning should not appear anymore:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>WARNING rd-demo odoo.modules.loading: The models ['estate.property'] have no access rules...
+</pre></div>
+</div>
+</div>
 
-**Goal** : at the end of this section, the following warning should not appear
-anymore:
-
-    
-    
-    WARNING rd-demo odoo.modules.loading: The models ['estate.property'] have no access rules...
-    
-
-When no access rights are defined on a model, Odoo determines that no users
+When no access rights are defined on a model, Konvergo ERP determines that no users
 can access the data. It is even notified in the log:
 
     
@@ -104,7 +102,7 @@ Here is an example for our previous `test_model`:
     access_test_model,access_test_model,model_test_model,base.group_user,1,0,0,0
     
 
-  * `id` is an [external identifier](../../glossary.html#term-external-identifier).
+  * `id` is an [external identifier](../../glossary#term-external-identifier).
 
   * `name` is the name of the `ir.model.access`.
 
@@ -114,28 +112,25 @@ Here is an example for our previous `test_model`:
 
   * `perm_read,perm_write,perm_create,perm_unlink`: read, write, create and unlink permissions
 
-Exercise
-
-Add access rights.
-
-Create the `ir.model.access.csv` file in the appropriate folder and define it
-in the `__manifest__.py` file.
-
-Give the read, write, create and unlink permissions to the group
-`base.group_user`.
-
-Tip: the warning message in the log gives you most of the solution ;-)
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add access rights.</p>
+<p>Create the <code>ir.model.access.csv</code> file in the appropriate folder and define it in the
+<code>__manifest__.py</code> file.</p>
+<p>Give the read, write, create and unlink permissions to the group <code>base.group_user</code>.</p>
+<p>Tip: the warning message in the log gives you most of the solution ;-)</p>
+</div>
 
 Restart the server and the warning message should have disappeared!
 
-It’s now time to finally [interact with the UI](06_firstui.html#tutorials-
+It’s now time to finally [interact with the UI](06_firstui#tutorials-
 getting-started-06-firstui)!
 
 1
 
     
 
-meaning which Odoo user (or group of users)
+meaning which Konvergo ERP user (or group of users)
 
 2
 

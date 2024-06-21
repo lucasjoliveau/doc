@@ -1,29 +1,28 @@
 # Owl Components
 
-The Odoo Javascript framework uses a custom component framework called Owl. It
+The Konvergo ERP Javascript framework uses a custom component framework called Owl. It
 is a declarative component system, loosely inspired by Vue and React.
-Components are defined using [QWeb templates](qweb.html), enriched with some
+Components are defined using [QWeb templates](qweb), enriched with some
 Owl specific directives. The official [Owl
 documentation](https://github.com/odoo/owl/blob/master/doc/readme.md) contains
 a complete reference and a tutorial.
 
-Importante
-
-Although the code can be found in the `web` module, it is maintained from a
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Although the code can be found in the <code>web</code> module, it is maintained from a
 separate GitHub repository. Any modification to Owl should therefore be made
-through a pull request on <https://github.com/odoo/owl>.
-
-Nota
-
-Currently, all Odoo versions (starting in version 14) share the same Owl
-version.
+through a pull request on <a href="https://github.com/odoo/owl">https://github.com/odoo/owl</a>.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Currently, all Konvergo ERP versions (starting in version 14) share the same Owl version.</p>
+</div>
 
 ## Using Owl components
 
 The [Owl documentation](https://github.com/odoo/owl/blob/master/doc/readme.md)
 already documents in detail the Owl framework, so this page will only provide
-Odoo specific information. But first, let us see how we can make a simple
-component in Odoo.
+Konvergo ERP specific information. But first, let us see how we can make a simple
+component in Konvergo ERP.
 
     
     
@@ -46,14 +45,14 @@ component in Odoo.
     
 
 This example shows that Owl is available as a library in the global namespace
-as `owl`: it can simply be used like most libraries in Odoo. Note that we
+as `owl`: it can simply be used like most libraries in Konvergo ERP. Note that we
 defined here the template as a static property, but without using the `static`
-keyword, which is not available in some browsers (Odoo javascript code should
+keyword, which is not available in some browsers (Konvergo ERP javascript code should
 be Ecmascript 2019 compliant).
 
 We define here the template in the javascript code, with the help of the `xml`
 helper. However, it is only useful to get started. In practice, templates in
-Odoo should be defined in an xml file, so they can be translated. In that
+Konvergo ERP should be defined in an xml file, so they can be translated. In that
 case, the component should only define the template name.
 
 In practice, most components should define 2 or 3 files, located at the same
@@ -91,29 +90,30 @@ And the template is now located in the corresponding xml file:
     </templates>
     
 
-Odoo code is not yet completely made in Owl, so it needs a way to tell the
+Konvergo ERP code is not yet completely made in Owl, so it needs a way to tell the
 difference between Owl templates (new code) and old templates (for
 components). To do that in a backward-compatible way, all new templates should
 be defined with the `owl` attribute set to 1.
 
-Nota
-
-Do not forget to set `owl="1"` in your Owl templates!
-
-Nota
-
-Template names should follow the convention `addon_name.ComponentName`.
-
-Ver también
-
-  * [Owl Repository](https://github.com/odoo/owl)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Do not forget to set <code>owl="1"</code> in your Owl templates!</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Template names should follow the convention <code>addon_name.ComponentName</code>.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="https://github.com/odoo/owl">Owl Repository</a></p></li>
+</ul>
+</div>
 
 ## Best practices
 
 First of all, components are classes, so they have a constructor. But
 constructors are special methods in javascript that are not overridable in any
-way. Since this is an occasionally useful pattern in Odoo, we need to make
-sure that no component in Odoo directly uses the constructor method. Instead,
+way. Since this is an occasionally useful pattern in Konvergo ERP, we need to make
+sure that no component in Konvergo ERP directly uses the constructor method. Instead,
 components should use the `setup` method:
 
     
@@ -138,8 +138,8 @@ Another good practice is to use a consistent convention for template names:
 
 ## Reference List
 
-The Odoo web client is built with [Owl](https://github.com/odoo/owl)
-components. To make it easier, the Odoo javascript framework provides a suite
+The Konvergo ERP web client is built with [Owl](https://github.com/odoo/owl)
+components. To make it easier, the Konvergo ERP javascript framework provides a suite
 of generic components that can be reused in some common situations, such as
 dropdowns, checkboxes or datepickers. This page explains how to use these
 generic components.
@@ -213,9 +213,10 @@ is enabled in both directions.
     </ActionSwiper>
     
 
-Nota
-
-Actions are permuted when using right-to-left (RTL) languages.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Actions are permuted when using right-to-left (RTL) languages.</p>
+</div>
 
 #### Props
 
@@ -372,7 +373,7 @@ features such as:
 
   * Smartly chose the direction it should open (right-to-left direction is automatically handled).
 
-To solve these issues once and for all, the Odoo framework provides a set of
+To solve these issues once and for all, the Konvergo ERP framework provides a set of
 two components: a `Dropdown` component (the actual dropdown), and
 `DropdownItem`, for each element in the item list.
 
@@ -406,7 +407,7 @@ Dropdown | Type | Description
 `beforeOpen` | function | hook to execute logic just before opening. May be asynchronous.  
 `manualOnly` | boolean | if true, only toggle the dropdown when the button is clicked on (defaults to `false`)  
 `title` | string | title attribute content for the `<button class="dropdown-toggle"/>` (default: none)  
-`position` | string | defines the desired menu opening position. RTL direction is automatically applied. Should be a valid [usePosition](hooks.html#frontend-hooks-useposition) hook position. (default: `bottom-start`)  
+`position` | string | defines the desired menu opening position. RTL direction is automatically applied. Should be a valid [usePosition](hooks#frontend-hooks-useposition) hook position. (default: `bottom-start`)  
 `toggler` | `"parent"` or `undefined` | when set to `"parent"` the `<button class="dropdown-toggle"/>` is not rendered (thus `toggler` slot is ignored) and the toggling feature is handled by the parent node (e.g. use case: pivot cells). (default: `undefined`)  
   
 A `<DropdownItem/>` is simply a span (`<span class="dropdown-item"/>`). When a
@@ -595,70 +596,64 @@ Name | Type | Description
 `orientation` | `string` | optional. Whether tabs direction is `horizontal` or `vertical`.  
 `onPageUpdate` | `function` | optional. Callback executed once the page has changed.  
 `pages` | `array` | optional. Contain the list of `page`’s to populate from a template.  
-  
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><blockquote>
+<div><p>The first approach is to set the pages in the slots of the component.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Notebook</span> <span class="na">orientation=</span><span class="s">"'vertical'"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;t</span> <span class="na">t-set-slot=</span><span class="s">"page_1"</span> <span class="na">title=</span><span class="s">"'Page 1'"</span> <span class="na">isVisible=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>My First Page<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>It's time to build Owl components. Did you read the documentation?<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/t&gt;</span>
+  <span class="nt">&lt;t</span> <span class="na">t-set-slot=</span><span class="s">"page_2"</span> <span class="na">title=</span><span class="s">"'2nd page'"</span> <span class="na">isVisible=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Wise owl's silent flight. Through the moonlit forest deep, guides my path to code<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/t&gt;</span>
+<span class="nt">&lt;/Notebook&gt;</span>
+</pre></div>
+</div>
+<p>The other way to define your pages is by passing the props. This can be useful if some pages share
+the same structure. Create first a component for each page template that you may use.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Notebook</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"@web/core/notebook/notebook"</span><span class="p">;</span>
 
-> The first approach is to set the pages in the slots of the component.
->  
->  
->     <Notebook orientation="'vertical'">
->       <t t-set-slot="page_1" title="'Page 1'" isVisible="true">
->         <h1>My First Page</h1>
->         <p>It's time to build Owl components. Did you read the
-> documentation?</p>
->       </t>
->       <t t-set-slot="page_2" title="'2nd page'" isVisible="true">
->         <p>Wise owl's silent flight. Through the moonlit forest deep, guides
-> my path to code</p>
->       </t>
->     </Notebook>
->  
->
-> The other way to define your pages is by passing the props. This can be
-> useful if some pages share the same structure. Create first a component for
-> each page template that you may use.
->  
->  
->     import { Notebook } from "@web/core/notebook/notebook";
->  
->     class MyTemplateComponent extends owl.Component {
->       static template = owl.tags.xml`
->         <h1 t-esc="props.title" />
->         <p t-esc="props.text" />
->       `;
->     }
->  
->     class MyComponent extends owl.Component {
->       get pages() {
->         return [
->           {
->             Component: MyTemplateComponent,
->             title: "Page 1",
->             props: {
->               title: "My First Page",
->               text: "This page is not visible",
->             },
->           },
->           {
->             Component: MyTemplateComponent,
->             id: "page_2",
->             title: "Page 2",
->             props: {
->               title: "My second page",
->               text: "You're at the right place!",
->             },
->           },
->         ]
->       }
->     }
->     MyComponent.template = owl.tags.xml`
->       <Notebook defaultPage="'page_2'" pages="pages" />
->     `;
->  
+<span class="kr">class</span> <span class="nx">MyTemplateComponent</span> <span class="kr">extends</span> <span class="nx">owl</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kr">static</span> <span class="nx">template</span> <span class="o">=</span> <span class="nx">owl</span><span class="p">.</span><span class="nx">tags</span><span class="p">.</span><span class="nx">xml</span><span class="sb">`</span>
+<span class="sb">    &lt;h1 t-esc="props.title" /&gt;</span>
+<span class="sb">    &lt;p t-esc="props.text" /&gt;</span>
+<span class="sb">  `</span><span class="p">;</span>
+<span class="p">}</span>
 
-Both examples are shown here:
-
-![Examples with vertical and horizontal layout](../../../_images/notebook.png)
+<span class="kr">class</span> <span class="nx">MyComponent</span> <span class="kr">extends</span> <span class="nx">owl</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">get</span> <span class="nx">pages</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nx">Component</span><span class="o">:</span> <span class="nx">MyTemplateComponent</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s2">"Page 1"</span><span class="p">,</span>
+        <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">title</span><span class="o">:</span> <span class="s2">"My First Page"</span><span class="p">,</span>
+          <span class="nx">text</span><span class="o">:</span> <span class="s2">"This page is not visible"</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nx">Component</span><span class="o">:</span> <span class="nx">MyTemplateComponent</span><span class="p">,</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">"page_2"</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s2">"Page 2"</span><span class="p">,</span>
+        <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">title</span><span class="o">:</span> <span class="s2">"My second page"</span><span class="p">,</span>
+          <span class="nx">text</span><span class="o">:</span> <span class="s2">"You're at the right place!"</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">MyComponent</span><span class="p">.</span><span class="nx">template</span> <span class="o">=</span> <span class="nx">owl</span><span class="p">.</span><span class="nx">tags</span><span class="p">.</span><span class="nx">xml</span><span class="sb">`</span>
+<span class="sb">  &lt;Notebook defaultPage="'page_2'" pages="pages" /&gt;</span>
+<span class="sb">`</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Both examples are shown here:</p>
+<img alt="Examples with vertical and horizontal layout" class="align-center" src="../../../_images/notebook.png" style="width: 400px;"/>
+</div>
 
 ### Pager
 
@@ -674,11 +669,10 @@ and the `total` number of elements, for instance, «9-12 / 20». In the previous
 example, `offset` is 8, `limit` is 4 and `total` is 20. It has two buttons
 («Previous» and «Next») to navigate between pages.
 
-Nota
-
-The pager can be used anywhere but its main use is in the control panel. See
-the [usePager](hooks.html#frontend-hooks-usepager) hook in order to manipulate
-the pager of the control panel.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>The pager can be used anywhere but its main use is in the control panel. See the <a href="hooks#frontend-hooks-usepager"><span class="std std-ref">usePager</span></a> hook in order to manipulate the pager of the control panel.</p>
+</div>
 
     
     

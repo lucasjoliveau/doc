@@ -6,7 +6,7 @@ Chaque build est isolé dans son propre conteneur (conteneur d’espace de noms
 Linux).
 
 La base est un système Ubuntu, où sont installées toutes les dépendances
-nécessaires à Odoo, ainsi que des paquets utiles courants.
+nécessaires à Konvergo ERP, ainsi que des paquets utiles courants.
 
 Si vous projet nécessite des dépendances Python supplémentaires ou des
 versions plus récentes, vous pouvez définir un fichier `requirements.txt` dans
@@ -16,11 +16,11 @@ d’installer ces dépendances dans vos conteneurs. La documentation relative au
 pip](https://pip.pypa.io/en/stable/reference/pip_install/#requirement-
 specifiers) peut vous aider à écrire un fichier `requirements.txt`. Pour avoir
 un exemple concret, consultez le [fichier requirements.txt
-d’Odoo](https://github.com/odoo/odoo/blob/16.0/requirements.txt).
+d’Konvergo ERP](https://github.com/odoo/odoo/blob/16.0/requirements.txt).
 
 Les fichiers `requirements.txt` des sous-modules sont également pris en
 compte. La plateforme recherche les fichiers `requirements.txt` dans chaque
-dossier contenant des modules Odoo : pas dans le dossier du module lui-même,
+dossier contenant des modules Konvergo ERP : pas dans le dossier du module lui-même,
 mais dans leur dossier parent.
 
 ## Structure du répertoire
@@ -31,7 +31,7 @@ Standard) de Linux. [L’arborescence du système de fichiers
 d’Ubuntu](https://help.ubuntu.com/community/LinuxFilesystemTreeOverview#Main_directories)
 vous explique les principaux répertoires.
 
-Voici les répertoires pertinents d’Odoo.sh :
+Voici les répertoires pertinents d’Konvergo ERP.sh :
 
     
     
@@ -39,10 +39,10 @@ Voici les répertoires pertinents d’Odoo.sh :
     ├── home
     │    └── odoo
     │         ├── src
-    │         │    ├── odoo                Odoo Community source code
-    │         │    │    └── odoo-bin       Odoo server executable
-    │         │    ├── enterprise          Odoo Enterprise source code
-    │         │    ├── themes              Odoo Themes source code
+    │         │    ├── odoo                Konvergo ERP Community source code
+    │         │    │    └── odoo-bin       Konvergo ERP server executable
+    │         │    ├── enterprise          Konvergo ERP Enterprise source code
+    │         │    ├── themes              Konvergo ERP Themes source code
     │         │    └── user                Your repository branch source code
     │         ├── data
     │         │    ├── filestore           database attachments, as well as the files of binary fields
@@ -74,9 +74,9 @@ Voici les répertoires pertinents d’Odoo.sh :
 
 Python 2.7 et 3.5 sont tous deux installés dans les conteneurs. Cependant :
 
-  * Si votre projet est configuré pour utiliser Odoo 10.0, le serveur Odoo fonctionne avec Python 2.7.
+  * Si votre projet est configuré pour utiliser Konvergo ERP 10.0, le serveur Konvergo ERP fonctionne avec Python 2.7.
 
-  * Si votre projet est configuré pour utiliser Odoo 11.0 ou les versions ultérieures, le serveur Odoo fonctionne avec Python 3.5.
+  * Si votre projet est configuré pour utiliser Konvergo ERP 11.0 ou les versions ultérieures, le serveur Konvergo ERP fonctionne avec Python 3.5.
 
 ## Shell de base de données
 
@@ -94,7 +94,7 @@ base de données à l’aide de _psql_.
     
 
 **Attention !** [Utilisez des
-transactions](https://www.postgresql.org/docs/current/static/sql-begin.html)
+transactions](https://www.postgresql.org/docs/current/static/sql-begin)
 (_BEGIN…COMMIT/ROLLBACK_) pour toutes les déclarations _sql_ conduisant à des
 changements (_UPDATE_ , _DELETE_ , _ALTER_ , …), surtout pour votre base de
 données de production.
@@ -139,13 +139,13 @@ De plus, dans la mesure du possible, utilisez vos bases de données de
 simulation pour d’abord tester vos déclarations. Vous disposerez ainsi d’un
 filet de sécurité supplémentaire.
 
-## Faire fonctionner un serveur Odoo
+## Faire fonctionner un serveur Konvergo ERP
 
-Vous pouvez démarrer une instance de serveur Odoo à partir d’un shell de
+Vous pouvez démarrer une instance de serveur Konvergo ERP à partir d’un shell de
 conteneur. Vous ne serez pas en mesure d’y accéder depuis le monde extérieur
 avec un navigateur, mais vous pouvez par exemple :
 
-  * utiliser le shell Odoo,
+  * utiliser le shell Konvergo ERP,
 
     
     
@@ -153,9 +153,9 @@ avec un navigateur, mais vous pouvez par exemple :
     >>> partner = env['res.partner'].search([('email', '=', 'asusteK@yourcompany.example.com')], limit=1)
     >>> partner.name
     'ASUSTeK'
-    >>> partner.name = 'Odoo'
+    >>> partner.name = 'Konvergo ERP'
     >>> env['res.partner'].search([('email', '=', 'asusteK@yourcompany.example.com')], limit=1).name
-    'Odoo'
+    'Konvergo ERP'
     
 
   * installer un module,
@@ -186,43 +186,42 @@ Dans les commandes susmentionnées, l’argument :
   * `--stop-after-init` arrête immédiatement l’instance du serveur après qu’elle ait effectué les opérations demandées.
 
 D’autres options sont disponibles et détaillées dans la [documentation
-CLI](../../../developer/reference/cli.html).
+CLI](../../../developer/reference/cli).
 
 Vous pouvez trouver dans les journaux (_~/logs/odoo.log_) le chemin des
-modules complémentaires utilisé par Odoo.sh pour faire fonctionner votre
+modules complémentaires utilisé par Konvergo ERP.sh pour faire fonctionner votre
 serveur. Cherchez «  _odoo: addons paths_ »:
 
     
     
-    2018-02-19 10:51:39,267 4 INFO ? odoo: Odoo version 16.0
+    2018-02-19 10:51:39,267 4 INFO ? odoo: Konvergo ERP version 16.0
     2018-02-19 10:51:39,268 4 INFO ? odoo: Using configuration file at /home/odoo/.config/odoo/odoo.conf
     2018-02-19 10:51:39,268 4 INFO ? odoo: addons paths: ['/home/odoo/data/addons/16.0', '/home/odoo/src/user', '/home/odoo/src/enterprise', '/home/odoo/src/themes', '/home/odoo/src/odoo/addons', '/home/odoo/src/odoo/odoo/addons']
     
 
 **Attention** , surtout avec votre base de données de production. Les
-opérations que vous effectuez en exécutant cette instance de serveur Odoo ne
+opérations que vous effectuez en exécutant cette instance de serveur Konvergo ERP ne
 sont pas isolées : les changements seront effectifs dans la base de données.
 Effectuez toujours vos tests dans vos bases de données de simulation.
 
-## Débogage dans Odoo.sh
+## Débogage dans Konvergo ERP.sh
 
-Le débogage d’un build Odoo.sh n’est pas vraiment différent de celui d’une
+Le débogage d’un build Konvergo ERP.sh n’est pas vraiment différent de celui d’une
 autre application Python. Cet article explique uniquement les spécificités et
-les limites de la plateforme Odoo.sh et suppose que vous savez déjà utiliser
+les limites de la plateforme Konvergo ERP.sh et suppose que vous savez déjà utiliser
 un débogueur.
 
-Note
-
-Si vous ne savez pas encore comment déboguer une application Python, il existe
-de nombreux cours d’introduction que vous pouvez facilement trouver sur
-Internet.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Si vous ne savez pas encore comment déboguer une application Python, il existe de nombreux cours d’introduction que vous pouvez facilement trouver sur Internet.</p>
+</div>
 
 Vous pouvez utiliser `pdb`, `pudb` ou `ipdb` pour déboguer votre code sur
-Odoo.sh. Comme le serveur est exécuté en dehors d’un shell, vous ne pouvez pas
-lancer le débogueur directement à partir du backend de votre instance Odoo,
+Konvergo ERP.sh. Comme le serveur est exécuté en dehors d’un shell, vous ne pouvez pas
+lancer le débogueur directement à partir du backend de votre instance Konvergo ERP,
 car le débogueur a besoin d’un shell pour fonctionner.
 
-  * [pdb](https://docs.python.org/3/library/pdb.html) est installé par défaut dans chaque conteneur.
+  * [pdb](https://docs.python.org/3/library/pdb) est installé par défaut dans chaque conteneur.
 
   * Si vous voulez utiliser [pudb](https://pypi.org/project/pudb/) ou [ipdb](https://pypi.org/project/ipdb/) vous devez l’installer avant.
 
@@ -252,18 +251,18 @@ ceci :
     
 
 La condition `sys.__stdin__.isatty()` est un hack qui détecte si vous faites
-fonctionner Odoo à partir d’un shell.
+fonctionner Konvergo ERP à partir d’un shell.
 
-Enregistrez le fichier et exécutez ensuite le Shell Odoo :
+Enregistrez le fichier et exécutez ensuite le Shell Konvergo ERP :
 
     
     
     $ odoo-bin shell
     
 
-Enfin, _via_ le Shell Odoo, vous pouvez déclencher le morceau de
+Enfin, _via_ le Shell Konvergo ERP, vous pouvez déclencher le morceau de
 code/fonction/méthode que vous voulez déboguer.
 
 ![Capture d'écran d'une console montrant ``pdb`` qui fonctionne dans un shell
-Odoo.sh.](../../../_images/pdb_sh.png)
+Konvergo ERP.sh.](../../../_images/pdb_sh.png)
 

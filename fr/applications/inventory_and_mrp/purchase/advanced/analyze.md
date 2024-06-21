@@ -15,7 +15,7 @@ performances réelles. Par défaut, le tableau de bord des rapports affiche un
 graphique linéaire présentant le nombre hors taxes de vos bons de commande par
 jour, et en dessous, les mesures clés et un tableau croisé dynamique.
 
-![Tableau de bord des rapports dans Odoo Achats](../../../../_images/analyze-
+![Tableau de bord des rapports dans Konvergo ERP Achats](../../../../_images/analyze-
 reporting-dashboard.png)
 
 Bien que les données initialement présentées soient utiles, il existe
@@ -24,9 +24,9 @@ encore plus d’informations sur vos achats.
 
 ### Utiliser des filtres pour sélectionner les données dont vous avez besoin
 
-Odoo propose plusieurs filtres par défaut que vous pouvez utiliser et combiner
+Konvergo ERP propose plusieurs filtres par défaut que vous pouvez utiliser et combiner
 en cliquant sur _Filtres_. Lorsque vous sélectionnez un ou plusieurs filtres,
-Odoo cherche toutes les commandes qui correspondent à au moins un filtre
+Konvergo ERP cherche toutes les commandes qui correspondent à au moins un filtre
 sélectionné et complète les données dans le graphique, les mesures clés et le
 tableau croisé dynamique. Les filtres préconfigurés sont :
 
@@ -40,20 +40,14 @@ tableau croisé dynamique. Les filtres préconfigurés sont :
 
   5. _Date de confirmation_ comprend toutes les commandes confirmées, y compris les bons de commande annulés, en fonction de leur date de confirmation.
 
-Note
-
-Lorsque vous avez sélectionné une période, vous pouvez utiliser plusieurs
-années et, avec au moins une année sélectionnée, plusieurs trimestres, ainsi
-que les trois derniers mois.
-
-Astuce
-
-Si vous utilisez les filtres _date de la commande_ ou _date de confirmation_ ,
-la fonctionnalité _Comparaison_ apparaît à côté de _Filtres_. Elle vous permet
-de comparer la période que vous avez filtrée avec la période précédente.
-
-![Filtres des rapports dans Odoo Achats](../../../../_images/analyze-
-filters.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Lorsque vous avez sélectionné une période, vous pouvez utiliser plusieurs années et, avec au moins une année sélectionnée, plusieurs trimestres, ainsi que les trois derniers mois.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Si vous utilisez les filtres <em>date de la commande</em> ou <em>date de confirmation</em>, la fonctionnalité <em>Comparaison</em> apparaît à côté de <em>Filtres</em>. Elle vous permet de comparer la période que vous avez filtrée avec la période précédente.</p>
+</div> ![Filtres des rapports dans Konvergo ERP
+Achats](../../../../_images/analyze-filters.png)
 
 #### Ajouter des filtres personnalisés
 
@@ -68,16 +62,11 @@ l’opérateur _ou_ , ne cliquez pas sur _Appliquer_ , mais plutôt sur _Ajouter
 une condition_. Une fois que vous avez ajouté toutes les options de filtrage
 souhaitées, cliquez sur _Appliquer_.
 
-![Filtre de rapportage personnalisé dans Odoo
-Achats](../../../../_images/analyze-custom-filter.png)
-
-Astuce
-
-Pour éviter de devoir recréer les filtres personnalisés à chaque fois,
-enregistrez-les en cliquant sur Favoris ‣ Enregistrer la recherche actuelle ‣
-Enregistrer. Vous pouvez accéder au filtre de recherche personnalisé en
-cliquant sur _Favoris_ et même le définir comme filtre par défaut en ouvrant
-le tableau de bord des rapports.
+![Filtre de rapportage personnalisé dans Konvergo ERP
+Achats](../../../../_images/analyze-custom-filter.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Pour éviter de devoir recréer les filtres personnalisés à chaque fois, enregistrez-les en cliquant sur Favoris ‣ Enregistrer la recherche actuelle ‣ Enregistrer. Vous pouvez accéder au filtre de recherche personnalisé en cliquant sur <em>Favoris</em> et même le définir comme filtre par défaut en ouvrant le tableau de bord des rapports.</p>
+</div>
 
 ### Mesurer exactement ce dont vous avez besoin
 
@@ -88,7 +77,7 @@ sélectionnées ne seront pas appliquées aux deux vues. Vous pouvez accéder à
 chaque vue séparément en cliquant sur les icônes en haut à droite du tableau
 de bord.
 
-![Changer la vue des rapports dans Odoo Achats](../../../../_images/analyze-
+![Changer la vue des rapports dans Konvergo ERP Achats](../../../../_images/analyze-
 switch-view.png)
 
 #### Visualiser vos données
@@ -99,7 +88,7 @@ Quatorze mesures différentes sont disponibles, mais vous ne pouvez en utiliser
 qu’une seule à la fois. Toutefois, vous pouvez regrouper la mesure en
 utilisant un ou plusieurs des 19 _groupes_.
 
-![Rapport sur la vue graphique dans Odoo Achats](../../../../_images/analyze-
+![Rapport sur la vue graphique dans Konvergo ERP Achats](../../../../_images/analyze-
 graph-view.png)
 
 Pour les graphiques à barres et les graphiques linéaires, la mesure
@@ -120,12 +109,9 @@ le signe **+** de la ligne _Total_ , vous pouvez ajouter des _Groupes_. Si
 vous cliquez sur le signe **+** d’un groupe, vous pouvez ajouter un sous-
 groupe, et ainsi de suite.
 
-![Vue du tableau croisé dynamique dans Odoo
-Achats](../../../../_images/analyze-pivot-view.png)
-
-Astuce
-
-Vous pouvez insérer les données de votre tableau croisé dynamique directement
-dans l’application Feuille de calcul ou les exporter sous forme de fichier
-Excel.
+![Vue du tableau croisé dynamique dans Konvergo ERP
+Achats](../../../../_images/analyze-pivot-view.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Vous pouvez insérer les données de votre tableau croisé dynamique directement dans l’application Feuille de calcul ou les exporter sous forme de fichier Excel.</p>
+</div>
 

@@ -16,40 +16,38 @@ inventario se usa para:
 
 Como la valuación usa el peso promedio para evaluar el costo, es un buen
 método para las empresas que venden solo algunos tipos de productos en grandes
-cantidades. En Odoo, este análisis de costos se _actualiza de forma
+cantidades. En Konvergo ERP, este análisis de costos se _actualiza de forma
 automática_ cada vez que se reciben productos.
 
-Por lo tanto, cuando devuelve las entregas al proveedor, Odoo genera asientos
+Por lo tanto, cuando devuelve las entregas al proveedor, Konvergo ERP genera asientos
 contables en automático para reflejar el cambio en la valuación del
-inventario. Sin embargo, Odoo **no** actualiza el cálculo de esta valuación de
+inventario. Sin embargo, Konvergo ERP **no** actualiza el cálculo de esta valuación de
 forma automática porque puede crear posibles inconsistencias con la valuación
 del inventario.
 
-Nota
-
-Este documento trata sobre un caso de uso específico con fines teóricos.
-Consulte la documentación de la [configuración de valoración de
-inventarios](../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/inventory_valuation_config.html)
-para obtener instrucciones sobre cómo configurar y utilizar AVCO.
-
-Ver también
-
-  * [Usar la valuación de inventario](../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/using_inventory_valuation.html)
-
-  * [Otros métodos de valuación de inventario](../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/inventory_valuation_config.html#inventory-inventory-valuation-config-costing-methods)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Este documento trata sobre un caso de uso específico con fines teóricos. Consulte la documentación de la <a href="../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/inventory_valuation_config">configuración de valoración de inventarios</a> para obtener instrucciones sobre cómo configurar y utilizar <abbr title="Average Cost Valuation">AVCO</abbr>.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/using_inventory_valuation">Usar la valuación de inventario</a></p></li>
+<li><p><a href="../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/inventory_valuation_config#inventory-inventory-valuation-config-costing-methods"><span class="std std-ref">Otros métodos de valuación de inventario</span></a></p></li>
+</ul>
+</div>
 
 ## Configuración
 
 Para utilizar la valuación del costo promedio del inventario en un producto,
 vaya a Inventario ‣ Configuración ‣ Categorías de producto y seleccione la
 categoría para la que usará la valuación. En la página de la categoría del
-producto, configure el Método de costo como `Costo promedio (AVCO)` y la
-Valuación del inventario en `Automático`.
+producto, configure el **Método de costo** como `Costo promedio (AVCO)` y la
+**Valuación del inventario** en `Automático`.
 
-Ver también
-
-[Configuración de la valuación de
-inventario](../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/inventory_valuation_config.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/inventory_valuation_config">Configuración de la valuación de inventario</a></p>
+</div>
 
 ## Uso de la valuación del costo promedio
 
@@ -72,15 +70,14 @@ vuelve a calcular con la siguiente fórmula:
 
   * **Cantidad entrante** : número de productos que llegan en la nueva entrega;
 
-  * **Precio de compra** : precio estimado de los productos a la recepción de los productos (algunas veces las facturas de proveedor llegan después). La cantidad no solo incluye el precio por los productos, sino también los costos adicionales como el envío, impuestos y los [costos en destino](../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/integrating_landed_costs.html#inventory-reporting-landed-costs). Al recibir la factura del proveedor, el precio se ajusta.
+  * **Precio de compra** : precio estimado de los productos a la recepción de los productos (algunas veces las facturas de proveedor llegan después). La cantidad no solo incluye el precio por los productos, sino también los costos adicionales como el envío, impuestos y los [costos en destino](../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/integrating_landed_costs#inventory-reporting-landed-costs). Al recibir la factura del proveedor, el precio se ajusta.
 
   * **Cantidad final** : la cantidad a la mano en las existencias después del movimiento de existencias.
 
-Importante
-
-Cuando los productos salen del almacén, el costo promedio **no** cambia. Si
-quiere saber más acerca de por qué la valoración del costo **no** se ajusta,
-consulte esta página.
+<div class="alert alert-warning" id="inventory-avg-cost-definite-rule">
+<p class="alert-title">
+Importante</p><p>Cuando los productos salen del almacén, el costo promedio <b>no</b> cambia. Si quiere saber más acerca de por qué la valoración del costo <b>no</b> se ajusta, consulte <a href="#inventory-avg-price-leaving-inventory"><span class="std std-ref">esta página</span></a>.</p>
+</div>
 
 ### Cálculo del costo promedio
 
@@ -95,56 +92,28 @@ Operación | Valor de entrada | Valor del inventario | Cantidad a la mano | Cost
 Recibe 8 mesas a $10/por unidad | 8 * $10 | $80 | 8 | $10  
 Recibe 4 mesas a $16/por unidad | 4 * $16 | $144 | 12 | $12  
 Entrega 10 mesas | -10 * $12 | $24 | 2 | $12  
-  
-Exercise
-
-Asegúrese de entender bien los cálculos de arriba revisando el ejemplo «recibe
-8 mesas a $10/por unidad».
-
-Inicialmente, las existencias del producto son 0 por lo que los valores
-también son $0.
-
-En la primera operación del almacén, recibe `8` mesas a `$10` cada una. El
-costo promedio se calcula usando la fórmula:
-
-\\[Costo~promedio = \frac{0 + 8 \times $10}{8} = \frac{$80}{8} = $10\\]
-
-  * Ya que la _cantidad entrante_ de mesas es `8` y el _precio de compra_ de cada una es de `$10`,
-
-  * El valor de inventario en el numerador se evalúa en `$80`;
-
-  * `$80` se divide entre la cantidad total de mesas por almacenar, `8`;
-
-  * `$10` es el costo promedio de una sola mesa de la primera entrega.
-
-Para verificar esto en Odoo, en la aplicación _Compra_ , ordene `8` unidades
-de un nuevo producto, `Mesa`, sin movimientos de existencias previos, a `$10`
-cada uno.
-
-En el campo Categoría del producto de la tabla, en la pestaña Información
-general en el formulario del producto, haga clic en el icono de ➡️ (flecha)
-para abrir un Enlace externo para editar la categoría del producto. Establezca
-el Método de costo en `Costo promedio (AVCO)` y la Valuación del inventario en
-`Automático`.
-
-Luego, regrese a la orden de compra. Haga clic en Confirmar orden y haga clic
-en Recibir productos para confirmar la recepción.
-
-Luego, revise el registro de la valuación de inventario que se generó a la
-recepción de los productos en Inventario ‣ Reportes ‣ Valuación del
-inventario. Seleccione el menú desplegable para `Mesa` y observe la columna de
-Valor total para la _capa de valuación_ (valuación del inventario en un
-periodo específico = cantidades a la mano * precio unitario). Las 8 mesas en
-existencias tienen un valor de $80.
-
-![Mostrar la valuación del inventario de 8 mesas en
-Odoo.](../../../../_images/inventory-val-8-tables.png)
-
-Truco
-
-Cuando el Método de costo de la categoría del producto está configurada como
-AVCO, entonces el costo promedio de un producto también aparece en el campo
-Costo en la pestaña de Información general en la página del producto.
+<div class="alert alert-dark" id="inventory-avg-cost-ex-1">
+<p class="alert-title">
+Exercise</p><p>Asegúrese de entender bien los cálculos de arriba revisando el ejemplo «recibe 8 mesas a $10/por unidad».</p>
+<p>Inicialmente, las existencias del producto son 0 por lo que los valores también son $0.</p>
+<p>En la primera operación del almacén, recibe <code>8</code> mesas a <code>$10</code> cada una. El costo promedio se calcula usando la <a href="#inventory-avg-cost-formula"><span class="std std-ref">fórmula</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[Costo~promedio = \frac{0 + 8 \times $10}{8} = \frac{$80}{8} = $10\]</div>
+<ul>
+<li><p>Ya que la <em>cantidad entrante</em> de mesas es <code>8</code> y el <em>precio de compra</em> de cada una es de <code>$10</code>,</p></li>
+<li><p>El valor de inventario en el numerador se evalúa en <code>$80</code>;</p></li>
+<li><p><code>$80</code> se divide entre la cantidad total de mesas por almacenar, <code>8</code>;</p></li>
+<li><p><code>$10</code> es el costo promedio de una sola mesa de la primera entrega.</p></li>
+</ul>
+<p>Para verificar esto en Konvergo ERP, en la aplicación <em>Compra</em>, ordene <code>8</code> unidades de un nuevo producto, <code>Mesa</code>, sin movimientos de existencias previos, a <code>$10</code> cada uno.</p>
+<p>En el campo <b>Categoría del producto</b> de la tabla, en la pestaña  <b>Información general</b> en el formulario del producto, haga clic en el icono de <b>➡️ (flecha)</b> para abrir un <b>Enlace externo</b> para editar la categoría del producto. Establezca el <b>Método de costo</b> en <code>Costo promedio (AVCO)</code> y la <b>Valuación del inventario</b> en <code>Automático</code>.</p>
+<p>Luego, regrese a la orden de compra. Haga clic en <b>Confirmar orden</b> y haga clic en <b>Recibir productos</b> para confirmar la recepción.</p>
+<p>Luego, revise el registro de la valuación de inventario que se generó a la recepción de los productos en Inventario ‣ Reportes ‣ Valuación del inventario. Seleccione el menú desplegable para <code>Mesa</code> y observe la columna de <b>Valor total</b> para la <em>capa de valuación</em> (<span class="dfn"><span>valuación del inventario en un periodo específico = cantidades a la mano * precio unitario</span></span>). Las 8 mesas en existencias tienen un valor de $80.</p>
+<img alt="Mostrar la valuación del inventario de 8 mesas en Konvergo ERP." class="align-center" src="../../../../_images/inventory-val-8-tables.png"/>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Cuando el <b>Método de costo</b> de la categoría del producto está configurada como <b>AVCO</b>, entonces el costo promedio de un producto también aparece en el campo <b>Costo</b> en la pestaña de  <b>Información general</b> en la página del producto.</p>
+</div>
 
 #### Envío de productos (caso de uso)
 
@@ -153,41 +122,27 @@ valuación del costo promedio. Aunque la valuación del costo promedio no se
 vuelve a calcular, el valor del inventario se reduce porque el producto sale
 de las existencias y se envía a la ubicación del cliente.
 
-Exercise
-
-Para demostrar que la valuación del costo promedio no se vuelve a calcular,
-examinemos el ejemplo de «Envío de 10 mesas».
-
-\\[Costo~promedio = \frac{12 \times $12 + (-10) \times $12}{12-10} =
-\frac{24}{2} = $12\\]
-
-  1. Puesto que se envían 10 mesas al cliente, la _cantidad entrante_ es `-10`. El costo promedio anterior (`$12`) se usa en lugar del _precio de compra_ del proveedor.
-
-  2. El _valor del inventario entrante_ es `-10 * $12 = -$120`;
-
-  3. El _valor del inventario_ anterior (`$144`) se agrega al _valor del inventario entrante_ (`-$120`), es decir, `$144 + -$120 = $24`;
-
-  4. Solo `2` mesas se quedan después de realizar el envío de `10` mesas de `12`. Por lo tanto, el _valor del inventario_ actual (`$24`) se divide entre las cantidades a la mano (`2`);
-
-  5. `$24 / 2 = $12`, que es el mismo costo en promedio que la operación anterior.
-
-Para verificar esto en Odoo, venda `10` mesas en la aplicación _Ventas_ ,
-valide la entrega y luego revise el registro de valuación del inventario en
-Inventario ‣ Reportes ‣ Valuación de inventario. Como puede observar en la
-primera línea de la valuación, enviar `10` mesas reduce el valor del producto
-a `-$120`.
-
-**Nota** : lo que no está representado en el registro de la valoración del
-inventario es el ingreso que se hace de esta venta, por lo que esta reducción
-no significa una pérdida para la empresa.
-
-![Muestra como los envíos reducen la valuación del
-inventario.](../../../../_images/inventory-val-send-10-tables.png)
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Para demostrar que la valuación del costo promedio no se vuelve a calcular, examinemos el ejemplo de «Envío de 10 mesas».</p>
+<div class="math notranslate nohighlight">
+\[Costo~promedio = \frac{12 \times $12 + (-10) \times $12}{12-10} = \frac{24}{2} = $12\]</div>
+<ol class="arabic simple">
+<li><p>Puesto que se envían 10 mesas al cliente, la <em>cantidad entrante</em> es <code>-10</code>. El costo promedio anterior (<code>$12</code>) se usa en lugar del <em>precio de compra</em> del proveedor.</p></li>
+<li><p>El <em>valor del inventario entrante</em> es <code>-10 * $12 = -$120</code>;</p></li>
+<li><p>El <em>valor del inventario</em> anterior (<code>$144</code>) se agrega al <em>valor del inventario entrante</em> (<code>-$120</code>), es decir, <code>$144 + -$120 = $24</code>;</p></li>
+<li><p>Solo <code>2</code> mesas se quedan después de realizar el envío de <code>10</code> mesas de <code>12</code>. Por lo tanto, el <em>valor del inventario</em> actual (<code>$24</code>) se divide entre las cantidades a la mano (<code>2</code>);</p></li>
+<li><p><code>$24 / 2 = $12</code>, que es el mismo costo en promedio que la operación anterior.</p></li>
+</ol>
+<p>Para verificar esto en Konvergo ERP, venda <code>10</code> mesas en la aplicación <em>Ventas</em>, valide la entrega y luego revise el registro de valuación del inventario en Inventario ‣ Reportes ‣ Valuación de inventario. Como puede observar en la primera línea de la valuación, enviar <code>10</code> mesas reduce el valor del producto a <code>-$120</code>.</p>
+<p><b>Nota</b>: lo que no está representado en el registro de la valoración del inventario es el ingreso que se hace de esta venta, por lo que esta reducción no significa una pérdida para la empresa.</p>
+<img alt="Muestra como los envíos reducen la valuación del inventario." class="align-center" src="../../../../_images/inventory-val-send-10-tables.png"/>
+</div>
 
 ## Devolver artículos al proveedor (caso de uso)
 
 Ya que el precio que se le paga a los proveedores puede variar del precio en
-el que se valora el producto con el método AVCO, Odoo se encarga de los
+el que se valora el producto con el método AVCO, Konvergo ERP se encarga de los
 artículos devueltos de una manera específica.
 
   1. Los productos se le devuelven a los proveedores al precio original de compra, pero:
@@ -201,27 +156,19 @@ Operación | Cant.*Costo prom | Valor del inventario | Cantidad a la mano | Cost
 |  | $24 | 2 | $12  
 Devuelve 1 mesa que se compró a $10 | -1 * $12 | $12 | 1 | $12  
   
-En otras palabras, Odoo percibe las devoluciones a los proveedores como otra
-forma de salida de un producto del almacén. Para Odoo, puesto que la mesa está
+En otras palabras, Konvergo ERP percibe las devoluciones a los proveedores como otra
+forma de salida de un producto del almacén. Para Konvergo ERP, puesto que la mesa está
 valorada en $12 por unidad, el valor de inventario se reduce en `$12` cuando
 se regresa el producto. El precio inicial de compra de `$10` no está
 relacionado con el costo promedio de la tabla.
 
-Example
-
-Para regresar una sola mesa que se compró a `$10`, vaya al recibo en la
-aplicación _Inventario_ de las 8 mesas compradas en el ejercicio 1 en la vista
-general de Inventario y haga clic en Recibos y seleccione el recibo que desea.
-
-Luego, haga clic en Devolver en la orden de envío validada y modifique la
-cantidad a `1` en la ventana de transferencia contraria. Esto crea un envío
-saliente para la mesa. Haga clic en Validar para confirmar el envío saliente.
-
-Regrese a Inventario ‣ Reportes ‣ Valoración de inventario para ver cómo el
-envío saliente redujo el valor del inventario en $12.
-
-![Valuación de inventario para devolución.](../../../../_images/inventory-
-valuation-return.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Para regresar una sola mesa que se compró a <code>$10</code>, vaya al recibo en la aplicación <em>Inventario</em> de las <a href="#inventory-avg-cost-ex-1"><span class="std std-ref">8 mesas compradas en el ejercicio 1</span></a> en la <b>vista general de Inventario</b> y haga clic en <b>Recibos</b> y seleccione el recibo que desea.</p>
+<p>Luego, haga clic en <b>Devolver</b> en la orden de envío validada y modifique la cantidad a <code>1</code> en la ventana de transferencia contraria. Esto crea un envío saliente para la mesa. Haga clic en <b>Validar</b> para confirmar el envío saliente.</p>
+<p>Regrese a Inventario ‣ Reportes ‣ Valoración de inventario para ver cómo el envío saliente redujo el valor del inventario en $12.</p>
+<img alt="Valuación de inventario para devolución." class="align-center" src="../../../../_images/inventory-valuation-return.png"/>
+</div>
 
 ### Eliminar errores de valuación de existencias en productos salientes
 
@@ -241,13 +188,10 @@ Devolución de un producto que se compró en $10 | -1 * $10 | **$2** | **0** | $
 En la operación final de arriba, la valuación final del inventario para la
 mesa es de `$2`, aunque hay `0` mesas restantes en las existencias.
 
-Método correcto
-
-Utilice el costo promedio para valorar la devolución. Esto no significa que la
-empresa obtenga $12 por una compra de $10; el artículo devuelto por $10 está
-valorado internamente en $12. El cambio en el valor del inventario representa
-que un producto que vale $12 ya no se tiene en cuenta en los activos de la
-empresa.
+<div class="admonition-correct-method alert">
+<p class="alert-title">
+Método correcto</p><p>Utilice el costo promedio para valorar la devolución. Esto no significa que la empresa obtenga $12 por una compra de $10; el artículo devuelto por $10 está valorado internamente en $12. El cambio en el valor del inventario representa que un producto que vale $12 ya no se tiene en cuenta en los activos de la empresa.</p>
+</div>
 
 ## Contabilidad anglosajona
 
@@ -259,9 +203,12 @@ del precio del proveedor de los productos que entraron a las existencias. La
 cuenta de retención (llamada **entrada de existencias**) se acredita y se
 concilia una vez que se recibe la factura del proveedor.
 
-Ver también
-
-  * [Anglosajona y Continental](../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/inventory_valuation_config.html#inventory-inventory-valuation-config-accounting)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/inventory_valuation_config#inventory-inventory-valuation-config-accounting"><span class="std std-ref">Anglosajona y Continental</span></a></p></li>
+</ul>
+</div>
 
 La siguiente tabla indica los asientos contables y las cuentas. La cuenta de
 _entrada de existencias_ almacena el dinero destinado al pago de los
@@ -285,7 +232,7 @@ Recibir reembolso de proveedor $10 | $0 | $2 | $12 | 1 | $12
 
 #### Resumen
 
-Al recibir los productos, Odoo se asegura de que las empresas puedan pagar los
+Al recibir los productos, Konvergo ERP se asegura de que las empresas puedan pagar los
 bienes que compraron y mueve, de forma preventiva, un importe que coincide con
 el precio de los bienes recibidos a la :doc:`cuenta de pasivo
 </applications/finance/accounting/get_started/cheat_sheet>, **Entrada de
@@ -314,24 +261,25 @@ En este ejemplo, una empresa comienza con cero unidades de un producto,
 
   3. se debe **pagar** `$80` por los productos recibidos (es decir, es un **ingreso** para la cuenta de _Entrada de existencias_ por `$80`).
 
-##### En Odoo
+##### En Konvergo ERP
 
-Odoo genera una asiento contable al recibir envíos que utilizan el método de
-costos AVCO. Configure una Cuenta de diferencia de precio, para esto
-seleccione el icono ➡️ (flecha) junto al campo Categoría de producto en la
-página del producto.
+Konvergo ERP genera una asiento contable al recibir envíos que utilizan el método de
+costos AVCO. Configure una **Cuenta de diferencia de precio** , para esto
+seleccione el icono **➡️ (flecha)** junto al campo **Categoría de producto**
+en la página del producto.
 
-Cree una nueva Cuenta de diferencia de precio desde Propiedades de la cuenta.
-Escriba el nombre de la cuenta y haga clic en Crear y editar, después
-configure el tipo de cuenta como `Gastos` y haga clic en Guardar.
+Cree una nueva **Cuenta de diferencia de precio** desde **Propiedades de la
+cuenta**. Escriba el nombre de la cuenta y haga clic en **Crear y editar** ,
+después configure el **tipo** de cuenta como `Gastos` y haga clic en
+**Guardar**.
 
 ![Cuenta que se crea para la diferencia de
 precios.](../../../../_images/create-price-difference.png)
 
 Reciba el envío en la aplicación _Compras_ o _Inventario_ y vaya a la
 aplicación Contabilidad ‣ Contabilidad ‣ Asientos contables. En la lista,
-busque la Referencia que coincide con la operación de recepción del almacén
-para el producto correspondiente.
+busque la **Referencia** que coincide con la operación de recepción del
+almacén para el producto correspondiente.
 
 ![El asiento contable por 8 mesas en la lista.](../../../../_images/search-
 for-entry-of-tables.png)
@@ -357,15 +305,16 @@ la factura del proveedor por estos productos:
 
   3. Se abonan `$80` a las **cuentas por pagar**. Esta cuenta almacena el importe que la empresa debe pagar a otras, por lo que el equipo de contabilidad usa este importe para girar cheques a los proveedores.
 
-##### En Odoo
+##### En Konvergo ERP
 
 Una vez que el proveedor solicita el pago, vaya a la aplicación Compra ‣
-Órdenes ‣ Compra y seleccione la orden de compra de 8 mesas. Seleccione Crear
-factura en la orden de compra.
+Órdenes ‣ Compra y seleccione la orden de compra de 8 mesas. Seleccione
+**Crear factura** en la orden de compra.
 
-Vaya a la pestaña Apuntes contables para visualizar cómo se transfieren `$80`
-de la cuenta de retención, `Provisional de existencias (recibido)`, a `Cuentas
-por pagar`. Confirme la factura para registrar el pago al proveedor.
+Vaya a la pestaña **Apuntes contables** para visualizar cómo se transfieren
+`$80` de la cuenta de retención, `Provisional de existencias (recibido)`, a
+`Cuentas por pagar`. **Confirme** la factura para registrar el pago al
+proveedor.
 
 ![Aparece la factura vinculada a la orden de compra de 8
 mesas.](../../../../_images/receive-8-table-bill.png)
@@ -381,20 +330,13 @@ entren. En resumen:
   2. Se hace un cargo a **Cuentas por cobrar** para registrar los ingresos por la venta.
 
 ![Los apuntes contables vinculados a la orden de
-venta.](../../../../_images/sell-10-tables.png)
-
-Understand Anglo-Saxon expensing
-
-En el asiento contable donde se factura a un cliente por 10 mesas, las cuentas
-**Venta de productos** , **Impuestos recibidos** y **Cuentas por cobrar**
-corresponden a la venta del producto. **Cuentas por cobrar** es la cuenta
-donde se recibirá el pago del cliente.
-
-La contabilidad anglosajona reconoce el costo de los bienes vendidos (COGS)
-una vez que se realiza la venta. Los costos de mantener el producto dentro de
-las existencias no se contabilizan hasta que vende, desecha o devuelve el
-producto. Se cargan `$120` a la cuenta de **gastos** para registrar los costos
-de almacenar 10 mesas durante este periodo.
+venta.](../../../../_images/sell-10-tables.png) <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/using_inventory_valuation">Usar la valuación de inventario</a></p></li>
+<li><p><a href="../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/inventory_valuation_config#inventory-inventory-valuation-config-costing-methods"><span class="std std-ref">Otros métodos de valuación de inventario</span></a></p></li>
+</ul>
+</div>0
 
 ### Al devolver un producto
 
@@ -402,15 +344,17 @@ En la tabla del ejemplo anterior, al devolver un producto que se compró a
 `$10` a un proveedor, la empresa espera recibir `$10` en la cuenta **Cuentas
 por pagar** del proveedor. Sin embargo, se deben debitar `$12` a la cuenta
 **Entrada de existencias** , pues el costo promedio es de `$12` al momento de
-la devolución. Los `$2` que restan se contabilizan en la Cuenta de diferencia
-de precio, que se configura en la Categoría de producto correspondiente.
+la devolución. Los `$2` que restan se contabilizan en la **Cuenta de
+diferencia de precio** , que se configura en la **Categoría de producto**
+correspondiente.
 
-Nota
-
-El comportamiento de las _cuentas de diferencia de precio_ varía según la
-localización. En este caso, la cuenta está destinada a almacenar las
-diferencias entre el precio del proveedor y los métodos _automatizados_ de
-valuación de inventario.
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/using_inventory_valuation">Usar la valuación de inventario</a></p></li>
+<li><p><a href="../../../inventory_and_mrp/inventory/warehouses_storage/inventory_valuation/inventory_valuation_config#inventory-inventory-valuation-config-costing-methods"><span class="std std-ref">Otros métodos de valuación de inventario</span></a></p></li>
+</ul>
+</div>1
 
 En resumen:
 

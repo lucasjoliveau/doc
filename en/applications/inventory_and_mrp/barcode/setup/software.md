@@ -1,4 +1,4 @@
-# Activate the Barcodes in Odoo
+# Activate the Barcodes in Konvergo ERP
 
 The barcode scanning features can save you a lot of time usually lost
 switching between the keyboard, the mouse and the scanner. Properly
@@ -26,11 +26,12 @@ creation on the product form.
 
 ![../../../../_images/software_03.png](../../../../_images/software_03.png)
 ![../../../../_images/software_04.png](../../../../_images/software_04.png)
-
-Note
-
-Be careful to add barcodes directly on the product variants and not on the
-template product. Otherwise, you won’t be able to differentiate them.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Be careful to add barcodes directly on the product variants and not on
+the template product. Otherwise, you won’t be able to differentiate
+them.</p>
+</div>
 
 ## Set Locations Barcodes
 
@@ -40,11 +41,11 @@ barcodes in Inventory ‣ Configuration ‣ Locations.
 
 ![../../../../_images/software_05.png](../../../../_images/software_05.png)
 ![../../../../_images/software_06.png](../../../../_images/software_06.png)
-
-Note
-
-You can easily print the barcode you allocate to the locations via the _Print_
-menu.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>You can easily print the barcode you allocate to the locations via the
+<em>Print</em> menu.</p>
+</div>
 
 ## Barcode Formats
 
@@ -60,7 +61,7 @@ will identify the company as the owner of the barcode any the products it
 appears on. To learn more about GS1 Company Prefixes, or purchase a license
 for a prefix, visit the GS1 Company Prefix page.
 
-Odoo users are able to use GTIN barcodes to identify their products. However,
-since Odoo supports any numeric string as a barcode, it is also possible to
+Konvergo ERP users are able to use GTIN barcodes to identify their products. However,
+since Konvergo ERP supports any numeric string as a barcode, it is also possible to
 define a custom barcode for internal use.
 

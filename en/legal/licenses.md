@@ -1,39 +1,39 @@
 # Licenses
 
-## Odoo 16 Community Edition
+## Konvergo ERP 16 Community Edition
 
-Odoo 16 Community Edition is licensed under [LGPL version
-3](http://www.gnu.org/licenses/lgpl-3.0.en.html) (also known as LGPLv3). See
-also the [GPL FAQ](http://www.gnu.org/licenses/gpl-faq.en.html) and the
+Konvergo ERP 16 Community Edition is licensed under [LGPL version
+3](http://www.gnu.org/licenses/lgpl-3.0.en) (also known as LGPLv3). See
+also the [GPL FAQ](http://www.gnu.org/licenses/gpl-faq.en) and the
 [compatibility matrix](http://www.gnu.org/licenses/gpl-
-faq.en.html#AllCompatibility).
+faq.en#AllCompatibility).
 
-## Odoo 16 Enterprise Edition
+## Konvergo ERP 16 Enterprise Edition
 
-Odoo 16 Enterprise Edition is licensed under the Odoo Enterprise Edition
+Konvergo ERP 16 Enterprise Edition is licensed under the Konvergo ERP Enterprise Edition
 License v1.0, defined as follows:
 
 `
 
-Odoo Enterprise Edition License v1.0
+Konvergo ERP Enterprise Edition License v1.0
 
 This software and associated files (the “Software”) can only be used
-(executed, modified, executed after modifications) with a valid Odoo
+(executed, modified, executed after modifications) with a valid Konvergo ERP
 Enterprise Subscription for the correct number of users.
 
-With a valid Partnership Agreement with Odoo S.A., the above permissions are
+With a valid Partnership Agreement with Konvergo ERP S.A., the above permissions are
 also granted, as long as the usage is limited to a testing or development
 environment.
 
-You may develop Odoo modules based on the Software and distribute them under
+You may develop Konvergo ERP modules based on the Software and distribute them under
 the license of your choice, provided that it is compatible with the terms of
-the Odoo Enterprise Edition License (For example: LGPL, MIT, or proprietary
+the Konvergo ERP Enterprise Edition License (For example: LGPL, MIT, or proprietary
 licenses similar to this one).
 
-You may use Odoo modules published under any license along with the Software,
-provided that their license is compatible with the terms of the Odoo
+You may use Konvergo ERP modules published under any license along with the Software,
+provided that their license is compatible with the terms of the Konvergo ERP
 Enterprise License (Including, but not limited to, any module published on the
-Odoo Apps Store on odoo.com/apps)
+Konvergo ERP Apps Store on odoo.com/apps)
 
 It is forbidden to publish, distribute, sublicense, or sell copies of the
 Software or modified copies of the Software.
@@ -51,26 +51,26 @@ SOFTWARE.
 
 `
 
-## Odoo Apps
+## Konvergo ERP Apps
 
-Unless otherwise stated, Odoo Apps by Odoo SA (including the website themes)
-are published under the Odoo Proprietary License v1.0, defined as follows
+Unless otherwise stated, Konvergo ERP Apps by Konvergo ERP SA (including the website themes)
+are published under the Konvergo ERP Proprietary License v1.0, defined as follows
 
 `
 
-Odoo Proprietary License v1.0
+Konvergo ERP Proprietary License v1.0
 
 This software and associated files (the “Software”) may only be used
 (executed, modified, executed after modifications) if you have purchased a
-valid license from the authors, typically via Odoo Apps, or if you have
+valid license from the authors, typically via Konvergo ERP Apps, or if you have
 received a written agreement from the authors of the Software (see the
 COPYRIGHT file).
 
-You may develop Odoo modules that use the Software as a library (typically by
+You may develop Konvergo ERP modules that use the Software as a library (typically by
 depending on it, importing it and using its resources), but without copying
 any source code or material from the Software. You may distribute those
 modules under the license of your choice, provided that this license is
-compatible with the terms of the Odoo Proprietary License (For example: LGPL,
+compatible with the terms of the Konvergo ERP Proprietary License (For example: LGPL,
 MIT, or proprietary licenses similar to this one).
 
 It is forbidden to publish, distribute, sublicense, or sell copies of the
@@ -89,17 +89,17 @@ SOFTWARE.
 
 `
 
-## Odoo 9 - Odoo 15
+## Konvergo ERP 9 - Konvergo ERP 15
 
-The licenses for both Community Edition and Enterprise Edition of all Odoo
-versions since Odoo 9 are respectively the same as for Odoo 16 Community
-Edition and Odoo 16 Enterprise Edition.
+The licenses for both Community Edition and Enterprise Edition of all Konvergo ERP
+versions since Konvergo ERP 9 are respectively the same as for Konvergo ERP 16 Community
+Edition and Konvergo ERP 16 Enterprise Edition.
 
-## Odoo 8
+## Konvergo ERP 8
 
-Odoo 8 is licensed under [AGPL version
-3](http://www.gnu.org/licenses/agpl-3.0.en.html) (also known as AGPLv3). See
-also the [GPL FAQ](http://www.gnu.org/licenses/gpl-faq.en.html) and the
+Konvergo ERP 8 is licensed under [AGPL version
+3](http://www.gnu.org/licenses/agpl-3.0.en) (also known as AGPLv3). See
+also the [GPL FAQ](http://www.gnu.org/licenses/gpl-faq.en) and the
 [compatibility matrix](http://www.gnu.org/licenses/gpl-
-faq.en.html#AllCompatibility).
+faq.en#AllCompatibility).
 

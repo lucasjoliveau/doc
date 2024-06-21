@@ -2,9 +2,9 @@
 
 ## Principales reportes disponibles
 
-Odoo incluye reportes **genéricos** y **dinámicos** disponibles para todos los
+Konvergo ERP incluye reportes **genéricos** y **dinámicos** disponibles para todos los
 países, sin importar el [paquete de
-localización](../fiscal_localizations.html) instalado:
+localización](../fiscal_localizations) instalado:
 
   * **Balance general**
 
@@ -25,12 +25,12 @@ localización](../fiscal_localizations.html) instalado:
 Los reportes se pueden **anotar, imprimir y desglosar** para ver sus detalles
 (pagos, facturas, asientos contables, etc.) si hace clic en la **flecha hacia
 abajo**. También se pueden exportar a formato **PDF** o **XLSX** si hace clic
-en PDF o XLSX en la parte superior de la página.
+en **PDF** o **XLSX** en la parte superior de la página.
 
 ![Anotar reportes.](../../../_images/reporting-annotate.png)
 
-Puede comparar valores entre varios periodos con el menú Comparación, luego
-deberá seleccionar los periodos que desea comparar.
+Puede comparar valores entre varios periodos con el menú **Comparación** ,
+luego deberá seleccionar los periodos que desea comparar.
 
 ![Menú de comparación para comparar periodos.](../../../_images/reporting-
 comparison.png)
@@ -40,7 +40,7 @@ comparison.png)
 El **balance general** muestra un resumen de los activos, pasivos y el capital
 de su empresa en una fecha determinada.
 
-![Reporte de balance general en Odoo.](../../../_images/reporting-balance-
+![Reporte de balance general en Konvergo ERP.](../../../_images/reporting-balance-
 sheet.png)
 
 ### Estado de resultados
@@ -49,7 +49,7 @@ El reporte de **estados de resultados** (o **estado de cuenta de resultados**)
 muestra los ingresos netos de su empresa al deducir los gastos de los ingresos
 correspondientes al periodo del reporte.
 
-![Reporte de estado de resultados de Odoo](../../../_images/reporting-profit-
+![Reporte de estado de resultados de Konvergo ERP](../../../_images/reporting-profit-
 and-loss.png)
 
 ### Resumen ejecutivo
@@ -113,7 +113,7 @@ respecto a los pasivos circulantes (pasivos que vencen el próximo año). Por lo
 general, se utiliza para medir la capacidad de una empresa para pagar su
 deuda.
 
-![Reporte de resumen ejecutivo en Odoo.](../../../_images/reporting-executive-
+![Reporte de resumen ejecutivo en Konvergo ERP.](../../../_images/reporting-executive-
 summary.png)
 
 ### Libro mayor
@@ -124,7 +124,7 @@ inicial muestra los totales de cada cuenta para que pueda visualizar un
 reporte detallado de las transacciones o de cualquier excepción. Este reporte
 le ayuda a revisar cada transacción que ocurrió durante un periodo específico.
 
-![Reporte de libro mayor en Odoo.](../../../_images/reporting-general-
+![Reporte de libro mayor en Konvergo ERP.](../../../_images/reporting-general-
 ledger.png)
 
 ### Cuenta antigua por pagar
@@ -133,7 +133,7 @@ Realice el reporte de **detalles de las cuentas antiguas por pagar** para
 mostrar información sobre facturas individuales, notas de crédito y sobrepagos
 específicos que usted debe, así como el tiempo que lleva sin pagarlos.
 
-![Reporte de cuentas antiguas por pagar en Odoo.](../../../_images/reporting-
+![Reporte de cuentas antiguas por pagar en Konvergo ERP.](../../../_images/reporting-
 aged-payable.png)
 
 ### Cuentas por cobrar antiguas
@@ -141,7 +141,7 @@ aged-payable.png)
 El reporte de **cuentas antiguas por cobrar** muestra las facturas de ventas
 pendientes de pago durante el mes seleccionado y varios meses anteriores.
 
-![Reporte de cuentas antiguas por cobrar en Odoo.](../../../_images/reporting-
+![Reporte de cuentas antiguas por cobrar en Konvergo ERP.](../../../_images/reporting-
 aged-receivable.png)
 
 ### Estado de flujos de efectivo
@@ -152,22 +152,22 @@ efectivo. También analiza las actividades de operación, de inversión y de
 financiación.
 
 ![Reporte de estado de cuenta de flujo de efectivo en
-Odoo.](../../../_images/reporting-cash-flow-statement.png)
+Konvergo ERP.](../../../_images/reporting-cash-flow-statement.png)
 
 ### Reporte de impuestos
 
 Este reporte permite ver los importes **netos** y **de impuestos** de todos
 los impuestos agrupados por tipo (venta/compra).
 
-![Reporte fiscal en Odoo.](../../../_images/reporting-tax-report.png)
+![Reporte fiscal en Konvergo ERP.](../../../_images/reporting-tax-report.png)
 
-  * [Declaración de impuestos](reporting/tax_returns.html)
-  * [Traspaso de impuestos](reporting/tax_carryover.html)
-  * [Contabilidad analítica](reporting/analytic_accounting.html)
-  * [Presupuesto financiero](reporting/budget.html)
-  * [Intrastat](reporting/intrastat.html)
-  * [Reporte de comprobación de inalterabilidad de datos](reporting/data_inalterability.html)
-  * [Integración con Silverfin](reporting/silverfin.html)
-  * [Reportes personalizados](reporting/customize.html)
-  * [Cierre del ejercicio](reporting/year_end.html)
+  * [Declaración de impuestos](reporting/tax_returns)
+  * [Traspaso de impuestos](reporting/tax_carryover)
+  * [Contabilidad analítica](reporting/analytic_accounting)
+  * [Presupuesto financiero](reporting/budget)
+  * [Intrastat](reporting/intrastat)
+  * [Reporte de comprobación de inalterabilidad de datos](reporting/data_inalterability)
+  * [Integración con Silverfin](reporting/silverfin)
+  * [Reportes personalizados](reporting/customize)
+  * [Cierre del ejercicio](reporting/year_end)
 

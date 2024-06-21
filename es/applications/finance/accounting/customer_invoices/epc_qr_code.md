@@ -8,30 +8,30 @@ escanear desde sus **aplicaciones de banca móvil** para iniciar una
 Además de brindar facilidad de uso y rapidez, reduce enormemente los errores
 tipográficos que pueden producirse al hacer pagos.
 
-Nota
-
-Esta función solo está disponible para empresas en varios países europeos,
-como Austria, Bélgica, Finlandia, Alemania y Países Bajos.
-
-Ver también
-
-  * [Cuentas bancarias y de efectivo](../bank.html)
-
-  * [Odoo Academy: QR Code on Invoices for European Customers](https://www.odoo.com/r/VuU)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Esta función solo está disponible para empresas en varios países europeos, como Austria, Bélgica, Finlandia, Alemania y Países Bajos.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../bank">Cuentas bancarias y de efectivo</a></p></li>
+<li><p><a href="https://www.odoo.com/r/VuU">Konvergo ERP Academy: QR Code on Invoices for European Customers</a></p></li>
+</ul>
+</div>
 
 ## Configuración
 
 Vaya a Contabilidad ‣ Configuración ‣ Ajustes`y active la función de
-:guilabel:`Códigos QR en la sección Pagos del cliente.
+:guilabel:`Códigos QR en la sección **Pagos del cliente**.
 
 ### Configure su diario de cuenta bancaria
 
-Asegúrese de que su cuenta bancaria está configurada en Odoo con su IBAN y
+Asegúrese de que su **cuenta bancaria** está configurada en Konvergo ERP con su IBAN y
 BIC.
 
 Para hacerlo, vaya a Contabiliad ‣ Configuración ‣ Diarios, abra su diario de
-banco, y llene los campos Número de cuenta y el Banco que se encuentran en la
-columna Número de cuenta bancaria.
+banco, y llene los campos **Número de cuenta** y el **Banco** que se
+encuentran en la columna **Número de cuenta bancaria**.
 
 ![Columna de número de cuenta bancaria en el diario de
 banco](../../../../_images/bank-journal.png)
@@ -44,24 +44,20 @@ escanear el código y pagar la factura
 
 Vaya a Contabilidad ‣ Clientes ‣ Facturas, y cree una nueva factura.
 
-Antes de publicar, abra la pestaña más información. Odoo llena el campo Banco
-destinatario de manera automática con su IBAN.
+Antes de publicar, abra la pestaña **más información**. Konvergo ERP llena el campo
+**Banco destinatario** de manera automática con su IBAN.
 
-Nota
-
-En la pestaña Otra información, usamos el campo Banco destinatario para
-recibir los pagos de sus clientes. Odoo llena este campo de manera automática
-con su IBAN y lo usa para generar un código QR EPC.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>En la pestaña <b>Otra información</b>, usamos el campo <b>Banco destinatario</b> para recibir los pagos de sus clientes. Konvergo ERP llena este campo de manera automática con su IBAN y lo usa para generar un código QR EPC.</p>
+</div>
 
 Cuando la factura se imprime o se previsualiza, el código QR se incluyo al
 final.
 
 ![Código QR en una factura para el cliente](../../../../_images/invoice-qr-
-code.png)
-
-Truco
-
-Si desea emitir una factura sin código EPC QR, quite el IBAN indicado en el
-campo Banco destinatario que se encuentra en la pestaña Otra información de la
-factura.
+code.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Si desea emitir una factura sin código EPC QR, quite el IBAN indicado en el campo <b>Banco destinatario</b> que se encuentra en la pestaña <b>Otra información</b> de la factura.</p>
+</div>
 

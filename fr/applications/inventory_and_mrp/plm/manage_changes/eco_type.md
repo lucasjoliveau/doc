@@ -16,21 +16,20 @@ supplier change or firmware update ECOs.
 To access and manage ECO types, navigate to PLM app ‣ Configuration ‣ ECO
 Types.
 
-Create a new ECO type by clicking New. On the new ECO Types form, fill in the
-following information:
+Create a new ECO type by clicking **New**. On the new **ECO Types** form, fill
+in the following information:
 
-  * Name: the name of the ECO type, which will organize all of the ECOs of this _type_ in a project.
+  * **Name** : the name of the ECO type, which will organize all of the ECOs of this _type_ in a project.
 
-  * Email Alias: if this optional field is filled, emails submitted to this email address automatically generate ECOs in the left-most stage of this ECO type.
+  * **Email Alias** : if this optional field is filled, emails submitted to this email address automatically generate ECOs in the left-most stage of this ECO type.
 
-Example
-
-The `Formulation change` ECO type is used to organize and track related ECOs
-in a single project. Configuring the Email Alias field generates ECOs in the
-`Formulation change` project sent to the email address, `pawlish-
-change@pawlished-glam.odoo.com`.
-
-![Example of an ECO type.](../../../../_images/create-eco-type.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>The <code>Formulation change</code> <abbr title="Engineering Change Order">ECO</abbr> type is used to organize and track related <abbr title="Engineering Change Orders">ECOs</abbr> in a single
+project. Configuring the <b>Email Alias</b> field generates <abbr title="Engineering Change Orders">ECOs</abbr> in the <code>Formulation
+change</code> project sent to the email address, <code>pawlish-change@pawlished-glam.odoo.com</code>.</p>
+<img alt="Example of an ECO type." class="align-center" src="../../../../_images/create-eco-type.png"/>
+</div>
 
 ## Edit ECO type
 
@@ -38,8 +37,8 @@ Modify existing ECO type names and email aliases by navigating to the PLM app
 ‣ Configuration ‣ ECO Types page. There, click on the desired ECO type from
 the list.
 
-On the form for each ECO type, proceed to edit the Name and Email Alias
-fields.
+On the form for each ECO type, proceed to edit the **Name** and **Email
+Alias** fields.
 
 ## Étapes
 
@@ -60,21 +59,19 @@ that have been either canceled or approved for use as the next production BoM.
 ### Create stage
 
 To add a stage, go to the PLM app and select the intended project for an ECO
-type from the PLM Overview dashboard.
+type from the **PLM Overview** dashboard.
 
-Then, on the Engineering Change Orders project pipeline for the ECO type,
-click the \+ Stage button. Doing so reveals a text box to fill in the name of
-the stage. After filling it in, click the Add button to finish adding the
-stage.
+Then, on the **Engineering Change Orders** project pipeline for the ECO type,
+click the **\+ Stage** button. Doing so reveals a text box to fill in the name
+of the stage. After filling it in, click the **Add** button to finish adding
+the stage.
 
-Example
-
-A new `Assigned` stage separates assigned ECOs from the unassigned ones in the
-`New` stage. Adding another stage helps the product manager track unassigned
-tasks.
-
-![Create a new stage in a project for an ECO
-type.](../../../../_images/create-stage.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>A new <code>Assigned</code> stage separates assigned <abbr title="Engineering Change Orders">ECOs</abbr> from the unassigned ones in the <code>New</code> stage.
+Adding another stage helps the product manager track unassigned tasks.</p>
+<img alt="Create a new stage in a project for an ECO type." class="align-center" src="../../../../_images/create-stage.png"/>
+</div>
 
 ### Verification stage
 
@@ -82,52 +79,47 @@ Click an ECO type from PLM app ‣ Overview to open a kanban view of ECOs of
 this type.
 
 To configure a verification stage, hover over the intended stage, and select
-the ⚙️ (gear) icon. Then, click Edit to open a pop-up window.
+the **⚙️ (gear)** icon. Then, click **Edit** to open a pop-up window.
 
 Configure the verification stage in the edit stage pop-up window, by checking
-the box for Allow to apply changes.
+the box for **Allow to apply changes**.
 
-Then, add an approver in the Approvers section, by clicking Add a line, and
-specifying the Role of the reviewer, their User, and Approval Type.
+Then, add an approver in the **Approvers** section, by clicking **Add a line**
+, and specifying the **Role** of the reviewer, their **User** , and **Approval
+Type**.
 
-Make sure at least one approver is configured with the Approval Type: Is
-required to approve.
+Make sure at least one approver is configured with the **Approval Type** :
+**Is required to approve**.
 
 The approver listed is automatically notified when ECOs are dropped in the
-stage specified in the pop-up window. Once finished, click Save & Close.
+stage specified in the pop-up window. Once finished, click **Save & Close**.
 
-Example
-
-In the ECO type `New Product Introduction`, the verification stage `Validated`
-is configured by clicking the ⚙️ (gear) icon, and selecting Edit. Doing so
-opens the Edit: Validated pop-up window.
-
-By adding the `Engineering manager` as an approver, only ECOs approved by this
-user can proceed to the next stage, and have the changes applied on the
-production BoM.
-
-Additionally, check the Allow to apply changes option to ensure proper
-behavior.
-
-![Show "Allow to apply changes" option is
-checked.](../../../../_images/verification-stage.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>In the <abbr title="Engineering Change Order">ECO</abbr> type <code>New Product Introduction</code>, the verification stage <code>Validated</code> is configured by
+clicking the <b>⚙️ (gear)</b> icon, and selecting <b>Edit</b>. Doing so opens the
+<b>Edit: Validated</b> pop-up window.</p>
+<p>By adding the <code>Engineering manager</code> as an approver, only <abbr title="Engineering Change Orders">ECOs</abbr> approved by this user can proceed
+to the next stage, and have the changes applied on the production <abbr title="Bill of Materials">BoM</abbr>.</p>
+<p>Additionally, check the <b>Allow to apply changes</b> option to ensure proper behavior.</p>
+<img alt='Show "Allow to apply changes" option is checked.' class="align-center" src="../../../../_images/verification-stage.png"/>
+</div>
 
 ### Closing stage
 
-Configure a closing stage by opening the Edit: [stage] pop-up window. To do
-so, hover over the intended stage and click the ⚙️ (gear) icon that appears in
-the top-right corner. Then, click Edit from the drop-down menu.
+Configure a closing stage by opening the **Edit: [stage]** pop-up window. To
+do so, hover over the intended stage and click the **⚙️ (gear)** icon that
+appears in the top-right corner. Then, click **Edit** from the drop-down menu.
 
-On the Edit: [stage] pop-up window, select the check boxes for Folded in
-kanban view, Allow to apply changes and Final Stage.
+On the **Edit: [stage]** pop-up window, select the check boxes for **Folded in
+kanban view** , **Allow to apply changes** and **Final Stage**.
 
-Example
-
-The closing stage, `Effective` is configured by checking the Folded in kanban
-view, Allow to apply changes, and Final Stage options
-
-![Show configurations of the closing stage.](../../../../_images/closing-
-stage.png)
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>The closing stage, <code>Effective</code> is configured by checking the <b>Folded in kanban view</b>,
+<b>Allow to apply changes</b>, and <b>Final Stage</b> options</p>
+</div> ![Show configurations of the closing
+stage.](../../../../_images/closing-stage.png)
 
   *[ECO]: Engineering Change Order
   *[ECOs]: Engineering Change Orders

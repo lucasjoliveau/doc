@@ -14,11 +14,10 @@ por sus siglas en inglés).
 HTTPS funciona mediante la transmisión de certificados TLS/SSL, cuya función
 es verificar que cada proveedor es realmente quien dice ser.
 
-Nota
-
-En esta documentación y Odoo se utilizará el término «certificado HTTPS» para
-definir el hecho de que el certificado SSL es válido y permite una conexión
-HTTPS.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>En esta documentación y Konvergo ERP se utilizará el término «certificado HTTPS» para definir el hecho de que el certificado SSL es válido y permite una conexión HTTPS.</p>
+</div>
 
 ### ¿Por qué es necesario?
 
@@ -41,31 +40,30 @@ requisitos.
 > de base de datos no debe ser copia, duplicado, preproducción o entorno de
 > desarrollo.
 >
->   2. La suscripción de Odoo debe:
+>   2. La suscripción de Konvergo ERP debe:
 >
 
->>      * Tener una línea de suscripción a la caja IoT.
+>>      * Tener una línea de suscripción a la **caja IoT**.
 
 >>
 
->>      * El estado debe ser En progreso.
+>>      * El **estado** debe ser **En progreso**.
 
 >
 > Si la suscripción está vinculada a un usuario del portal
 > <https://www.odoo.com> compruebe la información en la página de suscripción
 > del portal.
 >
-> ![Suscripciones del portal Odoo.com filtradas por "en
+> ![Suscripciones del portal Konvergo ERP.com filtradas por "en
 > progreso".](../../../../_images/sub-example-in-progress.png)
 >
 > En este caso, ambas suscripciones se consideran «en progreso», ya que se ha
-> utilizado la etiqueta Filtrar por: en progreso.
+> utilizado la etiqueta **Filtrar por: en progreso**.
 >
-> Nota
->
-> Si no está seguro de la suscripción, póngase en contacto con el gerente de
-> cuentas de la base de datos o con su partner.
->
+> <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Si no está seguro de la suscripción, póngase en contacto con el gerente de cuentas de la base de datos o con su partner.</p>
+</div>
 >
 
 ## Solución de errores de certificado del Protocolo seguro de transferencia de
@@ -75,12 +73,10 @@ Si durante el proceso de generación u obtención del «certificado HTTPS» se
 produce algún error, se mostrará un código de error específico en la página de
 inicio de la caja IoT.
 
-Truco
-
-Al acceder a la página de inicio de la caja IoT, podrá ver el certificado
-HTTPS y, si no lo tiene, intente generarlo. Si se produce un error en la
-página de inicio de la caja IoT, deberá actualizar la página de inicio de la
-caja IoT para comprobar si el error desaparece.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Al acceder a la página de inicio de la caja IoT, podrá ver el certificado HTTPS y, si no lo tiene, intente generarlo. Si se produce un error en la página de inicio de la caja IoT, deberá actualizar la página de inicio de la caja IoT para comprobar si el error desaparece.</p>
+</div>
 
 ### `ERR_IOT_HTTPS_CHECK_NO_SERVER`
 
@@ -89,7 +85,7 @@ Razón:
     
 
 Hace falta la configuración del servidor. En otras palabras, la instancia de
-Odoo no está conectada con la caja IoT.
+Konvergo ERP no está conectada con la caja IoT.
 
 Solución:
 
@@ -97,9 +93,10 @@ Solución:
 
 Asegúrese de que el servidor está configurado.
 
-Ver también
-
-[Conectar una caja IoT a Odoo](connect.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p><a href="connect">Conectar una caja IoT a Konvergo ERP</a></p>
+</div>
 
 ### `ERR_IOT_HTTPS_CHECK_CERT_READ_EXCEPTION`
 
@@ -129,7 +126,8 @@ Solución:
     
 
 Asegúrese de que ambos valores están configurados según lo previsto. Para
-modificarlos, vaya a la página de inicio de la caja IoT y busque Credencial.
+modificarlos, vaya a la página de inicio de la caja IoT y busque
+**Credencial**.
 
 ### `ERR_IOT_HTTPS_LOAD_REQUEST_EXCEPTION`
 
@@ -150,21 +148,17 @@ infraestructura o configuración de la red:
 >
 >
 
-Nota
-
-Puede encontrar más información sobre el error que se produjo en los detalles
-de la excepción de la solicitud completa, estos se encuentran en los registros
-de la caja IoT.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Puede encontrar más información sobre el error que se produjo en los detalles de la excepción de la solicitud completa, estos se encuentran en los registros de la caja IoT.</p>
+</div>
 
 Solución:
 
-    
-
-Advertencia
-
-Consulte a la persona que administra su sistema o su red si ocurre este
-problema. Este código de error depende de la infraestructura de red y va más
-allá del alcance del servicio de soporte de Odoo.
+    <div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Consulte a la persona que administra su sistema o su red si ocurre este problema. Este código de error depende de la infraestructura de red y va más allá del alcance del servicio de soporte de Konvergo ERP.</p>
+</div> 
 
 ### `ERR_IOT_HTTPS_LOAD_REQUEST_STATUS`
 
@@ -217,11 +211,11 @@ certificado: elegibilidad de Internet de las cosas (IoT).
 
 ## Cómo asegurarse de que el certificado HTTPS es correcto
 
-Si el certificado se aplicó de forma correcta, en la base de datos de Odoo
+Si el certificado se aplicó de forma correcta, en la base de datos de Konvergo ERP
 aparecerá una nueva URL HTTPS que termina en `.odoo-iot.com` para la caja IoT,
 dentro de la aplicación IoT en el formulario de ese dispositivo en específico.
 
-![La aplicación IoT de Odoo. Aparece una caja IoT con el dominio .odoo-
+![La aplicación IoT de Konvergo ERP. Aparece una caja IoT con el dominio .odoo-
 iot.com.](../../../../_images/odoo-new-domain.png)
 
 Se establecerá una conexión HTTPS segura al navegar a la URL en un navegador.
@@ -242,7 +236,7 @@ OK.](../../../../_images/status-ok.png)
 ## Errores del sistema de nombres de dominio (DNS)
 
 Si es posible acceder a la caja IoT desde su dirección IP, pero no desde el
-dominio asignado de Odoo `.odoo-iot.com`, entonces es probable que la caja IoT
+dominio asignado de Konvergo ERP `.odoo-iot.com`, entonces es probable que la caja IoT
 tenga un error DNS. En algunos navegadores aparecerá un código de error que
 menciona al DNS (como `DNS_PROBE_FINISHED_NXDOMAIN`).
 
@@ -272,17 +266,13 @@ Error del DNS en el navegador Edge, en Windows 10.
 
   2. Si no puede cambiar el DNS de su enrutador, entonces deberá cambiar los ajustes del DNS en cada uno de los dispositivos que utilizan el [DNS público de Google](https://developers.google.com/speed/public-dns?hl=es). Tendrá que hacerlo en **cada** dispositivo que interactuará con la caja IoT (por ejemplo computadora, tableta o teléfono). Los procesos de configuración de cada dispositivo se pueden encontrar en el sitio web de sus fabricantes.
 
-Nota
-
-Es probable que no necesite cambiar los ajustes de DNS en otros dispositivos
-IoT, como las terminales de pago, pues ya están configurados con un DNS
-personalizado.
-
-Advertencia
-
-Consulte a la persona que administra su sistema o su red si ocurre este
-problema. Este código de error depende de la infraestructura de red y va más
-allá del alcance del servicio de soporte de Odoo.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Es probable que no necesite cambiar los ajustes de DNS en otros dispositivos IoT, como las terminales de pago, pues ya están configurados con un DNS personalizado.</p>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Consulte a la persona que administra su sistema o su red si ocurre este problema. Este código de error depende de la infraestructura de red y va más allá del alcance del servicio de soporte de Konvergo ERP.</p>
+</div>
 
   *[HTTPS]: Protocolo seguro de transferencia de hipertexto
   *[UUID]: Identificador único universal

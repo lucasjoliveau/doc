@@ -22,51 +22,53 @@ esenciales en su dispositivo.
 
 ## Configuración
 
-Para habilitar la barra de cookies en su sitio web de Odoo, vaya a Sitio web ‣
-Configuración y habilite la barra de cookies en la sección de Privacidad.
+Para habilitar la barra de cookies en su sitio web de Konvergo ERP, vaya a Sitio web ‣
+Configuración y habilite la **barra de cookies** en la sección de
+**Privacidad**.
 
 Puede personalizar la apariencia de su barra de cookies y editar el contenido
 de la página relacionada con la política de cookies.
 
 ## Personalización
 
-Para adaptar la visualización de la barra de cookies, haga clic en Editar y
-seleccione el bloque de creación Barra de cookies en los elementos invisibles
-en la parte inferior del panel. Personalícela con las opciones en la pestaña
-Personalizar en el panel de edición. Hay tres diseños disponibles:
+Para adaptar la visualización de la barra de cookies, haga clic en **Editar**
+y seleccione el bloque de creación **Barra de cookies** en los **elementos
+invisibles** en la parte inferior del panel. Personalícela con las opciones en
+la pestaña **Personalizar** en el panel de edición. Hay tres **diseños**
+disponibles:
 
-  * Discreto: barra delgada
+  * **Discreto** : barra delgada
 
-  * Clásico: banner
+  * **Clásico** : banner
 
-  * Emergente: puede cambiar la posición de la ventana emergente a la parte superior, media o inferior de la pantalla.
+  * **Emergente** : puede cambiar la **posición** de la ventana emergente a la **parte superior** , **media** o **inferior** de la pantalla.
 
 Además, también puede:
 
-  * modificar el tamaño de la barra de cookies;
+  * modificar el **tamaño** de la barra de cookies;
 
-  * habilitar un fondo para oscurecer la página en el fondo cuando aparece la barra de cookies en la pantalla.
+  * habilitar un **fondo** para oscurecer la página en el fondo cuando aparece la barra de cookies en la pantalla.
 
-  * personalizar más la apariencia de la barra de cookies con las opciones de personalización de Bloque o Columna disponibles después de hacer clic en cualquier parte del bloque de creación.
+  * personalizar más la apariencia de la barra de cookies con las opciones de personalización de **Bloque** o **Columna** disponibles después de hacer clic en cualquier parte del bloque de creación.
 
 Para editar el contenido de la barra de cookies (por ejemplo, el mensaje de
 consentimiento) haga clic en el bloque de creación.
 
-![El panel de edición del sitio web de Odoo para personalizar la barra de
+![El panel de edición del sitio web de Konvergo ERP para personalizar la barra de
 cookies.](../../../../_images/customization.png)
 
 ## Política de cookies
 
-Cuando habilita la barra de cookies para su sitio web, Odoo crea la página de
+Cuando habilita la barra de cookies para su sitio web, Konvergo ERP crea la página de
 **Política de cookies** (`/cookie-policy`) con la lista de cookies esenciales
-y opcionales. Para acceder a ella, haga clic en el hipervínculo Política de
-cookies en la barra de cookies o abra la página desde Sitio web ‣ Páginas.
+y opcionales. Para acceder a ella, haga clic en el hipervínculo **Política de
+cookies** en la barra de cookies o abra la página desde Sitio web ‣ Páginas.
 
 En caso de que sea necesario, puede adaptar el contenido de la página según
 las características y funciones de su sitio web.
 
-Truco
-
-Por ejemplo, podría agregar un enlace que proporcione acceso a esta página en
-el pie de página de su sitio web.
+<div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Por ejemplo, podría agregar un enlace que proporcione acceso a esta página en el pie de página de su sitio web.</p>
+</div>
 

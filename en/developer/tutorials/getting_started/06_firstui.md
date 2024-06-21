@@ -1,8 +1,8 @@
 # Chapter 6: Finally, Some UI To Play With
 
-Now that we’ve created our new [model](04_basicmodel.html#tutorials-getting-
+Now that we’ve created our new [model](04_basicmodel#tutorials-getting-
 started-04-basicmodel) and its corresponding [access
-rights](05_securityintro.html#tutorials-getting-started-05-securityintro), it
+rights](05_securityintro#tutorials-getting-started-05-securityintro), it
 is time to interact with the user interface.
 
 At the end of this chapter, we will have created a couple of menus in order to
@@ -11,10 +11,10 @@ access a default list and form view.
 ## Data Files (XML)
 
 **Reference** : the documentation related to this topic can be found in [Data
-Files](../../reference/backend/data.html#reference-data).
+Files](../../reference/backend/data#reference-data).
 
 In [Chapter 5: Security - A Brief
-Introduction](05_securityintro.html#tutorials-getting-
+Introduction](05_securityintro#tutorials-getting-
 started-05-securityintro), we added data through a CSV file. The CSV format is
 convenient when the data to load has a simple format. When the format is more
 complex (e.g. load the structure of a view or an email template), we use the
@@ -32,13 +32,13 @@ views, we add them to the `views` folder.
 In this chapter, we will load our first action and menus through an XML file.
 Actions and menus are standard records in the database.
 
-Note
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>When performance is important, the CSV format is preferred over the XML format. This is the case in Konvergo ERP
+where loading a CSV file is faster than loading an XML file.</p>
+</div>
 
-When performance is important, the CSV format is preferred over the XML
-format. This is the case in Odoo where loading a CSV file is faster than
-loading an XML file.
-
-In Odoo, the user interface (actions, menus and views) is largely defined by
+In Konvergo ERP, the user interface (actions, menus and views) is largely defined by
 creating and composing records defined in an XML file. A common pattern is
 Menu > Action > View. To access records the user navigates through several
 menu levels; the deepest level is an action which triggers the opening of a
@@ -47,18 +47,16 @@ list of the records.
 ## Actions
 
 **Reference** : the documentation related to this topic can be found in
-[Actions](../../reference/backend/actions.html#reference-actions).
+[Actions](../../reference/backend/actions#reference-actions).
 
-Note
-
-**Goal** : at the end of this section, an action should be loaded in the
-system. We won’t see anything yet in the UI, but the file should be loaded in
-the log:
-
-    
-    
-    INFO rd-demo odoo.modules.loading: loading estate/views/estate_property_views.xml
-    
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section, an action should be loaded in the system. We won’t see
+anything yet in the UI, but the file should be loaded in the log:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>INFO rd-demo odoo.modules.loading: loading estate/views/estate_property_views.xml
+</pre></div>
+</div>
+</div>
 
 Actions can be triggered in three ways:
 
@@ -69,7 +67,7 @@ Actions can be triggered in three ways:
   3. as contextual actions on object
 
 We will only cover the first case in this chapter. The second case will be
-covered in a [later chapter](10_actions.html#tutorials-getting-
+covered in a [later chapter](10_actions#tutorials-getting-
 started-10-actions) while the last is the focus of an advanced topic. In our
 Real Estate example, we would like to link a menu to the `estate.property`
 model, so we are able to create a new record. The action can be viewed as the
@@ -86,45 +84,44 @@ A basic action for our `test_model` is:
     </record>
     
 
-  * `id` is an [external identifier](../../glossary.html#term-external-identifier). It can be used to refer to the record (without knowing its in-database identifier).
+  * `id` is an [external identifier](../../glossary#term-external-identifier). It can be used to refer to the record (without knowing its in-database identifier).
 
-  * `model` has a fixed value of `ir.actions.act_window` ([Window Actions (ir.actions.act_window)](../../reference/backend/actions.html#reference-actions-window)).
+  * `model` has a fixed value of `ir.actions.act_window` ([Window Actions (ir.actions.act_window)](../../reference/backend/actions#reference-actions-window)).
 
   * `name` is the name of the action.
 
   * `res_model` is the model which the action applies to.
 
-  * `view_mode` are the views that will be available; in this case they are the list (tree) and form views. We’ll see [later](15_qwebintro.html#tutorials-getting-started-15-qwebintro) that there can be other view modes.
+  * `view_mode` are the views that will be available; in this case they are the list (tree) and form views. We’ll see [later](15_qwebintro#tutorials-getting-started-15-qwebintro) that there can be other view modes.
 
-Examples can be found everywhere in Odoo, but
+Examples can be found everywhere in Konvergo ERP, but
 [this](https://github.com/odoo/odoo/blob/09c59012bf80d2ccbafe21c39e604d6cfda72924/addons/crm/views/crm_lost_reason_views.xml#L57-L70)
 is a good example of a simple action. Pay attention to the structure of the
 XML data file since you will need it in the following exercise.
 
-Exercise
-
-Add an action.
-
-Create the `estate_property_views.xml` file in the appropriate folder and
-define it in the `__manifest__.py` file.
-
-Create an action for the model `estate.property`.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add an action.</p>
+<p>Create the <code>estate_property_views.xml</code> file in the appropriate folder and define it in the
+<code>__manifest__.py</code> file.</p>
+<p>Create an action for the model <code>estate.property</code>.</p>
+</div>
 
 Restart the server and you should see the file loaded in the log.
 
 ## Menus
 
 **Reference** : the documentation related to this topic can be found in
-[Shortcuts](../../reference/backend/data.html#reference-data-shortcuts).
+[Shortcuts](../../reference/backend/data#reference-data-shortcuts).
 
-Note
-
-**Goal** : at the end of this section, three menus should be created and the
-default view is displayed:
-
-![Root menus](../../../_images/estate_menu_root.png) ![First level and action
-menus](../../../_images/estate_menu_action.png) ![Default form
-view](../../../_images/estate_form_default.png)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section, three menus should be created and the default view is
+displayed:</p>
+<img alt="Root menus" class="align-center" src="../../../_images/estate_menu_root.png"/>
+<img alt="First level and action menus" class="align-center" src="../../../_images/estate_menu_action.png"/>
+<img alt="Default form view" class="align-center" src="../../../_images/estate_form_default.png"/>
+</div>
 
 To reduce the complexity in declaring a menu (`ir.ui.menu`) and connecting it
 to the corresponding action, we can use the `<menuitem>` shortcut .
@@ -143,7 +140,7 @@ the action can be seen as the link between the menu and the model.
 However, menus always follow an architecture, and in practice there are three
 levels of menus:
 
-  1. The root menu, which is displayed in the App switcher (the Odoo Community App switcher is a dropdown menu)
+  1. The root menu, which is displayed in the App switcher (the Konvergo ERP Community App switcher is a dropdown menu)
 
   2. The first level menu, displayed in the top bar
 
@@ -166,17 +163,14 @@ basic structure for our `test_model_action` is:
 
 The name for the third menu is taken from the name of the `action`.
 
-Exercise
-
-Add menus.
-
-Create the `estate_menus.xml` file in the appropriate folder and define it in
-the `__manifest__.py` file. Remember the sequential loading of the data files
-;-)
-
-Create the three levels of menus for the `estate.property` action created in
-the previous exercise. Refer to the **Goal** of this section for the expected
-result.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add menus.</p>
+<p>Create the <code>estate_menus.xml</code> file in the appropriate folder and define it in the
+<code>__manifest__.py</code> file. Remember the sequential loading of the data files ;-)</p>
+<p>Create the three levels of menus for the <code>estate.property</code> action created in the previous
+exercise. Refer to the <b>Goal</b> of this section for the expected result.</p>
+</div>
 
 Restart the server and **refresh the browser**1. You should now see the menus,
 and you’ll even be able to create your first real estate property
@@ -184,22 +178,18 @@ advertisement!
 
 ## Fields, Attributes And View
 
-Note
-
-**Goal** : at the end of this section, the selling price should be read-only
-and the number of bedrooms and the availability date should have default
-values. Additionally the selling price and availability date values won’t be
-copied when the record is duplicated.
-
-![Interaction between model and
-view](../../../_images/attribute_and_default.gif)
-
-The reserved fields `active` and `state` are added to the `estate.property`
-model.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section, the selling price should be read-only and the number
+of bedrooms and the availability date should have default values. Additionally the selling price
+and availability date values won’t be copied when the record is duplicated.</p>
+<img alt="Interaction between model and view" class="align-center" src="../../../_images/attribute_and_default.gif"/>
+<p>The reserved fields <code>active</code> and <code>state</code> are added to the <code>estate.property</code> model.</p>
+</div>
 
 So far we have only used the generic view for our real estate property
 advertisements, but in most cases we want to fine tune the view. There are
-many fine-tunings possible in Odoo, but usually the first step is to make sure
+many fine-tunings possible in Konvergo ERP, but usually the first step is to make sure
 that:
 
   * some fields have a default value
@@ -225,15 +215,15 @@ definition. We saw that some attributes, such as `required=True`, impact the
 table schema in the database. Other attributes will impact the view or provide
 default values.
 
-Exercise
-
-Add new attributes to the fields.
-
-Find the appropriate attributes (see `Field`) to:
-
-  * set the selling price as read-only
-
-  * prevent copying of the availability date and the selling price values
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add new attributes to the fields.</p>
+<p>Find the appropriate attributes (see <code>Field</code>) to:</p>
+<ul>
+<li><p>set the selling price as read-only</p></li>
+<li><p>prevent copying of the availability date and the selling price values</p></li>
+</ul>
+</div>
 
 Restart the server and refresh the browser. You should not be able to set any
 selling prices. When duplicating a record, the availability date should be
@@ -254,34 +244,33 @@ integer, float, string) or a function taking a model and returning a value:
 The `name` field will have the value ‘Unknown’ by default while the
 `last_seen` field will be set as the current time.
 
-Exercise
-
-Set default values.
-
-Add the appropriate default attributes so that:
-
-  * the default number of bedrooms is 2
-
-  * the default availability date is in 3 months
-
-Tip: this might help you: `today()`
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Set default values.</p>
+<p>Add the appropriate default attributes so that:</p>
+<ul>
+<li><p>the default number of bedrooms is 2</p></li>
+<li><p>the default availability date is in 3 months</p></li>
+</ul>
+<p>Tip: this might help you: <code>today()</code></p>
+</div>
 
 Check that the default values are set as expected.
 
 ### Reserved Fields
 
 **Reference** : the documentation related to this topic can be found in
-[Reserved Field names](../../reference/backend/orm.html#reference-orm-fields-
+[Reserved Field names](../../reference/backend/orm#reference-orm-fields-
 reserved).
 
 A few field names are reserved for pre-defined behaviors. They should be
 defined on a model when the related behavior is desired.
 
-Exercise
-
-Add active field.
-
-Add the `active` field to the `estate.property` model.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add active field.</p>
+<p>Add the <code>active</code> field to the <code>estate.property</code> model.</p>
+</div>
 
 Restart the server, create a new property, then come back to the list view…
 The property will not be listed! `active` is an example of a reserved field
@@ -289,33 +278,29 @@ with a specific behavior: when a record has `active=False`, it is
 automatically removed from any search. To display the created property, you
 will need to specifically search for inactive records.
 
-![Inactive records](../../../_images/inactive.gif)
-
-Exercise
-
-Set a default value for active field.
-
-Set the appropriate default value for the `active` field so it doesn’t
-disappear anymore.
+![Inactive records](../../../_images/inactive.gif) <div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Set a default value for active field.</p>
+<p>Set the appropriate default value for the <code>active</code> field so it doesn’t disappear anymore.</p>
+</div>
 
 Note that the default `active=False` value was assigned to all existing
 records.
 
-Exercise
-
-Add state field.
-
-Add a `state` field to the `estate.property` model. Five values are possible:
-New, Offer Received, Offer Accepted, Sold and Canceled. It must be required,
-should not be copied and should have its default value set to ‘New’.
-
-Make sure to use the correct type!
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section, an action should be loaded in the system. We won’t see
+anything yet in the UI, but the file should be loaded in the log:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>INFO rd-demo odoo.modules.loading: loading estate/views/estate_property_views.xml
+</pre></div>
+</div>
+</div>0
 
 The `state` will be used later on for several UI enhancements.
 
 Now that we are able to interact with the UI thanks to the default views, the
 next step is obvious: we want to define [our own
-views](07_basicviews.html#tutorials-getting-started-07-basicviews).
+views](07_basicviews#tutorials-getting-started-07-basicviews).
 
 1
 

@@ -17,7 +17,7 @@ partir des matières premières « A » et « B ».
 
 ![](../../../../_images/subcontracting_01.png)
 
-Grâce à sa fonctionnalité de sous-traitance MRP, Odoo vous aide à gérer ce
+Grâce à sa fonctionnalité de sous-traitance MRP, Konvergo ERP vous aide à gérer ce
 flux facilement.
 
 ## Configuration
@@ -53,7 +53,7 @@ _nomenclature_ de ces produits.
 
 Une fois le _bon de commande_ validé (1), une réception en attente est créée.
 À la réception des produits, validez la réception (2), avec la quantité réelle
-reçue. En conséquence, Odoo fait les choses suivantes pour vous :
+reçue. En conséquence, Konvergo ERP fait les choses suivantes pour vous :
 
   * Consomme les composants respectifs chez le sous-traitant, selon la _nomenclature_ et votre entrée (3) ;
 
@@ -61,12 +61,10 @@ reçue. En conséquence, Odoo fait les choses suivantes pour vous :
 
   * Transfère les produits de l’emplacement de sous-traitance à votre entreprise YourCompany par le biais de la réception validée (5).
 
-Note
-
-Le _bon de commande_ est optionnel. Si vous créez une réception manuellement,
-avec le bon sous-traitant, Odoo effectue quand même tous les déplacements.
-Cela peut être utile si le sous-traitant ne facture pas un prix fixe par
-article, mais plutôt le temps et les matériaux utilisés.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Le <em>bon de commande</em> est optionnel. Si vous créez une réception manuellement, avec le bon sous-traitant, Konvergo ERP effectue quand même tous les déplacements. Cela peut être utile si le sous-traitant ne facture pas un prix fixe par article, mais plutôt le temps et les matériaux utilisés.</p>
+</div>
 
 ## Valorisation des stocks
 
@@ -98,11 +96,10 @@ c’est-à-dire la valeur du produit dans la comptabilité.
 Enfin, la facture du sous-traitant correspond au bon de commande, avec le prix
 proposé pour les produits finis C.
 
-Note
-
-S’il n’est pas nécessaire de gérer le réassort des matières premières **B**
-chez votre sous-traitant, il suffit d’inclure le coût de **B** dans le prix du
-sous-traitant **s** et de supprimer les produits **B** de la _nomenclature_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>S’il n’est pas nécessaire de gérer le réassort des matières premières <b>B</b> chez votre sous-traitant, il suffit d’inclure le coût de <b>B</b> dans le prix du sous-traitant <b>s</b> et de supprimer les produits <b>B</b> de la <em>nomenclature</em>.</p>
+</div>
 
 ## Traçabilité
 

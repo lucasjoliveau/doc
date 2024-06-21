@@ -4,9 +4,10 @@ If you want to sell your products with a discount, for a product getting close
 to its expiration date for example, you can use discount tags. They allow you
 to scan discount barcodes.
 
-Note
-
-To use discount tags you will need to use a barcode scanner.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>To use discount tags you will need to use a barcode scanner.</p>
+</div>
 
 ## Barcode Nomenclature
 

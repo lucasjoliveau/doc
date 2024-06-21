@@ -1,10 +1,13 @@
 # Marketing social
 
-Ver también
-
-  * [Tutoriales de Odoo: Marketing](https://www.odoo.com/slides/marketing-27)
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="https://www.odoo.com/slides/marketing-27">Tutoriales de Konvergo ERP: Marketing</a></p></li>
+</ul>
+</div>
 
   * Fundamentos
-    * [Fundamentos de marketing social](social_marketing/essentials/social_essentials.html)
-    * [Campañas de marketing social](social_marketing/essentials/social_campaigns.html)
+    * [Fundamentos de marketing social](social_marketing/essentials/social_essentials)
+    * [Campañas de marketing social](social_marketing/essentials/social_campaigns)
 

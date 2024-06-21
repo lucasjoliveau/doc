@@ -1,15 +1,16 @@
 # IP de localización
 
-Nota
-
-Esta documentación solo aplica a bases de datos con alojamiento local
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Esta documentación solo aplica a bases de datos con alojamiento local</p>
+</div>
 
 ## Instalación
 
-Advertencia
-
-Tenga en cuenta que la instalación depende del sistema operativo y la
-distribución de su computadora. Asumiremos que utiliza Linux.
+<div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>Tenga en cuenta que la instalación depende del sistema operativo y la distribución de su computadora. Asumiremos que utiliza Linux.</p>
+</div>
 
   1. Instale la biblioteca [geoip2](https://pypi.org/project/geoip2/) de Python
     
@@ -27,30 +28,24 @@ distribución de su computadora. Asumiremos que utiliza Linux.
 
   4. Reinicie el servidor
 
-Nota
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Si no puede o no desea localizar la base de datos geoip en <code>/usr/share/GeoIP/</code>, puede utilizar la opción <code>-geoip-db`</code> de la interfaz de línea de comandos de Konvergo ERP. Esta opción toma la ruta absoluta al archivo de base de datos GeoIP y la usa como base de datos GeoIP. Por ejemplo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./odoo-bin --geoip-db<span class="o">=</span> ~/Downloads/GeoLite2-City.mmdb
+</pre></div>
+</div>
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><ul>
+<li><p><a href="../../developer/reference/cli">Documentación de la CLI</a></p></li>
+</ul>
+</div>
+</div> <div class="alert alert-warning">
+<p class="alert-title">
+Advertencia</p><p>También se puede utilizar la biblioteca <code>GeoIP</code> de Python. Sin embargo, esta versión está obsoleta desde el 1 de enero.    Consulte <a href="https://support.maxmind.com/geolite-legacy-discontinuation-notice/">Las bases de datos GeoLite Legacy ya no están disponibles</a></p>
+</div>
 
-Si no puede o no desea localizar la base de datos geoip en
-`/usr/share/GeoIP/`, puede utilizar la opción `-geoip-db`` de la interfaz de
-línea de comandos de Odoo. Esta opción toma la ruta absoluta al archivo de
-base de datos GeoIP y la usa como base de datos GeoIP. Por ejemplo:
-
-    
-    
-    ./odoo-bin --geoip-db= ~/Downloads/GeoLite2-City.mmdb
-    
-
-Ver también
-
-  * [Documentación de la CLI](../../developer/reference/cli.html)
-
-Advertencia
-
-También se puede utilizar la biblioteca `GeoIP` de Python. Sin embargo, esta
-versión está obsoleta desde el 1 de enero. Consulte [Las bases de datos
-GeoLite Legacy ya no están disponibles](https://support.maxmind.com/geolite-
-legacy-discontinuation-notice/)
-
-## Cómo probar la geolocalización GeoIP en su sitio web de Odoo
+## Cómo probar la geolocalización GeoIP en su sitio web de Konvergo ERP
 
   1. Vaya a su sitio web y abra la página web en la que desea probar `GeoIP`.
 
@@ -67,18 +62,14 @@ Debe obtener como resultado un diccionario que indique la ubicación de la
 dirección IP.
 
 ![../../_images/on-premise_geo-ip-installation01.png](../../_images/on-
-premise_geo-ip-installation01.png)
-
-Nota
-
-Si las llaves están vacías `{}`, puede ser por cualquiera de los siguientes
-motivos:
-
-  * La dirección IP de navegación es el localhost (`127.0.0.1`) o una red de área local (`192.168.*.*`)
-
-  * Si se utiliza un proxy inverso, asegúrese de configurarlo correctamente. Consulte [`modo proxy`](../../developer/reference/cli.html#cmdoption-odoo-bin-proxy-mode)
-
-  * `geoip2` no está instalada o no se encontró el archivo de base de datos GeoIP
-
-  * La base de datos GeoIP no pudo determinar la dirección IP proporcionada
+premise_geo-ip-installation01.png) <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Si las llaves están vacías <code>{}</code>, puede ser por cualquiera de los siguientes motivos:</p>
+<ul>
+<li><p>La dirección IP de navegación es el localhost (<code>127.0.0.1</code>) o una red de área local (<code>192.168.*.*</code>)</p></li>
+<li><p>Si se utiliza un proxy inverso, asegúrese de configurarlo correctamente. Consulte <a href="../../developer/reference/cli#cmdoption-odoo-bin-proxy-mode"><code>modo proxy</code></a></p></li>
+<li><p><code>geoip2</code> no está instalada o no se encontró el archivo de base de datos GeoIP</p></li>
+<li><p>La base de datos GeoIP no pudo determinar la dirección IP proporcionada</p></li>
+</ul>
+</div>
 

@@ -1,6 +1,6 @@
 # Advanced
 
-  * [Containers](advanced/containers.html)
-  * [Submodules](advanced/submodules.html)
-  * [Frequent Technical Questions](advanced/frequent_technical_questions.html)
+  * [Containers](advanced/containers)
+  * [Submodules](advanced/submodules)
+  * [Frequent Technical Questions](advanced/frequent_technical_questions)
 

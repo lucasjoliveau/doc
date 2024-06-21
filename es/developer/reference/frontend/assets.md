@@ -1,6 +1,6 @@
 # Assets
 
-Managing assets in Odoo is not as straightforward as it is in some other apps.
+Managing assets in Konvergo ERP is not as straightforward as it is in some other apps.
 One of the reasons is that we have a variety of situations where some, but not
 all of the assets are required. For example, the needs of the web client, the
 point of sale app, the website or even the mobile application are different.
@@ -16,10 +16,10 @@ Code
 
     
 
-Odoo supports [three different kinds of javascript
-files](javascript_modules.html#frontend-js-modules). All these files are then
+Konvergo ERP supports [three different kinds of javascript
+files](javascript_modules#frontend-js-modules). All these files are then
 processed (native JS modules are transformed into odoo modules), then minified
-(if not in `debug=assets` [mode](framework_overview.html#frontend-framework-
+(if not in `debug=assets` [mode](framework_overview#frontend-framework-
 assets-debug-mode)) and concatenated. The result is then saved as a file
 attachment. These file attachments are usually loaded via a `<script>` tag in
 the `<head>` part of the page (as a static file).
@@ -31,7 +31,7 @@ Style
 Styling can be done with either `css` or [scss](https://sass-lang.com/). Like
 the javascript files, these files are processed (`scss` files are converted
 into `css`), then minified (again, if not in `debug=assets`
-[mode](framework_overview.html#frontend-framework-assets-debug-mode)) and
+[mode](framework_overview#frontend-framework-assets-debug-mode)) and
 concatenated. The result is then saved as a file attachment. They are then
 usually loaded via a `<link>` tag in the `<head>` part of the page (as a
 static file).
@@ -44,7 +44,7 @@ Templates (static `xml` files) are handled in a different way: they are simply
 read from the file system whenever they are needed, and concatenated.
 
 Whenever the browser loads odoo, it calls the `/web/webclient/qweb/`
-controller to fetch the [templates](qweb.html#reference-qweb).
+controller to fetch the [templates](qweb#reference-qweb).
 
 It is useful to know that in most cases, a browser only performs a request the
 first time it loads a page. This is because each of these assets are
@@ -54,9 +54,9 @@ set the cache headers to a long period.
 
 ## Bundles
 
-Odoo assets are grouped by _bundles_. Each bundle (a _list of file paths_ of
+Konvergo ERP assets are grouped by _bundles_. Each bundle (a _list of file paths_ of
 specific types: `xml`, `js`, `css` or `scss`) is listed in the [module
-manifest](../backend/module.html#reference-module-manifest). Files can be
+manifest](../backend/module#reference-module-manifest). Files can be
 declared using [glob](https://en.wikipedia.org/wiki/Glob_\(programming\))
 syntax, meaning that you can declare several asset files using a single line.
 
@@ -172,7 +172,7 @@ file. It is declared by replacing the normal path with a 3-element tuple
 Use nested bundles.
 
 The `include` directive is a way to use a bundle in other bundles to minimize
-the size of your manifest. In Odoo we use sub bundles (prefixed with an
+the size of your manifest. In Konvergo ERP we use sub bundles (prefixed with an
 underscore by convention) to batch files used in multiple other bundles. You
 can then specify the sub bundle as a pair `('include', <bundle>)` like this:
 
@@ -218,7 +218,7 @@ done with the `replace` directive, using a 3-element tuple `('replace',
 
 The order in which assets are loaded is sometimes critical and must be
 deterministic, mostly for stylesheets priorities and setup scripts. Assets in
-Odoo are processed as follows:
+Konvergo ERP are processed as follows:
 
   1. When an asset bundle is called (e.g. `t-call-assets="web.assets_common"`), an empty list of assets is generated
 
@@ -246,16 +246,17 @@ thus appear in the list before all the others included in the glob.
     ],
     
 
-Nota
-
-A module _b_ removing/replacing the assets declared in a module _a_ will have
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>A module <em>b</em> removing/replacing the assets declared in a module <em>a</em> will have
 to depend on it. Trying to operate on assets that have yet to be declared will
-result in an error.
+result in an error.</p>
+</div>
 
 ## Lazy loading
 
 It is sometimes useful to load files and/or asset bundles dynamically, for
-example to only load a library once it is needed. To do that, the Odoo
+example to only load a library once it is needed. To do that, the Konvergo ERP
 framework provides a few helper functions, located in `@web/core/assets`.
 
     

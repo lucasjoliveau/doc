@@ -1,4 +1,4 @@
 # Project management
 
-  * [Approvals](management/approvals.html)
+  * [Approvals](management/approvals)
 

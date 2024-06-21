@@ -14,8 +14,8 @@ soliciten para fines de auditoría.
 ### Importar FEC
 
 Para que la integración de nuevos usuarios sea más fácil, el [paquete de
-localización fiscal](../fiscal_localizations.html#fiscal-localizations-
-packages) para Francia de Odoo Enterprise incluye la función **Importar FEC**
+localización fiscal](../fiscal_localizations#fiscal-localizations-
+packages) para Francia de Konvergo ERP Enterprise incluye la función **Importar FEC**
 (nombre técnico: `l10n_fr_fec_import`), la cual permite importar archivos FEC
 existentes desde un software antiguo.
 
@@ -25,26 +25,23 @@ Importar contabilidad, active **Importar FEC** y haga clic en _guardar_.
 Después, vaya a Contabilidad ‣ Configuración ‣ Importar FEC, suba el archivo
 FEC y haga clic en _Importar_.
 
-Nota
-
-No hay una acción o cálculo particular para importar archivos FEC de un año
-diferente.
-
-Si varios archivos contienen «Reports à Nouveaux» (RAN) con el balance inicial
-del año, puede que tenga que cancelar los asientos en la interfaz del usuario.
-Los asientos (RAN) no son útiles en Odoo.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><div class="line-block">
+<div class="line">No hay una acción o cálculo particular para importar archivos FEC de un año diferente.</div>
+<div class="line">Si varios archivos contienen «Reports à Nouveaux» (RAN) con el balance inicial del año, puede que tenga que cancelar los asientos en la interfaz del usuario. Los asientos (RAN) no son útiles en Konvergo ERP.</div>
+</div>
+</div>
 
 #### Formatos de archivo
 
 Los archivos FEC solo pueden estar en formato CSV, ya que no son compatibles
 con el formato XML.
 
-Nota
-
-El archivo FEC CSV tiene un formato de texto plano que representa una tabla de
-datos, en la cual la primera línea es un encabezado y define la lista de
-campos de cada entrada. Cada una de las líneas siguientes representa un
-asiento contable y no tiene un orden predeterminado.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El archivo FEC CSV tiene un formato de texto plano que representa una tabla de datos, en la cual la primera línea es un encabezado y define la lista de campos de cada entrada. Cada una de las líneas siguientes representa un asiento contable y no tiene un orden predeterminado.</p>
+</div>
 
 Se espera que los archivos que se suban al módulo cumplan con las siguientes
 especificaciones técnicas:
@@ -112,21 +109,20 @@ por el campo `CompteNum`.
 Si hay un código de cuenta similar en el sistema, se usará el que ya existe en
 lugar de crear uno nuevo.
 
-Por lo general, las cuentas en Odoo tienen un número de dígitos
+Por lo general, las cuentas en Konvergo ERP tienen un número de dígitos
 predeterminados para la localización fiscal. Ya que el módulo FEC está
 relacionado a la localización francesa, el número predeterminado de números
 relevantes es 6.
 
 Esto significa que, en los códigos de cuenta, los ceros finales se recortan
 desde la derecha. La comparación entre los códigos en el archivo FEC y los que
-ya existen en Odoo se realiza solo en los primeros seis dígitos de los
+ya existen en Konvergo ERP se realiza solo en los primeros seis dígitos de los
 códigos.
 
-Example
-
-El código de la cuenta es `65800000` en el archivo se compara con una cuenta
-`658000` existente en Odoo. Se utilizará esa cuenta en lugar de crear una
-nueva.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>El código de la cuenta es <code>65800000</code> en el archivo se compara con una cuenta <code>658000</code> existente en Konvergo ERP. Se utilizará esa cuenta en lugar de crear una nueva.</p>
+</div>
 
 ##### Marcado como conciliado
 
@@ -134,12 +130,10 @@ Una cuenta se marca como _conciliada_ si la primera línea en la que aparece
 tiene el campo `EcritureLet` lleno. Esta marca significa que el asiento
 contable se conciliará con otro.
 
-Nota
-
-En caso de que, por algún motivo, la línea no tenga este campo completado pero
-el asiento se tenga que conciliar con un pago que aún no se registra, esto no
-es un problema. La cuenta se marca como conciliable tan pronto como el importe
-de las líneas lo requiera.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>En caso de que, por algún motivo, la línea no tenga este campo completado pero el asiento se tenga que conciliar con un pago que aún no se registra, esto no es un problema. La cuenta se marca como conciliable tan pronto como el importe de las líneas lo requiera.</p>
+</div>
 
 ##### Tipo de cuenta y emparejamiento de plantillas
 
@@ -152,20 +146,53 @@ se calcula de esta manera.
 El emparejamiento se realiza con los dígitos que están hasta la izquierda,
 primero se usan todos los dígitos, después 3 y al final 2.
 
-Example
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><table class="table docutils">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 14%"/>
+<col style="width: 20%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nombre</p></th>
+<th class="head"><p>Código</p></th>
+<th class="head"><p>Comparación completa</p></th>
+<th class="head"><p>Comparación de 3 dígitos</p></th>
+<th class="head"><p>Comparación de 2 dígitos</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Plantilla</p></td>
+<td><p><code>400000</code></p></td>
+<td><p><code>400000</code></p></td>
+<td><p><code>400</code></p></td>
+<td><p><code>40</code></p></td>
+</tr>
+<tr class="row-odd"><td><p>CompteNum</p></td>
+<td><p><code>40100000</code></p></td>
+<td><p><code>40100000</code></p></td>
+<td><p><code>401</code></p></td>
+<td><p><code>40</code></p></td>
+</tr>
+<tr class="row-even"><td><p><b>Resultado</b></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Coincidencia <b>encontrada</b></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 
-Nombre | Código | Comparación completa | Comparación de 3 dígitos | Comparación de 2 dígitos  
----|---|---|---|---  
-Plantilla | `400000` | `400000` | `400` | `40`  
-CompteNum | `40100000` | `40100000` | `401` | `40`  
-**Resultado** |  |  |  | Coincidencia **encontrada**  
-  
 El tipo de cuenta se marca como _por pagar_ y _conciliado_ según la plantilla
 de la cuenta.
 
 ##### Diarios contables
 
-Los diarios también se comparan con los que ya existen en Odoo para evitar
+Los diarios también se comparan con los que ya existen en Konvergo ERP para evitar
 duplicados, también en caso de importación de varios archivos FEC.
 
 Si hay un código de diario similar en el sistema, se usa el que ya existe en
@@ -173,9 +200,10 @@ lugar de crear uno nuevo.
 
 Los nombres de los diarios nuevos empiezan con el prefijo `FEC-`.
 
-Example
-
-`COMPRAS` -> `FEC-COMPRAS`
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p><code>COMPRAS</code> -&gt; <code>FEC-COMPRAS</code></p>
+</div>
 
 Los diarios _no_ están archivados, el usuario puede gestionarlos como
 prefiera.
@@ -205,42 +233,60 @@ o crédito.
 
   * `general`: para todo lo demás.
 
-Nota
-
-  * Para identificar el tipo de diario se necesitan, por lo menos, tres movimientos.
-
-  * Al menos el 70% de los movimientos deben corresponder a los criterios para poder determinar el tipo de diario.
-
-Example
-
-Supongamos que se están analizando los movimientos que comparten un
-`journal_id` específico.
-
-Movimientos | Número | Porcentaje  
----|---|---  
-que tienen una línea de cuenta de venta y no tienen una línea de cuenta de compra | 0 | 0  
-que tienen una línea de cuenta de compra y no tienen una línea de cuenta de venta | 1 | 25%  
-que tienen una línea de cuenta de liquidez | 3 | **75%**  
-**Total** | 4 | 100%  
-  
-El `tipo` de diario sería `banco`, ya que el porcentaje de movimientos
-bancarios (75%) excede el umbral (70%).
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><ul>
+<li><p>Para identificar el tipo de diario se necesitan, por lo menos, tres movimientos.</p></li>
+<li><p>Al menos el 70% de los movimientos deben corresponder a los criterios para poder determinar el tipo de diario.</p></li>
+</ul>
+</div> <div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>Supongamos que se están analizando los movimientos que comparten un <code>journal_id</code> específico.</p>
+<table class="table docutils">
+<colgroup>
+<col style="width: 76%"/>
+<col style="width: 9%"/>
+<col style="width: 15%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Movimientos</p></th>
+<th class="head"><p>Número</p></th>
+<th class="head"><p>Porcentaje</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>que tienen una línea de cuenta de venta y no tienen una línea de cuenta de compra</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>que tienen una línea de cuenta de compra y no tienen una línea de cuenta de venta</p></td>
+<td><p>1</p></td>
+<td><p>25%</p></td>
+</tr>
+<tr class="row-even"><td><p>que tienen una línea de cuenta de liquidez</p></td>
+<td><p>3</p></td>
+<td><p><b>75%</b></p></td>
+</tr>
+<tr class="row-odd"><td><p><b>Total</b></p></td>
+<td><p>4</p></td>
+<td><p>100%</p></td>
+</tr>
+</tbody>
+</table>
+<p>El <code>tipo</code> de diario sería <code>banco</code>, ya que el porcentaje de movimientos bancarios (75%) excede el umbral (70%).</p>
+</div>
 
 ##### Contactos
 
 Cada contacto mantiene su `referencia` del campo `CompAuxNum`.
 
-Nota
-
-Estos campos se pueden buscar en consonancia con los FEC importados con
-anterioridad en el lado del experto en contabilidad para propósitos fiscales o
-de auditoría.
-
-Truco
-
-Los usuarios pueden fusionar contactos con la aplicación Limpieza de datos. En
-esta aplicación los proveedores, clientes o contactos similares pueden
-fusionarse con ayuda del sistema que los agrupa por asientos similares.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Estos campos se pueden buscar en consonancia con los FEC importados con anterioridad en el lado del experto en contabilidad para propósitos fiscales o de auditoría.</p>
+</div> <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Los usuarios pueden fusionar contactos con la aplicación Limpieza de datos. En esta aplicación los proveedores, clientes o contactos similares pueden fusionarse con ayuda del sistema que los agrupa por asientos similares.</p>
+</div>
 
 ##### Movimientos
 
@@ -275,10 +321,10 @@ diario y la misma fecha (`JournalLib`, `EcritureDate`). Si este agrupamiento
 genera movimientos balanceados (suma(crédito) - suma(débito) = 0), entonces
 cada combinación distinta de diario y fecha crea un nuevo movimiento.
 
-Example
-
-`ACH` \+ `2021/05/01` –> nuevo movimiento en el diario `ACH` con el nombre
-`20210501`.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El archivo FEC CSV tiene un formato de texto plano que representa una tabla de datos, en la cual la primera línea es un encabezado y define la lista de campos de cada entrada. Cada una de las líneas siguientes representa un asiento contable y no tiene un orden predeterminado.</p>
+</div>0
 
 Si este intento falla, el usuario verá un mensaje de error con todas las
 líneas de movimiento que no están balanceadas.
@@ -292,21 +338,17 @@ pagar_ o _conciliable_.
 ### Exportar
 
 Si instaló el [paquete de localización
-fiscal](../fiscal_localizations.html#fiscal-localizations-packages) para
+fiscal](../fiscal_localizations#fiscal-localizations-packages) para
 Francia, debería poder descargar el FEC. Para hacerlo, vaya a Contabilidad ‣
 Reportes ‣ Francia ‣ FEC.
 
-Truco
-
-Si no puede ver el submenú **FEC** , vaya a Aplicaciones, elimine el filtro de
-_aplicaciones_ y busque el módulo llamado **Francia - FEC** y verifique que
-está instalado.
-
-Ver también
-
-  * [Especificación oficial técnica (en francés)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027804775)
-
-  * [Test-Compta-Demat (Herramienta de prueba oficial de FEC)](https://github.com/DGFiP/Test-Compta-Demat)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El archivo FEC CSV tiene un formato de texto plano que representa una tabla de datos, en la cual la primera línea es un encabezado y define la lista de campos de cada entrada. Cada una de las líneas siguientes representa un asiento contable y no tiene un orden predeterminado.</p>
+</div>1 <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El archivo FEC CSV tiene un formato de texto plano que representa una tabla de datos, en la cual la primera línea es un encabezado y define la lista de campos de cada entrada. Cada una de las líneas siguientes representa un asiento contable y no tiene un orden predeterminado.</p>
+</div>2
 
 ## Reportes contables franceses
 
@@ -319,18 +361,18 @@ contabilidad específicos para Francia:
 
   * Plan de impuestos de Francia
 
-## Obtener la certificación antifraude del IVA con Odoo
+## Obtener la certificación antifraude del IVA con Konvergo ERP
 
 A partir del primero de enero de 2018, entró en vigencia una nueva legislación
 antifraude en Francia y los territorios de ultramar. Esta nueva legislación
 estipula ciertos criterios sobre inalterabilidad, seguridad, almacenamiento y
 archivado de los datos de ventas. Estos requisitos legales se implementan en
-Odoo, a partir de la versión 9, con un módulo y un certificado de conformidad
+Konvergo ERP, a partir de la versión 9, con un módulo y un certificado de conformidad
 que se debe descargar.
 
 ### ¿Mi empresa necesita usar un software antifraude?
 
-Su empresa necesita usar un software antifraude de caja registradora como Odoo
+Su empresa necesita usar un software antifraude de caja registradora como Konvergo ERP
 (CGI art. 286, I. 3° bis) si:
 
   * Está sujeto a impuestos (no está exento de IVA) en Francia o en cualquier territorio de ultramar,
@@ -340,16 +382,16 @@ Su empresa necesita usar un software antifraude de caja registradora como Odoo
 Esta regla aplica para cualquier empresa de cualquier tamaño. Los empresarios
 independientes están exentos del IVA y, por tanto, no se ven afectados.
 
-### Obtenga la certificación con Odoo
+### Obtenga la certificación con Konvergo ERP
 
-Cumplir las reglas con Odoo es muy fácil.
+Cumplir las reglas con Konvergo ERP es muy fácil.
 
 La autoridad financiera le pide a su empresa que proporcione un certificado de
 conformidad en el que aparezca que su software cumple con la legislación
-antifraude. Odoo SA otorga este certificado a los usuarios de Odoo Enterprise
+antifraude. Konvergo ERP SA otorga este certificado a los usuarios de Konvergo ERP Enterprise
 [aquí](https://www.odoo.com/my/contract/french-certification/). Si usa la
-versión Community de Odoo, debería [actualizar a la versión
-Enterprise](../../../administration/on_premise/community_to_enterprise.html) o
+versión Community de Konvergo ERP, debería [actualizar a la versión
+Enterprise](../../../administration/on_premise/community_to_enterprise) o
 contactar a su proveedor.
 
 En caso de que no cumpla con la legislación, su empresa corre el riesgo de
@@ -357,19 +399,16 @@ recibir una multa por 7,500 euros.
 
 Para obtener el certificado solo siga estos pasos:
 
-  * Si usa el **Punto de venta de Odoo** [instale](../../general/apps_modules.html#general-install) el módulo **Francia - Certificación antifraude del IVA para Punto de venta (CGI 286 I-3 bis)**. Vaya a Aplicaciones, elimine el filtro de _aplicaciones_ , busque _l10n_fr_pos_cert_ e instale el módulo.
+  * Si usa el **Punto de venta de Konvergo ERP** [instale](../../general/apps_modules#general-install) el módulo **Francia - Certificación antifraude del IVA para Punto de venta (CGI 286 I-3 bis)**. Vaya a Aplicaciones, elimine el filtro de _aplicaciones_ , busque _l10n_fr_pos_cert_ e instale el módulo.
 
   * Asegúrese de que su país está configurado en su empresa, de lo contrario sus asientos no se encriptarán para la comprobación de inalterabilidad. Para editar la información de su empresa, vaya a Ajustes ‣ Usuarios y empresas ‣ Empresas. Seleccione un país de la lista, no necesita crear uno nuevo.
 
-  * Descargue el certificado de conformidad obligatorio que le proporciona Odoo SA [aquí](https://www.odoo.com/my/contract/french-certification/).
+  * Descargue el certificado de conformidad obligatorio que le proporciona Konvergo ERP SA [aquí](https://www.odoo.com/my/contract/french-certification/).
 
-Nota
-
-  * Para instalar el módulo en cualquier sistema creado antes del 18 de diciembre de 2017, debe actualizar la lista de módulos. Para hacerlo, active el [modo de desarrollador](../../general/developer_mode.html#developer-mode). Vaya al menú _Aplicaciones_ y de clic en _Actualizar lista de módulos_ en la parte superior del menú.
-
-  * En caso de que use Odoo de forma local, primero debe actualizar su instalación y reiniciar su servidor.
-
-  * Si instaló la versión inicial del módulo antifraude (anterior al 18 de diciembre de 2017), necesita actualizarlo. El nombre del módulo es _Francia - Contabilidad - CGI 286 I-3 bis certificado_. Después de la actualización de la lista de módulos, busque la actualización del módulo en _Aplicaciones_ , selecciónela y haga clic en _actualizar_. Por último, asegúrese de que el módulo _l10n_fr_sale_closing_ esté instalado.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El archivo FEC CSV tiene un formato de texto plano que representa una tabla de datos, en la cual la primera línea es un encabezado y define la lista de campos de cada entrada. Cada una de las líneas siguientes representa un asiento contable y no tiene un orden predeterminado.</p>
+</div>3
 
 ### Funciones antifraude
 
@@ -388,10 +427,10 @@ Todas las formas posibles de cancelar y modificar los datos clave de las
 desactivan si la empresa está ubicada en Francia o en cualquier territorio de
 ultramar.
 
-Nota
-
-Si ejecuta un entorno multiempresas, solo se verán afectados los documentos de
-dichas empresas.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El archivo FEC CSV tiene un formato de texto plano que representa una tabla de datos, en la cual la primera línea es un encabezado y define la lista de campos de cada entrada. Cada una de las líneas siguientes representa un asiento contable y no tiene un orden predeterminado.</p>
+</div>4
 
 #### Seguridad
 
@@ -419,43 +458,32 @@ asiento de ventas registrado en el sistema.
 Los cierres están disponibles en el menú _Estados de cuenta franceses_ de las
 aplicaciones Punto de venta, Facturación y Contabilidad.
 
-Nota
-
-  * Los cierres calculan los totales para los asientos contables de los diarios de venta (tipo de diario = ventas).
-
-  * Para entornos multiempresas, estos cierres se realizan para cada empresa por separado.
-
-  * Las órdenes del PdV se publican como asientos contables al cerrar la sesión del PdV y esta se puede cerrar en cualquier momento. Para invitar a que los usuarios hagan esto todos los días, el módulo no permite volver a iniciar una sesión que se abrió hace más de 24 horas. Esta sesión se debe cerrar antes de volver a vender.
-
-  * El total de un periodo se calcula a partir de todos los asientos contables que se publicaron después del cierre previo del mismo tipo, sin importar su fecha de publicación. Si registra una nueva transacción de venta para un periodo que ya se cerró, se contará en el cierre más cercano.
-
-Truco
-
-  * Para pruebas y auditorías, puede generar estos cierres de forma manual en el [modo de desarrollador](../../general/developer_mode.html#developer-mode).
-
-  * Después vaya a Ajustes ‣ Técnico ‣ Automatización ‣ Acciones planeadas.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El archivo FEC CSV tiene un formato de texto plano que representa una tabla de datos, en la cual la primera línea es un encabezado y define la lista de campos de cada entrada. Cada una de las líneas siguientes representa un asiento contable y no tiene un orden predeterminado.</p>
+</div>5 <div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El archivo FEC CSV tiene un formato de texto plano que representa una tabla de datos, en la cual la primera línea es un encabezado y define la lista de campos de cada entrada. Cada una de las líneas siguientes representa un asiento contable y no tiene un orden predeterminado.</p>
+</div>6
 
 ### Responsabilidades
 
 ¡No desinstale el módulo! Si lo hace, los hashes se resetearán y no será
 posible garantizar que su información previa sea inalterable.
 
-Los usuarios son responsables de su instancia de Odoo y deben usarla con su
+Los usuarios son responsables de su instancia de Konvergo ERP y deben usarla con su
 debida diligencia. No se permite modificar el código fuente, ya que este
 garantiza la inalterabilidad de los datos.
 
-Odoo no se hace responsable de cualquier cambio que las aplicaciones externas
-que Odoo no haya certificado puedan realizar en las funciones de los módulos.
+Konvergo ERP no se hace responsable de cualquier cambio que las aplicaciones externas
+que Konvergo ERP no haya certificado puedan realizar en las funciones de los módulos.
 
 ### Más información
 
 Encontrará más información sobre esta legislación en los documentos oficiales.
 
-Ver también
-
-  * [Preguntas frecuentes](https://www.economie.gouv.fr/files/files/directions_services/dgfip/controle_fiscal/actualites_reponses/logiciels_de_caisse.pdf)
-
-  * [Comunicado oficial](http://bofip.impots.gouv.fr/bofip/10691-PGP.html?identifiant=BOI-TVA-DECLA-30-10-30-20160803)
-
-  * [Artículo 88 de las leyes financieras de 2016](https://www.legifrance.gouv.fr/affichTexteArticle.do?idArticle=JORFARTI000031732968&categorieLien=id&cidTexte=JORFTEXT000031732865)
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>El archivo FEC CSV tiene un formato de texto plano que representa una tabla de datos, en la cual la primera línea es un encabezado y define la lista de campos de cada entrada. Cada una de las líneas siguientes representa un asiento contable y no tiene un orden predeterminado.</p>
+</div>7
 

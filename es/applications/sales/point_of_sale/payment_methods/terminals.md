@@ -6,34 +6,34 @@ que el proceso de pago será más eficiente.
 
 ## Configuración
 
-Vaya a los [ajustes de la aplicación](../configuration.html#configuration-
-settings), diríjase a la sección Terminales de pago y seleccione la casilla de
-su terminal.
+Vaya a los [ajustes de la aplicación](../configuration#configuration-
+settings), diríjase a la sección **Terminales de pago** y seleccione la
+casilla de su terminal.
 
 ![casilla de verificación en los ajustes para habilitar su terminal de
 pago](../../../../_images/settings-pt.png)
 
 Después, siga los pasos correspondientes para configurar su dispositivo:
 
-  * [Configuración de Adyen](terminals/adyen.html)
+  * [Configuración de Adyen](terminals/adyen)
 
-  * [Configuración de Ingenico](terminals/ingenico.html)
+  * [Configuración de Ingenico](terminals/ingenico)
 
-  * [Configuración de SIX](terminals/six.html)
+  * [Configuración de SIX](terminals/six)
 
-  * [Configuración de Stripe](terminals/stripe.html)
+  * [Configuración de Stripe](terminals/stripe)
 
-  * [Configuración de Vantiv](terminals/vantiv.html)
+  * [Configuración de Vantiv](terminals/vantiv)
 
-  * [Configuración de Worldline](terminals/worldline.html)
+  * [Configuración de Worldline](terminals/worldline)
 
 Una vez que haya configurado la terminal, puede [crear el método de pago
-correspondiente y agregarlo al Punto de venta](../payment_methods.html).
+correspondiente y agregarlo al Punto de venta](../payment_methods).
 
-  * [Adyen](terminals/adyen.html)
-  * [Ingenico](terminals/ingenico.html)
-  * [SIX](terminals/six.html)
-  * [Stripe](terminals/stripe.html)
-  * [Vantiv](terminals/vantiv.html)
-  * [Worldline](terminals/worldline.html)
+  * [Adyen](terminals/adyen)
+  * [Ingenico](terminals/ingenico)
+  * [SIX](terminals/six)
+  * [Stripe](terminals/stripe)
+  * [Vantiv](terminals/vantiv)
+  * [Worldline](terminals/worldline)
 

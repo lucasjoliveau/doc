@@ -12,45 +12,42 @@ améliorer son expérience.
 
 ## Produits optionnels sur les devis
 
-Dans l’application _Ventes_ d’Odoo, il est possible d’ajouter ou de modifier
+Dans l’application _Ventes_ d’Konvergo ERP, il est possible d’ajouter ou de modifier
 les produits optionnels directement sur les devis en allant à l’onglet
-Produits optionnels d’un formulaire de devis.
+**Produits optionnels** d’un formulaire de devis.
 
-![Comment ajouter des produits optionnels à vos devis dans Odoo
+![Comment ajouter des produits optionnels à vos devis dans Konvergo ERP
 Ventes.](../../../../_images/optional-products-tab.png)
 
-Pour ajouter un ou des produits optionnels à un devis, cliquez sur Ajouter un
-produit dans l’onglet Produits optionnels d’un devis. Cette opération fait
-apparaître un champ vierge dans la colonne Produit.
+Pour ajouter un ou des produits optionnels à un devis, cliquez sur **Ajouter
+un produit** dans l’onglet **Produits optionnels** d’un devis. Cette opération
+fait apparaître un champ vierge dans la colonne **Produit**.
 
 Lorsque vous cliquez dessus, un menu déroulant contenant des produits de la
 base de données s’affiche. Sélectionnez le produit souhaité dans le menu
 déroulant pour l’ajouter en tant que produit optionnel au modèle de devis.
 
-Astuce
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Si le produit souhaité n’est pas encore visible, saisissez le nom du produit souhaité dans le champ et l’option apparaît dans le menu déroulant. Sélectionnez ensuite ce produit souhaité pour l’ajouter au devis.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Lorsqu’un produit est ajouté, la <b>Quantité</b> par défaut est <code>1</code>, mais cette valeur peut être modifiée à tout moment.</p>
+</div>
 
-Si le produit souhaité n’est pas encore visible, saisissez le nom du produit
-souhaité dans le champ et l’option apparaît dans le menu déroulant.
-Sélectionnez ensuite ce produit souhaité pour l’ajouter au devis.
+Pour supprimer un article de l’onglet **Produits optionnels** , cliquez sur
+l’icône de corbeille **🗑️**.
 
-Note
+Cliquez sur le bouton **Aperçu** situé dans le coin supérieur gauche du devis
+pour faire apparaître un aperçu du devis que les clients vont recevoir, par
+email, avec les produits optionnels qu’ils peuvent éventuellement ajouter à
+leur commande, dans la section **Options**.
 
-Lorsqu’un produit est ajouté, la Quantité par défaut est `1`, mais cette
-valeur peut être modifiée à tout moment.
-
-Pour supprimer un article de l’onglet Produits optionnels, cliquez sur l’icône
-de corbeille 🗑️.
-
-Cliquez sur le bouton Aperçu situé dans le coin supérieur gauche du devis pour
-faire apparaître un aperçu du devis que les clients vont recevoir, par email,
-avec les produits optionnels qu’ils peuvent éventuellement ajouter à leur
-commande, dans la section Options.
-
-![Aperçu de vos devis dans Odoo Ventes.](../../../../_images/optional-
+![Aperçu de vos devis dans Konvergo ERP Ventes.](../../../../_images/optional-
 products-checkout.png)
 
 Les clients peuvent ajouter plusieurs produits optionnels à une commande en
-cliquant sur l’icône 🛒 (panier) située à droite de la ligne du produit
+cliquant sur l’icône **🛒 (panier)** située à droite de la ligne du produit
 optionnel.
 
 Si un client sélectionne des produits optionnels, ceux-ci sont ajoutés
@@ -64,51 +61,42 @@ l’application _Ventes_.
 
 ## Produits optionnels sur les modèles de devis
 
-Note
-
-N’hésitez pas à consulter la documentation sur les [Modèles de
-devis](quote_template.html) pour mieux comprendre le fonctionnement des
-modèles de devis avant de lire les informations suivantes.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>N’hésitez pas à consulter la documentation sur les <a href="quote_template">Modèles de devis</a> pour mieux comprendre le fonctionnement des modèles de devis avant de lire les informations suivantes.</p>
+</div>
 
 Pour les modèles de devis, tout comme un formulaire de devis typique, il y a
-également un onglet Produits optionnels, dans lequel des produits ou des
+également un onglet **Produits optionnels** , dans lequel des produits ou des
 services connexes peuvent être ajoutés à un modèle de devis.
 
 Pour ajouter des produits optionnels à un modèle de devis, allez à
 l’application Ventes ‣ Configuration ‣ Modèles de devis. Ensuite, sélectionnez
 un modèle de devis existant à modifier ou créez-en un nouveau en cliquant sur
-Nouveau.
+**Nouveau**.
 
-Sur le formulaire de modèle de devis, cliquez sur l’onglet Produits
-optionnels. Dans l’onglet Produits optionnels, cliquez sur Ajouter une ligne
-et sélectionnez le produit que vous voulez ajouter en tant que produit
-optionnel au modèle de devis.
+Sur le formulaire de modèle de devis, cliquez sur l’onglet **Produits
+optionnels**. Dans l’onglet **Produits optionnels** , cliquez sur **Ajouter
+une ligne** et sélectionnez le produit que vous voulez ajouter en tant que
+produit optionnel au modèle de devis.
 
-![Aperçu de vos devis dans Odoo Ventes.](../../../../_images/optional-
+![Aperçu de vos devis dans Konvergo ERP Ventes.](../../../../_images/optional-
 products-tab-quotation-template.png)
 
-Les produits ajoutés dans l’onglet Produits optionnels figurent dans le devis,
-par défaut, chaque fois que ce modèle de devis spécifique est utilisé. Ces
-produits peuvent être supprimés et d’autres produits peuvent être ajoutés
+Les produits ajoutés dans l’onglet **Produits optionnels** figurent dans le
+devis, par défaut, chaque fois que ce modèle de devis spécifique est utilisé.
+Ces produits peuvent être supprimés et d’autres produits peuvent être ajoutés
 avant d’envoyer le devis au client.
 
-Astuce
-
-Il est préférable de proposer des produits optionnels qui encouragent le
-client à ajouter des articles supplémentaires à leur commande ou qui
-l’incitent à acheter une version plus chère du produit qu’il a initialement
-sélectionné.
-
-Par exemple, si un client achète une chaise en bois, les produits optionnels
-pourraient être : une garantie sur cette chaise et/ou une chaise en bois avec
-des sièges en cuir.
-
-Note
-
-Le nombre de produits optionnels pouvant être ajoutés à un modèle de devis
-n’est pas limité.
-
-Pour plus d'infos
-
-[Modèles de devis](quote_template.html)
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Il est préférable de proposer des produits optionnels qui encouragent le client à ajouter des articles supplémentaires à leur commande ou qui l’incitent à acheter une version plus chère du produit qu’il a initialement sélectionné.</p>
+<p>Par exemple, si un client achète une chaise en bois, les produits optionnels pourraient être : une garantie sur cette chaise et/ou une chaise en bois avec des sièges en cuir.</p>
+</div> <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Le nombre de produits optionnels pouvant être ajoutés à un modèle de devis n’est pas limité.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+Pour plus d'infos</p><p><a href="quote_template">Modèles de devis</a></p>
+</div>
 

@@ -13,7 +13,7 @@ Community. En cualquier caso, las reglas básicas son:
 
   * Reinicie su servidor
 
-  * Ingrese su código de suscripción para Odoo Enterprise
+  * Ingrese su código de suscripción para Konvergo ERP Enterprise
 
 ![../../_images/enterprise_code.png](../../_images/enterprise_code.png)
 
@@ -36,7 +36,7 @@ Community. En cualquier caso, las reglas básicas son:
         $ python3 /usr/bin/odoo-bin -d <database_name> -i web_enterprise --stop-after-init
     
 
-  * Debería poder conectar su instancia de Odoo Enterprise usando sus medios de identificación usuales. Después puede vincular su base de datos con su suscripción de Odoo Enterprise ingresando el código que recibió en su correo electrónico cuando completó el formulario
+  * Debería poder conectar su instancia de Konvergo ERP Enterprise usando sus medios de identificación usuales. Después puede vincular su base de datos con su suscripción de Konvergo ERP Enterprise ingresando el código que recibió en su correo electrónico cuando completó el formulario
 
 ## En Linux, usando el código fuente
 
@@ -48,7 +48,7 @@ secciones a su flujo de trabajo habitual.
 
   * Respalde su base de datos de Community
 
-  * Actualice el parámetro `--addons-path` de su comando de inicio (consulte [Instalación desde la fuente](source.html)).
+  * Actualice el parámetro `--addons-path` de su comando de inicio (consulte [Instalación desde la fuente](source)).
 
   * Instale el módulo de web_enterprise con
     
@@ -57,24 +57,24 @@ secciones a su flujo de trabajo habitual.
 
 Dependiendo el tamaño de su base de datos, puede que tarde un poco.
 
-  * Reinicie su servidor con los complementos de ruta del punto 3 actualizados. Debería poder conectarse a su instancia. Después puede vincular su base de datos con su suscripción a Odoo Enterprise, para esto solo debe ingresar el código que recibió por correo electrónico al llenar el formulario
+  * Reinicie su servidor con los complementos de ruta del punto 3 actualizados. Debería poder conectarse a su instancia. Después puede vincular su base de datos con su suscripción a Konvergo ERP Enterprise, para esto solo debe ingresar el código que recibió por correo electrónico al llenar el formulario
 
 ## En Windows
 
   * Respalde su base de datos de Community
 
-  * Desinstale Odoo Community (mediante el archivo «Uninstall» que se encuentra en la carpeta de instalación) - PostgreSQL debe seguir instalado
+  * Desinstale Konvergo ERP Community (mediante el archivo «Uninstall» que se encuentra en la carpeta de instalación) - PostgreSQL debe seguir instalado
 
 ![../../_images/windows_uninstall.png](../../_images/windows_uninstall.png)
 
-  * Ejecute el instalador de Odoo Enterprise y siga los pasos como siempre. Al elegir la ruta de instalación puede configurar la carpeta de instalación de Community (esta carpeta aún tendrá la instalación de PostgreSQL). Desmarque `Ejecutar Odoo` al final de la instalación
+  * Ejecute el instalador de Konvergo ERP Enterprise y siga los pasos como siempre. Al elegir la ruta de instalación puede configurar la carpeta de instalación de Community (esta carpeta aún tendrá la instalación de PostgreSQL). Desmarque `Ejecutar Konvergo ERP` al final de la instalación
 
 ![../../_images/windows_setup.png](../../_images/windows_setup.png)
 
-  * Con ayuda de la ventana de comando, actualice su base de datos de Odoo con este comando (desde la ruta de instalación de Odoo, en la subcarpeta del servidor)
+  * Con ayuda de la ventana de comando, actualice su base de datos de Konvergo ERP con este comando (desde la ruta de instalación de Konvergo ERP, en la subcarpeta del servidor)
     
         $ ..\python\python.exe odoo-bin -d <database_name> -i web_enterprise --stop-after-init
     
 
-  * No es necesario lanzar manualmente el servidor, el servicio está funcionando. Debería poder conectarse a su instancia de Odoo Enterprise usando su medio habitual de identificación. A continuación, puede vincular su base de datos con su suscripción a Odoo Enterprise introduciendo el código que recibió por correo electrónico en la entrada del formulario
+  * No es necesario lanzar manualmente el servidor, el servicio está funcionando. Debería poder conectarse a su instancia de Konvergo ERP Enterprise usando su medio habitual de identificación. A continuación, puede vincular su base de datos con su suscripción a Konvergo ERP Enterprise introduciendo el código que recibió por correo electrónico en la entrada del formulario
 

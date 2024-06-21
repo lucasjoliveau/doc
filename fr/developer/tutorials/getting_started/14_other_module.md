@@ -1,24 +1,24 @@
 # Chapter 14: Interact With Other Modules
 
-In the [previous chapter](13_inheritance.html#tutorials-getting-
+In the [previous chapter](13_inheritance#tutorials-getting-
 started-13-inheritance), we used inheritance to modify the behavior of a
 module. In our real estate scenario, we would like to go a step further and be
-able to generate invoices for our customers. Odoo provides an Invoicing
+able to generate invoices for our customers. Konvergo ERP provides an Invoicing
 module, so it would be neat to create an invoice directly from our real estate
 module, i.e. once a property is set to “Sold”, an invoice is created in the
 Invoicing application.
 
 ## Concrete Example: Account Move
 
-Note
-
-**Goal** : at the end of this section:
-
-  * A new module `estate_account` should be created
-
-  * When a property is sold, an invoice should be issued for the buyer
-
-![Invoice creation](../../../_images/create_inv.gif)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p><b>Goal</b>: at the end of this section:</p>
+<ul>
+<li><p>A new module <code>estate_account</code> should be created</p></li>
+<li><p>When a property is sold, an invoice should be issued for the buyer</p></li>
+</ul>
+<img alt="Invoice creation" class="align-center" src="../../../_images/create_inv.gif"/>
+</div>
 
 Any time we interact with another module, we need to keep in mind the
 modularity. If we intend to sell our application to real estate agencies, some
@@ -32,16 +32,15 @@ invoice creation logic of the estate property. This way the real estate and
 the accounting modules can be installed independently. When both are
 installed, the link module provides the new feature.
 
-Exercise
-
-Create a link module.
-
-Create the `estate_account` module, which depends on the `estate` and
-`account` modules. For now, it will be an empty shell.
-
-Tip: you already did this at the [beginning of the
-tutorial](03_newapp.html#tutorials-getting-started-03-newapp). The process is
-very similar.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Create a link module.</p>
+<p>Create the <code>estate_account</code> module, which depends on the <code>estate</code> and <code>account</code> modules.
+For now, it will be an empty shell.</p>
+<p>Tip: you already did this at the
+<a href="03_newapp#tutorials-getting-started-03-newapp"><span class="std std-ref">beginning of the tutorial</span></a>. The process is very
+similar.</p>
+</div>
 
 When the `estate_account` module appears in the list, go ahead and install it!
 You’ll notice that the Invoicing application is installed as well. This is
@@ -53,13 +52,13 @@ application, your module will be uninstalled as well.
 It’s now time to generate the invoice. We want to add functionality to the
 `estate.property` model, i.e. we want to add some extra logic for when a
 property is sold. Does that sound familiar? If not, it’s a good idea to go
-back to the [previous chapter](13_inheritance.html#tutorials-getting-
+back to the [previous chapter](13_inheritance#tutorials-getting-
 started-13-inheritance) since you might have missed something ;-)
 
 As a first step, we need to extend the action called when pressing the [“Sold”
-button](10_actions.html#tutorials-getting-started-10-actions) on a property.
+button](10_actions#tutorials-getting-started-10-actions) on a property.
 To do so, we need to create a [model
-inheritance](13_inheritance.html#tutorials-getting-started-13-inheritance) in
+inheritance](13_inheritance#tutorials-getting-started-13-inheritance) in
 the `estate_account` module for the `estate.property` model. For now, the
 overridden action will simply return the `super` call. Maybe an example will
 make things clearer:
@@ -78,25 +77,24 @@ make things clearer:
 A practical example can be found
 [here](https://github.com/odoo/odoo/blob/f1f48cdaab3dd7847e8546ad9887f24a9e2ed4c1/addons/event_sale/models/account_move.py#L7-L16).
 
-Exercise
-
-Add the first step of invoice creation.
-
-  * Create a `estate_property.py` file in the correct folder of the `estate_account` module.
-
-  * `_inherit` the `estate.property` model.
-
-  * Override the `action_sold` method (you might have named it differently) to return the `super` call.
-
-Tip: to make sure it works, add a `print` or a debugger breakpoint in the
-overridden method.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add the first step of invoice creation.</p>
+<ul>
+<li><p>Create a <code>estate_property.py</code> file in the correct folder of the <code>estate_account</code> module.</p></li>
+<li><p><code>_inherit</code> the <code>estate.property</code> model.</p></li>
+<li><p>Override the <code>action_sold</code> method (you might have named it differently) to return the <code>super</code>
+call.</p></li>
+</ul>
+<p>Tip: to make sure it works, add a <code>print</code> or a debugger breakpoint in the overridden method.</p>
+</div>
 
 Is it working? If not, maybe check that all Python files are correctly
 imported.
 
 If the override is working, we can move forward and create the invoice.
 Unfortunately, there is no easy way to know how to create any given object in
-Odoo. Most of the time, it is necessary to have a look at its model to find
+Konvergo ERP. Most of the time, it is necessary to have a look at its model to find
 the required fields and provide appropriate values.
 
 A good way to learn is to look at how other modules already do what you want
@@ -117,21 +115,21 @@ To create an invoice, we need the following information:
 
 This is enough to create an empty invoice.
 
-Exercise
-
-Add the second step of invoice creation.
-
-Create an empty `account.move` in the override of the `action_sold` method:
-
-  * the `partner_id` is taken from the current `estate.property`
-
-  * the `move_type` should correspond to a “Customer Invoice”
-
-Tips:
-
-  * to create an object, use `self.env[model_name].create(values)`, where `values` is a `dict`.
-
-  * the `create` method doesn’t accept recordsets as field values.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add the second step of invoice creation.</p>
+<p>Create an empty <code>account.move</code> in the override of the <code>action_sold</code> method:</p>
+<ul>
+<li><p>the <code>partner_id</code> is taken from the current <code>estate.property</code></p></li>
+<li><p>the <code>move_type</code> should correspond to a “Customer Invoice”</p></li>
+</ul>
+<p>Tips:</p>
+<ul>
+<li><p>to create an object, use <code>self.env[model_name].create(values)</code>, where <code>values</code>
+is a <code>dict</code>.</p></li>
+<li><p>the <code>create</code> method doesn’t accept recordsets as field values.</p></li>
+</ul>
+</div>
 
 When a property is set to “Sold”, you should now have a new customer invoice
 created in Invoicing / Customers / Invoices.
@@ -175,22 +173,21 @@ a One2many field `line_ids` at creation of a `test_model`:
         return super().inherited_action()
     
 
-Exercise
-
-Add the third step of invoice creation.
-
-Add two invoice lines during the creation of the `account.move`. Each property
-sold will be invoiced following these conditions:
-
-  * 6% of the selling price
-
-  * an additional 100.00 from administrative fees
-
-Tip: Add the `invoice_line_ids` at creation following the example above. For
-each line, we need a `name`, `quantity` and `price_unit`.
+<div class="alert alert-dark">
+<p class="alert-title">
+Exercise</p><p>Add the third step of invoice creation.</p>
+<p>Add two invoice lines during the creation of the <code>account.move</code>. Each property sold will
+be invoiced following these conditions:</p>
+<ul>
+<li><p>6% of the selling price</p></li>
+<li><p>an additional 100.00 from administrative fees</p></li>
+</ul>
+<p>Tip: Add the <code>invoice_line_ids</code> at creation following the example above.
+For each line, we need a <code>name</code>, <code>quantity</code> and <code>price_unit</code>.</p>
+</div>
 
 This chapter might be one of the most difficult that has been covered so far,
-but it is the closest to what Odoo development will be in practice. In the
-[next chapter](15_qwebintro.html#tutorials-getting-started-15-qwebintro), we
-will introduce the templating mechanism used in Odoo.
+but it is the closest to what Konvergo ERP development will be in practice. In the
+[next chapter](15_qwebintro#tutorials-getting-started-15-qwebintro), we
+will introduce the templating mechanism used in Konvergo ERP.
 

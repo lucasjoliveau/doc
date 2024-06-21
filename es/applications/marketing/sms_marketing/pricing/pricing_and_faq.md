@@ -13,23 +13,20 @@ Hay dos tipos: GSM7 y UNICODE.
 mensaje, esto incluye los siguientes caracteres:
 
 ![Caracteres GSM7 disponibles en la aplicación Marketing por SMS de
-Odoo.](../../../../_images/faq1.png)
+Konvergo ERP.](../../../../_images/faq1.png)
 
 **UNICODE** es el formato que se aplica si se usa un carácter especial que no
 está en la lista GSM7. El límite por SMS es de 70 caracteres.
 
-Nota
-
-Para SMS con GSM7 el límite de caracteres es de 160 y para Unicode es de 70.
-_Si sobrepasa estos límites, el contenido se divide en varios mensajes_ y el
-límite de caracteres disminuye a 153 para GSM7 y 67 para Unicode. El sistema
-le informará en tiempo real sobre el número de SMS en los que se dividirá su
-mensaje.
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Para SMS con GSM7 el límite de caracteres es de 160 y para Unicode es de 70. <em>Si sobrepasa estos límites, el contenido se divide en varios mensajes</em> y el límite de caracteres disminuye a 153 para GSM7 y 67 para Unicode. El sistema le informará en tiempo real sobre el número de SMS en los que se dividirá su mensaje.</p>
+</div>
 
 ## ¿Cuánto cuesta enviar un SMS?
 
 El precio de un SMS depende del destinatario y la longitud (número de
-caracteres) del mensaje. Puede consultar el **precio por país** en [Odoo SMS -
+caracteres) del mensaje. Puede consultar el **precio por país** en [Konvergo ERP SMS -
 Preguntas frecuentes](https://iap-
 services.odoo.com/iap/sms/pricing#sms_faq_01).
 
@@ -37,24 +34,22 @@ El número de SMS en los que se divide un mensaje siempre estará disponible en
 la base de datos.
 
 ![Número de caracteres GSM7 que caben en un mensaje de SMS en la aplicación
-Marketing por SMS de Odoo.](../../../../_images/faq2.png)
+Marketing por SMS de Konvergo ERP.](../../../../_images/faq2.png)
 
 ## Cómo comprar créditos
 
 Vaya a Ajustes ‣ Comprar créditos.
 
 ![Compra de créditos para la aplicación de Marketing por SMS en los ajustes de
-Odoo.](../../../../_images/faq3.png)
+Konvergo ERP.](../../../../_images/faq3.png)
 
 O vaya a Ajustes ‣ Ver mis servicios.
 
-![Uso de Odoo IAP para recargar créditos de marketing por SMS en los ajustes
-de Odoo.](../../../../_images/faq4.png)
-
-Truco
-
-Están disponibles créditos de prueba gratuitos si se está utilizando Odoo en
-línea (Saas), junto con la versión Enterprise, para probar la función.
+![Uso de Konvergo ERP IAP para recargar créditos de marketing por SMS en los ajustes
+de Konvergo ERP.](../../../../_images/faq4.png) <div class="alert alert-info">
+<p class="alert-title">
+Truco</p><p>Están disponibles créditos de prueba gratuitos si se está utilizando Konvergo ERP en línea (Saas), junto con la versión Enterprise, para probar la función.</p>
+</div>
 
 ## Más preguntas comunes
 
@@ -85,11 +80,11 @@ para enviarlos todos.
 
 Un historial de los SMS enviados, junto con toda la información pertinente
 relacionada con los contactos a quienes se les envió (y el mensaje), se puede
-encontrar en la columna Enviado del tablero principal de Marketing por SMS
-(mientras se encuentra en la vista kanban).
+encontrar en la columna **Enviado** del tablero principal de **Marketing por
+SMS** (mientras se encuentra en la vista **kanban**).
 
 > Para obtener información más detallada, seleccione el SMS que desee en el
-> tablero principal (en la vista kanban) y haga clic en cualquiera de los
+> tablero principal (en la vista **kanban**) y haga clic en cualquiera de los
 > enlaces en el banner azul sobre el formulario de detalles de SMS para
 > obtener más información.
 
@@ -120,7 +115,7 @@ Consulte nuestras Políticas de privacidad
   12. **¿Puedo usar mi propio proveedor de SMS?**
 
 Sí, pero no es posible hacer uso de esta función de inmediato. Los expertos de
-Odoo pueden ayudar a personalizar una base de datos para permitir el uso de un
+Konvergo ERP pueden ayudar a personalizar una base de datos para permitir el uso de un
 proveedor personal de SMS. Consulte nuestros paquetes de éxito
 [aquí](https://www.odoo.com/pricing-packs).
 

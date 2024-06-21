@@ -1,21 +1,21 @@
 # VoIP (Voz sobre protocolo de internet)
 
-Ver también
+<div class="alert alert-secondary">
+<p class="alert-title">
+Ver también</p><p>Para más información, vea el <a href="https://www.odoo.com/slides/voip-voice-over-ip-315">video tutorial de Konvergo ERP eLearning sobre VoIP</a></p>
+</div>
 
-Para más información, vea el [video tutorial de Odoo eLearning sobre
-VoIP](https://www.odoo.com/slides/voip-voice-over-ip-315)
-
-  * [Utilice los servicios de VoIP en Odoo con OnSIP](voip/onsip.html)
+  * [Utilice los servicios de VoIP en Konvergo ERP con OnSIP](voip/onsip)
   * Configuración de Axivox
-    * [Servicios de VoIP en Odoo con Axivox](voip/axivox/axivox_config.html)
-    * [Gestionar usuarios en Axivox](voip/axivox/manage_users.html)
-    * [Buzones de voz y mensajes de audio](voip/axivox/vm_audio_messages.html)
-    * [Identificador de llamadas dinámico](voip/axivox/dynamic_caller_id.html)
-    * [Conferencia telefónica](voip/axivox/conference_calls.html)
-    * [Información básica de los planes de marcación](voip/axivox/dial_plan_basics.html)
-    * [Planes de marcado avanzados](voip/axivox/dial_plan_advanced.html)
-    * [Cola de llamadas](voip/axivox/call_queues.html)
-  * [Widget de VoIP](voip/voip_widget.html)
-  * [Dispositivos e integraciones](voip/devices_integrations.html)
-  * [Hacer, recibir, transferir y desviar llamadas](voip/transfer_forward.html)
+    * [Servicios de VoIP en Konvergo ERP con Axivox](voip/axivox/axivox_config)
+    * [Gestionar usuarios en Axivox](voip/axivox/manage_users)
+    * [Buzones de voz y mensajes de audio](voip/axivox/vm_audio_messages)
+    * [Identificador de llamadas dinámico](voip/axivox/dynamic_caller_id)
+    * [Conferencia telefónica](voip/axivox/conference_calls)
+    * [Información básica de los planes de marcación](voip/axivox/dial_plan_basics)
+    * [Planes de marcado avanzados](voip/axivox/dial_plan_advanced)
+    * [Cola de llamadas](voip/axivox/call_queues)
+  * [Widget de VoIP](voip/voip_widget)
+  * [Dispositivos e integraciones](voip/devices_integrations)
+  * [Hacer, recibir, transferir y desviar llamadas](voip/transfer_forward)
 

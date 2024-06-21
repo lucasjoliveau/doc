@@ -1,5 +1,5 @@
 # User interface
 
-  * [SCSS inheritance](user_interface/scss_inheritance.html)
-  * [UI icons](user_interface/icons.html)
+  * [SCSS inheritance](user_interface/scss_inheritance)
+  * [UI icons](user_interface/icons)
 

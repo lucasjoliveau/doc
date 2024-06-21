@@ -1,7 +1,7 @@
 # Ubicaciones
 
 Una _ubicación_ es un espacio específico dentro de un almacén. Puede ser un
-estante, una sala, un pasillo, etc. Hay tres tipos de ubicaciones en Odoo:
+estante, una sala, un pasillo, etc. Hay tres tipos de ubicaciones en Konvergo ERP:
 
   * Las _ubicaciones físicas_ son espacios dentro de un almacén que pertenece a la empresa del usuario. Estas pueden ser las áreas donde los artículos se almacenan como un pasillo o estante, o las áreas donde se realizan operaciones, como las zonas de carga y descarga.
 
@@ -9,32 +9,32 @@ estante, una sala, un pasillo, etc. Hay tres tipos de ubicaciones en Odoo:
 
   * Las _ubicaciones virtuales_ son ubicaciones que no existen de forma física, pero allí se pueden colocar los artículos que no están en el inventario. Estos pueden ser artículos que aún no son parte de las existencias, como productos que están en camino al almacén o artículos que ya no están en el inventario debido a pérdidas u otros factores.
 
-Importante
-
-Debe habilitar los ajustes de Ubicaciones de almacenamiento para poder
-usarlas. Vaya a Inventario ‣ Configuración ‣ Ajustes, diríjase al encabezado
-Almacén y active la casilla Ubicaciones de almacenamiento.
+<div class="alert alert-warning">
+<p class="alert-title">
+Importante</p><p>Debe habilitar los ajustes de <b>Ubicaciones de almacenamiento</b> para poder usarlas. Vaya a Inventario ‣ Configuración ‣ Ajustes, diríjase al encabezado <b>Almacén</b> y active la casilla <b>Ubicaciones de almacenamiento</b>.</p>
+</div>
 
 ## Crear una nueva ubicación dentro de un almacén
 
-En la aplicación Inventario, seleccione Configuración ‣ Ubicaciones ‣ Nuevo.
-Complete el formulario para la nueva ubicación con los siguientes datos:
+En la aplicación **Inventario** , seleccione Configuración ‣ Ubicaciones ‣
+Nuevo. Complete el formulario para la nueva ubicación con los siguientes
+datos:
 
-  * Nombre de la ubicación: el nombre que se utilizará para hacer referencia a la ubicación.
+  * **Nombre de la ubicación** : el nombre que se utilizará para hacer referencia a la ubicación.
 
-  * Ubicación principal: la ubicación o el almacén dentro del que está la nueva ubicación.
+  * **Ubicación principal** : la ubicación o el almacén dentro del que está la nueva ubicación.
 
-  * Tipo de ubicación: elija la categoría a la que pertenece la ubicación.
+  * **Tipo de ubicación** : elija la categoría a la que pertenece la ubicación.
 
-  * Empresa: la empresa que es propietaria del almacén donde se encuentra la ubicación.
+  * **Empresa** : la empresa que es propietaria del almacén donde se encuentra la ubicación.
 
-  * ¿Es una ubicación de desecho?: marque esta casilla si desea permitir que las mercancías que son desechos o están dañadas se almacenen en esta ubicación.
+  * **¿Es una ubicación de desecho?** : marque esta casilla si desea permitir que las mercancías que son desechos o están dañadas se almacenen en esta ubicación.
 
-  * ¿Es una ubicación de devolución?: marque esta casilla si desea permitir que devuelvan los productos a esta ubicación.
+  * **¿Es una ubicación de devolución?** : marque esta casilla si desea permitir que devuelvan los productos a esta ubicación.
 
-  * Código de barras: el número de código de barras que le asignó a la ubicación.
+  * **Código de barras** : el número de código de barras que le asignó a la ubicación.
 
-  * Estrategia de remoción: la [estrategia](../advanced_operations_warehouse/removal.html#inventory-routes-strategies-removal) que indica cómo deben tomarse los artículos del inventario.
+  * **Estrategia de remoción** : la [estrategia](../advanced_operations_warehouse/removal#inventory-routes-strategies-removal) que indica cómo deben tomarse los artículos del inventario.
 
 ![El formulario para crear una nueva ubicación.](../../../../../_images/new-
 location-form.png)
@@ -47,11 +47,10 @@ ubicación. Cada ubicación puede servir como una ubicación principal y cada un
 de ellas puede tener varias ubicaciones dentro, lo que permite la creación de
 una estructura jerárquica casi infinita.
 
-Example
-
-La jerarquía de ubicaciones permite que un estante se encuentre dentro de un
-pasillo, que se encuentra dentro de una sala, que se encuentra dentro del
-almacén general.
+<div class="alert alert-success">
+<p class="alert-title">
+Example</p><p>La jerarquía de ubicaciones permite que un estante se encuentre dentro de un pasillo, que se encuentra dentro de una sala, que se encuentra dentro del almacén general.</p>
+</div>
 
 Para crear la jerarquía de ubicación descrita en el ejemplo anterior,
 establezca el almacén como la ubicación principal de la sala, la sala como la

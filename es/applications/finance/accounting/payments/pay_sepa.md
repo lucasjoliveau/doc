@@ -39,7 +39,7 @@ Territorios fuera del Espacio Económico Europeo:
 
   * Isla de Man.
 
-Al pagar una factura con Odoo usted puede seleccionar los mandatos SEPA como
+Al pagar una factura con Konvergo ERP usted puede seleccionar los mandatos SEPA como
 opción de pago. Al final del día, puede generar un archivo SEPA que contenga
 todas las transferencias bancarias para enviárselo a su banco.
 
@@ -50,7 +50,7 @@ Alemania, se usan otros formatos. Para Suiza se usa
 **“pain.001.001.03.ch.02”** y para Alemania se usa **“pain.001.003.03”**.
 
 Una vez que su banco haya procesado los pagos, puede importar el estado de
-cuenta directo a Odoo. El proceso de conciliación bancaria vinculará las
+cuenta directo a Konvergo ERP. El proceso de conciliación bancaria vinculará las
 órdenes SEPA que envió a su banco con los respectivos estados de cuenta.
 
 ## Configuración
@@ -63,39 +63,38 @@ Pagos de proveedor: Transferencia SEPA de crédito (SCT). Al activar esta
 función y llenar los datos de su empresa, podrá usar la opción SCT al pagarle
 a su proveedor.
 
-Nota
-
-Es posible que los módulos **Domiciliación bancaria SEPA** y **Transferencias
-de crédito SEPA** ya estén instalados dependiendo del paquete de localización
-que se instaló. Si no es así, necesita
-[instalarlos](../../../general/apps_modules.html#general-install).
+<div class="alert alert-primary">
+<p class="alert-title">
+Nota</p><p>Es posible que los módulos <b>Domiciliación bancaria SEPA</b> y <b>Transferencias de crédito SEPA</b> ya estén instalados dependiendo del paquete de localización que se instaló. Si no es así, necesita <a href="../../../general/apps_modules#general-install"><span class="std std-ref">instalarlos</span></a>.</p>
+</div>
 
 ### Activar métodos de pago SEPA en bancos
 
-Desde el tablero de contabilidad, haga clic en el menú desplegable (⋮) en su
-diario contable y seleccione guilabel:`Configuración`. Haga clic en la pestaña
-Pagos salientes y agregue guilabel:`Transferencia de crédito SEPA` en Método
-de pago.
+Desde el tablero de contabilidad, haga clic en el menú desplegable (**⋮**) en
+su diario contable y seleccione guilabel:`Configuración`. Haga clic en la
+pestaña **Pagos salientes** y agregue guilabel:`Transferencia de crédito SEPA`
+en **Método de pago**.
 
 Asegúrese de especificar el número IBAN de la cuenta (los número de cuenta
 locales no funcionan con SEPA) y el BIC (código identificador se banco, por
-sus siglas en inglés) en la pestaña Asientos de diario.
+sus siglas en inglés) en la pestaña **Asientos de diario**.
 
 ### Registro de pagos
 
 Puede registrar el pago que realizó a un proveedor mediante SEPA. Para
 hacerlo, vaya a Contabilidad ‣ Proveedores ‣ Pagos. Cuando cree su pago
-seleccione Transferencia de crédito SEPA como el método de pago .
+seleccione **Transferencia de crédito SEPA** como el **método de pago** .
 
 La primera vez que le pague a un vendedor con SEPA, tendrá que llenar el campo
-Cuenta del banco receptor con el nombre del banco, el IBAN y el BIC. Odoo
+**Cuenta del banco receptor** con el nombre del banco, el IBAN y el BIC. Konvergo ERP
 verifica de manera automática si se respetó el formato IBAN.
 
-Para pagos futuros a este proveedor, Odoo le sugerirá de manera automática la
+Para pagos futuros a este proveedor, Konvergo ERP le sugerirá de manera automática la
 cuenta del banco, pero todavía puede elegir una nueva.
 
 Una vez que registre su pago, no se le olvide confirmarlo. Para pagar las
-facturas de proveedor solo tiene que hacer clic en el botón Registrar pago que
-se encuentra en la parte superior de la factura. El formulario es el mismo,
-pero el pago está ligado a la factura y se conciliará de manera automática.
+facturas de proveedor solo tiene que hacer clic en el botón **Registrar pago**
+que se encuentra en la parte superior de la factura. El formulario es el
+mismo, pero el pago está ligado a la factura y se conciliará de manera
+automática.
 

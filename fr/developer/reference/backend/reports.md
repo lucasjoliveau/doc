@@ -1,10 +1,10 @@
 # QWeb Reports
 
-Reports are written in HTML/QWeb, like website views in Odoo. You can use the
-usual [QWeb control flow tools](../frontend/qweb.html#reference-qweb). The PDF
+Reports are written in HTML/QWeb, like website views in Konvergo ERP. You can use the
+usual [QWeb control flow tools](../frontend/qweb#reference-qweb). The PDF
 rendering itself is performed by [wkhtmltopdf](https://wkhtmltopdf.org).
 
-Reports are declared using a [report action](actions.html#reference-actions-
+Reports are declared using a [report action](actions#reference-actions-
 report), and a Report template for the action to use.
 
 If useful or necessary, it is possible to specify a Paper Format for the
@@ -18,7 +18,7 @@ Report templates will always provide the following variables:
 
     
 
-a reference to [`time`](https://docs.python.org/3/library/time.html#module-
+a reference to [`time`](https://docs.python.org/3/library/time#module-
 time "\(disponible dans Python v3.12\)") from the Python standard library
 
 `user`
@@ -50,7 +50,7 @@ the base url for the webserver
     
 
 a function taking
-[`datetime.datetime`](https://docs.python.org/3/library/datetime.html#datetime.datetime
+[`datetime.datetime`](https://docs.python.org/3/library/datetime#datetime.datetime
 "\(disponible dans Python v3.12\)") in UTC1 and converting it to the timezone
 of the user printing the report
 
@@ -120,11 +120,11 @@ a record field. You will also need to re-browse the related records with the
 proper context if you use fields that are translatable (like country names,
 sales conditions, etc.)
 
-Avertissement
-
-If your report template does not use translatable record fields, re-browsing
-the record in another language is _not_ necessary and will impact
-performances.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>If your report template does not use translatable record fields, re-browsing the record
+in another language is <em>not</em> necessary and will impact performances.</p>
+</div>
 
 For example, let’s look at the Sale Order report from the Sale module:
 
@@ -170,19 +170,20 @@ the report’s external layout this way:
     <t t-call="web.external_layout" t-lang="en_US">
     
 
-Astuce
-
-Please take note that this works only when calling external templates, you
-will not be able to translate part of a document by setting a `t-lang`
-attribute on an xml node other than `t-call`. If you wish to translate part of
-a template, you can create an external template with this partial template and
-call it from the main one with the `t-lang` attribute.
+<div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Please take note that this works only when calling external templates, you will not be
+able to translate part of a document by setting a <code>t-lang</code> attribute on an xml node other
+than <code>t-call</code>. If you wish to translate part of a template, you can create an external
+template with this partial template and call it from the main one with the <code>t-lang</code>
+attribute.</p>
+</div>
 
 ### Barcodes
 
 Barcodes are images returned by a controller and can easily be embedded in
 reports thanks to the QWeb syntax (e.g. see
-[attributes](../frontend/qweb.html#reference-qweb-attributes)):
+[attributes](../frontend/qweb#reference-qweb-attributes)):
 
     
     
@@ -216,7 +217,7 @@ More parameters can be passed as a query string
     </template>
     
 
-  * If it appears that your PDF report is missing the styles, please check [these instructions](../../tutorials/backend.html#reference-backend-reporting-printed-reports-pdf-without-styles).
+  * If it appears that your PDF report is missing the styles, please check [these instructions](../../tutorials/backend#reference-backend-reporting-printed-reports-pdf-without-styles).
 
 ## Paper Format
 
@@ -331,14 +332,14 @@ the template, such as data from additional models:
             }
     
 
-Avertissement
-
-When using a custom report, the « default » document-related items (`doc_ids`,
-`doc_model` and `docs`) will _not_ be included. If you want them, you will
-need to include them yourself.
-
-In the example above, the rendering context will contain the « global » values
-as well as the `lines` we put in there but nothing else.
+<div class="alert alert-warning">
+<p class="alert-title">
+Avertissement</p><p>When using a custom report, the « default » document-related items
+(<code>doc_ids</code>, <code>doc_model</code> and <code>docs</code>) will <em>not</em> be included. If you
+want them, you will need to include them yourself.</p>
+<p>In the example above, the rendering context will contain the « global » values
+as well as the <code>lines</code> we put in there but nothing else.</p>
+</div>
 
 ## Custom fonts
 

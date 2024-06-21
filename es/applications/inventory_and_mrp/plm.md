@@ -9,9 +9,9 @@ Con las aprobaciones, las personas interesadas más importantes pueden hacer
 cambios antes de la implementación.
 
   * Gestión de cambio
-    * [Órdenes de cambio de ingeniería](plm/manage_changes/engineering_change_orders.html)
-    * [Tipo de ECO](plm/manage_changes/eco_type.html)
-    * [Control de versiones](plm/manage_changes/version_control.html)
+    * [Órdenes de cambio de ingeniería](plm/manage_changes/engineering_change_orders)
+    * [Tipo de ECO](plm/manage_changes/eco_type)
+    * [Control de versiones](plm/manage_changes/version_control)
   * Gestión de proyectos
-    * [Aprobaciones](plm/management/approvals.html)
+    * [Aprobaciones](plm/management/approvals)
 

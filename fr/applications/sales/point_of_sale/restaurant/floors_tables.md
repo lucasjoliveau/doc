@@ -9,11 +9,10 @@ sur _Salles_ pour créer et nommer vos salles et tables.
 ![Vue de la fonctionnalité de gestion des tables. Une façon de gérer et de
 créer des salles sur un PdV](../../../../_images/restaurant_03.png) ![Vue
 backend d'une salle de restaurant. Nom de table et nombre de places pour
-chaque table](../../../../_images/restaurant_04.png)
-
-Note
-
-N’oubliez pas d’associer votre salle à votre Point de Vente.
+chaque table](../../../../_images/restaurant_04.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>N’oubliez pas d’associer votre salle à votre Point de Vente.</p>
+</div>
 
 ## Ajouter des tables
 
@@ -27,13 +26,10 @@ Ensuite, cliquez sur _Mode Edition_ (icône du crayon dans le coin supérieur
 droit) afin de pouvoir créer, déplacer, modifier des tables, etc.
 
 ![Vue de la gestion des salles. Ajouter des tables, le nombre de places, leur
-nom et leur forme](../../../../_images/restaurant_06.png)
-
-Note
-
-Pour faciliter la recherche de vos tables, vous pouvez les renommer, changer
-leur forme, leur taille ou encore leur couleur. Il est également possible
-d’ajouter le nombre maximum de places que la table peut avoir.
+nom et leur forme](../../../../_images/restaurant_06.png) <div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Pour faciliter la recherche de vos tables, vous pouvez les renommer, changer leur forme, leur taille ou encore leur couleur. Il est également possible d’ajouter le nombre maximum de places que la table peut avoir.</p>
+</div>
 
 ## Enregistrer des commandes par table
 
@@ -71,10 +67,8 @@ Vous pouvez ensuite passer d’une commande à une autre et procéder au paiemen
 lorsque cela est nécessaire.
 
 ![Vue du bouton -, permettant aux employés de fermer/supprimer une
-commande](../../../../_images/restaurant_10.png)
-
-Astuce
-
-Le bouton - vous permet de supprimer la commande sur laquelle vous vous
-trouvez actuellement.
+commande](../../../../_images/restaurant_10.png) <div class="alert alert-info">
+<p class="alert-title">
+Astuce</p><p>Le bouton - vous permet de supprimer la commande sur laquelle vous vous trouvez actuellement.</p>
+</div>
 

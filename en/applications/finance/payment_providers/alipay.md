@@ -3,20 +3,23 @@
 [Alipay](https://www.alipay.com/) is an online payments platform established
 in China by Alibaba Group.
 
-Warning
-
-The provider Alipay is deprecated. It is recommended to use
-[AsiaPay](asiapay.html) instead.
+<div class="alert alert-warning">
+<p class="alert-title">
+Warning</p><p>The provider Alipay is deprecated. It is recommended to use <a href="asiapay">AsiaPay</a> instead.</p>
+</div>
 
 ## Configuration
 
-See also
-
-  * [Enable a payment provider](../payment_providers.html#payment-providers-add-new)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../payment_providers#payment-providers-add-new"><span class="std std-ref">Enable a payment provider</span></a></p></li>
+</ul>
+</div>
 
 ### Credentials tab
 
-Odoo needs your **API Credentials** to connect with your Alipay account, which
+Konvergo ERP needs your **API Credentials** to connect with your Alipay account, which
 comprise:
 
   * **Account** : Depending on where you are situated \- `Express Checkout` if your are a Chinese Merchant. \- `Cross-border` if you are not.
@@ -32,13 +35,14 @@ related fields under the **Credentials** tab.
 
 To retrieve them, log into your Alipay account, they are on the front page.
 
-Important
-
-If you are trying Alipay as a test, in the _sandbox_ , change the **State** to
-_Test Mode_. We recommend doing this on a test Odoo database, rather than on
-your main database.
-
-See also
-
-  * [Online payments](../payment_providers.html)
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>If you are trying Alipay as a test, in the <em>sandbox</em>, change the <b>State</b> to <em>Test Mode</em>. We
+recommend doing this on a test Konvergo ERP database, rather than on your main database.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../payment_providers">Online payments</a></p></li>
+</ul>
+</div>
 

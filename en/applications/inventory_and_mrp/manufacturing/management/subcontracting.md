@@ -16,7 +16,7 @@ produced out of raw materials “A” and “B”.
 
 ![](../../../../_images/subcontracting_01.png)
 
-With its MRP subcontracting feature, Odoo helps you handle this flow easily.
+With its MRP subcontracting feature, Konvergo ERP helps you handle this flow easily.
 
 ## Configuration
 
@@ -49,7 +49,7 @@ subcontractor on the _BoM_ of these products.
 
 Once the _PO_ is validated (1), a pending receipt is created. When the
 products are received, validate the receipt (2), with the actual quantity
-received. As a result, Odoo does the following things for you:
+received. As a result, Konvergo ERP does the following things for you:
 
   * Consumes the respective components at the subcontractor’s location, based on the _BoM_ and your input (3);
 
@@ -57,12 +57,13 @@ received. As a result, Odoo does the following things for you:
 
   * Moves products from that subcontractor’s location to YourCompany via the validated receipt (5).
 
-Note
-
-The _PO_ is optional. If you create a receipt manually, with the right
-subcontractor, Odoo still performs all the moves. This can be useful if the
-subcontractor does not bill a fixed price per item, but rather the time and
-materials used.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>The <em>PO</em> is optional. If you create a receipt manually, with the right
+subcontractor, Konvergo ERP still performs all the moves. This can be useful if
+the subcontractor does not bill a fixed price per item, but rather the time
+and materials used.</p>
+</div>
 
 ## Inventory Valuation
 
@@ -94,11 +95,13 @@ accounting.
 Finally, the subcontractor bill then matches the purchase order, with the
 proposed price coming from the finished products C.
 
-Note
-
-If managing the replenishment of raw materials **B** at your subcontractor’s
-location is not needed, simply include the cost of **B** in the
-subcontractor’s price **s** and remove the products _B_ from the _BoM_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>If managing the replenishment of raw materials <b>B</b> at your
+subcontractor’s location is not needed, simply include the cost of
+<b>B</b> in the subcontractor’s price <b>s</b> and remove the products
+<em>B</em> from the <em>BoM</em>.</p>
+</div>
 
 ## Traceability
 

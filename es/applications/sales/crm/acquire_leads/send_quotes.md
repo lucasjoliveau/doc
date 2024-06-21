@@ -1,7 +1,7 @@
 # Envíe presupuestos
 
 Cuando convierte un lead en una oportunidad seguramente necesitará enviar una
-cotización. Puede hacer esto directamente en la aplicación CRM de Odoo.
+cotización. Puede hacer esto directamente en la aplicación CRM de Konvergo ERP.
 
 ![../../../../_images/send_quotes01.png](../../../../_images/send_quotes01.png)
 

@@ -6,13 +6,10 @@ simplement déchargés dans une zone de _correspondance_ afin de réorganiser le
 produits et de charger un autre camion.
 
 ![../../../../../_images/cross1.png](../../../../../_images/cross1.png)
-
-Note
-
-Pour plus d’informations sur la façon d’organiser votre entrepôt, lisez notre
-blog : [What is cross-docking and is it for
-me?](https://www.odoo.com/blog/business-hacks-1/post/what-is-cross-docking-
-and-is-it-for-me-270)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Pour plus d’informations sur la façon d’organiser votre entrepôt, lisez notre blog : <a href="https://www.odoo.com/blog/business-hacks-1/post/what-is-cross-docking-and-is-it-for-me-270">What is cross-docking and is it for me?</a></p>
+</div>
 
 ## Configuration
 
@@ -20,10 +17,10 @@ Dans l’application _Inventaire_ , ouvrez Configuration ‣ Paramètres et acti
 les _Routes en plusieurs étapes_.
 
 ![../../../../../_images/cross2.png](../../../../../_images/cross2.png)
-
-Note
-
-Ceci activera également la fonctionnalité _Emplacements de stockage_.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>Ceci activera également la fonctionnalité <em>Emplacements de stockage</em>.</p>
+</div>
 
 À présent, il est possible de configurer les _Réceptions_ et les _Expéditions_
 pour fonctionner avec 2 étapes. Pour adapter la configuration, allez à
@@ -47,7 +44,7 @@ produit et définissez un prix.
 ![../../../../../_images/cross6.png](../../../../../_images/cross6.png)
 
 Une fois cela fait, créez une commande client pour le produit et confirmez-la.
-Odoo créera automatiquement deux transferts qui seront liés à la commande
+Konvergo ERP créera automatiquement deux transferts qui seront liés à la commande
 client. Le premier est le transfert depuis l” _Emplacement d’entrée_ vers l”
 _Emplacement de sortie_ , correspondant au déplacement du produit vers la zone
 de _Correspondance_. Le deuxième est le bon de livraison de l” _Emplacement de

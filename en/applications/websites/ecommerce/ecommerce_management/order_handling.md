@@ -1,7 +1,7 @@
 # Order handling
 
 When a customer orders on your eCommerce, there are **three** record types
-required to be handle in Odoo:
+required to be handle in Konvergo ERP:
 
   * Sales orders;
 
@@ -15,10 +15,10 @@ required to be handle in Odoo:
 
 The first step when a customer adds a product to his cart is the creation of a
 quotation. Orders can be managed either from the **Website** or
-[Sales](../../../sales/sales.html) app. eCommerce orders can automatically be
+[Sales](../../../sales/sales) app. eCommerce orders can automatically be
 assigned to a specific sales team by going to Website ‣ Configuration ‣
-Settings. In the **Shop - Checkout Process** section, select a Sales Team or
-Salesperson to handle eCommerce orders.
+Settings. In the **Shop - Checkout Process** section, select a **Sales Team**
+or **Salesperson** to handle eCommerce orders.
 
 ![Assignment of online orders to a sales team or
 salesperson](../../../../_images/handling-salesteam.png)
@@ -39,16 +39,16 @@ order goes through a different status:
 An **abandoned cart** represents an order for which the customer did **not
 finish** the checkout confirmation process. For these orders, it is possible
 to send an **email reminder** to the customer automatically. To enable that
-feature, go to Website ‣ Configuration ‣ Settings and in the Email & Marketing
-section, enable Automatically send abandoned checkout emails. Once enabled,
-you can set the **time-lapse** after which the email is sent and customize the
-**email template** used.
+feature, go to Website ‣ Configuration ‣ Settings and in the **Email &
+Marketing** section, enable **Automatically send abandoned checkout emails**.
+Once enabled, you can set the **time-lapse** after which the email is sent and
+customize the **email template** used.
 
-Note
-
-For abandoned cart emails, the customer must either have entered their contact
-details during the checkout process; or be logged-in when they added the
-product to their cart.
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>For abandoned cart emails, the customer must either have entered their contact details during the
+checkout process; or be logged-in when they added the product to their cart.</p>
+</div>
 
 ## Delivery orders
 
@@ -60,25 +60,25 @@ created. The next step is to process this delivery.
 Packing eCommerce orders usually requires picking the product, preparing the
 packaging, printing the shipping label(s) and shipping to the customer.
 Depending on the number of orders, strategy, or resources, those steps can be
-considered as one or multiple actions in Odoo.
+considered as one or multiple actions in Konvergo ERP.
 
 An automatic email can be sent to the customer when the transfer status in
-Odoo is “done”. To do so, enable the feature in the settings of the
-[Inventory](../../../inventory_and_mrp/inventory.html) app.
+Konvergo ERP is “done”. To do so, enable the feature in the settings of the
+[Inventory](../../../inventory_and_mrp/inventory) app.
 
-Note
-
-If customers are allowed to pay when picking up their order in stores or by
-wire transfer, the quotation is **not** be confirmed and the stock is **not**
-be reserved. Orders must be confirmed manually to reserve products in stock.
-
-See also
-
-  * [Shipping cost invoicing](../../../inventory_and_mrp/inventory/shipping_receiving/advanced_operations_shipping/invoicing.html)
-
-  * [Print shipping labels](../../../inventory_and_mrp/inventory/shipping_receiving/setup_configuration/labels.html)
-
-  * [Multi-package shipments](../../../inventory_and_mrp/inventory/shipping_receiving/advanced_operations_shipping/multipack.html)
+<div class="alert alert-primary">
+<p class="alert-title">
+Note</p><p>If customers are allowed to pay when picking up their order in stores or by wire transfer, the
+quotation is <b>not</b> be confirmed and the stock is <b>not</b> be reserved. Orders must be confirmed
+manually to reserve products in stock.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../../../inventory_and_mrp/inventory/shipping_receiving/advanced_operations_shipping/invoicing">Shipping cost invoicing</a></p></li>
+<li><p><a href="../../../inventory_and_mrp/inventory/shipping_receiving/setup_configuration/labels">Print shipping labels</a></p></li>
+<li><p><a href="../../../inventory_and_mrp/inventory/shipping_receiving/advanced_operations_shipping/multipack">Multi-package shipments</a></p></li>
+</ul>
+</div>
 
 ### Returns and refunds
 
@@ -89,13 +89,14 @@ product.
 Full refunds can be directly sent to customers from within the order
 interface. A refund-compatible payment provider needs to be enabled first.
 
-See also
-
-  * [Returns and refunds](../../../sales/sales/products_prices/returns.html)
-
-  * [After-Sales services](../../../services/helpdesk/advanced/after_sales.html)
-
-  * [Online payments](../../../finance/payment_providers.html)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../../../sales/sales/products_prices/returns">Returns and refunds</a></p></li>
+<li><p><a href="../../../services/helpdesk/advanced/after_sales">After-Sales services</a></p></li>
+<li><p><a href="../../../finance/payment_providers">Online payments</a></p></li>
+</ul>
+</div>
 
 ## Invoice and legal requirements
 
@@ -105,5 +106,5 @@ either be generated automatically (B2B) or on demand of the customer (B2C).
 This process can be automated if (and when) the online payment is confirmed.
 
 To automate invoicing, go to Website ‣ Configuration ‣ Settings and in the
-Invoicing section, enable Automatic Invoice.
+**Invoicing** section, enable **Automatic Invoice**.
 

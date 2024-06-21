@@ -21,7 +21,7 @@ _Crear_.
 Defina aquí su _Precisión de redondeo_ , _Estrategia de redondeo_ y _Método de
 redondeo_.
 
-Odoo acepta dos **estrategias de redondeo** :
+Konvergo ERP acepta dos **estrategias de redondeo** :
 
   1. **Añadir línea de redondeo** : se añade una línea de _redondeo_ en la factura. Hay que definir en qué cuenta se registran los redondeos de efectivo.
 

@@ -1,4 +1,4 @@
 # Gestión de proyectos
 
-  * [Aprobaciones](management/approvals.html)
+  * [Aprobaciones](management/approvals)
 

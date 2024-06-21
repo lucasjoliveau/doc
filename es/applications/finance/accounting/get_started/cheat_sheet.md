@@ -51,7 +51,7 @@ transacción se registra al cargar y abonar a diferentes cuentas en un asiento
 contable. Vea el plan de cuentas como el ADN de una empresa.
 
 Cada cuenta que se enlista en el plan de cuentas pertenece a una categoría
-específica. En Odoo, cada cuenta tiene un código único que pertenece a una de
+específica. En Konvergo ERP, cada cuenta tiene un código único que pertenece a una de
 estas categorías:
 
   * **Deuda subordinada y deuda de capital**
@@ -99,7 +99,7 @@ ejemplos de asientos contables para varias transacciones. (véase entries.js)
 
 ## Conciliación
 
-La [conciliación](../bank/reconciliation.html) es el proceso de enlazar los
+La [conciliación](../bank/reconciliation) es el proceso de enlazar los
 apuntes contables de una cuenta específica con los cargos y abonos
 respectivos.
 
@@ -139,9 +139,9 @@ de cuenta bancario, puede ser:
 
   * **se registró como otra transacción** transferencia bancaria, cambio directo, etc.
 
-Odoo conciliará de manera automática la mayoría de las transacciones, solo
+Konvergo ERP conciliará de manera automática la mayoría de las transacciones, solo
 necesitará revisar algunas personalmente. Cuando se termina el proceso de
-conciliación bancaria, el balance de la cuenta bancaria de Odoo debe ser el
+conciliación bancaria, el balance de la cuenta bancaria de Konvergo ERP debe ser el
 mismo que el balance del estado de cuenta bancario
 
 ## Gestión de cheques

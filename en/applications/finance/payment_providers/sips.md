@@ -5,13 +5,16 @@ multinational Worldline.
 
 ## Configuration
 
-See also
-
-  * [Enable a payment provider](../payment_providers.html#payment-providers-add-new)
+<div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../payment_providers#payment-providers-add-new"><span class="std std-ref">Enable a payment provider</span></a></p></li>
+</ul>
+</div>
 
 ### Credentials tab
 
-Odoo needs your **API Credentials** to connect with your SIPS account, which
+Konvergo ERP needs your **API Credentials** to connect with your SIPS account, which
 comprise:
 
   * **Merchant ID** : The ID solely used to identify the merchant account with SIPS.
@@ -26,13 +29,14 @@ You can copy your credentials from your SIPS environment info documentation,
 in the section **PROD** , and paste them in the related fields under the
 **Credentials** tab.
 
-Important
-
-If you are trying SIPS as a test, with the _TEST_ credentials, change the
-**State** to _Test Mode_. We recommend doing this on a test Odoo database,
-rather than on your main database.
-
-See also
-
-  * [Online payments](../payment_providers.html)
+<div class="alert alert-warning">
+<p class="alert-title">
+Important</p><p>If you are trying SIPS as a test, with the <em>TEST</em> credentials, change the <b>State</b> to <em>Test
+Mode</em>. We recommend doing this on a test Konvergo ERP database, rather than on your main database.</p>
+</div> <div class="alert alert-secondary">
+<p class="alert-title">
+See also</p><ul>
+<li><p><a href="../payment_providers">Online payments</a></p></li>
+</ul>
+</div>
 
